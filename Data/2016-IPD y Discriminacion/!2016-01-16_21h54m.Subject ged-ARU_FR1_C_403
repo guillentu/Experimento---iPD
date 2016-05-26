@@ -1,0 +1,751 @@
+File: C:\MED-PC IV\DATA\!2016-01-16_21h54m.Subject ged-ARU_FR1_C_403
+
+
+Start Date: 01/16/16
+End Date: 01/16/16
+Subject: ged-ARU_FR1_C_403
+Experiment: 1
+Group: 403
+Box: 3
+Start Time: 21:54:15
+End Time: 21:54:58
+MSN: GuilleARU_FR_Control_ITI_CastigoFijaD
+A:       1.000
+B:       0.000
+F:       9.000
+Q:    5000.000
+Y:      30.000
+D:
+     0:       -4.000        6.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        0.000        1.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/16/16
+End Date: 01/16/16
+Subject: ged-ARU_FR1_C_403
+Experiment: 1
+Group: 403
+Box: 3
+Start Time: 21:54:15
+End Time: 21:55:15
+MSN: GuilleARU_FR_Control_ITI_CastigoFijaD
+A:       2.000
+B:       0.000
+F:       9.000
+Q:    5000.000
+Y:      30.000
+D:
+     0:       13.000       24.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        0.000        2.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/16/16
+End Date: 01/16/16
+Subject: ged-ARU_FR1_C_403
+Experiment: 1
+Group: 403
+Box: 3
+Start Time: 21:54:15
+End Time: 21:55:52
+MSN: GuilleARU_FR_Control_ITI_CastigoFijaD
+A:       3.000
+B:       0.000
+F:       8.000
+Q:    5000.000
+Y:      30.000
+D:
+     0:       -6.000       24.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        0.000        2.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/16/16
+End Date: 01/16/16
+Subject: ged-ARU_FR1_C_403
+Experiment: 1
+Group: 403
+Box: 3
+Start Time: 21:54:15
+End Time: 21:56:20
+MSN: GuilleARU_FR_Control_ITI_CastigoFijaD
+A:       4.000
+B:       0.000
+F:       7.000
+Q:    5000.000
+Y:      30.000
+D:
+     0:        3.000       13.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        0.000        3.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/16/16
+End Date: 01/16/16
+Subject: ged-ARU_FR1_C_403
+Experiment: 1
+Group: 403
+Box: 3
+Start Time: 21:54:15
+End Time: 21:56:33
+MSN: GuilleARU_FR_Control_ITI_CastigoFijaD
+A:       5.000
+B:       0.000
+F:       3.000
+Q:    5000.000
+Y:      30.000
+D:
+     0:       18.000       28.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        1.000        3.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/16/16
+End Date: 01/16/16
+Subject: ged-ARU_FR1_C_403
+Experiment: 1
+Group: 403
+Box: 3
+Start Time: 21:54:15
+End Time: 21:57:09
+MSN: GuilleARU_FR_Control_ITI_CastigoFijaD
+A:       6.000
+B:       0.000
+F:       7.000
+Q:    5000.000
+Y:      30.000
+D:
+     0:       -6.000       28.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        1.000        3.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/16/16
+End Date: 01/16/16
+Subject: ged-ARU_FR1_C_403
+Experiment: 1
+Group: 403
+Box: 3
+Start Time: 21:54:15
+End Time: 21:57:22
+MSN: GuilleARU_FR_Control_ITI_CastigoFijaD
+A:       7.000
+B:       0.000
+F:       3.000
+Q:    5000.000
+Y:      30.000
+D:
+     0:       19.000       29.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        2.000        3.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/16/16
+End Date: 01/16/16
+Subject: ged-ARU_FR1_C_403
+Experiment: 1
+Group: 403
+Box: 3
+Start Time: 21:54:15
+End Time: 21:57:44
+MSN: GuilleARU_FR_Control_ITI_CastigoFijaD
+A:       8.000
+B:       0.000
+F:       1.000
+Q:    5000.000
+Y:      30.000
+D:
+     0:        9.000       19.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        3.000        3.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/16/16
+End Date: 01/16/16
+Subject: ged-ARU_FR1_C_403
+Experiment: 1
+Group: 403
+Box: 3
+Start Time: 21:54:15
+End Time: 21:58:20
+MSN: GuilleARU_FR_Control_ITI_CastigoFijaD
+A:       9.000
+B:       0.000
+F:       8.000
+Q:    5000.000
+Y:      30.000
+D:
+     0:       -6.000       19.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        3.000        3.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/16/16
+End Date: 01/16/16
+Subject: ged-ARU_FR1_C_403
+Experiment: 1
+Group: 403
+Box: 3
+Start Time: 21:54:15
+End Time: 21:58:38
+MSN: GuilleARU_FR_Control_ITI_CastigoFijaD
+A:      10.000
+B:       0.000
+F:       2.000
+Q:    5000.000
+Y:      30.000
+D:
+     0:       14.000       24.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        4.000        3.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/16/16
+End Date: 01/16/16
+Subject: ged-ARU_FR1_C_403
+Experiment: 1
+Group: 403
+Box: 3
+Start Time: 21:54:15
+End Time: 21:58:54
+MSN: GuilleARU_FR_Control_ITI_CastigoFijaD
+A:      11.000
+B:       0.000
+F:       1.000
+Q:    5000.000
+Y:      30.000
+D:
+     0:       15.000       25.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        5.000        3.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/16/16
+End Date: 01/16/16
+Subject: ged-ARU_FR1_C_403
+Experiment: 1
+Group: 403
+Box: 3
+Start Time: 21:54:15
+End Time: 21:59:30
+MSN: GuilleARU_FR_Control_ITI_CastigoFijaD
+A:      12.000
+B:       0.000
+F:       8.000
+Q:    5000.000
+Y:      30.000
+D:
+     0:       -6.000       25.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        5.000        3.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/16/16
+End Date: 01/16/16
+Subject: ged-ARU_FR1_C_403
+Experiment: 1
+Group: 403
+Box: 3
+Start Time: 21:54:15
+End Time: 21:59:49
+MSN: GuilleARU_FR_Control_ITI_CastigoFijaD
+A:      13.000
+B:       0.000
+F:       0.000
+Q:    5000.000
+Y:      30.000
+D:
+     0:       13.000       23.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        6.000        3.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/16/16
+End Date: 01/16/16
+Subject: ged-ARU_FR1_C_403
+Experiment: 1
+Group: 403
+Box: 3
+Start Time: 21:54:15
+End Time: 22:00:25
+MSN: GuilleARU_FR_Control_ITI_CastigoFijaD
+A:      14.000
+B:       0.000
+F:       1.000
+Q:    5000.000
+Y:      30.000
+D:
+     0:       -6.000        5.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        7.000        3.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/16/16
+End Date: 01/16/16
+Subject: ged-ARU_FR1_C_403
+Experiment: 1
+Group: 403
+Box: 3
+Start Time: 21:54:15
+End Time: 22:01:02
+MSN: GuilleARU_FR_Control_ITI_CastigoFijaD
+A:      15.000
+B:       0.000
+F:       8.000
+Q:    5000.000
+Y:      30.000
+D:
+     0:       -6.000        5.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        7.000        3.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/16/16
+End Date: 01/16/16
+Subject: ged-ARU_FR1_C_403
+Experiment: 1
+Group: 403
+Box: 3
+Start Time: 21:54:15
+End Time: 22:01:17
+MSN: GuilleARU_FR_Control_ITI_CastigoFijaD
+A:      16.000
+B:       0.000
+F:       3.000
+Q:    5000.000
+Y:      30.000
+D:
+     0:       16.000       27.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        8.000        3.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/16/16
+End Date: 01/16/16
+Subject: ged-ARU_FR1_C_403
+Experiment: 1
+Group: 403
+Box: 3
+Start Time: 21:54:15
+End Time: 22:01:34
+MSN: GuilleARU_FR_Control_ITI_CastigoFijaD
+A:      17.000
+B:       0.000
+F:       9.000
+Q:    5000.000
+Y:      30.000
+D:
+     0:       15.000       25.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        8.000        4.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/16/16
+End Date: 01/16/16
+Subject: ged-ARU_FR1_C_403
+Experiment: 1
+Group: 403
+Box: 3
+Start Time: 21:54:15
+End Time: 22:01:53
+MSN: GuilleARU_FR_Control_ITI_CastigoFijaD
+A:      18.000
+B:       0.000
+F:       2.000
+Q:    7000.000
+Y:      30.000
+D:
+     0:       12.000       24.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        9.000        4.000        0.000
+S:
+     0:        1.000        1.000        0.000
+
+
+Start Date: 01/16/16
+End Date: 01/16/16
+Subject: ged-ARU_FR1_C_403
+Experiment: 1
+Group: 403
+Box: 3
+Start Time: 21:54:15
+End Time: 22:02:29
+MSN: GuilleARU_FR_Control_ITI_CastigoFijaD
+A:      19.000
+B:       0.000
+F:       7.000
+Q:    5000.000
+Y:      30.000
+D:
+     0:       -6.000       24.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        9.000        4.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/16/16
+End Date: 01/16/16
+Subject: ged-ARU_FR1_C_403
+Experiment: 1
+Group: 403
+Box: 3
+Start Time: 21:54:15
+End Time: 22:02:46
+MSN: GuilleARU_FR_Control_ITI_CastigoFijaD
+A:      20.000
+B:       0.000
+F:       2.000
+Q:    7000.000
+Y:      30.000
+D:
+     0:       15.000       27.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:       10.000        4.000        0.000
+S:
+     0:        1.000        1.000        0.000
+
+
+Start Date: 01/16/16
+End Date: 01/16/16
+Subject: ged-ARU_FR1_C_403
+Experiment: 1
+Group: 403
+Box: 3
+Start Time: 21:54:15
+End Time: 22:03:23
+MSN: GuilleARU_FR_Control_ITI_CastigoFijaD
+A:      21.000
+B:       0.000
+F:       5.000
+Q:    5000.000
+Y:      30.000
+D:
+     0:       -6.000       27.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:       10.000        4.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/16/16
+End Date: 01/16/16
+Subject: ged-ARU_FR1_C_403
+Experiment: 1
+Group: 403
+Box: 3
+Start Time: 21:54:15
+End Time: 22:03:35
+MSN: GuilleARU_FR_Control_ITI_CastigoFijaD
+A:      22.000
+B:       0.000
+F:       3.000
+Q:    5000.000
+Y:      30.000
+D:
+     0:       19.000       29.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:       11.000        4.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/16/16
+End Date: 01/16/16
+Subject: ged-ARU_FR1_C_403
+Experiment: 1
+Group: 403
+Box: 3
+Start Time: 21:54:15
+End Time: 22:04:10
+MSN: GuilleARU_FR_Control_ITI_CastigoFijaD
+A:      23.000
+B:       0.000
+F:       6.000
+Q:    5000.000
+Y:      30.000
+D:
+     0:       -4.000        6.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:       11.000        5.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/16/16
+End Date: 01/16/16
+Subject: ged-ARU_FR1_C_403
+Experiment: 1
+Group: 403
+Box: 3
+Start Time: 21:54:15
+End Time: 22:04:45
+MSN: GuilleARU_FR_Control_ITI_CastigoFijaD
+A:      24.000
+B:       0.000
+F:       7.000
+Q:    5000.000
+Y:      30.000
+D:
+     0:       -4.000        6.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:       11.000        6.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/16/16
+End Date: 01/16/16
+Subject: ged-ARU_FR1_C_403
+Experiment: 1
+Group: 403
+Box: 3
+Start Time: 21:54:15
+End Time: 22:05:12
+MSN: GuilleARU_FR_Control_ITI_CastigoFijaD
+A:      25.000
+B:       0.000
+F:       5.000
+Q:    5000.000
+Y:      30.000
+D:
+     0:        5.000       15.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:       11.000        7.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/16/16
+End Date: 01/16/16
+Subject: ged-ARU_FR1_C_403
+Experiment: 1
+Group: 403
+Box: 3
+Start Time: 21:54:15
+End Time: 22:05:48
+MSN: GuilleARU_FR_Control_ITI_CastigoFijaD
+A:      26.000
+B:       0.000
+F:       8.000
+Q:    5000.000
+Y:      30.000
+D:
+     0:       -6.000       15.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:       11.000        7.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/16/16
+End Date: 01/16/16
+Subject: ged-ARU_FR1_C_403
+Experiment: 1
+Group: 403
+Box: 3
+Start Time: 21:54:15
+End Time: 22:06:07
+MSN: GuilleARU_FR_Control_ITI_CastigoFijaD
+A:      27.000
+B:       0.000
+F:       1.000
+Q:    5000.000
+Y:      30.000
+D:
+     0:       13.000       23.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:       12.000        7.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/16/16
+End Date: 01/16/16
+Subject: ged-ARU_FR1_C_403
+Experiment: 1
+Group: 403
+Box: 3
+Start Time: 21:54:15
+End Time: 22:06:27
+MSN: GuilleARU_FR_Control_ITI_CastigoFijaD
+A:      28.000
+B:       0.000
+F:       6.000
+Q:    5000.000
+Y:      30.000
+D:
+     0:       10.000       21.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:       12.000        8.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/16/16
+End Date: 01/16/16
+Subject: ged-ARU_FR1_C_403
+Experiment: 1
+Group: 403
+Box: 3
+Start Time: 21:54:15
+End Time: 22:06:45
+MSN: GuilleARU_FR_Control_ITI_CastigoFijaD
+A:      29.000
+B:       0.000
+F:       4.000
+Q:    7000.000
+Y:      30.000
+D:
+     0:       13.000       26.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:       13.000        8.000        0.000
+S:
+     0:        1.000        1.000        0.000
+
+
+Start Date: 01/16/16
+End Date: 01/16/16
+Subject: ged-ARU_FR1_C_403
+Experiment: 1
+Group: 403
+Box: 3
+Start Time: 21:54:15
+End Time: 22:06:46
+MSN: GuilleARU_FR_Control_ITI_CastigoFijaD
+A:      30.000
+B:       0.000
+F:       5.000
+Q:    5000.000
+Y:      30.000
+D:
+     0:       12.000       26.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:       13.000        8.000        0.000
+S:
+     0:        0.000        0.000        0.000

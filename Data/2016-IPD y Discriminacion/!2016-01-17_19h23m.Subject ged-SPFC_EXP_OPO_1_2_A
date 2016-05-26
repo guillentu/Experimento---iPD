@@ -1,0 +1,1587 @@
+File: C:\MED-PC IV\DATA\!2016-01-17_19h23m.Subject ged-SPFC_EXP_OPO_1_2_A
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 19:28:15
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:       1.000
+B:       1.000
+C:       0.000
+E:       1.000
+R:       0.000
+T:       1.000
+Y:      30.000
+D:
+     0:       19.000        0.000
+O:
+     0:       19.000       30.000
+S:
+     0:        0.000        0.000        0.000
+W:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 19:28:31
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:       1.000
+B:       0.000
+C:       1.000
+E:       2.000
+R:       1.000
+T:       1.000
+Y:      30.000
+D:
+     0:        3.000       13.000
+O:
+     0:       15.000       30.000
+S:
+     0:        1.000        0.000        0.000
+W:
+     0:        0.000        0.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 19:28:42
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:       2.000
+B:       1.000
+C:       0.000
+E:       2.000
+R:       1.000
+T:       2.000
+Y:      30.000
+D:
+     0:       20.000       13.000
+O:
+     0:        4.000       14.000
+S:
+     0:        0.000        0.000        0.000
+W:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 19:28:55
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:       2.000
+B:       1.000
+C:       1.000
+E:       3.000
+R:       2.000
+T:       3.000
+Y:      30.000
+D:
+     0:        6.000       17.000
+O:
+     0:       17.000       23.000
+S:
+     0:        1.000        0.000        0.000
+W:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 19:29:00
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:       3.000
+B:       1.000
+C:       0.000
+E:       3.000
+R:       2.000
+T:       3.000
+Y:      30.000
+D:
+     0:       27.000       17.000
+O:
+     0:       13.000       23.000
+S:
+     0:        0.000        0.000        0.000
+W:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 19:29:32
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:       3.000
+B:       1.000
+C:       0.000
+E:       4.000
+R:       2.000
+T:       4.000
+Y:      30.000
+D:
+     0:       -6.000       17.000
+O:
+     0:       -2.000        3.000
+S:
+     0:        1.000        0.000        0.000
+W:
+     0:        0.000        0.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 19:29:49
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:       4.000
+B:       1.000
+C:       1.000
+E:       4.000
+R:       3.000
+T:       4.000
+Y:      30.000
+D:
+     0:       15.000       25.000
+O:
+     0:      -18.000        3.000
+S:
+     0:        1.000        0.000        0.000
+W:
+     0:        1.000        5.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 19:29:50
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:       4.000
+B:       0.000
+C:       1.000
+E:       5.000
+R:       3.000
+T:       4.000
+Y:      30.000
+D:
+     0:       14.000       25.000
+O:
+     0:      -19.000        3.000
+S:
+     0:        1.000        0.000        0.000
+W:
+     0:        0.000        0.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 19:30:06
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:       5.000
+B:       1.000
+C:       1.000
+E:       5.000
+R:       4.000
+T:       5.000
+Y:      30.000
+D:
+     0:       15.000       20.000
+O:
+     0:       14.000       28.000
+S:
+     0:        0.000        0.000        0.000
+W:
+     0:        1.000        2.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 19:30:11
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:       5.000
+B:       0.000
+C:       1.000
+E:       6.000
+R:       4.000
+T:       5.000
+Y:      30.000
+D:
+     0:        9.000       20.000
+O:
+     0:       25.000       28.000
+S:
+     0:        1.000        0.000        0.000
+W:
+     0:        0.000        0.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 19:30:23
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:       6.000
+B:       1.000
+C:       1.000
+E:       6.000
+R:       5.000
+T:       6.000
+Y:      30.000
+D:
+     0:       19.000       30.000
+O:
+     0:       13.000       20.000
+S:
+     0:        1.000        0.000        0.000
+W:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 19:30:27
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:       7.000
+B:       1.000
+C:       0.000
+E:       6.000
+R:       5.000
+T:       6.000
+Y:      30.000
+D:
+     0:       27.000       30.000
+O:
+     0:        9.000       20.000
+S:
+     0:        0.000        0.000        0.000
+W:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 19:40:05
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:       7.000
+B:       1.000
+C:       1.000
+E:       7.000
+R:       6.000
+T:       7.000
+Y:      30.000
+D:
+     0:     -551.000       21.000
+O:
+     0:     -547.000       13.000
+S:
+     0:        1.000      734.000        0.000
+W:
+     0:        1.000       15.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 19:40:05
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:       7.000
+B:       1.000
+C:       1.000
+E:       7.000
+R:       6.000
+T:       7.000
+Y:      30.000
+D:
+     0:     -551.000       21.000
+O:
+     0:     -547.000       13.000
+S:
+     0:        1.000      734.000        0.000
+W:
+     0:        1.000       15.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 19:40:42
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:       8.000
+B:       0.000
+C:       1.000
+E:       8.000
+R:       7.000
+T:       7.000
+Y:      30.000
+D:
+     0:       -6.000        2.000
+O:
+     0:       -6.000       13.000
+S:
+     0:        1.000        0.000        0.000
+W:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 19:40:46
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:       8.000
+B:       0.000
+C:       1.000
+E:       9.000
+R:       7.000
+T:       7.000
+Y:      30.000
+D:
+     0:       -9.000        2.000
+O:
+     0:       28.000       13.000
+S:
+     0:        1.000        0.000        0.000
+W:
+     0:        0.000        0.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 19:41:19
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:       9.000
+B:       0.000
+C:       1.000
+E:       9.000
+R:       8.000
+T:       7.000
+Y:      30.000
+D:
+     0:       -3.000        0.000
+O:
+     0:       -6.000       13.000
+S:
+     0:        0.000        0.000        0.000
+W:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 19:58:00
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:       9.000
+B:       1.000
+C:       1.000
+E:      10.000
+R:       8.000
+T:       8.000
+Y:      30.000
+D:
+     0:    -1004.000        0.000
+O:
+     0:     -970.000        9.000
+S:
+     0:        1.000     2446.000        0.000
+W:
+     0:        1.000        6.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 19:58:00
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:       9.000
+B:       1.000
+C:       1.000
+E:      10.000
+R:       8.000
+T:       8.000
+Y:      30.000
+D:
+     0:    -1004.000        0.000
+O:
+     0:     -970.000        9.000
+S:
+     0:        1.000     2446.000        0.000
+W:
+     0:        1.000        6.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 19:59:48
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:      10.000
+B:       1.000
+C:       1.000
+E:      11.000
+R:       9.000
+T:       9.000
+Y:      30.000
+D:
+     0:      -76.000       16.000
+O:
+     0:      -76.000       17.000
+S:
+     0:        1.000      449.000        0.000
+W:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 19:59:48
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:      10.000
+B:       1.000
+C:       1.000
+E:      11.000
+R:       9.000
+T:       9.000
+Y:      30.000
+D:
+     0:      -76.000       16.000
+O:
+     0:      -76.000       17.000
+S:
+     0:        1.000      449.000        0.000
+W:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 20:00:24
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:      11.000
+B:       0.000
+C:       1.000
+E:      12.000
+R:      10.000
+T:       9.000
+Y:      30.000
+D:
+     0:       -6.000        2.000
+O:
+     0:       -6.000       17.000
+S:
+     0:        1.000        0.000        0.000
+W:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 20:00:27
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:      11.000
+B:       0.000
+C:       1.000
+E:      13.000
+R:      10.000
+T:       9.000
+Y:      30.000
+D:
+     0:       -8.000        2.000
+O:
+     0:       29.000       17.000
+S:
+     0:        1.000        0.000        0.000
+W:
+     0:        0.000        0.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 20:00:46
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:      12.000
+B:       1.000
+C:       1.000
+E:      13.000
+R:      11.000
+T:      10.000
+Y:      30.000
+D:
+     0:       12.000       16.000
+O:
+     0:       10.000       20.000
+S:
+     0:        0.000        0.000        0.000
+W:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 20:01:46
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:      12.000
+B:       1.000
+C:       1.000
+E:      14.000
+R:      11.000
+T:      11.000
+Y:      30.000
+D:
+     0:      -49.000       16.000
+O:
+     0:      -30.000       19.000
+S:
+     0:        1.000      498.000        0.000
+W:
+     0:        1.000        1.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 20:01:47
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:      13.000
+B:       1.000
+C:       0.000
+E:      14.000
+R:      11.000
+T:      11.000
+Y:      30.000
+D:
+     0:       30.000       16.000
+O:
+     0:      -31.000       19.000
+S:
+     0:        0.000        0.000        0.000
+W:
+     0:        1.000        1.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 20:03:53
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:      15.000
+B:       1.000
+C:       1.000
+E:      17.000
+R:      14.000
+T:      14.000
+Y:      30.000
+D:
+     0:      -42.000       29.000
+O:
+     0:      -46.000      -10.000
+S:
+     0:        1.000      302.000        0.000
+W:
+     0:        1.000        2.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 20:03:53
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:      15.000
+B:       1.000
+C:       1.000
+E:      17.000
+R:      14.000
+T:      14.000
+Y:      30.000
+D:
+     0:      -42.000       29.000
+O:
+     0:      -46.000      -10.000
+S:
+     0:        1.000      302.000        0.000
+W:
+     0:        1.000        2.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 20:03:53
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:      15.000
+B:       1.000
+C:       1.000
+E:      17.000
+R:      14.000
+T:      14.000
+Y:      30.000
+D:
+     0:      -42.000       29.000
+O:
+     0:      -46.000      -10.000
+S:
+     0:        1.000      302.000        0.000
+W:
+     0:        1.000        2.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 20:03:53
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:      15.000
+B:       1.000
+C:       1.000
+E:      17.000
+R:      14.000
+T:      14.000
+Y:      30.000
+D:
+     0:      -42.000       29.000
+O:
+     0:      -46.000      -10.000
+S:
+     0:        1.000      302.000        0.000
+W:
+     0:        1.000        2.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 20:04:14
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:      15.000
+B:       1.000
+C:       1.000
+E:      17.000
+R:      14.000
+T:      14.000
+Y:      30.000
+D:
+     0:      -63.000       29.000
+O:
+     0:      -67.000      -10.000
+S:
+     0:        1.000      491.000        0.000
+W:
+     0:        1.000        2.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 20:04:14
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:      15.000
+B:       1.000
+C:       1.000
+E:      17.000
+R:      14.000
+T:      14.000
+Y:      30.000
+D:
+     0:      -63.000       29.000
+O:
+     0:      -67.000      -10.000
+S:
+     0:        1.000      491.000        0.000
+W:
+     0:        1.000        2.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 20:04:30
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:      16.000
+B:       1.000
+C:       1.000
+E:      18.000
+R:      15.000
+T:      15.000
+Y:      30.000
+D:
+     0:       14.000       24.000
+O:
+     0:       14.000       29.000
+S:
+     0:        1.000        0.000        0.000
+W:
+     0:        1.000        2.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 20:04:31
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:      16.000
+B:       0.000
+C:       1.000
+E:      19.000
+R:      15.000
+T:      15.000
+Y:      30.000
+D:
+     0:       13.000       24.000
+O:
+     0:       30.000       29.000
+S:
+     0:        1.000        0.000        0.000
+W:
+     0:        0.000        0.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 20:04:44
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:      17.000
+B:       1.000
+C:       1.000
+E:      19.000
+R:      16.000
+T:      16.000
+Y:      30.000
+D:
+     0:       19.000       24.000
+O:
+     0:       18.000       29.000
+S:
+     0:        0.000        0.000        0.000
+W:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 20:04:50
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:      17.000
+B:       1.000
+C:       1.000
+E:      20.000
+R:      16.000
+T:      17.000
+Y:      30.000
+D:
+     0:       13.000       24.000
+O:
+     0:       25.000       29.000
+S:
+     0:        1.000        0.000        0.000
+W:
+     0:        0.000        0.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 20:05:14
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:      18.000
+B:       1.000
+C:       1.000
+E:      20.000
+R:      17.000
+T:      17.000
+Y:      30.000
+D:
+     0:        7.000       12.000
+O:
+     0:        1.000       29.000
+S:
+     0:        1.000      276.000        0.000
+W:
+     0:        1.000        3.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 20:05:14
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:      18.000
+B:       1.000
+C:       1.000
+E:      20.000
+R:      17.000
+T:      17.000
+Y:      30.000
+D:
+     0:        7.000       12.000
+O:
+     0:        1.000       29.000
+S:
+     0:        1.000      276.000        0.000
+W:
+     0:        1.000        3.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 20:05:35
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:      19.000
+B:       1.000
+C:       1.000
+E:      21.000
+R:      18.000
+T:      18.000
+Y:      30.000
+D:
+     0:       10.000       27.000
+O:
+     0:       10.000       21.000
+S:
+     0:        1.000       85.000        0.000
+W:
+     0:        1.000        1.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 20:05:35
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:      19.000
+B:       1.000
+C:       1.000
+E:      21.000
+R:      18.000
+T:      18.000
+Y:      30.000
+D:
+     0:       10.000       27.000
+O:
+     0:       10.000       21.000
+S:
+     0:        1.000       85.000        0.000
+W:
+     0:        1.000        1.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 20:06:10
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:      20.000
+B:       1.000
+C:       1.000
+E:      22.000
+R:      19.000
+T:      19.000
+Y:      30.000
+D:
+     0:       -4.000       24.000
+O:
+     0:       -4.000       28.000
+S:
+     0:        1.000      442.000        0.000
+W:
+     0:        1.000        2.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 20:06:10
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:      20.000
+B:       1.000
+C:       1.000
+E:      22.000
+R:      19.000
+T:      19.000
+Y:      30.000
+D:
+     0:       -4.000       24.000
+O:
+     0:       -4.000       28.000
+S:
+     0:        1.000      443.000        0.000
+W:
+     0:        1.000        2.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 20:06:25
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:      21.000
+B:       1.000
+C:       1.000
+E:      23.000
+R:      20.000
+T:      20.000
+Y:      30.000
+D:
+     0:       15.000       26.000
+O:
+     0:       15.000       23.000
+S:
+     0:        1.000        0.000        0.000
+W:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 20:06:28
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:      22.000
+B:       1.000
+C:       0.000
+E:      23.000
+R:      20.000
+T:      20.000
+Y:      30.000
+D:
+     0:       29.000       26.000
+O:
+     0:       13.000       23.000
+S:
+     0:        0.000        0.000        0.000
+W:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 20:06:49
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:      22.000
+B:       1.000
+C:       1.000
+E:      24.000
+R:      21.000
+T:      21.000
+Y:      30.000
+D:
+     0:        7.000       29.000
+O:
+     0:        9.000       24.000
+S:
+     0:        1.000      233.000        0.000
+W:
+     0:        1.000        1.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 20:06:50
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:      22.000
+B:       1.000
+C:       1.000
+E:      24.000
+R:      21.000
+T:      21.000
+Y:      30.000
+D:
+     0:        6.000       29.000
+O:
+     0:        8.000       24.000
+S:
+     0:        1.000      233.000        0.000
+W:
+     0:        1.000        1.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 20:07:21
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:      23.000
+B:       1.000
+C:       1.000
+E:      25.000
+R:      22.000
+T:      22.000
+Y:      30.000
+D:
+     0:       -1.000       25.000
+O:
+     0:        0.000       26.000
+S:
+     0:        1.000      447.000        0.000
+W:
+     0:        1.000        2.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 20:07:21
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:      23.000
+B:       1.000
+C:       1.000
+E:      25.000
+R:      22.000
+T:      22.000
+Y:      30.000
+D:
+     0:       -1.000       25.000
+O:
+     0:        0.000       26.000
+S:
+     0:        1.000      447.000        0.000
+W:
+     0:        1.000        2.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 20:07:56
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:      24.000
+B:       1.000
+C:       1.000
+E:      26.000
+R:      23.000
+T:      23.000
+Y:      30.000
+D:
+     0:       -3.000       26.000
+O:
+     0:       -3.000       26.000
+S:
+     0:        1.000      381.000        0.000
+W:
+     0:        1.000        4.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 20:07:56
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:      24.000
+B:       1.000
+C:       1.000
+E:      26.000
+R:      23.000
+T:      23.000
+Y:      30.000
+D:
+     0:       -3.000       26.000
+O:
+     0:       -3.000       26.000
+S:
+     0:        1.000      381.000        0.000
+W:
+     0:        1.000        4.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 20:08:13
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:      25.000
+B:       1.000
+C:       1.000
+E:      27.000
+R:      24.000
+T:      24.000
+Y:      30.000
+D:
+     0:       14.000       24.000
+O:
+     0:       14.000       15.000
+S:
+     0:        1.000        0.000        0.000
+W:
+     0:        0.000        0.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 20:08:24
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:      26.000
+B:       1.000
+C:       1.000
+E:      27.000
+R:      25.000
+T:      24.000
+Y:      30.000
+D:
+     0:       20.000       26.000
+O:
+     0:        3.000       15.000
+S:
+     0:        1.000        0.000        0.000
+W:
+     0:        1.000        1.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 20:09:01
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:      26.000
+B:       1.000
+C:       1.000
+E:      28.000
+R:      25.000
+T:      25.000
+Y:      30.000
+D:
+     0:      -17.000       26.000
+O:
+     0:       -6.000       20.000
+S:
+     0:        1.000      398.000        0.000
+W:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 20:09:01
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:      26.000
+B:       1.000
+C:       1.000
+E:      28.000
+R:      25.000
+T:      25.000
+Y:      30.000
+D:
+     0:      -17.000       26.000
+O:
+     0:       -6.000       20.000
+S:
+     0:        1.000      398.000        0.000
+W:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 20:09:12
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:      27.000
+B:       1.000
+C:       1.000
+E:      29.000
+R:      26.000
+T:      26.000
+Y:      30.000
+D:
+     0:       19.000      -18.000
+O:
+     0:       19.000       21.000
+S:
+     0:        1.000        0.000        0.000
+W:
+     0:        0.000        0.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 20:09:38
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:      28.000
+B:       1.000
+C:       1.000
+E:      29.000
+R:      27.000
+T:      26.000
+Y:      30.000
+D:
+     0:        6.000       27.000
+O:
+     0:       -6.000       21.000
+S:
+     0:        1.000      143.000        0.000
+W:
+     0:        1.000        3.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 20:09:38
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:      28.000
+B:       1.000
+C:       1.000
+E:      29.000
+R:      27.000
+T:      26.000
+Y:      30.000
+D:
+     0:        6.000       27.000
+O:
+     0:       -6.000       21.000
+S:
+     0:        1.000      145.000        0.000
+W:
+     0:        1.000        3.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 20:09:52
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:      29.000
+B:       1.000
+C:       1.000
+E:      30.000
+R:      28.000
+T:      27.000
+Y:      30.000
+D:
+     0:       17.000        5.000
+O:
+     0:       17.000       29.000
+S:
+     0:        1.000        0.000        0.000
+W:
+     0:        1.000        1.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 20:09:52
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:      29.000
+B:       1.000
+C:       1.000
+E:      30.000
+R:      28.000
+T:      27.000
+Y:      30.000
+D:
+     0:       16.000        5.000
+O:
+     0:       16.000       29.000
+S:
+     0:        1.000        0.000        0.000
+W:
+     0:        1.000        1.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 20:10:41
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:      30.000
+B:       1.000
+C:       1.000
+E:      31.000
+R:      29.000
+T:      28.000
+Y:      30.000
+D:
+     0:      -18.000       28.000
+O:
+     0:      -32.000       10.000
+S:
+     0:        1.000      861.000        0.000
+W:
+     0:        0.000        0.000        0.000
+
+
+Start Date: 01/17/16
+End Date: 01/17/16
+Subject: ged-SPFC_EXP_OPO_1_2_A
+Experiment: 1
+Group: 1A_EXP_2A_OPO
+Box: 3
+Start Time: 19:23:02
+End Time: 20:10:42
+MSN: Guille_SPFC_EXP_OPO_enIPD
+A:      31.000
+B:       1.000
+C:       0.000
+E:      31.000
+R:      29.000
+T:      28.000
+Y:      30.000
+D:
+     0:      -19.000       28.000
+O:
+     0:      -33.000       10.000
+S:
+     0:        0.000        0.000        0.000
+W:
+     0:        0.000        0.000        0.000

@@ -1,0 +1,58 @@
+File: C:\MED-PC IV\DATA\!2016-01-22_18h38m.Subject ged-discrminar2_control_ITI_501_502
+
+
+Start Date: 01/22/16
+End Date: 01/22/16
+Subject: ged-discrminar2_control_ITI_501_502
+Experiment: 27
+Group: 502 rever
+Box: 2
+Start Time: 18:38:17
+End Time: 18:43:24
+MSN: A
+A:       1.000
+B:       0.000
+C:      15.000
+F:   45000.000
+P:       0.000
+X:
+     0:    10000.000    20000.000    30000.000    40000.000    50000.000
+     5:    15000.000    25000.000    35000.000    45000.000    55000.000
+
+
+Start Date: 01/22/16
+End Date: 01/22/16
+Subject: ged-discrminar2_control_ITI_501_502
+Experiment: 27
+Group: 501 rever
+Box: 1
+Start Time: 18:38:10
+End Time: 18:43:34
+MSN: A
+A:       1.000
+B:       0.000
+C:       5.000
+F:   55000.000
+P:       0.000
+X:
+     0:    10000.000    20000.000    30000.000    40000.000    50000.000
+     5:    15000.000    25000.000    35000.000    45000.000    55000.000
+
+
+Start Date: 01/22/16
+End Date: 01/22/16
+Subject: ged-discrminar2_control_ITI_501_502
+Experiment: 27
+Group: 501 rever
+Box: 1
+Start Time: 18:38:10
+End Time: 18:43:59
+MSN: A
+A:       2.000
+B:       0.000
+C:      50.000
+F:   20000.000
+P:       0.000
+X:
+     0:    10000.000    20000.000    30000.000    40000.000    50000.000
+     5:    15000.000    25000.000    35000.000    45000.000    55000.000

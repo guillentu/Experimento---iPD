@@ -1,0 +1,2678 @@
+# Created by Octave 3.8.1, Wed Dec 16 19:49:15 2015 ART <guille@guille-HP-Pavilion-dm1>
+# name: ans
+# type: sq_string
+# elements: 1
+# length: 2
+22
+
+
+# name: exp17
+# type: struct
+# ndims: 2
+ 1 2
+# length: 20
+# name: _fileStr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 77
+File: C:\MED-PC IV\DATA\!2015-12-14_19h13m.Subject ged-discriminarControl_ITI
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 77
+File: C:\MED-PC IV\DATA\!2015-12-14_19h13m.Subject ged-discriminarControl_ITI
+
+
+
+
+
+# name: _startDateStr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+12/14/15
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+12/14/15
+
+
+
+
+
+# name: _endDateStr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+12/14/15
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+12/14/15
+
+
+
+
+
+# name: _subjectStr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 26
+ged-discriminarControl_ITI
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 26
+ged-discriminarControl_ITI
+
+
+
+
+
+# name: _experiment
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+17
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+17
+
+
+
+
+
+# name: _groupStr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+0
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+0
+
+
+
+
+
+# name: _box
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: scalar
+1
+
+
+
+# name: <cell-element>
+# type: scalar
+2
+
+
+
+
+
+# name: _msnStr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 50
+GuilleDiscriminacionControl_ITI_PalancaFijaDisplay
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 50
+GuilleDiscriminacionControl_ITI_PalancaFijaDisplay
+
+
+
+
+
+# name: _startTime
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+19:13:01
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+19:13:01
+
+
+
+
+
+# name: _endTime
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+20:05:50
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+20:03:44
+
+
+
+
+
+# name: _nTrial
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 30
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 30
+
+
+
+
+
+# name: _come
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0
+
+
+
+
+
+# name: _umbral
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+
+
+
+
+
+# name: _tiempoITI
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 31
+ 0 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000
+
+
+
+
+
+# name: _duarcionT
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: scalar
+30
+
+
+
+# name: <cell-element>
+# type: scalar
+30
+
+
+
+
+
+# name: _reloj
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 2
+# columns: 30
+ 149 13 30 30 30 -14 -35 30 30 30 -6 30 -35 30 30 0 12 7 -2 30 9 11 -5 30 30 7 10 9 5 5
+ 29 28 29 28 29 29 27 25 25 29 29 30 28 27 28 27 27 22 29 26 26 28 29 27 27 28 27 28 29 29
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 2
+# columns: 30
+ -49 -28 6 30 13 30 15 30 -5 -46 7 30 10 30 30 30 30 30 30 8 7 30 13 7 13 30 3 10 -36 -36
+ 25 29 27 26 28 25 29 28 27 30 25 28 25 24 27 30 27 21 28 29 27 25 27 29 27 13 13 25 28 28
+
+
+
+
+
+# name: _listaRndStr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 128
+       0.000        1.000        2.000        3.000        4.000       5.000        6.000        7.000        8.000        9.000
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 128
+       0.000        1.000        2.000        3.000        4.000       5.000        6.000        7.000        8.000        9.000
+
+
+
+
+
+# name: _respuestasIzq
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 21 22 23 24 25 26 27 27
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 1 2 2 3 3 3 4 4 5 5 6 7 7 8 8 9 10 11 12 13 14 15 16 17 18 19 19 19 20 20
+
+
+
+
+
+# name: _respuestasDer
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 0 0 1 1 2 3 3 4 4 5 5 5 6 6 7 7 7 7 7 7 7 7 7 7 7 8 8 9 9 9
+
+
+
+
+
+# name: _controlITI
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 3
+# columns: 30
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 3
+# columns: 30
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+
+
+
+
+
+
+# name: exp18
+# type: struct
+# ndims: 2
+ 1 2
+# length: 20
+# name: _fileStr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 77
+File: C:\MED-PC IV\DATA\!2015-12-14_20h40m.Subject ged-discriminarControl_ITI
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 77
+File: C:\MED-PC IV\DATA\!2015-12-14_20h40m.Subject ged-discriminarControl_ITI
+
+
+
+
+
+# name: _startDateStr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+12/14/15
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+12/14/15
+
+
+
+
+
+# name: _endDateStr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+12/14/15
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+12/14/15
+
+
+
+
+
+# name: _subjectStr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 26
+ged-discriminarControl_ITI
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 26
+ged-discriminarControl_ITI
+
+
+
+
+
+# name: _experiment
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+18
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+18
+
+
+
+
+
+# name: _groupStr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+0
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+0
+
+
+
+
+
+# name: _box
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: scalar
+1
+
+
+
+# name: <cell-element>
+# type: scalar
+2
+
+
+
+
+
+# name: _msnStr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 50
+GuilleDiscriminacionControl_ITI_PalancaFijaDisplay
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 50
+GuilleDiscriminacionControl_ITI_PalancaFijaDisplay
+
+
+
+
+
+# name: _startTime
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+20:40:43
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+20:40:45
+
+
+
+
+
+# name: _endTime
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+20:52:48
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+20:54:02
+
+
+
+
+
+# name: _nTrial
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 30
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 30
+
+
+
+
+
+# name: _come
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+
+
+
+
+# name: _umbral
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+
+
+
+
+
+# name: _tiempoITI
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 31
+ 0 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000
+
+
+
+
+
+# name: _duarcionT
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: scalar
+30
+
+
+
+# name: <cell-element>
+# type: scalar
+30
+
+
+
+
+
+# name: _reloj
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 2
+# columns: 30
+ 3 30 -13 2 11 30 30 14 30 30 30 14 30 11 30 15 30 10 11 30 11 30 30 30 30 30 30 30 -4 -4
+ 29 26 28 28 28 28 29 28 28 28 28 29 26 27 27 29 29 27 26 26 28 22 29 28 28 27 29 28 28 28
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 2
+# columns: 30
+ 30 -23 30 30 30 30 5 30 30 30 13 30 30 -14 30 30 30 14 30 9 8 30 30 30 12 30 10 30 8 8
+ 25 30 27 28 25 22 22 28 25 27 27 29 28 28 28 27 27 28 27 24 26 29 24 29 29 29 28 28 26 26
+
+
+
+
+
+# name: _listaRndStr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 128
+       0.000        1.000        2.000        3.000        4.000       5.000        6.000        7.000        8.000        9.000
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 128
+       0.000        1.000        2.000        3.000        4.000       5.000        6.000        7.000        8.000        9.000
+
+
+
+
+
+# name: _respuestasIzq
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 0 1 2 2 3 4 4 4 5 6 6 6 7 7 8 8 9 10 11 12 13 14 14 15 16 17 18 19 20 20
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 1 1 2 3 4 5 5 5 5 6 7 8 9 10 11 12 13 14 14 14 15 16 17 18 19 20 21 22 23 23
+
+
+
+
+
+# name: _respuestasDer
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 1 1 1 2 2 2 3 4 4 4 5 6 6 7 7 8 8 8 8 8 8 8 9 9 9 9 9 9 9 9
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 0 1 1 1 1 1 2 3 4 4 4 4 4 4 4 4 4 4 5 6 6 6 6 6 6 6 6 6 6 6
+
+
+
+
+
+# name: _controlITI
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 3
+# columns: 30
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 3
+# columns: 30
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+
+
+
+
+
+
+# name: exp19
+# type: struct
+# ndims: 2
+ 1 2
+# length: 20
+# name: _fileStr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 77
+File: C:\MED-PC IV\DATA\!2015-12-14_21h18m.Subject ged-discriminarControl_ITI
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 77
+File: C:\MED-PC IV\DATA\!2015-12-14_21h18m.Subject ged-discriminarControl_ITI
+
+
+
+
+
+# name: _startDateStr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+12/14/15
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+12/14/15
+
+
+
+
+
+# name: _endDateStr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+12/14/15
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+12/14/15
+
+
+
+
+
+# name: _subjectStr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 26
+ged-discriminarControl_ITI
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 26
+ged-discriminarControl_ITI
+
+
+
+
+
+# name: _experiment
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+19
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+19
+
+
+
+
+
+# name: _groupStr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+0
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+0
+
+
+
+
+
+# name: _box
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: scalar
+1
+
+
+
+# name: <cell-element>
+# type: scalar
+2
+
+
+
+
+
+# name: _msnStr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 50
+GuilleDiscriminacionControl_ITI_PalancaFijaDisplay
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 50
+GuilleDiscriminacionControl_ITI_PalancaFijaDisplay
+
+
+
+
+
+# name: _startTime
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+21:18:45
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+21:18:45
+
+
+
+
+
+# name: _endTime
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+21:37:06
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+21:38:53
+
+
+
+
+
+# name: _nTrial
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 30
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 30
+
+
+
+
+
+# name: _come
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+
+
+
+
+# name: _umbral
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+
+
+
+
+
+# name: _tiempoITI
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 31
+ 0 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000
+
+
+
+
+
+# name: _duarcionT
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: scalar
+30
+
+
+
+# name: <cell-element>
+# type: scalar
+30
+
+
+
+
+
+# name: _reloj
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 2
+# columns: 30
+ -60 13 10 30 13 30 14 30 14 13 30 13 14 30 30 12 30 30 30 30 10 30 15 12 13 14 14 9 12 12
+ 29 27 28 30 29 29 28 28 28 29 28 27 28 28 28 28 30 28 28 27 25 29 29 26 29 28 28 26 26 26
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 2
+# columns: 30
+ -3 -44 9 30 12 30 30 10 -17 30 30 6 2 30 30 12 2 30 30 4 12 -3 30 10 30 30 30 30 11 11
+ 24 30 25 26 29 27 19 25 29 29 25 26 28 29 26 29 26 28 27 25 27 22 27 28 27 27 27 26 28 28
+
+
+
+
+
+# name: _listaRndStr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 128
+       0.000        1.000        2.000        3.000        4.000       5.000        6.000        7.000        8.000        9.000
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 128
+       0.000        1.000        2.000        3.000        4.000       5.000        6.000        7.000        8.000        9.000
+
+
+
+
+
+# name: _respuestasIzq
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 0 1 2 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 27
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 1 1 1 1 2 3 4 5 5 5 6 6 7 8 8 9 9 9 9 10 11 12 12 13 14 15 16 16 17 17
+
+
+
+
+
+# name: _respuestasDer
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 1 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 0 1 2 3 3 3 3 3 4 5 5 6 6 6 7 7 8 9 10 10 10 10 11 11 11 11 11 12 12 12
+
+
+
+
+
+# name: _controlITI
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 3
+# columns: 30
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 3
+# columns: 30
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+
+
+
+
+
+
+# name: exp20
+# type: struct
+# ndims: 2
+ 1 2
+# length: 20
+# name: _fileStr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 77
+File: C:\MED-PC IV\DATA\!2015-12-15_17h40m.Subject ged-discriminarControl_ITI
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 77
+File: C:\MED-PC IV\DATA\!2015-12-15_17h40m.Subject ged-discriminarControl_ITI
+
+
+
+
+
+# name: _startDateStr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+12/15/15
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+12/15/15
+
+
+
+
+
+# name: _endDateStr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+12/15/15
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+12/15/15
+
+
+
+
+
+# name: _subjectStr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 26
+ged-discriminarControl_ITI
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 26
+ged-discriminarControl_ITI
+
+
+
+
+
+# name: _experiment
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+20
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+20
+
+
+
+
+
+# name: _groupStr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+0
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+0
+
+
+
+
+
+# name: _box
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: scalar
+1
+
+
+
+# name: <cell-element>
+# type: scalar
+2
+
+
+
+
+
+# name: _msnStr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 50
+GuilleDiscriminacionControl_ITI_PalancaFijaDisplay
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 50
+GuilleDiscriminacionControl_ITI_PalancaFijaDisplay
+
+
+
+
+
+# name: _startTime
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+17:40:10
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+17:40:11
+
+
+
+
+
+# name: _endTime
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+17:50:21
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+17:50:25
+
+
+
+
+
+# name: _nTrial
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 30
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 30
+
+
+
+
+
+# name: _come
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+
+
+
+
+# name: _umbral
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+
+
+
+
+
+# name: _tiempoITI
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 31
+ 0 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000
+
+
+
+
+
+# name: _duarcionT
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: scalar
+30
+
+
+
+# name: <cell-element>
+# type: scalar
+30
+
+
+
+
+
+# name: _reloj
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 2
+# columns: 30
+ 30 30 30 30 30 9 30 9 13 30 30 30 12 30 30 30 7 30 10 13 30 30 30 13 30 30 30 9 14 14
+ 26 29 26 27 27 28 27 26 27 26 25 28 26 25 25 28 28 29 26 27 28 26 26 27 25 27 26 27 28 28
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 2
+# columns: 30
+ 0 14 11 29 3 7 30 30 30 30 5 30 6 9 -2 30 30 30 14 11 30 30 14 30 9 12 30 30 11 11
+ 23 29 25 29 29 29 28 27 28 28 27 23 26 26 22 28 29 30 28 28 29 28 28 25 24 26 28 25 26 26
+
+
+
+
+
+# name: _listaRndStr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 128
+       0.000        1.000        2.000        3.000        4.000       5.000        6.000        7.000        8.000        9.000
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 128
+       0.000        1.000        2.000        3.000        4.000       5.000        6.000        7.000        8.000        9.000
+
+
+
+
+
+# name: _respuestasIzq
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 1 1 2 3 4 4 5 5 6 7 8 9 10 11 12 13 14 14 15 16 16 17 18 19 20 21 22 23 24 24
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 1 2 2 2 2 2 3 3 4 4 4 4 4 5 6 6 6 6 6 6 6 6 6 6 7 7 8 9 10 10
+
+
+
+
+
+# name: _respuestasDer
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 0 1 1 1 1 2 2 3 3 3 3 3 3 3 3 3 3 4 4 4 5 5 5 5 5 5 5 5 5 5
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 0 0 1 2 3 4 4 5 5 6 7 8 9 9 9 10 11 12 13 14 15 16 17 18 18 19 19 19 19 19
+
+
+
+
+
+# name: _controlITI
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 3
+# columns: 30
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 3
+# columns: 30
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+
+
+
+
+
+
+# name: exp21
+# type: struct
+# ndims: 2
+ 1 2
+# length: 20
+# name: _fileStr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 77
+File: C:\MED-PC IV\DATA\!2015-12-15_18h18m.Subject ged_discriminarControl_ITI
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 77
+File: C:\MED-PC IV\DATA\!2015-12-15_18h18m.Subject ged_discriminarControl_ITI
+
+
+
+
+
+# name: _startDateStr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+12/15/15
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+12/15/15
+
+
+
+
+
+# name: _endDateStr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+12/15/15
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+12/15/15
+
+
+
+
+
+# name: _subjectStr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 26
+ged_discriminarControl_ITI
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 26
+ged_discriminarControl_ITI
+
+
+
+
+
+# name: _experiment
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+21
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+21
+
+
+
+
+
+# name: _groupStr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+0
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+0
+
+
+
+
+
+# name: _box
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: scalar
+1
+
+
+
+# name: <cell-element>
+# type: scalar
+2
+
+
+
+
+
+# name: _msnStr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 50
+GuilleDiscriminacionControl_ITI_PalancaFijaDisplay
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 50
+GuilleDiscriminacionControl_ITI_PalancaFijaDisplay
+
+
+
+
+
+# name: _startTime
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+18:18:22
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+18:18:22
+
+
+
+
+
+# name: _endTime
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+18:28:24
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+18:28:08
+
+
+
+
+
+# name: _nTrial
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 30
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 30
+
+
+
+
+
+# name: _come
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+
+
+
+
+# name: _umbral
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8
+
+
+
+
+
+# name: _tiempoITI
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 31
+ 0 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000
+
+
+
+
+
+# name: _duarcionT
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: scalar
+30
+
+
+
+# name: <cell-element>
+# type: scalar
+30
+
+
+
+
+
+# name: _reloj
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 2
+# columns: 30
+ 4 30 15 30 30 30 30 14 10 12 12 14 30 30 30 30 12 30 12 30 30 13 30 30 -3 14 30 14 13 13
+ 28 27 29 24 28 28 28 28 27 28 26 28 29 29 27 28 28 29 28 28 29 27 27 27 25 28 27 28 28 28
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 2
+# columns: 30
+ -3 11 13 -12 30 30 30 30 30 12 30 30 8 11 7 30 15 10 13 30 11 30 30 12 14 15 30 12 11 11
+ 20 26 27 27 29 29 27 28 27 27 24 28 23 28 21 28 29 29 27 29 26 28 28 26 28 29 27 27 27 27
+
+
+
+
+
+# name: _listaRndStr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 128
+       0.000        1.000        2.000        3.000        4.000       5.000        6.000        7.000        8.000        9.000
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 128
+       0.000        1.000        2.000        3.000        4.000       5.000        6.000        7.000        8.000        9.000
+
+
+
+
+
+# name: _respuestasIzq
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 1 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 28
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 1 2 2 3 4 5 6 7 8 9 10 11 12 13 13 13 13 14 14 14 15 16 16 16 16 16 17 18 19 19
+
+
+
+
+
+# name: _respuestasDer
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 0 0 1 1 1 1 1 1 1 1 1 1 1 1 2 3 4 4 5 6 6 6 7 8 9 10 10 10 10 10
+
+
+
+
+
+# name: _controlITI
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 3
+# columns: 30
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 3
+# columns: 30
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+
+
+
+
+
+
+# name: exp22
+# type: struct
+# ndims: 2
+ 1 2
+# length: 20
+# name: _fileStr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 77
+File: C:\MED-PC IV\DATA\!2015-12-15_18h50m.Subject ged_discriminarControl_ITI
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 77
+File: C:\MED-PC IV\DATA\!2015-12-15_18h50m.Subject ged_discriminarControl_ITI
+
+
+
+
+
+# name: _startDateStr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+12/15/15
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+12/15/15
+
+
+
+
+
+# name: _endDateStr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+12/15/15
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+12/15/15
+
+
+
+
+
+# name: _subjectStr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 26
+ged_discriminarControl_ITI
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 26
+ged_discriminarControl_ITI
+
+
+
+
+
+# name: _experiment
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+22
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2
+22
+
+
+
+
+
+# name: _groupStr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+0
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+0
+
+
+
+
+
+# name: _box
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: scalar
+1
+
+
+
+# name: <cell-element>
+# type: scalar
+2
+
+
+
+
+
+# name: _msnStr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 50
+GuilleDiscriminacionControl_ITI_PalancaFijaDisplay
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 50
+GuilleDiscriminacionControl_ITI_PalancaFijaDisplay
+
+
+
+
+
+# name: _startTime
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+18:50:00
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+18:50:01
+
+
+
+
+
+# name: _endTime
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+19:00:39
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+18:59:09
+
+
+
+
+
+# name: _nTrial
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 30
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 30
+
+
+
+
+
+# name: _come
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+
+
+
+
+# name: _umbral
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
+
+
+
+
+
+# name: _tiempoITI
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 31
+ 0 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000 8000
+
+
+
+
+
+# name: _duarcionT
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: scalar
+30
+
+
+
+# name: <cell-element>
+# type: scalar
+30
+
+
+
+
+
+# name: _reloj
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 2
+# columns: 30
+ -13 30 30 11 30 6 30 10 8 7 30 13 30 30 30 30 30 30 30 12 10 30 30 30 30 30 30 14 12 12
+ 29 28 27 27 27 28 28 26 26 21 26 28 26 26 28 27 26 25 27 26 26 25 27 27 25 25 29 28 28 28
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 2
+# columns: 30
+ 30 30 10 30 30 30 13 30 12 30 10 30 9 30 13 7 30 13 14 30 30 30 30 30 13 30 9 14 13 13
+ 25 27 25 27 29 27 28 27 27 27 28 27 23 28 27 22 27 29 28 28 21 28 23 23 28 26 23 29 27 27
+
+
+
+
+
+# name: _listaRndStr
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 128
+       0.000        1.000        2.000        3.000        4.000       5.000        6.000        7.000        8.000        9.000
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 128
+       0.000        1.000        2.000        3.000        4.000       5.000        6.000        7.000        8.000        9.000
+
+
+
+
+
+# name: _respuestasIzq
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 0 1 2 3 4 4 5 5 6 7 8 9 10 11 12 13 14 15 16 17 17 18 19 20 20 20 21 22 23 23
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 1 1 2 2 2 2 3 3 4 4 4 4 4 4 4 5 6 7 7 7 8 9 10 10 11 12 12 12 12 12
+
+
+
+
+
+# name: _respuestasDer
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 1 1 1 1 1 2 2 3 3 3 3 3 3 3 3 3 3 3 3 3 4 4 4 4 5 6 6 6 6 6
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 30
+ 0 1 1 2 3 4 4 5 5 6 7 8 9 10 11 11 11 11 12 13 13 13 13 14 14 14 15 16 17 17
+
+
+
+
+
+# name: _controlITI
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 3
+# columns: 30
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 3
+# columns: 30
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+
+
+
+
+
+

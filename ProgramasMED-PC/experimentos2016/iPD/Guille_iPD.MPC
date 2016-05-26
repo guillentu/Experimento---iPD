@@ -1,0 +1,336 @@
+\===============================================================Delmas,2016===\
+\======================= Dilema del Prisionero Iterado =======================\
+\ En este entrenamiento las ratas debe aprender cual es la palanca que le per-\
+\ mite obtener mayor cantida dealimento a largo plazo. Se utilizan dos tipos  \
+\ de refuerzo, uno apetitivo (pellets) y otro aversivo (retardos en tiempo).  \
+\ Se utilizan dos jaulas enfrentadas comunicadas mediante una reja que le per-\
+\ mite a las ratas verse y olfaterase a una distancias de 10cm.               \
+\ Las variables de la segunda caja estaran indicadas con "_dos" en su nombre. \
+\ Los diferentes estados del juego son:                                       \
+\ Cooperacion [C], Desercion [D], Traicion [T] y Engaño [E]                   \
+\ 
+\ Se presentan el estimulo de luz para estrategia al Oponente en el mismo ---------\
+\ momento en que se enciende los estimulos al Experiemntal.               ---------\
+\ El oponente tiene una regimen de Tasa Fija                                  \  
+\===============================================================Delmas,2015===\
+\ Protocolo                                                                   \
+\ Nº de trials = 30
+\ Tiempo p\ palanqueo = 30min (def=30s)
+\ Tiempo p\ comer     = 5s (def=5)
+\ ITI                 = ***********10s (def=10) Luz apagada 
+
+\=Variables===================================================================\
+\ A=Trials
+\ B=Respuestas                                                 \
+\ C = 0- Detiene el comp. de tiempo x palanqueo y
+\     1- Respuesta Experimental ejecutada
+\     2- Respuesta Oponente ejecutada
+\     3- Exp: C(3)=1 Deserta(pal. Derecha) y C(3)=2 Coopera (pal Izquierda) 
+\     4- Opo: C(4)=1 Deserta(pal. Izquierda) y C(4)=2 Coopera (pal Derecha) 
+\ Q=^ITI Duracion del ITI
+\ P=^tComer=0
+\ D = reloj - tiempos de palanqueos
+\ E = lista
+\ F = toma al azar
+\ G = Tasa Fija de oponente                          
+\ H = array para la hora
+\ I = Cuenta reloj
+\ J = Reloj
+\ K = Cuenta reloj
+\ L = Luz para estrategia. L=2 cooperar, L=1 nocooperar
+\ R = respuestas (Las Respuestas sin 1=coopero; 2=deserto).
+\ S = palanqueos en ITI
+\ Y = tiempo de trial
+\ Z = Cantidad de Trials
+
+dim H=2 \tiempo para el trials
+dim J=2 \Reloj
+dim D=2 \Reloj segundos - Tiempo de palanqueo caja exp - opo
+dim R=1 \Respuestas Caja Exp R(0)=1-NoCoop(Der) y R(0)=2-Coop(Izq), 
+        \           Caja Opo R(1)=1-NoCoop(Izq) y R(1)=2-Coop(Der)
+dim C=4 \para comparacion de timepo y 
+
+dim S=2 \ (0)habilita control de ITI y cuenta palanqueos (1)EXP y (2)OPO
+list E=0,1,2,3,4,5,6,7,8,9
+
+\ Variables a guardar en disco en cada 'flush'.
+DISKVARS=A,B,C,D,E(5),F,R,Y,Q,S
+\=============================================================================\
+
+\=SALIDAS=====================================================================\
+\ ^constantes
+
+ 
+\OUTPUT
+^refuerzo=2
+^refuerzoOpo=4
+
+^luzComedero=3
+^luzComederoOpo=5
+
+^luzPalancaDer=14
+^luzPalancaIzq=13
+^luzPalancaCen=12  
+^luzPalancaDerOpo=10
+^luzPalancaIzqOpo=11
+\^luzPalancaCenOpo=9
+
+\INPUT
+^palancaDer=4
+^palancaIzq=6
+
+^palancaDerOpo=3
+^palancaIzqOpo=7
+
+
+\=============================================================================\
+\ Z-PULSE en uso
+\ Z1 = empieza el trial 
+\ Z2 = Inicia comparacion, espera hasta q se cumpla el tiempo p/ palanquear
+\      Luego se va a ITI
+\ Z3 = Fin de trial (continua ITI sin luz)
+\ Z4 = Inicio de ITI
+\ Z5,Z6  = Control de luces de palanca para Experimental
+\ Z9,Z10 = Control de luces de palanca para Oponenete
+\ Z7 = Secuencia para dispenzar refuerzo al Experimental
+\ Z11 = Secuencia para dispenzar refuerzo al Oponenete
+\ Z8 = Habilita control de palanqueo en ITI
+\=============================================================================\
+
+S.S.1, \Control de la cantidad de experimentos y seteo de tiempos
+  S1,       
+    #START:Z1;set A=0;set B=0;set C(0)=0;set C(1)=0;set C(2)=0; set R(0)=0;set R(1)=0;
+           set S(0)=0;set S(1)=0; set S(2)=0;set Q=10";set Y=45;set P=5";set Z=30; set L=2; 
+           set G=0 --->S2
+  S2,
+    #Z1:add A;set C(0)=0;set C(1)=0;set C(2)=0;set S(0)=0;set S(1)=0;set S(2)=0;set Q=10";
+        set G=0;set C(0)=0;set C(1)=0;set C(2)=0;show 1, Trial, A;show 2, Inicio,1; 
+        if (A>Z) [@fin,@sigTrial]
+                  @fin:--->S5
+                  @sigTrial:--->S3
+  S3, \
+    0.01":time H(0),H(1),H(2); set I=Y;    \ |  | enciende luces de palancas
+    set I=(((H(0)*3600)+(H(1)*60)+H(2))+ I);Z5;Z9;Z2 ---> S4 
+                              \ + tiempo de trial
+  S4, \Apaga las luces estimulos
+    #Z3:OFF^luzComedero;OFF^luzComederoOpo; Z6; Z10;
+        show 2, finPalanqueo,1;Z4 ---> S2 \ inicia el ITI  
+  S5, 
+    0.01":OFF^luzPalancaCen --->stopabortflush \Fin del experimentos
+
+
+S.S.2,  \Reloj : contador de tiempo infinito
+  S1,
+    #START:--->S2
+  S2,
+    0.01":TIME  J(0),J(1),J(2); SET K=(J(0)*3600 + J(1)*60 + J(2));
+    set D(0)=(I-K) --->S3
+  S3,
+    0.01":Show 3,t.trial,D(0) --->S2
+
+
+\\ CHEQUEAR CONDICION PARA FIN DE TRIAL
+
+S.S.3,  \Control de tiempo p/ palanquear, luego se va a ITI
+  S1,
+    #Z2: --->S2
+  S2,        \ Reloj > tiempo p/ palanquear
+    0.01": if (K > I) [@finTrial,@cont]
+                        @finTrial:Z3;set G=1 ---> S1 \ dispara apagar todo y luego ITI
+                        @cont: --->S3
+  S3,
+    0.01": if (C(0)>0) [@parar,@cont] \Si es 2 es porque ambos animales presionaron la palanca
+                              @parar: ---> S1  \Si para es xq se palanqueo
+                              @cont: ---> S2
+
+
+S.S.4,  \ITI     | control ITI DESACTIVADO (ACT=1)
+  S1,   \        |
+    #Z4:set S(0)=0;show 2, ITI,D(0) ---> S2
+  S2,
+    Q#T:flush ---> S3  \ITI es el tiempo de ITI seteado en S.S.1
+  S3,
+    1.00":set S(0)=0;Z1 ---> S1
+
+
+S.S.5, \Palanca Derecha Presionada Experimental (No Coopero)
+  S1,
+    #R^palancaDer:if (C(0)>0) [@nada,@cont]
+                            @nada: ---> S4          \ Ya se palanqueo
+                            @cont: ---> S2 
+  S2,  
+    0.01":if (C(1)=1) [@nada,@cont]
+                       @nada: ---> S1                  \Ya se palanqueo         
+                       @cont:set C(1)=1;set R(0)=1;set D(1)=D(0);
+                             Z7;show 5, Resp. EXP-DER, R(0) ---> S3  
+  S3,
+    0.01":if(C(2)=1) [@cont,@nada]
+                      @cont:set C(0)=1 --->S1 \Elecciones realizadas
+                      @nada: --->S1
+  S4, \Incrementa el ITI = Q
+    0.01":if(S(0)=1) [@incrementa,@nada]
+                      @incrementa:set Q=Q+2";add S(1);show 2, ITI,Q;
+                                  show 5, EXP ITI DER, S(1) --->S1
+                      @nada: --->S1        
+ 
+
+S.S.6, \Palanca Izquierda Presionada Experimental (Coopero)
+  S1,
+    #R^palancaIzq:if (C(0)>0) [@nada,@cont]
+                            @nada: ---> S4          \ Ya se palanqueo
+                            @cont: ---> S2 
+  S2,  
+    0.01":if (C(1)=1) [@nada,@cont]
+                       @nada: ---> S1                  \Ya se palanqueo         
+                       @cont:set C(1)=1;set R(0)=2;set D(1)=D(0);
+                             Z7;show 5, Resp. IZQ, R(0) ---> S3  
+  S3,
+    0.01":if(C(2)=1) [@cont,@nada]
+                      @cont:set C(0)=1; --->S1 \Elecciones realizadas
+                      @nada: --->S1   
+  S4, \Incrementa el ITI = Q
+    0.01":if(S(0)=1) [@incrementa,@nada]
+                      @incrementa:set Q=Q+2";add S(1);show 2, ITI,Q;
+                                  show 5, EXP ITI IZQ, S(1) --->S1
+                      @nada: --->S1 
+
+
+S.S.7, \Palanca Derecha Presionada Oponente (COOPERO)
+  S1,
+    #R^palancaDerOpo:if (C(0)>0) [@nada,@cont]
+                               @nada: ---> S4          \ Ya se palanqueo
+                               @cont: if L=2 [@cont,@nada]  \Bloqueo de palanca  
+                                              @cont: --->S2 
+                                              @nada: --->S4
+  S2,  
+    0.01":if (C(2)=1) [@nada,@cont]
+                       @nada: ---> S1                  \Ya se palanqueo         
+                       @cont:if (G=3)OR(C(1)=1) [@cont,@nada]
+                                 @cont: set C(2)=1;set R(1)=2;set D(2)=D(0);
+                                        Z11;add G;show 6, Resp. OPO, R(1) ---> S3  
+                                 @nada: add G;set R(1)=2 --->S1
+  S3,
+    0.01":if(C(1)=1) [@cont,@nada]
+                      @cont:set C(0)=1 --->S1 \Elecciones realizadas
+                      @nada: --->S1
+  S4, \Incrementa el ITI = Q
+    0.01":if(S(0)=1) [@incrementa,@nada]
+                      @incrementa:set Q=Q+2";add S(2);show 2, ITI,Q;
+                                  show 6, OPO ITI DER, S(2) --->S1
+                      @nada: --->S1        
+ 
+
+S.S.8, \Palanca Izquierda Presionada Oponente (NO Coopero)
+  S1,
+    #R^palancaIzqOpo:if (C(0)>0) [@nada,@cont]
+                               @nada: ---> S4               \ Ya se palanqueo
+                               @cont: if L=1 [@cont,@nada]  \Bloqueo de palanca 
+                                              @cont: --->S2 
+                                              @nada: --->S4
+  S2,  
+    1.00":if (C(2)=1) [@nada,@cont]
+                       @nada: ---> S1                  \Ya se palanqueo         
+                       @cont:if (G=3)OR(C(1)=1) [@cont,@nada]
+                                 @cont:set C(2)=1;set R(1)=1;set D(2)=D(0);
+                                       Z11;add G;show 6, Resp. OPO, R(1) ---> S3 
+                                      \ | Se z-pulse par dar refuerzo opo 
+                                 @nada:add G;set R(1)=1 --->S1 \ G=0 al inicio del trial
+  S3,
+    0.01":if(C(1)=1) [@cont,@nada]
+                      @cont:set C(0)=1 --->S1 \Elecciones realizadas
+                      @nada: --->S1   
+  S4, \Incrementa el ITI = Q
+    0.01":if(S(0)=1) [@incrementa,@nada]
+                      @incrementa:set Q=Q+2";add S(2);show 2, ITI,Q;
+                                  show 6, OPO ITI IZQ, S(2) --->S1
+                      @nada: --->S1 
+
+
+S.S.9, \ Secuencia para dar refuerzo al Experimental
+  S1,
+    #Z7:Z6 ---> S2   \ AGREGAR CONDICON PARA ESPERAR A QUE EL OPONENTE PALANQUEE UNA VEZ
+  S2,  \ | Apaga luces de palancas
+    0.01": --->S3
+  S3,
+    0.5":if (G>0) [@cont,@nada]
+                  @cont:--->S4
+                  @nada:show 5, dando vueltas, G--->S2 
+  S4,         \ P  D          D
+    0.01":if (R(0)=1) AND (R(1)=1) [@P,@otra]
+                                @P:set Q = (Q+(Q/2));if (G=3)[@nada,@cont]
+                                                              @nada:--->S13
+                                                              @cont:set C(0)=1;Z11 --->S13
+                                @otra:--->S5  
+  S5,         \S  C          D
+    0.01":if (R(0)=2) AND (R(1)=1) [@S,@otra]
+                                @S:set Q = (Q+Q);if (G=3)[@nada,@cont]
+                                                          @nada:--->S13
+                                                          @cont:set C(0)=1;Z11 --->S13
+                                @otra:--->S6
+  S6,         \ T  D          C
+    0.01":if (R(0)=1) AND (R(1)=2) [@T,@otra]
+                                @T:ON^luzComedero;if (G=3)[@nada,@cont]
+                                                              @nada:--->S8
+                                                              @cont:set C(0)=1;Z11 --->S8  \ Come DOS
+                                @otra:--->S7   
+  S7,         \ C  C          C
+    0.01":if (R(0)=2)AND(R(1)=2) [@C,@otra]
+                                @C:ON^luzComedero;if (G=3)[@nada,@cont]
+                                                              @nada:--->S10
+                                                              @cont:set C(0)=1;Z11 --->S10 
+                                @otra:show 5, HOUSTON, R(0);
+                                      show 6,we have PROBLEM, G--->S13      
+  S8,
+    1.00":ON^refuerzo ---> S9  
+  S9,
+    0.01":OFF^refuerzo ---> S10  
+  S10,
+    1.00":ON^refuerzo ---> S11 
+  S11,
+    0.01":OFF^refuerzo ---> S12
+  S12,
+    P#T:Z3; OFF^luzComedero --->S1  \Se va a apagar todo y al ITI
+  S13,
+    1":Z3;OFF^luzComedero --->S1  \Se va a apagar todo y al ITI
+
+
+S.S.10, \ Refuerzo para Oponente
+  S1,
+    #Z11:Z10;ON^luzComederoOpo --->S2
+  S2,
+    1.00":ON^refuerzoOpo ---> S3  
+  S3,
+    0.01":OFF^refuerzoOpo ---> S1 
+
+
+S.S.11, \Control de luces de palancas EXPERIMENTAL
+  S1, 
+    #Z5:ON^luzPalancaDer;
+        ON^luzPalancaIzq ---> S2      
+  S2,
+    #Z6:OFF^luzPalancaDer;
+        OFF^luzPalancaIzq ---> S3 
+  S3,
+    0.01": ---> S1
+   
+
+S.S.12, \Control de luces de palancas OPONENTE
+  S1, 
+    #Z9:if(R(0)=0)OR(R(1)=0) [@nada,@cont]
+                              @nada:--->S3
+                              @cont:--->S2
+  S2,
+    0.01":if R(0)=2 [@Coop,@NoCoop]
+                     @Coop:set L=2 --->S3
+                     @NoCoop:set L=1 --->S3
+  S3,
+    0.01":if L=2 [@coop,@nocoop]
+                  @coop:ON^luzPalancaDerOpo --->S4
+                  @nocoop:ON^luzPalancaIzqOpo --->S4
+  S4,
+    0.01":set R(0)=0; set R(1)=0 --->S5   
+  S5,
+    #Z10:OFF^luzPalancaDerOpo;
+         OFF^luzPalancaIzqOpo ---> S6 
+  S6,
+    0.01": ---> S1

@@ -1,0 +1,193 @@
+\===============================================================Delmas,2015===\
+\=========================== Alternar Palancas ===============================\
+\ En este entrenamiento las ratas debe aprender a que una palanca veces da    \
+\ comida y a veces no, introducir la contingencia con los estimulos de luz.   \
+\ Existe una palanca fija Izquierda y otra Derecha con sus respectivos estimu \
+\ los luminosos. 
+\ En la Primera Etapa, la palanca esta la mitad de los trials en derecha y la 
+\ otra mitad en izquierda, el orden de inicio inicio es al azar.
+\===============================================================Delmas,2015===\
+\ Protocolo                                                                   \
+\ Nº de trials = 30
+\ Tiempo p\ palanqueo = 20min (def=10s)
+\ Tiempo p\ comer     = 5s (def=5)
+\ ITI                 = 5s (def=5) Luz apagada 
+
+\=Variables===================================================================\
+\ A=Trials
+\ B=Respuestas
+\ paramatros de los  trials                                                  \
+^nTrials=30
+^tPalanca=60       \definidos en comienzo de trial
+\ C = ^pararComp=0 \Detiene el comparador de tiempo p/ palanqueo
+\ Q=^ITI=0
+\ P=^tComer=0
+\ D = reloj
+\ R = respuestas
+\ Y = tiempo de trial
+\ Z = Cantidad de Trials
+
+dim H=2 \tiempo para el trials
+dim J=2 \Reloj
+dim R=2 \Respuestas 1-Izq y 2-Der
+
+list E=0,1,2,3,4,5,6,7,8,9
+
+\ Variables a guardar en disco en cada 'flush'.
+DISKVARS=A,B,D,R,Y
+\=============================================================================\
+
+\=SALIDAS=====================================================================\
+\ ^constantes
+
+ 
+\OUTPUT
+^luzCaja=15 \\puertos
+^refuerzo=2
+^sacarPalancaShaping=16 \no se utiliza (centro)
+^sacarPalancaDer=4
+^sacarPalancaIzq=5
+^luzPalancaDer=14
+^luzPalancaIzq=11
+^luzPalancaCen=8  
+^luzComedero=3
+
+\INPUT
+^palancaDer=3
+^palancaIzq=7
+^palancaShaping=8 \ palancaCentro
+
+\=============================================================================\
+\ Z-PULSE en uso
+\ Z1 = empieza el trial 
+\ Z2 = Inicia comparacion, espera hasta q se cumpla el tiempo p/ palanquear
+\      Luego se va a ITI
+\ Z3 = Fin de trial (continua ITI sin luz)
+\ Z4 = Inicio de ITI
+\ Z5 = Control de luces de palanca
+\ Z7 = Secuencia para dispenzar refuerzo
+\=============================================================================\
+
+S.S.1, \Control de la cantidad de experimentos y seteo de tiempos
+
+S1,
+    #START:Z1;set A=0;set B=0;set C=0; set R(0)=0;set R(1)=0;set Q=5";set Y=30;set P=5";
+    set Z=30;RANDI F=E--->S2
+S2,
+  #Z1:add A;set C=0;show 1, Trial, A;show 2, Inicio,1; 
+  if (A=Z) [@fin,@sigTrial]
+                  @fin:--->S5
+                  @sigTrial:--->S3
+  S3, \Enciende las luces estimulos
+    0.01":OFF^sacarPalancaShaping;
+          ON^sacarPalancaDer;    \NUNCA se GUARDAN
+          ON^sacarPalancaIzq;
+    Z5;
+    time H(0),H(1),H(2); SET I=Y;
+    SET I=(((H(0)*3600)+(H(1)*60)+H(2))+ I);Z2 ---> S4 
+                              \ + tiempo de trial
+  S4, \Apaga las luces estimulos
+    #Z3:OFF^luzPalancaCen;
+        OFF^luzComedero;
+        OFF^luzPalancaDer;
+        OFF^luzPalancaIzq;
+        OFF^sacarPalancaShaping;
+    show 2, finPalanqueo,1;Z4 ---> S2 \ espera fin de ITI  
+  S5, 
+    0.01":OFF^luzCaja;OFF^luzPalancaCen --->stopabortflush \Fin del experimentos
+
+S.S.2,  \Reloj : contador de tiempo infinito
+  S1,
+    #START:--->S2
+  S2,
+    0.01":TIME  J(0),J(1),J(2); SET K=(J(0)*3600 + J(1)*60 + J(2));
+    set D=(I-K) --->S3
+  S3,
+    0.01":Show 3,t.trial,D --->S2
+
+
+S.S.3,  \Control de tiempo p/ palanquear, luego se va a ITI
+  S1,
+    #Z2: --->S2
+  S2,        \ Reloj > tiempo p/ palanquear
+    0.01": if (K > I) [@finTrial,@cont]
+                        @finTrial:Z3 ---> S1 \ dispara apagar todo y luego ITI
+                        @cont: --->S3
+  S3,
+    0.01": if (C=1) [@parar,@cont]
+                              @parar: ---> S1  \Si para es xq se palanqueo
+                              @cont: ---> S2
+
+S.S.4,  \ITI
+  S1,
+    #Z4:show 2, ITI,1 ---> S2
+  S2,
+    Q#T:Z1 ---> S1  \ITI es el tiempo de ITI seteado en S.S.1
+
+
+S.S.5, \Palanca Derecha Presionada 
+  S1,
+    #R^palancaDer: if(A>=(Z/2)) [@eligioBien,@eligioMAL]
+                                        @eligioBien:--->S3
+                                        @eligioMal: --->S2
+  S2,
+    0.01":if (C=1) [@nada,@cont]
+                    @nada: ---> S1          \ Ya se palanqueo
+                    @cont:set C=1;Z3 ---> S2 \ Se va al ITI
+  S3,
+    0.01":if (C=1) [@nada,@cont]
+                    @nada: ---> S1          \ Ya se palanqueo
+                    @cont: ---> S4          \ Se va al ITI
+  S4,
+    0.01":set C=1;add R(1);Z7 --->S1 \ Se va a comer
+ 
+
+S.S.6, \Palanca Presionada Izquierda
+  S1,
+    #R^palancaIzq: if(A<(Z/2)) [@eligioBien,@eligioMAL]
+                                        @eligioBien:--->S3
+                                        @eligioMal: --->S2
+  S2,
+    0.01":if (C=1) [@nada,@cont]
+                    @nada: ---> S1          \ Ya se palanqueo
+                    @cont:set C=1;Z3 ---> S2 \ Se va al ITI
+  S3,
+    0.01":if (C=1) [@nada,@cont]
+                    @nada: ---> S1          \ Ya se palanqueo
+                    @cont: ---> S4          \ Se va al ITI
+  S4,
+    0.01":set C=1;add R(0);Z7 --->S1 \ Se va a comer
+
+
+S.S.7, \ Secuencia para dar refuerzo
+  S1,
+    #Z7:flush ---> S2
+  S2,
+    0.1":OFF^luzPalancaCen;
+         ON^luzComedero;
+         OFF^luzPalancaDer;
+         OFF^luzPalancaIzq;
+    show 4, Respuestas, R(0);show 5, Respuestas, R(1)  --->S3
+  S3,
+    0.2":ON^refuerzo ---> S4  \Ver si es necesario sonido
+  S4,
+    0.01":OFF^refuerzo ---> S5
+  S5,
+    0.01": --->S6
+  S6,
+    P#T:Z3 --->S1  \Se va a apagar todo y al ITI
+		
+		
+S.S.8, \Control de luces de palancas
+  S1, 
+    #Z5: if(A>=(Z/2)) [@luzDer,@luzIzq]
+                       @luzDer: --->S2
+                       @luzIzq: --->S3 
+  S2,
+    0.01":ON^luzPalancaDer ---> S1
+  S3,
+    0.01":ON^luzPalancaIzq ---> S1  
+
+
+
+

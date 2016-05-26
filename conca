@@ -1,0 +1,4 @@
+#!/bin/bash
+for i in $(cat lista); do
+  cat $i >> !2016-03-26_exp04
+done

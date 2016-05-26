@@ -1,0 +1,28 @@
+/=============================================================================/
+/================== Shaping para presionar las palancas ======================/
+/ El entrenamiento con shaping esta destinado a entrenar al animal para apren /
+/ der a presionar la palanca. En la caja existen dos palancas en el frente y  /
+/ un comedero atrás, además existe una palanca de shaping externa.            /
+/                                                                             /
+/                                                               (Delmas,2015) /
+/=============================================================================/
+
+/=Variables===================================================================/
+/ A=Trials
+/ B=Respuestas
+/ Variables a guardar en disco en cada 'flush'.
+DISKVARS=A,B
+/=============================================================================/
+
+/=SALIDAS=====================================================================/
+/ ^constantes
+^caja=1 //puertos
+^refuerzo=2
+^palancaDer=3
+^palancaIzq=4
+^palancaShaping=15
+^luzPalancaDer=5
+^luzPalancaIzq=6
+^luzComedero=7
+
+

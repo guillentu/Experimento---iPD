@@ -1,0 +1,51 @@
+File: C:\MED-PC IV\DATA\!2016-01-16_20h55m.Subject ged-discriminar2_control_ITI_501_502
+
+
+Start Date: 01/16/16
+End Date: 01/16/16
+Subject: ged-discriminar2_control_ITI_501_502
+Experiment: 2
+Group: 501
+Box: 1
+Start Time: 20:55:10
+End Time: 20:56:06
+MSN: GuilleARU_FR_Control_ITI_CastigoFijaD
+A:       1.000
+B:       0.000
+F:       5.000
+Q:    5000.000
+Y:      30.000
+D:
+     0:       -6.000        0.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        0.000        0.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 01/16/16
+End Date: 01/16/16
+Subject: ged-discriminar2_control_ITI_501_502
+Experiment: 2
+Group: 502
+Box: 2
+Start Time: 20:55:22
+End Time: 20:56:06
+MSN: GuilleARU_FR_Control_ITI_CastigoFijaD
+A:       1.000
+B:       0.000
+F:       3.000
+Q:    5000.000
+Y:      30.000
+D:
+     0:       -6.000        0.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        0.000        0.000        0.000
+S:
+     0:        1.000        0.000        0.000

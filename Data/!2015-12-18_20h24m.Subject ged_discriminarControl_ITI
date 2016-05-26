@@ -1,0 +1,1561 @@
+File: C:\MED-PC IV\DATA\!2015-12-18_20h24m.Subject ged_discriminarControl_ITI
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 2
+Start Time: 20:24:14
+End Time: 20:24:37
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:       1.000
+B:       0.000
+C:       1.000
+F:       0.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:       13.000       27.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        1.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 1
+Start Time: 20:24:13
+End Time: 20:24:38
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:       1.000
+B:       0.000
+C:       2.000
+F:       1.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:       12.000       29.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        0.000        1.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 2
+Start Time: 20:24:14
+End Time: 20:24:54
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:       2.000
+B:       0.000
+C:       1.000
+F:       0.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:       15.000       29.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        2.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 1
+Start Time: 20:24:13
+End Time: 20:24:56
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:       2.000
+B:       0.000
+C:       1.000
+F:       1.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:       14.000       28.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        1.000        1.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 2
+Start Time: 20:24:14
+End Time: 20:25:11
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:       3.000
+B:       0.000
+C:       1.000
+F:       8.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:       14.000       28.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        3.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 1
+Start Time: 20:24:13
+End Time: 20:25:14
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:       3.000
+B:       0.000
+C:       2.000
+F:       1.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:       12.000       28.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        1.000        2.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 2
+Start Time: 20:24:14
+End Time: 20:25:30
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:       4.000
+B:       0.000
+C:       2.000
+F:       8.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:       11.000       27.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        4.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 1
+Start Time: 20:24:13
+End Time: 20:25:33
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:       4.000
+B:       0.000
+C:       2.000
+F:       1.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:       13.000       29.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        1.000        3.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 2
+Start Time: 20:24:14
+End Time: 20:25:50
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:       5.000
+B:       0.000
+C:       2.000
+F:       8.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:       12.000       28.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        5.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 1
+Start Time: 20:24:13
+End Time: 20:25:52
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:       5.000
+B:       0.000
+C:       1.000
+F:       1.000
+Q:   10000.000
+Y:      30.000
+D:
+     0:       11.000       28.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        2.000        3.000
+S:
+     0:        1.000        0.000        1.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 2
+Start Time: 20:24:14
+End Time: 20:26:08
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:       6.000
+B:       0.000
+C:       2.000
+F:       8.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:       12.000       28.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        6.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 1
+Start Time: 20:24:13
+End Time: 20:26:12
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:       6.000
+B:       0.000
+C:       1.000
+F:       1.000
+Q:   10000.000
+Y:      30.000
+D:
+     0:       12.000       28.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        3.000        3.000
+S:
+     0:        1.000        0.000        1.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 1
+Start Time: 20:24:13
+End Time: 20:26:32
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:       7.000
+B:       0.000
+C:       2.000
+F:       1.000
+Q:   10000.000
+Y:      30.000
+D:
+     0:       11.000       29.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        3.000        4.000
+S:
+     0:        1.000        0.000        1.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 2
+Start Time: 20:24:14
+End Time: 20:26:34
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:       7.000
+B:       0.000
+C:       2.000
+F:       8.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:        6.000       22.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        7.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 1
+Start Time: 20:24:13
+End Time: 20:26:51
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:       8.000
+B:       0.000
+C:       2.000
+F:       1.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:       12.000       28.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        3.000        5.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 2
+Start Time: 20:24:14
+End Time: 20:26:53
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:       8.000
+B:       0.000
+C:       2.000
+F:       8.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:       12.000       28.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        8.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 1
+Start Time: 20:24:13
+End Time: 20:27:09
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:       9.000
+B:       0.000
+C:       1.000
+F:       1.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:       13.000       27.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        4.000        5.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 2
+Start Time: 20:24:14
+End Time: 20:27:12
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:       9.000
+B:       0.000
+C:       2.000
+F:       8.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:       12.000       28.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        9.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 1
+Start Time: 20:24:13
+End Time: 20:27:30
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:      10.000
+B:       0.000
+C:       2.000
+F:       1.000
+Q:   10000.000
+Y:      30.000
+D:
+     0:       10.000       28.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        4.000        6.000
+S:
+     0:        1.000        0.000        1.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 2
+Start Time: 20:24:14
+End Time: 20:27:31
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:      10.000
+B:       0.000
+C:       2.000
+F:       8.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:       12.000       28.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:       10.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 1
+Start Time: 20:24:13
+End Time: 20:27:49
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:      11.000
+B:       0.000
+C:       2.000
+F:       1.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:       12.000       28.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        4.000        7.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 2
+Start Time: 20:24:14
+End Time: 20:27:50
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:      11.000
+B:       0.000
+C:       2.000
+F:       8.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:       12.000       28.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:       11.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 1
+Start Time: 20:24:13
+End Time: 20:28:08
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:      12.000
+B:       0.000
+C:       2.000
+F:       1.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:       12.000       28.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        4.000        8.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 2
+Start Time: 20:24:14
+End Time: 20:28:09
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:      12.000
+B:       0.000
+C:       2.000
+F:       8.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:       12.000       28.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:       12.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 2
+Start Time: 20:24:14
+End Time: 20:28:28
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:      13.000
+B:       0.000
+C:       2.000
+F:       8.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:       12.000       28.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:       13.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 1
+Start Time: 20:24:13
+End Time: 20:28:33
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:      13.000
+B:       0.000
+C:       2.000
+F:       1.000
+Q:   12000.000
+Y:      30.000
+D:
+     0:        6.000       26.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        4.000        9.000
+S:
+     0:        1.000        0.000        2.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 2
+Start Time: 20:24:14
+End Time: 20:28:47
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:      14.000
+B:       0.000
+C:       2.000
+F:       8.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:       12.000       28.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:       14.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 1
+Start Time: 20:24:13
+End Time: 20:28:52
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:      14.000
+B:       0.000
+C:       2.000
+F:       1.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:       12.000       28.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        4.000       10.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 1
+Start Time: 20:24:13
+End Time: 20:29:13
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:      15.000
+B:       0.000
+C:       2.000
+F:       1.000
+Q:   10000.000
+Y:      30.000
+D:
+     0:       10.000       28.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        4.000       11.000
+S:
+     0:        1.000        0.000        1.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 2
+Start Time: 20:24:14
+End Time: 20:29:14
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:      15.000
+B:       0.000
+C:       2.000
+F:       8.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:        4.000       20.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:       15.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 1
+Start Time: 20:24:13
+End Time: 20:29:32
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:      16.000
+B:       0.000
+C:       2.000
+F:       1.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:       12.000       28.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        4.000       12.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 2
+Start Time: 20:24:14
+End Time: 20:29:33
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:      16.000
+B:       0.000
+C:       2.000
+F:       8.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:       12.000       28.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:       16.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 1
+Start Time: 20:24:13
+End Time: 20:29:50
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:      17.000
+B:       0.000
+C:       2.000
+F:       1.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:       12.000       29.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        4.000       13.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 2
+Start Time: 20:24:14
+End Time: 20:29:52
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:      17.000
+B:       0.000
+C:       2.000
+F:       8.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:       12.000       28.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:       17.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 1
+Start Time: 20:24:13
+End Time: 20:30:12
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:      18.000
+B:       0.000
+C:       2.000
+F:       1.000
+Q:   10000.000
+Y:      30.000
+D:
+     0:       10.000       28.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        4.000       14.000
+S:
+     0:        1.000        0.000        1.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 2
+Start Time: 20:24:14
+End Time: 20:30:13
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:      18.000
+B:       0.000
+C:       2.000
+F:       8.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:       10.000       26.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:       18.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 2
+Start Time: 20:24:14
+End Time: 20:30:32
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:      19.000
+B:       0.000
+C:       2.000
+F:       8.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:       12.000       28.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:       19.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 1
+Start Time: 20:24:13
+End Time: 20:30:32
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:      19.000
+B:       0.000
+C:       2.000
+F:       1.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:       11.000       27.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        4.000       15.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 2
+Start Time: 20:24:14
+End Time: 20:30:51
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:      20.000
+B:       0.000
+C:       2.000
+F:       8.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:       11.000       28.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:       20.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 1
+Start Time: 20:24:13
+End Time: 20:30:53
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:      20.000
+B:       0.000
+C:       2.000
+F:       1.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:       10.000       26.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        4.000       16.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 2
+Start Time: 20:24:14
+End Time: 20:31:11
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:      21.000
+B:       0.000
+C:       2.000
+F:       8.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:       12.000       28.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:       21.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 1
+Start Time: 20:24:13
+End Time: 20:31:12
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:      21.000
+B:       0.000
+C:       2.000
+F:       1.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:       12.000       28.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        4.000       17.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 1
+Start Time: 20:24:13
+End Time: 20:31:30
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:      22.000
+B:       0.000
+C:       2.000
+F:       1.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:       12.000       29.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        4.000       18.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 2
+Start Time: 20:24:14
+End Time: 20:31:31
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:      22.000
+B:       0.000
+C:       2.000
+F:       8.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:       11.000       27.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:       22.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 1
+Start Time: 20:24:13
+End Time: 20:31:49
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:      23.000
+B:       0.000
+C:       1.000
+F:       1.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:       13.000       27.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        5.000       18.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 2
+Start Time: 20:24:14
+End Time: 20:31:55
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:      23.000
+B:       0.000
+C:       2.000
+F:       8.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:        7.000       23.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:       23.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 1
+Start Time: 20:24:13
+End Time: 20:32:09
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:      24.000
+B:       0.000
+C:       2.000
+F:       1.000
+Q:   10000.000
+Y:      30.000
+D:
+     0:       11.000       29.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        5.000       19.000
+S:
+     0:        1.000        0.000        1.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 2
+Start Time: 20:24:14
+End Time: 20:32:15
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:      24.000
+B:       0.000
+C:       2.000
+F:       8.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:       11.000       27.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:       24.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 1
+Start Time: 20:24:13
+End Time: 20:32:31
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:      25.000
+B:       0.000
+C:       2.000
+F:       1.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:        9.000       25.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        5.000       20.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 2
+Start Time: 20:24:14
+End Time: 20:32:35
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:      25.000
+B:       0.000
+C:       2.000
+F:       8.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:       11.000       27.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:       25.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 1
+Start Time: 20:24:13
+End Time: 20:32:50
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:      26.000
+B:       0.000
+C:       2.000
+F:       1.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:       12.000       28.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        5.000       21.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 2
+Start Time: 20:24:14
+End Time: 20:32:59
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:      26.000
+B:       0.000
+C:       2.000
+F:       8.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:        6.000       23.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:       26.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 1
+Start Time: 20:24:13
+End Time: 20:33:09
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:      27.000
+B:       0.000
+C:       1.000
+F:       1.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:       11.000       26.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        6.000       21.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 2
+Start Time: 20:24:14
+End Time: 20:33:22
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:      27.000
+B:       0.000
+C:       2.000
+F:       8.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:        9.000       25.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:       27.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 1
+Start Time: 20:24:13
+End Time: 20:33:35
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:      28.000
+B:       0.000
+C:       2.000
+F:       1.000
+Q:   12000.000
+Y:      30.000
+D:
+     0:        6.000       26.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        6.000       22.000
+S:
+     0:        1.000        0.000        2.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 2
+Start Time: 20:24:14
+End Time: 20:33:41
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:      28.000
+B:       0.000
+C:       2.000
+F:       8.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:       12.000       28.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:       28.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 1
+Start Time: 20:24:13
+End Time: 20:33:55
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:      29.000
+B:       0.000
+C:       2.000
+F:       1.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:       10.000       26.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        6.000       23.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 1
+Start Time: 20:24:13
+End Time: 20:33:56
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:      30.000
+B:       0.000
+C:       0.000
+F:       1.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:        9.000       26.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        6.000       23.000
+S:
+     0:        0.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 2
+Start Time: 20:24:14
+End Time: 20:34:01
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:      29.000
+B:       0.000
+C:       2.000
+F:       8.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:       10.000       27.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:       29.000        0.000
+S:
+     0:        1.000        0.000        0.000
+
+
+Start Date: 12/18/15
+End Date: 12/18/15
+Subject: ged_discriminarControl_ITI
+Experiment: 31
+Group: 0
+Box: 2
+Start Time: 20:24:14
+End Time: 20:34:02
+MSN: GuilleDiscriminacionTresControl_ITI_PalancaFijaDisplay
+A:      30.000
+B:       0.000
+C:       0.000
+F:       8.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:        9.000       27.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:       29.000        0.000
+S:
+     0:        0.000        0.000        0.000

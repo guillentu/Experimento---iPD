@@ -1,0 +1,169 @@
+\===============================================================Delmas,2015===\
+\=========================== Shaping Palanca =================================\
+\ Protocolo                                                                   \
+\ Nº de trials = 30
+\ Tiempo p\ palanqueo = 20min (def=10s)
+\ Tiempo p\ comer     = 5s (def=5)
+\ ITI                 = 5s (def=5) Luz apagada 
+
+\=Variables===================================================================\
+\ A=Trials
+\ B=Respuestas
+\ paramatros de los  trials                                                  \
+^nTrials=30
+^tPalanca=60       \definidos en comienzo de trial
+\ C = ^pararComp=0 \Detiene el comparador de tiempo p/ palanqueo
+\ Q=^ITI=0
+\ P=^tComer=0
+\ D = reloj
+\ R = respuestas
+\ Y = tiempo de trial
+
+\ Variables a guardar en disco en cada 'flush'.
+DISKVARS=A,B,D,R,Y
+
+dim H=2 \Reloj
+   \Reloj en segundos
+dim J=2
+
+\=============================================================================\
+
+\=SALIDAS=====================================================================\
+\ ^constantes
+
+ 
+\OUTPUT
+^luzCaja=15 \\puertos
+^refuerzo=2
+^sacarPalancaShaping=16
+^sacarPalancaShapingExterna=13
+^luzPalancaDer=50
+^luzPalancaIzq=60
+^luzPalancaCen=8  
+^luzComedero=3
+
+\INPUT
+^palancaDer=30
+^palancaIzq=40
+^palancaShaping=8
+^palancaShapingExterna=6
+
+\=============================================================================\
+\ Z-PULSE en uso
+\ Z1 = empieza el trial 
+\ Z2 = Inicia comparacion, espera hasta q se cumpla el tiempo p/ palanquear
+\      Luego se va a ITI
+\ Z3 = Fin de trial (continua ITI sin luz)
+\ Z4 = Inicio de ITI
+\ Z5 = Control de luces de palanca
+\=============================================================================\
+
+S.S.1, \Control de la cantidad de experimentos y seteo de tiempos
+
+S1,
+    #START:Z1;set A=0;set B=0;set C=0; set R=0;set Q=5";set Y=45;set P=10" --->S2
+S2,
+  #Z1:add A;set C=0;show 1, Trial, A;show 2, Inicio,1; 
+  if (A=30) [@fin,@sigTrial]
+                  @fin:--->S5
+                  @sigTrial: if (A=10) [@cambia,@igual]
+                                        @cambia: set P=5" ---> S3 
+                                        @igual: --->S3
+  S3, \Enciende las luces estimulos
+    0.01":Z5;OFF^luzComedero;ON^sacarPalancaShaping;ON^sacarPalancaShapingExterna;
+    time H(0),H(1),H(2); SET I=Y;
+    SET I=(((H(0)*3600)+(H(1)*60)+H(2))+ I); Z2 ---> S4 
+                              \ + tiempo de trial
+  S4, \Apaga las luces estimulos
+    #Z3:OFF^luzPalancaCen;OFF^luzComedero; show 2, finPalanqueo,1;
+    OFF^sacarPalancaShaping;Z4 ---> S2 \ espera fin de ITI  
+  S5, 
+    0.01":OFF^luzCaja;OFF^luzPalancaCen; OFF^sacarPalancaShapingExterna --->stopabortflush \Fin del experimentos
+
+S.S.2,  \Reloj : contador de tiempo infinito
+  S1,
+    #START:--->S2
+  S2,
+    0.01":TIME  J(0),J(1),J(2); SET K=(J(0)*3600 + J(1)*60 + J(2));
+    set D=(I-K) --->S3
+  S3,
+    0.01":Show 3,t.trial,D --->S2
+
+
+S.S.3,  \Control de tiempo p/ palanquear, luego se va a ITI
+  S1,
+    #Z2: --->S2
+  S2,        \ Reloj > tiempo p/ palanquear
+    0.01": if (K > I) [@finTrial,@cont]
+                        @finTrial:Z3 ---> S1 \ dispara apagar todo y luego ITI
+                        @cont: --->S3
+  S3,
+    0.01": if (C=1) [@parar,@cont]
+                              @parar: ---> S1  \Si para es xq se palanqueo
+                              @cont: ---> S2
+
+S.S.4,  \ITI
+  S1,
+    #Z4:show 2, ITI,1 ---> S2
+  S2,
+    Q#T:Z1 ---> S1  \ITI es el tiempo de ITI seteado en S.S.1
+
+
+S.S.5, \Palanca Shaping Habilita Refuerzo
+  S1,
+    #R^palancaShaping:if C=1 [@nada,@cont]
+                              @nada: ---> S1
+                              @cont: set C=1;add R;flush ---> S2  
+  S2,
+    0.1":OFF^luzPalancaCen;ON^luzComedero;
+    show 4, Respuestas, R;  --->S3
+  S3,
+    0.2":ON^refuerzo ---> S4  \Ver si es necesario sonido
+  S4,
+    0.01":OFF^refuerzo ---> S5
+  S5,
+    0.01": --->S6
+  S6,
+    P#T:Z3 --->S1  \Se va a apagar todo y al ITI
+	
+	
+S.S.6, \Palanca Externa p/ Shaping Habilita Refuerzo
+  S1,
+    #R^palancaShapingExterna:if C=1 [@nada,@cont]
+                              @nada: ---> S1
+                              @cont: set C=1;flush ---> S2  
+  S2,
+    0.1":OFF^luzPalancaCen;ON^luzComedero;
+    show 4, Respuestas, R;  --->S3
+  S3,
+    0.2":ON^refuerzo ---> S4  \Ver si es necesario sonido
+  S4,
+    0.01":OFF^refuerzo ---> S5
+  S5,
+    0.01": --->S6
+  S6,
+    P#T:Z3 --->S1  \Se va a apagar todo y al ITI
+
+		
+S.S.7, \Control de luces de palancas
+  S1, 
+    #Z5: ---> S2
+  S2,
+    0.01":ON^luzPalancaCen ---> S3
+  S3,
+    0.5":OFF^luzPalancaCen ---> S4
+  S4,
+    0.5":ON^luzPalancaCen ---> S5
+  S5,
+    0.5":OFF^luzPalancaCen ---> S6
+  S6,
+    0.5":ON^luzPalancaCen ---> S7
+  S7,
+    0.5":OFF^luzPalancaCen ---> S8
+  S8,
+    0.5":ON^luzPalancaCen ---> S9
+  S9,
+    0.01":--->S1
+
+
+

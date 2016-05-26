@@ -1,0 +1,57 @@
+File: C:\MED-PC IV\DATA\!2015-12-14_19h13m.Subject ged-discriminarControl_ITI
+
+
+
+Start Date: 12/14/15
+End Date: 12/14/15
+Subject: ged-discriminarControl_ITI
+Experiment: 17
+Group: 0
+Box: 2
+Start Time: 19:13:01
+End Time: 19:49:00
+MSN: GuilleDiscriminacionControl_ITI_PalancaFijaDisplay
+A:       2.000
+B:       0.000
+C:       0.000
+F:       3.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:      -49.000       25.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        1.000        0.000
+S:
+     0:        0.000        0.000        0.000
+
+
+
+Start Date: 12/14/15
+End Date: 12/14/15
+Subject: ged-discriminarControl_ITI
+Experiment: 17
+Group: 0
+Box: 2
+Start Time: 19:13:01
+End Time: 19:49:57
+MSN: GuilleDiscriminacionControl_ITI_PalancaFijaDisplay
+A:       3.000
+B:       0.000
+C:       0.000
+F:       3.000
+Q:    8000.000
+Y:      30.000
+D:
+     0:      -28.000       29.000
+E:
+     0:        0.000        1.000        2.000        3.000        4.000
+     5:        5.000        6.000        7.000        8.000        9.000
+R:
+     0:        2.000        0.000
+S:
+     0:        0.000        0.000        0.000
+
+
