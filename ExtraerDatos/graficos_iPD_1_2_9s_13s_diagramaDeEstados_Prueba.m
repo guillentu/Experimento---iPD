@@ -35,7 +35,12 @@ _txtSujetos=["1A";"2A";"3A";"4A";"5A";"6A";"7A";"8A";"9A";"10A";"3B";"4B"];
 
 % PORCENTAJE DE COOPERACION
 _nSujetos=12;
-_vSujetos=[8]; % a partir del exp34
+_vSujetos1=[1 2 3 4 5 6 7 8 9 10 11 12];% desde exp01
+_vSujetos2=[2 6 8 9 10 11];% a partir del exp25
+_vSujetos3=[2 6 8 9 11]; % a partir del exp30
+_vSujetos4=[2 8 11]; % a partir del exp32
+_vSujetos5=[8]; % a partir del exp34
+_vSujetos=_vSujetos1;
 _coop=zeros(1,_nSujetos);
 _cooperacion=[];
 _nada=[];
@@ -78,7 +83,7 @@ endfor
 
 % 
 % Brief: Carga las matrices de transicion de estado de cada sujeto.
-%        Es una promedio total 
+%        Es un promedio total 
 %        Acumula las veces que aparece la transicion durante los 29 trials a lo
 %        largo los inicio:fin de experimentos.
 T=zeros(_nSujetos,length(inicio:fin));C=zeros(_nSujetos,length(inicio:fin));
@@ -86,6 +91,17 @@ P=zeros(_nSujetos,length(inicio:fin));S=zeros(_nSujetos,length(inicio:fin));
 controlFallas=zeros(1,_nSujetos);
 auxFallas=1;
 for j=inicio:fin
+  if j<07
+    _vSujetos=_vSujetos1;
+  elseif (j>=07 && j<09)
+    _vSujetos=_vSujetos2;
+  elseif (j>=09 && j<25)
+    _vSujetos=_vSujetos3;
+  elseif (j>=25 && j<43)
+    _vSujetos=_vSujetos4;
+  elseif (j>=43)
+    _vSujetos=_vSujetos5;
+  endif
   for i=_vSujetos
     for k=_trialIni:_trialFin  % nºtrials x Exp.  TRAICIONAR DADO QUE
       if (todo.(indice(j+1,:))(i)._respuestasEXP(k)==0)
