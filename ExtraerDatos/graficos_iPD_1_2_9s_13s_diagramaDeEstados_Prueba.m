@@ -1,5 +1,9 @@
 %-------------------------------------------------------------------
 %------- Alternar Random - Control ITI - Castigo
+clear all
+close all
+load "iPD_1_2_9s_13s/datosCargadoWorkspace20160423";
+
 indice=["exp00";"exp01";"exp02";"exp03";"exp04";"exp05";
         "exp06";"exp07";"exp08";"exp09";"exp10";"exp11";
         "exp12";"exp13";"exp14";"exp15";"exp16";"exp17";
