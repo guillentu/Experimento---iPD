@@ -1,6 +1,5 @@
 %-------------------------------------------------------------------
-%------- IPD + TFT
-% Analisis de las ultimas 10 sesiones
+%------- IPD + TFT - REVERSION
 clear all
 close all
 load "iPD_1_2_9s_13s/datosCargadoWorkspace20160423";
@@ -108,6 +107,7 @@ controlFallas=zeros(1,_nSujetos);
 auxFallas=1;
 for j=inicio:fin
   if j>48
+    j
   endif
   if j<24
     _vSujetos=_vSujetos1;
@@ -254,19 +254,20 @@ for i=1:_nSujetos
   ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
   primero=ultimo-_ultimosX;
   for v=primero:ultimo % matricesQ borrada arriba
-        Q2(:,:,i)=Q2(:,:,i)+(matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))/length(primero:ultimo));
+        Q2(:,:,i)=Q2(:,:,i)+matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))/11;
   endfor
 endfor
 %     Normalizacion
-%for i=1:_nSujetos
-%  for j=1:4
-%    if sum(Q(j,:,i))!=0
-%      Q2(j,:,i)=Q2(j,:,i)/sum(Q2(j,:,i));
-%    endif
-%  endfor
-%endfor
+for i=1:_nSujetos
+  for j=1:4
+    if sum(Q(j,:,i))!=0
+      Q2(j,:,i)=Q2(j,:,i)/sum(Q2(j,:,i));
+    endif
+  endfor
+endfor
 %-------------------------------------------------------
 
+% VER COMO OBTENER LA MATRIZ DE ESTADO DE MARKOV
 
 T(:,:)=T(:,:)/length(_trialIni:_trialFin);C(:,:)=C(:,:)/length(_trialIni:_trialFin);P(:,:)=P(:,:)/length(_trialIni:_trialFin);S(:,:)=S(:,:)/length(_trialIni:_trialFin);
 % una por una
