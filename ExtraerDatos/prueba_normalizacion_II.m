@@ -70,9 +70,11 @@ datos=zeros(2,fin);
 % Testeo ------------------------------
 %for j=inicio:fin
 %  for i=_vSujetos
-%    todo.(indice(j+1,:))(i)._respuestasEXP=[2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1];
+%    %todo.(indice(j+1,:))(i)._respuestasEXP=[2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1];
+%   todo.(indice(j+1,:))(i)._respuestasEXP=[2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1];
 %    %todo.(indice(j+1,:))(i)._respuestasEXP=[1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2];
-%    todo.(indice(j+1,:))(i)._respuestasOPO=[2 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2];
+%    %todo.(indice(j+1,:))(i)._respuestasOPO=[1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2];
+%    todo.(indice(j+1,:))(i)._respuestasOPO=[2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1];
 %    %todo.(indice(j+1,:))(i)._respuestasOPO=[2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1];
 %  endfor
 %endfor
@@ -221,4 +223,65 @@ Q_antes=matricesQ;
 for i=1:_nSujetos % Ceros para todos
   matricesQ.(indiceSujeto(i,:)) = zeros(4,4); % [T C P S]'                %agregar matrices Q para cada sujeto en estructura
 endfor
+%   Promedio total --------------------------------------
+for i=1:_nSujetos
+  ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
+  primero=ultimo-_ultimosX;
+  for v=primero:ultimo % matricesQ borrada arriba
+        matricesQ.(indiceSujeto(i,:))=matricesQ.(indiceSujeto(i,:))+matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:));
+  endfor
+endfor 
+%     Normalizacion
+for i=1:_nSujetos
+  for j=1:4
+    if sum(matricesQ.(indiceSujeto(i,:))(j,:))!=0
+      Q(j,:,i)=matricesQ.(indiceSujeto(i,:))(j,:)/sum(matricesQ.(indiceSujeto(i,:))(j,:));
+      %Q(j,:,i)=matricesQ.(indiceSujeto(i,:))(j,:);%/sum(matricesQ.(indiceSujeto(i,:))(j,:));
+    endif
+  endfor
+endfor
+%-------------------------------------------------------
+%   Normalización Individual --------------------------
+QxExp_ante=matricesQxExp;
+indQ=[];
+for i=1:_nSujetos
+  for v=1:nfields(matricesQxExp.(indiceSujeto(i,:))) % experimentos
+    for j=1:4 %Estados TRPS
+      if sum(matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))(j,:))!=0
+         matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))(j,:)=matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))(j,:)/sum(matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))(j,:));
+         %matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))(j,:)=matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))(j,:);%/sum(matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))(j,:));
+      endif
+    endfor
+  endfor  
+endfor
+Q2=zeros(4,4,_nSujetos);
+for i=1:_nSujetos
+  ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
+  primero=ultimo-_ultimosX;
+  for v=primero:ultimo % matricesQ borrada arriba
+        Q2(:,:,i)=Q2(:,:,i)+(matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))/length(primero:ultimo));
+        %Q2(:,:,i)=Q2(:,:,i)+(matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:)));%/length(primero:ultimo));
+  endfor
+endfor
+%     Normalizacion
+%for i=1:_nSujetos
+%  for j=1:4
+%    if sum(Q(j,:,i))!=0
+%      Q2(j,:,i)=Q2(j,:,i)/sum(Q2(j,:,i));
+%    endif
+%  endfor
+%endfor
+%-------------------------------------------------------
 
+
+T(:,:)=T(:,:)/length(_trialIni:_trialFin);C(:,:)=C(:,:)/length(_trialIni:_trialFin);P(:,:)=P(:,:)/length(_trialIni:_trialFin);S(:,:)=S(:,:)/length(_trialIni:_trialFin);
+% una por una
+for i=_vSujetos
+  figure();
+  plot([inicio:fin],T(i,:),'--ob',[inicio:fin],C(i,:),'--or',[inicio:fin],P(i,:),'-->k',[inicio:fin],S(i,:),'--.m');
+  xlabel("n de sesiones");
+  ylabel("% Tasa de comportamientos");
+  title(strcat("Estrategias probabilistica en iPD: ",_txtSujetos(i,:)));
+  legend("T=D-C","C=C-C","P=D-D","S=C-D");
+  grid on;
+endfor
