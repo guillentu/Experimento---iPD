@@ -69,15 +69,33 @@ datos=zeros(2,fin);
 
 % Testeo ------------------------------
 %for j=inicio:fin
+%  if j<24
+%    _vSujetos=_vSujetos1;
+%  elseif (j>=24 && j<30)
+%    _vSujetos=_vSujetos2;
+%  elseif (j>=30 && j<32)
+%    _vSujetos=_vSujetos3;
+%  elseif (j>=32 && j<34)
+%    _vSujetos=_vSujetos4;
+%  elseif (j>=34)
+%    _vSujetos=_vSujetos5;
+%  else
+%    _vSujetos=_vSujetosNull;
+%  endif
 %  for i=_vSujetos
 %    %todo.(indice(j+1,:))(i)._respuestasEXP=[2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1];
-%   todo.(indice(j+1,:))(i)._respuestasEXP=[2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1];
+%   %if i==1 && (j==4||j==23)
+%   %todo.(indice(j+1,:))(i)._respuestasEXP=[2 2 2 0 0 2 2 2 2 2 2 2 2 2 2 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1];
+%   %else
+%   todo.(indice(j+1,:))(i)._respuestasEXP=ceil(2*rand(1,31));%[2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1];
+%   %endif
 %    %todo.(indice(j+1,:))(i)._respuestasEXP=[1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2];
 %    %todo.(indice(j+1,:))(i)._respuestasOPO=[1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2];
-%    todo.(indice(j+1,:))(i)._respuestasOPO=[2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1];
+%    todo.(indice(j+1,:))(i)._respuestasOPO=ceil(2*rand(1,31));%[2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1];
 %    %todo.(indice(j+1,:))(i)._respuestasOPO=[2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1];
 %  endfor
 %endfor
+
 %--------------------------------------
 
 indiceSujeto=[];
@@ -126,10 +144,19 @@ for j=inicio:fin
   endif
   for i=_vSujetos
     for k=_trialIni:_trialFin  % nºtrials x Exp.  TRAICIONAR DADO QUE
-      if (todo.(indice(j+1,:))(i)._respuestasEXP(k)==0)
+      if (todo.(indice(j+1,:))(i)._respuestasEXP(k)==0)||(k==2&&controlFallas(i)==1)||(k==3&&controlFallas(i)==2)
         if (k==1)
-          k=3;
           ++controlFallas(i);
+        elseif (k==2)
+         % nada 
+          if (todo.(indice(j+1,:))(i)._respuestasEXP(k)==0)
+            ++controlFallas(i);
+          endif
+        elseif (k==3)
+         % nada
+          if (todo.(indice(j+1,:))(i)._respuestasEXP(k)==0)
+            ++controlFallas(i);
+          endif 
         else
           auxFallas+=1;
           ++controlFallas(i);
