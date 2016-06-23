@@ -253,7 +253,7 @@ endfor
 %   Promedio total --------------------------------------
 for i=1:_nSujetos
   ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
-  primero=ultimo-_ultimosX;
+  primero=ultimo-_ultimosX+1;
   for v=primero:ultimo % matricesQ borrada arriba
         matricesQ.(indiceSujeto(i,:))=matricesQ.(indiceSujeto(i,:))+matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:));
   endfor
@@ -284,7 +284,7 @@ endfor
 Q2=zeros(4,4,_nSujetos);
 for i=1:_nSujetos
   ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
-  primero=ultimo-_ultimosX;
+  primero=ultimo-_ultimosX+1;
   for v=primero:ultimo % matricesQ borrada arriba
         Q2(:,:,i)=Q2(:,:,i)+(matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))/length(primero:ultimo));
         %Q2(:,:,i)=Q2(:,:,i)+(matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:)));%/length(primero:ultimo));
@@ -304,7 +304,7 @@ stdQ=[];
 for i=1:_nSujetos
   aux=[];
   ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
-  primero=ultimo-_ultimosX;
+  primero=ultimo-_ultimosX+1;
   for j=primero:ultimo % experimentos
     aux=[aux;vec(matricesQxExp.(indiceSujeto(i,:)).(indice(j+1,:))')'];
   endfor
@@ -317,17 +317,28 @@ endfor
 
 
 
-T2(:,:)=T(:,:)/length(_trialIni:_trialFin);C2(:,:)=C(:,:)/length(_trialIni:_trialFin);P2(:,:)=P(:,:)/length(_trialIni:_trialFin);S2(:,:)=S(:,:)/length(_trialIni:_trialFin);
-% una por una
+T2(:,:)=T(:,:)/length(_trialIni:_trialFin);R2(:,:)=C(:,:)/length(_trialIni:_trialFin);P2(:,:)=P(:,:)/length(_trialIni:_trialFin);S2(:,:)=S(:,:)/length(_trialIni:_trialFin);
+% Frecuencia de estados - una por una
 for i=1:_nSujetos
   ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
-  primero=ultimo-_ultimosX;
+  primero=ultimo-_ultimosX+1;
   figure()
-  plot([primero:ultimo],T2(i,primero:ultimo),'--ob',[primero:ultimo],C2(i,primero:ultimo),'--or',[primero:ultimo],P2(i,primero:ultimo),'-->k',[primero:ultimo],S2(i,primero:ultimo),'--.m');
-  xlabel("n de sesiones");
-  ylabel("% Tasa de comportamientos");
+  plot([primero:ultimo],T2(i,primero:ultimo),'--ob',[primero:ultimo],R2(i,primero:ultimo),'--or',[primero:ultimo],P2(i,primero:ultimo),'-->k',[primero:ultimo],S2(i,primero:ultimo),'--.m');
+  xlabel(strcat("n de sesiones - Ultimas ",_ultimosX));
+  ylabel("% Proporcion entre estados");
   title(strcat("Estrategias probabilistica en iPD: ",_txtSujetos(i,:)));
-  legend("T=D-C","C=C-C","P=D-D","S=C-D");
+  legend("T=D-C","RC=C-C","P=D-D","S=C-D");
   grid on;
 endfor
+
+% Frecuencia de estados - Promedio de las ultimas sesiones
+T_mean=zeros(_nSujetos);R_mean=zeros(_nSujetos);P_mean=zeros(_nSujetos);S_mean=zeros(_nSujetos);
+T_std=zeros(_nSujetos);R_std=zeros(_nSujetos);P_std=zeros(_nSujetos);S_std=zeros(_nSujetos);
+for i=1:_nSujetos
+  ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
+  primero=ultimo-_ultimosX+1;
+  T_mean(i)=mean(T2(i,primero:ultimo));R_mean(i)=mean(R2(i,primero:ultimo));P_mean(i)=mean(P2(i,primero:ultimo));S_mean(i)=mean(S2(i,primero:ultimo));
+  T_std(i)=std(T2(i,primero:ultimo));R_std(i)=std(R2(i,primero:ultimo));P_std(i)=std(P2(i,primero:ultimo));S_std(i)=std(S2(i,primero:ultimo));
+  plot("T",T_mean(i), "R",R_std(i) ,"P", P_std(i),"S",S_std(i))
+ endfor
 
