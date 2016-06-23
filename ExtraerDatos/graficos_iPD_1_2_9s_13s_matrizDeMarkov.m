@@ -317,14 +317,17 @@ endfor
 
 
 
-T(:,:)=T(:,:)/length(_trialIni:_trialFin);C(:,:)=C(:,:)/length(_trialIni:_trialFin);P(:,:)=P(:,:)/length(_trialIni:_trialFin);S(:,:)=S(:,:)/length(_trialIni:_trialFin);
+T2(:,:)=T(:,:)/length(_trialIni:_trialFin);C2(:,:)=C(:,:)/length(_trialIni:_trialFin);P2(:,:)=P(:,:)/length(_trialIni:_trialFin);S2(:,:)=S(:,:)/length(_trialIni:_trialFin);
 % una por una
-for i=_vSujetos
-  figure();
-  plot([inicio:fin],T(i,:),'--ob',[inicio:fin],C(i,:),'--or',[inicio:fin],P(i,:),'-->k',[inicio:fin],S(i,:),'--.m');
+for i=1:_nSujetos
+  ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
+  primero=ultimo-_ultimosX;
+  figure()
+  plot([primero:ultimo],T2(i,primero:ultimo),'--ob',[primero:ultimo],C2(i,primero:ultimo),'--or',[primero:ultimo],P2(i,primero:ultimo),'-->k',[primero:ultimo],S2(i,primero:ultimo),'--.m');
   xlabel("n de sesiones");
   ylabel("% Tasa de comportamientos");
   title(strcat("Estrategias probabilistica en iPD: ",_txtSujetos(i,:)));
   legend("T=D-C","C=C-C","P=D-D","S=C-D");
   grid on;
 endfor
+

@@ -1,18 +1,13 @@
-stdQ=[];
 
+% HACER:   struct de T R P S para cada sujeto por sesion
 for i=1:_nSujetos
-  aux=[];
   ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
   primero=ultimo-_ultimosX;
-  for j=primero:ultimo % experimentos
-    aux=[aux;vec(matricesQxExp.(indiceSujeto(i,:)).(indice(j+1,:))')'];
-    %reshape(ee,4,4)'
-    %matricesQxExp.(indiceSujeto(i,:)).(indice(j+1,:))
-  endfor
-  v_std=std(aux,0);
-  stdQ.(indiceSujeto(i,:))=reshape(v_std,4,4)';
-  %plot(median(aux(:,6)))
-  %hist (aux(:,6), 15, "facecolor", "r", "edgecolor", "b");
+  figure()
+  plot([primero:ultimo],T(i,primero:ultimo),'--ob',[primero:ultimo],C(i,primero:ultimo),'--or',[primero:ultimo],P(i,primero:ultimo),'-->k',[primero:ultimo],S(i,primero:ultimo),'--.m');
+  xlabel("n de sesiones");
+  ylabel("% Tasa de comportamientos");
+  title(strcat("Estrategias probabilistica en iPD: ",_txtSujetos(i,:)));
+  legend("T=D-C","C=C-C","P=D-D","S=C-D");
+  grid on;
 endfor
-%matricesQxExp.Q01.
-%std (x) = sqrt ( 1/(N-1) SUM_i (x(i) - mean(x))^2 )
