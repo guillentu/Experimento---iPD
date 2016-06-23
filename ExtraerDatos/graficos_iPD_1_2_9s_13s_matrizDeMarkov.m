@@ -299,6 +299,22 @@ endfor
 %  endfor
 %endfor
 %-------------------------------------------------------
+%--- Desviacion estandar de Q---------------------------
+stdQ=[];
+for i=1:_nSujetos
+  aux=[];
+  ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
+  primero=ultimo-_ultimosX;
+  for j=primero:ultimo % experimentos
+    aux=[aux;vec(matricesQxExp.(indiceSujeto(i,:)).(indice(j+1,:))')'];
+  endfor
+  v_std=std(aux,0);%std (x) = sqrt ( 1/(N-1) SUM_i (x(i) - mean(x))^2 )
+  stdQ.(indiceSujeto(i,:))=reshape(v_std,4,4)';
+  %plot(median(aux(:,6)))
+  %hist (aux(:,6), 15, "facecolor", "r", "edgecolor", "b");
+endfor
+
+
 
 
 T(:,:)=T(:,:)/length(_trialIni:_trialFin);C(:,:)=C(:,:)/length(_trialIni:_trialFin);P(:,:)=P(:,:)/length(_trialIni:_trialFin);S(:,:)=S(:,:)/length(_trialIni:_trialFin);
