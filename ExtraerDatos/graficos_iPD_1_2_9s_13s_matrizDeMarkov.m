@@ -340,5 +340,6 @@ for i=1:_nSujetos
   T_mean(i)=mean(T2(i,primero:ultimo));R_mean(i)=mean(R2(i,primero:ultimo));P_mean(i)=mean(P2(i,primero:ultimo));S_mean(i)=mean(S2(i,primero:ultimo));
   T_std(i)=std(T2(i,primero:ultimo));R_std(i)=std(R2(i,primero:ultimo));P_std(i)=std(P2(i,primero:ultimo));S_std(i)=std(S2(i,primero:ultimo));
   plot("T",T_mean(i), "R",R_std(i) ,"P", P_std(i),"S",S_std(i))
+  errorbar()
  endfor
 
