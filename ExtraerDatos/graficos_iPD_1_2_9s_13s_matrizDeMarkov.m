@@ -327,19 +327,36 @@ for i=1:_nSujetos
   xlabel(strcat("n de sesiones - Ultimas ",_ultimosX));
   ylabel("% Proporcion entre estados");
   title(strcat("Estrategias probabilistica en iPD: ",_txtSujetos(i,:)));
-  legend("T=D-C","RC=C-C","P=D-D","S=C-D");
+  legend("T=D-C","R=C-C","P=D-D","S=C-D");
   grid on;
 endfor
 
 % Frecuencia de estados - Promedio de las ultimas sesiones
 T_mean=zeros(_nSujetos);R_mean=zeros(_nSujetos);P_mean=zeros(_nSujetos);S_mean=zeros(_nSujetos);
+T_median=zeros(_nSujetos);R_median=zeros(_nSujetos);P_median=zeros(_nSujetos);S_median=zeros(_nSujetos);
 T_std=zeros(_nSujetos);R_std=zeros(_nSujetos);P_std=zeros(_nSujetos);S_std=zeros(_nSujetos);
 for i=1:_nSujetos
   ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
   primero=ultimo-_ultimosX+1;
   T_mean(i)=mean(T2(i,primero:ultimo));R_mean(i)=mean(R2(i,primero:ultimo));P_mean(i)=mean(P2(i,primero:ultimo));S_mean(i)=mean(S2(i,primero:ultimo));
+  T_median(i)=median(T2(i,primero:ultimo));R_median(i)=median(R2(i,primero:ultimo));P_median(i)=median(P2(i,primero:ultimo));S_median(i)=median(S2(i,primero:ultimo));
   T_std(i)=std(T2(i,primero:ultimo));R_std(i)=std(R2(i,primero:ultimo));P_std(i)=std(P2(i,primero:ultimo));S_std(i)=std(S2(i,primero:ultimo));
-  plot("T",T_mean(i), "R",R_std(i) ,"P", P_std(i),"S",S_std(i))
-  errorbar()
+  figure;
+  %plot(1,T_mean(i), 2,R_mean(i) ,3, P_mean(i),4,S_mean(i));
+  h=errorbar(1,T_mean(i), T_std(i),'*r', 2,R_mean(i),R_std(i),'*b', 3,P_mean(i), P_std(i),'*m', 4,S_mean(i), S_std(i),'*c');
+  set (h, "linewidth", 3);
+  xlabel("Estados");
+  ylabel("% incidencia");
+  title(strcat("Tasa de incidencia para cada estado en iPD: ",_txtSujetos(i,:)));
+  legend("T=D-C","R=C-C","P=D-D","S=C-D");
+  hold on
+  bar(1:4,[T_mean(i),R_mean(i),P_mean(i),S_mean(i)])
+  hold off
  endfor
+
+graficos_iPD_1_2_9s_13s_12Ratas_medias_y_medianas % se obtienen los sujetos que superan el .75 porciento de cooperación
+_sujetosCooperadores=find(_mediaXsujeto>.75);
+
+% promediar las tasas de cooperacion y tasas de estados
+
 
