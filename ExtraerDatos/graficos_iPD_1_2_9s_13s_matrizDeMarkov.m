@@ -355,8 +355,40 @@ for i=1:_nSujetos
  endfor
 
 graficos_iPD_1_2_9s_13s_12Ratas_medias_y_medianas % se obtienen los sujetos que superan el .75 porciento de cooperación
-_sujetosCooperadores=find(_mediaXsujeto>.75);
+_sujetosCooperadores=find(_mediaXsujeto>.75); % indice de sujetos que pasaron el criterios 
 
-% promediar las tasas de cooperacion y tasas de estados
+% promediar las tasas de cooperacion y tasas de estados de los animales que superaron el criterio
 
+_mediaT=mean(T_mean(_sujetosCooperadores));
+_mediaR=mean(R_mean(_sujetosCooperadores));
+_mediaP=mean(P_mean(_sujetosCooperadores));
+_mediaS=mean(S_mean(_sujetosCooperadores));
+_medianaT=mean(T_median(_sujetosCooperadores));
+_medianaR=mean(R_median(_sujetosCooperadores));
+_medianaP=mean(P_median(_sujetosCooperadores));
+_medianaS=mean(S_median(_sujetosCooperadores));
+_stdT=std(T_mean(_sujetosCooperadores));
+_stdR=std(R_mean(_sujetosCooperadores));
+_stdP=std(P_mean(_sujetosCooperadores));
+_stdS=std(S_mean(_sujetosCooperadores));
+
+% test Friedman's Anova (Ho: todas los estados son igualmente probables)
+% asignar rangos a los promedios de cada estado - ranks 
+vals=[(T_mean(_sujetosCooperadores));
+      (R_mean(_sujetosCooperadores));
+      (P_mean(_sujetosCooperadores));
+      (S_mean(_sujetosCooperadores));];
+rangos=ranks(vals,1)';
+        
+rangos_mean=sum(rangos);
+N = length(_sujetosCooperadores); % N numero de sujetos
+k=4% k numero de clases (estados)
+chi_2 = 12/(N*k*(k+1)).*sum(rangos_mean.^2)-3*N*(k+1)
+% chi_2 es evaluado respecto a la distribución estandar chi2 con k-1 grado de libertad
+if chi_2 > 14.860 % si chi_2 > chi2_tabla(alpha=0.005 -> 14.860) (alpha=0.05 -> 9.488)
+se rechaza Ho (hipotesis nula)
+  "Se rechaza la hipotesis nula"
+endif
+
+% Comparaciñon por two tails
 
