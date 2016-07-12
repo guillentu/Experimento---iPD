@@ -372,6 +372,17 @@ _stdR=std(R_mean(_sujetosCooperadores));
 _stdP=std(P_mean(_sujetosCooperadores));
 _stdS=std(S_mean(_sujetosCooperadores));
 
+figure;
+h=errorbar(1,_mediaT, _stdT,'*r', 2,_mediaR,_stdR,'*b', 3,_mediaP, _stdP,'*m', 4,_mediaS, _stdS,'*c');
+set (h, "linewidth", 3);
+xlabel("Estados");
+ylabel("% incidencia promedio");
+title(strcat("Tasa de incidencia promedio para los animales que superaron el criterio del 75%C"));
+legend("T=D-C","R=C-C","P=D-D","S=C-D");
+hold on
+bar(1:4,[_mediaT,_mediaR,_mediaP,_mediaS])
+hold off
+
 % test Friedman's Anova (Ho: todas los estados son igualmente probables)
 % asignar rangos a los promedios de cada estado - ranks 
 vals=[(T_mean(_sujetosCooperadores));
@@ -386,9 +397,22 @@ k=4% k numero de clases (estados)
 chi_2 = 12/(N*k*(k+1)).*sum(rangos_mean.^2)-3*N*(k+1)
 % chi_2 es evaluado respecto a la distribución estandar chi2 con k-1 grado de libertad
 if chi_2 > 14.860 % si chi_2 > chi2_tabla(alpha=0.005 -> 14.860) (alpha=0.05 -> 9.488)
+                  % De una tabla corregida para N=6 CHI2_0.005_3 = 11.400 y CHI2_0.05_3=7.6
 se rechaza Ho (hipotesis nula)
   "Se rechaza la hipotesis nula"
 endif
 
-% Comparaciñon por two tails
+% Comparaciñon por two tails Nemenyi
+q_alpha=2,569; % alpha=0.05 -> 2,569  bonferroni correction alpha=0.05/N -> 2,394 
+               % Bonferroni's adjustment: Lower the 0.05 to 0.0083333 ->  3.9608 http://www.quantitativeskills.com/sisa/calculations/bonfer.htm
+               % table of bonferroni correction
+q_alpha=3.9608;        
+CD=q_alpha*sqrt((k*(k+1))/(6*N));
+dif=[];
+for i=1:4
+  dif(i).diff=find(abs(rangos_mean-rangos_mean(i))>CD);
+end
+
+
+
 
