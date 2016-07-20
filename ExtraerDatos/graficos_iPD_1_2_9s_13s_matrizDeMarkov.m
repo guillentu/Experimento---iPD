@@ -1,40 +1,43 @@
 %-------------------------------------------------------------------
 %------- IPD + TFT
 % Analisis de las ultimas 10 sesiones
-clear all
+%clear all
 close all
-load "iPD_1_2_9s_13s/datosCargadoWorkspace20160423";
 
-indice=["exp00";"exp01";"exp02";"exp03";"exp04";"exp05";
-        "exp06";"exp07";"exp08";"exp09";"exp10";"exp11";
-        "exp12";"exp13";"exp14";"exp15";"exp16";"exp17";
-        "exp18";"exp19";"exp20";"exp21";"exp22";"exp23";
-				"exp24";"exp25";"exp26";"exp27";"exp28";"exp29";
-				"exp30";"exp31";"exp32";"exp33";"exp34";"exp35";
-				"exp36";"exp37";"exp38";"exp39";"exp40";"exp41";
-        "exp42";"exp43";"exp44";"exp45";"exp46";"exp47";
-        "exp48";"exp49";"exp50";"exp51";"exp52";"exp53";
-        "exp54";"exp55";"exp56";"exp57";"exp58"];
-%todo.exp00=exp00;
-todo.exp01=exp01;todo.exp02=exp02;todo.exp03=exp03;todo.exp04=exp04;todo.exp05=exp05;
-todo.exp06=exp06;todo.exp07=exp07;todo.exp08=exp08;todo.exp09=exp09;todo.exp10=exp10;
-todo.exp11=exp11;todo.exp12=exp12;todo.exp13=exp13;todo.exp14=exp14;todo.exp15=exp15;
-todo.exp16=exp16;todo.exp17=exp17;todo.exp18=exp18;todo.exp19=exp19,todo.exp20=exp20;
-todo.exp21=exp21;todo.exp22=exp22;todo.exp23=exp23;todo.exp24=exp24;todo.exp25=exp25;
-todo.exp26=exp26;todo.exp27=exp27;todo.exp28=exp28;todo.exp29=exp29;
-todo.exp30=exp30;todo.exp31=exp31;todo.exp32=exp32;todo.exp33=exp33;
-todo.exp34=exp34;todo.exp35=exp35;
-todo.exp36=exp36;todo.exp37=exp37;
-todo.exp38=exp38;todo.exp39=exp39;
-todo.exp40=exp40;todo.exp41=exp41;
-todo.exp42=exp42;todo.exp43=exp43;
-todo.exp44=exp44;todo.exp45=exp45;
-todo.exp46=exp46;todo.exp47=exp47;
-todo.exp48=exp48;todo.exp49=exp49;
-todo.exp50=exp50;todo.exp51=exp51;%todo.exp=exp;
-todo.exp52=exp52;todo.exp53=exp53;
-todo.exp54=exp54;todo.exp55=exp55;
-todo.exp56=exp56;todo.exp57=exp57;todo.exp58=exp58;
+% load "iPD_1_2_9s_13s/datosCargadoWorkspace20160423";
+
+load "iPD_1_2_9s_13s/datos_modificados_sobre_errores";
+
+%indice=["exp00";"exp01";"exp02";"exp03";"exp04";"exp05";
+%        "exp06";"exp07";"exp08";"exp09";"exp10";"exp11";
+%        "exp12";"exp13";"exp14";"exp15";"exp16";"exp17";
+%        "exp18";"exp19";"exp20";"exp21";"exp22";"exp23";
+%				"exp24";"exp25";"exp26";"exp27";"exp28";"exp29";
+%				"exp30";"exp31";"exp32";"exp33";"exp34";"exp35";
+%				"exp36";"exp37";"exp38";"exp39";"exp40";"exp41";
+%        "exp42";"exp43";"exp44";"exp45";"exp46";"exp47";
+%        "exp48";"exp49";"exp50";"exp51";"exp52";"exp53";
+%        "exp54";"exp55";"exp56";"exp57";"exp58"];
+%%%%%%%%todo.exp00=exp00;
+%todo.exp01=exp01;todo.exp02=exp02;todo.exp03=exp03;todo.exp04=exp04;todo.exp05=exp05;
+%todo.exp06=exp06;todo.exp07=exp07;todo.exp08=exp08;todo.exp09=exp09;todo.exp10=exp10;
+%todo.exp11=exp11;todo.exp12=exp12;todo.exp13=exp13;todo.exp14=exp14;todo.exp15=exp15;
+%todo.exp16=exp16;todo.exp17=exp17;todo.exp18=exp18;todo.exp19=exp19,todo.exp20=exp20;
+%todo.exp21=exp21;todo.exp22=exp22;todo.exp23=exp23;todo.exp24=exp24;todo.exp25=exp25;
+%todo.exp26=exp26;todo.exp27=exp27;todo.exp28=exp28;todo.exp29=exp29;
+%todo.exp30=exp30;todo.exp31=exp31;todo.exp32=exp32;todo.exp33=exp33;
+%todo.exp34=exp34;todo.exp35=exp35;
+%todo.exp36=exp36;todo.exp37=exp37;
+%todo.exp38=exp38;todo.exp39=exp39;
+%todo.exp40=exp40;todo.exp41=exp41;
+%todo.exp42=exp42;todo.exp43=exp43;
+%todo.exp44=exp44;todo.exp45=exp45;
+%todo.exp46=exp46;todo.exp47=exp47;
+%todo.exp48=exp48;todo.exp49=exp49;
+%todo.exp50=exp50;todo.exp51=exp51;%todo.exp=exp;
+%todo.exp52=exp52;todo.exp53=exp53;
+%todo.exp54=exp54;todo.exp55=exp55;
+%todo.exp56=exp56;todo.exp57=exp57;todo.exp58=exp58;
 
 _txtSujetos=["1A";"2A";"3A";"4A";"5A";"6A";"7A";"8A";"9A";"10A";"3B";"4B"];
 
@@ -382,13 +385,73 @@ legend("T=D-C","R=C-C","P=D-D","S=C-D");
 hold on
 bar(1:4,[_mediaT,_mediaR,_mediaP,_mediaS])
 hold off
+% ----------------------------------------------------------------------------------------
+% Test de Kolmogorov smirnov (probar distribución normal entre sujetos cooperadores sobre los mismos estados)
+% si la distribución es normal entre coop en estado R, T, S o P
+vals=[(T_mean(_sujetosCooperadores));
+      (R_mean(_sujetosCooperadores));
+      (P_mean(_sujetosCooperadores));
+      (S_mean(_sujetosCooperadores))];
 
-% test Friedman's Anova (Ho: todas los estados son igualmente probables)
+% Se prueba si la distribución es NORMAL
+c_alpha=.895; % valor por tabla para dist normal con alpha=0.05
+k_n=sqrt(6)-.01+.85/sqrt(6);
+Ho_xEstados=zeros(1,4);
+for i=1:length(vals(:,1)) %estados
+  d_alpha=c_alpha/k_n       % alpha=0.05
+                          %d_alpha =  0.32119 con alpha=0.05 y d_alpha(0.01)=1.035/(sqrt(6)-.01+.85/sqrt(6))=0.37143
+  [pval, ks, d]=kolmogorov_smirnov_test_2(vals(:,i),randn(1,6))
+  %warning: cannot compute correct p-values with ties
+  %pval =  0.44131 ks =  0.86603 d =  0.50000
+  %d<d_alpha Se rechaza la hipotesis nula, la distribución NO es normal
+  if d>d_alpha 
+    Ho_xEstados(i)=1;
+  endif
+endfor
+% Test de Kolmogorov smirnov (probar distribución normal entre estados)
+n=4
+k_n=sqrt(n)-.01+.85/sqrt(n);
+Ho_xSujeto=zeros(1,6);
+for i=1:length(vals(1,:)) %estados
+  d_alpha=c_alpha/k_n       % alpha=0.05
+                          %d_alpha =  0.32119 con alpha=0.05 y d_alpha(0.01)=1.035/(sqrt(6)-.01+.85/sqrt(6))=0.37143
+  [pval, ks, d]=kolmogorov_smirnov_test_2(vals(:,i),randn(1,6))
+  %warning: cannot compute correct p-values with ties
+  %pval =  0.44131 ks =  0.86603 d =  0.50000
+  %d<d_alpha Se rechaza la hipotesis nula, la distribución NO es normal
+  if d>d_alpha 
+    Ho_xSujeto(i)=1;
+  endif
+endfor
+% ----------------------------------------------------------------------------------------------
+% Prueba de homocedasticidad de Bartlett
+_vBartlett=zeros(_nSujetos,5);
+for i=1:_nSujetos
+  ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
+  primero=ultimo-_ultimosX+1;
+
+  [a b c]=bartlett_test(T2(i,primero:ultimo),R2(i,primero:ultimo),P2(i,primero:ultimo),S2(i,primero:ultimo));
+  _vBartlett(i,1:3)=[a b c];
+  chi2_00125_bonferroni=13.277;
+  if chi2_00125_bonferroni<_vBartlett(i,2)
+    _vBartlett(i,4)=1; 
+  endif
+  _vBartlett(i,5)=i;
+endfor
+% --------------------------------------------------------------------------------
+
+% Test Friedman's Anova (Ho: todas los estados son igualmente probables)
 % asignar rangos a los promedios de cada estado - ranks 
 vals=[(T_mean(_sujetosCooperadores));
       (R_mean(_sujetosCooperadores));
       (P_mean(_sujetosCooperadores));
-      (S_mean(_sujetosCooperadores));];
+      (S_mean(_sujetosCooperadores))];
+           
+vals_std=[(T_std(_sujetosCooperadores));
+          (R_std(_sujetosCooperadores));
+          (P_std(_sujetosCooperadores));
+          (S_std(_sujetosCooperadores))];
+      
 rangos=ranks(vals,1)';
         
 rangos_mean=sum(rangos);
@@ -398,11 +461,11 @@ chi_2 = 12/(N*k*(k+1)).*sum(rangos_mean.^2)-3*N*(k+1)
 % chi_2 es evaluado respecto a la distribución estandar chi2 con k-1 grado de libertad
 if chi_2 > 14.860 % si chi_2 > chi2_tabla(alpha=0.005 -> 14.860) (alpha=0.05 -> 9.488)
                   % De una tabla corregida para N=6 CHI2_0.005_3 = 11.400 y CHI2_0.05_3=7.6
-se rechaza Ho (hipotesis nula)
+  %se rechaza Ho (hipotesis nula)
   "Se rechaza la hipotesis nula"
 endif
 
-% Comparaciñon por two tails Nemenyi
+% Comparaciñon por Ttwo Tails Nemenyi
 q_alpha=2,569; % alpha=0.05 -> 2,569  bonferroni correction alpha=0.05/N -> 2,394 
                % Bonferroni's adjustment: Lower the 0.05 to 0.0083333 ->  3.9608 http://www.quantitativeskills.com/sisa/calculations/bonfer.htm
                % table of bonferroni correction
@@ -413,6 +476,56 @@ for i=1:4
   dif(i).diff=find(abs(rangos_mean-rangos_mean(i))>CD);
 end
 
+% Test de bondad de ajuste respecto de la Ho poblacion de preferencia uniforme 
+% Se utiliza la distribucion chi 2 para comparar los valores criticos 
+% se testea la desviación de las probabilidad de transición dada cada estado respecto a un ditribucion uniforme
+% REQUIERE LAS PROB de COOPERAR DADO LOS DIFERENTES ESTADOS
 
+% Se testea que las probabilidades indiciduales sobre cada sujeto es diferente del azar
+% Prob. P(c|T) -> teorica = 0.5. La matriz Q() tiene todas las matricesde de markov
+% Entre sujetos Cooperadores
+frec_teo= 0.5;
+aa=(Q(:,2,_sujetosCooperadores)-frec_teo).^2./frec_teo;
+chi_2_coop = sum(aa,3);
+pasan_coop=
+%    todos
+aa=(Q(:,2,:)-frec_teo).^2./frec_teo;
+chi_2_todos = sum(aa,3);% suma sobre la dimensión 3 = 12 
 
+% ERRORES en matriz
+% fila T 
+err= [];
+for j=1:_nSujetos
+  for i=1:nfields(matricesQxExp.(indiceSujeto(j,:)))
+    if length(find(QxExp_ante.(indiceSujeto(j,:)).(indice(i+1,:))(1,1:2)>0))!=0
+      err=[err; j i find(QxExp_ante.(indiceSujeto(j,:)).(indice(i+1,:))(1,1:2)>0) 1]
+    endif
+  endfor
+endfor
+% fila R 
 
+for j=1:_nSujetos
+  for i=1:nfields(matricesQxExp.(indiceSujeto(j,:)))
+    if length(find(QxExp_ante.(indiceSujeto(j,:)).(indice(i+1,:))(2,3:4)>0))!=0
+      err=[err; j i find(QxExp_ante.(indiceSujeto(j,:)).(indice(i+1,:))(2,3:4)>0) 2]
+    endif
+  endfor
+endfor
+% fila P 
+
+for j=1:_nSujetos
+  for i=1:nfields(matricesQxExp.(indiceSujeto(j,:)))
+    if length(find(QxExp_ante.(indiceSujeto(j,:)).(indice(i+1,:))(3,1:2)>0))!=0
+      err=[err; j i find(QxExp_ante.(indiceSujeto(j,:)).(indice(i+1,:))(3,1:2)>0) 3]
+    endif
+  endfor
+endfor
+% fila S 
+
+for j=1:_nSujetos
+  for i=1:nfields(matricesQxExp.(indiceSujeto(j,:)))
+    if length(find(QxExp_ante.(indiceSujeto(j,:)).(indice(i+1,:))(4,3:4)>0))!=0
+      err=[err; j i find(QxExp_ante.(indiceSujeto(j,:)).(indice(i+1,:))(4,3:4)>0) 4]
+    endif
+  endfor
+endfor
