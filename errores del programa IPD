@@ -1,0 +1,46 @@
+todo.exp11(4)._respuestasEXP
+ans = 1   1   1   1   2   1   1   1   1   1   0   1   2   1   1   1   2   2   2   2   2   1   1   2   1   1   2   1   1   1   1
+todo.exp11(4)._respuestasOPO
+ans = 2   1   1   1   1   2   1   1   1   1   2   2   1   2   1   1   1   2   2   2   2   2   1   1   2   1   1   2   1   1   1
+
+todo.exp15(7)._respuestasEXP
+ans = 2   2   2   2   2   2   1   0   1   2   2   2   2   2   1   2   2   2   2   2   1   2   2   1   1   1   2   2   2   2   2
+todo.exp15(7)._respuestasOPO
+ans = 2   2   2   2   2   2   2   2   2   1   2   2   2   2   2   1   2   2   2   2   2   1   2   2   1   1   1   2   2   2   2
+
+todo.exp25(8)._respuestasEXP
+ans = 2   0   1   2   2   2   2   1   2   2   1   1   2   2   2   2   1   2   1   1   2   2   2   2   2   2   0   1   2   2   2
+todo.exp25(8)._respuestasOPO
+ans = 2   2   2   1   2   2   2   2   1   2   2   1   1   2   2   2   2   1   2   1   1   2   2   2   2   2   1   1   1   2   2
+
+todo.exp25(11)._respuestasEXP
+ans = 1   2   2   2   2   2   1   1   1   2   2   1   0   2   2   2   2   1   1   2   1   2   2   2   2   1   2   2   2   2   2
+todo.exp25(11)._respuestasOPO
+ans = 2   1   2   2   2   2   2   1   1   1   2   2   2   2   2   2   2   2   1   1   2   1   2   2   2   2   1   2   2   2   2
+
+todo.exp13(11)._respuestasEXP
+ans = 2   2   1   1   2   2   1   2   2   2   1   1   2   1   1   2   2   2   2   2   1   1   1   2   2   1   2   2   0   1   1
+todo.exp13(11)._respuestasOPO
+ans = 2   2   2   1   1   2   2   1   2   2   2   1   1   2   1   1   2   2   2   2   2   1   1   1   2   1   2   2   2   2   2
+
+
+todo.exp19(8)._respuestasEXP
+ans = 1   1   2   2   1   1   1   2   1   1   1   1   1   2   2   1   1   1   1   1   1   2   2   0   1   1   1   2   2   1   1
+todo.exp19(8)._respuestasOPO
+ans = 2   1   1   2   2   1   1   1   2   1   1   1   1   1   2   2   1   1   1   1   1   1   2   1   1   1   1   1   2   2   2
+
+todo.exp12(8)._respuestasEXP
+ans = 1   2   1   1   0   1   1   2   2   2   0   1   2   1   1   2   2   2   1   1   2   2   1   1   2   1   2   2   1   1   1
+todo.exp12(8)._respuestasOPO
+ans = 2   1   2   1   2   2   1   1   2   2   2   2   1   2   1   1   2   2   2   1   1   2   2   1   1   2   1   2   2   1   1
+
+todo.exp05(3)._respuestasEXP
+ans = 2   2   2   1   2   1   2   2   2   1   1   1   2   0   2   1   1   1   2   2   2   2   2   2   2   2   2   1   1   1   1
+todo.exp05(3)._respuestasOPO
+ans = 2   2   2   2   1   2   1   2   2   2   1   1   1   1   1   2   1   1   1   2   2   2   2   2   2   2   2   2   1   1   1
+
+todo.exp14(9)._respuestasEXP
+ans = 2   0   2   2   1   1   2   1   2   1   1   2   1   2   0   0   1   2   1   1   0   1   0   2   1   1   0   1   1   1   1
+todo.exp14(9)._respuestasOPO
+ans = 2   2   2   2   2   1   1   2   1   2   1   1   2   1   2   1   1   1   2   1   1   1   1   1   2   1   1   1   1   1   1
+
