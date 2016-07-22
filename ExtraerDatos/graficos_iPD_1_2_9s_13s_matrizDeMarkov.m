@@ -428,7 +428,7 @@ for i=1:length(vals(1,:)) %estados
   endif
 endfor
 % ----------------------------------------------------------------------------------------------
-% Prueba de homocedasticidad de Bartlett
+% Prueba de homocedasticidad de Bartlett  http://www.itl.nist.gov/div898/handbook/eda/section3/eda357.htm
 _vBartlett=zeros(_nSujetos,5);
 for i=1:_nSujetos
   ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
@@ -498,17 +498,19 @@ for j=1:4 %Estados
     endif
   endfor
 endfor
-frec_teo= 0.5;
+_porX=100;
+frec_teo= _porX*0.5
 % P(c|T) prob
 aa=zeros(1,_nSujetos);
 for i=_sujetosCooperadores
-  aa(i)=(frec_obs(1,1,i)-frec_teo).^2./frec_teo;
+  aa(i)=(_pofrec_obs(1,1,i)-frec_teo).^2./frec_teo;
 endfor
 chi_2_coop = sum(aa,3); 
 % El chi2cdf(11.0705,5)=0.95 La funcion da P(X2 < x) inverso a la tabla
 if (1-chi2cdf(chi_2_coop,5))<0.05 % Con correccion de Bonferroni 0.05/5
   pasan(1)=1;
 endif
+
 %    todos
 %aa=(Q(:,2,:)-frec_teo).^2./frec_teo;
 %chi_2_todos = sum(aa,3);% suma sobre la dimensión 3 = 12 
