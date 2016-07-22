@@ -147,19 +147,23 @@ for j=inicio:fin
   endif
   for i=_vSujetos
     for k=_trialIni:_trialFin  % nºtrials x Exp.  TRAICIONAR DADO QUE
-      if (todo.(indice(j+1,:))(i)._respuestasEXP(k)==0)||(k==2&&controlFallas(i)==1)||(k==3&&controlFallas(i)==2)
+      if ((todo.(indice(j+1,:))(i)._respuestasEXP(k)==0)||(todo.(indice(j+1,:))(i)._respuestasOPO(k)==0))
         if (k==1)
-          ++controlFallas(i);
-        elseif (k==2)
-         % nada 
-          if (todo.(indice(j+1,:))(i)._respuestasEXP(k)==0)
-            ++controlFallas(i);
+          ++controlFallas(i);%%%
+        elseif (k==2) 
+          if (todo.(indice(j+1,:))(i)._respuestasEXP(k-1)!=0)% k=1 y K=2 son ceros no se cuenta una falla auxiluar
+            auxFallas+=1;  
           endif
+          ++controlFallas(i);%%%
         elseif (k==3)
-         % nada
-          if (todo.(indice(j+1,:))(i)._respuestasEXP(k)==0)
-            ++controlFallas(i);
-          endif 
+          if (todo.(indice(j+1,:))(i)._respuestasEXP(k-2)==0)&&(todo.(indice(j+1,:))(i)._respuestasEXP(k-1)==0)
+            % nada
+          elseif (todo.(indice(j+1,:))(i)._respuestasEXP(k-1)!=0)
+            auxFallas+=1;
+          else
+            a="MIERDA!!!"
+          endif
+          ++controlFallas(i);%%%
         else
           auxFallas+=1;
           ++controlFallas(i);
@@ -476,21 +480,38 @@ for i=1:4
   dif(i).diff=find(abs(rangos_mean-rangos_mean(i))>CD);
 end
 
-% Test de bondad de ajuste respecto de la Ho poblacion de preferencia uniforme 
+% Test de bondad de ajuste respecto de la Ho (poblacion de preferencia uniforme) 
 % Se utiliza la distribucion chi 2 para comparar los valores criticos 
-% se testea la desviación de las probabilidad de transición dada cada estado respecto a un ditribucion uniforme
+% se testea la desviación de las probabilidad de eleccion dado un estado respecto a un ditribucion uniforme
 % REQUIERE LAS PROB de COOPERAR DADO LOS DIFERENTES ESTADOS
-
+probCoopDadoEstadosPrimeroUltimo;
 % Se testea que las probabilidades indiciduales sobre cada sujeto es diferente del azar
-% Prob. P(c|T) -> teorica = 0.5. La matriz Q() tiene todas las matricesde de markov
+% Prob. P(c|T) -> teorica = 0.5. 
 % Entre sujetos Cooperadores
+
+pasan=zeros(1,4);
+frec_obs=zeros(4,2,_nSujetos);
+for j=1:4 %Estados
+  for i=1:_nSujetos
+    if sum(probTotalN(j,:,i))!=0
+      frec_obs(j,:,i)=probTotalN(j,:,i)./sum(probTotalN(j,:,i));
+    endif
+  endfor
+endfor
 frec_teo= 0.5;
-aa=(Q(:,2,_sujetosCooperadores)-frec_teo).^2./frec_teo;
-chi_2_coop = sum(aa,3);
-pasan_coop=
+% P(c|T) prob
+aa=zeros(1,_nSujetos);
+for i=_sujetosCooperadores
+  aa(i)=(frec_obs(1,1,i)-frec_teo).^2./frec_teo;
+endfor
+chi_2_coop = sum(aa,3); 
+% El chi2cdf(11.0705,5)=0.95 La funcion da P(X2 < x) inverso a la tabla
+if (1-chi2cdf(chi_2_coop,5))<0.05 % Con correccion de Bonferroni 0.05/5
+  pasan(1)=1;
+endif
 %    todos
-aa=(Q(:,2,:)-frec_teo).^2./frec_teo;
-chi_2_todos = sum(aa,3);% suma sobre la dimensión 3 = 12 
+%aa=(Q(:,2,:)-frec_teo).^2./frec_teo;
+%chi_2_todos = sum(aa,3);% suma sobre la dimensión 3 = 12 
 
 % ERRORES en matriz
 % fila T 

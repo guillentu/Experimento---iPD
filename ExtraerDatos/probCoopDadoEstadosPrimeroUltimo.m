@@ -9,30 +9,18 @@ P=zeros(_nSujetos,length(inicio:fin));S=zeros(_nSujetos,length(inicio:fin));
 probxExp=[];
 probAux=[];
 fallasxExp=[];
-Q = zeros(4,4); % [T C P S]'                %agregar matrices Q para cada sujeto en estructura
-%matricesQ.Q1=[];matricesQ.Q2=[];matricesQ.Q3=[];matricesQ.Q4=[];matricesQ.Q5=[];matricesQ.Q6=[];matricesQ.Q7=[];matricesQ.Q8=[];matricesQ.Q9=[];matricesQ.Q10=[];matricesQ.Q11=[];matricesQ.Q12=[];
 for i=1:_nSujetos
   probTotal.(indiceSujeto(i,:)) = zeros(4,2); % [T C P S]'                %agregar matrices Q para cada sujeto en estructura
-  probAux.(indiceSujeto(i,:)) = zeros(4,4);
+  probAux.(indiceSujeto(i,:)) = zeros(4,2);
 endfor
 
 controlFallas=zeros(1,_nSujetos);
 auxFallas=1;
-for j=inicio:fin
-  if j<24
-    _vSujetos=_vSujetos1;
-  elseif (j>=24 && j<30)
-    _vSujetos=_vSujetos2;
-  elseif (j>=30 && j<32)
-    _vSujetos=_vSujetos3;
-  elseif (j>=32 && j<34)
-    _vSujetos=_vSujetos4;
-  elseif (j>=34)
-    _vSujetos=_vSujetos5;
-  else
-    _vSujetos=_vSujetosNull;
-  endif
-  for i=_vSujetos
+_ultimosX=10;
+for i=1:_nSujetos
+  ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
+  primero=ultimo-_ultimosX+1;
+  for j=primero:ultimo
     for k=_trialIni:_trialFin  % nºtrials x Exp. 
       if ((todo.(indice(j+1,:))(i)._respuestasEXP(k)==0)||(todo.(indice(j+1,:))(i)._respuestasOPO(k)==0))
         if (k==1)
@@ -113,9 +101,9 @@ endfor
 % Transformando probabilidades de eleccion al intervalo [0,1] 
 % promediando las ultimas 10 sesiones por sujetos
 probxExpTotalN=zeros(4,2,_nSujetos);
-_ultimosX=10;
+
 for i=1:_nSujetos
-  ultimo=nfields(probxExp.(indiceSujeto(i,:)));
+  ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
   primero=ultimo-_ultimosX+1;
   for j=primero:ultimo
     probxExpN.(indiceSujeto(i,:)).(indice(j+1,:))=probxExp.(indiceSujeto(i,:)).(indice(j+1,:))/sum(sum(probxExp.(indiceSujeto(i,:)).(indice(j+1,:))));
@@ -124,17 +112,11 @@ for i=1:_nSujetos
 endfor
 
 for i=1:_nSujetos
-  probxExpTotalN(:,:,i)=probxExpTotalN(:,:,i)./length(primero:ultimon);
-  endfor
+  probxExpTotalN(:,:,i)=probxExpTotalN(:,:,i)./length(primero:ultimo);
 endfor
 
 % transformar frecuencias de elecion total del exp 
+probTotalN=zeros(4,2,_nSujetos);
 for i=1:_nSujetos
-  probxExpTotalN(:,:,i)=probxExpTotalN(:,:,i)./nfields(probxExp.(indiceSujeto(i,:)))
-  endfor
+  probTotalN(:,:,i)=probTotal.(indiceSujeto(i,:))/sum(sum(probTotal.(indiceSujeto(i,:))));
 endfor
-
-
-
-
-
