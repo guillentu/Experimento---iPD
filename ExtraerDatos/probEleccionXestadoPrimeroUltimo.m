@@ -11,7 +11,7 @@ probAux=[];
 fallasxExp=[];
 for i=1:_nSujetos
   probTotal.(indiceSujeto(i,:)) = zeros(4,2); % [T C P S]'                %agregar matrices Q para cada sujeto en estructura
-  probAux.(indiceSujeto(i,:)) = zeros(4,2);
+  probAux = zeros(4,2);
 endfor
 
 controlFallas=zeros(1,_nSujetos);
@@ -47,16 +47,16 @@ for i=1:_nSujetos
         if (k>1) 
           if (todo.(indice(j+1,:))(i)._respuestasEXP(k-auxFallas)==1)&&(todo.(indice(j+1,:))(i)._respuestasOPO(k-auxFallas)==2)%que Traiciono (imposible x TFT)%
             ++probTotal.(indiceSujeto(i,:))(1,1);
-            ++probAux.(indiceSujeto(i,:))(1,1); 
+            ++probAux(1,1); 
           elseif (todo.(indice(j+1,:))(i)._respuestasEXP(k-auxFallas)==2)&&(todo.(indice(j+1,:))(i)._respuestasOPO(k-auxFallas)==2) %Cooperacion mutua%
             ++probTotal.(indiceSujeto(i,:))(2,1);
-            ++probAux.(indiceSujeto(i,:))(2,1); 
+            ++probAux(2,1); 
           elseif (todo.(indice(j+1,:))(i)._respuestasEXP(k-auxFallas)==1)&&(todo.(indice(j+1,:))(i)._respuestasOPO(k-auxFallas)=1) %Nocooperacion mutua %
             ++probTotal.(indiceSujeto(i,:))(3,1);
-            ++probAux.(indiceSujeto(i,:))(3,1);
+            ++probAux(3,1);
           elseif (todo.(indice(j+1,:))(i)._respuestasEXP(k-auxFallas)==2)&&(todo.(indice(j+1,:))(i)._respuestasOPO(k-auxFallas)==1)%fue estafado%
             ++probTotal.(indiceSujeto(i,:))(4,1);
-            ++probAux.(indiceSujeto(i,:))(4,1);
+            ++probAux(4,1);
           else
             a="COOP ????" 
             i
@@ -69,16 +69,16 @@ for i=1:_nSujetos
         if (k>1) 
           if (todo.(indice(j+1,:))(i)._respuestasEXP(k-auxFallas)==1)&&(todo.(indice(j+1,:))(i)._respuestasOPO(k-auxFallas)==2)%que Traiciono (imposible x TFT)%
             ++probTotal.(indiceSujeto(i,:))(1,2); 
-            ++probAux.(indiceSujeto(i,:))(1,2);
+            ++probAux(1,2);
           elseif (todo.(indice(j+1,:))(i)._respuestasEXP(k-auxFallas)==2)&&(todo.(indice(j+1,:))(i)._respuestasOPO(k-auxFallas)==2) %Cooperacion mutua%
             ++probTotal.(indiceSujeto(i,:))(2,2);
-            ++probAux.(indiceSujeto(i,:))(2,2);
+            ++probAux(2,2);
           elseif (todo.(indice(j+1,:))(i)._respuestasEXP(k-auxFallas)==1)&&(todo.(indice(j+1,:))(i)._respuestasOPO(k-auxFallas)=1)%Nocooperacion mutua %
             ++probTotal.(indiceSujeto(i,:))(3,2);
-            ++probAux.(indiceSujeto(i,:))(3,2);
+            ++probAux(3,2);
           elseif (todo.(indice(j+1,:))(i)._respuestasEXP(k-auxFallas)==2)&&(todo.(indice(j+1,:))(i)._respuestasOPO(k-auxFallas)==1)%fue estafado%
             ++probTotal.(indiceSujeto(i,:))(4,2);
-            ++probAux.(indiceSujeto(i,:))(4,2); 
+            ++probAux(4,2); 
           else
             a="NO coop ????"
             i
@@ -90,24 +90,24 @@ for i=1:_nSujetos
       endif
     endfor
     auxFallas=1;
-    probxExp.(indiceSujeto(i,:)).(indice(j+1,:))=probAux.(indiceSujeto(i,:));
+    probxExp.(indiceSujeto(i,:)).(indice(j+1,:))=probAux;
+    probAux =zeros(4,2);
     fallasxExp.(indiceSujeto(i,:)).(indice(j+1,:))=controlFallas(i);
   endfor
-  for i=1:_nSujetos
-    probAux.(indiceSujeto(i,:)) = zeros(4,2);
-  endfor
+  
 endfor
 
 % Transformando probabilidades de eleccion al intervalo [0,1] 
 % promediando las ultimas 10 sesiones por sujetos
 probxExpTotalN=zeros(4,2,_nSujetos);
-
+probxExpTotal=zeros(4,2,_nSujetos)
 for i=1:_nSujetos
   ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
   primero=ultimo-_ultimosX+1;
   for j=primero:ultimo
     probxExpN.(indiceSujeto(i,:)).(indice(j+1,:))=probxExp.(indiceSujeto(i,:)).(indice(j+1,:))/sum(sum(probxExp.(indiceSujeto(i,:)).(indice(j+1,:))));
     probxExpTotalN(:,:,i)=probxExpTotalN(:,:,i)+probxExpN.(indiceSujeto(i,:)).(indice(j+1,:));
+    probxExpTotal(:,:,i)=probxExpTotal(:,:,i)+probxExp.(indiceSujeto(i,:)).(indice(j+1,:));
   endfor
 endfor
 
