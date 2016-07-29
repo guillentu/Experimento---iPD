@@ -92,7 +92,7 @@ ylabel("% de palanca C");
 title("Media - Porcentaje de eleccion de palanca Cooperar");
 hold on
 bar([1:12],_mediaXsujeto);
-h2=plot([1:12],0.75*ones(1,12),'--r');
+h2=plot([1:12],_criterio*ones(1,12),'--r');
 set (h2, "linewidth", 3);
 plot([1:12],.5*ones(1,12),'--k');
 hold off
@@ -105,7 +105,7 @@ ylabel("% de palanca C");
 title("Mediana - Porcentaje de eleccion de palanca Cooperar");
 hold on
 bar([1:12],_medianaXsujeto);
-h2=plot([1:12],0.75*ones(1,12),'--r');
+h2=plot([1:12],_criterio*ones(1,12),'--r');
 set (h2, "linewidth", 3);
 plot([1:12],.5*ones(1,12),'--k');
 hold off

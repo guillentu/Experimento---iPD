@@ -16,7 +16,7 @@ endfor
 
 controlFallas=zeros(1,_nSujetos);
 auxFallas=1;
-_ultimosX=10;
+%_ultimosX=10;
 for i=1:_nSujetos
   ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
   primero=ultimo-_ultimosX+1;
@@ -100,12 +100,12 @@ endfor
 % Transformando probabilidades de eleccion al intervalo [0,1] 
 % promediando las ultimas 10 sesiones por sujetos
 probxExpTotalN=zeros(4,2,_nSujetos);
-probxExpTotal=zeros(4,2,_nSujetos)
+probxExpTotal=zeros(4,2,_nSujetos);
 for i=1:_nSujetos
   ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
   primero=ultimo-_ultimosX+1;
   for j=primero:ultimo
-    probxExpN.(indiceSujeto(i,:)).(indice(j+1,:))=probxExp.(indiceSujeto(i,:)).(indice(j+1,:))/sum(sum(probxExp.(indiceSujeto(i,:)).(indice(j+1,:))));
+    probxExpN.(indiceSujeto(i,:)).(indice(j+1,:))=probxExp.(indiceSujeto(i,:)).(indice(j+1,:))./sum(probxExp.(indiceSujeto(i,:)).(indice(j+1,:)));
     probxExpTotalN(:,:,i)=probxExpTotalN(:,:,i)+probxExpN.(indiceSujeto(i,:)).(indice(j+1,:));
     probxExpTotal(:,:,i)=probxExpTotal(:,:,i)+probxExp.(indiceSujeto(i,:)).(indice(j+1,:));
   endfor
@@ -120,3 +120,14 @@ probTotalN=zeros(4,2,_nSujetos);
 for i=1:_nSujetos
   probTotalN(:,:,i)=probTotal.(indiceSujeto(i,:))/sum(sum(probTotal.(indiceSujeto(i,:))));
 endfor
+
+% Prob de ellcion dado un determinado estado. P(c|T) P(c|R) P(c|S) P(c|P)
+probEleccion=zeros(size(probxExpTotal));
+for i=1:_nSujetos
+  for j=1:4
+    if sum(probxExpTotal(j,:,i),2)!=0
+      probEleccion(j,:,i)=probxExpTotal(j,:,i)./sum(probxExpTotal(j,:,i),2);
+    endif
+  endfor
+endfor
+
