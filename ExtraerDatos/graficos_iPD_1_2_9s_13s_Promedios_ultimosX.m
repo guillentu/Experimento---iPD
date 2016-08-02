@@ -68,6 +68,8 @@ datos=zeros(2,fin);
 %endfor
 %--------------------------------------
 
+% 
+
 % se promedia solo los que siguen con IPD
 for j=inicio:fin
   _coop=zeros(1,_nSujetos);
