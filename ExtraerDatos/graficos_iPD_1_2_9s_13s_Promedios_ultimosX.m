@@ -71,79 +71,106 @@ datos=zeros(2,fin);
 % 
 
 % se promedia solo los que siguen con IPD
+
+indiceSujeto=["Q01";"Q02";"Q03";"Q04";"Q05";"Q06";"Q07";"Q08";"Q09";"Q10";"Q11";"Q12"];
+_colores=["--+k";"--om";"--*g";"--.r";"--xb";"--sc";"--^m";"--vg";"-->b";"--<c";"--pr";"--hr"];
+
+expXsuj=zeros(1,_nSujetos);
+for j=inicio:(nfields(todo)-8)
+  for i=1:length(todo.(indice(j+1,:)))
+    if length(todo.(indice(j+1,:))(i)._groupStr)!=0
+      expXsuj(i)++;
+    endif
+  endfor
+endfor
+% Estructura de datos por sujeto
+%_sujetos=[];
+%for i=1:_nSujetos
+%  _sujetos.(indiceSujetos(i,:))=[];
+%endfor
+_sujetos=[];
+for j=inicio:(nfields(todo)-8)
+  for i=1:_nSujetos
+    if expXsuj(i)>=j
+      _sujetos.(indiceSujeto(i,:)).(indice(j+1,:))=todo.(indice(j+1,:))(i);
+    endif
+  endfor
+endfor
+
+
+% se promedia solo los que siguen con IPD
+_cooperacion=[];
+_nada=[];
 for j=inicio:fin
   _coop=zeros(1,_nSujetos);
-  _nadaAux=zeros(1,_nSujetos);
-  if j<24
-    _vSujetos=_vSujetos1;
-  elseif (j>=24 && j<30)
-    _vSujetos=_vSujetos2;
-  elseif (j>=30 && j<32)
-    _vSujetos=_vSujetos3;
-  elseif (j>=32 && j<34)
-    _vSujetos=_vSujetos4;
-  elseif (j>=34)
-    _vSujetos=_vSujetos5;
-  endif
-  for i=_vSujetos
-    _coop(i)=length(find(todo.(indice(j+1,:))(i)._respuestasEXP(_trialIni:_trialFin)==2));
+  _nadaAux=zeros(1,_nSujetos); 
+  for i=1:_nSujetos
+    if expXsuj(i)>=j
+      _coop(i)=length(find(todo.(indice(j+1,:))(i)._respuestasEXP(_trialIni:_trialFin)==2));
+    endif
   endfor
   _cooperacion=[_cooperacion; _coop];
   for i=_vSujetos
-    _nadaAux(i)=length(find(todo.(indice(j+1,:))(i)._respuestasEXP(_trialIni:_trialFin)==0));
+    if expXsuj(i)>=j
+      _nadaAux(i)=length(find(todo.(indice(j+1,:))(i)._respuestasEXP(_trialIni:_trialFin)==0));
+    endif
   endfor
   _nada=[_nada; _nadaAux];
 endfor
 
-%_cooperacion=_cooperacion';
+_criterio=.65;
+graficos_iPD_1_2_9s_13s_12Ratas_medias_y_medianas % se obtienen los sujetos que superan el .75 porciento de cooperación
+_sujetosCooperadores=find(_mediaXsujeto>_criterio); % indice de sujetos que pasaron el criterios 
+_sujetosNocooperadores=complemento(_sujetosCooperadores,_nSujetos); % Obtiene los indices de los no coop
+
 _trialsOK=30*ones(length([inicio:fin]),_nSujetos);
 _promediosC=zeros(length([inicio:fin]),_nSujetos);
-%for i=1:_vSujetos
-%  _promediosC(i,:)=_cooperacion(i,:)./(_trialsOK-_nada)(i,:);
-%endfor
 
 _promediosC=_cooperacion./(_trialsOK-_nada);
-
+%sum(_nada(:,_sujetosCooperadores),1)
 _media=sum(_promediosC');%/_nSujetos; % CHEQUEAR MEDIA con menos sujetos
+
 inicioAux=inicio;
 finAux=fin;
 for j=inicio:fin
-  if j<24
-    _vSujetos=_vSujetos1;  
-  elseif (j>=24 && j<30)
-    _vSujetos=_vSujetos2;
-  elseif (j>=30 && j<32)
-    _vSujetos=_vSujetos3;
-  elseif (j>=32 && j<34)
-    _vSujetos=_vSujetos4;
-  elseif (j>=34)
-    _vSujetos=_vSujetos5;
-  endif
-  _media(j)=_media(j)/length(_vSujetos);
+  _media(j)=_media(j)/length(find(expXsuj>=j));
 endfor
+
+
 inicioAux=inicio;
 finAux=fin;
 % PLOT sujeto uno x uno
-for i=1:_nSujetos
-  if i==1||i==3||i==4||i==5||i==7||i==12
-    finAux=23;
-  elseif i==10
-    finAux=29;
-  elseif i==6||i==9
-    finAux=31;
-  elseif i==2||i==11
-    finAux=33;
-  elseif i==8
-    finAux=fin;
-  endif
-  
-  figure()
-  plot([inicioAux:finAux],_promediosC(inicioAux:finAux,i),'--ok');
+figure();hold on;
+for i=_sujetosCooperadores%1:_nSujetos
+  inicioAux=expXsuj(i)-_ultimosX+1;
+  finAux=expXsuj(i);
+  h=plot([inicioAux:finAux],_promediosC(inicioAux:finAux,i),_colores(i,:));
+  set(h, "linewidth", 2);
   xlabel("n de sesiones");
   ylabel("% de cooperacion");
-  title("Cooperacion en iPD");
-  legend(_txtSujetos(i,:));
+  title("Cooperacion en iPD en sujetos que alcanzaron Criterio");
+  
   grid on;
 endfor
+legend(_txtSujetos(_sujetosCooperadores,:),4);
+
+figure();hold on;
+for i=_sujetosNocooperadores%1:_nSujetos
+  inicioAux=expXsuj(i)-_ultimosX+1;
+  finAux=expXsuj(i);
+  h=plot([inicioAux:finAux],_promediosC(inicioAux:finAux,i),_colores(i,:));
+  set(h, "linewidth", 2);
+  xlabel("n de sesiones");
+  ylabel("% de cooperacion");
+  title("Cooperacion en iPDen Sujetos que No alcanzaron Criterio");
+  
+  grid on;
+endfor
+legend(_txtSujetos(_sujetosNocooperadores,:),4);
+
+
+% Kluskal-Wallis ANOVA one-way a lo largo de un juego (ultimas 10sesiones) entre los promedios de cooperacion 
+
+_proporcionC=30*_cooperacion./(_trialsOK-_nada)
 
 

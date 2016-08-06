@@ -391,7 +391,7 @@ hold on
 bar(1:4,[_mediaT,_mediaR,_mediaP,_mediaS])
 hold off
 % ----------------------------------------------------------------------------------------
-% Test de Kolmogorov smirnov (probar distribución normal entre sujetos cooperadores sobre los mismos estados)
+% Test de Kolmogorov smirnov (probar distribución normal entre sujetos cooperadores sobre los MISMO ESTADO)
 % si la distribución es normal entre coop en estado R, T, S o P
 vals=[(T_mean(_sujetosCooperadores));
       (R_mean(_sujetosCooperadores));
@@ -408,12 +408,12 @@ for i=1:length(vals(:,1)) %estados
   [pval, ks, d]=kolmogorov_smirnov_test_2(vals(:,i),randn(1,6))
   %warning: cannot compute correct p-values with ties
   %pval =  0.44131 ks =  0.86603 d =  0.50000
-  %d<d_alpha Se rechaza la hipotesis nula, la distribución NO es normal
+  %d>d_alpha Se rechaza la hipotesis nula, la distribución NO es normal
   if d>d_alpha 
     Ho_xEstados(i)=1;
   endif
 endfor
-% Test de Kolmogorov smirnov (probar distribución normal entre estados)
+% Test de Kolmogorov smirnov (probar distribución normal ENTRE estados)
 n=4
 k_n=sqrt(n)-.01+.85/sqrt(n);
 Ho_xSujeto=zeros(1,6);
@@ -518,9 +518,7 @@ chi_2_coop = zeros(4,1);% sum(aa([1 2 4],1,_sujetosCooperadores),3)
 for i=1:4
 chi_2_coop(i) = sum(aa(i,1,_sujetosCooperadores(_auxSujCoops.(_estados(i)) ) ) ,3);
 endfor
-%chi_2_coop(2) = sum(aa(2,1,_sujetosCooperadores),3);
-%chi_2_coop(3) = sum(aa(3,1,_sujetosCooperadores([2:4 6])),3); % SALVANDO ESTADOS DONDE NUCA SE REALIZARON ELECCIONES
-%chi_2_coop(4) = sum(aa(4,1,_sujetosCooperadores([1:4 6]))),3);
+
 
 chi_2_coop
 _sujetosNocooperadores=complemento(_sujetosCooperadores,_nSujetos); % Obtiene los indices de los no coop

@@ -232,3 +232,100 @@ for i=1:_nSujetos
   endfor
 endfor
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+indiceSujeto=["Q01";"Q02";"Q03";"Q04";"Q05";"Q06";"Q07";"Q08";"Q09";"Q10";"Q11";"Q12"];
+_colores=["--+k";"--om";"--*g";"--.r";"--xb";"--sc";"--^m";"--vg";"-->b";"--<c";"--pr";"--hr"];
+
+expXsuj=zeros(1,_nSujetos);
+for j=inicio:(nfields(todo)-8)
+  for i=1:length(todo.(indice(j+1,:)))
+    if length(todo.(indice(j+1,:))(i)._groupStr)!=0
+      expXsuj(i)++;
+    endif
+  endfor
+endfor
+% Estructura de datos por sujeto
+%_sujetos=[];
+%for i=1:_nSujetos
+%  _sujetos.(indiceSujetos(i,:))=[];
+%endfor
+_sujetos=[];
+for j=inicio:(nfields(todo)-8)
+  for i=1:_nSujetos
+    if expXsuj(i)>=j
+      _sujetos.(indiceSujeto(i,:)).(indice(j+1,:))=todo.(indice(j+1,:))(i);
+    endif
+  endfor
+endfor
+
+
+% se promedia solo los que siguen con IPD
+_cooperacion=[];
+_nada=[];
+for j=inicio:fin
+  _coop=zeros(1,_nSujetos);
+  _nadaAux=zeros(1,_nSujetos); 
+  for i=1:_nSujetos
+    if expXsuj(i)>=j
+      _coop(i)=length(find(todo.(indice(j+1,:))(i)._respuestasEXP(_trialIni:_trialFin)==2));
+    endif
+  endfor
+  _cooperacion=[_cooperacion; _coop];
+  for i=_vSujetos
+    _nadaAux(i)=length(find(todo.(indice(j+1,:))(i)._respuestasEXP(_trialIni:_trialFin)==0));
+  endfor
+  _nada=[_nada; _nadaAux];
+endfor
+
+_trialsOK=30*ones(length([inicio:fin]),_nSujetos);
+_promediosC=zeros(length([inicio:fin]),_nSujetos);
+
+_promediosC=_cooperacion./(_trialsOK-_nada);
+
+_media=sum(_promediosC');%/_nSujetos; % CHEQUEAR MEDIA con menos sujetos
+inicioAux=inicio;
+finAux=fin;
+for j=inicio:fin
+  _media(j)=_media(j)/length(find(expXsuj>=j));
+endfor
+
+_criterio=.65;
+graficos_iPD_1_2_9s_13s_12Ratas_medias_y_medianas % se obtienen los sujetos que superan el .75 porciento de cooperación
+_sujetosCooperadores=find(_mediaXsujeto>_criterio); % indice de sujetos que pasaron el criterios 
+_sujetosNocooperadores=complemento(_sujetosCooperadores,_nSujetos); % Obtiene los indices de los no coop
+
+inicioAux=inicio;
+finAux=fin;
+% PLOT sujeto uno x uno
+figure();hold on;
+for i=_sujetosCooperadores%1:_nSujetos
+  inicioAux=expXsuj(i)-_ultimosX+1;
+  finAux=expXsuj(i);
+  h=plot([inicioAux:finAux],_promediosC(inicioAux:finAux,i),_colores(i,:));
+  set(h, "linewidth", 2);
+  xlabel("n de sesiones");
+  ylabel("% de cooperacion");
+  title("Cooperacion en iPD en sujetos que alcanzaron Criterio");
+  
+  grid on;
+endfor
+legend(_txtSujetos(_sujetosCooperadores,:),4);
+
+figure();hold on;
+for i=_sujetosNocooperadores%1:_nSujetos
+  inicioAux=expXsuj(i)-_ultimosX+1;
+  finAux=expXsuj(i);
+  h=plot([inicioAux:finAux],_promediosC(inicioAux:finAux,i),_colores(i,:));
+  set(h, "linewidth", 2);
+  xlabel("n de sesiones");
+  ylabel("% de cooperacion");
+  title("Cooperacion en iPDen Sujetos que No alcanzaron Criterio");
+  
+  grid on;
+endfor
+legend(_txtSujetos(_sujetosNocooperadores,:),4);
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%555
+
+
+
