@@ -155,6 +155,20 @@ endfor
 legend(_txtSujetos(_sujetosCooperadores,:),4);
 
 figure();hold on;
+for i=_sujetosCooperadores%1:_nSujetos
+  inicioAux=expXsuj(i)-_ultimosX+1;
+  finAux=expXsuj(i);
+  h=plot([1:10],_promediosC(inicioAux:finAux,i),_colores(i,:));
+  set(h, "linewidth", 2);
+  xlabel("n de sesiones");
+  ylabel("% de cooperacion");
+  title("Cooperacion en iPD en sujetos que alcanzaron Criterio");
+  
+  grid on;
+endfor
+legend(_txtSujetos(_sujetosCooperadores,:),4);
+
+figure();hold on;
 for i=_sujetosNocooperadores%1:_nSujetos
   inicioAux=expXsuj(i)-_ultimosX+1;
   finAux=expXsuj(i);
@@ -168,9 +182,26 @@ for i=_sujetosNocooperadores%1:_nSujetos
 endfor
 legend(_txtSujetos(_sujetosNocooperadores,:),4);
 
+figure();hold on;
+for i=_sujetosNocooperadores%1:_nSujetos
+  inicioAux=expXsuj(i)-_ultimosX+1;
+  finAux=expXsuj(i);
+  h=plot([1:10],_promediosC(inicioAux:finAux,i),_colores(i,:));
+  set(h, "linewidth", 2);
+  xlabel("n de sesiones");
+  ylabel("% de cooperacion");
+  title("Cooperacion en iPDen Sujetos que No alcanzaron Criterio");
+  
+  grid on;
+endfor
+legend(_txtSujetos(_sujetosNocooperadores,:),4);
 
 % Kluskal-Wallis ANOVA one-way a lo largo de un juego (ultimas 10sesiones) entre los promedios de cooperacion 
 
-_proporcionC=30*_cooperacion./(_trialsOK-_nada)
-
-
+_proporcionC=30*_cooperacion./(_trialsOK-_nada);
+% los datos deben ser mayores a 5 para que el test funcione bien
+x=[];
+for i=1:length(_sujetosCooperadores)
+  x=[x _proporcionC([expXsuj(_sujetosCooperadores(i))-9:expXsuj(_sujetosCooperadores(i))],_sujetosCooperadores(i))];
+endfor
+[pVal,k,DF]=kruskal_wallis_test(x(:,1),x(:,2),x(:,3),x(:,4),x(:,5),x(:,6),x(:,7))
