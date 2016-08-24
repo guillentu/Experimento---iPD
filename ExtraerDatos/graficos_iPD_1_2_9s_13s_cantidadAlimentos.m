@@ -34,7 +34,8 @@ for i=1:_nSujetos
 endfor
 legend(_txtSujetos(:,:),4);
 hold off;
-_criterio=.65;
+
+_criterio=.75;
 graficos_iPD_1_2_9s_13s_12Ratas_medias_y_medianas % se obtienen los sujetos que superan el .75 porciento de cooperación
 _sujetosCooperadores=find(_mediaXsujeto>_criterio); % indice de sujetos que pasaron el criterios 
 _sujetosNocooperadores=complemento(_sujetosCooperadores,_nSujetos); % Obtiene los indices de los no coop
@@ -48,10 +49,11 @@ for i=_sujetosCooperadores%1:_nSujetos
   set(h, "linewidth", 2);
   xlabel("n de sesiones");
   ylabel("Cantidad de Alimento");
-  title("Cantidad de alimento obtenido - Sujetos en Criterio"); 
+  title(strcat("Cantidad de alimento obtenido - Sujetos en Criterio: ",num2str(_criterio))); 
   grid on;
 endfor
 legend(_txtSujetos(_sujetosCooperadores,:),4);
+axis ([1, 10, 1, 33], "square");
 hold off;
 %SOLO LOS NO COOPERADORES NO SUPERARON EL CRITERIO
 figure();hold on;
@@ -62,10 +64,11 @@ for i=_sujetosNocooperadores%1:_nSujetos
   set(h, "linewidth", 2);
   xlabel("n de sesiones");
   ylabel("Cantidad de Alimento");
-  title("Cantidad de alimento obtenido"); 
+  title(strcat("Cantidad de alimento obtenido - Sujetos fuera de criterio: ",num2str(_criterio))); 
   grid on;
 endfor
 legend(_txtSujetos(_sujetosNocooperadores,:),4);
+axis ([1, 10, 1, 33], "square");
 hold off;
 
 %foodTotal= sum(food(:,_sujetosCooperadores),2);
