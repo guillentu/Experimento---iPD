@@ -172,14 +172,14 @@ function x = extraerDatos_iPD_abril_corregido(str)
     elseif (strcmp("M",txt(1:pos-1))==1)
       for j=0:6
         txt=fgetl(_fid);
-        pos=strchr(txt,":") 
+        pos=strchr(txt,":");
         i=0;
         k=4;
         if (j==6) %j=6 significa fila = 7 
           k=0;
         endif
-        pos= pos - 4
-        txt
+        pos= pos - 4;
+        txt;
         for i=0:k
           _ventana(5*(j)+(i+1))=str2num(txt((pos+13-4):(pos+13+4)));
           pos=pos + 13;
