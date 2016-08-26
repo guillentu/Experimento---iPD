@@ -76,9 +76,14 @@ for i=1:_nSujetos
         else
           auxFallas+=1;
         endif
-      elseif todo.(indice(j+1,:))(i)._respuestasEXP(k-auxFallas)==2
-        auxOPO=max(todo.(indice(j+1,:))(i)._ventanas2(k,:));% primer palanqueo correcto
-        auxEXP=todo.(indice(j+1,:))(i)._reloj(2,k);
+      else
+        if todo.(indice(j+1,:))(i)._respuestasEXP(k-auxFallas)==2
+          auxOPO=max(todo.(indice(j+1,:))(i)._ventanas2(k,:));% primer palanqueo correcto
+          auxEXP=todo.(indice(j+1,:))(i)._reloj(2,k);
+        else todo.(indice(j+1,:))(i)._respuestasEXP(k-auxFallas)==1
+          auxOPO=min(todo.(indice(j+1,:))(i)._ventanas2(k,:));% primer palanqueo correcto
+          auxEXP=todo.(indice(j+1,:))(i)._reloj(2,k);
+        endif
         if auxEXP > auxOPO % Experimental palanqueo primero
           contador_1ro++;
         elseif auxEXP = auxOPO
@@ -86,11 +91,11 @@ for i=1:_nSujetos
         elseif auxEXP < auxOPO
           contador_2do++;
         else
-          error=1
+          error++;
         endif
-      
+        auxFallas=1;
       else
-        
+        a="MIERDA"
       endif
     endfor
-    sincro.(indiceSujeto(i,:)).(indice(j+1,:))=
+    sincro.(indiceSujeto(i,:)).(indice(j+1,:))=[contador_1ro;contador_igual;contador_2do;error];
