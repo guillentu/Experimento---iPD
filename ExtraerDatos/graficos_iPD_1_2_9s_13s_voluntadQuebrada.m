@@ -35,25 +35,35 @@ endfor
 % Secuancias
 % 212 - 2112 - 21112 - 211112 - 211112...
 % 212
+% comienza en D 111111112 (indice 21)
+% termina en  D 211111111 (indice 22)
 % usar una while si es cero la cantidad o mayor a 29 unos BRAKE
-
+_dejarD=zeros(1,20+2);
+voluntad=zeros(length(_dejarD),nfields(todo),_nSujetos);
 for i=1:_nSujetos
   for j=1:expXsuj(i)
     contador_1ro=0;contador_2do=0;contador_igual=0;
     auxFallas=1;_contador_1ro=0;_contador_igual=0;_contador_2do=0;_error=0;_alterna=0;
-    t=num2str(todo.exp10(1)._respuestasEXP(:));
-    
-    for k=_trialIni:_trialFin
+    t=num2str(todo.(indice(j+1,:))(i)._respuestasEXP(:))';
+    for k=sort(_trialIni:_trialFin,"descend")
       if ((todo.(indice(j+1,:))(i)._respuestasEXP(k)==0)||(todo.(indice(j+1,:))(i)._respuestasOPO(k)==0))
         t(k)="";
       endif
     endfor
-    ptr="2";
-    
-    for r=1:10
-      findstr(t,strcat(ptr,"1");
+    ptr="21";
+    for r=1:length(_dejarD)
+      ptr=strcat(ptr(1:(length(ptr)-1)),"12");
+      _dejarD(r)=length(findstr(t,ptr));
     endfor
-    
+     aa=length(t);   
+    while (aa>0 & t(aa--)==1)
+      _dejarD(21)++;
+    endwhile
+    aa=1;
+    while (aa<=length(t) & t(aa++)==1)
+      _dejarD(22)++;
+    endwhile
+    voluntad(:,j,i)=_dejarD;
   endfor
 endfor
   
@@ -73,23 +83,23 @@ endfor
 %hold off;
 
 %%%% DE A UNO
-for i=1:_nSujetos
-  figure();
-  inicioAux=1;%expXsuj(i)-_ultimosX+1;
-  finAux=expXsuj(i);
-  h=plot([inicioAux:finAux],sincro(1,inicioAux:finAux,i) + sincro(2,inicioAux:finAux,i),_colores(2,:),
-         [inicioAux:finAux],sincro(3,inicioAux:finAux,i),_colores(3,:),
-         [inicioAux:finAux],sincro(4,inicioAux:finAux,i),_colores(4,:),
-         [inicioAux:finAux],sincro(1,inicioAux:finAux,i) + sincro(2,inicioAux:finAux,i) +
-                            sincro(3,inicioAux:finAux,i) + sincro(4,inicioAux:finAux,i),_colores(5,:),
-         [inicioAux:finAux],sincro(5,inicioAux:finAux,i),_colores(6,:));
-  set(h, "linewidth", 2);
-  xlabel("n de sesiones");
-  ylabel("palanqueos por trials");
-  title(strcat("Cantidad de trial por Sesion don presiono primero. Sujeto: ",_txtSujetos(i,:))); 
-  legend("palanqueo 1ro + igual","palanqueo 2do","errores","Total","Alterna");
-  grid on;
-  axis ([0,expXsuj(i)+12,0,31], "square");
-endfor
+%for i=1:_nSujetos
+%  figure();
+%  inicioAux=1;%expXsuj(i)-_ultimosX+1;
+%  finAux=expXsuj(i);
+%  h=plot([inicioAux:finAux],sincro(1,inicioAux:finAux,i) + sincro(2,inicioAux:finAux,i),_colores(2,:),
+%         [inicioAux:finAux],sincro(3,inicioAux:finAux,i),_colores(3,:),
+%         [inicioAux:finAux],sincro(4,inicioAux:finAux,i),_colores(4,:),
+%         [inicioAux:finAux],sincro(1,inicioAux:finAux,i) + sincro(2,inicioAux:finAux,i) +
+%                            sincro(3,inicioAux:finAux,i) + sincro(4,inicioAux:finAux,i),_colores(5,:),
+%         [inicioAux:finAux],sincro(5,inicioAux:finAux,i),_colores(6,:));
+%  set(h, "linewidth", 2);
+%  xlabel("n de sesiones");
+%  ylabel("palanqueos por trials");
+%  title(strcat("Cantidad de trial por Sesion don presiono primero. Sujeto: ",_txtSujetos(i,:))); 
+%  legend("palanqueo 1ro + igual","palanqueo 2do","errores","Total","Alterna");
+%  grid on;
+%  axis ([0,expXsuj(i)+12,0,31], "square");
+%endfor
 
   
