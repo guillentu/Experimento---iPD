@@ -41,30 +41,18 @@ for i=1:_nSujetos
   for j=1:expXsuj(i)
     contador_1ro=0;contador_2do=0;contador_igual=0;
     auxFallas=1;_contador_1ro=0;_contador_igual=0;_contador_2do=0;_error=0;_alterna=0;
+    t=num2str(todo.exp10(1)._respuestasEXP(:));
+    
     for k=_trialIni:_trialFin
       if ((todo.(indice(j+1,:))(i)._respuestasEXP(k)==0)||(todo.(indice(j+1,:))(i)._respuestasOPO(k)==0))
-        if (k==1)
-        elseif (k==2) 
-          if (todo.(indice(j+1,:))(i)._respuestasEXP(k-1)!=0)% k=1 y K=2 son ceros no se cuenta una falla auxiluar
-            auxFallas+=1;  
-          endif
-        elseif (k==3)
-          if (todo.(indice(j+1,:))(i)._respuestasEXP(k-2)==0)&&(todo.(indice(j+1,:))(i)._respuestasEXP(k-1)==0)
-            % nada
-          elseif (todo.(indice(j+1,:))(i)._respuestasEXP(k-1)!=0)
-            auxFallas+=1;
-          else
-            a="MIERDA!!!"
-          endif
-        else
-          auxFallas+=1;
-        endif
-      else
-        
+        t(k)="";
       endif
-      
     endfor
-
+    ptr="2";
+    
+    for r=1:10
+      findstr(t,strcat(ptr,"1");
+    endfor
     
   endfor
 endfor
