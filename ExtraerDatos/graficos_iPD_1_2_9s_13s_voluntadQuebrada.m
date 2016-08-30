@@ -38,35 +38,84 @@ endfor
 % comienza en D 111111112 (indice 21)
 % termina en  D 211111111 (indice 22)
 % usar una while si es cero la cantidad o mayor a 29 unos BRAKE
-_dejarD=zeros(1,20+2);
+_combD=30;_iniFin=2;
+_combC=30;_fallas=1;
+_iFallas=_combC+_iniFin+_fallas;
+_dejarD=zeros(1,_combD+_iniFin);% 21 termino 1 y 22 empezo en 1
+_dejarC=zeros(1,_combC+_iniFin+_fallas);% 31 termino 2 y 32 empezo en 2 y 33 nº de ceros
 voluntad=zeros(length(_dejarD),nfields(todo),_nSujetos);
+voluntadC=zeros(length(_dejarC),nfields(todo),_nSujetos);
 for i=1:_nSujetos
   for j=1:expXsuj(i)
-    contador_1ro=0;contador_2do=0;contador_igual=0;
-    auxFallas=1;_contador_1ro=0;_contador_igual=0;_contador_2do=0;_error=0;_alterna=0;
     t=num2str(todo.(indice(j+1,:))(i)._respuestasEXP(:))';
+    t=t(1:30);
+    _dejarC(_iFallas)=0;
     for k=sort(_trialIni:_trialFin,"descend")
       if ((todo.(indice(j+1,:))(i)._respuestasEXP(k)==0)||(todo.(indice(j+1,:))(i)._respuestasOPO(k)==0))
         t(k)="";
+        _dejarC(_iFallas)++;
       endif
     endfor
+    % Dejar D
     ptr="21";
-    for r=1:length(_dejarD)
+    for r=1:(length(_dejarD(1:_combD))-2) % 2 por q esta enccerado entre 2 - 2
       ptr=strcat(ptr(1:(length(ptr)-1)),"12");
       _dejarD(r)=length(findstr(t,ptr));
     endfor
-     aa=length(t);   
-    while (aa>0 & t(aa--)==1)
-      _dejarD(21)++;
-    endwhile
     aa=1;
-    while (aa<=length(t) & t(aa++)==1)
-      _dejarD(22)++;
+    _dejarD(31)=0;_dejarD(32)=0;
+    while (aa<=length(t) && t(aa++)=="1")
+      _dejarD(31)++;
     endwhile
     voluntad(:,j,i)=_dejarD;
+    aa=length(t);
+    while (aa>0 && t(aa--)=="1" && _dejarD(31)<length(t))
+      _dejarD(32)++;
+    endwhile
+    voluntad(:,j,i)=_dejarD;
+    % Dejar C
+    ptr="12";
+    for r=1:(length(_dejarC(1:_combC))-2) % 2 por q esta enccerado entre 1 - 1
+      ptr=strcat(ptr(1:(length(ptr)-1)),"21");
+      _dejarC(r)=length(findstr(t,ptr));
+    endfor
+    aa=1;
+    _dejarC(31)=0;_dejarC(32)=0;
+    while (aa<=length(t) && t(aa++)=="2")
+      _dejarC(31)++;
+    endwhile
+    voluntadC(:,j,i)=_dejarC;
+    aa=length(t);
+    while (aa>0 && t(aa--)=="2" && _dejarC(31)<length(t))
+      _dejarC(32)++;
+    endwhile
+    voluntadC(:,j,i)=_dejarC;
   endfor
 endfor
-  
+
+% Histograma en D
+vVoluntades=zeros(_combC+_iniFin,_nSujetos);
+for i=1:_nSujetos
+  vVoluntades(:,i)=mean(voluntad(:,expXsuj(i)-9:expXsuj(i),i),2);
+  figure;
+  h=bar(vVoluntades(:,i)','*c');
+  set (h, "linewidth", 3);
+  xlabel("eventos D entre C - C");
+  ylabel("ocurrecia por eventos");
+  title(strcat("voluntad de No Cooperar-Sujeto: ",_txtSujetos(i,:)));
+endfor
+
+% SEPARAR ENTRE COOPERADORES Y NO
+% VER SUJETES CON GRAF PARECIDOS
+% PONER EN PORCENTAJES RESPECTO A UNA CANTIDAD TEORICA
+
+
+
+
+
+
+
+
 %%%% TODOS JUNTOS
 %figure();hold on;
 %for i=1:_nSujetos
