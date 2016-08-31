@@ -106,7 +106,100 @@ for i=1:_nSujetos
 endfor
 
 % SEPARAR ENTRE COOPERADORES Y NO
-% VER SUJETES CON GRAF PARECIDOS
+% Histograma en D
+_criterio=.70;
+graficos_iPD_1_2_9s_13s_12Ratas_medias_y_medianas % se obtienen los sujetos que superan el .75 porciento de cooperación
+_sujetosCooperadores=find(_mediaXsujeto>_criterio); % indice de sujetos que pasaron el criterios 
+_sujetosNocooperadores=complemento(_sujetosCooperadores,_nSujetos); % Obtiene los indices de los no coop
+
+figure;
+j=0;
+for i=_sujetosCooperadores
+  j++;
+  subplot(3,3,j)
+  h=bar(vVoluntades(:,i)','*c');
+  set (h, "linewidth", 2);
+  xlabel("eventos D entre C - C");
+  ylabel("ocurrecia por eventos");
+  aux=strcat("voluntad por D Coops: ",_txtSujetos(i,:));
+  aux=strcat(aux," - ");
+  title(strcat(aux,_criterio));
+endfor
+figure;
+j=0;
+for i=_sujetosNocooperadores
+  j++;
+  subplot(3,3,j)
+  h=bar(vVoluntades(:,i)','*c');
+  set (h, "linewidth", 2);
+  xlabel("eventos D entre C - C");
+  ylabel("ocurrecia por eventos");
+  aux=strcat("voluntad por D NO Coops: ",_txtSujetos(i,:));
+  aux=strcat(aux," - ");
+  title(strcat(aux,_criterio));
+endfor
+% Voluntad por D de los Cooperadores
+voluntadMedia=mean(vVoluntades(:,_sujetosCooperadores),2);
+voluntadStd=std(vVoluntades(:,_sujetosCooperadores),0,2);
+figure;
+h=errorbar([1:length(_dejarD)],voluntadMedia, voluntadStd,'*b');
+set (h, "linewidth", 2);
+hold on;
+h=bar(voluntadMedia,"facecolor", "none","edgecolor","m");
+hold off;
+set (h, "linewidth", 2);
+xlabel("eventos D entre C - C");
+ylabel("ocurrecia por eventos");
+title(strcat("voluntad de No Cooperar-Promedio Sujetos Cooperadores"));
+ptr="21";
+vPtr="";
+for r=1:(length(_dejarD(1:_combD))-2) % 2 por q esta enccerado entre 2 - 2
+  ptr=strcat(ptr(1:(length(ptr)-1)),"12");
+  vPtr=[vPtr; ptr];
+endfor
+vPtr=[vPtr; "29";"30";"11.12..";"..211.1"];
+axis ("tic[yz]", "labely[xyz]");
+%set(gca, 'XTick', 1:4, 'XTickLabel', t);
+t=text(0.5+[1:length(vPtr(:,1))], 0.5*ones(1,length(vPtr(:,1))) , vPtr);
+set(t, "HorizontalAlignment","left","VerticalAlignment", "bottom", "Rotation",90)
+%xlabel ('horizontal alignment');
+
+% Voluntad por D de los No Cooperadores
+voluntadMedia2=mean(vVoluntades(:,_sujetosNocooperadores),2);
+voluntadStd2=std(vVoluntades(:,_sujetosNocooperadores),0,2);
+figure;
+h=errorbar([1:length(_dejarD)],voluntadMedia2, voluntadStd2,'*b');
+set (h, "linewidth", 2);
+hold on;
+h=bar(voluntadMedia2,"facecolor", "none","edgecolor","m");
+hold off;
+set (h, "linewidth", 2);
+xlabel("eventos D entre C - C");
+ylabel("ocurrecia por eventos");
+title(strcat("Voluntad por D de los No Cooperar-Promedio Sujetos Cooperadores"));
+ptr="21";
+vPtr="";
+for r=1:(length(_dejarD(1:_combD))-2) % 2 por q esta enccerado entre 2 - 2
+  ptr=strcat(ptr(1:(length(ptr)-1)),"12");
+  vPtr=[vPtr; ptr];
+endfor
+vPtr=[vPtr; "29";"30";"11.12..";"..211.1"];
+axis ("tic[yz]", "labely[xyz]");
+t=text(0.5+[1:length(vPtr(:,1))], 0.5*ones(1,length(vPtr(:,1))) , vPtr);
+set(t, "HorizontalAlignment","left","VerticalAlignment", "bottom", "Rotation",90)
+
+% SUPERPOSICION
+h=figure;
+%h=errorbar([1:length(_dejarD)],voluntadMedia, voluntadStd,'*b');
+hold on;
+h=bar(voluntadMedia,"facecolor", "y","edgecolor","r");set (h, "linewidth", 2);
+%h=errorbar([1:length(_dejarD)],voluntadMedia2, voluntadStd2,'*g');
+h=bar(voluntadMedia2,"facecolor", "none","edgecolor","m");set (h, "linewidth", 2);
+hold off;
+xlabel("eventos D entre C - C");
+ylabel("ocurrecia por eventos");
+title(strcat("Diferencias entre los promedio entre grupos"));
+% VER SUJETOS CON GRAF PARECIDOS
 % PONER EN PORCENTAJES RESPECTO A UNA CANTIDAD TEORICA
 
 
