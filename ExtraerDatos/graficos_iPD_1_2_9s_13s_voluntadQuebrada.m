@@ -93,20 +93,51 @@ for i=1:_nSujetos
   endfor
 endfor
 
+ptr="21";
+vPtr="";
+for r=1:(length(_dejarD(1:_combD))-2) % 2 por q esta enccerado entre 2 - 2
+  ptr=strcat(ptr(1:(length(ptr)-1)),"12");
+  vPtr=[vPtr; ptr];
+endfor
+ptr="12";
+vPtrC="";
+for r=1:(length(_dejarC(1:_combC))-2) % 2 por q esta enccerado entre 2 - 2
+  ptr=strcat(ptr(1:(length(ptr)-1)),"21");
+  vPtrC=[vPtrC; ptr];
+endfor
+vPtr=[vPtr; "29";"30";"11.12..";"..211.1"];
+vPtrC=[vPtrC; "29";"30";"22.21..";"..122.2"];
+
+
 % Histograma en D
 vVoluntades=zeros(_combC+_iniFin,_nSujetos);
 for i=1:_nSujetos
   vVoluntades(:,i)=mean(voluntad(:,expXsuj(i)-9:expXsuj(i),i),2);
-  figure;
-  h=bar(vVoluntades(:,i)','*c');
-  set (h, "linewidth", 3);
-  xlabel("eventos D entre C - C");
-  ylabel("ocurrecia por eventos");
-  title(strcat("voluntad por D - Sujeto: ",_txtSujetos(i,:)));
+%  figure;
+%  h=bar(vVoluntades(:,i)','*c');
+%  set (h, "linewidth", 3);
+%  xlabel("eventos D entre C - C");
+%  ylabel("ocurrecia por eventos");
+%  title(strcat("voluntad por D - Sujeto: ",_txtSujetos(i,:)));
 endfor
 vVoluntadesC=zeros(_combC+_iniFin+_fallas,_nSujetos);
 for i=1:_nSujetos
   vVoluntadesC(:,i)=mean(voluntadC(:,expXsuj(i)-9:expXsuj(i),i),2);
+endfor
+for i=1:_nSujetos
+  figure;
+  h=bar([vVoluntadesC([1:17 31 32],i),vVoluntades([1:17 31 32],i)],'*c');
+  set (h, "linewidth", 2);
+  set (h(1), 'facecolor', 'g', 'edgecolor','b', "linewidth", 2);
+  set (h(2), 'facecolor', 'r', 'edgecolor','k', "linewidth", 2);
+  xlabel("eventos D entre C - C");
+  ylabel("ocurrecia por eventos");
+  title(strcat("voluntad por D - Sujeto: ",_txtSujetos(i,:)));
+  axis ("tic[yz]", "labely[xyz]");
+  t=text(-0.06+[1:length(vPtr([1:17 31 32],1))], 1*ones(1,length(vPtr([1:17 31 32],1))) , vPtrC([1:17 31 32],:));
+  set(t, "HorizontalAlignment","left","VerticalAlignment", "bottom", "Rotation",90)
+  t=text(0.28+[1:length(vPtr([1:17 31 32],1))], 1*ones(1,length(vPtr([1:17 31 32],1))) , vPtr([1:17 31 32],:));
+  set(t, "HorizontalAlignment","left","VerticalAlignment", "bottom", "Rotation",90)
 endfor
 % SEPARAR ENTRE COOPERADORES Y NO
 % Histograma en D
@@ -120,7 +151,7 @@ j=0;
 for i=_sujetosCooperadores
   j++;
   subplot(3,3,j)
-  h=bar(vVoluntades(:,i)','*c');
+  h=bar(vVoluntades(:,i)'./([30*[1./[1:28]] 1 1 30 30]),'*c');
   set (h, "linewidth", 2);
   xlabel("eventos D entre C - C");
   ylabel("ocurrecia por eventos");
@@ -133,7 +164,7 @@ j=0;
 for i=_sujetosNocooperadores
   j++;
   subplot(3,3,j)
-  h=bar(vVoluntades(:,i)','*c');
+  h=bar(vVoluntades(:,i)'./([30*[1./[1:28]] 1 1 30 30]),'*c');
   set (h, "linewidth", 2);
   xlabel("eventos D entre C - C");
   ylabel("ocurrecia por eventos");
@@ -156,7 +187,7 @@ hold off;
 set (h, "linewidth", 2);
 xlabel("eventos D entre C - C");
 ylabel("ocurrecia por eventos");
-title(strcat("voluntad de No Cooperar-Promedio Sujetos Cooperadores"));
+title(strcat("voluntad por D - Promedio Sujetos Cooperadores"));
 ptr="21";
 vPtr="";
 for r=1:(length(_dejarD(1:_combD))-2) % 2 por q esta enccerado entre 2 - 2
@@ -183,14 +214,14 @@ hold off;
 set (h, "linewidth", 2);
 xlabel("eventos D entre C - C");
 ylabel("ocurrecia por eventos");
-title(strcat("voluntad de No Cooperar-Promedio Sujetos Cooperadores"));
-ptr="21";
-vPtr="";
-for r=1:(length(_dejarD(1:_combD))-2) % 2 por q esta enccerado entre 2 - 2
-  ptr=strcat(ptr(1:(length(ptr)-1)),"12");
-  vPtr=[vPtr; ptr];
-endfor
-vPtr=[vPtr; "29";"30";"11.12..";"..211.1"];
+title(strcat("Voluntad por D - Promedio Sujetos No Cooperadores"));
+%ptr="21";
+%vPtr="";
+%for r=1:(length(_dejarD(1:_combD))-2) % 2 por q esta enccerado entre 2 - 2
+%  ptr=strcat(ptr(1:(length(ptr)-1)),"12");
+%  vPtr=[vPtr; ptr];
+%endfor
+%vPtr=[vPtr; "29";"30";"11.12..";"..211.1"];
 axis ("tic[yz]", "labely[xyz]");
 %set(gca, 'XTick', 1:4, 'XTickLabel', t);
 t=text(0.5+[1:length(vPtr(:,1))], 0.5*ones(1,length(vPtr(:,1))) , vPtr);
@@ -224,22 +255,22 @@ set (h(2), 'facecolor', 'r', 'edgecolor','k', "linewidth", 2);
 xlabel("eventos D y C");
 ylabel("ocurrecia por eventos");
 title(strcat("Promedio Sujetos Cooperadores"));
-%errorbar(-.5+[1:length(voluntadMediaC(1:32,1))],voluntadMediaC(1:32,1),voluntadStdC(1:32,1),'*b',[1:length(voluntadMedia(1:32,1))],voluntadMedia(1:32,1),voluntadStd(1:32,1),'*g');
-%errorbar([1:length(voluntadMedia(1:32,1))],voluntadMedia(1:32,1),voluntadStd(1:32,1),'*g');
-ptr="21";
-vPtr="";
-for r=1:(length(_dejarD(1:_combD))-2) % 2 por q esta enccerado entre 2 - 2
-  ptr=strcat(ptr(1:(length(ptr)-1)),"12");
-  vPtr=[vPtr; ptr];
-endfor
-ptr="12";
-vPtrC="";
-for r=1:(length(_dejarC(1:_combC))-2) % 2 por q esta enccerado entre 2 - 2
-  ptr=strcat(ptr(1:(length(ptr)-1)),"21");
-  vPtrC=[vPtrC; ptr];
-endfor
-vPtr=[vPtr; "29";"30";"11.12..";"..211.1"];
-vPtrC=[vPtrC; "29";"30";"22.21..";"..122.2"];
+%%errorbar(-.5+[1:length(voluntadMediaC(1:32,1))],voluntadMediaC(1:32,1),voluntadStdC(1:32,1),'*b',[1:length(voluntadMedia(1:32,1))],voluntadMedia(1:32,1),voluntadStd(1:32,1),'*g');
+%%errorbar([1:length(voluntadMedia(1:32,1))],voluntadMedia(1:32,1),voluntadStd(1:32,1),'*g');
+%ptr="21";
+%vPtr="";
+%for r=1:(length(_dejarD(1:_combD))-2) % 2 por q esta enccerado entre 2 - 2
+%  ptr=strcat(ptr(1:(length(ptr)-1)),"12");
+%  vPtr=[vPtr; ptr];
+%endfor
+%ptr="12";
+%vPtrC="";
+%for r=1:(length(_dejarC(1:_combC))-2) % 2 por q esta enccerado entre 2 - 2
+%  ptr=strcat(ptr(1:(length(ptr)-1)),"21");
+%  vPtrC=[vPtrC; ptr];
+%endfor
+%vPtr=[vPtr; "29";"30";"11.12..";"..211.1"];
+%vPtrC=[vPtrC; "29";"30";"22.21..";"..122.2"];
 %vPtrTot(2*(1:length(voluntadMedia)),:)=vPtr;
 %vPtrTot((1:2:2*length(voluntadMediaC)),:)=vPtrC(1:(length(vPtrC)-1),:);
 axis ("tic[yz]", "labely[xyz]");
@@ -290,7 +321,7 @@ voluntadCStdC=std(vVoluntadesC(:,_sujetosCooperadores),0,2);
 voluntadCMediaD=mean(vVoluntadesC(:,_sujetosNocooperadores),2);
 voluntadCStdD=std(vVoluntadesC(:,_sujetosNocooperadores),0,2);
 figure;
-h=errorbar([1:length(_dejarD)],voluntadDMedia2D voluntadDStdD,'*b');
+h=errorbar([1:length(_dejarD)],voluntadDMediaD, voluntadDStdD,'*b');
 set (h, "linewidth", 2);
 hold on;
 h=bar(voluntadDMediaD,"facecolor", "none","edgecolor","m");
@@ -324,9 +355,8 @@ hold off;
 xlabel("eventos D entre C - C");
 ylabel("ocurrecia por eventos");
 title(strcat("Diferencias entre los promedio entre grupos"));
-legend ('Vol C Coop', 'Vol D Coop','Vol C No Coop','Vol D No Coop');
-
-
+h=legend ('Vol C Coop', 'Vol D Coop','Vol C No Coop','Vol D No Coop');
+set (h, 'fontsize', 12);
 % PONER EN PORCENTAJES RESPECTO A UNA CANTIDAD TEORICA QUE es...
 %   Dividir todos los casos maximos por eventos
 
