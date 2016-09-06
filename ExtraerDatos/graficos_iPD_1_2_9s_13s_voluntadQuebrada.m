@@ -359,28 +359,39 @@ h=legend ('Vol C Coop', 'Vol D Coop','Vol C No Coop','Vol D No Coop');
 set (h, 'fontsize', 12);
 
 % cuanto comen por cada eventos
-i=2
-auxfoodD=voluntad(1:30,expXsuj(i)-_ultimosX+1 ,i)'*2;
-if voluntad(31,expXsuj(i)-_ultimosX+1 ,i)>=1 % |11..12..
-  auxfoodD=[auxfoodD 2];
-else
-  auxfoodD=[auxfoodD 0];
-endif
-if voluntad(32,expXsuj(i)-_ultimosX+1 ,i)>=1 % ..211..1|
-  auxfoodD=[auxfoodD 2];
-else
-  auxfoodD=[auxfoodD voluntad(32,expXsuj(i)-_ultimosX+1 ,i)*2];
-endif
-sum(auxfoodD)
-auxfoodC=[];
-auxfoodC=voluntadC(1:31,expXsuj(i)-_ultimosX+1 ,i)'.*([0:29 1]);
-if voluntadC(32,expXsuj(i)-_ultimosX+1 ,i)>=1
-  auxfoodC=[auxfoodC voluntadC(32,expXsuj(i)-_ultimosX+1 ,i)-1];
-else
-  auxfoodC=[auxfoodC voluntadC(32,expXsuj(i)-_ultimosX+1 ,i)];
-endif
-sum(auxfoodC)
-sum(auxfoodD)+sum(auxfoodC)
+voluntadDfood=zeros(length(_dejarD),nfields(todo),_nSujetos);
+voluntadCfood=zeros(length(_dejarC),nfields(todo),_nSujetos);
+for i=1:_nSujetos
+  for j=1:expXsuj(i) 
+    auxfoodD=voluntad(1:30,j ,i)'*2;
+    if voluntad(31,j ,i)>=1 % |11..12..
+      auxfoodD=[auxfoodD 2];
+    else
+      auxfoodD=[auxfoodD 0];
+    endif
+    if voluntad(32,j ,i)>=1 % ..211..1|
+      auxfoodD=[auxfoodD 2];
+    else
+      auxfoodD=[auxfoodD voluntad(32,j ,i)*2];
+    endif
+    sum(auxfoodD)
+    voluntadDfood(:,j,i)=auxfoodD;
+    auxfoodC=[];
+    auxfoodC=voluntadC(1:31,j ,i)'.*([0:29 1]);
+    if voluntadC(32,j ,i)>=1
+      auxfoodC=[auxfoodC voluntadC(32,j ,i)-1];
+    else
+      auxfoodC=[auxfoodC voluntadC(32,j ,i)];
+    endif
+    voluntadCfood(:,j,i)=auxfoodC;
+    sum(auxfoodC)
+    sum(auxfoodD)+sum(auxfoodC)
+    food(j,i)
+  endfor
+endfor
+
+%sum(auxfoodC)
+%sum(auxfoodD)+sum(auxfoodC)
 
 %j=expXsuj(i)-_ultimosX+1;
 

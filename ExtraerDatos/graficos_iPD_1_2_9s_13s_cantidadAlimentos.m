@@ -1,4 +1,4 @@
-clear all
+%clear all
 close all
 load "iPD_1_2_9s_13s/datos_modificados_sobre_errores";
 
