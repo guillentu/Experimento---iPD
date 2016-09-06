@@ -4,7 +4,7 @@ load "iPD_1_2_9s_13s/datos_modificados_sobre_errores";
 
 indiceSujeto=["Q01";"Q02";"Q03";"Q04";"Q05";"Q06";"Q07";"Q08";"Q09";"Q10";"Q11";"Q12"];
 _colores=["--+k";"--om";"--*g";"--.r";"--xb";"--sc";"--^m";"--vg";"-->b";"--<c";"--pr";"--hr"];
-
+ptrn={"1A";"2A";"3A";"4A";"5A";"6A";"7A";"8A";"9A";"10A";"3B";"4B"};
 % Experimentos por sujetos
 expXsuj=zeros(1,_nSujetos);
 for j=inicio:(nfields(todo)-8)
@@ -17,9 +17,28 @@ endfor
 
 food=[];
 for i=1:_nSujetos
-food(:,i)=[T(i,:).*2 + C(i,:).*1 + P(i,:).*0 + S(i,:).*0];
+food(:,i)=[TT(i,:).*2 + CC(i,:).*1 + PP(i,:).*0 + SS(i,:).*0];
 endfor
-
+foodMedia=zeros(1,_nSujetos);
+foodSem=zeros(1,_nSujetos);
+for i=1:_nSujetos
+  inicioAux=expXsuj(i)-_ultimosX+1;
+  finAux=expXsuj(i);
+  foodMedia(i) = mean(food(inicioAux:finAux,i));
+  foodSem(i) = sem(food(inicioAux:finAux,i));
+endfor
+figure;
+h=errorbar([1:_nSujetos],foodMedia,foodSem,'*b');
+set (h, "linewidth", 2);
+hold on;
+h=bar(foodMedia,"facecolor", "none","edgecolor","g");
+set (h, "linewidth", 2);
+hold off;
+xlabel("Sujetos - 10sesiones/30trials");
+ylabel("Cantidad de alimento");
+title("Promedio de la cantidad de alimento Obtenido");
+t=text(-.25+[1:_nSujetos], -0.5*ones(1,_nSujetos) , ptrn);
+axis ("tic[yz]", "labely[xyz]");axis([0,13,15,31],"square")
 % TODOS JUNTOS
 figure();hold on;
 for i=1:_nSujetos
@@ -35,7 +54,7 @@ endfor
 legend(_txtSujetos(:,:),4);
 hold off;
 
-_criterio=.75;
+_criterio=.70;
 graficos_iPD_1_2_9s_13s_12Ratas_medias_y_medianas % se obtienen los sujetos que superan el .75 porciento de cooperación
 _sujetosCooperadores=find(_mediaXsujeto>_criterio); % indice de sujetos que pasaron el criterios 
 _sujetosNocooperadores=complemento(_sujetosCooperadores,_nSujetos); % Obtiene los indices de los no coop

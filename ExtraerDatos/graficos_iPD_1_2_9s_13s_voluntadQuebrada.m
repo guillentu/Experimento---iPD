@@ -1,6 +1,6 @@
 % ----------- ¿Cuanto tarda en dejar la palanca D? -----------------------------
 
-clear all
+%clear all
 close all
 %load "iPD_1_2_9s_13s/datosCargadoWorkspace20160423";
 load "iPD_1_2_9s_13s/datos_errores_y_tiempos"
@@ -175,9 +175,9 @@ endfor
 
 %%%%%%%%%%%%%% SOLO COOPERADORES Voluntad por D
 voluntadMedia=mean(vVoluntades(:,_sujetosCooperadores),2);
-voluntadStd=std(vVoluntades(:,_sujetosCooperadores),0,2);
+voluntadStd=sem(vVoluntades(:,_sujetosCooperadores),2);
 voluntadMediaC=mean(vVoluntadesC(:,_sujetosCooperadores),2);
-voluntadStdC=std(vVoluntadesC(:,_sujetosCooperadores),0,2);
+voluntadStdC=sem(vVoluntadesC(:,_sujetosCooperadores),2);
 figure;
 h=errorbar([1:length(_dejarD)],voluntadMedia, voluntadStd,'*b');
 set (h, "linewidth", 2);
@@ -202,9 +202,9 @@ set(t, "HorizontalAlignment","left","VerticalAlignment", "bottom", "Rotation",90
 %xlabel ('horizontal alignment');
 %%%%%%%%%%%%%% SOLO NO cooperadores Voluntad por D
 voluntadMedia=mean(vVoluntades(:,_sujetosNocooperadores),2);
-voluntadStd=std(vVoluntades(:,_sujetosNocooperadores),0,2);
+voluntadStd=sem(vVoluntades(:,_sujetosNocooperadores),2);
 voluntadMediaC=mean(vVoluntadesC(:,_sujetosNocooperadores),2);
-voluntadStdC=std(vVoluntadesC(:,_sujetosNocooperadores),0,2);
+voluntadStdC=sem(vVoluntadesC(:,_sujetosNocooperadores),2);
 figure;
 h=errorbar([1:length(_dejarD)],voluntadMedia, voluntadStd,'*b');
 set (h, "linewidth", 2);
@@ -230,9 +230,9 @@ set(t, "HorizontalAlignment","left","VerticalAlignment", "bottom", "Rotation",90
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% SOLO COOPERADORES Voluntad por D y por C %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 voluntadMedia=mean(vVoluntades(:,_sujetosCooperadores),2);
-voluntadStd=std(vVoluntades(:,_sujetosCooperadores),0,2);
+voluntadStd=sem(vVoluntades(:,_sujetosCooperadores),2);
 voluntadMediaC=mean(vVoluntadesC(:,_sujetosCooperadores),2);
-voluntadStdC=std(vVoluntadesC(:,_sujetosCooperadores),0,2);
+voluntadStdC=sem(vVoluntadesC(:,_sujetosCooperadores),2);
 %voluntadMediaTot=zeros(length(voluntadMedia)+length(voluntadMediaC),1);
 %voluntadMediaTot(2*(1:length(voluntadMedia)))=voluntadMedia;
 %voluntadMediaTot(1:2:2*length(voluntadMediaC))=voluntadMediaC;
@@ -287,9 +287,9 @@ set(t, "HorizontalAlignment","left","VerticalAlignment", "bottom", "Rotation",90
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% SOLO NO COOP Voluntad por D y por C 
 voluntadMedia=mean(vVoluntades(:,_sujetosNocooperadores),2);
-voluntadStd=std(vVoluntades(:,_sujetosNocooperadores),0,2);
+voluntadStd=sem(vVoluntades(:,_sujetosNocooperadores),2);
 voluntadMediaC=mean(vVoluntadesC(:,_sujetosNocooperadores),2);
-voluntadStdC=std(vVoluntadesC(:,_sujetosNocooperadores),0,2);
+voluntadStdC=sem(vVoluntadesC(:,_sujetosNocooperadores),2);
 figure;
 h=errorbar(-.18+[1:length(voluntadMediaC(1:32,1))],voluntadMediaC(1:32,1),voluntadStdC(1:32,1),'*b',.18+[1:length(voluntadMedia(1:32,1))],voluntadMedia(1:32,1),voluntadStd(1:32,1),'*g');
 set (h(1), "linewidth", 2);
@@ -311,15 +311,15 @@ set(t, "HorizontalAlignment","left","VerticalAlignment", "bottom", "Rotation",90
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Voluntad por D de los No Cooperadores
-voluntadDStdC=std(vVoluntades(:,_sujetosCooperadores),0,2);
+voluntadDStdC=sem(vVoluntades(:,_sujetosCooperadores),2);
 voluntadDMediaC=mean(vVoluntades(:,_sujetosCooperadores),2);
 voluntadDMediaD=mean(vVoluntades(:,_sujetosNocooperadores),2);
-voluntadDStdD=std(vVoluntades(:,_sujetosNocooperadores),0,2);
+voluntadDStdD=sem(vVoluntades(:,_sujetosNocooperadores),2);
 %
 voluntadCMediaC=mean(vVoluntadesC(:,_sujetosCooperadores),2);
-voluntadCStdC=std(vVoluntadesC(:,_sujetosCooperadores),0,2);
+voluntadCStdC=sem(vVoluntadesC(:,_sujetosCooperadores),2);
 voluntadCMediaD=mean(vVoluntadesC(:,_sujetosNocooperadores),2);
-voluntadCStdD=std(vVoluntadesC(:,_sujetosNocooperadores),0,2);
+voluntadCStdD=sem(vVoluntadesC(:,_sujetosNocooperadores),2);
 figure;
 h=errorbar([1:length(_dejarD)],voluntadDMediaD, voluntadDStdD,'*b');
 set (h, "linewidth", 2);
@@ -357,8 +357,43 @@ ylabel("ocurrecia por eventos");
 title(strcat("Diferencias entre los promedio entre grupos"));
 h=legend ('Vol C Coop', 'Vol D Coop','Vol C No Coop','Vol D No Coop');
 set (h, 'fontsize', 12);
+
+% cuanto comen por cada eventos
+i=2
+auxfoodD=voluntad(1:30,expXsuj(i)-_ultimosX+1 ,i)'*2;
+if voluntad(31,expXsuj(i)-_ultimosX+1 ,i)>=1 % |11..12..
+  auxfoodD=[auxfoodD 2];
+else
+  auxfoodD=[auxfoodD 0];
+endif
+if voluntad(32,expXsuj(i)-_ultimosX+1 ,i)>=1 % ..211..1|
+  auxfoodD=[auxfoodD 2];
+else
+  auxfoodD=[auxfoodD voluntad(32,expXsuj(i)-_ultimosX+1 ,i)*2];
+endif
+sum(auxfoodD)
+auxfoodC=[];
+auxfoodC=voluntadC(1:31,expXsuj(i)-_ultimosX+1 ,i)'.*([0:29 1]);
+if voluntadC(32,expXsuj(i)-_ultimosX+1 ,i)>=1
+  auxfoodC=[auxfoodC voluntadC(32,expXsuj(i)-_ultimosX+1 ,i)-1];
+else
+  auxfoodC=[auxfoodC voluntadC(32,expXsuj(i)-_ultimosX+1 ,i)];
+endif
+sum(auxfoodC)
+sum(auxfoodD)+sum(auxfoodC)
+
+%j=expXsuj(i)-_ultimosX+1;
+
+%todo.(indice(j+1,:))(i)._respuestasEXP(1:30)
+%todo.(indice(j+1,:))(i)._respuestasOPO(1:30)
+
+%gg=vVoluntadesC(1:30,i)'.*([0:29 1 1]
+%sum(gg-([zeros(1,30) 1 1]))
+
+
 % PONER EN PORCENTAJES RESPECTO A UNA CANTIDAD TEORICA QUE es...
 %   Dividir todos los casos maximos por eventos
+
 
 
 

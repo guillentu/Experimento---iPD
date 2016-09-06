@@ -1,7 +1,7 @@
 %-------------------------------------------------------------------
 %------- IPD + TFT
 % Analisis de las ultimas 10 sesiones
-%clear all
+clear all
 close all
 
 % load "iPD_1_2_9s_13s/datosCargadoWorkspace20160423";
@@ -249,7 +249,8 @@ for j=inicio:fin
     matricesQaux.(indiceSujeto(i,:)) = zeros(4,4);
   endfor
 endfor
-
+TT=T;CC=C;
+PP=P;SS=S;
 % Analizando las ultimas X sesiones
 _ultimosX=10;
 %   Normalizacion para todos los sujetos en todos los experimentos
@@ -499,7 +500,7 @@ frec_teo= sum(probxExpTotal(:,:,:),2)./2;%     Se suman y div x 2 todos las elec
 aa=(probxExpTotal(:,1,:)-frec_teo).^2./frec_teo;
 % sumatoria del Chi 2
 _validosCoop=zeros(1,4);freedomNocoop=zeros(1,4);
-_auxSujCoops=[]
+_auxSujCoops=[];
 
 _estados=["T";"R";"P";"S"];
 for i=1:4
