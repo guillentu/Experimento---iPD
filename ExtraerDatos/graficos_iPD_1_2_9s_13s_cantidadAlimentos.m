@@ -1,7 +1,7 @@
-%clear all
+clear all
 close all
 load "iPD_1_2_9s_13s/datos_modificados_sobre_errores";
-
+load "iPD_1_2_9s_13s/datosVariablesCOMIDA"
 indiceSujeto=["Q01";"Q02";"Q03";"Q04";"Q05";"Q06";"Q07";"Q08";"Q09";"Q10";"Q11";"Q12"];
 _colores=["--+k";"--om";"--*g";"--.r";"--xb";"--sc";"--^m";"--vg";"-->b";"--<c";"--pr";"--hr"];
 ptrn={"1A";"2A";"3A";"4A";"5A";"6A";"7A";"8A";"9A";"10A";"3B";"4B"};

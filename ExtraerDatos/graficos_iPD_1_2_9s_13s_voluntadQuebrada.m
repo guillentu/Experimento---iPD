@@ -4,6 +4,7 @@
 close all
 %load "iPD_1_2_9s_13s/datosCargadoWorkspace20160423";
 load "iPD_1_2_9s_13s/datos_errores_y_tiempos"
+%load "iPD_1_2_9s_13s/datosVariablesCOMIDA"
 _txtSujetos=["1A";"2A";"3A";"4A";"5A";"6A";"7A";"8A";"9A";"10A";"3B";"4B"];
 indice=["exp00";"exp01";"exp02";"exp03";"exp04";"exp05";
         "exp06";"exp07";"exp08";"exp09";"exp10";"exp11";
@@ -108,22 +109,32 @@ endfor
 vPtr=[vPtr; "29";"30";"11.12..";"..211.1"];
 vPtrC=[vPtrC; "29";"30";"22.21..";"..122.2"];
 
+txt=[".  "];
+for i=1:32
+  txt=[txt;strcat(txt(length(txt(:,1)),:),".")];
+endfor
+txt=txt(sort([1:32],'descend'),:);
+vPtr=strcat(vPtr,txt);
+vPtrC=strcat(vPtrC,txt);
+
+cuantoComeXexp;
+
+vVoluntadDfood=zeros(32,_nSujetos);
+vVoluntadCfood=zeros(32,_nSujetos);
 
 % Histograma en D
 vVoluntades=zeros(_combC+_iniFin,_nSujetos);
 for i=1:_nSujetos
   vVoluntades(:,i)=mean(voluntad(:,expXsuj(i)-9:expXsuj(i),i),2);
-%  figure;
-%  h=bar(vVoluntades(:,i)','*c');
-%  set (h, "linewidth", 3);
-%  xlabel("eventos D entre C - C");
-%  ylabel("ocurrecia por eventos");
-%  title(strcat("voluntad por D - Sujeto: ",_txtSujetos(i,:)));
+  vVoluntadDfood(:,i)=mean(voluntadDfood(1:32,expXsuj(i)-9:expXsuj(i),i),2);
 endfor
 vVoluntadesC=zeros(_combC+_iniFin+_fallas,_nSujetos);
 for i=1:_nSujetos
   vVoluntadesC(:,i)=mean(voluntadC(:,expXsuj(i)-9:expXsuj(i),i),2);
+  vVoluntadCfood(:,i)=mean(voluntadCfood(1:32,expXsuj(i)-9:expXsuj(i),i),2);
 endfor
+
+
 for i=1:_nSujetos
   figure;
   h=bar([vVoluntadesC([1:17 31 32],i),vVoluntades([1:17 31 32],i)],'*c');
@@ -134,9 +145,12 @@ for i=1:_nSujetos
   ylabel("ocurrecia por eventos");
   title(strcat("voluntad por D - Sujeto: ",_txtSujetos(i,:)));
   axis ("tic[yz]", "labely[xyz]");
-  t=text(-0.06+[1:length(vPtr([1:17 31 32],1))], 1*ones(1,length(vPtr([1:17 31 32],1))) , vPtrC([1:17 31 32],:));
+  auxPtr=strcat(vPtr,num2str(vVoluntadDfood(:,i),2))
+  auxPtrC=strcat(vPtrC,num2str(vVoluntadCfood(:,i),2));
+  %t=text(-0.06+[1:length(vPtr([1:17 31 32],1))], 1*ones(1,length(vPtr([1:17 31 32],1))) , vPtrC([1:17 31 32],:));
+  t=text(-0.06+[1:length(vPtr([1:17 31 32],1))], 1*ones(1,length(vPtr([1:17 31 32],1))) , auxPtrC([1:17 31 32],:));
   set(t, "HorizontalAlignment","left","VerticalAlignment", "bottom", "Rotation",90)
-  t=text(0.28+[1:length(vPtr([1:17 31 32],1))], 1*ones(1,length(vPtr([1:17 31 32],1))) , vPtr([1:17 31 32],:));
+  t=text(0.28+[1:length(vPtr([1:17 31 32],1))], 1*ones(1,length(vPtr([1:17 31 32],1))) , auxPtr([1:17 31 32],:));
   set(t, "HorizontalAlignment","left","VerticalAlignment", "bottom", "Rotation",90)
 endfor
 % SEPARAR ENTRE COOPERADORES Y NO
@@ -178,6 +192,7 @@ voluntadMedia=mean(vVoluntades(:,_sujetosCooperadores),2);
 voluntadStd=sem(vVoluntades(:,_sujetosCooperadores),2);
 voluntadMediaC=mean(vVoluntadesC(:,_sujetosCooperadores),2);
 voluntadStdC=sem(vVoluntadesC(:,_sujetosCooperadores),2);
+
 figure;
 h=errorbar([1:length(_dejarD)],voluntadMedia, voluntadStd,'*b');
 set (h, "linewidth", 2);
@@ -315,11 +330,19 @@ voluntadDStdC=sem(vVoluntades(:,_sujetosCooperadores),2);
 voluntadDMediaC=mean(vVoluntades(:,_sujetosCooperadores),2);
 voluntadDMediaD=mean(vVoluntades(:,_sujetosNocooperadores),2);
 voluntadDStdD=sem(vVoluntades(:,_sujetosNocooperadores),2);
+voluntadDfoodMediaC=mean(vVoluntadDfood(:,_sujetosCooperadores),2);
+voluntadDfoodSemC=sem(vVoluntadDfood(:,_sujetosCooperadores),2);
+voluntadDfoodMediaD=(vVoluntadDfood(:,_sujetosNocooperadores),2);
+voluntadDfoodSemD=(vVoluntadDfood(:,_sujetosNocooperadores),2);
 %
 voluntadCMediaC=mean(vVoluntadesC(:,_sujetosCooperadores),2);
 voluntadCStdC=sem(vVoluntadesC(:,_sujetosCooperadores),2);
 voluntadCMediaD=mean(vVoluntadesC(:,_sujetosNocooperadores),2);
 voluntadCStdD=sem(vVoluntadesC(:,_sujetosNocooperadores),2);
+voluntadCfoodMediaC=mean(vVoluntadCfood(:,_sujetosCooperadores),2);
+voluntadCfoodSemC=sem(vVoluntadCfood(:,_sujetosCooperadores),2);
+voluntadCfoodMediaD=(vVoluntadCfood(:,_sujetosNocooperadores),2);
+voluntadCfoodSemD=(vVoluntadCfood(:,_sujetosNocooperadores),2);
 figure;
 h=errorbar([1:length(_dejarD)],voluntadDMediaD, voluntadDStdD,'*b');
 set (h, "linewidth", 2);
@@ -331,6 +354,7 @@ xlabel("eventos D entre C - C");
 ylabel("ocurrecia por eventos");
 title(strcat("Promedio cooperadores y No cooperadores - Voluntad por D"));
 axis ("tic[yz]", "labely[xyz]");
+
 t=text(0.5+[1:length(vPtr(:,1))], 0.5*ones(1,length(vPtr(:,1))) , vPtr);
 set(t, "HorizontalAlignment","left","VerticalAlignment", "bottom", "Rotation",90)
 
@@ -359,36 +383,36 @@ h=legend ('Vol C Coop', 'Vol D Coop','Vol C No Coop','Vol D No Coop');
 set (h, 'fontsize', 12);
 
 % cuanto comen por cada eventos
-voluntadDfood=zeros(length(_dejarD),nfields(todo),_nSujetos);
-voluntadCfood=zeros(length(_dejarC),nfields(todo),_nSujetos);
-for i=1:_nSujetos
-  for j=1:expXsuj(i) 
-    auxfoodD=voluntad(1:30,j ,i)'*2;
-    if voluntad(31,j ,i)>=1 % |11..12..
-      auxfoodD=[auxfoodD 2];
-    else
-      auxfoodD=[auxfoodD 0];
-    endif
-    if voluntad(32,j ,i)>=1 % ..211..1|
-      auxfoodD=[auxfoodD 2];
-    else
-      auxfoodD=[auxfoodD voluntad(32,j ,i)*2];
-    endif
-    sum(auxfoodD)
-    voluntadDfood(:,j,i)=auxfoodD;
-    auxfoodC=[];
-    auxfoodC=voluntadC(1:31,j ,i)'.*([0:29 1]);
-    if voluntadC(32,j ,i)>=1
-      auxfoodC=[auxfoodC voluntadC(32,j ,i)-1];
-    else
-      auxfoodC=[auxfoodC voluntadC(32,j ,i)];
-    endif
-    voluntadCfood(:,j,i)=auxfoodC;
-    sum(auxfoodC)
-    sum(auxfoodD)+sum(auxfoodC)
-    food(j,i)
-  endfor
-endfor
+%voluntadDfood=zeros(length(_dejarD),nfields(todo),_nSujetos);
+%voluntadCfood=zeros(length(_dejarC),nfields(todo),_nSujetos);
+%for i=1:_nSujetos
+%  for j=1:expXsuj(i) 
+%    auxfoodD=voluntad(1:30,j ,i)'*2;
+%    if voluntad(31,j ,i)>=1 % |11..12..
+%      auxfoodD=[auxfoodD 2];
+%    else
+%      auxfoodD=[auxfoodD 0];
+%    endif
+%    if voluntad(32,j ,i)>=1 % ..211..1|
+%      auxfoodD=[auxfoodD 2];
+%    else
+%      auxfoodD=[auxfoodD voluntad(32,j ,i)*2];
+%    endif
+%    %sum(auxfoodD)
+%    voluntadDfood(:,j,i)=auxfoodD;
+%    auxfoodC=[];
+%    auxfoodC=voluntadC(1:31,j ,i)'.*([0:29 1]);
+%    if voluntadC(32,j ,i)>=1
+%      auxfoodC=[auxfoodC voluntadC(32,j ,i)-1];
+%    else
+%      auxfoodC=[auxfoodC voluntadC(32,j ,i)];
+%    endif
+%    voluntadCfood(:,j,i)=auxfoodC;
+%    %sum(auxfoodC)
+%    sum(auxfoodD)+sum(auxfoodC)
+%    food(j,i)
+%  endfor
+%endfor
 
 %sum(auxfoodC)
 %sum(auxfoodD)+sum(auxfoodC)
