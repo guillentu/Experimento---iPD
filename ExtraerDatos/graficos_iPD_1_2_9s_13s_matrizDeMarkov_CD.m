@@ -226,14 +226,17 @@ PP=P;SS=S;
 _ultimosX=10;
 %   Normalizacion para todos los sujetos en todos los experimentos
 Q_antes=matricesQ;
-QQ=zeros(4,_ultimosX,_nSujetos);
+QQ=[];
+QQTot=zeros(2,2,_nSujetos);
 for i=1:_nSujetos
   ultimo=expXsuj(i);
   primero=ultimo-_ultimosX+1;
   jj=0;
   for j=primero:ultimo %Experimentos
     jj++;
-    QQ(:,jj,i)=sum((QxExp_ante.(indiceSujeto(i,:)).(indice(j+1,:)))./sum(sum(QxExp_ante.(indiceSujeto(i,:)).(indice(j+1,:)))),1)';
+    aux=sum(QxExp_ante.(indiceSujeto(i,:)).(indice(j+1,:)));
+    QQTot(:,:,i)=QQTot(:,:,i) + [aux(sort(1:4,'descend'))(3:4); aux(sort(1:4,'descend'))(1:2)];
+    QQ.(indiceSujeto(i,:)).(num2str(jj))=[aux(sort(1:4,'descend'))(3:4); aux(sort(1:4,'descend'))(1:2)];%./sum(sum(QxExp_ante.(indiceSujeto(i,:)).(indice(j+1,:)))),1)';
   endfor
 endfor
 
