@@ -81,6 +81,7 @@ for i=1:_nSujetos
   ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
   primero=ultimo-_ultimosX+1;
   _mediaXsujeto(i)=mean(_promediosC(primero:ultimo,i));
+  _mediaFallasXsujeto(i)=mean(_nada(primero:ultimo,i));
   _medianaXsujeto(i)=median(_promediosC(primero:ultimo,i));
   _stdXsujeto(i)=std(_promediosC(primero:ultimo,i));
 endfor 

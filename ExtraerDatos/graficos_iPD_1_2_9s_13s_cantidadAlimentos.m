@@ -1,6 +1,6 @@
-clear all
-close all
-load "iPD_1_2_9s_13s/datos_modificados_sobre_errores";
+%clear all
+%close all
+%load "iPD_1_2_9s_13s/datos_modificados_sobre_errores";
 load "iPD_1_2_9s_13s/datosVariablesCOMIDA"
 indiceSujeto=["Q01";"Q02";"Q03";"Q04";"Q05";"Q06";"Q07";"Q08";"Q09";"Q10";"Q11";"Q12"];
 _colores=["--+k";"--om";"--*g";"--.r";"--xb";"--sc";"--^m";"--vg";"-->b";"--<c";"--pr";"--hr"];
@@ -89,6 +89,11 @@ endfor
 legend(_txtSujetos(_sujetosNocooperadores,:),4);
 axis ([1, 10, 1, 33], "square");
 hold off;
+
+meanFoodXsuj=zeros(1,_nSujetos);
+for i=1:_nSujetos
+  meanFoodXsuj=mean(food(inicioAux:finAux,i));
+endfor
 
 %foodTotal= sum(food(:,_sujetosCooperadores),2);
 %plot([1:50],foodTotal)

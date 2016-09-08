@@ -1,7 +1,7 @@
 %-------------------------------------------------------------------
 %------- IPD + TFT
 % Analisis de las ultimas 10 sesiones
-clear all
+%clear all
 close all
 
 % load "iPD_1_2_9s_13s/datosCargadoWorkspace20160423";
@@ -228,6 +228,7 @@ _ultimosX=10;
 Q_antes=matricesQ;
 QQ=[];
 QQTot=zeros(2,2,_nSujetos);
+QQTotmarkov=zeros(2,2,_nSujetos);
 for i=1:_nSujetos
   ultimo=expXsuj(i);
   primero=ultimo-_ultimosX+1;
@@ -238,7 +239,37 @@ for i=1:_nSujetos
     QQTot(:,:,i)=QQTot(:,:,i) + [aux(sort(1:4,'descend'))(3:4); aux(sort(1:4,'descend'))(1:2)];
     QQ.(indiceSujeto(i,:)).(num2str(jj))=[aux(sort(1:4,'descend'))(3:4); aux(sort(1:4,'descend'))(1:2)];%./sum(sum(QxExp_ante.(indiceSujeto(i,:)).(indice(j+1,:)))),1)';
   endfor
+  QQTotmarkov(1,:,i)=QQTot(1,:,i)./sum(QQTot(:,:,i),2)(1);
+  QQTotmarkov(2,:,i)=QQTot(2,:,i)./sum(QQTot(:,:,i),2)(2);
 endfor
+
+
+graficos_iPD_1_2_9s_13s_Promedios_ultimosX;
+% Probabilidad d estar en C o en D
+
+probC=zeros(1,_nSujetos);
+probC=_mediaXsujeto;
+probD=zeros(1,_nSujetos);
+probD=1-_mediaXsujeto;
+
+N=30;
+_vRefuerzos=[1 2 0 0];
+_alimento=zeros(_nSujetos);
+for i=1:_nSujetos   % vec [a b;c d] -> [a c b d] = [cc dc cd dd]
+  _alimento(i)=_vRefuerzos*(vec(QQTotmarkov(:,:,i)).*[probC(i);probD(i);probC(i);probD(i)]);
+  % VER meanFoodXsuj desde cantidad  de alimento
+endfor
+% vec(QQTotmarkov(:,:,1)) y reshape(ans,2,2)
+
+
+mean(food(inicioAux:finAux,i))
+_estadoEstacionario=zeros(_nSujetos);
+
+for i=1:_nSujetos
+  _estadoEstacionario(i) = dtmc(QQTotmarkov(:,:,12));
+endfor
+
+plot([1 1],[2 1],'ko','Marke')
 
 %for i=1:_nSujetos % Ceros para todos
 %  matricesQ.(indiceSujeto(i,:)) = zeros(4,4); % [T C P S]'                %agregar matrices Q para cada sujeto en estructura

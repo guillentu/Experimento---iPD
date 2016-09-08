@@ -1,7 +1,7 @@
 %-------------------------------------------------------------------
 %------- Alternar Random - Control ITI - Castigo
-clear all
-close all
+%clear all
+%close all
 %load "iPD_1_2_9s_13s/datosCargadoWorkspace20160423";
 load "iPD_1_2_9s_13s/datos_modificados_sobre_errores"
 
@@ -118,7 +118,7 @@ for j=inicio:fin
   _nada=[_nada; _nadaAux];
 endfor
 
-_criterio=.65;
+_criterio=.70;
 graficos_iPD_1_2_9s_13s_12Ratas_medias_y_medianas % se obtienen los sujetos que superan el .75 porciento de cooperación
 _sujetosCooperadores=find(_mediaXsujeto>_criterio); % indice de sujetos que pasaron el criterios 
 _sujetosNocooperadores=complemento(_sujetosCooperadores,_nSujetos); % Obtiene los indices de los no coop
