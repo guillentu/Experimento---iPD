@@ -125,14 +125,18 @@ vVoluntadDfoodSem=zeros(32,_nSujetos);
 vVoluntadCfoodSem=zeros(32,_nSujetos);
 % Histograma en D
 vVoluntades=zeros(_combC+_iniFin,_nSujetos);
+vVoluntadesSem=zeros(_combC+_iniFin,_nSujetos);
 for i=1:_nSujetos
   vVoluntades(:,i)=mean(voluntad(:,expXsuj(i)-9:expXsuj(i),i),2);
+  vVoluntadesSem(:,i)=sem(voluntad(:,expXsuj(i)-9:expXsuj(i),i),2);
   vVoluntadDfood(:,i)=mean(voluntadDfood(1:32,expXsuj(i)-9:expXsuj(i),i),2);
   vVoluntadDfoodSem(:,i)=sem(voluntadDfood(1:32,expXsuj(i)-9:expXsuj(i),i),2);
 endfor
 vVoluntadesC=zeros(_combC+_iniFin+_fallas,_nSujetos);
+vVoluntadesCSem=zeros(_combC+_iniFin+_fallas,_nSujetos);
 for i=1:_nSujetos
-  vVoluntadesC(:,i)=mean(voluntadC(:,expXsuj(i)-9:expXsuj(i),i),2);
+  vVoluntadesC(:,i)=mean(voluntadC(:,expXsuj(i)-9:expXsuj(i),i),2);  
+  vVoluntadesCSem(:,i)=sem(voluntadC(:,expXsuj(i)-9:expXsuj(i),i),2);
   vVoluntadCfood(:,i)=mean(voluntadCfood(1:32,expXsuj(i)-9:expXsuj(i),i),2);
   vVoluntadCfoodSem(:,i)=sem(voluntadCfood(1:32,expXsuj(i)-9:expXsuj(i),i),2);
 endfor
@@ -140,8 +144,8 @@ endfor
 
 for i=1:_nSujetos
   figure;
-  h=errorbar(-.18+[1:length(vVoluntadCfoodSem([1:17 31 32],1))],vVoluntadCfoodSem([1:17 31 32],1),vVoluntadCfoodSem([1:17 31 32],i),'*b',
-            .18+[1:length(vVoluntadDfoodSem([1:17 31 32],1))],vVoluntadDfoodSem([1:17 31 32],1),vVoluntadDfoodSem([1:17 31 32],i),'*g');
+  h=errorbar(-.18+[1:length(vVoluntadesC([1:17 31 32],1))],vVoluntadesC([1:17 31 32],i),vVoluntadesCSem([1:17 31 32],i),'*b',
+            .18+[1:length(vVoluntades([1:17 31 32],1))],vVoluntades([1:17 31 32],i),vVoluntadesSem([1:17 31 32],i),'*g');
   set (h(1), "linewidth", 2);
   set (h(2), "linewidth", 2);
   legend ('C errbar', 'D errbar');
@@ -154,7 +158,7 @@ for i=1:_nSujetos
   ylabel("ocurrecia por eventos");
   title(strcat("voluntad por D - Sujeto: ",_txtSujetos(i,:)));
   axis ("tic[yz]", "labely[xyz]");
-  auxPtr=strcat(vPtr,num2str(vVoluntadDfood(:,i),2))
+  auxPtr=strcat(vPtr,num2str(vVoluntadDfood(:,i),2));
   auxPtrC=strcat(vPtrC,num2str(vVoluntadCfood(:,i),2));
   %t=text(-0.06+[1:length(vPtr([1:17 31 32],1))], 1*ones(1,length(vPtr([1:17 31 32],1))) , vPtrC([1:17 31 32],:));
   t=text(-0.06+[1:length(vPtr([1:17 31 32],1))], 1*ones(1,length(vPtr([1:17 31 32],1))) , auxPtrC([1:17 31 32],:));
@@ -170,10 +174,10 @@ _sujetosCooperadores=find(_mediaXsujeto>_criterio); % indice de sujetos que pasa
 _sujetosNocooperadores=complemento(_sujetosCooperadores,_nSujetos); % Obtiene los indices de los no coop
 
 % Medias y SEM
-voluntadDStdC=sem(vVoluntades(:,_sujetosCooperadores),2);
+voluntadDStdC  =sem (vVoluntades(:,_sujetosCooperadores),2);
 voluntadDMediaC=mean(vVoluntades(:,_sujetosCooperadores),2);
 voluntadDMediaD=mean(vVoluntades(:,_sujetosNocooperadores),2);
-voluntadDStdD=sem(vVoluntades(:,_sujetosNocooperadores),2);
+voluntadDStdD  =sem (vVoluntades(:,_sujetosNocooperadores),2);
 %
 voluntadDfoodMediaC=mean(vVoluntadDfood(:,_sujetosCooperadores),2);
 voluntadDfoodSemC=sem(vVoluntadDfood(:,_sujetosCooperadores),2);
@@ -202,7 +206,7 @@ set (h(2), "linewidth", 2);
 legend ('C errbar', 'D errbar');
 hold on;
 %h=bar(voluntadMediaTot,"facecolor", "none","edgecolor","m");
-h=bar([voluntadMediaC(1:32,1),voluntadMedia(1:32,1)],"facecolor", "none","edgecolor","m");
+h=bar([voluntadCMediaC(1:32,1),voluntadDMediaC(1:32,1)],"facecolor", "none","edgecolor","m");
 hold off;
 set (h(1), 'facecolor', 'g', 'edgecolor','b', "linewidth", 2);
 set (h(2), 'facecolor', 'r', 'edgecolor','k', "linewidth", 2);
@@ -225,17 +229,14 @@ set(t, "HorizontalAlignment","left","VerticalAlignment", "bottom", "Rotation",90
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% SOLO NO COOP Voluntad por D y por C 
-voluntadMedia=mean(vVoluntades(:,_sujetosNocooperadores),2);
-voluntadStd=sem(vVoluntades(:,_sujetosNocooperadores),2);
-voluntadMediaC=mean(vVoluntadesC(:,_sujetosNocooperadores),2);
-voluntadStdC=sem(vVoluntadesC(:,_sujetosNocooperadores),2);
 figure;
-h=errorbar(-.18+[1:length(voluntadMediaC(1:32,1))],voluntadMediaC(1:32,1),voluntadStdC(1:32,1),'*b',.18+[1:length(voluntadMedia(1:32,1))],voluntadMedia(1:32,1),voluntadStd(1:32,1),'*g');
+h=errorbar(-.18+[1:length(voluntadCMediaD(1:32,1))],voluntadCMediaD(1:32,1),voluntadCStdD(1:32,1),'*b',
+            .18+[1:length(voluntadDMediaD(1:32,1))],voluntadDMediaD(1:32,1),voluntadDStdD(1:32,1),'*g');
 set (h(1), "linewidth", 2);
 set (h(2), "linewidth", 2);
 legend ('C errbar', 'D errbar');
 hold on;
-h=bar([voluntadMediaC(1:32,1),voluntadMedia(1:32,1)],"facecolor", "none","edgecolor","m");
+h=bar([voluntadCMediaD(1:32,1),voluntadDMediaD(1:32,1)],"facecolor", "none","edgecolor","m");
 hold off;
 set (h(1), 'facecolor', 'g', 'edgecolor','b', "linewidth", 2);
 set (h(2), 'facecolor', 'r', 'edgecolor','k', "linewidth", 2);
@@ -243,6 +244,8 @@ xlabel("eventos D y C");
 ylabel("ocurrecia por eventos");
 title(strcat("Promedio Sujetos NO Cooperadores ( ultimas 10s)"));
 axis ("tic[yz]", "labely[xyz]");
+auxPtr=strcat(vPtr,num2str(voluntadDfoodMediaC,2));
+auxPtrC=strcat(vPtrC,num2str(voluntadCfoodMediaC,2));
 t=text(-0.06+[1:length(vPtr(:,1))], 1*ones(1,length(vPtr(:,1))) , vPtrC);
 set(t, "HorizontalAlignment","left","VerticalAlignment", "bottom", "Rotation",90)
 t=text(0.28+[1:length(vPtr(:,1))], 1*ones(1,length(vPtr(:,1))) , vPtr);

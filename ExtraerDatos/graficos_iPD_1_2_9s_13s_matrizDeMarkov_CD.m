@@ -252,24 +252,39 @@ probC=_mediaXsujeto;
 probD=zeros(1,_nSujetos);
 probD=1-_mediaXsujeto;
 
-N=30;
+N=30; % numero de trials
 _vRefuerzos=[1 2 0 0];
-_alimento=zeros(_nSujetos);
+_alimento=zeros(1,_nSujetos);
 for i=1:_nSujetos   % vec [a b;c d] -> [a c b d] = [cc dc cd dd]
-  _alimento(i)=_vRefuerzos*(vec(QQTotmarkov(:,:,i)).*[probC(i);probD(i);probC(i);probD(i)]);
+  _alimento(i)=N*_vRefuerzos*(vec(QQTotmarkov(:,:,i)).*[probC(i);probD(i);probC(i);probD(i)]);
   % VER meanFoodXsuj desde cantidad  de alimento
 endfor
 % vec(QQTotmarkov(:,:,1)) y reshape(ans,2,2)
-
-
-mean(food(inicioAux:finAux,i))
-_estadoEstacionario=zeros(_nSujetos);
-
-for i=1:_nSujetos
-  _estadoEstacionario(i) = dtmc(QQTotmarkov(:,:,12));
+_vDelay4eat=[0 8 0 4];
+_delay4eat=zeros(1,_nSujetos);
+for i=1:_nSujetos   % vec [a b;c d] -> [a c b d] = [cc dc cd dd]
+  _delay4eat(i)=N*_vDelay4eat*(vec(QQTotmarkov(:,:,i)).*[probC(i);probD(i);probC(i);probD(i)]);
+  % VER meanFoodXsuj desde cantidad  de alimento
 endfor
 
-plot([1 1],[2 1],'ko','Marke')
+mean(food(inicioAux:finAux,i))
+_estadoEstacionario=zeros(2,_nSujetos);
+
+for i=1:_nSujetos
+  _estadoEstacionario(:,i) = dtmc(QQTotmarkov(:,:,i));
+endfor
+
+figure;
+h=plot(30*_mediaXsujeto(I),_alimento(I),'ko', "markersize",12,"markerfacecolor",'c', "linewidth", 2);
+set(h, "linewidth", 2);
+hh=xlabel("among of C choice ");
+set(hh, "fontsize", 14);
+hh=ylabel("Cantidadfood harvested [Pellets]");
+set(hh, "fontsize", 14);
+hh=title("Food versus Cooperation"); 
+set(hh, "fontsize", 14);
+grid on;
+t=text(-0.5*[1 1 1 1 1 1 1 1 1 1 1 -1]+30*_mediaXsujeto(I), .5+_alimento(I) ,_txtSujetos(I,:));
 
 %for i=1:_nSujetos % Ceros para todos
 %  matricesQ.(indiceSujeto(i,:)) = zeros(4,4); % [T C P S]'                %agregar matrices Q para cada sujeto en estructura
