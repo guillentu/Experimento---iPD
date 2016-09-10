@@ -595,6 +595,48 @@ xlabel("T=1 --- R=2 --- P=3 --- S=4");
 ylabel("P(C|X)");
 title("Probabilidad de elegir C dado cada estado- No alcanzaron Criterio");
 hold off;
+
+figure;
+
+probEleccionC=zeros(4,_nSujetos);
+probEleccionD=zeros(4,2);
+for i=1:_nSujetos
+  probEleccionC(:,i)=probEleccion(:,1,i);
+endfor
+
+figure;
+h=errorbar([1:4],mean(probEleccionC(:,_sujetosNocooperadores),2),sem(probEleccionC(:,_sujetosNocooperadores),2),'*k');
+hold on;set(h, "linewidth", 2);     
+h=bar([1:4],mean(probEleccionC(:,_sujetosNocooperadores),2),'facecolor', 'g', 'edgecolor','b', "linewidth", 2);
+h=plot([0:5],[.5 .5 .5 .5 .5 .5],"--r");
+axis ("tic[yz]", "labely[xyz]");
+set(h, "linewidth", 2);  
+legend("SEM","MEAN","Half prob");
+%hh=xlabel("T=1 --- R=2 --- P=3 --- S=4");set(hh, "fontsize", 14);
+hh=ylabel("P(C|X)");set(hh, "fontsize", 14);
+hh=title("Probabilidad de elegir C dado cada estado- No alcanzaron Criterio");set(hh, "fontsize", 13);
+axis ("tic[yz]", "labely[xyz]");
+t=text([1:4], -.04*ones(1,4), {"T"; "R";"P";"S"},"fontsize",14);
+t=text([1:4/(length(_sujetosCooperadores)+1):4], -.08*ones(1,length(_sujetosCooperadores)), _txtSujetos(_sujetosCooperadores,:),"fontsize",14);
+axis([0 5 0 1]);
+hold off;grid on;
+
+figure;
+h=errorbar([1:4],mean(probEleccionC(:,_sujetosCooperadores),2),sem(probEleccionC(:,_sujetosCooperadores),2),'*k');
+hold on;set(h, "linewidth", 2);     
+h=bar([1:4],mean(probEleccionC(:,_sujetosCooperadores),2),'facecolor', 'g', 'edgecolor','b', "linewidth", 2);
+h=plot([0:5],[.5 .5 .5 .5 .5 .5],"--r");
+axis ("tic[yz]", "labely[xyz]");
+set(h, "linewidth", 2);  
+legend("SEM","MEAN","Half prob");
+%hh=xlabel("T=1 --- R=2 --- P=3 --- S=4");set(hh, "fontsize", 14);
+hh=ylabel("P(C|X)");set(hh, "fontsize", 14);
+hh=title("Probabilidad de elegir C dado cada estado- Alcanzaron Criterio");set(hh, "fontsize", 13);
+axis ("tic[yz]", "labely[xyz]");
+t=text([1:4], -.04*ones(1,4), {"T"; "R";"P";"S"},"fontsize",14);
+t=text([1:4/(length(_sujetosCooperadores)+1):4], -.08*ones(1,length(_sujetosCooperadores)), _txtSujetos(_sujetosCooperadores,:),"fontsize",14);
+axis([0 5 0 1]);
+hold off;grid on;
 % ------------------------
 
 % ERRORES en matriz

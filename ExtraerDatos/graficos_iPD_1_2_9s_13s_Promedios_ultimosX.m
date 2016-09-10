@@ -146,10 +146,10 @@ for i=_sujetosCooperadores%1:_nSujetos
   finAux=expXsuj(i);
   h=plot([inicioAux:finAux],_promediosC(inicioAux:finAux,i),_colores(i,:));
   set(h, "linewidth", 2);
-  xlabel("n de sesiones");
-  ylabel("% de cooperacion");
-  title("Cooperacion en iPD en sujetos que alcanzaron Criterio");
-  
+  hh=xlabel("n de sesiones");set(hh, "fontsize", 14);
+  hh=ylabel("% de cooperacion");set(hh, "fontsize", 14);
+  hh=title(strcat("Cooperacion en iPD en sujetos que alcanzaron Criterio: ",num2str(_criterio,2)));
+  set(hh, "fontsize", 14);
   grid on;
 endfor
 legend(_txtSujetos(_sujetosCooperadores,:),4);
@@ -160,10 +160,10 @@ for i=_sujetosCooperadores%1:_nSujetos
   finAux=expXsuj(i);
   h=plot([1:10],_promediosC(inicioAux:finAux,i),_colores(i,:));
   set(h, "linewidth", 2);
-  xlabel("n de sesiones");
-  ylabel("% de cooperacion");
-  title("Cooperacion en iPD en sujetos que alcanzaron Criterio");
-  
+  hh=xlabel("n de sesiones");set(hh, "fontsize", 14);
+  hh=ylabel("% de cooperacion");set(hh, "fontsize", 14);
+  hh=title(strcat("Cooperacion en iPD en sujetos que alcanzaron Criterio: ",num2str(_criterio,2)));
+  axis([1 10 0 1]);set(hh, "fontsize", 14);
   grid on;
 endfor
 legend(_txtSujetos(_sujetosCooperadores,:),4);
@@ -176,7 +176,7 @@ for i=_sujetosNocooperadores%1:_nSujetos
   set(h, "linewidth", 2);
   xlabel("n de sesiones");
   ylabel("% de cooperacion");
-  title("Cooperacion en iPDen Sujetos que No alcanzaron Criterio");
+  title(strcat("Cooperacion en iPDen Sujetos que No alcanzaron Criterio: ",num2str(_criterio,2)));
   
   grid on;
 endfor
@@ -188,10 +188,10 @@ for i=_sujetosNocooperadores%1:_nSujetos
   finAux=expXsuj(i);
   h=plot([1:10],_promediosC(inicioAux:finAux,i),_colores(i,:));
   set(h, "linewidth", 2);
-  xlabel("n de sesiones");
-  ylabel("% de cooperacion");
-  title("Cooperacion en iPDen Sujetos que No alcanzaron Criterio");
-  
+  hh=xlabel("n de sesiones");set(hh, "fontsize", 14);
+  hh=ylabel("% de cooperacion");set(hh, "fontsize", 14);
+  hh=title(strcat("Cooperacion en iPDen Sujetos que No alcanzaron Criterio: ",num2str(_criterio,2)));
+  axis([1 10 0 1]);set(hh, "fontsize", 14);
   grid on;
 endfor
 legend(_txtSujetos(_sujetosNocooperadores,:),4);

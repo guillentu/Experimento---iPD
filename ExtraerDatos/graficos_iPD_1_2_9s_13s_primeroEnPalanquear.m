@@ -134,9 +134,10 @@ for i=1:_nSujetos
                             sincro(3,inicioAux:finAux,i) + sincro(4,inicioAux:finAux,i),_colores(5,:),
          [inicioAux:finAux],sincro(5,inicioAux:finAux,i),_colores(6,:));
   set(h, "linewidth", 2);
-  xlabel("n de sesiones");
-  ylabel("palanqueos por trials");
-  title(strcat("Cantidad de trial por Sesion don presiono primero. Sujeto: ",_txtSujetos(i,:))); 
+  hh=xlabel("n de sesiones");set(hh, "fontsize", 14);
+  hh=ylabel("palanqueos por trials");set(hh, "fontsize", 14);
+  hh=title(strcat("Cantidad de trial por Sesion don presiono primero. Sujeto: ",_txtSujetos(i,:))); 
+  set(hh, "fontsize", 14);
   legend("palanqueo 1ro + igual","palanqueo 2do","errores","Total","Alterna");
   grid on;
   axis ([0,expXsuj(i)+12,0,31], "square");
