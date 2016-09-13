@@ -246,10 +246,10 @@ endfor
 % matriz para inkscape
 QQTotmarkovInk=zeros(2,2,_nSujetos);
 for i=1:_nSujetos
-   QQTotmarkovInk(1,1,i)=10.4*QQTotmarkov(1,1,i)+.6;
-   QQTotmarkovInk(1,2,i)=10.4*QQTotmarkov(1,2,i)+.6;
-   QQTotmarkovInk(2,1,i)=10.4*QQTotmarkov(2,1,i)+.6;
-   QQTotmarkovInk(2,2,i)=10.4*QQTotmarkov(2,2,i)+.6;
+   QQTotmarkovInk(1,1,i)=30*QQTotmarkov(1,1,i)+0;
+   QQTotmarkovInk(1,2,i)=30*QQTotmarkov(1,2,i)+0;
+   QQTotmarkovInk(2,1,i)=30*QQTotmarkov(2,1,i)+0;
+   QQTotmarkovInk(2,2,i)=30*QQTotmarkov(2,2,i)+0;
 endfor
 
 graficos_iPD_1_2_9s_13s_Promedios_ultimosX;
@@ -286,7 +286,7 @@ endfor
 % grafico Alimentos versus Cooperacion
 [S I]=sort(_mediaXsujeto);
 figure;
-h=plot(30*_mediaXsujeto(I),_alimento(I),'ko', "markersize",12,"markerfacecolor",'c', "linewidth", 2);
+h=plot(N*_mediaXsujeto(I),_alimento(I),'ko', "markersize",12,"markerfacecolor",'c', "linewidth", 2);
 set(h, "linewidth", 2);
 hh=xlabel("Among of C choice ");
 set(hh, "fontsize", 14);
@@ -297,23 +297,30 @@ set(hh, "fontsize", 14);
 grid on;
 t=text(-0.5*[1 1 1 1 1 1 1 1 1 1 1 -1]+30*_mediaXsujeto(I), .5+_alimento(I) ,_txtSujetos(I,:));
 axis([10 ,31,17.5, 31],'manual');
+hold on;
+h=plot(30*_mediaXsujeto(I(length(I))),_alimento(I(length(I))),'ko', "markersize",20,"markerfacecolor",'none', "linewidth", 2);
+hold off;
 
 % Tasa de alimentacion
-_foodRate= _alimento./_delay4eat;
+_foodRate= _alimento./(_delay4eat/30);%_vDelay4eat(1));
+_delay2eat=_delay4eat/30;
 [S I]=sort(_foodRate);
 figure;
-h=plot(30*_mediaXsujeto(I),_foodRate(I),'ko', "markersize",14,"markerfacecolor",'c', "linewidth", 2);
+h=plot(30*_mediaXsujeto(I),_delay2eat(I),'ko', "markersize",14,"markerfacecolor",'c', "linewidth", 2);
+hold on;
 set(h, "linewidth", 2);
 hh=xlabel("Among of C choice ");
 set(hh, "fontsize", 14);
-hh=ylabel("Food rate [Pellets/sec]");
+hh=ylabel("Delay to eat [seconds]");
 set(hh, "fontsize", 14);
-hh=title("Food Rate versus Cooperation"); 
+hh=title("Cooperation versus Delay to eat"); 
 set(hh, "fontsize", 14);
 grid on;
-t=text(-0.4*[1 1 1 1 1 1 1 1 1 1 1 -.8]+30*_mediaXsujeto(I), 0.04+_foodRate(I) ,_txtSujetos(I,:));
+t=text(-0.5*[1 1 1 1 1 1 1 1 1 1 1 -1]+30*_mediaXsujeto(I), 0.04*[1 1 1 1 1 1 1 1 1 1 1 .5]+_delay2eat(I) ,_txtSujetos(I,:));
 axis([1 ,30, 0, 1],'auto');
-
+hold on;
+h=plot(30*_mediaXsujeto(I(length(I))),_delay2eat(I(length(I))),'ko', "markersize",20,"markerfacecolor",'none', "linewidth", 2);
+hold off;
 % tiempos promedio por ensayor
 [S I]=sort(_effectiveness);
 figure;
@@ -328,8 +335,41 @@ set(hh, "fontsize", 14);
 grid on;
 t=text(-0.60*[1 1 1 1 1 1 1 1 1 1 1 -1]+30*_mediaXsujeto(I), 0.02*[1 -1 1 1 1 1 1 1 1 1 1 .5]+_effectiveness(I) ,_txtSujetos(I,:));
 axis([1 ,30, 0, 1],'auto');
+hold on;
+h=plot(30*_mediaXsujeto(I(length(I))),_effectiveness(I(length(I))),'ko', "markersize",20,"markerfacecolor",'none', "linewidth", 2);
+hold off;
 
+% Food versus FoodRate
+[S I]=sort(_alimento);
+figure;
+h=plot(_alimento(I),_foodRate(I),'ko', "markersize",14,"markerfacecolor",'c', "linewidth", 2);
+set(h, "linewidth", 2);
+hh=xlabel("Food Harvested [Pellet]");
+set(hh, "fontsize", 14);
+hh=ylabel("Food rate [Pellets/trial]");
+set(hh, "fontsize", 14);
+hh=title("Food Rate versus Food Harvested"); 
+set(hh, "fontsize", 14);
+grid on;
+t=text(-0.60*[1 1 1 1 1 1 1 1 1 1 1 -1]+_alimento(I), 0.02*[1 -1 1 1 1 1 1 1 1 1 1 .5]+_foodRate(I) ,_txtSujetos(I,:));
+axis([1 ,30, 0, 1],'auto');
+hold on;
+h=plot(_alimento(I(length(I))),_foodRate(I(length(I))),'ko', "markersize",20,"markerfacecolor",'none', "linewidth", 2);
+hold off;
 
+[S I]=sort(_alimento);
+[x, y, z] = sphere (50);
+figure;
+
+for i=I
+  meshc((_delay4eat(i)/30)+x./30, 30*_mediaXsujeto(i)+1*y, _alimento(i)+1*z);hold on;
+endfor
+hold off;
+zlabel("FOOD");
+ylabel("MEDIA DE COOPERACION");
+xlabel("DELAY TO EAT [Seconds]");
+
+contour3(_alimento,_foodRate,_mediaXsujeto)
 %for i=1:_nSujetos % Ceros para todos
 %  matricesQ.(indiceSujeto(i,:)) = zeros(4,4); % [T C P S]'                %agregar matrices Q para cada sujeto en estructura
 %endfor

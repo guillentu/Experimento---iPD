@@ -1,7 +1,7 @@
 %-------------------------------------------------------------------
 %------- IPD + TFT
 % Analisis de las ultimas 10 sesiones
-clear all
+%clear all
 close all
 
 % load "iPD_1_2_9s_13s/datosCargadoWorkspace20160423";
