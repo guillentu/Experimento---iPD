@@ -362,14 +362,18 @@ hold off;
 figure;
 
 for i=I
-  meshc((_delay4eat(i)/30)+x./30, 30*_mediaXsujeto(i)+1*y, _alimento(i)+1*z);hold on;
+  ezmesh((_delay4eat(i)/30)+x./13, 30*_mediaXsujeto(i)+1*y, _alimento(i)+1*z);hold on;set(h, "linewidth", 2);
 endfor
 hold off;
-zlabel("FOOD");
-ylabel("MEDIA DE COOPERACION");
-xlabel("DELAY TO EAT [Seconds]");
+hh=zlabel("FOOD");set(hh, "fontsize", 14);
+hh=ylabel("MEDIA DE COOPERACION");set(hh, "fontsize", 14);
+hh=xlabel("DELAY TO EAT [Seconds]");set(hh, "fontsize", 14);
+hh=title("Delay and Cooperation and Food Harvested"); 
+set(hh, "fontsize", 14);
 
-contour3(_alimento,_foodRate,_mediaXsujeto)
+
+
+%contour3(_alimento,_foodRate,_mediaXsujeto)
 %for i=1:_nSujetos % Ceros para todos
 %  matricesQ.(indiceSujeto(i,:)) = zeros(4,4); % [T C P S]'                %agregar matrices Q para cada sujeto en estructura
 %endfor
