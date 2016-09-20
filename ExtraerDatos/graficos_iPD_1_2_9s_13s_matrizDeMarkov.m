@@ -386,6 +386,18 @@ _criterio=.65;
 graficos_iPD_1_2_9s_13s_12Ratas_medias_y_medianas % se obtienen los sujetos que superan el .75 porciento de cooperación
 _sujetosCooperadores=find(_mediaXsujeto>_criterio); % indice de sujetos que pasaron el criterios 
 
+QmediaC=zeros(4,4);
+QmediaD=zeros(4,4);
+for i=_sujetosCooperadores
+  QmediaC=QmediaC+Q(:,:,i);
+endfor
+QmediaC=QmediaC./sum(QmediaC,2);
+
+for i=_sujetosNocooperadores
+  QmediaD=QmediaD+Q(:,:,i);
+endfor
+QmediaD=QmediaD./sum(QmediaD,2);
+
 % promediar las tasas de cooperacion y tasas de estados de los animales que superaron el criterio
 
 _mediaT=mean(T_mean(_sujetosCooperadores));
