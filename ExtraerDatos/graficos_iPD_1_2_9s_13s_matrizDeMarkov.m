@@ -70,6 +70,16 @@ inicio=01;
 fin=50;
 datos=zeros(2,fin);
 
+
+% Experimentos por sujetos
+expXsuj=zeros(1,_nSujetos);
+for j=inicio:(nfields(todo)-8)
+  for i=1:length(todo.(indice(j+1,:)))
+    if length(todo.(indice(j+1,:))(i)._groupStr)!=0
+      expXsuj(i)++;
+    endif
+  endfor
+endfor
 % Testeo ------------------------------
 %for j=inicio:fin
 %  if j<24
@@ -117,6 +127,7 @@ for i=1:_nSujetos
   matricesQ.(indiceSujeto(i,:)) = zeros(4,4); % [T C P S]'                %agregar matrices Q para cada sujeto en estructura
   matricesQaux.(indiceSujeto(i,:)) = zeros(4,4);
 endfor
+
 
 
 
@@ -274,6 +285,15 @@ for i=1:_nSujetos
       %Q(j,:,i)=matricesQ.(indiceSujeto(i,:))(j,:);%/sum(matricesQ.(indiceSujeto(i,:))(j,:));
     endif
   endfor
+endfor
+% matriz para inkscape
+QQTotmarkovInk=zeros(4,4,_nSujetos);
+for i=1:_nSujetos
+  QQTotmarkovInk(:,:,i)=30*Q(:,:,i);
+%   QQTotmarkovInk(1,1,i)=30*Q(1,1,i)+0;
+%   QQTotmarkovInk(1,2,i)=30*Q(1,2,i)+0;
+%   QQTotmarkovInk(2,1,i)=30*Q(2,1,i)+0;
+%   QQTotmarkovInk(2,2,i)=30*Q(2,2,i)+0;
 endfor
 %-------------------------------------------------------
 %   Normalización Individual --------------------------

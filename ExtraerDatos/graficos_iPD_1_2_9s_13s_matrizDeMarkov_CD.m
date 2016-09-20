@@ -71,6 +71,33 @@ fin=50;
 datos=zeros(2,fin);
 
 % Testeo ------------------------------
+%for j=inicio:fin
+%  if j<24
+%    _vSujetos=_vSujetos1;
+%  elseif (j>=24 && j<30)
+%    _vSujetos=_vSujetos2;
+%  elseif (j>=30 && j<32)
+%    _vSujetos=_vSujetos3;
+%  elseif (j>=32 && j<34)
+%    _vSujetos=_vSujetos4;
+%  elseif (j>=34)
+%    _vSujetos=_vSujetos5;
+%  else
+%    _vSujetos=_vSujetosNull;
+%  endif
+%  for i=_vSujetos
+%    %todo.(indice(j+1,:))(i)._respuestasEXP=[2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1];
+%   %if i==1 && (j==4||j==23)
+%   %todo.(indice(j+1,:))(i)._respuestasEXP=[2 2 2 0 0 2 2 2 2 2 2 2 2 2 2 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1];
+%   %else
+%   todo.(indice(j+1,:))(i)._respuestasEXP=ceil(2*rand(1,31));%[2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1];
+%   %endif
+%    %todo.(indice(j+1,:))(i)._respuestasEXP=[1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2];
+%    %todo.(indice(j+1,:))(i)._respuestasOPO=[1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2];
+%    todo.(indice(j+1,:))(i)._respuestasOPO=ceil(2*rand(1,31));%[2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1];
+%    %todo.(indice(j+1,:))(i)._respuestasOPO=[2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1];
+%  endfor
+%endfor
 %--------------------------------------
 
 indiceSujeto=[];
@@ -92,14 +119,14 @@ for i=1:_nSujetos
 endfor
 
 % Experimentos por sujetos
-expXsuj=zeros(1,_nSujetos);
-for j=inicio:(nfields(todo)-8)
-  for i=1:length(todo.(indice(j+1,:)))
-    if length(todo.(indice(j+1,:))(i)._groupStr)!=0
-      expXsuj(i)++;
-    endif
-  endfor
-endfor
+%expXsuj=zeros(1,_nSujetos);
+%for j=inicio:(nfields(todo)-8)
+%  for i=1:length(todo.(indice(j+1,:)))
+%    if length(todo.(indice(j+1,:))(i)._groupStr)!=0
+%      expXsuj(i)++;
+%    endif
+%  endfor
+%endfor
 
 % 
 % Brief: Carga las matrices de transicion de estado de cada sujeto.
@@ -262,11 +289,22 @@ probD=1-_mediaXsujeto;
 
 N=30; % numero de trials
 _vRefuerzos=[1 2 0 0];
-_alimento=zeros(1,_nSujetos);
+_alimento=zeros(1,_nSujetos+2);
 for i=1:_nSujetos   % vec [a b;c d] -> [a c b d] = [cc dc cd dd]
   _alimento(i)=N*_vRefuerzos*(vec(QQTotmarkov(:,:,i)).*[probC(i);probD(i);probC(i);probD(i)]);
   % VER meanFoodXsuj desde cantidad  de alimento
 endfor
+% alimento de sujetos ideales   markov       prob estaren C o D
+probC=zeros(1,5); % [alternador; cooperador; CyD de a pares; la mitad coop] 
+probC=[.5;1;0.5;.5;.5];
+probD=zeros(1,5);
+probD=1-probC;
+QQideales=[[0; 1 ;1; 0],[1; 0; 0; 0],[.5; .5; .5; .5],[14/15; 0; 1/15; 1],[2/3;1/3;1/3;2/3]];
+_idealSujeto=zeros(2,length(probC));% row 1 alimetno - row 2 delay to eat
+for i=1:length(probC)
+  _idealSujeto(1,i)=N*_vRefuerzos*(QQideales(:,i).*[probC(i);probD(i);probC(i);probD(i)]);
+endfor
+
 % vec(QQTotmarkov(:,:,1)) y reshape(ans,2,2)
 _vDelay4eat=[5 5 13 9];
 _delay4eat=zeros(1,_nSujetos);
@@ -274,6 +312,10 @@ for i=1:_nSujetos   % vec [a b;c d] -> [a c b d] = [cc dc cd dd]
   _delay4eat(i)=N*_vDelay4eat*(vec(QQTotmarkov(:,:,i)).*[probC(i);probD(i);probC(i);probD(i)]);
   % VER meanFoodXsuj desde cantidad  de alimento
 endfor
+for i=1:length(probC)
+  _idealSujeto(2,i)=_vDelay4eat*(QQideales(:,i).*[probC(i);probD(i);probC(i);probD(i)]);
+endfor
+
 _effectiveness=(N*_vDelay4eat(1))./_delay4eat;
 
 mean(food(inicioAux:finAux,i))
@@ -286,7 +328,7 @@ endfor
 % grafico Alimentos versus Cooperacion
 [S I]=sort(_mediaXsujeto);
 figure;
-h=plot(N*_mediaXsujeto(I),_alimento(I),'ko', "markersize",12,"markerfacecolor",'c', "linewidth", 2);
+h=plot(_mediaXsujeto(I),_alimento(I),'ko', "markersize",12,"markerfacecolor",'c', "linewidth", 2);
 set(h, "linewidth", 2);
 hh=xlabel("Among of C choice ");
 set(hh, "fontsize", 14);
@@ -295,10 +337,13 @@ set(hh, "fontsize", 14);
 hh=title("Food versus Cooperation"); 
 set(hh, "fontsize", 14);
 grid on;
-t=text(-0.5*[1 1 1 1 1 1 1 1 1 1 1 -1]+30*_mediaXsujeto(I), .5+_alimento(I) ,_txtSujetos(I,:));
-axis([10 ,31,17.5, 31],'manual');
+t=text(-0.01*[1 2.5 1 1 1 1 1 1 1 1 1 -1]+_mediaXsujeto(I), .9+_alimento(I) ,_txtSujetos(I,:));
+axis('auto');
 hold on;
-h=plot(30*_mediaXsujeto(I(length(I))),_alimento(I(length(I))),'ko', "markersize",20,"markerfacecolor",'none', "linewidth", 2);
+h=plot(_mediaXsujeto(I(length(I))),_alimento(I(length(I))),'ko', "markersize",20,"markerfacecolor",'none', "linewidth", 2);
+h=plot(probC([1 3 4 5]),_idealSujeto(1,[1 3 4 5]),'ko', "markersize",20,"markerfacecolor",'r', "linewidth", 2);
+t=text(0.025*ones(1,length(probC([1 3 4 5])))+ probC([1 3 4 5])', 
+        _idealSujeto(1,[1 3 4 5]) ,{"switch CD";"switch CCDD";"half C";"switch 3Cx3D"});
 hold off;
 
 % Tasa de alimentacion
@@ -306,7 +351,7 @@ _foodRate= _alimento./(_delay4eat/30);%_vDelay4eat(1));
 _delay2eat=_delay4eat/30;
 [S I]=sort(_foodRate);
 figure;
-h=plot(30*_mediaXsujeto(I),_delay2eat(I),'ko', "markersize",14,"markerfacecolor",'c', "linewidth", 2);
+h=plot(_mediaXsujeto(I),_delay2eat(I),'ko', "markersize",14,"markerfacecolor",'c', "linewidth", 2);
 hold on;
 set(h, "linewidth", 2);
 hh=xlabel("Among of C choice ");
@@ -315,12 +360,16 @@ hh=ylabel("Delay to eat [seconds]");
 set(hh, "fontsize", 14);
 hh=title("Cooperation versus Delay to eat"); 
 set(hh, "fontsize", 14);
+h=plot(_mediaXsujeto(I),_delay2eat(I),'ko', "markersize",14,"markerfacecolor",'c', "linewidth", 2);
 grid on;
-t=text(-0.5*[1 1 1 1 1 1 1 1 1 1 1 -1]+30*_mediaXsujeto(I), 0.04*[1 1 1 1 1 1 1 1 1 1 1 .5]+_delay2eat(I) ,_txtSujetos(I,:));
-axis([1 ,30, 0, 1],'auto');
+t=text(-0.02*[1 1 1 1 1 1 1 1 1 1 1 1]+_mediaXsujeto(I), 0.15*[1 1 -1 1 1 1 1 1 1 1 1 -1]+_delay2eat(I) ,_txtSujetos(I,:));
+axis('auto');
 hold on;
-h=plot(30*_mediaXsujeto(I(length(I))),_delay2eat(I(length(I))),'ko', "markersize",20,"markerfacecolor",'none', "linewidth", 2);
+h=plot(probC([1 3 4 5]),_idealSujeto(2,[1 3 4 5]),'ko', "markersize",20,"markerfacecolor",'r', "linewidth", 2);
+t=text(0.025*ones(1,length(probC([1 3 4 5])))+ probC([1 3 4 5])', 
+        _idealSujeto(2,[1 3 4 5]) ,{"switch CD";"switch CCDD";"half C";"switch 3Cx3D"});
 hold off;
+
 % tiempos promedio por ensayor
 [S I]=sort(_effectiveness);
 figure;
@@ -362,7 +411,7 @@ hold off;
 figure;
 
 for i=I
-  ezmesh((_delay4eat(i)/30)+x./13, 30*_mediaXsujeto(i)+1*y, _alimento(i)+1*z);hold on;set(h, "linewidth", 2);
+  ezmesh((_delay4eat(i)/30)+x./13, 30*_mediaXsujeto(i)+1*y, _alimento(i)+1*z);hold on;set(h, "linewidth", 2);hold on;
 endfor
 hold off;
 hh=zlabel("FOOD");set(hh, "fontsize", 14);
