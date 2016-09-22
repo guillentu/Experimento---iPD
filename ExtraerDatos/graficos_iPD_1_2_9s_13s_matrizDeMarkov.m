@@ -382,10 +382,10 @@ for i=1:_nSujetos
   hold off
 endfor
 
-_criterio=.65;
+_criterio=.70;
 graficos_iPD_1_2_9s_13s_12Ratas_medias_y_medianas % se obtienen los sujetos que superan el .75 porciento de cooperación
 _sujetosCooperadores=find(_mediaXsujeto>_criterio); % indice de sujetos que pasaron el criterios 
-_sujetosNocooperadores=complemento(_sujetosCooperadores,_nSujetos);
+
 QmediaC=zeros(4,4);
 QmediaD=zeros(4,4);
 for i=_sujetosCooperadores
@@ -628,49 +628,18 @@ ylabel("P(C|X)");
 title("Probabilidad de elegir C dado cada estado- No alcanzaron Criterio");
 hold off;
 
+figure;
 
-% PROBABILIDAD DE COOPERAR DADO CADA ESTADOS
 probEleccionC=zeros(4,_nSujetos);
 probEleccionD=zeros(4,2);
 for i=1:_nSujetos
   probEleccionC(:,i)=probEleccion(:,1,i);
 endfor
-probEleccionMean=zeros(4,2,2);
-probEleccionSem=zeros(4,2,2);
-
-for i=_sujetosCooperadores
-  probEleccionMean(:,:,1)+=probEleccion(:,:,i);
-endfor
-for i=_sujetosNocooperadores
-  probEleccionMean(:,:,2)+=probEleccion(:,:,i);
-endfor
-probEleccionMean(:,:,1)=probEleccionMean(:,:,1)./sum(probEleccionMean(:,:,1),2);
-probEleccionMean(:,:,2)=probEleccionMean(:,:,2)./sum(probEleccionMean(:,:,2),2)
-aux=[];
-for j=1:4
-  aux=[];
-  for i=_sujetosCooperadores
-    if probEleccion(j,1,i)!=0 || probEleccion(j,2,i)!=0
-      aux=[aux; probEleccion(j,:,i)]
-    endif
-  endfor
-  probEleccionSem(j,:,1)=sem(aux)
-endfor
-aux=[];
-for j=1:4
-  aux=[];
-  for i=_sujetosNocooperadores
-    if probEleccion(j,1,i)!=0 || probEleccion(j,2,i)!=0
-      aux=[aux; probEleccion(j,:,i)]
-    endif
-  endfor
-  probEleccionSem(j,:,2)=sem(aux)
-endfor
 
 figure;
-h=errorbar([1:4],probEleccionMean(:,1,2),probEleccionSem(:,1,2),'*k');
+h=errorbar([1:4],mean(probEleccionC(:,_sujetosNocooperadores),2),sem(probEleccionC(:,_sujetosNocooperadores),2),'*k');
 hold on;set(h, "linewidth", 2);     
-h=bar([1:4],probEleccionMean(:,1,2),'facecolor', 'g', 'edgecolor','b', "linewidth", 2);
+h=bar([1:4],mean(probEleccionC(:,_sujetosNocooperadores),2),'facecolor', 'g', 'edgecolor','b', "linewidth", 2);
 h=plot([0:5],[.5 .5 .5 .5 .5 .5],"--r");
 axis ("tic[yz]", "labely[xyz]");
 set(h, "linewidth", 2);  
@@ -680,14 +649,14 @@ hh=ylabel("P(C|X)");set(hh, "fontsize", 14);
 hh=title("Probabilidad de elegir C dado cada estado- No alcanzaron Criterio");set(hh, "fontsize", 13);
 axis ("tic[yz]", "labely[xyz]");
 t=text([1:4], -.04*ones(1,4), {"T"; "R";"P";"S"},"fontsize",14);
-t=text([1:4/(length(_sujetosCooperadores)+1):4], -.08*ones(1,length(_sujetosNocooperadores)), _txtSujetos(_sujetosNocooperadores,:),"fontsize",14);
+t=text([1:4/(length(_sujetosCooperadores)+1):4], -.08*ones(1,length(_sujetosCooperadores)), _txtSujetos(_sujetosCooperadores,:),"fontsize",14);
 axis([0 5 0 1]);
 hold off;grid on;
 
 figure;
-h=errorbar([1:4],probEleccionMean(:,1,1),probEleccionSem(:,1,1),'*k');
+h=errorbar([1:4],mean(probEleccionC(:,_sujetosCooperadores),2),sem(probEleccionC(:,_sujetosCooperadores),2),'*k');
 hold on;set(h, "linewidth", 2);     
-h=bar([1:4],probEleccionMean(:,1,1),'facecolor', 'g', 'edgecolor','b', "linewidth", 2);
+h=bar([1:4],mean(probEleccionC(:,_sujetosCooperadores),2),'facecolor', 'g', 'edgecolor','b', "linewidth", 2);
 h=plot([0:5],[.5 .5 .5 .5 .5 .5],"--r");
 axis ("tic[yz]", "labely[xyz]");
 set(h, "linewidth", 2);  

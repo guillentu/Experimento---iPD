@@ -119,14 +119,14 @@ for i=1:_nSujetos
 endfor
 
 % Experimentos por sujetos
-%expXsuj=zeros(1,_nSujetos);
-%for j=inicio:(nfields(todo)-8)
-%  for i=1:length(todo.(indice(j+1,:)))
-%    if length(todo.(indice(j+1,:))(i)._groupStr)!=0
-%      expXsuj(i)++;
-%    endif
-%  endfor
-%endfor
+expXsuj=zeros(1,_nSujetos);
+for j=inicio:(nfields(todo)-8)
+  for i=1:length(todo.(indice(j+1,:)))
+    if length(todo.(indice(j+1,:))(i)._groupStr)!=0
+      expXsuj(i)++;
+    endif
+  endfor
+endfor
 
 % 
 % Brief: Carga las matrices de transicion de estado de cada sujeto.
@@ -294,6 +294,14 @@ for i=1:_nSujetos   % vec [a b;c d] -> [a c b d] = [cc dc cd dd]
   _alimento(i)=N*_vRefuerzos*(vec(QQTotmarkov(:,:,i)).*[probC(i);probD(i);probC(i);probD(i)]);
   % VER meanFoodXsuj desde cantidad  de alimento
 endfor
+% vec(QQTotmarkov(:,:,1)) y reshape(ans,2,2)
+_vDelay4eat=[5 5 13 9];
+_delay4eat=zeros(1,_nSujetos);
+for i=1:_nSujetos   % vec [a b;c d] -> [a c b d] = [cc dc cd dd]
+  _delay4eat(i)=N*_vDelay4eat*(vec(QQTotmarkov(:,:,i)).*[probC(i);probD(i);probC(i);probD(i)]);
+  % VER meanFoodXsuj desde cantidad  de alimento
+endfor
+
 % alimento de sujetos ideales   markov       prob estaren C o D
 probC=zeros(1,5); % [alternador; cooperador; CyD de a pares; la mitad coop] 
 probC=[.5;1;0.5;.5;.5];
@@ -303,14 +311,6 @@ QQideales=[[0; 1 ;1; 0],[1; 0; 0; 0],[.5; .5; .5; .5],[14/15; 0; 1/15; 1],[2/3;1
 _idealSujeto=zeros(2,length(probC));% row 1 alimetno - row 2 delay to eat
 for i=1:length(probC)
   _idealSujeto(1,i)=N*_vRefuerzos*(QQideales(:,i).*[probC(i);probD(i);probC(i);probD(i)]);
-endfor
-
-% vec(QQTotmarkov(:,:,1)) y reshape(ans,2,2)
-_vDelay4eat=[5 5 13 9];
-_delay4eat=zeros(1,_nSujetos);
-for i=1:_nSujetos   % vec [a b;c d] -> [a c b d] = [cc dc cd dd]
-  _delay4eat(i)=N*_vDelay4eat*(vec(QQTotmarkov(:,:,i)).*[probC(i);probD(i);probC(i);probD(i)]);
-  % VER meanFoodXsuj desde cantidad  de alimento
 endfor
 for i=1:length(probC)
   _idealSujeto(2,i)=_vDelay4eat*(QQideales(:,i).*[probC(i);probD(i);probC(i);probD(i)]);
@@ -347,7 +347,7 @@ t=text(0.025*ones(1,length(probC([1 3 4 5])))+ probC([1 3 4 5])',
 hold off;
 
 % Tasa de alimentacion
-_foodRate= _alimento./(_delay4eat/30);%_vDelay4eat(1));
+_foodRate= _alimento(1:_nSujetos)./(_delay4eat/30);%_vDelay4eat(1));
 _delay2eat=_delay4eat/30;
 [S I]=sort(_foodRate);
 figure;
@@ -389,7 +389,7 @@ h=plot(30*_mediaXsujeto(I(length(I))),_effectiveness(I(length(I))),'ko', "marker
 hold off;
 
 % Food versus FoodRate
-[S I]=sort(_alimento);
+[S I]=sort(_alimento(1:_nSujetos));
 figure;
 h=plot(_alimento(I),_foodRate(I),'ko', "markersize",14,"markerfacecolor",'c', "linewidth", 2);
 set(h, "linewidth", 2);
@@ -406,12 +406,12 @@ hold on;
 h=plot(_alimento(I(length(I))),_foodRate(I(length(I))),'ko', "markersize",20,"markerfacecolor",'none', "linewidth", 2);
 hold off;
 
-[S I]=sort(_alimento);
+[S I]=sort(_alimento(1:_nSujetos));
 [x, y, z] = sphere (50);
 figure;
 
 for i=I
-  ezmesh((_delay4eat(i)/30)+x./13, 30*_mediaXsujeto(i)+1*y, _alimento(i)+1*z);hold on;set(h, "linewidth", 2);hold on;
+  meshc((_delay4eat(i)/30)+x./13, 30*_mediaXsujeto(i)+1*y, _alimento(i)+1*z);hold on;set(h, "linewidth", 2);hold on;
 endfor
 hold off;
 hh=zlabel("FOOD");set(hh, "fontsize", 14);
@@ -421,6 +421,22 @@ hh=title("Delay and Cooperation and Food Harvested");
 set(hh, "fontsize", 14);
 
 
+_criterio=.70;
+graficos_iPD_1_2_9s_13s_12Ratas_medias_y_medianas % se obtienen los sujetos que superan el .75 porciento de cooperación
+_sujetosCooperadores=find(_mediaXsujeto>_criterio); % indice de sujetos que pasaron el criterios 
+
+
+QmarkovmediaC=zeros(2,2);
+QmarkovmediaD=zeros(2,2);
+for i=_sujetosCooperadores
+  QmarkovmediaC=QmarkovmediaC+QQTotmarkov(:,:,i);
+endfor
+QmarkovmediaC=QmarkovmediaC./sum(QmarkovmediaC,2);
+
+for i=_sujetosNocooperadores
+  QmarkovmediaD=QmarkovmediaD+QQTotmarkov(:,:,i);
+endfor
+QmarkovmediaD=QmarkovmediaD./sum(QmarkovmediaD,2);
 
 %contour3(_alimento,_foodRate,_mediaXsujeto)
 %for i=1:_nSujetos % Ceros para todos
