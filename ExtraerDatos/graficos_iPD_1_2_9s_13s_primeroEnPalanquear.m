@@ -124,7 +124,7 @@ endfor
 
 %%%% DE A UNO
 for i=1:_nSujetos
-  figure();
+  hhh=figure();
   inicioAux=1;%expXsuj(i)-_ultimosX+1;
   finAux=expXsuj(i);
   h=plot([inicioAux:finAux],sincro(1,inicioAux:finAux,i) + sincro(2,inicioAux:finAux,i),_colores(2,:),
@@ -141,6 +141,11 @@ for i=1:_nSujetos
   legend("palanqueo 1ro + igual","palanqueo 2do","errores","Total","Alterna");
   grid on;
   axis ([0,expXsuj(i)+12,0,31], "square");
+  cd "/home/guille/Documents/investigacion/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/sincronismo y alternarOPO/";
+  %dir=strcat(dir,strcat("sincronismoYalternar_",_txtSujetos(i,:)));
+  name=strcat("sincronismoYalternar_",_txtSujetos(i,:));
+  name=strcat(name,".png");
+  print(hhh, name);
 endfor
 
   
