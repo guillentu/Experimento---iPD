@@ -5,6 +5,7 @@ load "iPD_1_2_9s_13s/datosVariablesCOMIDA"
 indiceSujeto=["Q01";"Q02";"Q03";"Q04";"Q05";"Q06";"Q07";"Q08";"Q09";"Q10";"Q11";"Q12"];
 _colores=["--+k";"--om";"--*g";"--.r";"--xb";"--sc";"--^m";"--vg";"-->b";"--<c";"--pr";"--hr"];
 ptrn={"1A";"2A";"3A";"4A";"5A";"6A";"7A";"8A";"9A";"10A";"3B";"4B"};
+
 % Experimentos por sujetos
 expXsuj=zeros(1,_nSujetos);
 for j=inicio:(nfields(todo)-8)
@@ -31,13 +32,13 @@ figure;
 h=errorbar([1:_nSujetos],foodMedia,foodSem,'*b');
 set (h, "linewidth", 2);
 hold on;
-h=bar(foodMedia,"facecolor", "none","edgecolor","g");
+h=bar(foodMedia,"facecolor", "g","edgecolor","k");
 set (h, "linewidth", 2);
 hold off;
-xlabel("Sujetos - 10sesiones/30trials");
-ylabel("Cantidad de alimento");
-title("Promedio de la cantidad de alimento Obtenido");
-t=text(-.25+[1:_nSujetos], -0.5*ones(1,_nSujetos) , ptrn);
+hh=xlabel("Sujets - Last 10 sesions");set(hh, "fontsize", 14);
+hh=ylabel("Food Harvested");set(hh, "fontsize", 14);
+hh=title(" Mean of Food Harvested per sesion");set(hh, "fontsize", 14);
+t=text(-.25+[1:_nSujetos], -0.5*ones(1,_nSujetos) , ptrn);set(hh, "fontsize", 14);
 axis ("tic[yz]", "labely[xyz]");axis([0,13,15,31],"square")
 % TODOS JUNTOS
 figure();hold on;
