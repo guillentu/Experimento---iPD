@@ -360,9 +360,9 @@ for i=1:_nSujetos
 endfor
 
 % Frecuencia de estados - Promedio de las ultimas sesiones
-T_mean=zeros(_nSujetos);R_mean=zeros(_nSujetos);P_mean=zeros(_nSujetos);S_mean=zeros(_nSujetos);
-T_median=zeros(_nSujetos);R_median=zeros(_nSujetos);P_median=zeros(_nSujetos);S_median=zeros(_nSujetos);
-T_std=zeros(_nSujetos);R_std=zeros(_nSujetos);P_std=zeros(_nSujetos);S_std=zeros(_nSujetos);
+T_mean=zeros(1,_nSujetos);R_mean=zeros(1,_nSujetos);P_mean=zeros(1,_nSujetos);S_mean=zeros(1,_nSujetos);
+T_median=zeros(1,_nSujetos);R_median=zeros(1,_nSujetos);P_median=zeros(1,_nSujetos);S_median=zeros(1,_nSujetos);
+T_std=zeros(1,_nSujetos);R_std=zeros(1,_nSujetos);P_std=zeros(1,_nSujetos);S_std=zeros(1,_nSujetos);
 for i=1:_nSujetos
   ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
   primero=ultimo-_ultimosX+1;
@@ -424,9 +424,7 @@ t=text([1:4], -.04*ones(1,4), {"T"; "R";"P";"S"},"fontsize",14);
 t=text([1:4/(length(_sujetosCooperadores)+1):4], -.08*ones(1,length(_sujetosCooperadores)), _txtSujetos(_sujetosCooperadores,:),"fontsize",13);
 axis([0 5 0 1]);
 hold off
-%cd "/home/guille/Documents/investigacion/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales";
-%cd "/home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales"
-%name=strcat("figura_iPD_1_2_9s_13s/fig_finales/outcomeRate_overLevel",_txtSujetos(i,:));
+
 name=strcat("figura_iPD_1_2_9s_13s/fig_finales/outcomeRate_overLevel",".png");
 print(hhh, name);
 
@@ -470,58 +468,59 @@ _stdS=std(S_mean(_sujetosCooperadores));
 
 
 % ----------------------------------------------------------------------------------------
-% Test de Kolmogorov smirnov (probar distribución normal entre sujetos cooperadores sobre los MISMO ESTADO)
-% si la distribución es normal entre coop en estado R, T, S o P
-vals=[(T_mean(_sujetosCooperadores));
-      (R_mean(_sujetosCooperadores));
-      (P_mean(_sujetosCooperadores));
-      (S_mean(_sujetosCooperadores))];
-
-% Se prueba si la distribución es NORMAL
-c_alpha=.895; % valor por tabla para dist normal con alpha=0.05
-k_n=sqrt(6)-.01+.85/sqrt(6);
-Ho_xEstados=zeros(1,4);
-for i=1:length(vals(:,1)) %estados
-  d_alpha=c_alpha/k_n       % alpha=0.05
-                          %d_alpha =  0.32119 con alpha=0.05 y d_alpha(0.01)=1.035/(sqrt(6)-.01+.85/sqrt(6))=0.37143
-  [pval, ks, d]=kolmogorov_smirnov_test_2(vals(:,i),randn(1,6))
-  %warning: cannot compute correct p-values with ties
-  %pval =  0.44131 ks =  0.86603 d =  0.50000
-  %d>d_alpha Se rechaza la hipotesis nula, la distribución NO es normal
-  if d>d_alpha 
-    Ho_xEstados(i)=1;
-  endif
-endfor
-% Test de Kolmogorov smirnov (probar distribución normal ENTRE estados)
-n=4
-k_n=sqrt(n)-.01+.85/sqrt(n);
-Ho_xSujeto=zeros(1,6);
-for i=1:length(vals(1,:)) %estados
-  d_alpha=c_alpha/k_n       % alpha=0.05
-                          %d_alpha =  0.32119 con alpha=0.05 y d_alpha(0.01)=1.035/(sqrt(6)-.01+.85/sqrt(6))=0.37143
-  [pval, ks, d]=kolmogorov_smirnov_test_2(vals(:,i),randn(1,6))
-  %warning: cannot compute correct p-values with ties
-  %pval =  0.44131 ks =  0.86603 d =  0.50000
-  %d<d_alpha Se rechaza la hipotesis nula, la distribución NO es normal
-  if d>d_alpha 
-    Ho_xSujeto(i)=1;
-  endif
-endfor
+%% Test de Kolmogorov smirnov (probar distribución normal entre sujetos cooperadores sobre los MISMO ESTADO)
+%% si la distribución es normal entre coop en estado R, T, S o P
+%vals=[(T_mean(_sujetosCooperadores));
+%      (R_mean(_sujetosCooperadores));
+%      (P_mean(_sujetosCooperadores));
+%      (S_mean(_sujetosCooperadores))];
+%
+%% Se prueba si la distribución es NORMAL
+%c_alpha=.895; % valor por tabla para dist normal con alpha=0.05
+%n=size(vals,2);
+%k_n=sqrt(n)-.01+.85/sqrt(n);
+%Ho_xEstados=zeros(1,4);
+%for i=1:length(vals(:,1)) %estados
+%  d_alpha=c_alpha/k_n       % alpha=0.05
+%                          %d_alpha =  0.32119 con alpha=0.05 y d_alpha(0.01)=1.035/(sqrt(6)-.01+.85/sqrt(6))=0.37143
+%  [pval, ks, d]=kolmogorov_smirnov_test_2(vals(i,:),normrnd(ones(1,length(vals(i,:)))*.5, .1))
+%  %warning: cannot compute correct p-values with ties
+%  %pval =  0.44131 ks =  0.86603 d =  0.50000
+%  %d>d_alpha Se rechaza la hipotesis nula, la distribución NO es normal
+%  if d>d_alpha 
+%    Ho_xEstados(i)=1;
+%  endif
+%endfor
+%% Test de Kolmogorov smirnov (probar distribución normal ENTRE estados)
+%n=size(vals,1);
+%k_n=sqrt(n)-.01+.85/sqrt(n);
+%Ho_xSujeto=zeros(1,size(vals,2));
+%for i=1:size(vals,2) %estados
+%  d_alpha=c_alpha/k_n       % alpha=0.05
+%                          %d_alpha =  0.32119 con alpha=0.05 y d_alpha(0.01)=1.035/(sqrt(6)-.01+.85/sqrt(6))=0.37143
+%  [pval, ks, d]=kolmogorov_smirnov_test_2(vals(:,i),rand(1,length(vals(i,:))))
+%  %warning: cannot compute correct p-values with ties
+%  %pval =  0.44131 ks =  0.86603 d =  0.50000
+%  %d<d_alpha Se rechaza la hipotesis nula, la distribución NO es normal
+%  if d>d_alpha 
+%    Ho_xSujeto(i)=1;
+%  endif
+%endfor
 % ----------------------------------------------------------------------------------------------
 % Prueba de homocedasticidad de Bartlett  http://www.itl.nist.gov/div898/handbook/eda/section3/eda357.htm
-_vBartlett=zeros(_nSujetos,5);
-for i=1:_nSujetos
-  ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
-  primero=ultimo-_ultimosX+1;
-
-  [a b c]=bartlett_test(T2(i,primero:ultimo),R2(i,primero:ultimo),P2(i,primero:ultimo),S2(i,primero:ultimo));
-  _vBartlett(i,1:3)=[a b c];
-  chi2_00125_bonferroni=13.277;
-  if chi2_00125_bonferroni<_vBartlett(i,2)
-    _vBartlett(i,4)=1; 
-  endif
-  _vBartlett(i,5)=i;
-endfor
+%_vBartlett=zeros(_nSujetos,5);
+%for i=1:_nSujetos
+%  ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
+%  primero=ultimo-_ultimosX+1;
+%
+%  [a b c]=bartlett_test(T2(i,primero:ultimo),R2(i,primero:ultimo),P2(i,primero:ultimo),S2(i,primero:ultimo));
+%  _vBartlett(i,1:3)=[a b c];
+%  chi2_00125_bonferroni=13.277;
+%  if chi2_00125_bonferroni<_vBartlett(i,2)
+%    _vBartlett(i,4)=1; 
+%  endif
+%  _vBartlett(i,5)=i;
+%endfor
 % --------------------------------------------------------------------------------
 
 % Test Friedman's Anova (Ho: todas los estados son igualmente probables)
@@ -537,28 +536,49 @@ vals_std=[(T_std(_sujetosCooperadores));
           (S_std(_sujetosCooperadores))];
       
 rangos=ranks(vals,1)';
-        
+
+vals2=30.*[(T_mean(_sujetosCooperadores));(R_mean(_sujetosCooperadores));(P_mean(_sujetosCooperadores));(S_mean(_sujetosCooperadores))]
+myfriedman(vals2')
+   
 rangos_mean=sum(rangos);
 N = length(_sujetosCooperadores); % N numero de sujetos
 k=4% k numero de clases (estados)
 chi_2 = 12/(N*k*(k+1)).*sum(rangos_mean.^2)-3*N*(k+1)
+
+alpha=0.05%/(length(_sujetosCooperadores)-1)
+%----------BUSCANDO el valor de chi2 en base al alpha y al DF
+_chi2value=0;
+while (1-chi2cdf(_chi2value,6)>alpha)
+  
+  _chi2value+=0.01;
+endwhile
+%----------
 % chi_2 es evaluado respecto a la distribución estandar chi2 con k-1 grado de libertad
-if chi_2 > 14.860 % si chi_2 > chi2_tabla(alpha=0.005 -> 14.860) (alpha=0.05 -> 9.488)
+#classifiers 2 3 4 5 6 7 8 9 10
+_vQAlpha= [1.960 2.343 2.569 2.728 2.850 2.949 3.031 3.102 3.164];
+if chi_2 > _chi2value % si chi_2 > chi2_tabla(alpha=0.005 -> 14.860) (alpha=0.05 -> 9.488)
                   % De una tabla corregida para N=6 CHI2_0.005_3 = 11.400 y CHI2_0.05_3=7.6
   %se rechaza Ho (hipotesis nula)
-  "Se rechaza la hipotesis nula"
+  disp("Se rechaza la hipotesis nula: Los estados no son ifgualmente prob");
+  disp("Comparaciñon por Two Tails Nemenyi");
+  
+  % Comparaciñon por Two Tails Nemenyi
+  q_alpha=_vQAlpha(size(vals,1)-1);%2,569; % alpha=0.05 -> 2,569  bonferroni correction alpha=0.05/N -> 2,394 
+                 % Bonferroni's adjustment: Lower the 0.05 to 0.0083333 ->  3.9608 http://www.quantitativeskills.com/sisa/calculations/bonfer.htm
+                 % table of bonferroni correction
+  %%q_alpha=3.9608;        
+  CD=q_alpha*sqrt((k*(k+1))/(6*N));
+  dif=[];
+  for i=1:4
+    dif(i).diff=find(abs(rangos_mean-rangos_mean(i))>CD);
+  end
+  %fprintf(': %i\n',)
+
+else
+  disp("La hipotesis nula es CORRECTA: Todos los estados son igualmente prob.");
 endif
 
-% Comparaciñon por Ttwo Tails Nemenyi
-q_alpha=2,569; % alpha=0.05 -> 2,569  bonferroni correction alpha=0.05/N -> 2,394 
-               % Bonferroni's adjustment: Lower the 0.05 to 0.0083333 ->  3.9608 http://www.quantitativeskills.com/sisa/calculations/bonfer.htm
-               % table of bonferroni correction
-q_alpha=3.9608;        
-CD=q_alpha*sqrt((k*(k+1))/(6*N));
-dif=[];
-for i=1:4
-  dif(i).diff=find(abs(rangos_mean-rangos_mean(i))>CD);
-end
+
 
 % Test CHI_2 de bondad de ajuste respecto de la Ho (poblacion de preferencia uniforme entre C y D) 
 % Se utiliza la distribucion chi 2 para comparar los valores criticos 
@@ -633,7 +653,7 @@ for i=1:4
   endif
 endfor
 
-% -- Graficos de P(C|X)
+% -- Graficos de P(C|X) ------------------------------------
 probEleccion=zeros(size(probxExpTotal));
 for i=1:_nSujetos
   for j=1:4
@@ -643,35 +663,37 @@ for i=1:_nSujetos
   endfor
 endfor
 _txtSujetos=["1A";"2A";"3A";"4A";"5A";"6A";"7A";"8A";"9A";"10A";"3B";"4B"];
-_colores=["--+k";"--om";"--*g";"--.r";"--xb";"--sc";"--^m";"--vg";"-->b";"--<c";"--pr";"--hr"];
+_colores=["+k";"om";"*g";".r";"xb";"sc";"^m";"vg";">b";"<k";"pk";"hr"];
 figure;hold on;
 for i=_sujetosCooperadores
-  i
-  h=plot(probEleccion(:,1,i),_colores(i,:));
-  set(h, "linewidth", 2);
+  h=plot(probEleccion(:,1,i),_colores(i,:), "markersize",12,"markerfacecolor",'none', "linewidth", 2);
 endfor
-plot(probEleccion(:,2,_sujetosCooperadores(5)),"--ok");
-set(h, "linewidth", 1);
 plot([.5 .5 .5 .5],"--r");
 set(h, "linewidth", 2);  
-legend(_txtSujetos(_sujetosCooperadores,:), 4);
-xlabel("T=1 --- R=2 --- P=3 --- S=4");
-ylabel("P(C|X)");
-title("Outcome Rate per individuals");
+hh=legend(_txtSujetos(_sujetosCooperadores,:), 4);set(hh,"fontsize",12);
+%xlabel("T=1 --- R=2 --- P=3 --- S=4");
+axis ("tic[yz]", "labely[xyz]");
+ylabel("P(C|X)", "fontsize", 13);
+title("Probability of Cooperation after outcome - Over Level", "fontsize", 14);
+t=text([1:4], -.04*ones(1,4), {"T"; "R";"P";"S"},"fontsize",14);
 hold off;
+axis([0 5 0 1]);
 
 figure;
 for i=_sujetosNocooperadores
   hold on;
-  h=plot(probEleccion(:,1,i),_colores(i,:));
+  h=plot(probEleccion(:,1,i),_colores(i,:), "markersize",12,"markerfacecolor",'none', "linewidth", 2);
   set(h, "linewidth", 2);       
 endfor
 plot([.5 .5 .5 .5],"--r");
 set(h, "linewidth", 2);  
-legend(_txtSujetos(_sujetosNocooperadores,:));
-xlabel("T=1 --- R=2 --- P=3 --- S=4");
-ylabel("P(C|X)");
-title("Probabilidad de elegir C dado cada estado- No alcanzaron Criterio");
+hh=legend(_txtSujetos(_sujetosNocooperadores,:));set(hh,"fontsize",12);
+%xlabel("T=1 --- R=2 --- P=3 --- S=4");
+axis ("tic[yz]", "labely[xyz]");
+hh=ylabel("P(C|X)", "fontsize", 13);
+title("Probability of Cooperation after outcome - Down Level", "fontsize", 14);
+t=text([1:4], -.04*ones(1,4), {"T"; "R";"P";"S"},"fontsize",14);
+axis([0 5 0 1]);
 hold off;
 
 
@@ -724,7 +746,7 @@ set(h, "linewidth", 2);
 legend("SEM","MEAN","Half prob");
 %hh=xlabel("T=1 --- R=2 --- P=3 --- S=4");set(hh, "fontsize", 14);
 hh=ylabel("P(C|X)");set(hh, "fontsize", 14);
-hh=title("Probabilidad de elegir C dado cada estado- No alcanzaron Criterio");set(hh, "fontsize", 13);
+hh=title("Probability of Cooperation after outcome - Down Level");set(hh, "fontsize", 13);
 axis ("tic[yz]", "labely[xyz]");
 t=text([1:4], -.04*ones(1,4), {"T"; "R";"P";"S"},"fontsize",14);
 t=text([1:4/(length(_sujetosNocooperadores)+1):4], -.08*ones(1,length(_sujetosNocooperadores)), _txtSujetos(_sujetosNocooperadores,:),"fontsize",14);
@@ -741,7 +763,7 @@ set(h, "linewidth", 2);
 legend("SEM","MEAN","Half prob");
 %hh=xlabel("T=1 --- R=2 --- P=3 --- S=4");set(hh, "fontsize", 14);
 hh=ylabel("P(C|X)");set(hh, "fontsize", 14);
-hh=title("Probabilidad de elegir C dado cada estado- Alcanzaron Criterio");set(hh, "fontsize", 13);
+hh=title("Probability of Cooperation after outcome - Over Level");set(hh, "fontsize", 13);
 axis ("tic[yz]", "labely[xyz]");
 t=text([1:4], -.04*ones(1,4), {"T"; "R";"P";"S"},"fontsize",14);
 t=text([1:4/(length(_sujetosCooperadores)+1):4], -.08*ones(1,length(_sujetosCooperadores)), _txtSujetos(_sujetosCooperadores,:),"fontsize",14);
