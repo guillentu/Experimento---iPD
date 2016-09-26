@@ -579,12 +579,12 @@ else
 endif
 
 
-
+probEleccionXestadoPrimeroUltimo;
 % Test CHI_2 de bondad de ajuste respecto de la Ho (poblacion de preferencia uniforme entre C y D) 
 % Se utiliza la distribucion chi 2 para comparar los valores criticos 
 % se testea la desviación de las probabilidad de eleccion dado un estado respecto a un ditribucion uniforme
 % REQUIERE LAS PROB de COOPERAR DADO LOS DIFERENTES ESTADOS
-probEleccionXestadoPrimeroUltimo;
+
 % Se testea que las probabilidades indiciduales sobre cada sujeto es diferente del azar
 % Prob. P(c|X) -> teorica = n_total_en_X / 2. La Frec Teoria se calcula como la suma de los casos de elección de C y D cuando caen 
 % en un determinado X.  
@@ -593,10 +593,11 @@ probEleccionXestadoPrimeroUltimo;
 % P(c|X) probsbilidad de elección dado los Diferentes estados
 aa=zeros(4,_nSujetos);
 frec_teo=zeros(4,1,_nSujetos);
-frec_teo= sum(probxExpTotal(:,:,:),2)./2;%     Se suman y div x 2 todos las eleciones luego de T
+frec_teo=sum(probxExpTotal(:,:,:),2)./2;%     Se suman y div x 2 todos las eleciones luego de T
 % componentes de la sumatoria  (Oi-Ei)^2/Ei
 aa=(probxExpTotal(:,1,:)-frec_teo).^2./frec_teo;
 % sumatoria del Chi 2
+
 _validosCoop=zeros(1,4);freedomNocoop=zeros(1,4);
 _auxSujCoops=[];
 
@@ -611,17 +612,27 @@ for i=1:4
       printf("-- Sujeto %d NO VISITADO %s, valor=%d\n",_sujetosCooperadores(j),_estados(i),aa(i,1,_sujetosCooperadores(j)))
     endif
   endfor
-  _auxSujCoops.(_estados(i))=_aux
+  _auxSujCoops.(_estados(i))=_aux;
 endfor
 chi_2_coop = zeros(4,1);% sum(aa([1 2 4],1,_sujetosCooperadores),3)
 for i=1:4
-chi_2_coop(i) = sum(aa(i,1,_sujetosCooperadores(_auxSujCoops.(_estados(i)) ) ) ,3);
+chi_2_coop(i) = sum(aa(i,1,_sujetosCooperadores(_auxSujCoops.(_estados(i)))));
 endfor
 
 
-chi_2_coop
+chi_2_coop;
 _sujetosNocooperadores=complemento(_sujetosCooperadores,_nSujetos); % Obtiene los indices de los no coop
-chi_2_nocoop = sum(aa(:,1,_sujetosNocooperadores),3)
+chi_2_nocoop = sum(aa(:,1,_sujetosNocooperadores),3);
+
+_vecProbxExpTotal=[];
+for i=1:_nSujetos
+  _vecProbxExpTotal=[_vecProbxExpTotal probxExpTotal(:,1,i)]
+endfor
+_stdSujetosCoop=zeros(4,1)
+for i=1:4
+  _stdSujetosCoop(i,1)=std(_vecProbxExpTotal(i,_sujetosCooperadores(_auxSujCoops.(_estados(i)))),0,2);
+endfor
+_stdSujetosNocoop=std(_vecProbxExpTotal(:,_sujetosNocooperadores),0,2);
 
 pasanCoop=zeros(1,4);
 pasanNocoop=zeros(1,4);
