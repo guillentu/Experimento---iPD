@@ -197,7 +197,7 @@ endfor
 legend(_txtSujetos(_sujetosNocooperadores,:),4);
 
 % Kluskal-Wallis ANOVA one-way a lo largo de un juego (ultimas 10sesiones) entre los promedios de cooperacion 
-
+% test de independencia entre muestras o individuos
 _proporcionC=30*_cooperacion./(_trialsOK-_nada);
 % los datos deben ser mayores a 5 para que el test funcione bien
 x=[];
