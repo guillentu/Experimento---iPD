@@ -398,6 +398,34 @@ for i=_sujetosNocooperadores
 endfor
 QmediaD=QmediaD./sum(QmediaD,2);
 
+% Test Friedman's Anova (Ho: todas los estados son igualmente probables)
+% asignar rangos a los promedios de cada estado - ranks 
+vals=[(T_mean(_sujetosCooperadores));
+      (R_mean(_sujetosCooperadores));
+      (P_mean(_sujetosCooperadores));
+      (S_mean(_sujetosCooperadores))];
+           
+vals_std=[(T_std(_sujetosCooperadores));
+          (R_std(_sujetosCooperadores));
+          (P_std(_sujetosCooperadores));
+          (S_std(_sujetosCooperadores))];
+      
+%rangos=ranks(vals,1)';
+
+vals2=[(T_mean(_sujetosNocooperadores));
+      (R_mean(_sujetosNocooperadores));
+      (P_mean(_sujetosNocooperadores));
+      (S_mean(_sujetosNocooperadores))];
+           
+vals_std2=[(T_std(_sujetosNocooperadores));
+          (R_std(_sujetosNocooperadores));
+          (P_std(_sujetosNocooperadores));
+          (S_std(_sujetosNocooperadores))];
+
+%vals2=30.*[(T_mean(_sujetosCooperadores));(R_mean(_sujetosCooperadores));(P_mean(_sujetosCooperadores));(S_mean(_sujetosCooperadores))]
+%myfriedman(vals2')
+dd=friedmanGuille(vals,0.05);
+ff=friedmanGuille(vals2,0.05);
 
 % promediar las tasas de cooperacion y tasas de estados de los animales que superaron el criterio
 _mediaT=mean(T_mean(_sujetosCooperadores));
@@ -523,147 +551,87 @@ _stdS=std(S_mean(_sujetosCooperadores));
 %endfor
 % --------------------------------------------------------------------------------
 
-% Test Friedman's Anova (Ho: todas los estados son igualmente probables)
-% asignar rangos a los promedios de cada estado - ranks 
-vals=[(T_mean(_sujetosCooperadores));
-      (R_mean(_sujetosCooperadores));
-      (P_mean(_sujetosCooperadores));
-      (S_mean(_sujetosCooperadores))];
-           
-vals_std=[(T_std(_sujetosCooperadores));
-          (R_std(_sujetosCooperadores));
-          (P_std(_sujetosCooperadores));
-          (S_std(_sujetosCooperadores))];
-      
-rangos=ranks(vals,1)';
+%% Test Friedman's Anova (Ho: todas los estados son igualmente probables)
+%% asignar rangos a los promedios de cada estado - ranks 
+%vals=[(T_mean(_sujetosCooperadores));
+%      (R_mean(_sujetosCooperadores));
+%      (P_mean(_sujetosCooperadores));
+%      (S_mean(_sujetosCooperadores))];
+%           
+%vals_std=[(T_std(_sujetosCooperadores));
+%          (R_std(_sujetosCooperadores));
+%          (P_std(_sujetosCooperadores));
+%          (S_std(_sujetosCooperadores))];
+%      
+%%rangos=ranks(vals,1)';
+%
+%vals2=[(T_mean(_sujetosNocooperadores));
+%      (R_mean(_sujetosNocooperadores));
+%      (P_mean(_sujetosNocooperadores));
+%      (S_mean(_sujetosNocooperadores))];
+%           
+%vals_std2=[(T_std(_sujetosNocooperadores));
+%          (R_std(_sujetosNocooperadores));
+%          (P_std(_sujetosNocooperadores));
+%          (S_std(_sujetosNocooperadores))];
+%
+%%vals2=30.*[(T_mean(_sujetosCooperadores));(R_mean(_sujetosCooperadores));(P_mean(_sujetosCooperadores));(S_mean(_sujetosCooperadores))]
+%%myfriedman(vals2')
+%dd=friedmanGuille(vals,0.05);
+%ff=friedmanGuille(vals2,0.05);
 
-vals2=30.*[(T_mean(_sujetosCooperadores));(R_mean(_sujetosCooperadores));(P_mean(_sujetosCooperadores));(S_mean(_sujetosCooperadores))]
-myfriedman(vals2')
-   
-rangos_mean=sum(rangos);
-N = length(_sujetosCooperadores); % N numero de sujetos
-k=4% k numero de clases (estados)
-chi_2 = 12/(N*k*(k+1)).*sum(rangos_mean.^2)-3*N*(k+1)
-
-alpha=0.05%/(length(_sujetosCooperadores)-1)
-%----------BUSCANDO el valor de chi2 en base al alpha y al DF
-_chi2value=0;
-while (1-chi2cdf(_chi2value,6)>alpha)
-  
-  _chi2value+=0.01;
-endwhile
-%----------
-% chi_2 es evaluado respecto a la distribución estandar chi2 con k-1 grado de libertad
-#classifiers 2 3 4 5 6 7 8 9 10
-_vQAlpha= [1.960 2.343 2.569 2.728 2.850 2.949 3.031 3.102 3.164];
-if chi_2 > _chi2value % si chi_2 > chi2_tabla(alpha=0.005 -> 14.860) (alpha=0.05 -> 9.488)
-                  % De una tabla corregida para N=6 CHI2_0.005_3 = 11.400 y CHI2_0.05_3=7.6
-  %se rechaza Ho (hipotesis nula)
-  disp("Se rechaza la hipotesis nula: Los estados no son ifgualmente prob");
-  disp("Comparaciñon por Two Tails Nemenyi");
-  
-  % Comparaciñon por Two Tails Nemenyi
-  q_alpha=_vQAlpha(size(vals,1)-1);%2,569; % alpha=0.05 -> 2,569  bonferroni correction alpha=0.05/N -> 2,394 
-                 % Bonferroni's adjustment: Lower the 0.05 to 0.0083333 ->  3.9608 http://www.quantitativeskills.com/sisa/calculations/bonfer.htm
-                 % table of bonferroni correction
-  %%q_alpha=3.9608;        
-  CD=q_alpha*sqrt((k*(k+1))/(6*N));
-  dif=[];
-  for i=1:4
-    dif(i).diff=find(abs(rangos_mean-rangos_mean(i))>CD);
-  end
-  %fprintf(': %i\n',)
-
-else
-  disp("La hipotesis nula es CORRECTA: Todos los estados son igualmente prob.");
-endif
+%rangos_mean=sum(rangos);
+%[k N] = length(vals); % N numero de sujetos
+%k=4% k numero de clases (estados)
+%chi_2 = 12/(N*k*(k+1)).*sum(rangos_mean.^2)-3*N*(k+1)
+%
+%alpha=0.05%/(length(_sujetosCooperadores)-1)
+%%----------BUSCANDO el valor de chi2 en base al alpha y al DF
+%_chi2value=0;
+%while (1-chi2cdf(_chi2value,6)>alpha)
+%  
+%  _chi2value+=0.01;
+%endwhile
+%%----------
+%% chi_2 es evaluado respecto a la distribución estandar chi2 con k-1 grado de libertad
+%#classifiers 2 3 4 5 6 7 8 9 10
+%_vQAlpha= [1.960 2.343 2.569 2.728 2.850 2.949 3.031 3.102 3.164];
+%if chi_2 > _chi2value % si chi_2 > chi2_tabla(alpha=0.005 -> 14.860) (alpha=0.05 -> 9.488)
+%                  % De una tabla corregida para N=6 CHI2_0.005_3 = 11.400 y CHI2_0.05_3=7.6
+%  %se rechaza Ho (hipotesis nula)
+%  disp("Se rechaza la hipotesis nula: Los estados no son ifgualmente prob");
+%  disp("Comparaciñon por Two Tails Nemenyi");
+%  
+%  % Comparaciñon por Two Tails Nemenyi
+%  q_alpha=_vQAlpha(size(vals,1)-1);%2,569; % alpha=0.05 -> 2,569  bonferroni correction alpha=0.05/N -> 2,394 
+%                 % Bonferroni's adjustment: Lower the 0.05 to 0.0083333 ->  3.9608 http://www.quantitativeskills.com/sisa/calculations/bonfer.htm
+%                 % table of bonferroni correction
+%  %%q_alpha=3.9608;        
+%  CD=q_alpha*sqrt((k*(k+1))/(6*N));
+%  dif=[];
+%  for i=1:4
+%    dif(i).diff=find(abs(rangos_mean-rangos_mean(i))>CD);
+%  end
+%  %fprintf(': %i\n',)
+%
+%else
+%  disp("La hipotesis nula es CORRECTA: Todos los estados son igualmente prob.");
+%endif
 
 
-probEleccionXestadoPrimeroUltimo;
-% Test CHI_2 de bondad de ajuste respecto de la Ho (poblacion de preferencia uniforme entre C y D) 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ------------------ Test CHI_2 de bondad de ajuste---------------------------
+% respecto de la Ho (poblacion de preferencia uniforme entre C y D) 
 % Se utiliza la distribucion chi 2 para comparar los valores criticos 
 % se testea la desviación de las probabilidad de eleccion dado un estado respecto a un ditribucion uniforme
 % REQUIERE LAS PROB de COOPERAR DADO LOS DIFERENTES ESTADOS
-
+probEleccionXestadoPrimeroUltimo;
 % Se testea que las probabilidades indiciduales sobre cada sujeto es diferente del azar
 % Prob. P(c|X) -> teorica = n_total_en_X / 2. La Frec Teoria se calcula como la suma de los casos de elección de C y D cuando caen 
 % en un determinado X.  
+% Entre sujetos Cooperadores 
 % Entre sujetos Cooperadores
-
 % P(c|X) probsbilidad de elección dado los Diferentes estados
-aa=zeros(4,_nSujetos);
-frec_teo=zeros(4,1,_nSujetos);
-frec_teo=sum(probxExpTotal(:,:,:),2)./2;%     Se suman y div x 2 todos las eleciones luego de T
-% componentes de la sumatoria  (Oi-Ei)^2/Ei
-aa=(probxExpTotal(:,1,:)-frec_teo).^2./frec_teo;
-% sumatoria del Chi 2
-
-_validosCoop=zeros(1,4);freedomNocoop=zeros(1,4);
-_auxSujCoops=[];
-
-_estados=["T";"R";"P";"S"];
-for i=1:4
-  _aux=[];
-  for j=1:length(_sujetosCooperadores)
-    if ~isnan(aa(i,1,_sujetosCooperadores(j))) % Salvando cuando el animal no estuvo en el estado X
-      _validosCoop(i)++;
-      _aux = [_aux, j];
-    else
-      printf("-- Sujeto %d NO VISITADO %s, valor=%d\n",_sujetosCooperadores(j),_estados(i),aa(i,1,_sujetosCooperadores(j)))
-    endif
-  endfor
-  _auxSujCoops.(_estados(i))=_aux;
-endfor
-chi_2_coop = zeros(4,1);% sum(aa([1 2 4],1,_sujetosCooperadores),3)
-for i=1:4
-chi_2_coop(i) = sum(aa(i,1,_sujetosCooperadores(_auxSujCoops.(_estados(i)))));
-endfor
-
-
-chi_2_coop;
-_sujetosNocooperadores=complemento(_sujetosCooperadores,_nSujetos); % Obtiene los indices de los no coop
-chi_2_nocoop = sum(aa(:,1,_sujetosNocooperadores),3);
-
-_vecProbxExpTotal=[];
-for i=1:_nSujetos
-  _vecProbxExpTotal=[_vecProbxExpTotal probxExpTotal(:,1,i)]
-endfor
-_stdSujetosCoop=zeros(4,1)
-for i=1:4
-  _stdSujetosCoop(i,1)=std(_vecProbxExpTotal(i,_sujetosCooperadores(_auxSujCoops.(_estados(i)))),0,2);
-endfor
-_stdSujetosNocoop=std(_vecProbxExpTotal(:,_sujetosNocooperadores),0,2);
-
-pasanCoop=zeros(1,4);
-pasanNocoop=zeros(1,4);
-% Sin correccion de Bonferroni
-freedom=length(_sujetosNocooperadores)-1;
-for i=1:4
-  if (1-chi2cdf(chi_2_coop(i),_validosCoop(i)-1))<0.05 %Si es menor significa que las muestras no provienen de una población aleatoria
-    pasanCoop(i)=1;% Se rechaza la HIP NULA
-  endif
-endfor
-
-for i=1:4
-  if (1-chi2cdf(chi_2_nocoop(i),freedom))<0.05 %Si es menor significa que las muestras no provienen de una población aleatoria
-    pasanNocoop(i)=1;% Se rechaza la HIP NULA
-  endif
-endfor
-% Con Correccion de Bonferroni
-pasanCoopBon=zeros(1,4);
-pasanNocoopBon=zeros(1,4);
-for i=1:4
-  if (1-chi2cdf(chi_2_coop(i),_validosCoop(i)-1))<(0.05/(_validosCoop(i))) %Si es menor significa que las muestras no provienen de una población aleatoria
-    pasanCoopBon(i)=1;% Se rechaza la HIP NULA
-  endif
-endfor
-
-for i=1:4
-  if (1-chi2cdf(chi_2_nocoop(i),freedom))<(0.05/(freedom+1)) %Si es menor significa que las muestras no provienen de una población aleatoria
-    pasanNocoopBon(i)=1;% Se rechaza la HIP NULA
-  endif
-endfor
-
 % -- Graficos de P(C|X) ------------------------------------
 probEleccion=zeros(size(probxExpTotal));
 for i=1:_nSujetos
@@ -706,14 +674,16 @@ title("Probability of Cooperation after outcome - Down Level", "fontsize", 14);
 t=text([1:4], -.04*ones(1,4), {"T"; "R";"P";"S"},"fontsize",14);
 axis([0 5 0 1]);
 hold off;
-
+% -- end ------------------------------------
 
 % PROBABILIDAD DE COOPERAR DADO CADA ESTADOS
 probEleccionC=zeros(4,_nSujetos);
-probEleccionD=zeros(4,2);
+probEleccionD=zeros(4,_nSujetos);
 for i=1:_nSujetos
   probEleccionC(:,i)=probEleccion(:,1,i);
+  probEleccionD(:,i)=probEleccion(:,2,i);
 endfor
+
 probEleccionMean=zeros(4,2,2);
 probEleccionSem=zeros(4,2,2);
 
@@ -729,7 +699,7 @@ for j=1:4
       aux=[aux; probEleccion(j,:,i)]
     endif
   endfor
-  probEleccionSem(j,:,1)=sem(aux)
+  probEleccionSem(j,:,1)=sem(aux);
 endfor
 
 for i=_sujetosNocooperadores
@@ -744,8 +714,14 @@ for j=1:4
       aux=[aux; probEleccion(j,:,i)]
     endif
   endfor
-  probEleccionSem(j,:,2)=sem(aux)
+  probEleccionSem(j,:,2)=sem(aux);
 endfor
+
+%% CHI 2 %%%%%%%%%%%%%%%%%%%%%%
+frec_teo=100*[.5];%                   |-> 1=cooperadores y 2=No_cooperadores
+chi_2_coop= (100.*probEleccionMean(:,1,1)-frec_teo).^2./frec_teo + (100.*probEleccionMean(:,2,1)-frec_teo).^2./frec_teo
+chi_2_nocoop=(100.*probEleccionMean(:,1,2)-frec_teo).^2./frec_teo + (100.*probEleccionMean(:,2,2)-frec_teo).^2./frec_teo
+%%%%%%%%%%%%%%%%%%%%%%%%
 
 figure;
 h=errorbar([1:4],probEleccionMean(:,1,2),probEleccionSem(:,1,2),'*k');
@@ -757,7 +733,7 @@ set(h, "linewidth", 2);
 legend("SEM","MEAN","Half prob");
 %hh=xlabel("T=1 --- R=2 --- P=3 --- S=4");set(hh, "fontsize", 14);
 hh=ylabel("P(C|X)");set(hh, "fontsize", 14);
-hh=title("Probability of Cooperation after outcome - Down Level");set(hh, "fontsize", 13);
+hh=title("Probability of Cooperation after outcome - Down Level");set(hh, "fontsize", 14);
 axis ("tic[yz]", "labely[xyz]");
 t=text([1:4], -.04*ones(1,4), {"T"; "R";"P";"S"},"fontsize",14);
 t=text([1:4/(length(_sujetosNocooperadores)+1):4], -.08*ones(1,length(_sujetosNocooperadores)), _txtSujetos(_sujetosNocooperadores,:),"fontsize",14);
@@ -771,12 +747,14 @@ h=bar([1:4],probEleccionMean(:,1,1),'facecolor', 'g', 'edgecolor','b', "linewidt
 h=plot([0:5],[.5 .5 .5 .5 .5 .5],"--r");
 axis ("tic[yz]", "labely[xyz]");
 set(h, "linewidth", 2);  
-legend("SEM","MEAN","Half prob");
+hh=legend("SEM","MEAN","Half prob",4);set(hh, "fontsize", 14);
 %hh=xlabel("T=1 --- R=2 --- P=3 --- S=4");set(hh, "fontsize", 14);
 hh=ylabel("P(C|X)");set(hh, "fontsize", 14);
-hh=title("Probability of Cooperation after outcome - Over Level");set(hh, "fontsize", 13);
+hh=title("Probability of Cooperation after outcome - Over Level");set(hh, "fontsize", 14);
 axis ("tic[yz]", "labely[xyz]");
 t=text([1:4], -.04*ones(1,4), {"T"; "R";"P";"S"},"fontsize",14);
+aux22=probEleccionMean(:,1,1)+probEleccionSem(:,1,1)+0.01;
+t=text(-0.06+[1:4], aux22, {"* "; "* ";"* ";"* "},"fontsize",25);
 t=text([1:4/(length(_sujetosCooperadores)+1):4], -.08*ones(1,length(_sujetosCooperadores)), _txtSujetos(_sujetosCooperadores,:),"fontsize",14);
 axis([0 5 0 1]);
 hold off;grid on;
