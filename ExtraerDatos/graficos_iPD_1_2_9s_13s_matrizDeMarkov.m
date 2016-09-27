@@ -295,6 +295,15 @@ for i=1:_nSujetos
 %   QQTotmarkovInk(2,1,i)=30*Q(2,1,i)+0;
 %   QQTotmarkovInk(2,2,i)=30*Q(2,2,i)+0;
 endfor
+
+% ESTADOS ESTACIONARIOS
+%_estadoEstacionario4=zeros(4,_nSujetos);
+%
+%for i=1:_nSujetos
+%  _estadoEstacionario4(:,i) = dtmc(Q(:,:,i));
+%endfor
+
+
 %-------------------------------------------------------
 %   Normalización Individual --------------------------
 QxExp_ante=matricesQxExp;
