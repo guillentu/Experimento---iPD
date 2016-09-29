@@ -287,15 +287,15 @@ probC=_mediaXsujeto;
 probD=zeros(1,_nSujetos);
 probD=1-_mediaXsujeto;
 
-N=30; % numero de trials
+N=1; % numero de trials
 _vRefuerzos=[1 2 0 0];
-_alimento=zeros(1,_nSujetos+2);
+_alimento=zeros(1,_nSujetos);
 for i=1:_nSujetos   % vec [a b;c d] -> [a c b d] = [cc dc cd dd]
   _alimento(i)=N*_vRefuerzos*(vec(QQTotmarkov(:,:,i)).*[probC(i);probD(i);probC(i);probD(i)]);
   % VER meanFoodXsuj desde cantidad  de alimento
 endfor
 % vec(QQTotmarkov(:,:,1)) y reshape(ans,2,2)
-_vDelay4eat=[5 5 13 9];
+_vDelay4eat=[0 0 8 4];
 _delay4eat=zeros(1,_nSujetos);
 for i=1:_nSujetos   % vec [a b;c d] -> [a c b d] = [cc dc cd dd]
   _delay4eat(i)=N*_vDelay4eat*(vec(QQTotmarkov(:,:,i)).*[probC(i);probD(i);probC(i);probD(i)]);
@@ -303,11 +303,11 @@ for i=1:_nSujetos   % vec [a b;c d] -> [a c b d] = [cc dc cd dd]
 endfor
 
 % alimento de sujetos ideales   markov       prob estaren C o D
-probC=zeros(1,5); % [alternador; cooperador; CyD de a pares; la mitad coop] 
-probC=[.5;1;0.5;.5;.5];
-probD=zeros(1,5);
+probC=zeros(1,7); % [alternador; cooperador; CyD de a pares; la mitad coop] 
+probC=[.5;1;0.5;.5;.5;2/3;3/4];
+probD=zeros(1,7);
 probD=1-probC;
-QQideales=[[0; 1 ;1; 0],[1; 0; 0; 0],[.5; .5; .5; .5],[14/15; 0; 1/15; 1],[2/3;1/3;1/3;2/3]];
+QQideales=[[0; 1 ;1; 0],[1; 0; 0; 0],[.5; .5; .5; .5],[14/15; 0; 1/15; 1],[2/3;1/3;1/3;2/3],[.5; 1; .5; 0],[2/3; 1; 1/3; 0]];
 _idealSujeto=zeros(2,length(probC));% row 1 alimetno - row 2 delay to eat
 for i=1:length(probC)
   _idealSujeto(1,i)=N*_vRefuerzos*(QQideales(:,i).*[probC(i);probD(i);probC(i);probD(i)]);
@@ -315,6 +315,7 @@ endfor
 for i=1:length(probC)
   _idealSujeto(2,i)=_vDelay4eat*(QQideales(:,i).*[probC(i);probD(i);probC(i);probD(i)]);
 endfor
+
 
 _effectiveness=(N*_vDelay4eat(1))./_delay4eat;
 
@@ -337,7 +338,7 @@ set(hh, "fontsize", 14);
 hh=title("Food versus Cooperation"); 
 set(hh, "fontsize", 14);
 grid on;
-t=text(-0.01*[1 2.5 1 1 1 1 1 1 1 1 1 -1]+_mediaXsujeto(I), .9+_alimento(I) ,_txtSujetos(I,:));
+t=text(-0.01*[1 2.5 1 1 1 1 1 1 1 1 1 -1]+_mediaXsujeto(I), .05+_alimento(I) ,_txtSujetos(I,:));
 axis('auto');
 hold on;
 h=plot(_mediaXsujeto(I(length(I))),_alimento(I(length(I))),'ko', "markersize",20,"markerfacecolor",'none', "linewidth", 2);
@@ -348,7 +349,7 @@ hold off;
 
 % Tasa de alimentacion
 _foodRate= _alimento(1:_nSujetos)./(_delay4eat/30);%_vDelay4eat(1));
-_delay2eat=_delay4eat/30;
+_delay2eat=_delay4eat;
 [S I]=sort(_foodRate);
 figure;
 h=plot(_mediaXsujeto(I),_delay2eat(I),'ko', "markersize",14,"markerfacecolor",'c', "linewidth", 2);
@@ -368,6 +369,29 @@ hold on;
 h=plot(probC([1 3 4 5]),_idealSujeto(2,[1 3 4 5]),'ko', "markersize",20,"markerfacecolor",'r', "linewidth", 2);
 t=text(0.025*ones(1,length(probC([1 3 4 5])))+ probC([1 3 4 5])', 
         _idealSujeto(2,[1 3 4 5]) ,{"switch CD";"switch CCDD";"half C";"switch 3Cx3D"});
+hold off;
+
+% Alimentacion Versus Delay to eat
+_delay2eat=_delay4eat;
+[S I]=sort(_alimento);
+figure;
+%h=plot(_alimento(I),_delay2eat(I),'ko', "markersize",14,"markerfacecolor",'c', "linewidth", 2);
+h=scatter(_alimento(I),_delay2eat(I),20, _mediaXsujeto(I),"filled");
+hold on;
+set(h, "linewidth", 2);
+hh=xlabel("% of total Reinforcers per Sesion");
+set(hh, "fontsize", 14);
+hh=ylabel("Mean Time out for eat per trials [seconds]");
+set(hh, "fontsize", 14);
+hh=title("Total Reinforcers versus Delay to eat"); 
+set(hh, "fontsize", 14);
+grid on;
+t=text(-0.02*[1 1 -1 1 1 1 1 1 1 1 1 -1]+_alimento(I), 0.15*[1 1 1 1 1 1 1 1 -1 1 -1 -1]+_delay2eat(I) ,_txtSujetos(I,:));
+axis('auto');
+hold on;
+h=plot(_idealSujeto(1,[1 3 4 5 6 7]),_idealSujeto(2,[1 3 4 5 6 7]),'ko', "markersize",20,"markerfacecolor",'r', "linewidth", 2);
+t=text(0.025*ones(1,length(probC([1 3 4 5 6 7])))+ _idealSujeto(1,[1 3 4 5 6 7]), 
+        _idealSujeto(2,[1 3 4 5 6 7]) ,{"switch CD\ncoop 0.5";"switch CCDD\ncoop 0.5";"half C\ncoop 0.5";"switch 3Cx3D\ncoop 0.5";"switch CCD \ncoop 2/3";"switch CCCD \ncoop 2/3"});
 hold off;
 
 % tiempos promedio por ensayor
@@ -406,13 +430,23 @@ hold on;
 h=plot(_alimento(I(length(I))),_foodRate(I(length(I))),'ko', "markersize",20,"markerfacecolor",'none', "linewidth", 2);
 hold off;
 
+%%
+
 [S I]=sort(_alimento(1:_nSujetos));
-[x, y, z] = sphere (50);
+[x, y, z] = [sphere (50)]/50;
+x=x./50;y=y./50;z=z./50;
 figure;
 
 for i=I
-  meshc((_delay4eat(i)/30)+x./13, 30*_mediaXsujeto(i)+1*y, _alimento(i)+1*z);hold on;set(h, "linewidth", 2);hold on;
+  mesh((_delay4eat(i))+x, _mediaXsujeto(i)+y, _alimento(i)+z);hold on;set(h, "linewidth", 2);hold on;
 endfor
+figure;
+for i=I
+  contourc((_delay4eat(i))+x, _mediaXsujeto(i)+y, _alimento(i)+z);
+endfor
+figure;
+contour(_delay4eat, _mediaXsujeto, _alimento);
+%&stem3((_delay4eat(i))+x, _mediaXsujeto(i)+y, _alimento(i)+z,"markersize",20,"markerfacecolor",'none', "linewidth", 3);
 hold off;
 hh=zlabel("FOOD");set(hh, "fontsize", 14);
 hh=ylabel("MEDIA DE COOPERACION");set(hh, "fontsize", 14);
@@ -420,6 +454,15 @@ hh=xlabel("DELAY TO EAT [Seconds]");set(hh, "fontsize", 14);
 hh=title("Delay and Cooperation and Food Harvested"); 
 set(hh, "fontsize", 14);
 
+figure;
+x = randn (100, 1);
+y = randn (100, 1);
+c = x .* y;
+scatter (x, y, 20, c, 'filled');
+
+x = 1:100;
+y = 1:100;
+scatter(_alimento,_delay4eat,20, _mediaXsujeto,"filled");
 
 _criterio=.70;
 graficos_iPD_1_2_9s_13s_12Ratas_medias_y_medianas % se obtienen los sujetos que superan el .75 porciento de cooperación
