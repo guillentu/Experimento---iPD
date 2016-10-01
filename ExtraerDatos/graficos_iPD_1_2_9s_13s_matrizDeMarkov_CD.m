@@ -287,34 +287,35 @@ probC=_mediaXsujeto;
 probD=zeros(1,_nSujetos);
 probD=1-_mediaXsujeto;
 
-N=30; % numero de trials
+N=1; % numero de trials
 _vRefuerzos=[1 2 0 0];
-_alimento=zeros(1,_nSujetos+2);
+_alimento=zeros(1,_nSujetos);
 for i=1:_nSujetos   % vec [a b;c d] -> [a c b d] = [cc dc cd dd]
   _alimento(i)=N*_vRefuerzos*(vec(QQTotmarkov(:,:,i)).*[probC(i);probD(i);probC(i);probD(i)]);
   % VER meanFoodXsuj desde cantidad  de alimento
 endfor
 % vec(QQTotmarkov(:,:,1)) y reshape(ans,2,2)
-_vDelay4eat=[5 5 13 9];
+_vDelay4eat=[0 0 8 4];
 _delay4eat=zeros(1,_nSujetos);
 for i=1:_nSujetos   % vec [a b;c d] -> [a c b d] = [cc dc cd dd]
-  _delay4eat(i)=N*_vDelay4eat*(vec(QQTotmarkov(:,:,i)).*[probC(i);probD(i);probC(i);probD(i)]);
+  _delay4eat(i)=30*_vDelay4eat*(vec(QQTotmarkov(:,:,i)).*[probC(i);probD(i);probC(i);probD(i)]);
   % VER meanFoodXsuj desde cantidad  de alimento
 endfor
 
 % alimento de sujetos ideales   markov       prob estaren C o D
-probC=zeros(1,5); % [alternador; cooperador; CyD de a pares; la mitad coop] 
-probC=[.5;1;0.5;.5;.5];
-probD=zeros(1,5);
+probC=zeros(1,7); % [alternador; cooperador; CyD de a pares; la mitad coop] 
+probC=[.5;1;0.5;.5;.5;2/3;3/4];
+probD=zeros(1,7);
 probD=1-probC;
-QQideales=[[0; 1 ;1; 0],[1; 0; 0; 0],[.5; .5; .5; .5],[14/15; 0; 1/15; 1],[2/3;1/3;1/3;2/3]];
+QQideales=[[0; 1 ;1; 0],[1; 0; 0; 0],[.5; .5; .5; .5],[14/15; 0; 1/15; 1],[2/3;1/3;1/3;2/3],[.5; 1; .5; 0],[2/3; 1; 1/3; 0]];
 _idealSujeto=zeros(2,length(probC));% row 1 alimetno - row 2 delay to eat
 for i=1:length(probC)
   _idealSujeto(1,i)=N*_vRefuerzos*(QQideales(:,i).*[probC(i);probD(i);probC(i);probD(i)]);
 endfor
 for i=1:length(probC)
-  _idealSujeto(2,i)=_vDelay4eat*(QQideales(:,i).*[probC(i);probD(i);probC(i);probD(i)]);
+  _idealSujeto(2,i)=30*_vDelay4eat*(QQideales(:,i).*[probC(i);probD(i);probC(i);probD(i)]);
 endfor
+
 
 _effectiveness=(N*_vDelay4eat(1))./_delay4eat;
 
@@ -328,27 +329,35 @@ endfor
 % grafico Alimentos versus Cooperacion
 [S I]=sort(_mediaXsujeto);
 figure;
-h=plot(_mediaXsujeto(I),_alimento(I),'ko', "markersize",12,"markerfacecolor",'c', "linewidth", 2);
+%h=plot(_mediaXsujeto(I),_alimento(I),'ko', "markersize",12,"markerfacecolor",'c', "linewidth", 2);
+h=scatter(_mediaXsujeto(I),_alimento(I),20,_delay4eat(I),"filled");
+colorbar('southoutside');
 set(h, "linewidth", 2);
 hh=xlabel("Among of C choice ");
 set(hh, "fontsize", 14);
-hh=ylabel("Food harvested [Pellets]");
+hh=ylabel("% Total Reward");
 set(hh, "fontsize", 14);
-hh=title("Food versus Cooperation"); 
+hh=title("Reward versus Cooperation (Colorbar=Timeout)"); 
 set(hh, "fontsize", 14);
-grid on;
-t=text(-0.01*[1 2.5 1 1 1 1 1 1 1 1 1 -1]+_mediaXsujeto(I), .9+_alimento(I) ,_txtSujetos(I,:));
+grid off;%grid minor;
+t=text(-0.01*[1 2.5 1 1 1 1 1 1 1 1 1 -1]+_mediaXsujeto(I), .03*[1 1 1 1 1 1 1 1 1 1 1 -1]+_alimento(I) ,_txtSujetos(I,:));
 axis('auto');
 hold on;
-h=plot(_mediaXsujeto(I(length(I))),_alimento(I(length(I))),'ko', "markersize",20,"markerfacecolor",'none', "linewidth", 2);
-h=plot(probC([1 3 4 5]),_idealSujeto(1,[1 3 4 5]),'ko', "markersize",20,"markerfacecolor",'r', "linewidth", 2);
-t=text(0.025*ones(1,length(probC([1 3 4 5])))+ probC([1 3 4 5])', 
-        _idealSujeto(1,[1 3 4 5]) ,{"switch CD";"switch CCDD";"half C";"switch 3Cx3D"});
+%h=plot(_mediaXsujeto(I(length(I))),_alimento(I(length(I))),'ko', "markersize",20,"markerfacecolor",'none', "linewidth", 2);
+h=scatter(probC([1 3 4 5 6 7])',_idealSujeto(1,[1 3 4 5 6 7]),15,_idealSujeto(2,[1 3 4 5 6 7]),'s',"filled");
+h=scatter(probC([1 3 4 5 6 7])',_idealSujeto(1,[1 3 4 5 6 7]),15,'k','s',"linewidth",2);
+%h=scatter(_idealSujeto(1,[1 3 4 5 6 7]),_idealSujeto(2,[1 3 4 5 6 7]),15,probC([1 3 4 5 6 7])','s',"filled");
+%h=plot(probC([1 3 4 5]),_idealSujeto(1,[1 3 4 5]),'ko', "markersize",20,"markerfacecolor",'r', "linewidth", 2);
+t=text(0.025*[1 1 1 1 -.8 -.5]+ probC([1 3 4 5 6 7])', 
+        0.04*[.5 .5 .5 .5 1.1 1.1]+_idealSujeto(1,[1 3 4 5 6 7]) ,{"switch CD";"switch CCDD";"half C";"switch 3Cx3D";"switch CCD";"switch CCCD"});
+t=text(0.025*[1 1 1 1 -.8 -.5]+ probC([1 3 4 5 6 7])', 
+       0.025*[0 0 0 0  1.2 1.2]+_idealSujeto(1,[1 3 4 5 6 7]) ,
+        {"coop 0.5";"coop 0.5";"coop 0.5";"coop 0.5";"coop 0.66%";"coop 0.75%"});
 hold off;
 
 % Tasa de alimentacion
 _foodRate= _alimento(1:_nSujetos)./(_delay4eat/30);%_vDelay4eat(1));
-_delay2eat=_delay4eat/30;
+_delay2eat=_delay4eat;
 [S I]=sort(_foodRate);
 figure;
 h=plot(_mediaXsujeto(I),_delay2eat(I),'ko', "markersize",14,"markerfacecolor",'c', "linewidth", 2);
@@ -370,49 +379,90 @@ t=text(0.025*ones(1,length(probC([1 3 4 5])))+ probC([1 3 4 5])',
         _idealSujeto(2,[1 3 4 5]) ,{"switch CD";"switch CCDD";"half C";"switch 3Cx3D"});
 hold off;
 
-% tiempos promedio por ensayor
-[S I]=sort(_effectiveness);
+% Alimentacion Versus Delay to eat
+_delay2eat=_delay4eat;
+[S I]=sort(_alimento);
 figure;
-h=plot(30*_mediaXsujeto(I),_effectiveness(I),'ko', "markersize",14,"markerfacecolor",'c', "linewidth", 2);
+%h=plot(_alimento(I),_delay2eat(I),'ko', "markersize",14,"markerfacecolor",'c', "linewidth", 2);
+h=scatter(_delay2eat(I),_alimento(I),20, _mediaXsujeto(I),"filled");
+h=colorbar('southoutside');
+hold on;
 set(h, "linewidth", 2);
-hh=xlabel("Among of C choice ");
+hh=ylabel("% Total Reward");
 set(hh, "fontsize", 14);
-hh=ylabel("Effectiveness [time required/spend]");
+hh=xlabel("Acumulated Timeout per game [seconds]");
 set(hh, "fontsize", 14);
-hh=title("Effectiveness versus Cooperation"); 
+hh=title("Reward versus Timeout to eat (colorbar=cooperation)"); 
 set(hh, "fontsize", 14);
 grid on;
-t=text(-0.60*[1 1 1 1 1 1 1 1 1 1 1 -1]+30*_mediaXsujeto(I), 0.02*[1 -1 1 1 1 1 1 1 1 1 1 .5]+_effectiveness(I) ,_txtSujetos(I,:));
-axis([1 ,30, 0, 1],'auto');
+t=text(0.06*[1 1 1 1 1 1 1 1 -1 1 -1 -1]+_delay2eat(I),-0.03*[1 1 -1 1 1 1 1 1 1.2 1 1.2 -1.2]+_alimento(I),_txtSujetos(I,:));
+axis('auto');
 hold on;
-h=plot(30*_mediaXsujeto(I(length(I))),_effectiveness(I(length(I))),'ko', "markersize",20,"markerfacecolor",'none', "linewidth", 2);
+h=scatter(_idealSujeto(2,[1 3 4 5 6 7]),_idealSujeto(1,[1 3 4 5 6 7]),10,probC([1 3 4 5 6 7])','ks',"filled");
+h=scatter(_idealSujeto(2,[1 3 4 5 6 7]),_idealSujeto(1,[1 3 4 5 6 7]),15,'k','s',"linewidth",2);
+%h=plot(_idealSujeto(1,[1 3 4 5 6 7]),_idealSujeto(2,[1 3 4 5 6 7]),'ko', "markersize",15,"markerfacecolor",'r', "linewidth", 2);
+t=text(-10*[1 1 1 1 1 1]+_idealSujeto(2,[1 3 4 5 6 7]),
+       0.05*ones(1,length(probC([1 3 4 5 6 7])))+ _idealSujeto(1,[1 3 4 5 6 7]), 
+       {"switch CD";"switch CCDD";"half C";"switch 3Cx3D";"switch CCD";"switch CCCD"});
+
+t=text(-10*[1 1 1 1 1 1]+ _idealSujeto(2,[1 3 4 5 6 7]),
+       0.03*[1 1 1 1 1 1]+ _idealSujeto(1,[1 3 4 5 6 7]),
+       {"coop 0.5";"coop 0.5";"coop 0.5";"coop 0.5";"coop 0.66%";"coop 0.75%"});        
 hold off;
 
-% Food versus FoodRate
-[S I]=sort(_alimento(1:_nSujetos));
-figure;
-h=plot(_alimento(I),_foodRate(I),'ko', "markersize",14,"markerfacecolor",'c', "linewidth", 2);
-set(h, "linewidth", 2);
-hh=xlabel("Food Harvested [Pellet]");
-set(hh, "fontsize", 14);
-hh=ylabel("Food rate [Pellets/trial]");
-set(hh, "fontsize", 14);
-hh=title("Food Rate versus Food Harvested"); 
-set(hh, "fontsize", 14);
-grid on;
-t=text(-0.60*[1 1 1 1 1 1 1 1 1 1 1 -1]+_alimento(I), 0.02*[1 -1 1 1 1 1 1 1 1 1 1 .5]+_foodRate(I) ,_txtSujetos(I,:));
-axis([1 ,30, 0, 1],'auto');
-hold on;
-h=plot(_alimento(I(length(I))),_foodRate(I(length(I))),'ko', "markersize",20,"markerfacecolor",'none', "linewidth", 2);
-hold off;
+%% tiempos promedio por ensayor
+%[S I]=sort(_effectiveness);
+%figure;
+%h=plot(30*_mediaXsujeto(I),_effectiveness(I),'ko', "markersize",14,"markerfacecolor",'c', "linewidth", 2);
+%set(h, "linewidth", 2);
+%hh=xlabel("Among of C choice ");
+%set(hh, "fontsize", 14);
+%hh=ylabel("Effectiveness [time required/spend]");
+%set(hh, "fontsize", 14);
+%hh=title("Effectiveness versus Cooperation"); 
+%set(hh, "fontsize", 14);
+%grid on;
+%t=text(-0.60*[1 1 1 1 1 1 1 1 1 1 1 -1]+30*_mediaXsujeto(I), 0.02*[1 -1 1 1 1 1 1 1 1 1 1 .5]+_effectiveness(I) ,_txtSujetos(I,:));
+%axis([1 ,30, 0, 1],'auto');
+%hold on;
+%h=plot(30*_mediaXsujeto(I(length(I))),_effectiveness(I(length(I))),'ko', "markersize",20,"markerfacecolor",'none', "linewidth", 2);
+%hold off;
+
+%% Food versus FoodRate
+%[S I]=sort(_alimento(1:_nSujetos));
+%figure;
+%h=plot(_alimento(I),_foodRate(I),'ko', "markersize",14,"markerfacecolor",'c', "linewidth", 2);
+%set(h, "linewidth", 2);
+%hh=xlabel("Food Harvested [Pellet]");
+%set(hh, "fontsize", 14);
+%hh=ylabel("Food rate [Pellets/trial]");
+%set(hh, "fontsize", 14);
+%hh=title("Food Rate versus Food Harvested"); 
+%set(hh, "fontsize", 14);
+%grid on;
+%t=text(-0.60*[1 1 1 1 1 1 1 1 1 1 1 -1]+_alimento(I), 0.02*[1 -1 1 1 1 1 1 1 1 1 1 .5]+_foodRate(I) ,_txtSujetos(I,:));
+%axis([1 ,30, 0, 1],'auto');
+%hold on;
+%h=plot(_alimento(I(length(I))),_foodRate(I(length(I))),'ko', "markersize",20,"markerfacecolor",'none', "linewidth", 2);
+%hold off;
+
+%%
 
 [S I]=sort(_alimento(1:_nSujetos));
-[x, y, z] = sphere (50);
+[x, y, z] = [sphere (50)]/50;
+x=x./50;y=y./50;z=z./50;
 figure;
 
 for i=I
-  meshc((_delay4eat(i)/30)+x./13, 30*_mediaXsujeto(i)+1*y, _alimento(i)+1*z);hold on;set(h, "linewidth", 2);hold on;
+  mesh((_delay4eat(i))+x, _mediaXsujeto(i)+y, _alimento(i)+z);hold on;set(h, "linewidth", 2);hold on;
 endfor
+figure;
+for i=I
+  contourc((_delay4eat(i))+x, _mediaXsujeto(i)+y, _alimento(i)+z);
+endfor
+figure;
+contour(_delay4eat, _mediaXsujeto, _alimento);
+%&stem3((_delay4eat(i))+x, _mediaXsujeto(i)+y, _alimento(i)+z,"markersize",20,"markerfacecolor",'none', "linewidth", 3);
 hold off;
 hh=zlabel("FOOD");set(hh, "fontsize", 14);
 hh=ylabel("MEDIA DE COOPERACION");set(hh, "fontsize", 14);
@@ -420,6 +470,15 @@ hh=xlabel("DELAY TO EAT [Seconds]");set(hh, "fontsize", 14);
 hh=title("Delay and Cooperation and Food Harvested"); 
 set(hh, "fontsize", 14);
 
+figure;
+x = randn (100, 1);
+y = randn (100, 1);
+c = x .* y;
+scatter (x, y, 20, c, 'filled');
+
+x = 1:100;
+y = 1:100;
+scatter(_alimento,_delay4eat,20, _mediaXsujeto,"filled");
 
 _criterio=.70;
 graficos_iPD_1_2_9s_13s_12Ratas_medias_y_medianas % se obtienen los sujetos que superan el .75 porciento de cooperación
