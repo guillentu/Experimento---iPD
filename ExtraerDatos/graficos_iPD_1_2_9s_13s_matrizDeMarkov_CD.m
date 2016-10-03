@@ -326,11 +326,13 @@ for i=1:_nSujetos
   _estadoEstacionario(:,i) = dtmc(QQTotmarkov(:,:,i));
 endfor
 
+
 % grafico Alimentos versus Cooperacion
 [S I]=sort(_mediaXsujeto);
 figure;
 %h=plot(_mediaXsujeto(I),_alimento(I),'ko', "markersize",12,"markerfacecolor",'c', "linewidth", 2);
 h=scatter(_mediaXsujeto(I),_alimento(I),20,_delay4eat(I),"filled");
+ch=colormap(copper);
 colorbar('southoutside');
 set(h, "linewidth", 2);
 hh=xlabel("Among of C choice ");
@@ -385,6 +387,8 @@ _delay2eat=_delay4eat;
 figure;
 %h=plot(_alimento(I),_delay2eat(I),'ko', "markersize",14,"markerfacecolor",'c', "linewidth", 2);
 h=scatter(_delay2eat(I),_alimento(I),20, _mediaXsujeto(I),"filled");
+%ch=colormap(copper);
+ch=colormap(copper);
 h=colorbar('southoutside');
 hold on;
 set(h, "linewidth", 2);

@@ -651,7 +651,8 @@ for i=1:_nSujetos
   endfor
 endfor
 _txtSujetos=["1A";"2A";"3A";"4A";"5A";"6A";"7A";"8A";"9A";"10A";"3B";"4B"];
-_colores=["+k";"om";"*g";".r";"xb";"sc";"^m";"vg";">b";"<k";"pk";"hr"];
+%_colores=["+k";"om";"*g";".r";"xb";"sc";"^m";"vg";">b";"<k";"pk";"hr"];
+_colores=["-+k";"-om";"-*g";"-.r";"-xb";"-sc";"-^m";"-vg";"->b";"-<k";"-pk";"-hr"];
 figure;hold on;
 for i=_sujetosCooperadores
   h=plot(probEleccion(:,1,i),_colores(i,:), "markersize",12,"markerfacecolor",'none', "linewidth", 2);
@@ -705,7 +706,7 @@ for j=1:4
   aux=[];
   for i=_sujetosCooperadores
     if probEleccion(j,1,i)!=0 || probEleccion(j,2,i)!=0
-      aux=[aux; probEleccion(j,:,i)]
+      aux=[aux; probEleccion(j,:,i)];
     endif
   endfor
   probEleccionSem(j,:,1)=sem(aux);
@@ -714,13 +715,13 @@ endfor
 for i=_sujetosNocooperadores
   probEleccionMean(:,:,2)+=probEleccion(:,:,i);
 endfor
-probEleccionMean(:,:,2)=probEleccionMean(:,:,2)./sum(probEleccionMean(:,:,2),2)
+probEleccionMean(:,:,2)=probEleccionMean(:,:,2)./sum(probEleccionMean(:,:,2),2);
 aux=[];
 for j=1:4
   aux=[];
   for i=_sujetosNocooperadores
     if probEleccion(j,1,i)!=0 || probEleccion(j,2,i)!=0
-      aux=[aux; probEleccion(j,:,i)]
+      aux=[aux; probEleccion(j,:,i)];
     endif
   endfor
   probEleccionSem(j,:,2)=sem(aux);
@@ -731,6 +732,7 @@ frec_teo=100*[.5];%                   |-> 1=cooperadores y 2=No_cooperadores
 chi_2_coop= (100.*probEleccionMean(:,1,1)-frec_teo).^2./frec_teo + (100.*probEleccionMean(:,2,1)-frec_teo).^2./frec_teo
 chi_2_nocoop=(100.*probEleccionMean(:,1,2)-frec_teo).^2./frec_teo + (100.*probEleccionMean(:,2,2)-frec_teo).^2./frec_teo
 %%%%%%%%%%%%%%%%%%%%%%%%
+
 
 figure;
 h=errorbar([1:4],probEleccionMean(:,1,2),probEleccionSem(:,1,2),'*k');
