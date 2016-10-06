@@ -693,6 +693,24 @@ for i=1:_nSujetos
   probEleccionC(:,i)=probEleccion(:,1,i);
   probEleccionD(:,i)=probEleccion(:,2,i);
 endfor
+for i=1:_nSujetos
+figure;
+  %h=errorbar([1:4],probEleccion(:,1,i),probEleccionSem(:,1,2),'*k');
+  hold on;%set(h, "linewidth", 2);     
+  h=bar([1:4],probEleccion(:,1,i),'facecolor', 'g', 'edgecolor','b', "linewidth", 2);
+  h=plot([0:5],[.5 .5 .5 .5 .5 .5],"--r");
+  axis ("tic[yz]", "labely[xyz]");
+  set(h, "linewidth", 2);  
+  legend("MEAN","Half prob");
+  %hh=xlabel("T=1 --- R=2 --- P=3 --- S=4");set(hh, "fontsize", 14);
+  hh=ylabel("P(C|X)");set(hh, "fontsize", 14);
+  hh=title(strcat("Probability of Cooperation after outcome: ",_txtSujetos(i,:)));
+  set(hh, "fontsize", 14);
+  axis ("tic[yz]", "labely[xyz]");
+  t=text([1:4], -.04*ones(1,4), {"T"; "R";"P";"S"},"fontsize",14);
+  axis([0 5 0 1]);
+  hold off;grid on;
+endfor
 
 probEleccionMean=zeros(4,2,2);
 probEleccionSem=zeros(4,2,2);
