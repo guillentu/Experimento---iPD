@@ -7,6 +7,22 @@ chi_2_xSujetos=zeros(1,_nSujetos);
 for i=1:_nSujetos
   chi_2_xSujetos(i)=sum((100.*probEleccion(:,1,i)-frec_teo).^2./frec_teo);
 endfor
+aux=probEleccion;
+aux(:,1,1)=[.5;.55; .5; .5];
+aux(:,1,2)=[.5;.5; .55; .5];
+aux(:,1,3)=[.5;.5; .5; .55];
+aux(:,1,4)=[.55;.5; .5; .5];
+aux(:,1,5)=[.55;.55; .55; .55];
+aux(:,1,6)=[.55;.55; .5; .5];
+aux(:,1,7)=[.5;.5; .55; .55];
+aux(:,1,8)=[.55;.55; .5; .5];
+aux(:,1,9)=[.5;.55; .55; .55];
+aux(:,1,10)=[.55;.55; .55; .5];
+aux(:,1,11)=[.55;.55; .55; .5];
+aux(:,1,12)=[.60;.55; .55; .60];
+for i=1:_nSujetos
+  chi_2_xSujetos(i)=sum((100.*aux(:,1,i)-frec_teo).^2./frec_teo);
+endfor
 
 pasan=zeros(1,_nSujetos);
 pasanBon=zeros(1,_nSujetos);
@@ -24,6 +40,7 @@ for i=1:_nSujetos
     pasanBon(i)=1;% Se rechaza la HIP NULA
   endif
 endfor
+
 pasan
 pasanBon
 

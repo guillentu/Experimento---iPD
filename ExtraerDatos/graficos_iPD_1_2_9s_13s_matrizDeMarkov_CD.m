@@ -289,7 +289,7 @@ probD=1-_mediaXsujeto;
 
 N=1; % numero de trials
 _vRefuerzos=[1 2 0 0];
-_alimento=zeros(1,_nSujetos);
+_alimento=zeros(1,_nSujetos); %                      
 for i=1:_nSujetos   % vec [a b;c d] -> [a c b d] = [cc dc cd dd]
   _alimento(i)=N*_vRefuerzos*(vec(QQTotmarkov(:,:,i)).*[probC(i);probD(i);probC(i);probD(i)]);
   % VER meanFoodXsuj desde cantidad  de alimento
