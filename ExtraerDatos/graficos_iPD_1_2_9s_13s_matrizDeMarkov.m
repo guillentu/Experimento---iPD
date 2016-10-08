@@ -278,7 +278,7 @@ for i=1:_nSujetos
   endfor
 endfor 
 %     Normalizacion
-for i=1:_nSujetos
+for i=1:_nSujetosTT
   for j=1:4
     if sum(matricesQ.(indiceSujeto(i,:))(j,:))!=0
       Q(j,:,i)=matricesQ.(indiceSujeto(i,:))(j,:)/sum(matricesQ.(indiceSujeto(i,:))(j,:));

@@ -8,43 +8,54 @@
 %    chi_2_xSujetos(i)=sum((100.*probEleccion(:,1,i)-frec_teo).^2./frec_teo);
 %  endfor
 %  aux=probEleccion;
-  aux(:,1,1)=[.5;.5];
-  aux(:,1,2)=[.5;.55];
-  aux(:,1,3)=[.5;.6];
-  aux(:,1,4)=[.5;.65];
-  aux(:,1,5)=[.6;.65];
-  aux(:,1,6)=[.65;.65];
-  aux(:,1,7)=[.7;.7];
-  aux(:,1,8)=[.5;.45];
-  aux(:,1,9)=[.5;.4];
-  aux(:,1,10)=[.5;.35];
-  aux(:,1,11)=[.5;.30];
-  aux(:,1,12)=[.4;.4];
-  for i=1:_nSujetos
-    chi_2_xSujetos(i)=sum((100.*aux(:,1,i)-frec_teo).^2./frec_teo);
-    aux(:,1,i);
-  endfor
-  frec_teo=sum(sum(QQTot))(:)/4;
+%  aux(:,1,1)=[.5;.5];
+%  aux(:,1,2)=[.5;.55];
+%  aux(:,1,3)=[.5;.6];
+%  aux(:,1,4)=[.5;.65];
+%  aux(:,1,5)=[.6;.65];
+%  aux(:,1,6)=[.65;.65];
+%  aux(:,1,7)=[.7;.7];
+%  aux(:,1,8)=[.5;.45];
+%  aux(:,1,9)=[.5;.4];
+%  aux(:,1,10)=[.5;.35];
+%  aux(:,1,11)=[.5;.30];
+%  aux(:,1,12)=[.4;.4];
+%  for i=1:_nSujetos
+%    chi_2_xSujetos(i)=sum((100.*aux(:,1,i)-frec_teo).^2./frec_teo);
+%    aux(:,1,i);
+%  endfor
+%  frec_teo=sum(sum(QQTot))(:)/4;
 
   
   
-  %  frec_teo=100*[.5];
-%  for i=1:_nSujetos
-%    chi_2_xSujetos(i)=sum((100*QQTotmarkov(:,1,i)-frec_teo).^2./frec_teo);
-%  endfor
+  frec_teo=100*[.5];
+  frec_teo_timeout=100*[90/120]; % en porcentaje. 120 es el mayor timeout a obtener
+  frec_teo_food=100*[.75];
+  frec_teo_coop=100*[.5];
+  for i=1:_nSujetos
+    chi_2_xSujetos(i)=sum((100*QQTotmarkov(:,1,i)-frec_teo).^2./frec_teo); % dos
+    sum((100*QQTotmarkov(:,1,i)-frec_teo).^2./frec_teo)
+    chi_2_xSujetos(i)+=sum((100*delay2eat(i)/120-frec_teo_timeout)^2/frec_teo_timeout); % uno
+    sum((100*delay2eat(i)/120-frec_teo_timeout)^2/frec_teo_timeout)
+    chi_2_xSujetos(i)+=sum((100.*_alimento(i)-frec_teo_food)^2/frec_teo_food); % uno
+    sum((100.*_alimento(i)-frec_teo_food)^2/frec_teo_food)
+    chi_2_xSujetos(i)+=sum((100.*_mediaXsujeto(i)-frec_teo_coop)^2/frec_teo_coop);
+    sum((100.*_mediaXsujeto(i)-frec_teo_coop)^2/frec_teo_coop)
+    1
+  endfor
   
   pasan=zeros(1,_nSujetos);
   pasanBon=zeros(1,_nSujetos);
+  freedom=3;
   % Sin correccion de Bonferroni
   for i=1:_nSujetos
-    freedom=1;% estados -1
+    (1-chi2cdf(chi_2_xSujetos(i),freedom))
     if (1-chi2cdf(chi_2_xSujetos(i),freedom))<0.05 %Si es menor significa que las muestras no provienen de una población aleatoria
       pasan(i)=1;% Se rechaza la HIP NULA
     endif
   endfor
   % Con Correccion de Bonferroni
   for i=1:_nSujetos
-    freedom=1;%
     if (1-chi2cdf(chi_2_xSujetos(i),freedom))<(0.05/(freedom+1)) %Si es menor significa que las muestras no provienen de una población aleatoria
       pasanBon(i)=1;% Se rechaza la HIP NULA
     endif
