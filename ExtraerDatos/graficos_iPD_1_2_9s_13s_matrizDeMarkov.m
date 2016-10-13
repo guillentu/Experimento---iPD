@@ -391,9 +391,10 @@ for i=1:_nSujetos
   hold off
 endfor
 
-_criterio=.70;
+_criterio=.5;
 graficos_iPD_1_2_9s_13s_12Ratas_medias_y_medianas % se obtienen los sujetos que superan el .75 porciento de cooperación
-_sujetosCooperadores=find(_mediaXsujeto>_criterio); % indice de sujetos que pasaron el criterios 
+%_sujetosCooperadores=find(_mediaXsujeto>_criterio); % indice de sujetos que pasaron el criterios 
+_sujetosCooperadores=find(>_criterio); % indice de sujetos que pasaron el criterios 
 _sujetosNocooperadores=complemento(_sujetosCooperadores,_nSujetos);
 QmediaC=zeros(4,4);
 QmediaD=zeros(4,4);

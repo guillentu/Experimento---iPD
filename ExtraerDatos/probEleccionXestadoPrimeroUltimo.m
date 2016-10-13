@@ -105,7 +105,7 @@ for i=1:_nSujetos
   ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
   primero=ultimo-_ultimosX+1;
   for j=primero:ultimo
-    probxExpN.(indiceSujeto(i,:)).(indice(j+1,:))=probxExp.(indiceSujeto(i,:)).(indice(j+1,:))./sum(probxExp.(indiceSujeto(i,:)).(indice(j+1,:)));
+    probxExpN.(indiceSujeto(i,:)).(indice(j+1,:))=probxExp.(indiceSujeto(i,:)).(indice(j+1,:))./sum(probxExp.(indiceSujeto(i,:)).(indice(j+1,:)),2);
     probxExpTotalN(:,:,i)=probxExpTotalN(:,:,i)+probxExpN.(indiceSujeto(i,:)).(indice(j+1,:));
     probxExpTotal(:,:,i)=probxExpTotal(:,:,i)+probxExp.(indiceSujeto(i,:)).(indice(j+1,:));
   endfor
@@ -131,3 +131,35 @@ for i=1:_nSujetos
   endfor
 endfor
 
+probEleccionSem=zeros(size(probxExpTotal));
+for i=1:_nSujetos
+  ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
+  primero=ultimo-_ultimosX+1;
+  aux1=[];
+  aux2=[];
+  for j=primero:ultimo
+    aux1=[aux1 probxExpN.(indiceSujeto(i,:)).(indice(j+1,:))(:,1)];
+    aux2=[aux2 probxExpN.(indiceSujeto(i,:)).(indice(j+1,:))(:,2)];
+  endfor
+  probEleccionSem(:,1,i)=sem(aux1,2);
+  probEleccionSem(:,2,i)=sem(aux2,2);
+endfor
+
+for i=1:_nSujetos
+  figure;
+  h=errorbar([1:4],probEleccion(:,1,i),probEleccionSem(:,1,i),'*k');
+  hold on;%set(h, "linewidth", 2);     
+  h=bar([1:4],probEleccion(:,1,i),'facecolor', 'g', 'edgecolor','b', "linewidth", 2);
+  h=plot([0:5],[.5 .5 .5 .5 .5 .5],"--r");
+  axis ("tic[yz]", "labely[xyz]");
+  set(h, "linewidth", 2);  
+  legend("MEAN","Half prob");
+  %hh=xlabel("T=1 --- R=2 --- P=3 --- S=4");set(hh, "fontsize", 14);
+  hh=ylabel("P(C|X)");set(hh, "fontsize", 14);
+  hh=title(strcat("Probability of Cooperation given outcome: ",_txtSujetos(i,:)));
+  set(hh, "fontsize", 14);
+  axis ("tic[yz]", "labely[xyz]");
+  t=text([1:4], -.04*ones(1,4), {"P(c|T)"; "P(c|R)";"P(c|P)";"P(c|S)"},"fontsize",14);
+  axis([0 5 0 1]);
+  hold off;grid on;
+endfor

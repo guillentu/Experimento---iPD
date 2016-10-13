@@ -35,18 +35,18 @@
   for i=1:_nSujetos
     chi_2_xSujetos(i)=sum((100*QQTotmarkov(:,1,i)-frec_teo).^2./frec_teo); % dos
     sum((100*QQTotmarkov(:,1,i)-frec_teo).^2./frec_teo)
-    chi_2_xSujetos(i)+=sum((100*delay2eat(i)/120-frec_teo_timeout)^2/frec_teo_timeout); % uno
-    sum((100*delay2eat(i)/120-frec_teo_timeout)^2/frec_teo_timeout)
-    chi_2_xSujetos(i)+=sum((100.*_alimento(i)-frec_teo_food)^2/frec_teo_food); % uno
-    sum((100.*_alimento(i)-frec_teo_food)^2/frec_teo_food)
-    chi_2_xSujetos(i)+=sum((100.*_mediaXsujeto(i)-frec_teo_coop)^2/frec_teo_coop);
-    sum((100.*_mediaXsujeto(i)-frec_teo_coop)^2/frec_teo_coop)
+    %chi_2_xSujetos(i)+=sum((100*delay2eat(i)/120-frec_teo_timeout)^2/frec_teo_timeout); % uno
+    %sum((100*delay2eat(i)/120-frec_teo_timeout)^2/frec_teo_timeout)
+    %chi_2_xSujetos(i)+=sum((100.*_alimento(i)-frec_teo_food)^2/frec_teo_food); % uno
+    %sum((100.*_alimento(i)-frec_teo_food)^2/frec_teo_food)
+    %chi_2_xSujetos(i)+=sum((100.*_mediaXsujeto(i)-frec_teo_coop)^2/frec_teo_coop);
+    %sum((100.*_mediaXsujeto(i)-frec_teo_coop)^2/frec_teo_coop)
     1
   endfor
   
   pasan=zeros(1,_nSujetos);
   pasanBon=zeros(1,_nSujetos);
-  freedom=3;
+  freedom=1;
   % Sin correccion de Bonferroni
   for i=1:_nSujetos
     (1-chi2cdf(chi_2_xSujetos(i),freedom))
