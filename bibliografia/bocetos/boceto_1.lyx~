@@ -150,9 +150,20 @@ Both iPd and Evolutionary Stable Strategies (von Neumann and Morgenstern,
  Defeat strategy.
  Nevertheless, when use pay-off matrix that meets 2R>T+P and player indefinite
  numbres of times the best strategy is mutual cooperation.
- It that means to each player always must to choose cooperation option but
- if other does not the cooperation is the worst option.
-  
+ It that means to each player always must to choose cooperation option.
+ It does not means that if one does not cooperate the option remains be
+ the best option, but is the worst option.
+ Axelrod and Hamilton, 1981, expose that some organisms simbiosis can be
+ understand through reciprocal altruism but when organism can remember at
+ least one previous intereaction and outcomes and is able to distingish
+ differente individuals then the strategies situation becomes much richer
+ set of posibilities.
+ They put over a ESS for iterated PD as the result of computer tournament
+ and was submitted by Anatol Rapoport that gather robustness and stability
+ and initial viability, called TIT FOR TAT, with which an individual can
+ survive invades to other strategies.
+ The highly simple strategy roots inside simply one cooperate on the first
+ move and then doing whatever the oponent did on the preceding move.
 \end_layout
 
 \begin_layout Standard
@@ -161,30 +172,14 @@ Both iPd and Evolutionary Stable Strategies (von Neumann and Morgenstern,
 \end_layout
 
 \begin_layout Standard
-HHHhablar de hamilton y la competencia estategias optimas y estrageria estables
- en iterated pd
-\end_layout
-
-\begin_layout Standard
-Dado que la cooperacion de caracter altruista es estable si se cumplen ciertas
- condiciones decir que se 
-\end_layout
-
-\begin_layout Standard
-Thus, many experiments have tried to explain different aspects of reciprocal
- altruism behavior.
+Thus, many experimenters have tried to understand different aspects of reciproca
+l altruism behavior in animals and if animals with less ability than humans
+ can solve iPD.
+ The fact is comprise what abilities are essencial.
  Green, Price and Hamburger (1995) assess iterated prisioner's dilemma game
  over pigons and observated that birds are so impulsivity and prefer small
  immediate outcomes rather than big long-term delayed outcomes.
  
-\end_layout
-
-\begin_layout Standard
-describir el iPD y sus condiciones
-\end_layout
-
-\begin_layout Standard
-Diferentes ejemplo de cooperacion altruista en animales
 \end_layout
 
 \begin_layout Standard
