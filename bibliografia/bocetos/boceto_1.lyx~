@@ -2,7 +2,7 @@
 \lyxformat 413
 \begin_document
 \begin_header
-\textclass article
+\textclass paper
 \use_default_options true
 \maintain_unincluded_children false
 \language english
@@ -25,6 +25,7 @@
 \bibtex_command default
 \index_command default
 \paperfontsize default
+\spacing single
 \use_hyperref false
 \papersize default
 \use_geometry false
@@ -173,12 +174,67 @@ Both iPd and Evolutionary Stable Strategies (von Neumann and Morgenstern,
 
 \begin_layout Standard
 Thus, many experimenters have tried to understand different aspects of reciproca
-l altruism behavior in animals and if animals with less ability than humans
+l altruism behavior in animals and if non-human animals with less ability
  can solve iPD.
- The fact is comprise what abilities are essencial.
+ Basically we want to comprise what abilities are essencial for.
  Green, Price and Hamburger (1995) assess iterated prisioner's dilemma game
  over pigons and observated that birds are so impulsivity and prefer small
  immediate outcomes rather than big long-term delayed outcomes.
+ Stevens and Stephens (2003) use Blue jays on four different pay-off matrix,
+ where one of them is the iPD matrix, over special dual operant box.
+ This study found little cooperation in prisioner's dilemma treatment and
+ this findings suggest that jays don't cooperate when immediate benefit
+ is available (defect only), even if a long-term benefit may exist.
+ Then in Steven et al.
+ (2002 and 2005) inspired by low level of cooperation (Gardner et all.
+ 1984, Clements and Stephens 1995, Flood et al.
+ 1983, Green et al.
+ 1995) proposed payoff accumulation and temporal clumping to iPD game using
+ blue jays in a kind of apparatus that consisted of side by side V-shaped
+ compartiment.
+ They found that combined both accumulation and clumpling treatment birds
+ show a level of cooperation over chance choice.
+ But in Danchin et.
+ al.
+ (2006) critized these treatment arguing that iPD payoff matrix becomes
+ stag hung matrix after each accumulation blocks.
+ Adams and Mesterton-Gibbons points out that in Stevens et al.
+ (2002) found that birs care less about the immediacy of reward if seeds
+ accumulation in a transparent food tray for some time befores being deliver.
+\end_layout
+
+\begin_layout Standard
+Moreover, Mendres and Waal(2000) and Waal(2000), used a pulling task over
+ Capuchin monkeys (cebus apella) and a chamber divided for mesh to tests
+ cooperation.
+ They got that monkeys can adjust pulling task behavior according to their
+ partner's presence and the food shared behavior depend of quality of own
+ and partner foods.
+\end_layout
+
+\begin_layout Standard
+Moreover, Mendres and Waal(2000) and Waal(2000) tested cooperation aspects
+ using a pulling task over Capuchin monkeys (cebus apella) and a chamber
+ that was partitioned by means of a mesh with two food bowl on a tray.
+ The monkeys can get foods pulling sticks attached at the side of the tray,
+ one for each.
+ They got that monkeys can adjust pulling task behavior according to their
+ partner's presence and the food shared behavior depend of quality of own
+ and partner foods.
+ Similarly, using a pulling task to give food to a partner and receive from
+ a altruistic partner Hause et al.(2003) evaluated altruistic food giving
+ behavior where share food through mesh was not allowed over genetically
+ unrelated cotton-top tamarin mokeys and showed that monkeys give more or
+ less foods to partner taking into account what was altruistic and what
+ not.
+ 
+\end_layout
+
+\begin_layout Standard
+Knowing that pimates have high psicologic capability we can expect that
+ these kind of monkeys can able to learn reciprocal altruism despite of
+ do not in wild, but the insteresting question is whether animals that less
+ capabilities can learn reciprocal altruismo.
  
 \end_layout
 
