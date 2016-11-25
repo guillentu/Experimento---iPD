@@ -307,9 +307,23 @@ To test whether the rat has ability to solve the iPD game when faced to
 et al.
 
 \emph default
- using this mimic stategy on the opponent in a doble T-maze chamber, neither
- reach a high level of cooperation and in further analysis over markov chain
- diagram we view that 
+ using a mimic tit-for-tat stategy on the opponent in a doble T-maze chamber
+ and neither reach a high level of cooperation.
+ Our further analysis over their markov chain diagram gave evidence that
+ strategy performed by rat was more selfish than cooperative because its
+ adopts a alternating decision's rule among sucker and temptation outcomes.
+\end_layout
+
+\begin_layout Standard
+We are interested to assess whether the rat can learn to solve iterates
+ Prisioner when face to reciprocated altruistic opponent altruistics behavior
+ 
+\end_layout
+
+\begin_layout Standard
+Considering the result archieved by above experiment we propose a experiment
+ set-up to test altruistic behaviors and also other behavios and matrix
+ payoff searching
 \end_layout
 
 \begin_layout Standard
