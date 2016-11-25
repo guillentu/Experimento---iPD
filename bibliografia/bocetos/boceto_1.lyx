@@ -154,7 +154,7 @@ Both iPd and Evolutionary Stable Strategies (von Neumann and Morgenstern,
  It that means to each player always must to choose cooperation option.
  It does not means that if one does not cooperate the option remains be
  the best option, but is the worst option.
- Axelrod and Hamilton, 1981, expose that some organisms simbiosis can be
+ Axelrod and Hamilton (1981) expose that some organisms simbiosis can be
  understand through reciprocal altruism but when organism can remember at
  least one previous intereaction and outcomes and is able to distingish
  differente individuals then the strategies situation becomes much richer
@@ -283,15 +283,47 @@ pulling
 
 \begin_layout Standard
 Reciprocal altruism is widely tested by iterating prisioner dilemma, iPD,
- and size up individual's decision rules by transition vector t, r, p, s
- that reflect the probability of cooperation when the previous trials resulted
- in outcomes of R, T, S or P respectively (stevens and stephens,2004).
- if all componente of vector are 0.5, the agent decision rule is chance irrespect
-ive last outcome.
- One of different experiment developed by Wood et al.
+ and the individual's decision rules size up by transition vector t, r,
+ p, s that reflect the probability of cooperation when the previous trials
+ resulted in outcomes of R, T, S or P, respectively (stevens and stephens,2004).
+ if all componente of vector are 0.5, the agent's decision rule is randomly
+ irrespective last outcome.
+ Part of experiment set developed by Wood et al.
  (2016) was measure reciprocal altruism in long-evans male and felmale rats
- using iPD.
-  
+ using iPD in operant chamber divide half by removable mesh equiped with
+ retractable lever and stimulus light.
+ The best result show that male rats cooperative behavior is a little over
+ the chance near to 60%.
+ 
+\end_layout
+
+\begin_layout Standard
+To test whether the rat has ability to solve the iPD game when faced to
+ altruist opponent we need to force TIT FOR TAT mimic behavior on the opponent
+ (stevens & stephens 2002, St-Pierre, Larose & Dubois 2009, viana, Gordo,
+ Sucena & Moita 2010).
+ In Moita 
+\emph on
+et al.
+
+\emph default
+ using a mimic tit-for-tat stategy on the opponent in a doble T-maze chamber
+ and neither reach a high level of cooperation.
+ Our further analysis over their markov chain diagram gave evidence that
+ strategy performed by rat was more selfish than cooperative because its
+ adopts a alternating decision's rule among sucker and temptation outcomes.
+\end_layout
+
+\begin_layout Standard
+We are interested to assess whether the rat can learn to solve iterates
+ Prisioner when face to reciprocated altruistic opponent altruistics behavior
+ 
+\end_layout
+
+\begin_layout Standard
+Considering the result archieved by above experiment we propose a experiment
+ set-up to test altruistic behaviors and also other behavios and matrix
+ payoff searching
 \end_layout
 
 \begin_layout Standard

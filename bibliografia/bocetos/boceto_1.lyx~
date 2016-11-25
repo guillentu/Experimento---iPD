@@ -154,7 +154,7 @@ Both iPd and Evolutionary Stable Strategies (von Neumann and Morgenstern,
  It that means to each player always must to choose cooperation option.
  It does not means that if one does not cooperate the option remains be
  the best option, but is the worst option.
- Axelrod and Hamilton, 1981, expose that some organisms simbiosis can be
+ Axelrod and Hamilton (1981) expose that some organisms simbiosis can be
  understand through reciprocal altruism but when organism can remember at
  least one previous intereaction and outcomes and is able to distingish
  differente individuals then the strategies situation becomes much richer
@@ -274,9 +274,42 @@ pulling
 \end_layout
 
 \begin_layout Standard
---We maybe demur in our search of altruistic behavior over nonhumand and
- non-primate animals that rats behavior in taborsky's experiment didn't
- meet all conditions for reciprocal altruistic behaviour--- 
+--In our search of altruistic behavior over nonhumand and non-primate animals
+ we maybe demur that rats behavior in taborsky's experiment didn't meet
+ all conditions for reciprocal altruistic behaviour rather that they assessed
+ a type of reciprocity, because rats don't receive punishment for either
+ punishment or temptation outcomes--- 
+\end_layout
+
+\begin_layout Standard
+Reciprocal altruism is widely tested by iterating prisioner dilemma, iPD,
+ and the individual's decision rules size up by transition vector t, r,
+ p, s that reflect the probability of cooperation when the previous trials
+ resulted in outcomes of R, T, S or P, respectively (stevens and stephens,2004).
+ if all componente of vector are 0.5, the agent's decision rule is randomly
+ irrespective last outcome.
+ Part of experiment set developed by Wood et al.
+ (2016) was measure reciprocal altruism in long-evans male and felmale rats
+ using iPD in operant chamber divide half by removable mesh equiped with
+ retractable lever and stimulus light.
+ The best result show that male rats cooperative behavior is a little over
+ the chance near to 60%.
+ 
+\end_layout
+
+\begin_layout Standard
+To test whether the rat has ability to solve the iPD game when faced to
+ altruist opponent we need to force TIT FOR TAT mimic behavior on the opponent
+ (stevens & stephens 2002, St-Pierre, Larose & Dubois 2009, viana, Gordo,
+ Sucena & Moita 2010).
+ In Moita 
+\emph on
+et al.
+
+\emph default
+ using this mimic stategy on the opponent in a doble T-maze chamber, neither
+ reach a high level of cooperation and in further analysis over markov chain
+ diagram we view that 
 \end_layout
 
 \begin_layout Standard
