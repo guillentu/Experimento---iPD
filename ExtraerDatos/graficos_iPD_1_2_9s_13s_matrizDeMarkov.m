@@ -278,7 +278,7 @@ for i=1:_nSujetos
   endfor
 endfor 
 %     Normalizacion
-for i=1:_nSujetos
+for i=1:_nSujetosTT
   for j=1:4
     if sum(matricesQ.(indiceSujeto(i,:))(j,:))!=0
       Q(j,:,i)=matricesQ.(indiceSujeto(i,:))(j,:)/sum(matricesQ.(indiceSujeto(i,:))(j,:));
@@ -391,9 +391,10 @@ for i=1:_nSujetos
   hold off
 endfor
 
-_criterio=.70;
+_criterio=.5;
 graficos_iPD_1_2_9s_13s_12Ratas_medias_y_medianas % se obtienen los sujetos que superan el .75 porciento de cooperación
-_sujetosCooperadores=find(_mediaXsujeto>_criterio); % indice de sujetos que pasaron el criterios 
+%_sujetosCooperadores=find(_mediaXsujeto>_criterio); % indice de sujetos que pasaron el criterios 
+_sujetosCooperadores=find(>_criterio); % indice de sujetos que pasaron el criterios 
 _sujetosNocooperadores=complemento(_sujetosCooperadores,_nSujetos);
 QmediaC=zeros(4,4);
 QmediaD=zeros(4,4);
@@ -651,7 +652,8 @@ for i=1:_nSujetos
   endfor
 endfor
 _txtSujetos=["1A";"2A";"3A";"4A";"5A";"6A";"7A";"8A";"9A";"10A";"3B";"4B"];
-_colores=["+k";"om";"*g";".r";"xb";"sc";"^m";"vg";">b";"<k";"pk";"hr"];
+%_colores=["+k";"om";"*g";".r";"xb";"sc";"^m";"vg";">b";"<k";"pk";"hr"];
+_colores=["-+k";"-om";"-*g";"-.r";"-xb";"-sc";"-^m";"-vg";"->b";"-<k";"-pk";"-hr"];
 figure;hold on;
 for i=_sujetosCooperadores
   h=plot(probEleccion(:,1,i),_colores(i,:), "markersize",12,"markerfacecolor",'none', "linewidth", 2);
@@ -692,6 +694,24 @@ for i=1:_nSujetos
   probEleccionC(:,i)=probEleccion(:,1,i);
   probEleccionD(:,i)=probEleccion(:,2,i);
 endfor
+for i=1:_nSujetos
+figure;
+  %h=errorbar([1:4],probEleccion(:,1,i),probEleccionSem(:,1,2),'*k');
+  hold on;%set(h, "linewidth", 2);     
+  h=bar([1:4],probEleccion(:,1,i),'facecolor', 'g', 'edgecolor','b', "linewidth", 2);
+  h=plot([0:5],[.5 .5 .5 .5 .5 .5],"--r");
+  axis ("tic[yz]", "labely[xyz]");
+  set(h, "linewidth", 2);  
+  legend("MEAN","Half prob");
+  %hh=xlabel("T=1 --- R=2 --- P=3 --- S=4");set(hh, "fontsize", 14);
+  hh=ylabel("P(C|X)");set(hh, "fontsize", 14);
+  hh=title(strcat("Probability of Cooperation after outcome: ",_txtSujetos(i,:)));
+  set(hh, "fontsize", 14);
+  axis ("tic[yz]", "labely[xyz]");
+  t=text([1:4], -.04*ones(1,4), {"T"; "R";"P";"S"},"fontsize",14);
+  axis([0 5 0 1]);
+  hold off;grid on;
+endfor
 
 probEleccionMean=zeros(4,2,2);
 probEleccionSem=zeros(4,2,2);
@@ -705,7 +725,7 @@ for j=1:4
   aux=[];
   for i=_sujetosCooperadores
     if probEleccion(j,1,i)!=0 || probEleccion(j,2,i)!=0
-      aux=[aux; probEleccion(j,:,i)]
+      aux=[aux; probEleccion(j,:,i)];
     endif
   endfor
   probEleccionSem(j,:,1)=sem(aux);
@@ -714,13 +734,13 @@ endfor
 for i=_sujetosNocooperadores
   probEleccionMean(:,:,2)+=probEleccion(:,:,i);
 endfor
-probEleccionMean(:,:,2)=probEleccionMean(:,:,2)./sum(probEleccionMean(:,:,2),2)
+probEleccionMean(:,:,2)=probEleccionMean(:,:,2)./sum(probEleccionMean(:,:,2),2);
 aux=[];
 for j=1:4
   aux=[];
   for i=_sujetosNocooperadores
     if probEleccion(j,1,i)!=0 || probEleccion(j,2,i)!=0
-      aux=[aux; probEleccion(j,:,i)]
+      aux=[aux; probEleccion(j,:,i)];
     endif
   endfor
   probEleccionSem(j,:,2)=sem(aux);
@@ -731,6 +751,7 @@ frec_teo=100*[.5];%                   |-> 1=cooperadores y 2=No_cooperadores
 chi_2_coop= (100.*probEleccionMean(:,1,1)-frec_teo).^2./frec_teo + (100.*probEleccionMean(:,2,1)-frec_teo).^2./frec_teo
 chi_2_nocoop=(100.*probEleccionMean(:,1,2)-frec_teo).^2./frec_teo + (100.*probEleccionMean(:,2,2)-frec_teo).^2./frec_teo
 %%%%%%%%%%%%%%%%%%%%%%%%
+
 
 figure;
 h=errorbar([1:4],probEleccionMean(:,1,2),probEleccionSem(:,1,2),'*k');

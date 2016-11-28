@@ -128,6 +128,7 @@ for j=inicio:(nfields(todo)-8)
   endfor
 endfor
 
+
 % 
 % Brief: Carga las matrices de transicion de estado de cada sujeto.
 %        Es un promedio total 
@@ -249,6 +250,8 @@ for i=1:_nSujetos
 endfor
 TT=T;CC=C;
 PP=P;SS=S;
+% Alimento obtenido por cada animal
+graficos_iPD_1_2_9s_13s_cantidadAlimentos;
 % Analizando las ultimas X sesiones
 _ultimosX=10;
 %   Normalizacion para todos los sujetos en todos los experimentos
@@ -256,18 +259,23 @@ Q_antes=matricesQ;
 QQ=[];
 QQTot=zeros(2,2,_nSujetos);
 QQTotmarkov=zeros(2,2,_nSujetos);
+QQTotmarkovSem=zeros(2,2,_nSujetos);
 for i=1:_nSujetos
   ultimo=expXsuj(i);
   primero=ultimo-_ultimosX+1;
   jj=0;
+  aux2=[];
   for j=primero:ultimo %Experimentos
-    jj++;
-    aux=sum(QxExp_ante.(indiceSujeto(i,:)).(indice(j+1,:)));
-    QQTot(:,:,i)=QQTot(:,:,i) + [aux(sort(1:4,'descend'))(3:4); aux(sort(1:4,'descend'))(1:2)];
+    jj++;  %| la P(c|c) es igual a la sumatorias en "sum(x ,1)" de P(c|R) y P(c|S) y las otras filas lsa compo ponentes son cero
+    aux = sum(QxExp_ante.(indiceSujeto(i,:)).(indice(j+1,:)));% P(d|c) P(c|c) P(d|d) P(c|d) 
+    aux2=[aux2 aux'./[aux(1)+aux(3);aux(2)+aux(4);aux(1)+aux(3);aux(2)+aux(4)]];
+    QQTot(:,:,i)=QQTot(:,:,i) + [aux(sort(1:4,'descend'))(3:4); aux(sort(1:4,'descend'))(1:2)];% se ordena par que tengal a lforma 2x2
     QQ.(indiceSujeto(i,:)).(num2str(jj))=[aux(sort(1:4,'descend'))(3:4); aux(sort(1:4,'descend'))(1:2)];%./sum(sum(QxExp_ante.(indiceSujeto(i,:)).(indice(j+1,:)))),1)';
   endfor
-  QQTotmarkov(1,:,i)=QQTot(1,:,i)./sum(QQTot(:,:,i),2)(1);
-  QQTotmarkov(2,:,i)=QQTot(2,:,i)./sum(QQTot(:,:,i),2)(2);
+  QQTotmarkov(1,:,i)=QQTot(1,:,i)./sum(QQTot(:,:,i),2)(1);%QQTot = P(c|c) P(d|c) => vec(QQTot)
+  QQTotmarkov(2,:,i)=QQTot(2,:,i)./sum(QQTot(:,:,i),2)(2);%        P(c|d) P(d|d)  P(c|c) P(c|d) P(d|c) P(d|d)
+                         % sem cc             dc           cd                dd
+  QQTotmarkovSem(:,:,i)= [ sem(aux2,2)(2) sem(aux2,2)(1); sem(aux2,2)(4) sem(aux2,2)(3)];
 endfor
 
 % matriz para inkscape
@@ -280,6 +288,7 @@ for i=1:_nSujetos
 endfor
 
 graficos_iPD_1_2_9s_13s_Promedios_ultimosX;
+
 % Probabilidad d estar en C o en D
 
 probC=zeros(1,_nSujetos);
@@ -289,7 +298,7 @@ probD=1-_mediaXsujeto;
 
 N=1; % numero de trials
 _vRefuerzos=[1 2 0 0];
-_alimento=zeros(1,_nSujetos);
+_alimento=zeros(1,_nSujetos); %                      
 for i=1:_nSujetos   % vec [a b;c d] -> [a c b d] = [cc dc cd dd]
   _alimento(i)=N*_vRefuerzos*(vec(QQTotmarkov(:,:,i)).*[probC(i);probD(i);probC(i);probD(i)]);
   % VER meanFoodXsuj desde cantidad  de alimento
@@ -297,7 +306,7 @@ endfor
 % vec(QQTotmarkov(:,:,1)) y reshape(ans,2,2)
 _vDelay4eat=[0 0 8 4];
 _delay4eat=zeros(1,_nSujetos);
-for i=1:_nSujetos   % vec [a b;c d] -> [a c b d] = [cc dc cd dd]
+for i=1:_nSujetos   % vec [a b;c d] -> [a c b d] = [c|c c|d d|c d|d]
   _delay4eat(i)=30*_vDelay4eat*(vec(QQTotmarkov(:,:,i)).*[probC(i);probD(i);probC(i);probD(i)]);
   % VER meanFoodXsuj desde cantidad  de alimento
 endfor
@@ -319,18 +328,40 @@ endfor
 
 _effectiveness=(N*_vDelay4eat(1))./_delay4eat;
 
-mean(food(inicioAux:finAux,i))
+%mean(food(inicioAux:finAux,i))
 _estadoEstacionario=zeros(2,_nSujetos);
 
 for i=1:_nSujetos
   _estadoEstacionario(:,i) = dtmc(QQTotmarkov(:,:,i));
 endfor
 
+% Prob de Coop dado que antes C o D
+for i=1:_nSujetos
+  figure;
+  h=errorbar([1:4],vec(QQTotmarkov(:,:,i)),vec(QQTotmarkovSem(:,:,i)),'*k');
+  hold on;set(h, "linewidth", 2);     
+  h=bar([1:4],vec(QQTotmarkov(:,:,i)),'facecolor', 'g', 'edgecolor','b', "linewidth", 2);
+  h=plot([0:5],[.5 .5 .5 .5 .5 .5],"--r");
+  axis ("tic[yz]", "labely[xyz]");
+  set(h, "linewidth", 2);  
+  legend("SEM","MEAN");
+  %hh=xlabel("T=1 --- R=2 --- P=3 --- S=4");set(hh, "fontsize", 14);
+  hh=ylabel("P(C|X)");set(hh, "fontsize", 14);
+  hh=title(strcat("Probability of Cooperation given last choose: ",_txtSujetos(i,:)));
+  set(hh, "fontsize", 14);
+  axis ("tic[yz]", "labely[xyz]");
+  t=text([1:4], -.04*ones(1,4), {"P(c|c)"; "P(c|d)";"P(d|c)";"P(d|d)"},"fontsize",14);
+  axis([0 5 0 1]);
+  hold off;grid on;
+endfor
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
+
 % grafico Alimentos versus Cooperacion
 [S I]=sort(_mediaXsujeto);
 figure;
 %h=plot(_mediaXsujeto(I),_alimento(I),'ko', "markersize",12,"markerfacecolor",'c', "linewidth", 2);
 h=scatter(_mediaXsujeto(I),_alimento(I),20,_delay4eat(I),"filled");
+ch=colormap(copper);
 colorbar('southoutside');
 set(h, "linewidth", 2);
 hh=xlabel("Among of C choice ");
@@ -360,7 +391,7 @@ _foodRate= _alimento(1:_nSujetos)./(_delay4eat/30);%_vDelay4eat(1));
 _delay2eat=_delay4eat;
 [S I]=sort(_foodRate);
 figure;
-h=plot(_mediaXsujeto(I),_delay2eat(I),'ko', "markersize",14,"markerfacecolor",'c', "linewidth", 2);
+h=plot(_mediaXsujeto(I),100.*_delay2eat(I)./120,'ko', "markersize",14,"markerfacecolor",'c', "linewidth", 2);
 hold on;
 set(h, "linewidth", 2);
 hh=xlabel("Among of C choice ");
@@ -369,14 +400,14 @@ hh=ylabel("Delay to eat [seconds]");
 set(hh, "fontsize", 14);
 hh=title("Cooperation versus Delay to eat"); 
 set(hh, "fontsize", 14);
-h=plot(_mediaXsujeto(I),_delay2eat(I),'ko', "markersize",14,"markerfacecolor",'c', "linewidth", 2);
+%h=plot(_mediaXsujeto(I),_delay2eat(I),'ko', "markersize",14,"markerfacecolor",'c', "linewidth", 2);
 grid on;
 t=text(-0.02*[1 1 1 1 1 1 1 1 1 1 1 1]+_mediaXsujeto(I), 0.15*[1 1 -1 1 1 1 1 1 1 1 1 -1]+_delay2eat(I) ,_txtSujetos(I,:));
 axis('auto');
 hold on;
-h=plot(probC([1 3 4 5]),_idealSujeto(2,[1 3 4 5]),'ko', "markersize",20,"markerfacecolor",'r', "linewidth", 2);
+h=plot(probC([1 3 4 5]),100/120.*_idealSujeto(2,[1 3 4 5]),'ko', "markersize",20,"markerfacecolor",'r', "linewidth", 2);
 t=text(0.025*ones(1,length(probC([1 3 4 5])))+ probC([1 3 4 5])', 
-        _idealSujeto(2,[1 3 4 5]) ,{"switch CD";"switch CCDD";"half C";"switch 3Cx3D"});
+        100/120.*_idealSujeto(2,[1 3 4 5]) ,{"switch CD";"switch CCDD";"half C";"switch 3Cx3D"});
 hold off;
 
 % Alimentacion Versus Delay to eat
@@ -385,6 +416,8 @@ _delay2eat=_delay4eat;
 figure;
 %h=plot(_alimento(I),_delay2eat(I),'ko', "markersize",14,"markerfacecolor",'c', "linewidth", 2);
 h=scatter(_delay2eat(I),_alimento(I),20, _mediaXsujeto(I),"filled");
+%ch=colormap(copper);
+ch=colormap(copper);
 h=colorbar('southoutside');
 hold on;
 set(h, "linewidth", 2);
@@ -409,6 +442,35 @@ t=text(-10*[1 1 1 1 1 1]+ _idealSujeto(2,[1 3 4 5 6 7]),
        0.03*[1 1 1 1 1 1]+ _idealSujeto(1,[1 3 4 5 6 7]),
        {"coop 0.5";"coop 0.5";"coop 0.5";"coop 0.5";"coop 0.66%";"coop 0.75%"});        
 hold off;
+
+
+% grafico Cooperacion Versus R
+[S I]=sort(_mediaXsujeto);
+figure;
+h=scatter(_mediaXsujeto(I),R_mean(I),20,(_delay4eat(I)./120),"filled");
+ch=colormap(copper);
+colorbar('southoutside');
+set(h, "linewidth", 2);
+hh=xlabel("Among of C choice ");
+set(hh, "fontsize", 14);
+hh=ylabel("% Mutual Cooperation");
+set(hh, "fontsize", 14);
+hh=title("Cooperation Versus Mutual Cooperation (Colorbar=Timeout)"); 
+set(hh, "fontsize", 14);
+grid off;%grid minor;
+t=text(-0.01*[1 2.5 1 1 1 1 1 1 1 1 1 -1]+_mediaXsujeto(I), .08*[1 1 1 1 1 1 1 1 1 1 1 -1]+R_mean(I),_txtSujetos(I,:));
+axis('auto');
+
+%hold on;
+%h=scatter(probC([1 3 4 5 6 7])',_idealSujeto(1,[1 3 4 5 6 7]),15,_idealSujeto(2,[1 3 4 5 6 7]),'s',"filled");
+%h=scatter(probC([1 3 4 5 6 7])',_idealSujeto(1,[1 3 4 5 6 7]),15,'k','s',"linewidth",2);
+%t=text(0.025*[1 1 1 1 -.8 -.5]+ probC([1 3 4 5 6 7])', 
+%        0.04*[.5 .5 .5 .5 1.1 1.1]+_idealSujeto(1,[1 3 4 5 6 7]) ,{"switch CD";"switch CCDD";"half C";"switch 3Cx3D";"switch CCD";"switch CCCD"});
+%t=text(0.025*[1 1 1 1 -.8 -.5]+ probC([1 3 4 5 6 7])', 
+%       0.025*[0 0 0 0  1.2 1.2]+_idealSujeto(1,[1 3 4 5 6 7]) ,
+%        {"coop 0.5";"coop 0.5";"coop 0.5";"coop 0.5";"coop 0.66%";"coop 0.75%"});
+%hold off;
+
 
 %% tiempos promedio por ensayor
 %[S I]=sort(_effectiveness);
@@ -449,7 +511,7 @@ hold off;
 %%
 
 [S I]=sort(_alimento(1:_nSujetos));
-[x, y, z] = [sphere (50)]/50;
+[x, y, z] = [sphere (50)]./50;
 x=x./50;y=y./50;z=z./50;
 figure;
 

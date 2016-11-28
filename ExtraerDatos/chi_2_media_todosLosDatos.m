@@ -4,13 +4,10 @@
 % Se utiliza una 
 
 _stdSujetosCoop2=zeros(4,1);
-_todoJuntoCoop=[];
-_todoJuntoCoopD=[];  %sacar
-_todoJuntoNocoop=[];
-_todoJuntoNocoopD=[];
-_frecTeoCoop=[];
-_frecTeoNocoop=[];
-_todosFallas=[];_todosFallasNocoop=[];
+_todoJuntoCoop=[];  _todoJuntoCoopD=[];  %sacar
+_todoJuntoNocoop=[];_todoJuntoNocoopD=[];
+_frecTeoCoop=[];    _frecTeoNocoop=[];
+_todosFallas=[];    _todosFallasNocoop=[];
 for i=_sujetosCooperadores
   ultimo=expXsuj(i);
   primero=ultimo-_ultimosX+1;
@@ -49,6 +46,33 @@ _stdSujetosCoop2=std(_todoJuntoCoop,0,2);
 _stdSujetosNocoop2=std(_todoJuntoNocoop,0,2);
 _rango=1;
 
+%%%%%%%%%% Datos para CHI2 en cada sujeto %%%%%%%%%%%%%%%%%%555
+%_todosJuntoXsujetosC=zeros(_nSujetos,_ultimosX,_nSujetos);
+%_todosJuntoXsujetosD=zeros(_nSujetos,_ultimosX,_nSujetos);
+%_chi2SumC=zeros(4,_nSujetos);
+%_chi2SumD=zeros(4,_nSujetos)
+%_todosFrecTeo=zeros(_nSujetos,_ultimosX);
+%for i=1:_nSujetos
+%  for t=1:4
+%    aux22=[];
+%    aux23=[];
+%    aux24=[];
+%    ultimo=expXsuj(i);
+%    primero=ultimo-_ultimosX+1;
+%    for j=primero:ultimo
+%      if sum(probxExp.(indiceSujeto(i,:)).(indice(j+1,:))(t,:))!=0
+%        aux22=[aux22 probxExp.(indiceSujeto(i,:)).(indice(j+1,:))(t,1)];
+%        aux23=[aux23 probxExp.(indiceSujeto(i,:)).(indice(j+1,:))(t,2)];
+%        aux24=[aux24 sum(probxExp.(indiceSujeto(i,:)).(indice(j+1,:))(t,:),2)./2]; 
+%      endif
+%    endfor
+%    if sum(aux22)!=0 || sum(aux23)!=0
+%      _chi2SumC(t,i)=sum((aux22-aux24).^2./aux24,2);
+%      %_chi2SumD(t,i)=sum((aux23-aux24).^2./aux24,2); % Son iguales 
+%    endif    
+%  endfor
+%endfor
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %frec_teo=[_rango*.5];%     Se suman y div x 2 todos las eleciones luego de T
 
 % componentes de la sumatoria  (Oi-Ei)^2/Ei

@@ -1,3 +1,5 @@
+%%
+%%
 _stdSujetosCoop2=zeros(4,1);
 _todoJuntoCoop=[];
 _todoJuntoCoopD=[];  %sacar
