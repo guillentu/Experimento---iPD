@@ -60,7 +60,7 @@
 
 \begin_body
 
-\begin_layout Title
+\begin_layout Section
 Introduction
 \end_layout
 
@@ -127,46 +127,43 @@ ve, (2) the fitness of the recipient must be elevated relative to a nonrecipient
 \end_layout
 
 \begin_layout Standard
-The investigation about cooperation along non-related organism gain a new
- impulse since Trivers present model of reciprocal altruism because it allowed
- to evaluate reciprocal animals behaviors with famous mathematical Prisioner's
- Dilemma (PD) game (framed by Merrill Flood and Melvin Dresher 1950).
- 
+Research on cooperative behaviors along non-related organism gain a new
+ impulse since Trivers connect reciprocal altruism behaviors with famous
+ mathematical Prisioner's Dilemma (PD) game (framed by Merrill Flood and
+ Melvin Dresher 1950).
+ The PD game is one class of 2x2 game that involve two players who must
+ to choose between two options, generally called cooperation and defection.
+ The size of reward to delievered is according both player's choice.
+ For example, if both chose cooperation options both get pay-off R (reward),
+ if both choice defection each other get pay-off P (Punishment) and if one
+ choose cooperation and the second player choose defection the first get
+ pay-off S (sucker) and other pay-off T (tentation) where pay-off matrix
+ maintain inequality T>R>P>S.
 \end_layout
 
 \begin_layout Standard
-The PD game is one class of 2x2 game that involve two players who must to
- choose between two options, generally called cooperation and defection.
- The pay-off is given depending of your choice.
- For example, if both chose cooperation or defection options both get respective
-ly pay-off R (reward) or P (Punishment) and if one choose cooperation and
- second player choose defection the first get pay-off S (sucker) and other
- pay-off T (tentation) where pay-off matrix maintain inequality T>R>P>S.
-\end_layout
-
-\begin_layout Standard
-Both iPd and Evolutionary Stable Strategies (von Neumann and Morgenstern,
- 1944, and Nash, 1949) predict to or give a sign what behavior (strategy)
- is likely to happen if it is adopt by the population, in such a way, no
- minority using a another strategy can invade (M.
+Both iPD and Evolutionary Stable Strategies (von Neumann and Morgenstern,
+ 1944, and Nash, 1949) predict, or give a sign, what behavior (strategy)
+ is likely to happen whether it is adopt by the population, in such a way,
+ no minority using a another strategy can invade (M.
  Smith, 1974).
  When the 2x2 prisioner's dilemma is playing for once the unique ESS es
  Defeat strategy.
- Nevertheless, when use pay-off matrix that meets 2R>T+P and player indefinite
+ Nevertheless, when use pay-off matrix that meets 2R>T+P and play indefinite
  numbres of times the best strategy is mutual cooperation.
- It that means to each player always must to choose cooperation option.
  It does not means that if one does not cooperate the option remains be
- the best option, but is the worst option.
- Axelrod and Hamilton (1981) expose that some organisms simbiosis can be
- understand through reciprocal altruism but when organism can remember at
- least one previous intereaction and outcomes and is able to distingish
- differente individuals then the strategies situation becomes much richer
+ the best option but it is the worst option.
+ Axelrod and Hamilton (1981) expose that some organism's simbiosis can be
+ understand through reciprocal altruism's model and when organisms can remember
+ at least one previous intereaction, outcomes and they are able to distingish
+ individual's difference then the strategies situation becomes much richer
  set of posibilities.
- They put over a ESS for iterated PD as the result of computer tournament
- and was submitted by Anatol Rapoport that gather robustness and stability
- and initial viability, called TIT FOR TAT, with which an individual can
- survive invades to other strategies.
- The highly simple strategy roots inside simply one cooperate on the first
+ They present a ESS for iterated PD that gather robustness and stability
+ and initial viability, called TIT FOR TAT.
+ It was arised as the winner strategy, submitted by Anatol Rapoport in the
+ Robert Axelrod's computer tournament, because an individual that used it
+ can survive invades to other strategies.
+ The highly simple strategy roots inside that one cooperate on the first
  move and then doing whatever the oponent did on the preceding move.
 \end_layout
 
@@ -177,7 +174,7 @@ Both iPd and Evolutionary Stable Strategies (von Neumann and Morgenstern,
 
 \begin_layout Standard
 Thus, many experimenters have tried to understand different aspects of reciproca
-l altruism behavior in animals and if non-human animals with less ability
+l altruism behavior in animals and whether non-human animals with less ability
  can solve iPD.
  Basically we want to comprise what abilities are essencial for.
  Green, Price and Hamburger (1995) assess iterated prisioner's dilemma game
@@ -217,8 +214,9 @@ Moreover, Mendres and Waal(2000) and Waal(2000), used a pulling task over
 
 \begin_layout Standard
 Moreover, Mendres and Waal(2000) and Waal(2000) tested cooperation aspects
- using a pulling task over Capuchin monkeys (cebus apella) and a chamber
- that was partitioned by means of a mesh with two food bowl on a tray.
+ using a pulling task over Capuchin monkeys (cebus apella).
+ They use a chamber that was partitioned by means of a mesh with two food
+ bowl on a external tray.
  The monkeys can get foods pulling sticks attached at the side of the tray,
  one for each.
  They got that monkeys can adjust pulling task behavior according to their
@@ -234,10 +232,10 @@ Moreover, Mendres and Waal(2000) and Waal(2000) tested cooperation aspects
 \end_layout
 
 \begin_layout Standard
-Knowing that pimates have high psicologic capability we can expect that
- these kind of monkeys can able to learn reciprocal altruism despite of
- do not in wild, but the insteresting question is whether animals that less
- capabilities can learn reciprocal altruismo.
+Knowing that pimates have high psicological capability we can expect that
+ these kind of animals can able to learn reciprocal altruism despite of
+ they not perform this behavior in wild, but the insteresting question is
+ whether animals with less capabilities can learn reciprocal altruism.
  For the same way that monkeys experiments, Rutte and Taborsky (2007) assess
  generalized reciprocity in female rats (
 \emph on
@@ -251,14 +249,16 @@ Rattus norvegicus
  experience irrespective of partner identity.
  Experiment was carried out with two phase.
  The first, pre-training phase in which a humand experimenter taught focals
- rats to perform alternating reciprocal task and second, on experiment phase
+ rats to perform alternating reciprocal task and second on experiment phase
  that after recieve help or not for several days from differents partners
- to get food were paired with a new partnet in role of potencial helper.
+ were paired with a new partnet in role of potencial helper.
+ They observe the rats pull more frecuently when previously received interaction
+ with food-givers partner.
  We could make a comment about this last experiment over the perspective
  of operant conditioning owing to they has assessed extintion rate of pulling
  behavior after focal rats has or not received food for several days rather
- than rise the frecuency of behavior by interaction between playes.
- Then, Rutte and Taborsky (2007) evaluates direct versus generalised reciprocity
+ than rise the frecuency of behavior by interaction between players.
+ Then, Rutte and Taborsky (2008) evaluates direct versus generalised reciprocity
  using the same experiment set up.
  Direct reciprocity is a kind of reciprocate interaction in which a subjet
  A cooperate with B on account of B previously cooperate with A.
@@ -277,11 +277,11 @@ pulling
 \end_layout
 
 \begin_layout Standard
---In our search of altruistic behavior over nonhumand and non-primate animals
- we maybe demur that rats behavior in taborsky's experiment didn't meet
- all conditions for reciprocal altruistic behaviour rather that they assessed
- a type of reciprocity, because rats don't receive punishment for either
- punishment or temptation outcomes--- 
+-creo que este párrafo no va----In our search of altruistic behavior over
+ nonhumand and non-primate animals we maybe demur that rats behavior in
+ taborsky's experiment didn't meet all conditions for reciprocal altruistic
+ behaviour rather that they assessed a type of reciprocity, because rats
+ don't receive punishment for either punishment or temptation outcomes-----
 \end_layout
 
 \begin_layout Standard
@@ -291,12 +291,12 @@ Reciprocal altruism is widely tested by iterating prisioner dilemma, iPD,
  resulted in outcomes of R, T, S or P, respectively (stevens and stephens,2004).
  if all componente of vector are 0.5, the agent's decision rule is randomly
  irrespective last outcome.
- Part of experiment set developed by Wood et al.
+ Part of all experiment set developed by Wood et al.
  (2016) was measure reciprocal altruism in long-evans male and felmale rats
  using iPD in operant chamber divide half by removable mesh equiped with
  retractable lever and stimulus light.
- The best result show that male rats cooperative behavior is a little over
- the chance near to 60%.
+ The best result show that cooperative behavior on male rats is a little
+ over the chance near to 60%.
  
 \end_layout
 
@@ -319,16 +319,16 @@ et al.
 
 \begin_layout Standard
 The rats often develop on social groups and studies have demostrated that
- they prefer social reward that along or have a tendence to performed pro-social
- acts over the chance.
- (Moita 2015 and Kalenscher 2015).
- But why all iPD-base studies haven't found high level of reciprocity?
+ they prefer social reward rather that along or have a tendence to performed
+ pro-social acts over the chance (Moita 2015 and Kalenscher 2015).
+ 
 \end_layout
 
 \begin_layout Standard
-We considering about previous result that the rat don't reach learn iPD
- maybe due to the test box and stimulus contingency are inadequate for its
- natural expectation, i.e.
+But why all iPD-base studies haven't found high level of reciprocity? We
+ considering about previous result in which the rat don't reach learn iPD
+ and think that is maybe due to the test box and stimulus contingency are
+ inadequate for its natural expectation, i.e.
  the rat maybe has ability to achieve a aproximated optimal solution but
  for example the lenght of time used for made contingency is longer that
  rats can keep in mind or maybe don't realized the real difference within
@@ -336,34 +336,6 @@ We considering about previous result that the rat don't reach learn iPD
  As a result, we found that combining iterated Prisioner's Dilemma matrix
  payoff and delay's penalty for released reciprocation and tit for tat oponent's
  strategy achieve high level of reciprocal altruism behavior in rats.
-\end_layout
-
-\begin_layout Standard
----We are interested to assess whether the rat effectively can learn to
- solve iterates Prisioner when face to non-relative reciprocate altruistic
- opponent keeping in mind that it is archived when the rats choose cooperative
- option for a long run.
- Considering the result archieved by above experiment we propose a new experimen
-t set-up and a matrix payoff to test altruistic behaviors in rats.
- We use a dual operant chamber box equiped with fit lever and stimulus light
- and the matrix payoff is a mix appetitive reward and aversive delay punishment.-
----
-\end_layout
-
-\begin_layout Standard
-,
-\end_layout
-
-\begin_layout Standard
-Teoria de juegos y estraterias, descripcion de la matriz y estrategia optim
-\end_layout
-
-\begin_layout Standard
-,
-\end_layout
-
-\begin_layout Standard
-,
 \end_layout
 
 \begin_layout Section
@@ -435,6 +407,14 @@ Analysis
 
 \begin_layout Section
 Results
+\end_layout
+
+\begin_layout Standard
+.
+\end_layout
+
+\begin_layout Standard
+Dicution
 \end_layout
 
 \end_body
