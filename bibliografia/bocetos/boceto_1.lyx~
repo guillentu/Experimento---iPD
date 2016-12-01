@@ -60,16 +60,16 @@
 
 \begin_body
 
-\begin_layout Title
+\begin_layout Section
 Introduction
 \end_layout
 
 \begin_layout Standard
 Since Darwin's theory of species evolution was put forward there was some
- trouble to explain cooperative traits on animales and humans.
- For that the darwin's theory incorporate two novels kinds of extention.
- The genetical kinship theory that Hamilton grounded mathematicaly (hamilton,64)
- and the reciprocation theory (Trivers, 71).
+ trouble to explain cooperative traits on animals and humans.
+ For that the Darwin's theory incorporate two novels kinds of extension.
+ The genetically kinship theory that Hamilton grounded mathematically (Hamilton,
+64) and the reciprocation theory (Trivers, 71).
  Both appended theory able explanation of social altruism behavior through
  natural selection.
  In evolutionary biology, reciprocal altruism is a behavior whereby organism
@@ -88,7 +88,7 @@ kin Selection
  between closed related individuals can being selected though the natural
  selection.
  This theory does not include the altruist act among distantly related organism
- and so that trivers' theory does it.
+ and so that Trivers' theory does it.
  The term 
 \begin_inset Quotes eld
 \end_inset
@@ -98,75 +98,72 @@ reciprocal altruism
 \end_inset
 
  was use for Trivers for cover this type of behavior and give explanation
- about how the selection favors the altruistic behavios in long run when
+ about how the selection favors the altruistic behaviors in long run when
  in population there are reciprocity.
- Some of most relevant and releable examples about this type of cooperation
+ Some of most relevant and reliable examples about this type of cooperation
  are the Wilkinson studies in reciprocal foods sharing behavior in vampires
- bats, rotundus, (wilkinson,1984) wheres they share a part of harverted
- food only a partnet that previously being shared.
+ bats, rotundus, (Wilkinson,1984) wheres they share a part of harvested
+ food only a partner that previously being shared.
  Other about it, ....
  
 \end_layout
 
 \begin_layout Standard
-Diferent conditions must be fullfilled to warranted that reciprocally altruistic
- behavios will be selected for.
+Different conditions must be fulfilled to warranted that reciprocally altruistic
+ behaviors will be selected for.
  Wilkinson make a clear brief of conditions must be satisfied to assure
- that the selection favor reciprocal altruismo behavior: 
+ that the selection favor reciprocal altruism behavior: 
 \shape italic
 (1) the behavior must reduce a donor’s fitness relative to the selfish alternati
-ve, (2) the fitness of the recipient must be elevated relative to a nonrecipient
-, (3) performance of the behavior must not depend on receipt of an immediate
+ve, (2) the fitness of the recipient must be elevated relative to a non-recipien
+t, (3) performance of the behavior must not depend on receipt of an immediate
  benefit, (4) a mechanism for detecting individuals who receive benefits
  but never pay altruistic costs has to exist, and (5) a large but indefinite
  number of opportunities to exchange aid must exist within each individual’s
  lifetime
 \shape default
- (wilkinson, 1987).
+ (Wilkinson, 1987).
  
 \end_layout
 
 \begin_layout Standard
-The investigation about cooperation along non-related organism gain a new
- impulse since Trivers present model of reciprocal altruism because it allowed
- to evaluate reciprocal animals behaviors with famous mathematical Prisioner's
- Dilemma (PD) game (framed by Merrill Flood and Melvin Dresher 1950).
- 
+Research on cooperative behaviors along non-related organism gain a new
+ impulse since Trivers connect reciprocal altruism behaviors with famous
+ mathematical Prisoner's Dilemma (PD) game (framed by Merrill Flood and
+ Melvin Dresher 1950).
+ The PD game is one class of 2x2 game that involve two players who must
+ to choose between two options, generally called cooperation and defection.
+ The size of reward to delivered is according both player's choice.
+ For example, if both chose cooperation options both get pay-off R (reward),
+ if both choice defection each other get pay-off P (Punishment) and if one
+ choose cooperation and the second player choose defection the first get
+ pay-off S (sucker) and other pay-off T (temptation) where pay-off matrix
+ maintain inequality T>R>P>S.
 \end_layout
 
 \begin_layout Standard
-The PD game is one class of 2x2 game that involve two players who must to
- choose between two options, generally called cooperation and defection.
- The pay-off is given depending of your choice.
- For example, if both chose cooperation or defection options both get respective
-ly pay-off R (reward) or P (Punishment) and if one choose cooperation and
- second player choose defection the first get pay-off S (sucker) and other
- pay-off T (tentation) where pay-off matrix maintain inequality T>R>P>S.
-\end_layout
-
-\begin_layout Standard
-Both iPd and Evolutionary Stable Strategies (von Neumann and Morgenstern,
- 1944, and Nash, 1949) predict to or give a sign what behavior (strategy)
- is likely to happen if it is adopt by the population, in such a way, no
- minority using a another strategy can invade (M.
+Both iPD and Evolutionary Stable Strategies (von Neumann and Morgenstern,
+ 1944, and Nash, 1949) predict, or give a sign, what behavior (strategy)
+ is likely to happen whether it is adopt by the population, in such a way,
+ no minority using a another strategy can invade (M.
  Smith, 1974).
- When the 2x2 prisioner's dilemma is playing for once the unique ESS es
- Defeat strategy.
- Nevertheless, when use pay-off matrix that meets 2R>T+P and player indefinite
- numbres of times the best strategy is mutual cooperation.
- It that means to each player always must to choose cooperation option.
+ When the 2x2 prisoner's dilemma is playing for once the unique ESS es Defeat
+ strategy.
+ Nevertheless, when use pay-off matrix that meets 2R>T+P and play indefinite
+ numbers of times the best strategy is mutual cooperation.
  It does not means that if one does not cooperate the option remains be
- the best option, but is the worst option.
- Axelrod and Hamilton (1981) expose that some organisms simbiosis can be
- understand through reciprocal altruism but when organism can remember at
- least one previous intereaction and outcomes and is able to distingish
- differente individuals then the strategies situation becomes much richer
- set of posibilities.
- They put over a ESS for iterated PD as the result of computer tournament
- and was submitted by Anatol Rapoport that gather robustness and stability
- and initial viability, called TIT FOR TAT, with which an individual can
- survive invades to other strategies.
- The highly simple strategy roots inside simply one cooperate on the first
+ the best option but it is the worst option.
+ Axelrod and Hamilton (1981) expose that some organism's symbiosis can be
+ understand through reciprocal altruism's model and when organisms can remember
+ at least one previous interaction, outcomes and they are able to distinguish
+ partner's difference then the strategies situation becomes much richer
+ set of possibilities.
+ They present a ESS for iterated PD that gather robustness and stability
+ and initial viability, called TIT FOR TAT.
+ It was arise as the winner strategy, submitted by Anatol Rapoport in the
+ Robert Axelrod's computer tournament, because an individual that used it
+ can survive invades to other strategies.
+ The highly simple strategy roots inside that one cooperate on the first
  move and then doing whatever the oponent did on the preceding move.
 \end_layout
 
@@ -177,33 +174,37 @@ Both iPd and Evolutionary Stable Strategies (von Neumann and Morgenstern,
 
 \begin_layout Standard
 Thus, many experimenters have tried to understand different aspects of reciproca
-l altruism behavior in animals and if non-human animals with less ability
+l altruism behavior in animals and whether non-human animals with less ability
  can solve iPD.
- Basically we want to comprise what abilities are essencial for.
- Green, Price and Hamburger (1995) assess iterated prisioner's dilemma game
- over pigons and observated that birds are so impulsivity and prefer small
+ Basically we want to comprise what abilities are essential for.
+ Green, Price and Hamburger (1995) assess iterated prisoner's dilemma game
+ over pigeons and observed that birds are so impulsive and prefer small
  immediate outcomes rather than big long-term delayed outcomes.
  Stevens and Stephens (2003) use Blue jays on four different pay-off matrix,
  where one of them is the iPD matrix, over special dual operant box.
- This study found little cooperation in prisioner's dilemma treatment and
+ This study found little cooperation in prisoner's dilemma treatment and
  this findings suggest that jays don't cooperate when immediate benefit
  is available (defect only), even if a long-term benefit may exist.
- Then in Steven et al.
+ Then in Steven 
+\emph on
+et al
+\emph default
+.
  (2002 and 2005) inspired by low level of cooperation (Gardner et all.
  1984, Clements and Stephens 1995, Flood et al.
  1983, Green et al.
  1995) proposed payoff accumulation and temporal clumping to iPD game using
  blue jays in a kind of apparatus that consisted of side by side V-shaped
- compartiment.
- They found that combined both accumulation and clumpling treatment birds
+ compartment.
+ They found that combined both accumulation and clumping treatment birds
  show a level of cooperation over chance choice.
  But in Danchin et.
  al.
- (2006) critized these treatment arguing that iPD payoff matrix becomes
+ (2006) criticized these treatment arguing that iPD payoff matrix becomes
  stag hung matrix after each accumulation blocks.
  Adams and Mesterton-Gibbons points out that in Stevens et al.
- (2002) found that birs care less about the immediacy of reward if seeds
- accumulation in a transparent food tray for some time befores being deliver.
+ (2002) found that birds care less about the immediacy of reward if seeds
+ accumulation in a transparent food tray for some time before being deliver.
 \end_layout
 
 \begin_layout Standard
@@ -217,8 +218,9 @@ Moreover, Mendres and Waal(2000) and Waal(2000), used a pulling task over
 
 \begin_layout Standard
 Moreover, Mendres and Waal(2000) and Waal(2000) tested cooperation aspects
- using a pulling task over Capuchin monkeys (cebus apella) and a chamber
- that was partitioned by means of a mesh with two food bowl on a tray.
+ using a pulling task over Capuchin monkeys (cebus apella).
+ They use a chamber that was partitioned by means of a mesh with two food
+ bowl on a external tray.
  The monkeys can get foods pulling sticks attached at the side of the tray,
  one for each.
  They got that monkeys can adjust pulling task behavior according to their
@@ -234,38 +236,44 @@ Moreover, Mendres and Waal(2000) and Waal(2000) tested cooperation aspects
 \end_layout
 
 \begin_layout Standard
-Knowing that pimates have high psicologic capability we can expect that
- these kind of monkeys can able to learn reciprocal altruism despite of
- do not in wild, but the insteresting question is whether animals that less
- capabilities can learn reciprocal altruismo.
+Knowing that primates have high psychological capability we can expect that
+ these kind of animals can able to learn reciprocal altruism despite of
+ they not perform this behavior in wild, but the interesting question is
+ whether animals with less capabilities can learn reciprocal altruism.
  For the same way that monkeys experiments, Rutte and Taborsky (2007) assess
  generalized reciprocity in female rats (
 \emph on
 Rattus norvegicus
 \emph default
-) by means of a alternating pulling task in wich either the focal rats adopt
- a role of either helper to give food to a partner or a receiver food from
- a partner over a like-Wall&Menders chamber scaled for rats.
+) by means of a alternating pulling task in which either the focal rats
+ adopt a role of either helper to give food to a partner or a receiver food
+ from a partner over a like-Wall&Menders chamber scaled for rats.
  Generalized reciprocity is kind of reciprocal altruism between unrelated
  individuals where individual make altruistic behavior by previous social
  experience irrespective of partner identity.
  Experiment was carried out with two phase.
- The first, pre-training phase in which a humand experimenter taught focals
- rats to perform alternating reciprocal task and second, on experiment phase
- that after recieve help or not for several days from differents partners
- to get food were paired with a new partnet in role of potencial helper.
+ The first, pre-training phase in which a humans experimenter taught focal
+ rats to perform alternating reciprocal task and second on experiment phase
+ that after receive help or not for several days from differents partners
+ were paired with a new partner in role of potential helper.
+ They observe the rats pull more frequently when previously received interaction
+ with food-givers partner.
  We could make a comment about this last experiment over the perspective
- of operant conditioning owing to they has assessed extintion rate of pulling
+ of operant conditioning owing to they has assessed extinction rate of pulling
  behavior after focal rats has or not received food for several days rather
- than rise the frecuency of behavior by interaction between playes.
- Then, Rutte and Taborsky (2007) evaluates direct versus generalised reciprocity
+ than rise the frequency of behavior by interaction between players.
+ Then, Rutte and Taborsky (2008) evaluates direct versus generalized reciprocity
  using the same experiment set up.
- Direct reciprocity is a kind of reciprocate interaction in which a subjet
+ Direct reciprocity is a kind of reciprocate interaction in which a subject
  A cooperate with B on account of B previously cooperate with A.
  They observe that rats the pull rate is higher and its delay to pull is
- lower on direct reciprocity than generalised.
+ lower on direct reciprocity than generalized.
  This means that know opponent is a more powers stimulus than unknown.
- Taborsky et al.
+ Taborsky 
+\emph on
+et al.
+
+\emph default
  (2012) shown that rats reduced pulling rate with increasing resistance
  to pull and Dolivo and Taborsky (2015) evince that rats take account the
  quality of foods received from opponent to future cooperation(
@@ -277,26 +285,26 @@ pulling
 \end_layout
 
 \begin_layout Standard
---In our search of altruistic behavior over nonhumand and non-primate animals
- we maybe demur that rats behavior in taborsky's experiment didn't meet
- all conditions for reciprocal altruistic behaviour rather that they assessed
- a type of reciprocity, because rats don't receive punishment for either
- punishment or temptation outcomes--- 
+-creo que este párrafo no va----In our search of altruistic behavior over
+ non-humans and non-primate animals we maybe demur that rats behavior in
+ taborsky's experiment didn't meet all conditions for reciprocal altruistic
+ behavior rather that they assessed a type of reciprocity, because rats
+ don't receive punishment for either punishment or temptation outcomes-----
 \end_layout
 
 \begin_layout Standard
-Reciprocal altruism is widely tested by iterating prisioner dilemma, iPD,
+Reciprocal altruism is widely tested by iterating prisoner dilemma, iPD,
  and the individual's decision rules size up by transition vector t, r,
  p, s that reflect the probability of cooperation when the previous trials
  resulted in outcomes of R, T, S or P, respectively (stevens and stephens,2004).
- if all componente of vector are 0.5, the agent's decision rule is randomly
+ if all component of vector are 0.5, the agent's decision rule is randomly
  irrespective last outcome.
- Part of experiment set developed by Wood et al.
- (2016) was measure reciprocal altruism in long-evans male and felmale rats
- using iPD in operant chamber divide half by removable mesh equiped with
+ Part of all experiment set developed by Wood et al.
+ (2016) was measure reciprocal altruism in long-evans male and female rats
+ using iPD in operant chamber divide half by removable mesh equipped with
  retractable lever and stimulus light.
- The best result show that male rats cooperative behavior is a little over
- the chance near to 60%.
+ The best result show that cooperative behavior on male rats is a little
+ over the chance near to 60%.
  
 \end_layout
 
@@ -310,7 +318,7 @@ To test whether the rat has ability to solve the iPD game when faced to
 et al.
 
 \emph default
- using a mimic tit-for-tat stategy on the opponent in a doble T-maze chamber
+ using a mimic tit-for-tat strategy on the opponent in a double T-maze chamber
  and neither reach a high level of cooperation.
  Our further analysis over their markov chain diagram gave evidence that
  strategy performed by rat was more selfish than cooperative because its
@@ -319,51 +327,23 @@ et al.
 
 \begin_layout Standard
 The rats often develop on social groups and studies have demostrated that
- they prefer social reward that along or have a tendence to performed pro-social
- acts over the chance.
- (Moita 2015 and Kalenscher 2015).
- But why all iPD-base studies haven't found high level of reciprocity?
+ they prefer social reward rather that along or have a tendency to performed
+ pro-social acts over the chance (Moita 2015 and Kalenscher 2015).
+ 
 \end_layout
 
 \begin_layout Standard
-We considering about previous result that the rat don't reach learn iPD
- maybe due to the test box and stimulus contingency are inadequate for its
- natural expectation, i.e.
- the rat maybe has ability to achieve a aproximated optimal solution but
- for example the lenght of time used for made contingency is longer that
+But why all iPD-base studies haven't found high level of reciprocity? We
+ considering about previous result in which the rat don't reach learn iPD
+ and think that is maybe due to the test box and stimulus contingency are
+ inadequate for its natural expectation, i.e.
+ the rat maybe has ability to achieve a approximated optimal solution but
+ for example the length of time used for made contingency is longer that
  rats can keep in mind or maybe don't realized the real difference within
  payoff matrix amounts.
- As a result, we found that combining iterated Prisioner's Dilemma matrix
- payoff and delay's penalty for released reciprocation and tit for tat oponent's
- strategy achieve high level of reciprocal altruism behavior in rats.
-\end_layout
-
-\begin_layout Standard
----We are interested to assess whether the rat effectively can learn to
- solve iterates Prisioner when face to non-relative reciprocate altruistic
- opponent keeping in mind that it is archived when the rats choose cooperative
- option for a long run.
- Considering the result archieved by above experiment we propose a new experimen
-t set-up and a matrix payoff to test altruistic behaviors in rats.
- We use a dual operant chamber box equiped with fit lever and stimulus light
- and the matrix payoff is a mix appetitive reward and aversive delay punishment.-
----
-\end_layout
-
-\begin_layout Standard
-,
-\end_layout
-
-\begin_layout Standard
-Teoria de juegos y estraterias, descripcion de la matriz y estrategia optim
-\end_layout
-
-\begin_layout Standard
-,
-\end_layout
-
-\begin_layout Standard
-,
+ As a result, we found that combining iterated Prisoner's Dilemma matrix
+ payoff and delay's penalty for released reciprocation and tit for tat opponent'
+s strategy achieve high level of reciprocal altruism behavior in rats.
 \end_layout
 
 \begin_layout Section
@@ -377,11 +357,11 @@ Subjects and Housing
 \begin_layout Standard
 Two group of long-Evans rats (Charles Rivers....) were used.
  Twelves males were used like subjects and six (Nstooge=6) identical rats
- like oponentes.
+ like opponents.
  At weaning time all subject were housed in group of two rats per cage to
  addressing social interaction and each stooge in single individual cage.
  We had 12 cage altogether.
- All rats were food deprivated schedule, and to subject rats dialy food
+ All rats were food deprivation schedule, and to subject rats daily food
  intake was restricted to keep animals at between 90-95% of free feeding
  body weight and to stooge rats at between 80-85% of free feeding body weight.
  The housing room had an average temperature of 22°C and 12:12h light:dark
@@ -392,8 +372,8 @@ Two group of long-Evans rats (Charles Rivers....) were used.
 We used two opposite standard operant chamber by Med-Association (Product
  ENV-008) in such manner that each rats can make olfactory and eye contact
  through metal windows (FIGURA 1 CAJAS).
- Each standard chamber was equiped with two side by side lever and two stimulus
- light over each lever and a feeder in the center.
+ Each standard chamber was equipped with two side by side lever and two
+ stimulus light over each lever and a feeder in the center.
  
 \end_layout
 
@@ -435,6 +415,22 @@ Analysis
 
 \begin_layout Section
 Results
+\end_layout
+
+\begin_layout Standard
+.
+\end_layout
+
+\begin_layout Section
+Discussion
+\end_layout
+
+\begin_layout Standard
+.
+\end_layout
+
+\begin_layout Section
+Reference
 \end_layout
 
 \end_body
