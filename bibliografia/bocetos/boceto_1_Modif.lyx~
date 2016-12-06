@@ -265,7 +265,7 @@ Reciprocal altruism has been widely tested by iPD, where the individual's
  using iPD.
  They used an operant chamber divided in halves by a removable mesh and
  equipped with retractable levers and stimulus light.
- As aresult, they show a 60% of altruistic behavior on male rats, barely
+ As a result, they show a 60% of altruistic behavior on male rats, barely
  surpassing chance choice.
  
 \end_layout
@@ -383,23 +383,107 @@ k cycle, using a standard operant chambers (MED associates Inc., USA) with
 \end_layout
 
 \begin_layout Subsection
-Experimental Setup
+Procedures
 \end_layout
 
 \begin_layout Standard
-.
-\end_layout
-
-\begin_layout Subsection
-Experimental Design
-\end_layout
-
-\begin_layout Standard
-
+During the whole duration of experiment, every actor were trained for 2
+ session per day for all handing, habituation, training and iPD experiment
+ sessions.
+ 
 \end_layout
 
 \begin_layout Subsubsection
-General Task Design
+Training procedure
+\end_layout
+
+\begin_layout Standard
+handing
+\end_layout
+
+\begin_layout Standard
+Habituation
+\end_layout
+
+\begin_layout Standard
+Magazine
+\end_layout
+
+\begin_layout Standard
+Shaping
+\end_layout
+
+\begin_layout Standard
+two alternative
+\end_layout
+
+\begin_layout Standard
+At weaning time when the animals were moved to housing room started a handing
+ procedure to decrease the stress by experimenter manipulation and finished
+ when animals had 60 days old.
+ 
+\end_layout
+
+\begin_layout Standard
+The animals were habituated to the single and double operant chamber for
+ a days in session of 3 minute.
+ In this treatment, there were either no stimulus-reward contingencies or
+ reward, only a back-light that marked the beginning and the end of sessions.
+\end_layout
+
+\begin_layout Standard
+To learn the place in which the food is given, the rat were exposed for
+ a days to a 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Magazine
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+ procedure in the single chamber.
+ It consisted in variable ratio reinforcement scheduler.
+ 
+\end_layout
+
+\begin_layout Standard
+The pressing lever training on rats was done through a successive approximations
+ procedure, 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Shaping
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+ (Mazur, 1994, page 122) on a single chamber.
+ The chamber was equipped as described above and was added a external lever.
+ In this training, the external lever was manipulated by the operator to
+ give reward as the rat go to the goal and finally when press lever.
+ When the rat learned to press the lever after light onset, the operator
+ left to  The trial sequence was: the center light turned on and the lever
+ below it ejected, these stated that the trial starts and the contingency
+ exists, when either inner or outer levers is press the lever light wash
+ out and turn on the feeder's light, one second later a 45mg pellet is automatic
+ally dispensed, when 5 second elapsed all light is turn off and the lever
+ is retract, finally 5 second inter-trials-interval starts.
+ 
+\end_layout
+
+\begin_layout Standard
+The procedure was perform during 3 days until the rats 
+\end_layout
+
+\begin_layout Subsubsection
+Iterated Prisoner's Dilemma Procedure
 \end_layout
 
 \begin_layout Standard
