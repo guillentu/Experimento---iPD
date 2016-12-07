@@ -399,24 +399,8 @@ During the whole duration of experiment, every actor were trained for 2
 Training procedure
 \end_layout
 
-\begin_layout Standard
-handing
-\end_layout
-
-\begin_layout Standard
-Habituation
-\end_layout
-
-\begin_layout Standard
-Magazine
-\end_layout
-
-\begin_layout Standard
-Shaping
-\end_layout
-
-\begin_layout Standard
-two alternative
+\begin_layout Paragraph
+Handing
 \end_layout
 
 \begin_layout Standard
@@ -426,11 +410,19 @@ At weaning time when the animals were moved to housing room started a handing
  
 \end_layout
 
+\begin_layout Paragraph
+Habituation
+\end_layout
+
 \begin_layout Standard
 The animals were habituated to the single and double operant chamber for
  a days in session of 3 minute.
  In this treatment, there were either no stimulus-reward contingencies or
  reward, only a back-light that marked the beginning and the end of sessions.
+\end_layout
+
+\begin_layout Paragraph
+Magazine
 \end_layout
 
 \begin_layout Standard
@@ -450,6 +442,10 @@ Magazine
  procedure in the single chamber.
  It consisted in variable ratio reinforcement scheduler.
  
+\end_layout
+
+\begin_layout Paragraph
+Shaping
 \end_layout
 
 \begin_layout Standard
@@ -485,13 +481,17 @@ Shaping
 \end_layout
 
 \begin_layout Standard
-Following we exposed the rat to the same task but now the center lever during
- the session never more was retracted, the lever ejected at first trials
- and retracted at the last trials.
+Following, we exposed the rat to the same task but now the center lever
+ during the session never more was retracted, the lever ejected at first
+ trials and retracted at the last trials.
  In this training, when the rat pressed lever on ITI was punished with 2
  second delays added to 5 second of ITI.
  This procedure went on for tree days or until pressing rate was below one
  per trials.
+\end_layout
+
+\begin_layout Paragraph
+Basic toggle task for subject
 \end_layout
 
 \begin_layout Standard
@@ -508,7 +508,7 @@ toggle 8x8
  rat lever's preference.
  The experiment was performed by 2 days in which on first day a rat use
  chamber 1 and on day 2 used chamber 2.
- this last allow not placed preference.
+ This last allow not placed preference.
  The chamber communication windows were closed and any contact was suppressed.
  Each rat had two lever option and two light stimulus.
  When session started since the first to eighth trials only one pair stimulus
@@ -517,6 +517,10 @@ toggle 8x8
  What pair light lever started was randomly and in the second day was maintained
  in the same way.
  The trials procedure was identical to the previous one in the shaping.
+\end_layout
+
+\begin_layout Paragraph
+Mimic tit for tat for opponent
 \end_layout
 
 \begin_layout Standard
@@ -547,7 +551,201 @@ Iterated Prisoner's Dilemma Procedure
 \end_layout
 
 \begin_layout Standard
-.
+The iPD experiment was performed in dual chamber but the center lever and
+ light and the windows covers were removed.
+ The rats had only two lever option and the contact between chamber was
+ restored.
+ There was one chamber for the subject and one for the opponent, as showed
+ the figure xxx(figura 1 de ARRIBA).
+ 
+\end_layout
+
+\begin_layout Standard
+We used a Prisioner's Dilemma game matrix in which T>R>P>S.
+ The T and R were positive reinforcements and P and S was punishment.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Prisioner's Dilemma Pay-off Matrix
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Opponent choice
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+C
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+D
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Subject choice
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+C
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 pellet
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8 second
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+D
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2 pellets
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4 second
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
