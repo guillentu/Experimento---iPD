@@ -390,7 +390,9 @@ Procedures
 During the whole duration of experiment, every actor were trained for 2
  session per day for all handing, habituation, training and iPD experiment
  sessions.
- 
+ The 5 second inter-trial interval(ITI) was used and each trial duration
+ was 45 second.
+ the standard experiment session had 30 trials.
 \end_layout
 
 \begin_layout Subsubsection
@@ -469,17 +471,75 @@ Shaping
  In this training, the external lever was manipulated by the operator to
  give reward as the rat go to the goal and finally when press lever.
  When the rat learned to press the lever after light onset, the operator
- left to  The trial sequence was: the center light turned on and the lever
- below it ejected, these stated that the trial starts and the contingency
- exists, when either inner or outer levers is press the lever light wash
- out and turn on the feeder's light, one second later a 45mg pellet is automatic
-ally dispensed, when 5 second elapsed all light is turn off and the lever
- is retract, finally 5 second inter-trials-interval starts.
- 
+ left to gave reward with his lever.
+ It training finished when the rat made the task for at least two session.
+ Trials procedure: each trial began when the center stimulus light was turned
+ on and the lever below it was ejected, then if either inner or outer levers
+ wasn't pressed and 45 second had elapsed, the trials finished and not reward
+ was given.
+ But nevertheless, if either inner or outer levers was pressed, the light
+ turn-off and the feeder's light was turned on, one second later a 45mg
+ pellet is automatically dispensed, when 5 second elapsed all light were
+ turn off and the lever was retracted, finally 5 second ITI started.
+ The procedure was performed during 3 days or until the rats met task goal.
 \end_layout
 
 \begin_layout Standard
-The procedure was perform during 3 days until the rats 
+Following we exposed the rat to the same task but now the center lever during
+ the session never more was retracted, the lever ejected at first trials
+ and retracted at the last trials.
+ In this training, when the rat pressed lever on ITI was punished with 2
+ second delays added to 5 second of ITI.
+ This procedure went on for tree days or until pressing rate was below one
+ per trials.
+\end_layout
+
+\begin_layout Standard
+The subject rats group was exposed to a training called 
+\begin_inset Quotes eld
+\end_inset
+
+toggle 8x8
+\begin_inset Quotes erd
+\end_inset
+
+ in dual iPD chamber.
+ The purposed of the training was show that two lever exist and balance
+ rat lever's preference.
+ The experiment was performed by 2 days in which on first day a rat use
+ chamber 1 and on day 2 used chamber 2.
+ this last allow not placed preference.
+ The chamber communication windows were closed and any contact was suppressed.
+ Each rat had two lever option and two light stimulus.
+ When session started since the first to eighth trials only one pair stimulus
+ light and lever worked and the next 8 trials(9-16) the another pair light-lever
+ worked.
+ What pair light lever started was randomly and in the second day was maintained
+ in the same way.
+ The trials procedure was identical to the previous one in the shaping.
+\end_layout
+
+\begin_layout Standard
+The opponent learned to develop a mimic tit for tat strategy by to learn
+ a basic operant task.
+ The opponent rat group was exposed to a fixed ratio (FR) schedule in dual
+ operant chamber equipped in the same way.
+ The pair light-lever was randomly assigned in each trials along the session.
+ In this training, the rat must to press the lever that had light turned
+ on.
+ The other lever did not work during the trials and on the next trials the
+ light-lever pair that worked was pseudo-randomly assigned.
+ Pseudo-randomly means that the assigned was random but not allowed the
+ same assigned for more than four time.
+ The training was developed during five days and the FR schedule was increased
+ step by step: day 1º the FR=2 and day 2º to 3º the FR=3, then day 4º the
+ FR=4 and finally day 5º the FR=5.
+ If the rat press the lever on ITI time received 2
+\begin_inset Quotes erd
+\end_inset
+
+ second delay added ITI time as punishment.
+ 
 \end_layout
 
 \begin_layout Subsubsection
