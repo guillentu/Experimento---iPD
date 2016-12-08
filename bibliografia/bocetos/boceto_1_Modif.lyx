@@ -574,9 +574,16 @@ The main experiment was designed to study the reciprocal cooperation lever
 \end_inset
 
  delay of punishment and no pellet in this trial.
- The opponent strategy was conducted by the stimulus light, e.i.
+ The opponent strategy was conducted by place in which the stimulus was
+ lighting, e.i.
  the opponent didn't choose freely and the side where light was turn on,
  the opponent pressed the lever.
+ The amount pellet preference was test previously and the rat shown more
+ preferences for 2 pellet than 1 pellet.
+ The delay discrimination had been tested in 
+\color red
+PAPER DE SELF CONTROL EN RATAS.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -762,12 +769,13 @@ D
 \end_layout
 
 \begin_layout Standard
-The iPD experiment was performed in dual chamber but the center lever and
- light and the windows covers were removed.
+In iPD experiment used a dual chamber without neither center lever and center
+ light.
+ The windows cover was removed.
  The rats had only two lever option and the contact between chamber was
  restored.
  There was one chamber for the subject and one for the opponent fixed during
- the experiment, see the figure xxx(figura 1 de ARRIBA).
+ all the experiment, see the figure xxx(figura 1 de ARRIBA).
  
 \end_layout
 
@@ -778,6 +786,10 @@ The main experiment was conducted for 20 days and 2 session per day.
  didn't change along ten consecutive sessions.
  To some subject was exposed more than 20 days when rise its behavior tendency.
  
+\end_layout
+
+\begin_layout Subsubsection
+Typical Trial Structure
 \end_layout
 
 \begin_layout Standard
@@ -799,20 +811,42 @@ The sequence of events within a single trial was as follows.
  The next trials started.
 \end_layout
 
-\begin_layout Subsubsection
-Typical Trial Structure
-\end_layout
-
-\begin_layout Standard
-.
-\end_layout
-
 \begin_layout Subsection
-Analysis
+Statistical Analysis
 \end_layout
 
 \begin_layout Standard
-.
+Al statistical analysis were performed using statistic library from octave
+ open source software.
+ Only a 
+\end_layout
+
+\begin_layout Standard
+chi 2 para 
+\end_layout
+
+\begin_layout Subsubsection
+Stability of cooperation
+\end_layout
+
+\begin_layout Standard
+To analysis the choice stability of rats in the iterated game, we pooled
+ data from session in which the cooperation rate was stable.
+ We used the last 10 session as a pool of data due to the rat's behaviors
+ had reached a plateau.
+\end_layout
+
+\begin_layout Subsubsection
+Probability of cooperation after outcomes
+\end_layout
+
+\begin_layout Standard
+The animals probability to cooperate after each outcomes was assess using
+ a chi square test.
+ The probability of cooperation given specific outcomes in last trial was
+ compared from chance, e.i.
+ 0.5.
+  
 \end_layout
 
 \begin_layout Section
