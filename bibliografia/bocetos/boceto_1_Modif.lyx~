@@ -121,7 +121,7 @@ Research on cooperative behaviors between non-related organisms has gained
  The size of the reward delivered is established according both player's
  choice.
  If both chose the cooperation option both get payed a certain amount R
- (reward), and if both chose defection they bothget payed a smaller reward
+ (reward), and if both chose defection they both get payed a smaller reward
  P (punishment) than R.
  However if one cooperates and the second player defects, the first one
  gets payed S (sucker) and other receives the best amount T (temptation)
@@ -343,6 +343,10 @@ l cages.
  All animals were kept in a well-ventilated, temperature-controlled room
  (22 ± 2 °C) with a 12/12 h light/dark cycle (lights on at 8 am).
  Tap water was available ad libitum.
+ To ensure that animals obtained sufficient food to survive, we provided
+ supplementary food (at 22hs) for any rats that obtained the average amount
+ of pellet to maintain body weight.
+ 
 \end_layout
 
 \begin_layout Subsubsection
@@ -392,31 +396,16 @@ During the whole duration of experiment, every actor were trained for 2
  sessions.
  The 5 second inter-trial interval(ITI) was used and each trial duration
  was 45 second.
- the standard experiment session had 30 trials.
+ The standard experiment session had 30 trials.
+ 
 \end_layout
 
 \begin_layout Subsubsection
 Training procedure
 \end_layout
 
-\begin_layout Standard
-handing
-\end_layout
-
-\begin_layout Standard
-Habituation
-\end_layout
-
-\begin_layout Standard
-Magazine
-\end_layout
-
-\begin_layout Standard
-Shaping
-\end_layout
-
-\begin_layout Standard
-two alternative
+\begin_layout Paragraph
+Handing
 \end_layout
 
 \begin_layout Standard
@@ -426,11 +415,19 @@ At weaning time when the animals were moved to housing room started a handing
  
 \end_layout
 
+\begin_layout Paragraph
+Habituation
+\end_layout
+
 \begin_layout Standard
 The animals were habituated to the single and double operant chamber for
  a days in session of 3 minute.
  In this treatment, there were either no stimulus-reward contingencies or
  reward, only a back-light that marked the beginning and the end of sessions.
+\end_layout
+
+\begin_layout Paragraph
+Magazine
 \end_layout
 
 \begin_layout Standard
@@ -450,6 +447,10 @@ Magazine
  procedure in the single chamber.
  It consisted in variable ratio reinforcement scheduler.
  
+\end_layout
+
+\begin_layout Paragraph
+Shaping
 \end_layout
 
 \begin_layout Standard
@@ -485,13 +486,17 @@ Shaping
 \end_layout
 
 \begin_layout Standard
-Following we exposed the rat to the same task but now the center lever during
- the session never more was retracted, the lever ejected at first trials
- and retracted at the last trials.
+Following, we exposed the rat to the same task but now the center lever
+ during the session never more was retracted, the lever ejected at first
+ trials and retracted at the last trials.
  In this training, when the rat pressed lever on ITI was punished with 2
  second delays added to 5 second of ITI.
  This procedure went on for tree days or until pressing rate was below one
  per trials.
+\end_layout
+
+\begin_layout Paragraph
+Basic toggle task for subject
 \end_layout
 
 \begin_layout Standard
@@ -508,7 +513,7 @@ toggle 8x8
  rat lever's preference.
  The experiment was performed by 2 days in which on first day a rat use
  chamber 1 and on day 2 used chamber 2.
- this last allow not placed preference.
+ This last allow not placed preference.
  The chamber communication windows were closed and any contact was suppressed.
  Each rat had two lever option and two light stimulus.
  When session started since the first to eighth trials only one pair stimulus
@@ -517,6 +522,10 @@ toggle 8x8
  What pair light lever started was randomly and in the second day was maintained
  in the same way.
  The trials procedure was identical to the previous one in the shaping.
+\end_layout
+
+\begin_layout Paragraph
+Mimic tit for tat for opponent
 \end_layout
 
 \begin_layout Standard
@@ -547,7 +556,236 @@ Iterated Prisoner's Dilemma Procedure
 \end_layout
 
 \begin_layout Standard
-.
+The main experiment was designed to study the reciprocal cooperation lever
+ in a iterated prisioner's dilemma game.
+ We used a pay-off matrix in which T>R>P>S.
+ The T and R outcomes were positive reinforcement and P and S was punishment.
+ The matrix coefficient are shown in TABLE 1.
+ Thus, If opponent choose the cooperation option (C) and the subject choose
+ C or defection option (D), the subject received one pellet or 2 pellet,
+ respectability.
+ When the Opponent choose D and the subject choose C or D, the subject received
+ 8
+\begin_inset Quotes erd
+\end_inset
+
+ or 4
+\begin_inset Quotes erd
+\end_inset
+
+ delay of punishment and no pellet in this trial.
+ The opponent strategy was conducted by place in which the stimulus was
+ lighting, e.i.
+ the opponent didn't choose freely and the side where light was turn on,
+ the opponent pressed the lever.
+ The amount pellet preference was test previously and the rat shown more
+ preferences for 2 pellet than 1 pellet.
+ The delay discrimination had been tested in 
+\color red
+PAPER DE SELF CONTROL EN RATAS.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Prisioner's Dilemma Pay-off Matrix
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Opponent choice
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+C
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+D
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Subject choice
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+C
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 pellet
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8 second
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+D
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2 pellets
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4 second
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In iPD experiment used a dual chamber without neither center lever and center
+ light.
+ The windows cover was removed.
+ The rats had only two lever option and the contact between chamber was
+ restored.
+ There was one chamber for the subject and one for the opponent fixed during
+ all the experiment, see the figure xxx(figura 1 de ARRIBA).
+ 
+\end_layout
+
+\begin_layout Standard
+The main experiment was conducted for 20 days and 2 session per day.
+ The session consisted in 30 trials.
+ For individual subject, the experiment was stopped, if the average behavior
+ didn't change along ten consecutive sessions.
+ To some subject was exposed more than 20 days when rise its behavior tendency.
+ 
 \end_layout
 
 \begin_layout Subsubsection
@@ -555,15 +793,60 @@ Typical Trial Structure
 \end_layout
 
 \begin_layout Standard
-.
+The sequence of events within a single trial was as follows.
+ (1) The stimulus light was turned on stating that trails was started.
+ The focal rats had both lights turned on (this was done throughout the
+ iPD experiment) and the opponent only one for the tit for tat strategy.
+ (2)after both rats done their response, the light was turned off and the
+ rewards computed.
+ (3) The feeder's light was lighting one second before a reward was delivered.
+ If the opponent pressed the lever always received one pellet irrespective
+ the focal rat's choice.
+ If punishment was assigned, the focal rat feeder's light remained off and
+ the punishment time started, but the opponent's feed was lighted and its
+ one pellet reward was delivered.
+ (5) After either five second eating time expired or punishment time complete,
+ all light was turned off.
+ Then, the focal and opponent waited for fixed ITI time.
+ The next trials started.
 \end_layout
 
 \begin_layout Subsection
-Analysis
+Statistical Analysis
 \end_layout
 
 \begin_layout Standard
-.
+Al statistical analysis were performed using statistic library from octave
+ open source software.
+ Only a 
+\end_layout
+
+\begin_layout Standard
+chi 2 para 
+\end_layout
+
+\begin_layout Subsubsection
+Stability of cooperation
+\end_layout
+
+\begin_layout Standard
+To analysis the choice stability of rats in the iterated game, we pooled
+ data from session in which the cooperation rate was stable.
+ We used the last 10 session as a pool of data due to the rat's behaviors
+ had reached a plateau.
+\end_layout
+
+\begin_layout Subsubsection
+Probability of cooperation after outcomes
+\end_layout
+
+\begin_layout Standard
+The animals probability to cooperate after each outcomes was assess using
+ a chi square test.
+ The probability of cooperation given specific outcomes in last trial was
+ compared from chance, e.i.
+ 0.5.
+ 
 \end_layout
 
 \begin_layout Section
@@ -579,7 +862,8 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-.
+.receive the double amount of pellet es mas tentados que la mitad.
+ esp hace que las ratas tiendan a alternar palanca
 \end_layout
 
 \begin_layout Section
