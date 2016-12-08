@@ -343,6 +343,10 @@ l cages.
  All animals were kept in a well-ventilated, temperature-controlled room
  (22 ± 2 °C) with a 12/12 h light/dark cycle (lights on at 8 am).
  Tap water was available ad libitum.
+ To ensure that animals obtained sufficient food to survive, we provided
+ supplementary food (at 22hs) for any rats that obtained the average amount
+ of pellet to maintain body weight.
+ 
 \end_layout
 
 \begin_layout Subsubsection
@@ -393,6 +397,7 @@ During the whole duration of experiment, every actor were trained for 2
  The 5 second inter-trial interval(ITI) was used and each trial duration
  was 45 second.
  the standard experiment session had 30 trials.
+ 
 \end_layout
 
 \begin_layout Subsubsection
@@ -548,6 +553,11 @@ The opponent learned to develop a mimic tit for tat strategy by to learn
 
 \begin_layout Subsubsection
 Iterated Prisoner's Dilemma Procedure
+\end_layout
+
+\begin_layout Standard
+The objective of Iterated prisioner's dilemma treatment was evaluar the
+ reciprocal cooperation lever 
 \end_layout
 
 \begin_layout Standard
