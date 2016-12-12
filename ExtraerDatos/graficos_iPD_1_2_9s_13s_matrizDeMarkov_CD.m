@@ -250,8 +250,7 @@ for i=1:_nSujetos
 endfor
 TT=T;CC=C;
 PP=P;SS=S;
-% Alimento obtenido por cada animal
-graficos_iPD_1_2_9s_13s_cantidadAlimentos;
+
 % Analizando las ultimas X sesiones
 _ultimosX=10;
 %   Normalizacion para todos los sujetos en todos los experimentos
@@ -286,6 +285,9 @@ for i=1:_nSujetos
    QQTotmarkovInk(2,1,i)=30*QQTotmarkov(2,1,i)+0;
    QQTotmarkovInk(2,2,i)=30*QQTotmarkov(2,2,i)+0;
 endfor
+
+% Alimento obtenido por cada animal
+graficos_iPD_1_2_9s_13s_cantidadAlimentos;
 
 graficos_iPD_1_2_9s_13s_Promedios_ultimosX;
 
@@ -337,7 +339,7 @@ endfor
 
 % Prob de Coop dado que antes C o D
 for i=1:_nSujetos
-  figure;
+  hhh=figure;
   h=errorbar([1:4],vec(QQTotmarkov(:,:,i)),vec(QQTotmarkovSem(:,:,i)),'*k');
   hold on;set(h, "linewidth", 2);     
   h=bar([1:4],vec(QQTotmarkov(:,:,i)),'facecolor', 'g', 'edgecolor','b', "linewidth", 2);
@@ -353,7 +355,11 @@ for i=1:_nSujetos
   t=text([1:4], -.04*ones(1,4), {"P(c|c)"; "P(c|d)";"P(d|c)";"P(d|d)"},"fontsize",14);
   axis([0 5 0 1]);
   hold off;grid on;
+  name=strcat("figura_iPD_1_2_9s_13s/fig_finales/prob_C_dado_X/",_txtSujetos(i,:));
+  name=strcat(name,".png");
+  print(hhh, name);
 endfor
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%55
 
 % grafico Alimentos versus Cooperacion
@@ -511,7 +517,7 @@ axis('auto');
 %%
 
 [S I]=sort(_alimento(1:_nSujetos));
-[x, y, z] = [sphere (50)]./50;
+[x, y, z] = sphere(50);
 x=x./50;y=y./50;z=z./50;
 figure;
 
@@ -542,7 +548,7 @@ x = 1:100;
 y = 1:100;
 scatter(_alimento,_delay4eat,20, _mediaXsujeto,"filled");
 
-_criterio=.70;
+_criterio=.5;
 graficos_iPD_1_2_9s_13s_12Ratas_medias_y_medianas % se obtienen los sujetos que superan el .75 porciento de cooperación
 _sujetosCooperadores=find(_mediaXsujeto>_criterio); % indice de sujetos que pasaron el criterios 
 

@@ -28,18 +28,22 @@ for i=1:_nSujetos
   foodMedia(i) = mean(food(inicioAux:finAux,i));
   foodSem(i) = sem(food(inicioAux:finAux,i));
 endfor
-figure;
-h=errorbar([1:_nSujetos],foodMedia,foodSem,'*b');
-set (h, "linewidth", 2);
+
+hhh=figure;
+h=errorbar([1:_nSujetos],foodMedia/30,foodSem/30,'*b');set (h, "linewidth", 2);
 hold on;
-h=bar(foodMedia,"facecolor", "g","edgecolor","k");
-set (h, "linewidth", 2);
-hold off;
+axis("tic[yz]", "labely[xyz]");
+h=bar(foodMedia/30,"facecolor", "g","edgecolor","k");set (h, "linewidth", 2);
+
 hh=xlabel("Sujets - Last 10 sesions");set(hh, "fontsize", 14);
-hh=ylabel("Food Harvested");set(hh, "fontsize", 14);
-hh=title(" Mean of Food Harvested per sesion");set(hh, "fontsize", 14);
-t=text(-.25+[1:_nSujetos], -0.5*ones(1,_nSujetos) , ptrn);set(hh, "fontsize", 14);
-axis ("tic[yz]", "labely[xyz]");axis([0,13,15,31],"square")
+hh=ylabel("% total reward");set(hh, "fontsize", 14);
+hh=title(" Mean of reward");set(hh, "fontsize", 14);
+t=text(-.25+[1:_nSujetos], 0.55*ones(1,_nSujetos) , ptrn);set(hh, "fontsize", 14);
+axis([0,13,0.5,1],"square");legend("SEM","MEAN");
+hold off;
+name=strcat("figura_iPD_1_2_9s_13s/fig_finales/mean_reward",".png");
+print(hhh, name);
+
 % TODOS JUNTOS
 figure();hold on;
 for i=1:_nSujetos
@@ -124,7 +128,7 @@ hold off;
 
 meanFoodXsuj=zeros(1,_nSujetos);
 for i=1:_nSujetos
-  meanFoodXsuj=mean(food(inicioAux:finAux,i));
+  meanFoodXsuj()=mean(food(inicioAux:finAux,i));
 endfor
 
 %foodTotal= sum(food(:,_sujetosCooperadores),2);

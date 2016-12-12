@@ -1,54 +1,83 @@
-vals=[(T_mean(_sujetosNocooperadores));
-      (R_mean(_sujetosNocooperadores));
-      (P_mean(_sujetosNocooperadores));
-      (S_mean(_sujetosNocooperadores))];
-           
-vals_std=[(T_std(_sujetosNocooperadores));
-          (R_std(_sujetosNocooperadores));
-          (P_std(_sujetosNocooperadores));
-          (S_std(_sujetosNocooperadores))];
-      
-rangos=ranks(vals,1)';
 
-vals2=30.*[(T_mean(_sujetosNocooperadores));(R_mean(_sujetosNocooperadores));(P_mean(_sujetosNocooperadores));(S_mean(_sujetosNocooperadores))]
 
-%myfriedman(vals2')
+%for i=1:_nSujetos
+%  inicioAux=expXsuj(i)-_ultimosX+1;
+%  finAux=expXsuj(i);
+%  h=plot([1:10],_promediosC(inicioAux:finAux,i),_colores(i,:));
+%  set(h, "linewidth", 2);
+%  hh=xlabel("n de sesiones");set(hh, "fontsize", 14);
+%  hh=ylabel("% de cooperacion");set(hh, "fontsize", 14);
+%  hh=title(strcat("Cooperacion en iPD en sujetos que alcanzaron Criterio: ",num2str(_criterio,2)));
+%  axis([1 10 0 1]);set(hh, "fontsize", 14);
+%  grid on;
+%endfor
+close all;
+_ultimosX=10
+_ps1=zeros(2,_nSujetos);
 
-rangos_mean=sum(rangos);
-N = length(_sujetosNocooperadores); % N numero de sujetos
-k=4% k numero de clases (estados)
-chi_2 = 12/(N*k*(k+1)).*sum(rangos_mean.^2)-3*N*(k+1)
+%for i=1:_nSujetos
+%  inicioAux=1;%expXsuj(i)-_ultimosX+1;
+%  finAux=10;%expXsuj(i);
+%  x=[1:_ultimosX]';%[inicio:fin]';
+%  y=_promediosC(inicioAux:finAux,i);
+%  F = [ ones(length(x),1) x];
+%  [p,e_var,r,p_var,y_var] = LinearRegression(F,y(:,1));
+%  yFit = F*p;
+%  _ps1(:,i)=p;
+%%  figure();
+%%  plot(x,y(:,1),'+b',x,yFit,'-g',x,yFit+1.96*sqrt(y_var),'--r',x,yFit-1.96*sqrt(y_var),'--r');
+%%  title('Behavior Stability - Lineal Regresion');
+%%  xlabel("session");
+%%  ylabel("% of cooperation");
+%%  legend(strcat('C choice ',_txtSujetos(i,:)),'fit','+/-95% Desv. Std');
+%%  axis([0 10 0.2 1.3])
+%%  grid on
+%endfor
 
-alpha=0.05%/(length(_sujetosCooperadores)-1)
-%----------BUSCANDO el valor de chi2 en base al alpha y al DF
-_chi2value=0;
-while (1-chi2cdf(_chi2value,6)>alpha)
-  
-  _chi2value+=0.01;
-endwhile
-%----------
-% chi_2 es evaluado respecto a la distribución estandar chi2 con k-1 grado de libertad
-#classifiers 2 3 4 5 6 7 8 9 10
-_vQAlpha= [1.960 2.343 2.569 2.728 2.850 2.949 3.031 3.102 3.164];
-if chi_2 > _chi2value % si chi_2 > chi2_tabla(alpha=0.005 -> 14.860) (alpha=0.05 -> 9.488)
-                  % De una tabla corregida para N=6 CHI2_0.005_3 = 11.400 y CHI2_0.05_3=7.6
-  %se rechaza Ho (hipotesis nula)
-  disp("Se rechaza la hipotesis nula: Los estados no son igualmente prob");
-  disp("Comparaciñon por Two Tails Nemenyi");
-  
-  % Comparaciñon por Two Tails Nemenyi
-  q_alpha=_vQAlpha(size(vals,1)-1);%2,569; % alpha=0.05 -> 2,569  bonferroni correction alpha=0.05/N -> 2,394 
-                 % Bonferroni's adjustment: Lower the 0.05 to 0.0083333 ->  3.9608 http://www.quantitativeskills.com/sisa/calculations/bonfer.htm
-                 % table of bonferroni correction
-  %%q_alpha=3.9608;        
-  CD=q_alpha*sqrt((k*(k+1))/(6*N));
-  dif=[];
-  for i=1:4
-    dif(i).diff=find(abs(rangos_mean-rangos_mean(i))>CD);
-  end
-  %fprintf(': %i\n',)
-
-else
-  disp("La hipotesis nula es CORRECTA: Todos los estados son igualmente prob.");
-endif
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+_ps2=zeros(2,_nSujetos);
+_values=zeros(_nSujetos,1);
+%for i=1:_nSujetos
+%  inicioAux=expXsuj(i)-_ultimosX+1;
+%  finAux=expXsuj(i);
+%  x=[1:_ultimosX]';%[inicio:fin]';
+%  y=_promediosC(inicioAux:finAux,i);
+%  F = [ ones(length(x),1) x];
+%  [p,e_var,r,p_var,y_var] = LinearRegression(F,y(:,1));
+%  yFit = F*p;
+%  _ps2(1,i)=[1 5]*p;
+%  _ps2(1,i)
+%  [_values(i) index]=max(abs(_ps2(1,i)-_promediosC(inicioAux:finAux,i)));
+%  mean(y)
+%  
+%%  figure();
+%%  plot(x,y(:,1),'+b',x,yFit,'-g',x,yFit+1.96*sqrt(y_var),'--r',x,yFit-1.96*sqrt(y_var),'--r');
+%%  title('Behavior Stability - Lineal Regresion');
+%%  xlabel("session");
+%%  ylabel("% of cooperation");
+%%  legend(strcat('C choice ',_txtSujetos(i,:)),'fit','+/-95% Desv. Std');
+%%  axis([0 10 0.2 1.3])
+%%  grid on
+%endfor
+for i=1:_nSujetos
+  inicioAux=expXsuj(i)-_ultimosX+1;
+  finAux=expXsuj(i);
+  x=[1:_ultimosX]';%[inicio:fin]';
+  y=_promediosC(inicioAux:finAux,i);
+  F = [ ones(length(x),1) x];
+  [p,e_var,r,p_var,y_var] = LinearRegression(F,y(:,1));
+  yFit = F*p;
+  _ps1(1,i)=p
+  e_var
+  _ps2(1,i)=[1 5]*p;
+  %_ps2(1,i)
+  [_values(i) index]=max(abs(_ps2(1,i)-_promediosC(inicioAux:finAux,i)));
+  %mean(y)
+%  figure();
+%  plot(x,y(:,1),'+b',x,yFit,'-g',x,yFit+1.96*sqrt(y_var),'--r',x,yFit-1.96*sqrt(y_var),'--r');
+%  title('Behavior Stability - Lineal Regresion');
+%  xlabel("session");
+%  ylabel("% of cooperation");
+%  legend(strcat('C choice ',_txtSujetos(i,:)),'fit','+/-95% Desv. Std');
+%  axis([0 10 0.2 1.3])
+%  grid on
+endfor

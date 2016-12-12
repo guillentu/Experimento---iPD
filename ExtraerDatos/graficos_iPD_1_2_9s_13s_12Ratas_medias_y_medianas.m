@@ -84,30 +84,42 @@ for i=1:_nSujetos
   _mediaFallasXsujeto(i)=mean(_nada(primero:ultimo,i));
   _medianaXsujeto(i)=median(_promediosC(primero:ultimo,i));
   _stdXsujeto(i)=sem(_promediosC(primero:ultimo,i));
-endfor 
-figure; 
+endfor
+% MEDIA 
+hhh=figure; 
 h=errorbar([1:12],_mediaXsujeto, _stdXsujeto,'*c');
 set (h, "linewidth", 3);
-hh=xlabel("Sujetos 1A-2A-3A-4A-5A-6A-7A-8A-9A-10A-3B-4B");set(hh, "fontsize", 14);
-hh=ylabel("% de palanca C");set(hh, "fontsize", 14);
-hh=title("Media - Porcentaje de eleccion de palanca Cooperar");set(hh, "fontsize", 14);
+hh=ylabel("% of cooperation");set(hh, "fontsize", 14);
+hh=title("Cooperation Mean");set(hh, "fontsize", 14);
 hold on
+axis ("tic[yz]", "labely[xyz]");
 bar([1:12],_mediaXsujeto);
 h2=plot([1:12],_criterio*ones(1,12),'--r');
 set (h2, "linewidth", 3);
 plot([1:12],.5*ones(1,12),'--k');
+legend("SEM","MEAN","half",0);
+t=text([1:12]-0.25, .1*ones(1,12), _txtSujetos(:,:),"fontsize",13);
+hh=xlabel("Subjects");set(hh, "fontsize", 14);
+axis([0 13 0 1.05])
 hold off
-
-figure; 
+name=strcat("figura_iPD_1_2_9s_13s/fig_finales/cooperation_mean",".png");
+print(hhh, name);
+% MEDIANA
+hhh=figure; 
 h=errorbar([1:12],_medianaXsujeto, _stdXsujeto,'*c');
 set (h, "linewidth", 3);
-hh=xlabel("Sujetos 1A-2A-3A-4A-5A-6A-7A-8A-9A-10A-3B-4B");set(hh, "fontsize", 14);
-hh=ylabel("% de palanca C");set(hh, "fontsize", 14);
-hh=title("Mediana - Porcentaje de eleccion de palanca Cooperar");set(hh, "fontsize", 14);
+hh=xlabel("Subjects");set(hh, "fontsize", 14);
+hh=ylabel("% of cooperation");set(hh, "fontsize", 14);
+hh=title("Cooperation Median");set(hh, "fontsize", 14);
 hold on
 bar([1:12],_medianaXsujeto);
 h2=plot([1:12],_criterio*ones(1,12),'--r');
 set (h2, "linewidth", 3);
 plot([1:12],.5*ones(1,12),'--k');
+legend("SEM","MEAN","half",0);
+axis ("tic[yz]", "labely[xyz]");
+t=text([1:12]-0.25, .1*ones(1,12), _txtSujetos(:,:),"fontsize",13);
+axis([0 13 0 1.05])
 hold off
-
+name=strcat("figura_iPD_1_2_9s_13s/fig_finales/cooperation_median",".png");
+print(hhh, name);

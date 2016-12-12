@@ -3,7 +3,7 @@ function dif = friedmanGuille(vals,alpha)
 rangos=ranks(vals,1)';
 rangos_mean=sum(rangos);
 [k N] = size(vals); % N numero de sujetos
-k=4% k numero de clases (estados)
+k%=4% k numero de clases (estados)
 chi_2 = 12/(N*k*(k+1)).*sum(rangos_mean.^2)-3*N*(k+1)
 
 %----------BUSCANDO el valor de chi2 en base al alpha y al DF

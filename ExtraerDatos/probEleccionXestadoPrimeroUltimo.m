@@ -153,7 +153,7 @@ for i=1:_nSujetos
   h=plot([0:5],[.5 .5 .5 .5 .5 .5],"--r");
   axis ("tic[yz]", "labely[xyz]");
   set(h, "linewidth", 2);  
-  legend("MEAN","Half prob");
+  legend("SEM","MEAN","Half prob");
   %hh=xlabel("T=1 --- R=2 --- P=3 --- S=4");set(hh, "fontsize", 14);
   hh=ylabel("P(C|X)");set(hh, "fontsize", 14);
   hh=title(strcat("Probability of Cooperation given outcome: ",_txtSujetos(i,:)));

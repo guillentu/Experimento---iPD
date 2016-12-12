@@ -278,7 +278,7 @@ for i=1:_nSujetos
   endfor
 endfor 
 %     Normalizacion
-for i=1:_nSujetosTT
+for i=1:_nSujetos
   for j=1:4
     if sum(matricesQ.(indiceSujeto(i,:))(j,:))!=0
       Q(j,:,i)=matricesQ.(indiceSujeto(i,:))(j,:)/sum(matricesQ.(indiceSujeto(i,:))(j,:));
@@ -355,46 +355,47 @@ endfor
 
 
 T2(:,:)=T(:,:)/length(_trialIni:_trialFin);R2(:,:)=C(:,:)/length(_trialIni:_trialFin);P2(:,:)=P(:,:)/length(_trialIni:_trialFin);S2(:,:)=S(:,:)/length(_trialIni:_trialFin);
-% Frecuencia de estados - una por una
-for i=1:_nSujetos
-  ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
-  primero=ultimo-_ultimosX+1;
-  figure()
-  plot([primero:ultimo],T2(i,primero:ultimo),'--ob',[primero:ultimo],R2(i,primero:ultimo),'--or',[primero:ultimo],P2(i,primero:ultimo),'-->k',[primero:ultimo],S2(i,primero:ultimo),'--.m');
-  xlabel(strcat("n de sesiones - Ultimas ",_ultimosX));
-  ylabel("% Proporcion entre estados");
-  title(strcat("Estrategias probabilistica en iPD: ",_txtSujetos(i,:)));
-  legend("T=D-C","R=C-C","P=D-D","S=C-D");
-  grid on;
-endfor
-
-% Frecuencia de estados - Promedio de las ultimas sesiones
-T_mean=zeros(1,_nSujetos);R_mean=zeros(1,_nSujetos);P_mean=zeros(1,_nSujetos);S_mean=zeros(1,_nSujetos);
-T_median=zeros(1,_nSujetos);R_median=zeros(1,_nSujetos);P_median=zeros(1,_nSujetos);S_median=zeros(1,_nSujetos);
-T_std=zeros(1,_nSujetos);R_std=zeros(1,_nSujetos);P_std=zeros(1,_nSujetos);S_std=zeros(1,_nSujetos);
-for i=1:_nSujetos
-  ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
-  primero=ultimo-_ultimosX+1;
-  T_mean(i)=mean(T2(i,primero:ultimo));R_mean(i)=mean(R2(i,primero:ultimo));P_mean(i)=mean(P2(i,primero:ultimo));S_mean(i)=mean(S2(i,primero:ultimo));
-  T_median(i)=median(T2(i,primero:ultimo));R_median(i)=median(R2(i,primero:ultimo));P_median(i)=median(P2(i,primero:ultimo));S_median(i)=median(S2(i,primero:ultimo));
-  T_std(i)=std(T2(i,primero:ultimo));R_std(i)=std(R2(i,primero:ultimo));P_std(i)=std(P2(i,primero:ultimo));S_std(i)=std(S2(i,primero:ultimo));
-  figure;
-  %plot(1,T_mean(i), 2,R_mean(i) ,3, P_mean(i),4,S_mean(i));
-  h=errorbar(1,T_mean(i), T_std(i),'*r', 2,R_mean(i),R_std(i),'*b', 3,P_mean(i), P_std(i),'*m', 4,S_mean(i), S_std(i),'*c');
-  set (h, "linewidth", 3);
-  xlabel("Estados");
-  ylabel("% de ocurrencia");
-  title(strcat("Tasa de ocurrencia de cada estado en iPD: ",_txtSujetos(i,:)));
-  legend("T=D-C","R=C-C","P=D-D","S=C-D");
-  hold on
-  bar(1:4,[T_mean(i),R_mean(i),P_mean(i),S_mean(i)])
-  hold off
-endfor
-
+%%%%%%%%%%%%%%%%%%%%%%%%% 
+%% Frecuencia de ESTADOS ULTIMOS 10 SESIONES - POR SUJETOS
+%for i=1:_nSujetos
+%  ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
+%  primero=ultimo-_ultimosX+1;
+%  figure()
+%  plot([primero:ultimo],T2(i,primero:ultimo),'--ob',[primero:ultimo],R2(i,primero:ultimo),'--or',[primero:ultimo],P2(i,primero:ultimo),'-->k',[primero:ultimo],S2(i,primero:ultimo),'--.m');
+%  xlabel(strcat("n de sesiones - Ultimas ",_ultimosX));
+%  ylabel("% Proporcion entre estados");
+%  title(strcat("Estrategias probabilistica en iPD: ",_txtSujetos(i,:)));
+%  legend("T=D-C","R=C-C","P=D-D","S=C-D");
+%  grid on;
+%endfor
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Frecuencia de estados - PROMEDIOS DE LAS ULTIMAS 10 SESIONES
+%T_mean=zeros(1,_nSujetos);R_mean=zeros(1,_nSujetos);P_mean=zeros(1,_nSujetos);S_mean=zeros(1,_nSujetos);
+%T_median=zeros(1,_nSujetos);R_median=zeros(1,_nSujetos);P_median=zeros(1,_nSujetos);S_median=zeros(1,_nSujetos);
+%T_std=zeros(1,_nSujetos);R_std=zeros(1,_nSujetos);P_std=zeros(1,_nSujetos);S_std=zeros(1,_nSujetos);
+%for i=1:_nSujetos
+%  ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
+%  primero=ultimo-_ultimosX+1;
+%  T_mean(i)=mean(T2(i,primero:ultimo));R_mean(i)=mean(R2(i,primero:ultimo));P_mean(i)=mean(P2(i,primero:ultimo));S_mean(i)=mean(S2(i,primero:ultimo));
+%  T_median(i)=median(T2(i,primero:ultimo));R_median(i)=median(R2(i,primero:ultimo));P_median(i)=median(P2(i,primero:ultimo));S_median(i)=median(S2(i,primero:ultimo));
+%  T_std(i)=std(T2(i,primero:ultimo));R_std(i)=std(R2(i,primero:ultimo));P_std(i)=std(P2(i,primero:ultimo));S_std(i)=std(S2(i,primero:ultimo));
+%  figure;
+%  %plot(1,T_mean(i), 2,R_mean(i) ,3, P_mean(i),4,S_mean(i));
+%  h=errorbar(1,T_mean(i), T_std(i),'*r', 2,R_mean(i),R_std(i),'*b', 3,P_mean(i), P_std(i),'*m', 4,S_mean(i), S_std(i),'*c');
+%  set (h, "linewidth", 3);
+%  xlabel("Estados");
+%  ylabel("% de ocurrencia");
+%  title(strcat("Tasa de ocurrencia de cada estado en iPD: ",_txtSujetos(i,:)));
+%  legend("T=D-C","R=C-C","P=D-D","S=C-D");
+%  hold on
+%  bar(1:4,[T_mean(i),R_mean(i),P_mean(i),S_mean(i)])
+%  hold off
+%endfor
+%%%%%%%%%%%%%%%%%%%%%%%%%
 _criterio=.5;
 graficos_iPD_1_2_9s_13s_12Ratas_medias_y_medianas % se obtienen los sujetos que superan el .75 porciento de cooperación
 %_sujetosCooperadores=find(_mediaXsujeto>_criterio); % indice de sujetos que pasaron el criterios 
-_sujetosCooperadores=find(>_criterio); % indice de sujetos que pasaron el criterios 
+_sujetosCooperadores=find(_mediaXsujeto>_criterio); % indice de sujetos que pasaron el criterios 
 _sujetosNocooperadores=complemento(_sujetosCooperadores,_nSujetos);
 QmediaC=zeros(4,4);
 QmediaD=zeros(4,4);
@@ -435,6 +436,7 @@ vals_std2=[(T_std(_sujetosNocooperadores));
 %vals2=30.*[(T_mean(_sujetosCooperadores));(R_mean(_sujetosCooperadores));(P_mean(_sujetosCooperadores));(S_mean(_sujetosCooperadores))]
 %myfriedman(vals2')
 dd=friedmanGuille(vals,0.05);
+dd.diff
 ff=friedmanGuille(vals2,0.05);
 
 % promediar las tasas de cooperacion y tasas de estados de los animales que superaron el criterio
@@ -459,7 +461,7 @@ bar(1:4,[_mediaT,_mediaR,_mediaP,_mediaS]);
 set(hh, "fontsize", 14);
 axis ("tic[yz]", "labely[xyz]");
 t=text([1:4], -.04*ones(1,4), {"T"; "R";"P";"S"},"fontsize",14);
-t=text([1:4/(length(_sujetosCooperadores)+1):4], -.08*ones(1,length(_sujetosCooperadores)), _txtSujetos(_sujetosCooperadores,:),"fontsize",13);
+t=text([1:(4-1)/(length(_sujetosCooperadores)-1):4], -.08*ones(1,length(_sujetosCooperadores)), _txtSujetos(_sujetosCooperadores,:),"fontsize",13);
 axis([0 5 0 1]);
 hold off
 
@@ -474,22 +476,22 @@ _semT=sem(T_mean(_sujetosNocooperadores));
 _semR=sem(R_mean(_sujetosNocooperadores));
 _semP=sem(P_mean(_sujetosNocooperadores));
 _semS=sem(S_mean(_sujetosNocooperadores));
-figure;
+hh=figure;
 h=errorbar(1,_mediaT, _semT,'*r', 2,_mediaR,_semR,'*b', 3,_mediaP, _semP,'*m', 4,_mediaS, _semS,'*c');
 set (h, "linewidth", 3);
 %xlabel("Estados");
 ylabel("% outcome rate","fontsize", 14);
 title(strcat("Incidence Rate of all outcome. Down level C: ",num2str(_criterio*100),"% de C"),"fontsize", 14);
-legend("T=D-C","R=C-C","P=D-D","S=C-D");set(hh, "fontsize", 14);
-hold on
-bar(1:4,[_mediaT,_mediaR,_mediaP,_mediaS])
+h=legend("T=D-C","R=C-C","P=D-D","S=C-D");set(h, "fontsize", 14);
+hold on;
+bar(1:4,[_mediaT,_mediaR,_mediaP,_mediaS]);
 axis ("tic[yz]", "labely[xyz]");
 t=text([1:4], -.04*ones(1,4), {"T"; "R";"P";"S"},"fontsize",14);
-t=text([1:4/(length(_sujetosNocooperadores)+1):4], -.08*ones(1,length(_sujetosNocooperadores)), _txtSujetos(_sujetosNocooperadores,:),"fontsize",13);
+t=text([1:(4-1)/(length(_sujetosNocooperadores)-1):4], -.08*ones(1,length(_sujetosNocooperadores)), _txtSujetos(_sujetosNocooperadores,:),"fontsize",13);
 axis([0 5 0 1]);
 hold off;
 name=strcat("figura_iPD_1_2_9s_13s/fig_finales/outcomeRate_downLevel",".png");
-print(hhh, name);
+print(hh, name);
 
 _mediaT=mean(T_mean(_sujetosCooperadores));
 _mediaR=mean(R_mean(_sujetosCooperadores));
@@ -654,9 +656,10 @@ endfor
 _txtSujetos=["1A";"2A";"3A";"4A";"5A";"6A";"7A";"8A";"9A";"10A";"3B";"4B"];
 %_colores=["+k";"om";"*g";".r";"xb";"sc";"^m";"vg";">b";"<k";"pk";"hr"];
 _colores=["-+k";"-om";"-*g";"-.r";"-xb";"-sc";"-^m";"-vg";"->b";"-<k";"-pk";"-hr"];
+_colores2=["+k";"om";"*g";".r";"xb";"sc";"^m";"vg";">b";"<k";"pk";"hr"];
 figure;hold on;
 for i=_sujetosCooperadores
-  h=plot(probEleccion(:,1,i),_colores(i,:), "markersize",12,"markerfacecolor",'none', "linewidth", 2);
+  h=plot(probEleccion(:,1,i),_colores2(i,:), "markersize",12,"markerfacecolor",'none', "linewidth", 2);
 endfor
 plot([.5 .5 .5 .5],"--r");
 set(h, "linewidth", 2);  
@@ -672,7 +675,7 @@ axis([0 5 0 1]);
 figure;
 for i=_sujetosNocooperadores
   hold on;
-  h=plot(probEleccion(:,1,i),_colores(i,:), "markersize",12,"markerfacecolor",'none', "linewidth", 2);
+  h=plot(probEleccion(:,1,i),_colores2(i,:), "markersize",12,"markerfacecolor",'none', "linewidth", 2);
   set(h, "linewidth", 2);       
 endfor
 plot([.5 .5 .5 .5],"--r");
@@ -694,24 +697,24 @@ for i=1:_nSujetos
   probEleccionC(:,i)=probEleccion(:,1,i);
   probEleccionD(:,i)=probEleccion(:,2,i);
 endfor
-for i=1:_nSujetos
-figure;
-  %h=errorbar([1:4],probEleccion(:,1,i),probEleccionSem(:,1,2),'*k');
-  hold on;%set(h, "linewidth", 2);     
-  h=bar([1:4],probEleccion(:,1,i),'facecolor', 'g', 'edgecolor','b', "linewidth", 2);
-  h=plot([0:5],[.5 .5 .5 .5 .5 .5],"--r");
-  axis ("tic[yz]", "labely[xyz]");
-  set(h, "linewidth", 2);  
-  legend("MEAN","Half prob");
-  %hh=xlabel("T=1 --- R=2 --- P=3 --- S=4");set(hh, "fontsize", 14);
-  hh=ylabel("P(C|X)");set(hh, "fontsize", 14);
-  hh=title(strcat("Probability of Cooperation after outcome: ",_txtSujetos(i,:)));
-  set(hh, "fontsize", 14);
-  axis ("tic[yz]", "labely[xyz]");
-  t=text([1:4], -.04*ones(1,4), {"T"; "R";"P";"S"},"fontsize",14);
-  axis([0 5 0 1]);
-  hold off;grid on;
-endfor
+%for i=1:_nSujetos
+%figure;
+%  %h=errorbar([1:4],probEleccion(:,1,i),probEleccionSem(:,1,2),'*k');
+%  hold on;%set(h, "linewidth", 2);     
+%  h=bar([1:4],probEleccion(:,1,i),'facecolor', 'g', 'edgecolor','b', "linewidth", 2);
+%  h=plot([0:5],[.5 .5 .5 .5 .5 .5],"--r");
+%  axis ("tic[yz]", "labely[xyz]");
+%  set(h, "linewidth", 2);  
+%  legend("MEAN","Half prob");
+%  %hh=xlabel("T=1 --- R=2 --- P=3 --- S=4");set(hh, "fontsize", 14);
+%  hh=ylabel("P(C|X)");set(hh, "fontsize", 14);
+%  hh=title(strcat("Probability of Cooperation after outcome: ",_txtSujetos(i,:)));
+%  set(hh, "fontsize", 14);
+%  axis ("tic[yz]", "labely[xyz]");
+%  t=text([1:4], -.04*ones(1,4), {"T"; "R";"P";"S"},"fontsize",14);
+%  axis([0 5 0 1]);
+%  hold off;grid on;
+%endfor
 
 probEleccionMean=zeros(4,2,2);
 probEleccionSem=zeros(4,2,2);
@@ -750,6 +753,28 @@ endfor
 frec_teo=100*[.5];%                   |-> 1=cooperadores y 2=No_cooperadores
 chi_2_coop= (100.*probEleccionMean(:,1,1)-frec_teo).^2./frec_teo + (100.*probEleccionMean(:,2,1)-frec_teo).^2./frec_teo
 chi_2_nocoop=(100.*probEleccionMean(:,1,2)-frec_teo).^2./frec_teo + (100.*probEleccionMean(:,2,2)-frec_teo).^2./frec_teo
+% VER Y COMPLETAR
+%pasan=zeros(1,_nSujetos);
+%pasanBon=zeros(1,_nSujetos);
+%freedom=1;
+%% Sin correccion de Bonferroni
+%for i=1:_nSujetos
+%  (1-chi2cdf(chi_2_xSujetos(i),freedom))
+%  if (1-chi2cdf(chi_2_xSujetos(i),freedom))<0.05 %Si es menor significa que las muestras no provienen de una población aleatoria
+%    pasan(i)=1;% Se rechaza la HIP NULA
+%  endif
+%endfor
+%% Con Correccion de Bonferroni
+%for i=1:_nSujetos
+%  if (1-chi2cdf(chi_2_xSujetos(i),freedom))<(0.05/(freedom+1)) %Si es menor significa que las muestras no provienen de una población aleatoria
+%    pasanBon(i)=1;% Se rechaza la HIP NULA
+%  endif
+%endfor
+%
+%pasan
+%pasanBon
+%aa=[1:_nSujetos];
+%aa(pasan==1)
 %%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -785,7 +810,7 @@ axis ("tic[yz]", "labely[xyz]");
 t=text([1:4], -.04*ones(1,4), {"T"; "R";"P";"S"},"fontsize",14);
 aux22=probEleccionMean(:,1,1)+probEleccionSem(:,1,1)+0.01;
 t=text(-0.06+[1:4], aux22, {"* "; "* ";"* ";"* "},"fontsize",25);
-t=text([1:4/(length(_sujetosCooperadores)+1):4], -.08*ones(1,length(_sujetosCooperadores)), _txtSujetos(_sujetosCooperadores,:),"fontsize",14);
+t=text([1:(4-1)/(length(_sujetosCooperadores)-1):4], -.08*ones(1,length(_sujetosCooperadores)), _txtSujetos(_sujetosCooperadores,:),"fontsize",14);
 axis([0 5 0 1]);
 hold off;grid on;
 % ------------------------
