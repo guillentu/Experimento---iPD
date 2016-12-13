@@ -864,8 +864,51 @@ we used friedman test and postmultiple post-hoc pairwise comparisons using
  corrected a value of 0.0083.
 \end_layout
 
+\begin_layout Subsubsection
+Markov chain diagram
+\end_layout
+
+\begin_layout Standard
+We compute the strategies for each rats by diagram of probability of transition
+ between outcome.
+ The outcomes were T (temptation) in which 
+\end_layout
+
 \begin_layout Section
 Results
+\end_layout
+
+\begin_layout Standard
+The experiment result are show below.
+ We compute the rat behavior from data of last ten session.
+ The end of each rat's experiment was fixed in order to progressively reached
+ some strategy.
+ If the rats maintained a not random behavior at least ten session, the
+ experiment was stop.
+ The rat that maintained a random strategy beyond 20 session was deserted.
+ 
+\end_layout
+
+\begin_layout Standard
+We obtain at the end of experiment from the initial batch of 12 rats, two
+ group of subject rats.
+ A group of 8 rats that showed a not random strategy and a second group
+ of 4 rats with a random strategy.
+ The group with random strategy was disregarded, because these subjects
+ had no information on some behavior.
+ Mostrar los dos grupos 
+\end_layout
+
+\begin_layout Standard
+,
+\end_layout
+
+\begin_layout Standard
+,
+\end_layout
+
+\begin_layout Standard
+,
 \end_layout
 
 \begin_layout Standard

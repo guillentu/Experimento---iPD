@@ -59,6 +59,7 @@ _values=zeros(_nSujetos,1);
 %%  grid on
 %endfor
 for i=1:_nSujetos
+   _txtSujetos(i,:)
   inicioAux=expXsuj(i)-_ultimosX+1;
   finAux=expXsuj(i);
   x=[1:_ultimosX]';%[inicio:fin]';
@@ -66,9 +67,10 @@ for i=1:_nSujetos
   F = [ ones(length(x),1) x];
   [p,e_var,r,p_var,y_var] = LinearRegression(F,y(:,1));
   yFit = F*p;
-  _ps1(1,i)=p
-  e_var
-  _ps2(1,i)=[1 5]*p;
+  %_ps1(1,i)=p
+  _mediaXsujeto(i)
+  sqrt(e_var)
+  %_ps2(1,i)=[1 5]*p;
   %_ps2(1,i)
   [_values(i) index]=max(abs(_ps2(1,i)-_promediosC(inicioAux:finAux,i)));
   %mean(y)

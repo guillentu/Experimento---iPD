@@ -349,6 +349,11 @@ l cages.
  
 \end_layout
 
+\begin_layout Standard
+The subject was named in succesive order: 1A, 2A, 3A, 4A, 5A, 6A, 7A, 8A,
+ 9A, 10A, 3B, 4B.
+\end_layout
+
 \begin_layout Subsubsection
 Housing
 \end_layout
@@ -849,12 +854,108 @@ The animals probability to cooperate after each outcomes was assess using
   
 \end_layout
 
+\begin_layout Subsubsection
+Rate of difference outcomes
+\end_layout
+
+\begin_layout Standard
+we used friedman test and postmultiple post-hoc pairwise comparisons using
+ the Nemenyi’s procedure/Two-tailed tests were performed, with the Bonferroni
+ corrected a value of 0.0083.
+\end_layout
+
+\begin_layout Subsubsection
+Markov chain diagram
+\end_layout
+
+\begin_layout Standard
+We compute the strategies for each rats by diagram of probability of transition
+ between outcome.
+ The outcomes were T (temptation) in which 
+\end_layout
+
 \begin_layout Section
 Results
 \end_layout
 
 \begin_layout Standard
-.
+The experiment result are show below.
+ We compute the rat behavior from data of last ten session.
+ The end of each rat's experiment was fixed in order to progressively reached
+ some strategy.
+ If the rats maintained a not random behavior at least ten session, the
+ experiment was stop.
+ The rat that maintained a random strategy beyond 20 session was deserted.
+ 
+\end_layout
+
+\begin_layout Standard
+We obtain at the end of experiment from the initial batch of 12 rats, two
+ group of subject rats.
+ A group of 8 rats that showed a not random strategy and a second group
+ of 4 rats with a random strategy.
+ The group with random strategy was disregarded, because these subjects
+ had no information on some behavior.
+\end_layout
+
+\begin_layout Standard
+,
+\end_layout
+
+\begin_layout Standard
+,
+\end_layout
+
+\begin_layout Standard
+,
+\end_layout
+
+\begin_layout Standard
+GRaficos de media de COOPERACION y media de REWARD
+\end_layout
+
+\begin_layout Standard
+Media de cooperacion por sesiones Ultimas
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+jkhkjh
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Figuras/cooperacion_Barras.png
+	lyxscale 40
+	width 50page%
+	draft
+	groupId grupo1
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -864,6 +965,15 @@ Discussion
 \begin_layout Standard
 .receive the double amount of pellet es mas tentados que la mitad.
  esp hace que las ratas tiendan a alternar palanca
+\end_layout
+
+\begin_layout Standard
+.
+\end_layout
+
+\begin_layout Standard
+Podemos decir que quizás las ratas en esrado salvaje no cooperan por en
+ una población 
 \end_layout
 
 \begin_layout Section
