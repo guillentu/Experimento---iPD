@@ -849,9 +849,8 @@ Probability of cooperation after outcomes
 The animals probability to cooperate after each outcomes was assess using
  a chi square test.
  The probability of cooperation given specific outcomes in last trial was
- compared from chance, e.i.
- 0.5.
-  
+ compared from chance, 0.5.
+ We performed a Chi square test with bonferroni corrected value of 0.05/n.
 \end_layout
 
 \begin_layout Subsubsection
@@ -883,20 +882,29 @@ The experiment result are show below.
  We compute the rat behavior from data of last ten session.
  The end of each rat's experiment was fixed in order to progressively reached
  some strategy.
- If the rats maintained a not random behavior at least ten session, the
- experiment was stop.
+ If the rats maintained a not random behavior at least for ten session,
+ the experiment was stop.
  The rat that maintained a random strategy beyond 20 session was deserted.
+ To assess the rat strategy, we perform a chi2 test on last ten session
  
 \end_layout
 
 \begin_layout Standard
-We obtain at the end of experiment from the initial batch of 12 rats, two
- group of subject rats.
+After compute the parameter CHI2 with bonferroni From the batch of 12 subject
+ rats at the end of experiment we obtained two group of subject.
  A group of 8 rats that showed a not random strategy and a second group
  of 4 rats with a random strategy.
  The group with random strategy was disregarded, because these subjects
  had no information on some behavior.
- Mostrar los dos grupos 
+ These group are shown in figura X(media, cadena de markov aplicandole bondad
+ de ajusta a model al azar).
+ The rats that no exceed the level of fifty percent of cooperation's choice,
+ showed a random strategy.
+ 
+\end_layout
+
+\begin_layout Standard
+Luegose analizaron la estategias del grupo de 8
 \end_layout
 
 \begin_layout Standard
@@ -933,7 +941,7 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-jkhkjh
+
 \end_layout
 
 \end_inset
@@ -943,9 +951,9 @@ jkhkjh
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename Figuras/cooperacion_Barras.png
-	lyxscale 40
-	width 50page%
+	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperation_mean.png
+	lyxscale 50
+	width 100page%
 	draft
 	groupId grupo1
 
