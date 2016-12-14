@@ -718,11 +718,12 @@ endfor
 
 probEleccionMean=zeros(4,2,2);
 probEleccionSem=zeros(4,2,2);
-
+% mean of cooperation over cooperators
 for i=_sujetosCooperadores
   probEleccionMean(:,:,1)+=probEleccion(:,:,i);
 endfor
 probEleccionMean(:,:,1)=probEleccionMean(:,:,1)./sum(probEleccionMean(:,:,1),2);
+%       % se eliminan los NAN para calcular SEM
 aux=[];
 for j=1:4
   aux=[];
