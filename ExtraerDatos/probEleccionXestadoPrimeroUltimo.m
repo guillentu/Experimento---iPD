@@ -161,5 +161,8 @@ for i=1:_nSujetos
   axis ("tic[yz]", "labely[xyz]");
   t=text([1:4], -.04*ones(1,4), {"P(c|T)"; "P(c|R)";"P(c|P)";"P(c|S)"},"fontsize",14);
   axis([0 5 0 1]);
-  hold off;grid on;
+  hold off;grid on;  
+  name=strcat("figura_iPD_1_2_9s_13s/fig_finales/prob_C_giveno_Outcome_/",_txtSujetos(i,:));
+  name=strcat(name,".png");
+  print(hhh, name);
 endfor

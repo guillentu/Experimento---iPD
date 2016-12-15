@@ -726,7 +726,11 @@ C
 \begin_inset Text
 
 \begin_layout Plain Layout
-8 second
+8
+\begin_inset Quotes erd
+\end_inset
+
+ delay
 \end_layout
 
 \end_inset
@@ -755,7 +759,11 @@ D
 \begin_inset Text
 
 \begin_layout Plain Layout
-4 second
+4
+\begin_inset Quotes erd
+\end_inset
+
+ delay
 \end_layout
 
 \end_inset
@@ -785,7 +793,7 @@ In iPD experiment used a dual chamber without neither center lever and center
 \end_layout
 
 \begin_layout Standard
-The main experiment was conducted for 20 days and 2 session per day.
+The main experiment was conducted for 10 days and 2 session per day.
  The session consisted in 30 trials.
  For individual subject, the experiment was stopped, if the average behavior
  didn't change along ten consecutive sessions.
@@ -823,11 +831,7 @@ Statistical Analysis
 \begin_layout Standard
 Al statistical analysis were performed using statistic library from octave
  open source software.
- Only a 
-\end_layout
-
-\begin_layout Standard
-chi 2 para 
+ 
 \end_layout
 
 \begin_layout Subsubsection
@@ -835,10 +839,9 @@ Stability of cooperation
 \end_layout
 
 \begin_layout Standard
-To analysis the choice stability of rats in the iterated game, we pooled
- data from session in which the cooperation rate was stable.
- We used the last 10 session as a pool of data due to the rat's behaviors
- had reached a plateau.
+To analysis the choice stability of rats in the iterated game, we used the
+ last 10 session as a pool of data due to the rat's behaviors had reached
+ a plateau.
 \end_layout
 
 \begin_layout Subsubsection
@@ -850,7 +853,8 @@ The animals probability to cooperate after each outcomes was assess using
  a chi square test.
  The probability of cooperation given specific outcomes in last trial was
  compared from chance, 0.5.
- We performed a Chi square test with bonferroni corrected value of 0.05/n.
+ We performed a Chi-square goodness of fit test with bonferroni corrected
+ value of 0.05/n.
 \end_layout
 
 \begin_layout Subsubsection
@@ -879,21 +883,88 @@ Results
 
 \begin_layout Standard
 The experiment result are show below.
- We compute the rat behavior from data of last ten session.
- The end of each rat's experiment was fixed in order to progressively reached
- some strategy.
- If the rats maintained a not random behavior at least for ten session,
- the experiment was stop.
+ We compute the rat behavior from data of last ten session at the end of
+ the experiment.
+ A strategy was defined by its transition vector that reflects the probability
+ of cooperation when the previous trials resulted in outcomes of R, T, S
+ or P, respectively (
+\begin_inset Formula $v=[p(c|t),p(c|r),p(c|p),p(c|s)]$
+\end_inset
+
+).
+ The end of experiment for each rat was extended beyond 20 session in order
+ to the rat was progressively finding some strategy.
  The rat that maintained a random strategy beyond 20 session was deserted.
- To assess the rat strategy, we perform a chi2 test on last ten session
- 
+ When the rat maintained a not random behavior at least for ten session,
+ the experiment was stop.
+ To test if rat strategy differs from chance strategy (v=[.5 .5 .5 .5]), we
+ perform a 
+\begin_inset Formula $\chi{}^{2}$
+\end_inset
+
+ goodness of fit test on last ten session.
 \end_layout
 
 \begin_layout Standard
-After compute the parameter CHI2 with bonferroni From the batch of 12 subject
- rats at the end of experiment we obtained two group of subject.
- A group of 8 rats that showed a not random strategy and a second group
- of 4 rats with a random strategy.
+After compute the parameter 
+\begin_inset Formula $\chi{}^{2}$
+\end_inset
+
+with bonferroni correction for each rat we obtained two group of subject.
+ The figure (X) shows the mean of cooperation for all rats and the asterisks
+ marks denoted significant difference respect the chance.
+ The subject 2A, 4A, 5A, 6A without significant difference were removed
+ from data pool because they not had a fixed strategy (See Supplementary
+ materials for the graph of markov chain with probabilities of transition).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperation_mean_with_significant.png
+	lyxscale 50
+	width 100page%
+	draft
+	groupId grupo1
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In figure xx we show the mean of reward per subject.
+ The rats with not random strategies got many more reward than the removed
+ group.
+ But nevertheless, we show that the iPD game gives to the random strategy
+ group a amount that between 60% to 70% of total reward.
+\end_layout
+
+\begin_layout Standard
+A group of 8 rats that showed a not random strategy and a second group of
+ 4 rats with a random strategy.
  The group with random strategy was disregarded, because these subjects
  had no information on some behavior.
  These group are shown in figura X(media, cadena de markov aplicandole bondad
@@ -916,55 +987,8 @@ Luegose analizaron la estategias del grupo de 8
 \end_layout
 
 \begin_layout Standard
-,
-\end_layout
-
-\begin_layout Standard
-GRaficos de media de COOPERACION y media de REWARD
-\end_layout
-
-\begin_layout Standard
-Media de cooperacion por sesiones Ultimas
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperation_mean.png
-	lyxscale 50
-	width 100page%
-	draft
-	groupId grupo1
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
+,The figure XX show the graph of markov chain with probabilities of transition
+ both groups
 \end_layout
 
 \begin_layout Section

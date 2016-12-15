@@ -32,3 +32,27 @@
   aa=[1:_nSujetos];
   aa(pasan==1)
 %endfor
+
+
+% MEDIA CON SIGNIFICACION 
+hhh=figure; 
+h=errorbar([1:12],_mediaXsujeto, _stdXsujeto,'*c');
+set (h, "linewidth", 3);
+hh=ylabel("% of cooperation");set(hh, "fontsize", 14);
+hh=title("Cooperation Mean");set(hh, "fontsize", 14);
+hold on
+axis ("tic[yz]", "labely[xyz]");
+bar([1:12],_mediaXsujeto);
+h2=plot([1:12],_criterio*ones(1,12),'--r');
+set (h2, "linewidth", 3);
+plot([1:12],.5*ones(1,12),'--k');
+legend("SEM","MEAN","half",0);
+t=text([1:12]-0.25, .1*ones(1,12), _txtSujetos(:,:),"fontsize",13);
+hh=xlabel("Subjects");set(hh, "fontsize", 14);
+axis([0 13 0 1.15])
+aux22=_mediaXsujeto'+_stdXsujeto'+0.05;
+t=text(-0.15+[1:length(aux22)]', aux22, {"* "; "  ";"* ";"  ";"  "; "  ";"* ";"* ";"* ";"* "; "* ";"* "},"fontsize",20);
+%t=text([1:(4-1)/(length(_sujetosCooperadores)-1):4], -.08*ones(1,length(_sujetosCooperadores)), _txtSujetos(_sujetosCooperadores,:),"fontsize",14);
+hold off
+name=strcat("figura_iPD_1_2_9s_13s/fig_finales/cooperation_mean_with_significant",".png");
+print(hhh, name);

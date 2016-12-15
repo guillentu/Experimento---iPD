@@ -126,10 +126,7 @@ legend(_txtSujetos(_sujetosNocooperadores,:),4);
 axis ([1, 10, 1, 33], "square");
 hold off;
 
-meanFoodXsuj=zeros(1,_nSujetos);
-for i=1:_nSujetos
-  meanFoodXsuj()=mean(food(inicioAux:finAux,i));
-endfor
+%
 
 %foodTotal= sum(food(:,_sujetosCooperadores),2);
 %plot([1:50],foodTotal)
