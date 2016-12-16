@@ -916,13 +916,14 @@ with bonferroni correction for each rat we obtained two group of subject.
  The subject 2A, 4A, 5A, 6A without significant difference were removed
  from data pool because they not had a fixed strategy (See Supplementary
  materials for the graph of markov chain with probabilities of transition).
+ In figura xx we present the mean of strategy over two group 
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption
@@ -938,7 +939,7 @@ status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperation_mean_with_significant.png
+	filename /home/guille/Documentos/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperation_mean_with_significant.png
 	lyxscale 50
 	width 100page%
 	draft
@@ -1011,6 +1012,14 @@ Podemos decir que quizás las ratas en esrado salvaje no cooperan por en
 
 \begin_layout Section
 Reference
+\end_layout
+
+\begin_layout Section
+Supplementary Material
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \end_body

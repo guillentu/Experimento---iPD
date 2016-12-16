@@ -51,6 +51,7 @@ t=text([1:12]-0.25, .1*ones(1,12), _txtSujetos(:,:),"fontsize",13);
 hh=xlabel("Subjects");set(hh, "fontsize", 14);
 axis([0 13 0 1.15])
 aux22=_mediaXsujeto'+_stdXsujeto'+0.05;
+
 t=text(-0.15+[1:length(aux22)]', aux22, {"* "; "  ";"* ";"  ";"  "; "  ";"* ";"* ";"* ";"* "; "* ";"* "},"fontsize",20);
 %t=text([1:(4-1)/(length(_sujetosCooperadores)-1):4], -.08*ones(1,length(_sujetosCooperadores)), _txtSujetos(_sujetosCooperadores,:),"fontsize",14);
 hold off

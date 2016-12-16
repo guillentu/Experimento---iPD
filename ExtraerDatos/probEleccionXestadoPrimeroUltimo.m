@@ -146,7 +146,7 @@ for i=1:_nSujetos
 endfor
 
 for i=1:_nSujetos
-  figure;
+  hhh=figure;
   h=errorbar([1:4],probEleccion(:,1,i),probEleccionSem(:,1,i),'*k');
   hold on;%set(h, "linewidth", 2);     
   h=bar([1:4],probEleccion(:,1,i),'facecolor', 'g', 'edgecolor','b', "linewidth", 2);
@@ -162,7 +162,7 @@ for i=1:_nSujetos
   t=text([1:4], -.04*ones(1,4), {"P(c|T)"; "P(c|R)";"P(c|P)";"P(c|S)"},"fontsize",14);
   axis([0 5 0 1]);
   hold off;grid on;  
-  name=strcat("figura_iPD_1_2_9s_13s/fig_finales/prob_C_giveno_Outcome_/",_txtSujetos(i,:));
+  name=strcat("figura_iPD_1_2_9s_13s/fig_finales/prob_C_giveno_Outcome/",_txtSujetos(i,:));
   name=strcat(name,".png");
   print(hhh, name);
 endfor
