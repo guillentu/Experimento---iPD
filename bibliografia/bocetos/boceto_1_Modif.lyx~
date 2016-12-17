@@ -883,9 +883,12 @@ Results
 
 \begin_layout Standard
 The experiment result are show below.
+ To assessing whether a subject was abled to solve the iPD game, we first
+ need to know whether either the subject adopt some strategy or play in
+ random mode.
  We compute the rat behavior from data of last ten session at the end of
  the experiment.
- A strategy was defined by its transition vector that reflects the probability
+ A strategy was defined by a transition vector that reflects the probability
  of cooperation when the previous trials resulted in outcomes of R, T, S
  or P, respectively (
 \begin_inset Formula $v=[p(c|t),p(c|r),p(c|p),p(c|s)]$
@@ -911,32 +914,257 @@ After compute the parameter
 \end_inset
 
 with bonferroni correction for each rat we obtained two group of subject.
- The figure (X) shows the mean of cooperation for all rats and the asterisks
- marks denoted subject that had significant difference respect the chance.
- The subject 2A, 4A, 5A, 6A without significant difference were removed
- from data pool because they not had a fixed strategy (See Supplementary
- materials for the graph of markov chain with probabilities of transition).
- In table 
+ Those who adopted some strategy and those who did not.
+ The figure (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig1_meansAnd significance"
+
+\end_inset
+
+) shows the mean of cooperation for all rats and the asterisks marks denoted
+ subject that had significant difference respect the chance.
+ The subject 2A, 4A, 5A, 6A were removed from data pool because they not
+ had a fixed strategy (See Supplementary materials for the graph of markov
+ chain with probabilities of transition).
+ Since the table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "table_meanAndstrategies"
+
+\end_inset
+
+ we can see that there is a group of 8 rats with had a fixed no random strategy.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+
+\size scriptsize
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+
+\size scriptsize
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\size scriptsize
+Cooperation mean
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperation_mean_with_significant.png
+	lyxscale 35
+	width 45text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+
+\size scriptsize
+\begin_inset CommandInset label
+LatexCommand label
+name "fig1_meansAnd significance"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+
+\size scriptsize
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Reward mean 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+
+\size scriptsize
+\begin_inset Graphics
+	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/mean_reward.png
+	lyxscale 35
+	width 45text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+
+\size scriptsize
+\begin_inset CommandInset label
+LatexCommand label
+name "meanReward-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig1_meansAnd significance"
+
+\end_inset
+
+)
+\series bold
+Mean and 
+\series default
+
+\begin_inset Formula $\chi{}^{2}$
+\end_inset
+
+
+\series bold
+test
+\series default
+: The rats with 95% of free feeding body weight played under a matrix pay-off
+ T=2, R=1,P=4
+\begin_inset Quotes erd
+\end_inset
+
+delay, S=8
+\begin_inset Quotes erd
+\end_inset
+
+delay against a TFT opponent.
+ We show means of the numbers of times rats chose the cooperate option (
+\begin_inset Formula $mean\pm s.e.m.$
+\end_inset
+
+).
+ The Asterix denote when strategy adopted by a rat had significant difference
+ from chance strategy (
+\begin_inset Formula $\chi{}^{2}$
+\end_inset
+
+ goodness of fit test with bonferroni corrected, p>0.125).
+ The rats without significant difference did not surpass 0.5 probability
+ of cooperation.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "meanReward-1"
+
+\end_inset
+
+) 
+\series bold
+Means of reward.
+
+\series default
+ Bar line shows the mean of obtained reward per session over the last 10
+ session (
+\begin_inset Formula $mean\pm s.e.m.$
+\end_inset
+
+).
+ The rats with random strategy (not chi-square significant) obtained the
+ lowest level of reward, below 75% of total reward.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "table_meanAndstrategies"
+
+\end_inset
+
+
 \begin_inset Caption
 
 \begin_layout Plain Layout
-The mean of cooperation and the values of probabilities of cooperation given
- each outcomes are shown and also, the result of 
+We show the mean of cooperation and the values of probabilities of cooperation
+ given each outcomes.
+ The 
 \begin_inset Formula $\chi^{2}test$
 \end_inset
 
-with bonferroni correction.
- The subject underlined and with green color had significant different respect
- random strategy.
+ with bonferroni correction results and significance show the subject that
+ devoloped a specific strategy.
+ The subject underlined and in blue text color had significant different
+ respect random strategy.
  
 \end_layout
 
@@ -2524,43 +2752,14 @@ cooperation
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-
-\end_layout
+In figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "meanReward-1"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperation_mean_with_significant.png
-	lyxscale 50
-	width 100page%
-	draft
-	groupId grupo1
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-In figure xx we show the mean of reward per subject.
+ we show the mean of reward per subject.
  The rats with not random strategies got many more reward than the removed
  group.
  But nevertheless, we show that the iPD game gives to the random strategy
@@ -2568,15 +2767,8 @@ In figure xx we show the mean of reward per subject.
 \end_layout
 
 \begin_layout Standard
-A group of 8 rats that showed a not random strategy and a second group of
- 4 rats with a random strategy.
- The group with random strategy was disregarded, because these subjects
- had no information on some behavior.
- These group are shown in figura X(media, cadena de markov aplicandole bondad
- de ajusta a model al azar).
- The rats that no exceed the level of fifty percent of cooperation's choice,
- showed a random strategy.
- 
+Mostrar grafico de cooperacion mutua y mostrar que existen dos grupos marcado
+ y que dado que se 
 \end_layout
 
 \begin_layout Standard

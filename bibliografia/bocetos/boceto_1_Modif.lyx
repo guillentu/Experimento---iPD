@@ -974,7 +974,7 @@ Cooperation mean
 \begin_inset Graphics
 	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperation_mean_with_significant.png
 	lyxscale 35
-	width 50text%
+	width 45text%
 
 \end_inset
 
@@ -1028,7 +1028,7 @@ Reward mean
 \begin_inset Graphics
 	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/mean_reward.png
 	lyxscale 35
-	width 50text%
+	width 45text%
 
 \end_inset
 
@@ -1065,7 +1065,6 @@ name "meanReward-1"
 \begin_layout Plain Layout
 
 \size scriptsize
-jnjn: (
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig1_meansAnd significance"
@@ -1106,7 +1105,8 @@ delay against a TFT opponent.
 
  goodness of fit test with bonferroni corrected, p>0.125).
  The rats without significant difference did not surpass 0.5 probability
- of cooperation (
+ of cooperation.
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "meanReward-1"
@@ -1125,7 +1125,7 @@ Means of reward.
 
 ).
  The rats with random strategy (not chi-square significant) obtained the
- lowest level of reward.
+ lowest level of reward, below 75% of total reward.
 \end_layout
 
 \end_inset
@@ -2767,19 +2767,37 @@ reference "meanReward-1"
 \end_layout
 
 \begin_layout Standard
-A group of 8 rats that showed a not random strategy and a second group of
- 4 rats with a random strategy.
- The group with random strategy was disregarded, because these subjects
- had no information on some behavior.
- These group are shown in figura X(media, cadena de markov aplicandole bondad
- de ajusta a model al azar).
- The rats that no exceed the level of fifty percent of cooperation's choice,
- showed a random strategy.
+Mostrar grafico de cooperacion mutua y mostrar que existen dos grupos marcado
  
 \end_layout
 
 \begin_layout Standard
-Luegose analizaron la estategias del grupo de 8
+Explicar que la estrategia buscada es una que tenga una alta tasa de cooperación
+ mutua.
+ Decir que se ve que las estrategias de las ratas que no fueron random son
+ parecidas y tiene probabilidades de cooperar altas.
+\end_layout
+
+\begin_layout Standard
+Graf de estrategis con simbolos y promedios de estrategias, de tasa de outcomes,
+ de las ocho 
+\end_layout
+
+\begin_layout Standard
+Decir que si una rata tubiera una estrategia no cooperativa como alternar
+ que tambien obtiene la maxima recompenza estaría hubicada en la base del
+ grafico de coop mutua
+\end_layout
+
+\begin_layout Standard
+Otro de los paramentros a tener en cuenta es el castigo por delay que tambien
+ se un factor que influye en la calidad de la recompensa o apreciación del
+ beneficio.
+\end_layout
+
+\begin_layout Standard
+Diagrama de cadena de markov de ambos grupos y grafico de estrategias promedio.
+ Tambien grafico de markov de cada sujeto IDEAL utilizados par el graf.
 \end_layout
 
 \begin_layout Standard
