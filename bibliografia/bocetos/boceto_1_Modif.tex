@@ -7,12 +7,20 @@
 \usepackage{array}
 \usepackage{textcomp}
 \usepackage{multirow}
+\usepackage{graphicx}
 
 \makeatletter
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
 %% Because html converters don't know tabularnewline
 \providecommand{\tabularnewline}{\\}
+%% A simple dot to overcome graphicx limitations
+\newcommand{\lyxdot}{.}
+
+\floatstyle{}
+\newfloat{}{}{}
+\providecommand{\name}{}
+\floatname{}{\protect\name}
 
 \makeatother
 
@@ -246,6 +254,9 @@ ad libitum. To ensure that animals obtained sufficient food to survive,
 we provided supplementary food (at 22hs) for any rats that obtained
 the average amount of pellet to maintain body weight. 
 
+The subject was named in succesive order: 1A, 2A, 3A, 4A, 5A, 6A,
+7A, 8A, 9A, 10A, 3B, 4B.
+
 
 \subsubsection{Housing}
 
@@ -401,8 +412,8 @@ had been tested in \textcolor{red}{PAPER DE SELF CONTROL EN RATAS. }
 \hline 
 Subject choice & \multicolumn{2}{c|}{}\tabularnewline
 \cline{1-1} 
-\multicolumn{1}{|c||}{C} & 1 pellet & 8 second\tabularnewline
-\multicolumn{1}{|c||}{D} & 2 pellets & 4 second\tabularnewline
+\multicolumn{1}{|c||}{C} & 1 pellet & 8'' delay\tabularnewline
+\multicolumn{1}{|c||}{D} & 2 pellets & 4'' delay\tabularnewline
 \hline 
 \end{tabular}
 \end{table}
@@ -414,7 +425,7 @@ two lever option and the contact between chamber was restored. There
 was one chamber for the subject and one for the opponent fixed during
 all the experiment, see the figure xxx(figura 1 de ARRIBA). 
 
-The main experiment was conducted for 20 days and 2 session per day.
+The main experiment was conducted for 10 days and 2 session per day.
 The session consisted in 30 trials. For individual subject, the experiment
 was stopped, if the average behavior didn't change along ten consecutive
 sessions. To some subject was exposed more than 20 days when rise
@@ -441,16 +452,13 @@ and opponent waited for fixed ITI time. The next trials started.
 \subsection{Statistical Analysis}
 
 Al statistical analysis were performed using statistic library from
-octave open source software. Only a 
-
-chi 2 para 
+octave open source software. 
 
 
 \subsubsection{Stability of cooperation}
 
 To analysis the choice stability of rats in the iterated game, we
-pooled data from session in which the cooperation rate was stable.
-We used the last 10 session as a pool of data due to the rat's behaviors
+used the last 10 session as a pool of data due to the rat's behaviors
 had reached a plateau.
 
 
@@ -458,7 +466,9 @@ had reached a plateau.
 
 The animals probability to cooperate after each outcomes was assess
 using a chi square test. The probability of cooperation given specific
-outcomes in last trial was compared from chance, e.i. 0.5.  
+outcomes in last trial was compared from chance, 0.5. We performed
+a Chi-square goodness of fit test with bonferroni corrected value
+of 0.05/n.
 
 
 \subsubsection{Rate of difference outcomes}
@@ -468,13 +478,120 @@ using the Nemenyi\textquoteright{}s procedure/Two-tailed tests were
 performed, with the Bonferroni corrected a value of 0.0083.
 
 
+\subsubsection{Markov chain diagram}
+
+We compute the strategies for each rats by diagram of probability
+of transition between outcome. The outcomes were T (temptation) in
+which 
+
+
 \section{Results}
 
-GRaficos de media de COOPERACION y media de REWARD
+The experiment result are show below. To assessing whether a subject
+was abled to solve the iPD game, we first need to know whether either
+the subject adopt some strategy or play in random mode. We compute
+the rat behavior from data of last ten session at the end of the experiment.
+A strategy was defined by a transition vector that reflects the probability
+of cooperation when the previous trials resulted in outcomes of R,
+T, S or P, respectively ($v=[p(c|t),p(c|r),p(c|p),p(c|s)]$). The
+end of experiment for each rat was extended beyond 20 session in order
+to the rat was progressively finding some strategy. The rat that maintained
+a random strategy beyond 20 session was deserted. When the rat maintained
+a not random behavior at least for ten session, the experiment was
+stop. To test if rat strategy differs from chance strategy (v={[}.5
+.5 .5 .5{]}), we perform a $\chi{}^{2}$ goodness of fit test on last
+ten session.
 
-Media de cooperacion por sesiones Ultimas 10
+After compute the parameter $\chi{}^{2}$with bonferroni correction
+for each rat we obtained two group of subject. Those who adopted some
+strategy and those who did not. The figure (X) shows the mean of cooperation
+for all rats and the asterisks marks denoted subject that had significant
+difference respect the chance. The subject 2A, 4A, 5A, 6A were removed
+from data pool because they not had a fixed strategy (See Supplementary
+materials for the graph of markov chain with probabilities of transition).
+Since the table \ref{table_meanAndstrategies} we can see that there
+is a group of 8 rats with had a fixed no random strategy.
 
 
+
+\begin{label}
+\label{fig_meansAndSignificance}\caption{\textbf{\scriptsize{}Mean and }{\scriptsize{}$\chi{}^{2}$}\textbf{\scriptsize{}test}{\scriptsize{}:
+The rats with 95\% of free feeding body weight played under a matrix
+pay-off T=2, R=1,P=4''delay, S=8''delay against a TFT opponent.
+We show means of the numbers of times rats chose the cooperate option.
+The Asterix denote when strategy adopted by a rat had significant
+difference from chance strategy. }}
+
+
+\includegraphics[draft,width=1\paperwidth]{/home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperation_mean_with_significant}
+\end{label}
+
+
+\begin{table}
+\label{table_meanAndstrategies}\caption{We show the mean of cooperation and the values of probabilities of
+cooperation given each outcomes. The $\chi^{2}test$ with bonferroni
+correction results and significance show the subject that devoloped
+a specific strategy. The subject underlined and in blue text color
+had significant different respect random strategy. }
+
+
+{\scriptsize{}}%
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline 
+ & {\scriptsize{}Mean} & \multicolumn{4}{c|}{Strategies} &  & \tabularnewline
+\cline{1-1} \cline{3-8} 
+{\scriptsize{}Subject} & {\scriptsize{}cooperation} & {\tiny{}$p(c|T)$} & {\tiny{}$p(c|R)$} & {\tiny{}$p(c|P)$} & {\tiny{}$p(c|S)$} & {\tiny{}$\chi_{bonferroni}^{2}$} & {\tiny{}$p<0.125$}\tabularnewline
+\hline 
+\hline 
+\textbf{\textcolor{blue}{\emph{\tiny{}1A}}} & \emph{\tiny{}$0.639$} & \emph{\tiny{}$0.525$} & \emph{\tiny{}$0.691$} & \emph{\tiny{}$0.644$} & \emph{\tiny{}$0.667$} & \emph{\tiny{}$17.15$} & \textcolor{blue}{\emph{\tiny{}$6.583e^{-4}$}}\tabularnewline
+\hline 
+\textbf{\tiny{}2A} & {\tiny{}$0.417$} & {\tiny{}$0.469$} & {\tiny{}$0.408$} & {\tiny{}$0.446$} & {\tiny{}$0.333$} & {\tiny{}$8.02$} & {\tiny{}$0.0456$}\tabularnewline
+\hline 
+\textbf{\textcolor{blue}{\tiny{}3A}} & {\tiny{}$0.997$} & {\tiny{}$1$} & {\tiny{}$0.996$} & {\tiny{}$0$} & {\tiny{}$1$} & {\tiny{}$199.30$} & \textcolor{blue}{\tiny{}$0.0000$}\tabularnewline
+\hline 
+\textbf{\tiny{}4A} & {\tiny{}$0.461$} & {\tiny{}$0.5$} & {\tiny{}$0.625$} & {\tiny{}$0.348$} & {\tiny{}$0.403$} & {\tiny{}$9.60$} & {\tiny{}$0.0223$}\tabularnewline
+\hline 
+\textbf{\tiny{}5A} & {\tiny{}$0.386$} & {\tiny{}$0.359$} & {\tiny{}$0.408$} & {\tiny{}$0.351$} & {\tiny{}$0.459$} & {\tiny{}$10.42$} & {\tiny{}$0.0152$}\tabularnewline
+\hline 
+\textbf{\tiny{}6A} & {\tiny{}$0.411$} & {\tiny{}$0.493$} & {\tiny{}$0.37$} & {\tiny{}$0.381$} & {\tiny{}$0.394$} & {\tiny{}$8.45$} & {\tiny{}$0.0375$}\tabularnewline
+\hline 
+\textbf{\textcolor{blue}{\tiny{}7A}} & {\tiny{}$0.886$} & {\tiny{}$0.778$} & {\tiny{}$0.904$} & {\tiny{}$0.857$} & {\tiny{}$0.885$} & {\tiny{}$103.23$} & \textcolor{blue}{\tiny{}$0.0000$}\tabularnewline
+\hline 
+\textbf{\textcolor{blue}{\tiny{}8A}} & {\tiny{}$0.762$} & {\tiny{}$0.638$} & {\tiny{}$0.75$} & {\tiny{}$0.682$} & {\tiny{}$0.864$} & {\tiny{}$49.38$} & \textcolor{blue}{\tiny{}$1.081e^{-10}$}\tabularnewline
+\hline 
+\textbf{\textcolor{blue}{\tiny{}9A}} & {\tiny{}$0.862$} & {\tiny{}$0.781$} & {\tiny{}$0.851$} & {\tiny{}$0.778$} & {\tiny{}$1$} & {\tiny{}$105.91$} & \textcolor{blue}{\tiny{}$0.0000$}\tabularnewline
+\hline 
+\textbf{\textcolor{blue}{\tiny{}10A}} & {\tiny{}$0.997$} & {\tiny{}$1$} & {\tiny{}$0.996$} & {\tiny{}$0$} & {\tiny{}$1$} & {\tiny{}$199.30$} & \textcolor{blue}{\tiny{}$0.0000$}\tabularnewline
+\hline 
+\textbf{\textcolor{blue}{\tiny{}3B}} & {\tiny{}$0.715$} & {\tiny{}$0.742$} & {\tiny{}$0.687$} & {\tiny{}$0.842$} & {\tiny{}$0.705$} & {\tiny{}$50.51$} & \textcolor{blue}{\tiny{}$6.217e^{-11}$}\tabularnewline
+\hline 
+\textbf{\textcolor{blue}{\tiny{}4B}} & {\tiny{}$0.966$} & {\tiny{}$0.889$} & {\tiny{}$0.97$} & {\tiny{}$1$} & {\tiny{}$1$} & {\tiny{}$174.45$} & \textcolor{blue}{\tiny{}$0.0000$}\tabularnewline
+\hline 
+\end{tabular}
+\end{table}
+
+
+In figure \ref{fig_meansAndSignificance} we show the mean of reward
+per subject. The rats with not random strategies got many more reward
+than the removed group. But nevertheless, we show that the iPD game
+gives to the random strategy group a amount that between 60\% to 70\%
+of total reward.
+
+A group of 8 rats that showed a not random strategy and a second group
+of 4 rats with a random strategy. The group with random strategy was
+disregarded, because these subjects had no information on some behavior.
+These group are shown in figura X(media, cadena de markov aplicandole
+bondad de ajusta a model al azar). The rats that no exceed the level
+of fifty percent of cooperation's choice, showed a random strategy. 
+
+Luegose analizaron la estategias del grupo de 8
+
+,
+
+,
+
+,The figure XX show the graph of markov chain with probabilities of
+transition both groups
 
 
 \section{Discussion}
@@ -489,4 +606,9 @@ en una población
 
 
 \section{Reference}
+
+
+\section{Supplementary Material}
+
+
 \end{document}
