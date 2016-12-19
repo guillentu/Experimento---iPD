@@ -885,7 +885,7 @@ Results
 The experiment result are show below.
  To assessing whether a subject was abled to solve the iPD game, we first
  need to know whether either the subject adopt some strategy or play in
- random mode.
+ random mode and then we have to sort the type of strategy.
  We compute the rat behavior from data of last ten session at the end of
  the experiment.
  A strategy was defined by a transition vector that reflects the probability
@@ -1142,7 +1142,7 @@ Means of reward.
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset CommandInset label
@@ -1421,6 +1421,7 @@ cooperation
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
 \emph on
 \begin_inset Formula $0.691$
@@ -1652,6 +1653,7 @@ cooperation
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
 \begin_inset Formula $0.996$
 \end_inset
@@ -2102,6 +2104,7 @@ cooperation
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
 \begin_inset Formula $0.904$
 \end_inset
@@ -2216,6 +2219,7 @@ cooperation
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
 \begin_inset Formula $0.75$
 \end_inset
@@ -2330,6 +2334,7 @@ cooperation
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
 \begin_inset Formula $0.851$
 \end_inset
@@ -2444,6 +2449,7 @@ cooperation
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
 \begin_inset Formula $0.996$
 \end_inset
@@ -2558,6 +2564,7 @@ cooperation
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
 \begin_inset Formula $0.687$
 \end_inset
@@ -2672,6 +2679,7 @@ cooperation
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
 \begin_inset Formula $0.97$
 \end_inset
@@ -2761,18 +2769,64 @@ reference "meanReward-1"
 
  we show the mean of reward per subject.
  The rats with not random strategies got many more reward than the removed
- group.
+ group (subject: 2A, 4A, 5A, 6A).
  But nevertheless, we show that the iPD game gives to the random strategy
  group a amount that between 60% to 70% of total reward.
 \end_layout
 
 \begin_layout Standard
-Mostrar grafico de cooperacion mutua y mostrar que existen dos grupos marcado
- y que dado que se 
+Analyzing the not random strategy groups behaviors, we found that all rats
+ had each componentes of the probabilities of cooperation given each outcomes
+ markely above 0.5 suggest that the rat's behaviors trend to be more cooperative,
+ see table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "table_meanAndstrategies"
+
+\end_inset
+
+.
+ The average of each probabilities component over the subject showed that
+ there was high level of cooperation in the group (tested by 
+\begin_inset Formula $\chi{}^{2}$
+\end_inset
+
+ goodness of fit with theory frecuency 0.5).
+ (FIG
+\noun on
+ promedio de probabilidades
+\noun default
+ + MEANS of cooperation groups) The reciprocate strategy is mainly defined
+ by the probability of mutual cooperation .
+ Thus we Mostrar grafico de cooperacion mutua y mostrar que existen dos
+ grupos marcado
 \end_layout
 
 \begin_layout Standard
-Luegose analizaron la estategias del grupo de 8
+.
+\end_layout
+
+\begin_layout Standard
+Explicar que la estrategia buscada es una que tenga una alta tasa de cooperación
+ mutua.
+ Decir que se ve que las estrategias de las ratas que no fueron random son
+ parecidas y tiene probabilidades de cooperar altas.
+\end_layout
+
+\begin_layout Standard
+Graf de estrategis con simbolos y promedios de estrategias, de tasa de outcomes,
+ de las ocho 
+\end_layout
+
+\begin_layout Standard
+Otro de los paramentros a tener en cuenta es el castigo por delay que tambien
+ se un factor que influye en la calidad de la recompensa o apreciación del
+ beneficio.
+\end_layout
+
+\begin_layout Standard
+Diagrama de cadena de markov de ambos grupos y grafico de estrategias promedio.
+ Tambien grafico de markov de cada sujeto IDEAL utilizados par el graf.
 \end_layout
 
 \begin_layout Standard
@@ -2804,6 +2858,32 @@ Discussion
 \begin_layout Standard
 Podemos decir que quizás las ratas en esrado salvaje no cooperan por en
  una población 
+\end_layout
+
+\begin_layout Standard
+.
+\end_layout
+
+\begin_layout Standard
+Decir que si una rata tubiera una estrategia no cooperativa como alternar
+ que tambien obtiene la maxima recompenza estaría hubicada en la base del
+ grafico de coop mutua.
+\end_layout
+
+\begin_layout Standard
+.
+\end_layout
+
+\begin_layout Standard
+Es muy pobables que lña dificultad para resolver iPD esté en la capacidad
+ de apreciar las diferencia en recompensas a lo largo del tiempo
+\end_layout
+
+\begin_layout Standard
+Quizas una dificultades para resolver iPD es la apreciación de las diferencias
+ en las recompenzas a lo largo de cada sesion.
+ - we show that the iPD game gives to the random strategy group a amount
+ that between 60% to 70% of total reward.
 \end_layout
 
 \begin_layout Section

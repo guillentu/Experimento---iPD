@@ -815,6 +815,30 @@ t=text([1:(4-1)/(length(_sujetosCooperadores)-1):4], -.08*ones(1,length(_sujetos
 axis([0 5 0 1]);
 hold off;grid on;
 % ------------------------
+% ------------------------
+figure;
+media1=mean( _mediaXsujeto([1 3 7 8 9 10 11 12]) );
+sem1=sem(_mediaXsujeto([1 3 7 8 9 10 11 12]));
+h=errorbar([1:4],media1,sem1,'*k');
+hold on;set(h, "linewidth", 2);     
+h=bar([1:4],media1,'facecolor', 'g', 'edgecolor','b', "linewidth", 2);
+h=plot([0:2],[.5 .5 .5],"--r");
+axis ("tic[yz]", "labely[xyz]");
+set(h, "linewidth", 2);  
+hh=legend("SEM","MEAN","Half prob",4);set(hh, "fontsize", 14);
+%hh=xlabel("T=1 --- R=2 --- P=3 --- S=4");set(hh, "fontsize", 14);
+hh=ylabel("Means of cooperation");set(hh, "fontsize", 14);
+%hh=title("");set(hh, "fontsize", 14);
+axis ("tic[yz]", "labely[xyz]");
+t=text([1:4], -.04*ones(1,4), {"T"; "R";"P";"S"},"fontsize",14);
+aux22=probEleccionMean(:,1,1)+probEleccionSem(:,1,1)+0.01;
+t=text(-0.06+[1:4], aux22, {"* "; "* ";"* ";"* "},"fontsize",25);
+t=text([1:(4-1)/(length(_sujetosCooperadores)-1):4], -.08*ones(1,length(_sujetosCooperadores)), _txtSujetos(_sujetosCooperadores,:),"fontsize",14);
+axis([0 5 0 1]);
+hold off;grid on;
+% ------------------------% ------------------------
+% ------------------------% ------------------------
+
 
 % ERRORES en matriz
 % fila T 
