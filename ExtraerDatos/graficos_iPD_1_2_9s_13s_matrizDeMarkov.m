@@ -437,7 +437,7 @@ vals_std2=[(T_std(_sujetosNocooperadores));
 %myfriedman(vals2')
 dd=friedmanGuille(vals,0.05,0);
 dd.diff
-ff=friedmanGuille(vals2,0.05);
+ff=friedmanGuille(vals2,0.05,0);
 
 % promediar las tasas de cooperacion y tasas de estados de los animales que superaron el criterio
 _mediaT=mean(T_mean(_sujetosCooperadores));
