@@ -842,6 +842,9 @@ Stability of cooperation
 To analysis the choice stability of rats in the iterated game, we used the
  last 10 session as a pool of data due to the rat's behaviors had reached
  a plateau.
+ The mean of cooperation per rat was obtained by count the number of times
+ a rat chose the cooperation lever in last ten session.
+ 
 \end_layout
 
 \begin_layout Subsubsection
@@ -1142,7 +1145,7 @@ Means of reward.
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset CommandInset label
@@ -2775,10 +2778,9 @@ reference "meanReward-1"
 \end_layout
 
 \begin_layout Standard
-Analyzing the not random strategy groups behaviors, we found that all rats
- had each componentes of the probabilities of cooperation given each outcomes
- markely above 0.5 suggest that the rat's behaviors trend to be more cooperative,
- see table 
+Analyzing the not random strategy groups behaviors, we found that each rats
+ had all components of strategic vector markedly above 0.5 suggesting that
+ the rat's behaviors trend to be highly cooperative, see table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "table_meanAndstrategies"
@@ -2786,18 +2788,133 @@ reference "table_meanAndstrategies"
 \end_inset
 
 .
- The average of each probabilities component over the subject showed that
- there was high level of cooperation in the group (tested by 
+ The average strategy over all subject (blue color on table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "table_meanAndstrategies"
+
+\end_inset
+
+) showed that there was high level of cooperation in the group.
+ Also we calculated the mean of cooperation choice in the groups .
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_meanC_strategy"
+
+\end_inset
+
+ illustrates that the mean and s.e.m.
+ of cooperation was 
+\begin_inset Formula $0.852\pm0.0482$
+\end_inset
+
+ and the average strategy was
+\series bold
+ 
+\begin_inset Formula $p(c|T)=0.794$
+\end_inset
+
+, 
+\begin_inset Formula $p(c|R)=0.856$
+\end_inset
+
+, 
+\begin_inset Formula $p(c|P)=0.801$
+\end_inset
+
+, 
+\begin_inset Formula $p(c|S)=0.890$
+\end_inset
+
+
+\series default
+, tested by 
 \begin_inset Formula $\chi{}^{2}$
 \end_inset
 
- goodness of fit with theory frecuency 0.5).
- (FIG
-\noun on
- promedio de probabilidades
-\noun default
- + MEANS of cooperation groups) The reciprocate strategy is mainly defined
- by the probability of mutual cooperation .
+ goodness of fit with theory frequency 0.5).
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/mean_cooperation_and_strategy.png
+	lyxscale 40
+	width 80col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\series bold
+Mean of cooperation
+\series default
+ over not random strategy rats (8 rats) was performed and the measured is
+ shown on the first magenta bar (
+\begin_inset Formula $mean=0.852$
+\end_inset
+
+ and 
+\begin_inset Formula $s.e.m.=\pm0.0482$
+\end_inset
+
+ ).
+ The last four green bars represent the mean strategy over the group and
+ each bar agree with the transition vector,
+\series bold
+
+\begin_inset Formula $v=[0.794,0.856,0.801,0.890$
+\end_inset
+
+.
+ 
+\series default
+The asterisk indicates significant difference respect the half probability
+ of chose cooperation lever and we tested by 
+\begin_inset Formula $\chi{}^{2}$
+\end_inset
+
+ goodness of fit with theory frequency 0.5.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig_meanC_strategy"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(MUTUAL COOP)The reciprocate strategy is mainly defined by the probability
+ of mutual cooperation .
  Thus we Mostrar grafico de cooperacion mutua y mostrar que existen dos
  grupos marcado
 \end_layout

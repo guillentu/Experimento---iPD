@@ -435,7 +435,7 @@ vals_std2=[(T_std(_sujetosNocooperadores));
 
 %vals2=30.*[(T_mean(_sujetosCooperadores));(R_mean(_sujetosCooperadores));(P_mean(_sujetosCooperadores));(S_mean(_sujetosCooperadores))]
 %myfriedman(vals2')
-dd=friedmanGuille(vals,0.05);
+dd=friedmanGuille(vals,0.05,0);
 dd.diff
 ff=friedmanGuille(vals2,0.05);
 
@@ -449,7 +449,8 @@ _semR=sem(R_mean(_sujetosCooperadores));
 _semP=sem(P_mean(_sujetosCooperadores));
 _semS=sem(S_mean(_sujetosCooperadores));
 hhh=figure;
-h=errorbar(1,_mediaT, _semT,'*r', 2,_mediaR,_semR,'*b', 3,_mediaP, _semP,'*m', 4,_mediaS, _semS,'*c');
+h=errorbar(1,_mediaT, _semT,'*r', 2,_mediaR,_semR,'*b', 3,_mediaP, _semP,'*m', 4,_mediaS, _semS,'*k');
+%h=errorbar(1,_mediaT, _semT, 2,_mediaR,_semR, 3,_mediaP, _semP, 4,_mediaS, _semS,'*k');
 set (h, "linewidth", 3);
 %hh=xlabel("Estados");set(hh, "fontsize", 14);
 hh=ylabel("% outcome rate","fontsize",14);
@@ -457,14 +458,18 @@ hh=title(strcat("Incidence Rate of all outcome. Over level C: ",num2str(_criteri
 set(hh, "fontsize", 14);
 legend("T=D-C","R=C-C","P=D-D","S=C-D");set(hh, "fontsize", 14);
 hold on
-bar(1:4,[_mediaT,_mediaR,_mediaP,_mediaS]);
+bar(1:4,[_mediaT,_mediaR,_mediaP,_mediaS],'facecolor', 'g','edgecolor','b', "linewidth", 2);
 set(hh, "fontsize", 14);
 axis ("tic[yz]", "labely[xyz]");
+h=plot([0.5:4.5 ],[0.25 .25 .25 .25 .25],"--r");
+set(h, "linewidth", 2);  
+%t=text(-0.3+[1:4], -1.03+ones(1,4), {"P(c|T)"; "P(c|R)";"P(c|P)";"P(c|S)"},"fontsize",14);
 t=text([1:4], -.04*ones(1,4), {"T"; "R";"P";"S"},"fontsize",14);
 t=text([1:(4-1)/(length(_sujetosCooperadores)-1):4], -.08*ones(1,length(_sujetosCooperadores)), _txtSujetos(_sujetosCooperadores,:),"fontsize",13);
 axis([0 5 0 1]);
+t=text(0.5, 0.95, {"Ho=outcomes rates have the same frequency"},"fontsize",14);
+t=text(3, 0.29, {"Ho is rejected"},"fontsize",14);
 hold off
-
 name=strcat("figura_iPD_1_2_9s_13s/fig_finales/outcomeRate_overLevel",".png");
 print(hhh, name);
 
@@ -819,22 +824,26 @@ hold off;grid on;
 figure;
 media1=mean( _mediaXsujeto([1 3 7 8 9 10 11 12]) );
 sem1=sem(_mediaXsujeto([1 3 7 8 9 10 11 12]));
-h=errorbar([1:4],media1,sem1,'*k');
+hold on;
+h=errorbar([1:5],[media1 probEleccionMean(:,1,1)'],[ sem1 probEleccionSem(:,1,1)'],'*k');
 hold on;set(h, "linewidth", 2);     
-h=bar([1:4],media1,'facecolor', 'g', 'edgecolor','b', "linewidth", 2);
-h=plot([0:2],[.5 .5 .5],"--r");
+h=bar([2:5],[probEleccionMean(:,1,1)'],'facecolor', 'g', 'edgecolor','b', "linewidth", 2,'barwidth',0.65);
+h=bar([1],[media1],'facecolor', 'm', 'edgecolor','b', "linewidth", 2,'barwidth',0.35);
+%h=bar([2:5],[probEleccionMean(:,1,1)'],'facecolor', 'g', 'edgecolor','b', "linewidth", 2);
+h=plot([0:6],[.5 .5 .5 .5 .5 .5 .5],"--r");
 axis ("tic[yz]", "labely[xyz]");
 set(h, "linewidth", 2);  
-hh=legend("SEM","MEAN","Half prob",4);set(hh, "fontsize", 14);
+hh=legend("SEM","STRATEGY MEAN","COOP. MEAN","Half prob",4);set(hh, "fontsize", 14);
 %hh=xlabel("T=1 --- R=2 --- P=3 --- S=4");set(hh, "fontsize", 14);
-hh=ylabel("Means of cooperation");set(hh, "fontsize", 14);
+hh=ylabel("probability");set(hh, "fontsize", 14);
 %hh=title("");set(hh, "fontsize", 14);
 axis ("tic[yz]", "labely[xyz]");
-t=text([1:4], -.04*ones(1,4), {"T"; "R";"P";"S"},"fontsize",14);
+%t=text([0.55 1.7 2.7 3.7 4.7], -.1*ones(1,5), {"C choice";"P(c|T)"; "p(c|R)";"P(c|P)";"p(c|S)"},"fontsize",14);
+t=text([0.6 1.7 2.7 3.7 4.7], -1.03+ones(1,5), {"C choice";"P(c|T)"; "p(c|R)";"P(c|P)";"p(c|S)"},"fontsize",14);
 aux22=probEleccionMean(:,1,1)+probEleccionSem(:,1,1)+0.01;
-t=text(-0.06+[1:4], aux22, {"* "; "* ";"* ";"* "},"fontsize",25);
-t=text([1:(4-1)/(length(_sujetosCooperadores)-1):4], -.08*ones(1,length(_sujetosCooperadores)), _txtSujetos(_sujetosCooperadores,:),"fontsize",14);
-axis([0 5 0 1]);
+t=text(-0.08+[1:5],[media1 aux22'], {"  ";"* "; "* ";"* ";"* "},"fontsize",25);
+%t=text([1:(4-1)/(length(_sujetosCooperadores)-1):4], -.08*ones(1,length(_sujetosCooperadores)), _txtSujetos(_sujetosCooperadores,:),"fontsize",14);
+axis([0 6 0 1]);
 hold off;grid on;
 % ------------------------% ------------------------
 % ------------------------% ------------------------

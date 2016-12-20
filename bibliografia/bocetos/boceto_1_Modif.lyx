@@ -842,6 +842,9 @@ Stability of cooperation
 To analysis the choice stability of rats in the iterated game, we used the
  last 10 session as a pool of data due to the rat's behaviors had reached
  a plateau.
+ The mean of cooperation per rat was obtained by count the number of times
+ a rat chose the cooperation lever in last ten session.
+ 
 \end_layout
 
 \begin_layout Subsubsection
@@ -862,9 +865,9 @@ Rate of difference outcomes
 \end_layout
 
 \begin_layout Standard
-we used friedman test and postmultiple post-hoc pairwise comparisons using
- the Nemenyi’s procedure/Two-tailed tests were performed, with the Bonferroni
- corrected a value of 0.0083.
+We used Friedman's ANOVA test and multiple post-hoc pairwise comparisons
+ using the Nemenyi’s procedure/Two-tailed tests were performed, with the
+ Bonferroni corrected a value of 0.0125.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1142,7 +1145,7 @@ Means of reward.
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset CommandInset label
@@ -2775,10 +2778,9 @@ reference "meanReward-1"
 \end_layout
 
 \begin_layout Standard
-Analyzing the not random strategy groups behaviors, we found that all rats
- had each componentes of the probabilities of cooperation given each outcomes
- markely above 0.5 suggest that the rat's behaviors trend to be more cooperative,
- see table 
+Analyzing the not random strategy groups behaviors, we found that each rats
+ had all components of strategic vector markedly above 0.5 suggesting that
+ the rat's behaviors trend to be highly cooperative, see table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "table_meanAndstrategies"
@@ -2786,27 +2788,42 @@ reference "table_meanAndstrategies"
 \end_inset
 
 .
- The average of each probabilities component over the subject showed that
- there was high level of cooperation in the group (the mean ans s.e.m.
+ The average strategy over all subject (blue color on table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "table_meanAndstrategies"
+
+\end_inset
+
+) showed that there was high level of cooperation in the group.
+ Also we calculated the mean of cooperation choice in the groups .
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_meanC_strategy"
+
+\end_inset
+
+ illustrates that the mean and s.e.m.
  of cooperation was 
 \begin_inset Formula $0.852\pm0.0482$
 \end_inset
 
- and
+ and the average strategy was
 \series bold
  
 \begin_inset Formula $p(c|T)=0.794$
 \end_inset
 
-,
+, 
 \begin_inset Formula $p(c|R)=0.856$
 \end_inset
 
-,
+, 
 \begin_inset Formula $p(c|P)=0.801$
 \end_inset
 
-,
+, 
 \begin_inset Formula $p(c|S)=0.890$
 \end_inset
 
@@ -2816,16 +2833,333 @@ reference "table_meanAndstrategies"
 \begin_inset Formula $\chi{}^{2}$
 \end_inset
 
- goodness of fit with theory frecuency 0.5).
- (FIG
-\noun on
- promedio de probabilidades
-\noun default
- + MEANS of cooperation groups) 
+ goodness of fit with theory frequency 0.5).
+ In figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "outcomes rate"
+
+\end_inset
+
+, the rate outcomes suggest that R outcomes(i.e.
+ both subject and opponent chose cooperation lever option in the trial)
+ had very high incidence in the experiment over the last 10 sessions.
+ We found that exist significant difference between outcomes rate.
 \end_layout
 
 \begin_layout Standard
-(MUTUAL COOP)The reciprocate strategy is mainly defined by the probability
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/mean_cooperation_and_strategy.png
+	lyxscale 40
+	width 45col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\size scriptsize
+Mean of cooperation and transition vector
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig_meanC_strategy"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/outcomeRate_overLevel.png
+	lyxscale 35
+	width 45col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\size scriptsize
+Outcomes rates over the last ten sessions.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "outcomes rate"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/g26897-6.png
+	lyxscale 35
+	width 40col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\size scriptsize
+Markov chain graph of four state
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig_4state_markovChain"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/g33959.png
+	lyxscale 35
+	width 30col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Markov chain graph of two state
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig_2state_markovChain"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_meanC_strategy"
+
+\end_inset
+
+) Mean of cooperation over not random strategy rats (8 rats) was performed
+ and the measured is shown on the first magenta bar (
+\begin_inset Formula $mean=0.852$
+\end_inset
+
+ and 
+\begin_inset Formula $s.e.m.=\pm0.0482$
+\end_inset
+
+ ).
+ The last four green bars represent the mean strategy over the group and
+ each bar agree with the transition vector,
+\begin_inset Formula $v=[0.794,0.856,0.801,0.890$
+\end_inset
+
+.
+ The asterisk indicates significant difference respect the half probability
+ of chose cooperation lever and we tested by 
+\begin_inset Formula $\chi{}^{2}$
+\end_inset
+
+ goodness of fit with theory frequency 0.5.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "outcomes rate"
+
+\end_inset
+
+) The bar graph shows the outcomes rates and suggest that R outcomes had
+ very high incidence in the experiment over the last 10 sessions.
+ .
+ We found significant difference between outcomes (Friedman's ANOVA test
+ was performed with bonferroni correction (
+\begin_inset Formula $\alpha=0.00625,p>0.0625;\chi^{2}=22.2$
+\end_inset
+
+) and Multiple pairwise comparison's using Nemeyi's procedure ).
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_4state_markovChain"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_2state_markovChain"
+
+\end_inset
+
+) Graph of Markov chain of four and two state, in which the arrow represent
+ the transition probability between outcomes.
+ A blue arrow signalized when the subject chose cooperate lever given the
+ las outcome and a red arrow signalized when it chose defect lever.
+ The words mean temptation (T), mutual cooperation (R), punishment (P) and
+ sucker (S).
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_4state_markovChain"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_2state_markovChain"
+
+\end_inset
+
+ we show diagrams of transition probability between outcomes.
+ The diagrams show the probabilities to transition given last outcomes.
+ In each trials the subject can choose cooperation (blue arrow) or defect
+ lever (red arrow) and its width is proportional to the probability of cooperate
+ or to not cooperate.
+ In both diagrams is clearly that the big blue arrow predominate indicating
+ a hard trend to cooperate by all rats in the group.
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+(MUTUAL COOP) The reciprocate strategy is mainly defined by the probability
  of mutual cooperation .
  Thus we Mostrar grafico de cooperacion mutua y mostrar que existen dos
  grupos marcado
