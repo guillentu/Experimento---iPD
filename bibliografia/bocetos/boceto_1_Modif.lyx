@@ -957,7 +957,7 @@ status open
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -2960,7 +2960,7 @@ status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/guille/Documentos/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/g26897-6.png
+	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/g26897-6.png
 	lyxscale 35
 	width 40col%
 
@@ -3007,7 +3007,7 @@ status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/guille/Documentos/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/g33959.png
+	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/g33959.png
 	lyxscale 35
 	width 30col%
 
@@ -3164,11 +3164,11 @@ status open
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/guille/Documentos/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperacionVscoopMutua_delay_sinrandom.png
+	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperacionVscoopMutua_delay_sinrandom.png
 	lyxscale 35
 	width 45col%
 
@@ -3178,7 +3178,7 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
- 
+Mutual Cooperation versus cooperation choice 
 \end_layout
 
 \end_inset
@@ -3210,7 +3210,7 @@ status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/guille/Documentos/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperacionVsReward_delay_sinrandom.png
+	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperacionVsReward_delay_sinrandom.png
 	lyxscale 35
 	width 45col%
 
@@ -3223,7 +3223,7 @@ status collapsed
 \begin_inset Caption
 
 \begin_layout Plain Layout
-
+Total reward versus cooperation choice
 \end_layout
 
 \end_inset
@@ -3254,11 +3254,11 @@ name "fig_rewardVScoop"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/guille/Documentos/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/alimentoVstimeout_cooperation.png
+	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/alimentoVstimeout_cooperation.png
 	lyxscale 35
 	width 45col%
 
@@ -3271,7 +3271,7 @@ status collapsed
 \begin_inset Caption
 
 \begin_layout Plain Layout
-
+Total Reward versus accumulated timeout
 \end_layout
 
 \end_inset
@@ -3303,6 +3303,48 @@ name "reward VS timeout"
 
 \begin_layout Plain Layout
 
+\size scriptsize
+There experiment's result was computed from last ten session pool data set.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_coopMutua"
+
+\end_inset
+
+) The graph of Mutual cooperations versus cooperation show that the subject
+ (filled circle) had a directly proportional relationship, mutual cooperate
+ less when cooperate less.
+ The color bar represent average accumulated punishment (second) that each
+ subject obtain per sessions and also is drive by same relationship respect
+ .
+ The square represent theoretical behaviors 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_rewardVScoop"
+
+\end_inset
+
+) .
+ ..........
+ .
+ .
+ .
+ .
+ .
+ .
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "reward VS timeout"
+
+\end_inset
+
+) The figure show the relation between rewards and timeout punishment, the
+ color bar point out the level cooperation choice.
+ Since the graph we observe that the highest reward corresponds to the subject
+ with less accumulated timeout punishment and also with the subjects with
+ the highest cooperation choice level.
 \end_layout
 
 \end_inset
@@ -3317,9 +3359,80 @@ name "reward VS timeout"
 
 \begin_layout Standard
 The reciprocate strategy is mainly defined by the probability of mutual
- cooperation .
- Thus we Mostrar grafico de cooperacion mutua y mostrar que existen dos
- grupos marcado
+ cooperation.
+ Thus we made a graph of Mutual cooperations versus cooperation and saw
+ that exist a directly proportional relationship between these parameters,
+ mutual cooperate less when cooperate less.
+ The color bar represent average accumulated punishment (second) that each
+ subject obtain per sessions and also is drive by same relationship respect
+ either mutual cooperation or cooperation choice.
+ The square point represent theoretical behaviors whose behaviors were:
+ 
+\emph on
+1º)
+\begin_inset Quotes eld
+\end_inset
+
+switch CD
+\begin_inset Quotes erd
+\end_inset
+
+
+\emph default
+ in which the theoretical subject choose alternately cooperate (C) lever
+ or defect (D) lever; 2º) 
+\begin_inset Quotes eld
+\end_inset
+
+switch CCDD
+\begin_inset Quotes erd
+\end_inset
+
+ is similar to the previous but the subject choose consecutively 2 time
+ the same lever and then change to the other lever; 3º) 
+\begin_inset Quotes eld
+\end_inset
+
+switch 3C3D
+\begin_inset Quotes erd
+\end_inset
+
+ the subject choose consecutively 3 time the same lever and then change;
+ 
+\begin_inset Quotes eld
+\end_inset
+
+half C
+\begin_inset Quotes erd
+\end_inset
+
+ the subject choose the same lever until the middle of session and then
+ change; 
+\begin_inset Quotes eld
+\end_inset
+
+switch CCD
+\begin_inset Quotes erd
+\end_inset
+
+ in which choose 2 time C lever and then choose a one D lever 
+\end_layout
+
+\begin_layout Standard
+.
+\end_layout
+
+\begin_layout Standard
+Since the figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "reward VS timeout"
+
+\end_inset
+
+ we observe that the highest reward corresponds to the subject with less
+ accumulated timeout punishment and also with the subjects with the highest
+ cooperation choice level.
 \end_layout
 
 \begin_layout Standard
