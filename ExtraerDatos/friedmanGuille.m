@@ -8,7 +8,7 @@ chi_2 = 12/(N*k*(k+1)).*sum(rangos_mean.^2)-3*N*(k+1)
 
 %----------BUSCANDO el valor de chi2 en base al alpha y al DF
 if bonferroni==1
-  alpha=alpha/N;
+  alpha=alpha/N
 endif
 
 _chi2value=0;

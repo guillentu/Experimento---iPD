@@ -318,6 +318,7 @@ probC=zeros(1,7); % [alternador; cooperador; CyD de a pares; la mitad coop]
 probC=[.5;1;0.5;.5;.5;2/3;3/4];
 probD=zeros(1,7);
 probD=1-probC;
+%         {"switch CD"; "all C";      "switch CCDD";  "half C";            "switch 3Cx3D";   "switch CCD";  "switch CCCD"}
 QQideales=[[0; 1 ;1; 0],[1; 0; 0; 0],[.5; .5; .5; .5],[14/15; 0; 1/15; 1],[2/3;1/3;1/3;2/3],[.5; 1; .5; 0],[2/3; 1; 1/3; 0]];
 _idealSujeto=zeros(2,length(probC));% row 1 alimetno - row 2 delay to eat
 for i=1:length(probC)
@@ -413,21 +414,50 @@ set(hh, "fontsize", 14);
 grid off;%grid minor;
 %t=text(-0.01*[1 2.5 1 1 1 1 1 1 1 1 1 -1]+_mediaXsujeto(I), .08*[1 1 1 1 1 1 1 1 1 1 1 -1]+R_mean(I),_txtSujetos(I,:));
 t=text(-0.01*[1 1 1 1 1 1 1 -1]+_mediaXsujeto(I(find(sort(_mediaXsujeto)>0.5))),
-         .08*[1 1 1 1 1 1 1 -1]+R_mean(I(find(sort(_mediaXsujeto)>0.5))),
+         .08*[-1 -1 -1 1 1 1 1 -1]+R_mean(I(find(sort(_mediaXsujeto)>0.5))),
          _txtSujetos(I(find(sort(_mediaXsujeto)>0.5)),:));
 %axis('auto');
 axis([.49 1.1 0 1.1]);
 hold on;
-h=scatter(probC([1 3 4 5 6 7])',_idealSujeto(1,[1 3 4 5 6 7]),15,_idealSujeto(2,[1 3 4 5 6 7])./120,'s',"filled");
-h=scatter(probC([1 3 4 5 6 7])',_idealSujeto(1,[1 3 4 5 6 7]),15,'k','s',"linewidth",2);
+h=scatter(probC([1 3 4 5 6 7])',QQideales(1,[1 3 4 5 6 7]),15,_idealSujeto(2,[1 3 4 5 6 7])./120,'s',"filled");
+h=scatter(probC([1 3 4 5 6 7])',QQideales(1,[1 3 4 5 6 7]),15,'k','s',"linewidth",2);
 t=text(0.025*[1 1 1 1 -.8 -.5]+ probC([1 3 4 5 6 7])', 
-        0.04*[.5 .5 .5 .5 1.4 1.4]+_idealSujeto(1,[1 3 4 5 6 7]) ,{"switch CD";"switch CCDD";"half C";"switch 3Cx3D";"switch CCD";"switch CCCD"});
+        0.04*[.5 .5 .5 .5 2.4 2.4]+QQideales(1,[1 3 4 5 6 7]) ,{"switch CD";"switch CCDD";"half C";"switch 3Cx3D";"switch CCD";"switch CCCD"});
 t=text(0.025*[1 1 1 1 -.8 -.5]+ probC([1 3 4 5 6 7])', 
-       -0.025*[1.2 1 1 1  1.9 1.9]+_idealSujeto(1,[1 3 4 5 6 7]) ,
+       -0.025*[1.2 1 1 1  -2.3 -2.3]+QQideales(1,[1 3 4 5 6 7]) ,
         {"coop 0.5";"coop 0.5";"coop 0.5";"coop 0.5";"coop 0.66%";"coop 0.75%"});
 t=text(0.6,-0.37,{"Normalized accumulated timeout per sessions"},"fontsize",14);
 hold off;
 
+% grafico Reward Versus R
+[S I]=sort(R_mean);
+figure;
+h=scatter(_alimento(I(find(sort(R_mean)>0.4))),R_mean(I(find(sort(R_mean)>0.4))),20,(_delay4eat(I(find(sort(R_mean)>0.4)))./120),"filled");
+ch=colormap(copper);
+colorbar('southoutside');
+set(h, "linewidth", 2);
+hh=xlabel("% of maximal Reward");
+set(hh, "fontsize", 14);
+hh=ylabel("% Mutual Cooperation");
+set(hh, "fontsize", 14);
+hh=title("Reward Versus Mutual Cooperation (Colorbar=Timeout)"); 
+set(hh, "fontsize", 14);
+grid off;%grid minor;
+t=text(-0.01*[1 1 1 1 1 3 1 -1] + _alimento(I(find(sort(R_mean)>0.4))), 
+           .07*[1 1 1 1 1 0.2 1 .5] + R_mean(I(find(sort(R_mean)>0.4)))', 
+                            _txtSujetos(I(find(sort(R_mean)>0.4)),:))';
+%axis('auto');
+axis([.49 1.1 0 1.1]);
+hold on;
+h=scatter(_idealSujeto(1,[1 3 4 5 6 7]),QQideales(1,[1 3 4 5 6 7]),15,_idealSujeto(2,[1 3 4 5 6 7])./120,'s',"filled");
+h=scatter(_idealSujeto(1,[1 3 4 5 6 7]),QQideales(1,[1 3 4 5 6 7]),15,'k','s',"linewidth",2);
+t=text(0.025*[.51 .51 .51 .51 -.8 -.5]+ _idealSujeto(1,[1 3 4 5 6 7]), 
+        0.04*[.5 .5 .5 .5 1.4 1.4]+QQideales(1,[1 3 4 5 6 7]) ,{"switch CD";"switch CCDD";"half C";"switch 3Cx3D";"switch CCD";"switch CCCD"});
+t=text(0.025*[.51 .51 .51 .51 -.8 -.5]+ _idealSujeto(1,[1 3 4 5 6 7]), 
+       -0.025*[1.2 1 1 1  1.9 1.9]+ QQideales(1,[1 3 4 5 6 7]),
+        {"coop 0.5";"coop 0.5";"coop 0.5";"coop 0.5";"coop 0.66%";"coop 0.75%"});
+t=text(0.62,-0.38,{"Normalized accumulated timeout per sessions"},"fontsize",14);
+hold off;
 
 % Tasa de alimentacion
 _foodRate= _alimento(1:_nSujetos)./(_delay4eat/30);%_vDelay4eat(1));
@@ -456,34 +486,38 @@ hold off;
 % Alimentacion Versus Delay to eat
 _delay2eat=_delay4eat;
 [S I]=sort(_alimento);
-figure;
+hhh=figure;
 %h=plot(_alimento(I),_delay2eat(I),'ko', "markersize",14,"markerfacecolor",'c', "linewidth", 2);
-h=scatter(_delay2eat(I),_alimento(I),20, _mediaXsujeto(I),"filled");
+h=scatter(_delay2eat(I(find(sort(_alimento)>0.8)))./120,_alimento(I(find(sort(_alimento)>0.8))),20, _mediaXsujeto(I(find(sort(_alimento)>0.8))),"filled");
 %ch=colormap(copper);
 ch=colormap(copper);
 h=colorbar('southoutside');
 hold on;
-set(h, "linewidth", 2);
-hh=ylabel("% Total Reward");
+h=errorbar(_delay2eat(I(find(sort(_alimento)>0.8)))./120,_alimento(I(find(sort(_alimento)>0.8))),,'*k');
+set(hhh, "linewidth", 2);
+hh=ylabel("% of total Reward");
 set(hh, "fontsize", 14);
-hh=xlabel("Acumulated Timeout per game [seconds]");
+hh=xlabel("% total acumulated Timeout per sessions");
 set(hh, "fontsize", 14);
 hh=title("Reward versus Timeout to eat (colorbar=cooperation)"); 
 set(hh, "fontsize", 14);
 grid on;
-t=text(0.06*[1 1 1 1 1 1 1 1 -1 1 -1 -1]+_delay2eat(I),-0.03*[1 1 -1 1 1 1 1 1 1.2 1 1.2 -1.2]+_alimento(I),_txtSujetos(I,:));
+t=text(0.02*[-1 -1 -1 -1 -1 -1 -1 -1]+_delay2eat(I(find(sort(_alimento)>0.8)))./120,
+       -0.04*[1 1 1 1 1.2 -1 1 -1]+_alimento(I(find(sort(_alimento)>0.8))),
+       _txtSujetos(I(find(sort(_alimento)>0.8)),:));
 axis('auto');
 hold on;
-h=scatter(_idealSujeto(2,[1 3 4 5 6 7]),_idealSujeto(1,[1 3 4 5 6 7]),10,probC([1 3 4 5 6 7])','ks',"filled");
-h=scatter(_idealSujeto(2,[1 3 4 5 6 7]),_idealSujeto(1,[1 3 4 5 6 7]),15,'k','s',"linewidth",2);
+h=scatter(_idealSujeto(2,[1 3 4 5 6 7])./120,_idealSujeto(1,[1 3 4 5 6 7]),15,probC([1 3 4 5 6 7])','s',"filled");
+h=scatter(_idealSujeto(2,[1 3 4 5 6 7])./120,_idealSujeto(1,[1 3 4 5 6 7]),15,'k','s',"linewidth",2);
 %h=plot(_idealSujeto(1,[1 3 4 5 6 7]),_idealSujeto(2,[1 3 4 5 6 7]),'ko', "markersize",15,"markerfacecolor",'r', "linewidth", 2);
-t=text(-10*[1 1 1 1 1 1]+_idealSujeto(2,[1 3 4 5 6 7]),
+t=text(-0.10*[1 1 1 1 1 1]+_idealSujeto(2,[1 3 4 5 6 7])./120,
        0.05*ones(1,length(probC([1 3 4 5 6 7])))+ _idealSujeto(1,[1 3 4 5 6 7]), 
        {"switch CD";"switch CCDD";"half C";"switch 3Cx3D";"switch CCD";"switch CCCD"});
 
-t=text(-10*[1 1 1 1 1 1]+ _idealSujeto(2,[1 3 4 5 6 7]),
+t=text(-0.10*[1 1 1 1 1 1]+ _idealSujeto(2,[1 3 4 5 6 7])./120,
        0.03*[1 1 1 1 1 1]+ _idealSujeto(1,[1 3 4 5 6 7]),
-       {"coop 0.5";"coop 0.5";"coop 0.5";"coop 0.5";"coop 0.66%";"coop 0.75%"});        
+       {"coop 0.5";"coop 0.5";"coop 0.5";"coop 0.5";"coop 0.66%";"coop 0.75%"}); 
+t=text(0.2,0.22,{"Normalized amoung of C choice"},"fontsize",14);       
 hold off;
 
 

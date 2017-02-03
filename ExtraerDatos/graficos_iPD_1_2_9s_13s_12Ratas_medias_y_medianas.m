@@ -71,7 +71,7 @@ for j=inicio:fin
   _media(j)=_media(j)/length(_vSujetos);
   %plot([1:_nSujetos],_media(j));
 endfor
-
+_vSujetos=_vSujetos1;
 
 %   Promedio total de las ultimas 10 sesiones --------------------------------------
 _mediaXsujeto=zeros(1,_nSujetos);

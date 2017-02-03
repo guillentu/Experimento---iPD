@@ -17,7 +17,7 @@ endfor
 controlFallas=zeros(1,_nSujetos);
 auxFallas=1;
 %_ultimosX=10;
-for i=1:_nSujetos
+for i=_vSujetos
   ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
   primero=ultimo-_ultimosX+1;
   for j=primero:ultimo
@@ -101,7 +101,7 @@ endfor
 % promediando las ultimas 10 sesiones por sujetos
 probxExpTotalN=zeros(4,2,_nSujetos);
 probxExpTotal=zeros(4,2,_nSujetos);
-for i=1:_nSujetos
+for i=_vSujetos
   ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
   primero=ultimo-_ultimosX+1;
   for j=primero:ultimo
@@ -132,7 +132,7 @@ for i=1:_nSujetos
 endfor
 
 probEleccionSem=zeros(size(probxExpTotal));
-for i=1:_nSujetos
+for i=_vSujetos
   ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
   primero=ultimo-_ultimosX+1;
   aux1=[];
@@ -145,7 +145,7 @@ for i=1:_nSujetos
   probEleccionSem(:,2,i)=sem(aux2,2);
 endfor
 
-for i=1:_nSujetos
+for i=_vSujetos
   hhh=figure;
   h=errorbar([1:4],probEleccion(:,1,i),probEleccionSem(:,1,i),'*k');
   hold on;%set(h, "linewidth", 2);     

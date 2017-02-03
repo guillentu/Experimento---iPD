@@ -1145,7 +1145,7 @@ Means of reward.
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset CommandInset label
@@ -1158,14 +1158,17 @@ name "table_meanAndstrategies"
 \begin_inset Caption
 
 \begin_layout Plain Layout
-We show the mean of cooperation and the values of probabilities of cooperation
- given each outcomes.
+
+\size scriptsize
+We show the mean of cooperation and the probabilities of cooperation given
+ each outcomes.
  The 
-\begin_inset Formula $\chi^{2}test$
+\begin_inset Formula $\chi^{2}$
 \end_inset
 
- with bonferroni correction results and significance show the subject that
- devoloped a specific strategy.
+goodness of fit with bonferroni correction was performed used a theorical
+ frecuency of 0.5.
+ The significance value show the subject that developed a specific strategy.
  The subject underlined and in blue text color had significant different
  respect random strategy.
  
@@ -1365,7 +1368,7 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
-\begin_inset Formula $p<0.125$
+\begin_inset Formula $p<0.0{\color{red}}125$
 \end_inset
 
 
@@ -2772,7 +2775,7 @@ reference "meanReward-1"
 
  we show the mean of reward per subject.
  The rats with not random strategies got many more reward than the removed
- group (subject: 2A, 4A, 5A, 6A).
+ group.
  But nevertheless, we show that the iPD game gives to the random strategy
  group a amount that between 60% to 70% of total reward.
 \end_layout
@@ -2804,12 +2807,12 @@ reference "fig_meanC_strategy"
 
 \end_inset
 
- illustrates that the mean and s.e.m.
- of cooperation was 
+ illustrates the mean and s.e.m.
+ of cooperation, 
 \begin_inset Formula $0.852\pm0.0482$
 \end_inset
 
- and the average strategy was
+ and the average strategy,
 \series bold
  
 \begin_inset Formula $p(c|T)=0.794$
@@ -2833,7 +2836,11 @@ reference "fig_meanC_strategy"
 \begin_inset Formula $\chi{}^{2}$
 \end_inset
 
- goodness of fit with theory frequency 0.5).
+ goodness of fit with theory frequency 
+\begin_inset Formula $0.5$
+\end_inset
+
+.
  In figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2843,8 +2850,15 @@ reference "outcomes rate"
 
 , the rate outcomes suggest that R outcomes(i.e.
  both subject and opponent chose cooperation lever option in the trial)
- had very high incidence in the experiment over the last 10 sessions.
- We found that exist significant difference between outcomes rate.
+ had very high incidence in the experiment over the last 10 sessions into
+ the group.
+ We found that exist significant difference between outcomes rate, a Friedman's
+ ANOVA test was performed with bonferroni correction (
+\begin_inset Formula $\alpha=0.0125,p>3.33e-5;\chi^{2}=23.4$
+\end_inset
+
+) and Multiple pairwise comparison using Nemeyi's procedure point out that
+ all outcomes levels are differents.
 \end_layout
 
 \begin_layout Standard
@@ -2857,7 +2871,7 @@ status open
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -2906,7 +2920,7 @@ name "fig_meanC_strategy"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -2960,7 +2974,7 @@ status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/guille/Documentos/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/g26897-6.png
+	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/g26897-6.png
 	lyxscale 35
 	width 40col%
 
@@ -3007,7 +3021,7 @@ status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/guille/Documentos/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/g33959.png
+	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/g33959.png
 	lyxscale 35
 	width 30col%
 
@@ -3069,9 +3083,9 @@ reference "fig_meanC_strategy"
 \end_inset
 
  ).
- The last four green bars represent the mean strategy over the group and
+ The next four green bars represent the mean strategy over the group and
  each bar agree with the transition vector,
-\begin_inset Formula $v=[0.794,0.856,0.801,0.890$
+\begin_inset Formula $v=[0.794,0.856,0.801,0.890]$
 \end_inset
 
 .
@@ -3093,7 +3107,7 @@ reference "outcomes rate"
  .
  We found significant difference between outcomes (Friedman's ANOVA test
  was performed with bonferroni correction (
-\begin_inset Formula $\alpha=0.00625,p>0.0625;\chi^{2}=22.2$
+\begin_inset Formula $\alpha=0.0125,p>3.3e-5;\chi^{2}=23.4$
 \end_inset
 
 ) and Multiple pairwise comparison's using Nemeyi's procedure ).
@@ -3117,6 +3131,8 @@ reference "fig_2state_markovChain"
  las outcome and a red arrow signalized when it chose defect lever.
  The words mean temptation (T), mutual cooperation (R), punishment (P) and
  sucker (S).
+ Pay atemption that the arrows width are proportional to the transition
+ probability.
  
 \end_layout
 
@@ -3152,6 +3168,7 @@ reference "fig_2state_markovChain"
  or to not cooperate.
  In both diagrams is clearly that the big blue arrow predominate indicating
  a hard trend to cooperate by all rats in the group.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -3161,14 +3178,18 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset space \hfill{}
+\end_inset
+
+
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/guille/Documentos/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperacionVscoopMutua_delay_sinrandom.png
+	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperacionVscoopMutua_delay_sinrandom.png
 	lyxscale 35
 	width 45col%
 
@@ -3178,7 +3199,7 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
- 
+Mutual Cooperation versus cooperation choice 
 \end_layout
 
 \end_inset
@@ -3210,7 +3231,7 @@ status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/guille/Documentos/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperacionVsReward_delay_sinrandom.png
+	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/coopMutuaVsReward_delay.png
 	lyxscale 35
 	width 45col%
 
@@ -3223,7 +3244,59 @@ status collapsed
 \begin_inset Caption
 
 \begin_layout Plain Layout
+Mutual Cooperation versus reward
+\end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig_coopMutualVsReward"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperacionVsReward_delay_sinrandom.png
+	lyxscale 35
+	width 45col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Total reward versus cooperation choice
 \end_layout
 
 \end_inset
@@ -3244,9 +3317,6 @@ name "fig_rewardVScoop"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset space \hfill{}
 \end_inset
 
@@ -3258,7 +3328,7 @@ status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/guille/Documentos/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/alimentoVstimeout_cooperation.png
+	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/alimentoVstimeout_cooperation.png
 	lyxscale 35
 	width 45col%
 
@@ -3271,7 +3341,7 @@ status collapsed
 \begin_inset Caption
 
 \begin_layout Plain Layout
-
+Total Reward versus accumulated timeout
 \end_layout
 
 \end_inset
@@ -3303,6 +3373,54 @@ name "reward VS timeout"
 
 \begin_layout Plain Layout
 
+\size scriptsize
+There experiment's result was computed from last ten session pool data set.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_coopMutua"
+
+\end_inset
+
+) The graph of Mutual cooperations versus cooperation show that the subject
+ (filled circle) had a directly proportional relationship, mutual cooperate
+ less when cooperate less.
+ The color bar represent average accumulated punishment (second) that each
+ subject obtain per sessions and also is drive by same relationship respect
+ .
+ The square represent theoretical behaviors.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_coopMutualVsReward"
+
+\end_inset
+
+) The graph show the mutual cooperation versus total reward.
+ All animals obtain more that 80% of total reward per session.
+ The simulated agent (filled square) help to understand the strategies used
+ by animals.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_rewardVScoop"
+
+\end_inset
+
+) The mean of total reward don't change significantly respect to cooperation
+ level.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "reward VS timeout"
+
+\end_inset
+
+) The figure show the relation between rewards and timeout punishment, the
+ color bar point out the level cooperation choice.
+ Since the graph we observe that the highest reward corresponds to the subject
+ with less accumulated timeout punishment and they also have the highest
+ cooperation choice level.
 \end_layout
 
 \end_inset
@@ -3317,31 +3435,156 @@ name "reward VS timeout"
 
 \begin_layout Standard
 The reciprocate strategy is mainly defined by the probability of mutual
- cooperation .
- Thus we Mostrar grafico de cooperacion mutua y mostrar que existen dos
- grupos marcado
+ cooperation.
+ Thus we made a graph of Mutual cooperations versus cooperation and saw
+ that exist a directly proportional relationship between them, if mutual
+ cooperate does down then the cooperate choice goes down.
+ See figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_coopMutua"
+
+\end_inset
+
+.
+ The color bar represent average accumulated punishment (second) that each
+ subject obtain per sessions in the last ten session and also is drive by
+ same relationship respect either mutual cooperation or cooperation choice.
+ The square point represent theoretical simulated behaviors used to compare
+ the real average rat behavior respect to these repetitive simulated agent.
+ We created the follow behaviors: 
+\emph on
+1º)
+\begin_inset Quotes eld
+\end_inset
+
+switch CD
+\begin_inset Quotes erd
+\end_inset
+
+
+\emph default
+ in which the theoretical subject choose alternately cooperate (C) lever
+ or defect (D) lever; 2º) 
+\begin_inset Quotes eld
+\end_inset
+
+switch CCDD
+\begin_inset Quotes erd
+\end_inset
+
+ is similar to the previous but the subject choose consecutively 2 time
+ the same lever and then change to the other lever and repeat the action;
+ 3º) 
+\begin_inset Quotes eld
+\end_inset
+
+switch 3C3D
+\begin_inset Quotes erd
+\end_inset
+
+ the subject choose consecutively 3 time the same lever and then change;
+ 4º) 
+\begin_inset Quotes eld
+\end_inset
+
+half C
+\begin_inset Quotes erd
+\end_inset
+
+ the subject choose the same lever until the middle of session, then change
+ and doesn't change at the end; 5º) 
+\begin_inset Quotes eld
+\end_inset
+
+switch CCD
+\begin_inset Quotes erd
+\end_inset
+
+ in which choose 2 time C lever and then choose only a time the D lever
+ and go back to the previous C lever and repeat the action.
+ 6º) 
+\begin_inset Quotes eld
+\end_inset
+
+switch CCCD
+\begin_inset Quotes erd
+\end_inset
+
+ is similar to the previous but the subject choose 3 time C lever.
+ These simulation allow to visualization that animals trend to choose consecutiv
+ely the same lever (C) and only in few occasion choose the defeat lever
+ and back to the cooperation lever.
+ 
+\end_layout
+
+\begin_layout Standard
+All rats got the high level of reward, over 80%, despite of the dispersion
+ of mutual cooperation data, fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_coopMutualVsReward"
+
+\end_inset
+
+.
+ The simulated agent (filled square) are used to understand the kind of
+ strategy used by the rats.
+ We observe that the defeat choice exist but the rats trend to learned that
+ after this choice they have to back to cooperate, because the rats with
+ low mutual coop are near the simulated agent with behaviors 
+\begin_inset Quotes eld
+\end_inset
+
+Switch CCD
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+Switch CCCD
+\begin_inset Quotes erd
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+The payoff matrix used in the experiment gives the same amount of reward
+ a always cooperator subject that other that always alternate between cooperate
+ and defect option.
+ Nevertheless, there is a strategy that is the best (
+\emph on
+pareto optimum
+\emph default
+) because the first strategy doesn't receive timeout punishment and the
+ second does.
+ Since the figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "reward VS timeout"
+
+\end_inset
+
+ we observe that the highest reward corresponds to the subject with less
+ accumulated timeout punishment and also with the subjects with the highest
+ cooperation choice level.
+ The simulated agent that used alternate strategy got the maximum punishment.
+\end_layout
+
+\begin_layout Standard
+These results give evidence to conclude that the rats learned to solve the
+ iPD when they face an opponent with TIT FOR TAT strategy.
+ The animals shown a high mutual cooperation as a result to the learning
+ into the operant box.
 \end_layout
 
 \begin_layout Standard
 .
-\end_layout
-
-\begin_layout Standard
-Explicar que la estrategia buscada es una que tenga una alta tasa de cooperación
- mutua.
- Decir que se ve que las estrategias de las ratas que no fueron random son
- parecidas y tiene probabilidades de cooperar altas.
-\end_layout
-
-\begin_layout Standard
-Graf de estrategis con simbolos y promedios de estrategias, de tasa de outcomes,
- de las ocho 
-\end_layout
-
-\begin_layout Standard
-Otro de los paramentros a tener en cuenta es el castigo por delay que tambien
- se un factor que influye en la calidad de la recompensa o apreciación del
- beneficio.
 \end_layout
 
 \begin_layout Standard
@@ -3414,7 +3657,192 @@ Reference
 Supplementary Material
 \end_layout
 
+\begin_layout Subsection
+Theorical subject statistics
+\end_layout
+
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/Simulated_markov.png
+	lyxscale 20
+	width 95col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Graph of transition probabilities.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Non cooperator subject Statistics
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/nocoop_probabilidades.png
+	lyxscale 35
+	width 95col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Probabilities of cooperate given each outcomes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig_nocoop_statistic"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/nocoop_markov.png
+	lyxscale 35
+	width 95col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Graph of markov chain per subject
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig_nocoop_markov"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Statistic for the removed subject.
+ These subject had a random behavior because.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_nocoop_statistic"
+
+\end_inset
+
+) All probabilities of cooperate given each outcome are near 50 percent
+ and this means that their haven't any preference choice.
+ See significant value of 
+\begin_inset Formula $X^{2}$
+\end_inset
+
+test in table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "table_meanAndstrategies"
+
+\end_inset
+
+.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_nocoop_markov"
+
+\end_inset
+
+) The graph of markov chain show that the transition probabilities are very
+ closed to 50%.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
 
 \end_layout
 

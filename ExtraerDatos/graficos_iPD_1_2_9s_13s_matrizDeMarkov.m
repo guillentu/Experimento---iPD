@@ -260,6 +260,7 @@ for j=inicio:fin
     matricesQaux.(indiceSujeto(i,:)) = zeros(4,4);
   endfor
 endfor
+_vSujetos=_vSujetos1;
 TT=T;CC=C;
 PP=P;SS=S;
 % Analizando las ultimas X sesiones
@@ -396,7 +397,7 @@ _criterio=.5;
 graficos_iPD_1_2_9s_13s_12Ratas_medias_y_medianas % se obtienen los sujetos que superan el .75 porciento de cooperación
 %_sujetosCooperadores=find(_mediaXsujeto>_criterio); % indice de sujetos que pasaron el criterios 
 _sujetosCooperadores=find(_mediaXsujeto>_criterio); % indice de sujetos que pasaron el criterios 
-_sujetosNocooperadores=complemento(_sujetosCooperadores,_nSujetos);
+_sujetosNocooperadores=complemento(_sujetosCooperadores,[1:_nSujetos]);
 QmediaC=zeros(4,4);
 QmediaD=zeros(4,4);
 for i=_sujetosCooperadores
@@ -435,10 +436,10 @@ vals_std2=[(T_std(_sujetosNocooperadores));
 
 %vals2=30.*[(T_mean(_sujetosCooperadores));(R_mean(_sujetosCooperadores));(P_mean(_sujetosCooperadores));(S_mean(_sujetosCooperadores))]
 %myfriedman(vals2')
-dd=friedmanGuille(vals,0.05,0);
+dd=friedmanGuille(vals,0.05,1);
 dd.diff
-ff=friedmanGuille(vals2,0.05,0);
-
+ff=friedmanGuille(vals2,0.05,1);
+%ff.diff
 % promediar las tasas de cooperacion y tasas de estados de los animales que superaron el criterio
 _mediaT=mean(T_mean(_sujetosCooperadores));
 _mediaR=mean(R_mean(_sujetosCooperadores));
