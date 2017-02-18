@@ -18,7 +18,7 @@ endfor
 
 food=[];
 for i=1:_nSujetos
-food(:,i)=[TT(i,:).*2 + CC(i,:).*1 + PP(i,:).*0 + SS(i,:).*0];
+food(:,i)=[TT(i,:).*_vRefuerzos(3) + CC(i,:).*_vRefuerzos(1) + PP(i,:).*_vRefuerzos(4) + SS(i,:).*_vRefuerzos(2)];
 endfor
 foodMedia=zeros(1,_nSujetos);
 foodSem=zeros(1,_nSujetos);
@@ -28,6 +28,27 @@ for i=1:_nSujetos
   foodMedia(i) = mean(food(inicioAux:finAux,i));
   foodSem(i) = sem(food(inicioAux:finAux,i));
 endfor
+
+%%%%%%%%%%%%%%%%  TIMTEOUT   %%%%%%%%%%%%%%%%55
+_timeOut=[];
+for i=1:_nSujetos
+  if (strcmp(_experimento,"T=3"))
+    _timeOut(:,i)=[TT(i,:).*_vDelay4eat(3) + CC(i,:).*_vDelay4eat(1)+ PP(i,:).*_vDelay4eat(4)+ SS(i,:).*_vDelay4eat(2)];
+  else
+    _timeOut(:,i)=[TT(i,:).*_vDelay4eat(3)+ CC(i,:).*_vDelay4eat(1)+ PP(i,:).*_vDelay4eat(4)+ SS(i,:).*_vDelay4eat(2)];
+  endif
+endfor
+
+_timeOutMedia=zeros(1,_nSujetos);
+_timeOutSem=zeros(1,_nSujetos);
+for i=1:_nSujetos
+  inicioAux=expXsuj(i)-_ultimosX+1;
+  finAux=expXsuj(i);
+  _timeOutMedia(i) = mean(_timeOut(inicioAux:finAux,i));
+  _timeOutSem(i) = sem(_timeOut(inicioAux:finAux,i));
+endfor
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 hhh=figure;
 h=errorbar([1:_nSujetos],foodMedia/30,foodSem/30,'*b');set (h, "linewidth", 2);
@@ -43,6 +64,24 @@ axis([0,13,0.5,1],"square");legend("SEM","MEAN");
 hold off;
 name=strcat("figura_iPD_1_2_9s_13s/fig_finales/mean_reward",".png");
 print(hhh, name);
+%%%%%%%%%%%%%%%%  GRAPH OF TIMTEOUT   %%%%%%%%%%%%%%%%55
+hhh=figure;
+h=errorbar([1:_nSujetos],_timeOutMedia,_timeOutSem,'*b');set (h, "linewidth", 2);
+hold on;
+axis("tic[yz]", "labely[xyz]");
+h=bar(_timeOutMedia,"facecolor", "g","edgecolor","k");set (h, "linewidth", 2);
+
+hh=xlabel("Sujets - Last 10 sesions");set(hh, "fontsize", 14);
+hh=ylabel("Timeout per session");set(hh, "fontsize", 14);
+hh=title(" Mean of timeout");set(hh, "fontsize", 14);
+t=text(-.25+[1:_nSujetos], 0.55*ones(1,_nSujetos) , ptrn);set(hh, "fontsize", 14);
+%axis([0,13,0.5,1],"square");
+legend("SEM","MEAN");
+hold off;
+name=strcat("figura_iPD_1_2_9s_13s/fig_finales/mean_timeout",".png");
+print(hhh, name);
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % TODOS JUNTOS
 figure();hold on;
@@ -59,7 +98,7 @@ endfor
 legend(_txtSujetos(:,:),4);
 hold off;
 
-_criterio=.5;
+%_criterio=.5;
 
 graficos_iPD_1_2_9s_13s_12Ratas_medias_y_medianas % se obtienen los sujetos que superan el .75 porciento de cooperación
 

@@ -399,8 +399,10 @@ Procedures
 During the whole duration of experiment, every actor were trained for 2
  session per day for all handing, habituation, training and iPD experiment
  sessions.
- The 5 second inter-trial interval(ITI) was used and each trial duration
- was 45 second.
+ Each typical trial began in the darkness during 5 second inter-trial interval(I
+TI) and then the stimulus light were illuminated for either 45 second or
+ until a lever was press.
+ Before deliver any reward the feeder light was 1 second turn on.
  The standard experiment session had 30 trials.
  
 \end_layout
@@ -514,7 +516,7 @@ toggle 8x8
 \end_inset
 
  in dual iPD chamber.
- The purposed of the training was show that two lever exist and balance
+ The purposed of the training was show them that two lever exist and balance
  rat lever's preference.
  The experiment was performed by 2 days in which on first day a rat use
  chamber 1 and on day 2 used chamber 2.
@@ -843,7 +845,7 @@ To analysis the choice stability of rats in the iterated game, we used the
  last 10 session as a pool of data due to the rat's behaviors had reached
  a plateau.
  The mean of cooperation per rat was obtained by count the number of times
- a rat chose the cooperation lever in last ten session.
+ a rat chose the cooperation lever per session over the last ten session.
  
 \end_layout
 
@@ -887,10 +889,17 @@ Results
 \begin_layout Standard
 The experiment result are show below.
  To assessing whether a subject was abled to solve the iPD game, we first
- need to know whether either the subject adopt some strategy or play in
+ need to know whether either the subjects adopt some strategy or play in
  random mode and then we have to sort the type of strategy.
- We compute the rat behavior from data of last ten session at the end of
- the experiment.
+ The full data set that we record had difference length for each rat, because
+ after recorded 20 sessions the experiment for each rat stop when the means
+ of cooperation reached a plateau.
+ (
+\size scriptsize
+Rat/sessions: 1A/23; 2A/33; 3A/23; 4A/23; 5A/23; 6A/31; 7A/23; 8A/50; 9A/31;
+ 10A/29; 3B/33; 4B/23
+\size default
+) We compute the rat behaviors from last ten session data set.
  A strategy was defined by a transition vector that reflects the probability
  of cooperation when the previous trials resulted in outcomes of R, T, S
  or P, respectively (
@@ -1145,7 +1154,7 @@ Means of reward.
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset CommandInset label
@@ -2868,6 +2877,90 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperation_mean_sem_last23session.png
+	lyxscale 40
+	width 60col%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\size scriptsize
+Evolution of cooperation choice from cooperator group data set with the
+ last 23 sessions.
+ The blue and continuous and thicker line is the means per session of the
+ group and the dotter line is the standard error of the mean (
+\begin_inset Formula $mean\pm sem=0.853\pm0.0681$
+\end_inset
+
+over the las ten sessions).
+ The vertical dotter line mark the pool of data that was used to analyse
+ the strategies adopted by the rats.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig_evolutionCoop"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In the figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_evolutionCoop"
+
+\end_inset
+
+ we show the means per session per rats and the means per sessions over
+ the group of rats with non-random strategy.
+ Since the number of sessions was different along the rats, we aligned the
+ last session of each rats and pooled the data from the 23 last sessions.
+ The means ans standard error of the means of last ten session, that represent
+ the plateau of the curve, was a
+\begin_inset Formula $mean\pm sem=0.853\pm0.0681$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
 \begin_inset Float figure
 wide false
 sideways false
@@ -2892,7 +2985,7 @@ status open
 \begin_layout Plain Layout
 
 \size scriptsize
-Mean of cooperation and transition vector
+Mean of cooperation and means of transition vector
 \end_layout
 
 \end_inset
@@ -2920,7 +3013,7 @@ name "fig_meanC_strategy"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -2973,6 +3066,7 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/g26897-6.png
 	lyxscale 35
@@ -3175,7 +3269,7 @@ reference "fig_2state_markovChain"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset space \hfill{}
@@ -3583,26 +3677,1222 @@ These results give evidence to conclude that the rats learned to solve the
  into the operant box.
 \end_layout
 
+\begin_layout Subsubsection
+Reversion
+\end_layout
+
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+
+\size scriptsize
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+
+\size scriptsize
+\begin_inset Graphics
+	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperation_mean_with_significant_reversion.png
+	lyxscale 35
+	width 45text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+
+\size scriptsize
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\size scriptsize
+Cooperation mean
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+
+\size scriptsize
+\begin_inset CommandInset label
+LatexCommand label
+name "fig1_REV_meansAnd significance-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+
+\size large
+\color red
+FALTA
+\size scriptsize
+\color inherit
+
+\begin_inset Graphics
+	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/mean_reward.png
+	lyxscale 35
+	width 45text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+
+\size scriptsize
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Reward mean 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+
+\size scriptsize
+\begin_inset CommandInset label
+LatexCommand label
+name "fig_REV_meanReward-1-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig1_REV_meansAnd significance-1"
+
+\end_inset
+
+)
+\series bold
+Mean and 
+\series default
+
+\begin_inset Formula $\chi{}^{2}$
+\end_inset
+
+
+\series bold
+test
+\series default
+: The rats with 95% of free feeding body weight played under a matrix pay-off
+ T=2, R=1,P=4
+\begin_inset Quotes erd
+\end_inset
+
+delay, S=8
+\begin_inset Quotes erd
+\end_inset
+
+delay against a TFT opponent.
+ We show means of the numbers of times rats chose the cooperate option (
+\begin_inset Formula $mean\pm s.e.m.$
+\end_inset
+
+).
+ The Asterix denote when the rat adopted a strategy that had significant
+ difference from chance strategy (
+\begin_inset Formula $\chi{}^{2}$
+\end_inset
+
+ goodness of fit test with bonferroni corrected, p>0.125).
+ The rats without significant difference did not surpass 0.5 probability
+ of cooperation.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_REV_meanReward-1-1"
+
+\end_inset
+
+) 
+\series bold
+Means of reward.
+
+\series default
+ Bar line shows the mean of obtained reward per session over the last 10
+ session (
+\begin_inset Formula $mean\pm s.e.m.$
+\end_inset
+
+).
+ The rats with random strategy (not chi-square significant) obtained the
+ lowest level of reward, below 75% of total reward.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "table_REV_meanAndstrategies-1"
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\size scriptsize
+We show the mean of cooperation and the probabilities of cooperation given
+ each outcomes.
+ The 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+goodness of fit with bonferroni correction was performed used a theorical
+ frecuency of 0.5.
+ The significance value show the subject that developed a specific strategy.
+ The subject underlined and in blue text color had significant different
+ respect random strategy.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="8">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+Mean
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Strategies
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+Subject
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+cooperation
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\begin_inset Formula $p(c|T)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\begin_inset Formula $p(c|R)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\begin_inset Formula $p(c|P)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\begin_inset Formula $p(c|S)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\begin_inset Formula $\chi_{bonferroni}^{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\begin_inset Formula $p<0.0{\color{red}}125$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size tiny
+\color blue
+3A
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\begin_inset Formula $0.787$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\begin_inset Formula $0.868$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size tiny
+\begin_inset Formula $0.786$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\begin_inset Formula $0.768$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\begin_inset Formula $107.99$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\color blue
+\begin_inset Formula $0.0000$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size tiny
+\color blue
+7A
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\begin_inset Formula $0.865$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\begin_inset Formula $0.886$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size tiny
+\begin_inset Formula $0.891$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\begin_inset Formula $0.714$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\begin_inset Formula $119.59$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\color blue
+\begin_inset Formula $1.6110e-12$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size tiny
+\color blue
+9A
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\begin_inset Formula $0.809$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\begin_inset Formula $0.657$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size tiny
+\begin_inset Formula $0.868$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\begin_inset Formula $0.545$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\begin_inset Formula $0.857$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\begin_inset Formula $57.95$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\color blue
+\begin_inset Formula $9.6839e-12$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size tiny
+\color blue
+10A
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\begin_inset Formula $0.644$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\begin_inset Formula $0.267$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size tiny
+\begin_inset Formula $0.908$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\begin_inset Formula $0.287$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\begin_inset Formula $0.571$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\begin_inset Formula $54.3$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\color blue
+\begin_inset Formula $0.39253$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+,
+\end_layout
+
+\begin_layout Standard
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/mean_cooperation_and_strategy_reversion.png
+	lyxscale 40
+	width 45col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\size scriptsize
+Mean of cooperation and means of transition vector
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig_REV_meanC_strategy-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/outcomeRate_overLevel_reversion.png
+	lyxscale 35
+	width 45col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\size scriptsize
+Outcomes rates over the last ten sessions.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig_REV_outcomes rate-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/markov_4estados_mean_reversion.png
+	lyxscale 35
+	width 40col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\size scriptsize
+Markov chain graph of four state
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig_REV_4state_markovChain-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/g33959.png
+	lyxscale 35
+	width 30col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Markov chain graph of two state
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig_REV_2state_markovChain-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_REV_meanC_strategy-1"
+
+\end_inset
+
+) Mean of cooperation over not random strategy rats (8 rats) was performed
+ and the measured is shown on the first magenta bar (
+\begin_inset Formula $mean=0.852$
+\end_inset
+
+ and 
+\begin_inset Formula $s.e.m.=\pm0.0482$
+\end_inset
+
+ ).
+ The next four green bars represent the mean strategy over the group and
+ each bar agree with the transition vector,
+\begin_inset Formula $v=[0.794,0.856,0.801,0.890]$
+\end_inset
+
 .
+ The asterisk indicates significant difference respect the half probability
+ of chose cooperation lever and we tested by 
+\begin_inset Formula $\chi{}^{2}$
+\end_inset
+
+ goodness of fit with theory frequency 0.5.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_REV_outcomes rate-1"
+
+\end_inset
+
+) The bar graph shows the outcomes rates and suggest that R outcomes had
+ very high incidence in the experiment over the last 10 sessions.
+ .
+ We found significant difference between outcomes (Friedman's ANOVA test
+ was performed with bonferroni correction (
+\begin_inset Formula $\alpha=0.0125,p>3.3e-5;\chi^{2}=23.4$
+\end_inset
+
+) and Multiple pairwise comparison's using Nemeyi's procedure ).
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_REV_4state_markovChain-1"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_REV_2state_markovChain-1"
+
+\end_inset
+
+) Graph of Markov chain of four and two state, in which the arrow represent
+ the transition probability between outcomes.
+ A blue arrow signalized when the subject chose cooperate lever given the
+ las outcome and a red arrow signalized when it chose defect lever.
+ The words mean temptation (T), mutual cooperation (R), punishment (P) and
+ sucker (S).
+ Pay atemption that the arrows width are proportional to the transition
+ probability.
+ 
 \end_layout
 
-\begin_layout Standard
-Diagrama de cadena de markov de ambos grupos y grafico de estrategias promedio.
- Tambien grafico de markov de cada sujeto IDEAL utilizados par el graf.
+\end_inset
+
+
 \end_layout
 
-\begin_layout Standard
-,
-\end_layout
+\end_inset
 
-\begin_layout Standard
-,
-\end_layout
 
-\begin_layout Standard
-,The figure XX show the graph of markov chain with probabilities of transition
- both groups
 \end_layout
 
 \begin_layout Section
@@ -3663,9 +4953,10 @@ Theorical subject statistics
 
 \begin_layout Standard
 \begin_inset Float figure
+placement h
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -3682,6 +4973,8 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
+
+\size scriptsize
 Graph of transition probabilities.
 \end_layout
 
@@ -3705,6 +4998,7 @@ Non cooperator subject Statistics
 
 \begin_layout Standard
 \begin_inset Float figure
+placement h
 wide false
 sideways false
 status open
@@ -3713,7 +5007,7 @@ status open
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -3730,6 +5024,8 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
+
+\size scriptsize
 Probabilities of cooperate given each outcomes
 \end_layout
 
@@ -3757,7 +5053,7 @@ name "fig_nocoop_statistic"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -3774,7 +5070,9 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Graph of markov chain per subject
+
+\size scriptsize
+Graph of markov transition probabilities per subject
 \end_layout
 
 \end_inset
@@ -3801,6 +5099,8 @@ name "fig_nocoop_markov"
 \begin_inset Caption
 
 \begin_layout Plain Layout
+
+\size scriptsize
 Statistic for the removed subject.
  These subject had a random behavior because.
  
@@ -3835,6 +5135,103 @@ reference "fig_nocoop_markov"
  closed to 50%.
  
 \end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Cooperatos statistics
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/coop_statistic.png
+	lyxscale 20
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Probabilities of cooperate given each outcomes for cooperator subjects (T:tempta
+tion to cheat; R:reward when both cooperated; P:punishment's payoff when
+ neither cooperate;S:sucket's payoff that an altruist gets when cheated).
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig_coop_statistic"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/coop_markov.png
+	lyxscale 20
+	width 95col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Graph of markov transition probabilities per subjects
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig_coop_markov"
 
 \end_inset
 

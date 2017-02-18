@@ -85,6 +85,7 @@ for i=_vSujetos
   _medianaXsujeto(i)=median(_promediosC(primero:ultimo,i));
   _stdXsujeto(i)=sem(_promediosC(primero:ultimo,i));
 endfor
+
 % MEDIA 
 hhh=figure; 
 h=errorbar(1:length(_vSujetos),_mediaXsujeto(_vSujetos), _stdXsujeto(_vSujetos),'*c');

@@ -53,7 +53,7 @@ hh=xlabel("Subjects");set(hh, "fontsize", 14);
 axis([0 length(_vSujetos)+1 0 1.15])
 aux22=_mediaXsujeto(_vSujetos)'+_stdXsujeto(_vSujetos)'+0.05;
 
-t=text(-0.15+[1:length(aux22)]', aux22, {"* ";"* ";"* "; "* "},"fontsize",20);
+t=text(-0.05+[1:length(aux22)]', aux22, {"* ";"* ";"* "; "* "},"fontsize",20);
 %t=text([1:(4-1)/(length(_sujetosCooperadores)-1):4], -.08*ones(1,length(_sujetosCooperadores)), _txtSujetos(_sujetosCooperadores,:),"fontsize",14);
 hold off
 name=strcat("figura_iPD_1_2_9s_13s/fig_finales/cooperation_mean_with_significant_reversion",".png");

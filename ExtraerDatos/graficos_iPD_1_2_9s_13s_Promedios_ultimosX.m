@@ -118,7 +118,7 @@ for j=inicio:fin
   _nada=[_nada; _nadaAux];
 endfor
 
-_criterio=.50;
+%_criterio=.50;
 graficos_iPD_1_2_9s_13s_12Ratas_medias_y_medianas % se obtienen los sujetos que superan el .75 porciento de cooperación
 
 %%%%%  COOPERACION ESTABLE - PLATEAU 

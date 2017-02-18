@@ -36,6 +36,8 @@ todo.exp54=exp54;todo.exp55=exp55;
 todo.exp56=exp56;todo.exp57=exp57;todo.exp58=exp58;
 
 _txtSujetos=["1A";"2A";"3A";"4A";"5A";"6A";"7A";"8A";"9A";"10A";"3B";"4B"];
+_colores=["--+k";"--om";"--*g";"--.r";"--xb";"--sc";"--^m";"--vg";"-->b";"--<c";"--pr";"--hr"];
+ptrn={"1A";"2A";"3A";"4A";"5A";"6A";"7A";"8A";"9A";"10A";"3B";"4B"};
 
 % PORCENTAJE DE COOPERACION
 _nSujetos=12;
@@ -122,7 +124,9 @@ endfor
 inicioAux=inicio;
 finAux=fin;
 % PLOT sujeto uno x uno
-for i=1:_nSujetos
+figure();
+hold on;
+for i=[1 3 7 8 9 10 11 12]
   if i==1||i==3||i==4||i==5||i==7||i==12
     finAux=23;
   elseif i==10
@@ -135,13 +139,23 @@ for i=1:_nSujetos
     finAux=fin;
   endif
   
-  figure()
-  plot([inicioAux:finAux],_promediosC(inicioAux:finAux,i),'--ok');
-  xlabel("n de sesiones");
-  ylabel("% de cooperacion");
-  title("Cooperacion en iPD");
-  legend(_txtSujetos(i,:));
-  grid on;
+  %figure()
+  h=plot([inicioAux:finAux],_promediosC(inicioAux:finAux,i),_colores(i,:));set (h, "linewidth", 1);
+  
+  
+  
 endfor
+plot(_media);
+xlabel("n de sesiones");
+ylabel("% de cooperacion");
+title("Cooperacion en iPD");
+legend(_txtSujetos(:,:));
+grid on;
+hold off;
 
 
+
+
+
+
+%plot(_promediosC(:,[1 3 7 9 10 11 12]),'--ok');

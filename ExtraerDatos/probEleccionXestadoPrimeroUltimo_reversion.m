@@ -18,7 +18,7 @@ controlFallas=zeros(1,_nSujetos);
 auxFallas=1;
 %_ultimosX=10;
 for i=_vSujetos
-  ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
+  ultimo=_iniSujExp(i)-1+nfields(matricesQxExp.(indiceSujeto(i,:)));
   primero=ultimo-_ultimosX+1;
   for j=primero:ultimo
     for k=_trialIni:_trialFin  % nºtrials x Exp. 
@@ -101,11 +101,20 @@ endfor
 % promediando las ultimas 10 sesiones por sujetos
 probxExpTotalN=zeros(4,2,_nSujetos);
 probxExpTotal=zeros(4,2,_nSujetos);
+probxExpN=[];
 for i=_vSujetos
-  ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
+  ultimo=_iniSujExp(i)-1+nfields(matricesQxExp.(indiceSujeto(i,:)))
   primero=ultimo-_ultimosX+1;
   for j=primero:ultimo
-    probxExpN.(indiceSujeto(i,:)).(indice(j+1,:))=probxExp.(indiceSujeto(i,:)).(indice(j+1,:))./sum(probxExp.(indiceSujeto(i,:)).(indice(j+1,:)),2);
+    for l=1:4
+      if sum(probxExp.(indiceSujeto(i,:)).(indice(j+1,:)),2)(l)!=0
+           %sum(probxExp.(indiceSujeto(i,:)).(indice(j+1,:)),2)(l)
+        probxExpN.(indiceSujeto(i,:)).(indice(j+1,:))(l,:)=probxExp.(indiceSujeto(i,:)).(indice(j+1,:))(l,:)./sum(probxExp.(indiceSujeto(i,:)).(indice(j+1,:)),2)(l);
+      else
+        probxExpN.(indiceSujeto(i,:)).(indice(j+1,:))(l,:)=[0 0];
+      endif
+    endfor
+    %probxExpN.(indiceSujeto(i,:)).(indice(j+1,:))=probxExp.(indiceSujeto(i,:)).(indice(j+1,:))./sum(probxExp.(indiceSujeto(i,:)).(indice(j+1,:)),2);
     probxExpTotalN(:,:,i)=probxExpTotalN(:,:,i)+probxExpN.(indiceSujeto(i,:)).(indice(j+1,:));
     probxExpTotal(:,:,i)=probxExpTotal(:,:,i)+probxExp.(indiceSujeto(i,:)).(indice(j+1,:));
   endfor
@@ -133,7 +142,7 @@ endfor
 
 probEleccionSem=zeros(size(probxExpTotal));
 for i=_vSujetos
-  ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
+  ultimo=_iniSujExp(i)-1+nfields(matricesQxExp.(indiceSujeto(i,:)));
   primero=ultimo-_ultimosX+1;
   aux1=[];
   aux2=[];
@@ -162,7 +171,7 @@ for i=_vSujetos
   t=text([1:4], -.04*ones(1,4), {"P(c|T)"; "P(c|R)";"P(c|P)";"P(c|S)"},"fontsize",14);
   axis([0 5 0 1]);
   hold off;grid on;  
-  name=strcat("figura_iPD_1_2_9s_13s/fig_finales/prob_C_giveno_Outcome/",_txtSujetos(i,:));
+  name=strcat("figura_iPD_1_2_9s_13s/fig_finales/prob_C_giveno_Outcome/",strcat(_txtSujetos(i,:),"_reversion"));
   name=strcat(name,".png");
   print(hhh, name);
 endfor

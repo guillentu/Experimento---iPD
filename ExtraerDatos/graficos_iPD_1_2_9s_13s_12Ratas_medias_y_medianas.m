@@ -123,3 +123,9 @@ axis([0 13 0 1.05])
 hold off
 name=strcat("figura_iPD_1_2_9s_13s/fig_finales/cooperation_median",".png");
 print(hhh, name);
+
+
+%%%  la media y sem de las ultimas 10 sesiones del vectos de media por sesion del grupo de cooperadores
+mean(_media_EndAtached(length(_media_EndAtached)-9:end))
+%ans =  0.85286
+mean(_semTodos_EndAttached(length(_semTodos_EndAttached):end))

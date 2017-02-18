@@ -69,7 +69,10 @@ _trialFin=30;
 inicio=01;
 fin=50;
 datos=zeros(2,fin);
-
+            %R S T P
+_vRefuerzos=[1 0 2 0];
+_vDelay4eat=[5 13 5 9];%[cc dc cd dd]
+_criterio=0.5;
 % Testeo ------------------------------
 %for j=inicio:fin
 %  if j<24
@@ -299,14 +302,14 @@ probD=zeros(1,_nSujetos);
 probD=1-_mediaXsujeto;
 
 N=1; % numero de trials
-_vRefuerzos=[1 2 0 0];
+%_vRefuerzos=[1 2 0 0];
 _alimento=zeros(1,_nSujetos); %                      
 for i=1:_nSujetos   % vec [a b;c d] -> [a c b d] = [cc dc cd dd]
   _alimento(i)=N*_vRefuerzos*(vec(QQTotmarkov(:,:,i)).*[probC(i);probD(i);probC(i);probD(i)]);
   % VER meanFoodXsuj desde cantidad  de alimento
 endfor
 % vec(QQTotmarkov(:,:,1)) y reshape(ans,2,2)
-_vDelay4eat=[0 0 8 4];
+%_vDelay4eat=[0 0 8 4];
 _delay4eat=zeros(1,_nSujetos);
 for i=1:_nSujetos   % vec [a b;c d] -> [a c b d] = [c|c c|d d|c d|d]
   _delay4eat(i)=30*_vDelay4eat*(vec(QQTotmarkov(:,:,i)).*[probC(i);probD(i);probC(i);probD(i)]);
@@ -593,7 +596,7 @@ x = 1:100;
 y = 1:100;
 scatter(_alimento,_delay4eat,20, _mediaXsujeto,"filled");
 
-_criterio=.5;
+%_criterio=.5;
 graficos_iPD_1_2_9s_13s_12Ratas_medias_y_medianas % se obtienen los sujetos que superan el .75 porciento de cooperación
 _sujetosCooperadores=find(_mediaXsujeto>_criterio); % indice de sujetos que pasaron el criterios 
 
@@ -610,6 +613,36 @@ for i=_sujetosNocooperadores
 endfor
 QmarkovmediaD=QmarkovmediaD./sum(QmarkovmediaD,2);
 
+
+
+%%%%% Calculo de coeficiente de preferencia  %%%%%%%%%%%%%%%%%%%%%%%%%
+
+_selfish=foodMedia./_timeOutMedia;
+
+_selfishInf=_alimento.*_delay4eat;
+
+_selfishtheor=_idealSujeto(1,:)*30./_idealSujeto(2,:);
+
+hhh=figure;%  {"switch CD"; "all C";      "switch CCDD";  "half C";            "switch 3Cx3D";   "switch CCD";  "switch CCCD"}
+hold on;
+scatter(_selfish,ones(1,_nSujetos),20,"filled");
+t=text(-0.002+_selfish,0.013+ones(1,_nSujetos),_txtSujetos(:,:),"fontsize",14);
+h=scatter(_selfishtheor([1 2 3 5 6]),ones(1,length(_selfishtheor([1 2 3 5 6]))),25,'r');
+set(h, "linewidth", 2);  
+t=text(-0.005+_selfishtheor([1 2 3 5 6]),-0.013+ones(1,length(_selfishtheor([1 2 3 5 6]))),
+                                       {"CD","AllC","2Cx2D","3Cx3D" ,"CCD"},"fontsize",12);
+t=text([0.26 0.27 0.26 0.27],[1.055 1.055 1.045 1.045],
+       {num2str(_vRefuerzos(1));num2str(_vRefuerzos(2));num2str(_vRefuerzos(3));num2str(_vRefuerzos(4))},"fontsize",13);                                     
+t=text(0.005+[0.26 0.27 0.26 0.27],-0.005+[1.055 1.055 1.045 1.045],
+       {num2str(_vDelay4eat(1));num2str(_vDelay4eat(2));num2str(_vDelay4eat(3));num2str(_vDelay4eat(4))},"fontsize",13);
+hold off;
+ylabel("");
+xlabel("Coefficient of preference");
+
+
+name=strcat("figura_iPD_1_2_9s_13s/fig_finales/coefficientOfPreference",_txtSujetos(i,:));
+name=strcat(name,".png");
+print(hhh, name);
 
 
 

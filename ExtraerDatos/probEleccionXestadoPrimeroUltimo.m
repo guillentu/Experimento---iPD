@@ -105,7 +105,14 @@ for i=_vSujetos
   ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
   primero=ultimo-_ultimosX+1;
   for j=primero:ultimo
-    probxExpN.(indiceSujeto(i,:)).(indice(j+1,:))=probxExp.(indiceSujeto(i,:)).(indice(j+1,:))./sum(probxExp.(indiceSujeto(i,:)).(indice(j+1,:)),2);
+    for l=1:4
+      if sum(probxExp.(indiceSujeto(i,:)).(indice(j+1,:)),2)(l)!=0
+        probxExpN.(indiceSujeto(i,:)).(indice(j+1,:))(l,:)=probxExp.(indiceSujeto(i,:)).(indice(j+1,:))(l,:)./sum(probxExp.(indiceSujeto(i,:)).(indice(j+1,:)),2)(l);
+      else
+        probxExpN.(indiceSujeto(i,:)).(indice(j+1,:))(l,:)=[0 0];
+      endif
+    endfor
+    %probxExpN.(indiceSujeto(i,:)).(indice(j+1,:))=probxExp.(indiceSujeto(i,:)).(indice(j+1,:))./sum(probxExp.(indiceSujeto(i,:)).(indice(j+1,:)),2);
     probxExpTotalN(:,:,i)=probxExpTotalN(:,:,i)+probxExpN.(indiceSujeto(i,:)).(indice(j+1,:));
     probxExpTotal(:,:,i)=probxExpTotal(:,:,i)+probxExp.(indiceSujeto(i,:)).(indice(j+1,:));
   endfor
