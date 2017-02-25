@@ -98,23 +98,23 @@ xlabel("n de sesiones");ylabel("% de cooperacion");title("Cooperacion en iPD");
 legend(_txtSujetos(3,:),_txtSujetos(7,:),_txtSujetos(10,:),_txtSujetos(9,:));
 grid on;
 
-figure();
+figure;
 plot([inicio:fin],_promediosC(3,:),'--ok');
 xlabel("n de sesiones");ylabel("% de cooperacion");title("Cooperacion en iPD");
 legend(_txtSujetos(3,:));grid on;
-figure();
+figure;
 plot([inicio:fin],_promediosC(7,:),'--ob');
 xlabel("n de sesiones");ylabel("% de cooperacion");title("Cooperacion en iPD");
 legend(_txtSujetos(7,:));grid on;
-figure();
+figure;
 plot([inicio:42],_promediosC(12,inicio:42),'--or');
 xlabel("n de sesiones");ylabel("% de cooperacion");title("Cooperacion en iPD");
 legend(_txtSujetos(12,:));grid on;
-figure();
+figure;
 plot([7:24],_promediosC(10,[7:24]),'--oc');
 xlabel("n de sesiones");ylabel("% de cooperacion");title("Cooperacion en iPD");
 legend(_txtSujetos(10,:));grid on;
-figure();
+figure;
 plot([9:fin], _promediosC(9,[9:fin]),'--om');
 xlabel("n de sesiones");ylabel("% de cooperacion");title("Cooperacion en iPD");
 legend(_txtSujetos(9,:));grid on;
@@ -124,10 +124,12 @@ legend(_txtSujetos(9,:));grid on;
 % Promedio de cooperacion sin outlayers
 
 
-indiceSujeto=[];
-for i=1:_nSujetos
-  indiceSujeto=[indiceSujeto;strcat("Q",mat2str(i))]
-endfor
+%indiceSujeto=[];
+%for i=1:_nSujetos
+%  indiceSujeto=[indiceSujeto(i,:);strcat("Q",mat2str(i))];
+%endfor
+indiceSujeto=["Q01";"Q02";"Q03";"Q04";"Q05";"Q06";"Q07";"Q08";"Q09";"Q10";"Q11";"Q12"];
+
 % Probabilidades de transicion de estados
 matricesQxExp=[];
 matricesQaux=[];
@@ -289,19 +291,21 @@ Qvar=var(Q,0,3);
 
 T(:,:)=T(:,:)/length(_trialIni:_trialFin);C(:,:)=C(:,:)/length(_trialIni:_trialFin);P(:,:)=P(:,:)/length(_trialIni:_trialFin);S(:,:)=S(:,:)/length(_trialIni:_trialFin);
 % una por una
-for i=_vSujetos
-  figure();
-  plot([inicio:fin],T(i,:),'--ob',[inicio:fin],C(i,:),'--or',[inicio:fin],P(i,:),'--oc',[inicio:fin],S(i,:),'--om');
-  xlabel("n de sesiones");
-  ylabel("% Tasa de comportamientos");
-  title(strcat("Estrategias probabilistica en iPD: ",_txtSujetos(i,:)));
-  legend("T=D-C","C=C-C","P=D-D","S=C-D");
-  grid on;
-  %name=strcat(_txtSujetos(i,:),".pdf");
-  %name=strcat("temp_figs/tasa_TRPS_",name);
-  %print -deps name;
-  % VER saveas() SAVEAS
-endfor
+
+%for i=_vSujetos
+%  figure;
+%  plot([inicio:fin],T(i,:),'--ob',[inicio:fin],C(i,:),'--or',
+%       [inicio:fin],P(i,:),'--oc',[inicio:fin],S(i,:),'--om');
+%  xlabel("n de sesiones");
+%  ylabel("% Tasa de comportamientos");
+%  title(strcat("Estrategias probabilistica en iPD: ",_txtSujetos(i,:)));
+%  legend("T=D-C","C=C-C","P=D-D","S=C-D");
+%  %grid on;
+%  %name=strcat(_txtSujetos(i,:),".pdf");
+%  %name=strcat("temp_figs/tasa_TRPS_",name);
+%  %print -deps name;
+%  % VER saveas() SAVEAS
+%endfor
 
 %%%%%%%%%%%%%%%%%%%%%%%% Copy MArkov %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 TT=T;CC=C;
@@ -315,7 +319,7 @@ for i=1:_nSujetos % Ceros para todos
 endfor
 %   Promedio total --------------------------------------
 for i=_vSujetos
-  ultimo=_iniSujExp(i)-1+nfields(matricesQxExp.(indiceSujeto(i,:)));
+  ultimo=_iniSujExp(i)-1+numfields(matricesQxExp.(indiceSujeto(i,:)));
   primero=ultimo-_ultimosX+1;
   for v=primero:ultimo % matricesQ borrada arriba
         matricesQ.(indiceSujeto(i,:))=matricesQ.(indiceSujeto(i,:))+matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:));
@@ -353,7 +357,7 @@ endfor
 QxExp_ante=matricesQxExp;
 indQ=[];
 for i=_vSujetos
-  for v=_iniSujExp(i):(_iniSujExp(i)-1+nfields(matricesQxExp.(indiceSujeto(i,:)))) % experimentos
+  for v=_iniSujExp(i):(_iniSujExp(i)-1+numfields(matricesQxExp.(indiceSujeto(i,:)))) % experimentos
     for j=1:4 %Estados TRPS
       if sum(matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))(j,:))!=0
          matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))(j,:)=matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))(j,:)/sum(matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))(j,:));
@@ -364,7 +368,7 @@ for i=_vSujetos
 endfor
 Q2=zeros(4,4,_nSujetos);
 for i=_vSujetos
-  ultimo=_iniSujExp(i)-1+nfields(matricesQxExp.(indiceSujeto(i,:)));
+  ultimo=_iniSujExp(i)-1+numfields(matricesQxExp.(indiceSujeto(i,:)));
   primero=ultimo-_ultimosX+1;
   for v=primero:ultimo % matricesQ borrada arriba
         Q2(:,:,i)=Q2(:,:,i)+(matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))/length(primero:ultimo));
@@ -384,7 +388,7 @@ endfor
 stdQ=[];
 for i=_vSujetos
   aux=[];
-  ultimo=_iniSujExp(i)-1+nfields(matricesQxExp.(indiceSujeto(i,:)));
+  ultimo=_iniSujExp(i)-1+numfields(matricesQxExp.(indiceSujeto(i,:)));
   primero=ultimo-_ultimosX+1;
   for j=primero:ultimo % experimentos
     aux=[aux;vec(matricesQxExp.(indiceSujeto(i,:)).(indice(j+1,:))')'];
@@ -403,7 +407,7 @@ T2(:,:)=T(:,:);R2(:,:)=C(:,:);P2(:,:)=P(:,:);S2(:,:)=S(:,:);
 %%%%%%%%%%%%%%%%%%%%%%%%% 
 %% Frecuencia de ESTADOS ULTIMOS 10 SESIONES - POR SUJETOS
 %for i=1:_nSujetos
-%  ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
+%  ultimo=numfields(matricesQxExp.(indiceSujeto(i,:)));
 %  primero=ultimo-_ultimosX+1;
 %  figure()
 %  plot([primero:ultimo],T2(i,primero:ultimo),'--ob',[primero:ultimo],R2(i,primero:ultimo),'--or',[primero:ultimo],P2(i,primero:ultimo),'-->k',[primero:ultimo],S2(i,primero:ultimo),'--.m');
@@ -419,7 +423,7 @@ T_mean=zeros(1,_nSujetos);R_mean=zeros(1,_nSujetos);P_mean=zeros(1,_nSujetos);S_
 T_median=zeros(1,_nSujetos);R_median=zeros(1,_nSujetos);P_median=zeros(1,_nSujetos);S_median=zeros(1,_nSujetos);
 T_std=zeros(1,_nSujetos);R_std=zeros(1,_nSujetos);P_std=zeros(1,_nSujetos);S_std=zeros(1,_nSujetos);
 for i=_vSujetos
-  ultimo=_iniSujExp(i)-1+nfields(matricesQxExp.(indiceSujeto(i,:)));
+  ultimo=_iniSujExp(i)-1+numfields(matricesQxExp.(indiceSujeto(i,:)));
   primero=ultimo-_ultimosX+1;
   T_mean(i)=mean(T2(i,primero:ultimo),2);R_mean(i)=mean(R2(i,primero:ultimo),2);P_mean(i)=mean(P2(i,primero:ultimo),2);S_mean(i)=mean(S2(i,primero:ultimo),2);
   T_median(i)=median(T2(i,primero:ultimo),2);R_median(i)=median(R2(i,primero:ultimo),2);P_median(i)=median(P2(i,primero:ultimo),2);S_median(i)=median(S2(i,primero:ultimo),2);
@@ -465,25 +469,29 @@ vals_std=[(T_std(_sujetosCooperadores));
           (R_std(_sujetosCooperadores));
           (P_std(_sujetosCooperadores));
           (S_std(_sujetosCooperadores))];
-      
+
+dd=friedmanGuille(vals,0.05,0);
+dd.diff    
 %rangos=ranks(vals,1)';
 
-vals2=[(T_mean(_sujetosNocooperadores));
-      (R_mean(_sujetosNocooperadores));
-      (P_mean(_sujetosNocooperadores));
-      (S_mean(_sujetosNocooperadores))];
-           
-vals_std2=[(T_std(_sujetosNocooperadores));
-          (R_std(_sujetosNocooperadores));
-          (P_std(_sujetosNocooperadores));
-          (S_std(_sujetosNocooperadores))];
+if (length(_sujetosNocooperadores)>1)
+  vals2=[(T_mean(_sujetosNocooperadores));
+        (R_mean(_sujetosNocooperadores));
+        (P_mean(_sujetosNocooperadores));
+        (S_mean(_sujetosNocooperadores))];
+             
+  vals_std2=[(T_std(_sujetosNocooperadores));
+            (R_std(_sujetosNocooperadores));
+            (P_std(_sujetosNocooperadores));
+            (S_std(_sujetosNocooperadores))];
 
-%vals2=30.*[(T_mean(_sujetosCooperadores));(R_mean(_sujetosCooperadores));(P_mean(_sujetosCooperadores));(S_mean(_sujetosCooperadores))]
-%myfriedman(vals2')
-dd=friedmanGuille(vals,0.05,0);
-dd.diff
-%ff=friedmanGuille(vals2,0.05,1);
-%ff.diff
+  %vals2=30.*[(T_mean(_sujetosCooperadores));(R_mean(_sujetosCooperadores));(P_mean(_sujetosCooperadores));(S_mean(_sujetosCooperadores))]
+  %myfriedman(vals2')
+
+  ff=friedmanGuille(vals2,0.05,1);
+  
+  ff.diff
+endif
 % promediar las tasas de cooperacion y tasas de estados de los animales que superaron el criterio
 _mediaT=mean(T_mean(_sujetosCooperadores));
 _mediaR=mean(R_mean(_sujetosCooperadores));
@@ -518,30 +526,32 @@ hold off
 name=strcat("figura_iPD_1_2_9s_13s/fig_finales/outcomeRate_overLevel_reversion",".png");
 print(hhh, name);
 
-_mediaT=mean(T_mean(_sujetosNocooperadores));
-_mediaR=mean(R_mean(_sujetosNocooperadores));
-_mediaP=mean(P_mean(_sujetosNocooperadores));
-_mediaS=mean(S_mean(_sujetosNocooperadores));
-_semT=sem(T_mean(_sujetosNocooperadores));
-_semR=sem(R_mean(_sujetosNocooperadores));
-_semP=sem(P_mean(_sujetosNocooperadores));
-_semS=sem(S_mean(_sujetosNocooperadores));
-hh=figure;
-h=errorbar(1,_mediaT, _semT,'*r', 2,_mediaR,_semR,'*b', 3,_mediaP, _semP,'*m', 4,_mediaS, _semS,'*c');
-set (h, "linewidth", 3);
-%xlabel("Estados");
-ylabel("% outcome rate","fontsize", 14);
-title(strcat("Incidence Rate of all outcome. Down level C: ",num2str(_criterio*100),"% de C"),"fontsize", 14);
-h=legend("T=D-C","R=C-C","P=D-D","S=C-D");set(h, "fontsize", 14);
-hold on;
-bar(1:4,[_mediaT,_mediaR,_mediaP,_mediaS]);
-axis ("tic[yz]", "labely[xyz]");
-t=text([1:4], -.04*ones(1,4), {"T"; "R";"P";"S"},"fontsize",14);
-t=text((4/2), -.08*ones(1,length(_sujetosNocooperadores)), _txtSujetos(_sujetosNocooperadores,:),"fontsize",13);
-axis([0 5 0 1]);
-hold off;
-name=strcat("figura_iPD_1_2_9s_13s/fig_finales/outcomeRate_downLevel_reversion",".png");
-print(hh, name);
+if (length(_sujetosNocooperadores)>1)
+  _mediaT=mean(T_mean(_sujetosNocooperadores));
+  _mediaR=mean(R_mean(_sujetosNocooperadores));
+  _mediaP=mean(P_mean(_sujetosNocooperadores));
+  _mediaS=mean(S_mean(_sujetosNocooperadores));
+  _semT=sem(T_mean(_sujetosNocooperadores));
+  _semR=sem(R_mean(_sujetosNocooperadores));
+  _semP=sem(P_mean(_sujetosNocooperadores));
+  _semS=sem(S_mean(_sujetosNocooperadores));
+  hh=figure;
+  h=errorbar(1,_mediaT, _semT,'*r', 2,_mediaR,_semR,'*b', 3,_mediaP, _semP,'*m', 4,_mediaS, _semS,'*c');
+  set (h, "linewidth", 3);
+  %xlabel("Estados");
+  ylabel("% outcome rate","fontsize", 14);
+  title(strcat("Incidence Rate of all outcome. Down level C: ",num2str(_criterio*100),"% de C"),"fontsize", 14);
+  h=legend("T=D-C","R=C-C","P=D-D","S=C-D");set(h, "fontsize", 14);
+  hold on;
+  bar(1:4,[_mediaT,_mediaR,_mediaP,_mediaS]);
+  axis ("tic[yz]", "labely[xyz]");
+  t=text([1:4], -.04*ones(1,4), {"T"; "R";"P";"S"},"fontsize",14);
+  t=text((4/2), -.08*ones(1,length(_sujetosNocooperadores)), _txtSujetos(_sujetosNocooperadores,:),"fontsize",13);
+  axis([0 5 0 1]);
+  hold off;
+  name=strcat("figura_iPD_1_2_9s_13s/fig_finales/outcomeRate_downLevel_reversion",".png");
+  print(hh, name);
+endif
 
 _mediaT=mean(T_mean(_sujetosCooperadores));
 _mediaR=mean(R_mean(_sujetosCooperadores));
@@ -563,7 +573,8 @@ _stdS=std(S_mean(_sujetosCooperadores));
 % Se utiliza la distribucion chi 2 para comparar los valores criticos 
 % se testea la desviación de las probabilidad de eleccion dado un estado respecto a un ditribucion uniforme
 % REQUIERE LAS PROB de COOPERAR DADO LOS DIFERENTES ESTADOS
-probEleccionXestadoPrimeroUltimo_reversion;
+%probEleccionXestadoPrimeroUltimo_reversion;
+probCXestadoReversion;
 % Se testea que las probabilidades indiciduales sobre cada sujeto es diferente del azar
 % Prob. P(c|X) -> teorica = n_total_en_X / 2. La Frec Teoria se calcula como la suma de los casos de elección de C y D cuando caen 
 % en un determinado X.  
@@ -598,22 +609,24 @@ t=text([1:4], -.04*ones(1,4), {"T"; "R";"P";"S"},"fontsize",14);
 hold off;
 axis([0 5 0 1]);
 
-figure;
-for i=_sujetosNocooperadores
-  hold on;
-  h=plot(probEleccion(:,1,i),_colores2(i,:), "markersize",12,"markerfacecolor",'none', "linewidth", 2);
-  set(h, "linewidth", 2);       
-endfor
-plot([.5 .5 .5 .5],"--r");
-set(h, "linewidth", 2);  
-hh=legend(_txtSujetos(_sujetosNocooperadores,:));set(hh,"fontsize",12);
-%xlabel("T=1 --- R=2 --- P=3 --- S=4");
-axis ("tic[yz]", "labely[xyz]");
-hh=ylabel("P(C|X)", "fontsize", 13);
-title("Probability of Cooperation after outcome - Down Level", "fontsize", 14);
-t=text([1:4], -.04*ones(1,4), {"T"; "R";"P";"S"},"fontsize",14);
-axis([0 5 0 1]);
-hold off;
+if (_sujetosNocooperadores>0)
+  figure;
+  for i=_sujetosNocooperadores
+    hold on;
+    h=plot(probEleccion(:,1,i),_colores2(i,:), "markersize",12,"markerfacecolor",'none', "linewidth", 2);
+    set(h, "linewidth", 2);       
+  endfor
+  plot([.5 .5 .5 .5],"--r");
+  set(h, "linewidth", 2);  
+  hh=legend(_txtSujetos(_sujetosNocooperadores,:));set(hh,"fontsize",12);
+  %xlabel("T=1 --- R=2 --- P=3 --- S=4");
+  axis ("tic[yz]", "labely[xyz]");
+  hh=ylabel("P(C|X)", "fontsize", 13);
+  title("Probability of Cooperation after outcome - Down Level", "fontsize", 14);
+  t=text([1:4], -.04*ones(1,4), {"T"; "R";"P";"S"},"fontsize",14);
+  axis([0 5 0 1]);
+  hold off;
+endif
 % -- end ------------------------------------
 
 % PROBABILIDAD DE COOPERAR DADO CADA ESTADOS
@@ -661,21 +674,22 @@ for j=1:4
   probEleccionSem(j,:,1)=sem(aux);
 endfor
 
-for i=_sujetosNocooperadores
-  probEleccionMean(:,:,2)+=probEleccion(:,:,i);
-endfor
-probEleccionMean(:,:,2)=probEleccionMean(:,:,2)./sum(probEleccionMean(:,:,2),2);
-aux=[];
-for j=1:4
-  aux=[];
+if (_sujetosNocooperadores>0)
   for i=_sujetosNocooperadores
-    if probEleccion(j,1,i)!=0 || probEleccion(j,2,i)!=0
-      aux=[aux; probEleccion(j,:,i)];
-    endif
+    probEleccionMean(:,:,2)+=probEleccion(:,:,i);
   endfor
-  probEleccionSem(j,:,2)=sem(aux);
-endfor
-
+  probEleccionMean(:,:,2)=probEleccionMean(:,:,2)./sum(probEleccionMean(:,:,2),2);
+  aux=[];
+  for j=1:4
+    aux=[];
+    for i=_sujetosNocooperadores
+      if probEleccion(j,1,i)!=0 || probEleccion(j,2,i)!=0
+        aux=[aux; probEleccion(j,:,i)];
+      endif
+    endfor
+    probEleccionSem(j,:,2)=sem(aux);
+  endfor
+endif
 %% CHI 2 %%%%%%%%%%%%%%%%%%%%%%
 frec_teo=100*[.5];%                   |-> 1=cooperadores y 2=No_cooperadores
 chi_2_coop= (100.*probEleccionMean(:,1,1)-frec_teo).^2./frec_teo + (100.*probEleccionMean(:,2,1)-frec_teo).^2./frec_teo
@@ -704,23 +718,24 @@ chi_2_nocoop=(100.*probEleccionMean(:,1,2)-frec_teo).^2./frec_teo + (100.*probEl
 %aa(pasan==1)
 %%%%%%%%%%%%%%%%%%%%%%%%
 
-
-figure;
-h=errorbar([1:4],probEleccionMean(:,1,2),probEleccionSem(:,1,2),'*k');
-hold on;set(h, "linewidth", 2);     
-h=bar([1:4],probEleccionMean(:,1,2),'facecolor', 'g', 'edgecolor','b', "linewidth", 2);
-h=plot([0:5],[.5 .5 .5 .5 .5 .5],"--r");
-axis ("tic[yz]", "labely[xyz]");
-set(h, "linewidth", 2);  
-legend("SEM","MEAN","Half prob");
-%hh=xlabel("T=1 --- R=2 --- P=3 --- S=4");set(hh, "fontsize", 14);
-hh=ylabel("P(C|X)");set(hh, "fontsize", 14);
-hh=title("Probability of Cooperation after outcome - Down Level");set(hh, "fontsize", 14);
-axis ("tic[yz]", "labely[xyz]");
-t=text([1:4], -.04*ones(1,4), {"T"; "R";"P";"S"},"fontsize",14);
-t=text([2.5], -.08*ones(1,length(_sujetosNocooperadores)), _txtSujetos(_sujetosNocooperadores,:),"fontsize",14);
-axis([0 5 0 1]);
-hold off;grid on;
+if (_sujetosNocooperadores>0)
+  figure;
+  h=errorbar([1:4],probEleccionMean(:,1,2),probEleccionSem(:,1,2),'*k');
+  hold on;set(h, "linewidth", 2);     
+  h=bar([1:4],probEleccionMean(:,1,2),'facecolor', 'g', 'edgecolor','b', "linewidth", 2);
+  h=plot([0:5],[.5 .5 .5 .5 .5 .5],"--r");
+  axis ("tic[yz]", "labely[xyz]");
+  set(h, "linewidth", 2);  
+  legend("SEM","MEAN","Half prob");
+  %hh=xlabel("T=1 --- R=2 --- P=3 --- S=4");set(hh, "fontsize", 14);
+  hh=ylabel("P(C|X)");set(hh, "fontsize", 14);
+  hh=title("Probability of Cooperation after outcome - Down Level");set(hh, "fontsize", 14);
+  axis ("tic[yz]", "labely[xyz]");
+  t=text([1:4], -.04*ones(1,4), {"T"; "R";"P";"S"},"fontsize",14);
+  t=text([2.5], -.08*ones(1,length(_sujetosNocooperadores)), _txtSujetos(_sujetosNocooperadores,:),"fontsize",14);
+  axis([0 5 0 1]);
+  hold off;grid on;
+endif
 
 figure;
 h=errorbar([1:4],probEleccionMean(:,1,1),probEleccionSem(:,1,1),'*k');
@@ -774,7 +789,7 @@ hold off;grid on;
 % fila T 
 err= [];
 for j=_vSujetos
-  for i=_iniSujExp(j):(_iniSujExp(j)-1+nfields(matricesQxExp.(indiceSujeto(j,:))))
+  for i=_iniSujExp(j):(_iniSujExp(j)-1+numfields(matricesQxExp.(indiceSujeto(j,:))))
     if length(find(QxExp_ante.(indiceSujeto(j,:)).(indice(i+1,:))(1,1:2)>0))!=0
       err=[err; j i find(QxExp_ante.(indiceSujeto(j,:)).(indice(i+1,:))(1,1:2)>0) 1];
     endif
@@ -783,7 +798,7 @@ endfor
 % fila R 
 
 for j=_vSujetos
-  for i=_iniSujExp(j):(_iniSujExp(j)-1+nfields(matricesQxExp.(indiceSujeto(j,:))))
+  for i=_iniSujExp(j):(_iniSujExp(j)-1+numfields(matricesQxExp.(indiceSujeto(j,:))))
     if length(find(QxExp_ante.(indiceSujeto(j,:)).(indice(i+1,:))(2,3:4)>0))!=0
       err=[err; j i find(QxExp_ante.(indiceSujeto(j,:)).(indice(i+1,:))(2,3:4)>0) 2];
     endif
@@ -792,7 +807,7 @@ endfor
 % fila P 
 
 for j=_vSujetos
-  for i=_iniSujExp(j):(_iniSujExp(j)-1+nfields(matricesQxExp.(indiceSujeto(j,:))))
+  for i=_iniSujExp(j):(_iniSujExp(j)-1+numfields(matricesQxExp.(indiceSujeto(j,:))))
     if length(find(QxExp_ante.(indiceSujeto(j,:)).(indice(i+1,:))(3,1:2)>0))!=0
       err=[err; j i find(QxExp_ante.(indiceSujeto(j,:)).(indice(i+1,:))(3,1:2)>0) 3];
     endif
@@ -801,7 +816,7 @@ endfor
 % fila S 
 
 for j=_vSujetos
-  for i=_iniSujExp(j):(_iniSujExp(i)-1+nfields(matricesQxExp.(indiceSujeto(j,:))))
+  for i=_iniSujExp(j):(_iniSujExp(j)-1+numfields(matricesQxExp.(indiceSujeto(j,:))))
     if length(find(QxExp_ante.(indiceSujeto(j,:)).(indice(i+1,:))(4,3:4)>0))!=0
       err=[err; j i find(QxExp_ante.(indiceSujeto(j,:)).(indice(i+1,:))(4,3:4)>0) 4];
     endif
@@ -813,7 +828,7 @@ endfor
 errores=zeros(length(1:_nSujetos),_ultimosX);
 abscisa=zeros(length(1:_nSujetos),_ultimosX);
 for i=_vSujetos
-  ultimo=_iniSujExp(i)-1+nfields(matricesQxExp.(indiceSujeto(i,:)));
+  ultimo=_iniSujExp(i)-1+numfields(matricesQxExp.(indiceSujeto(i,:)));
   primero=ultimo-_ultimosX+1;
   abscisa(i,:)=primero:ultimo;
   k=0;

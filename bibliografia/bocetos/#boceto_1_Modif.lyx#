@@ -594,7 +594,7 @@ PAPER DE SELF CONTROL EN RATAS.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float table
+\begin_inset Float space
 wide false
 sideways false
 status open
@@ -612,6 +612,10 @@ Prisioner's Dilemma Pay-off Matrix
 \end_layout
 
 \begin_layout Plain Layout
+\begin_inset space \hfill{}
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="3">
 <features tabularvalignment="middle">
@@ -776,6 +780,10 @@ D
 \end_inset
 
 
+\begin_inset space \hfill{}
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -804,15 +812,19 @@ The main experiment was conducted for 10 days and 2 session per day.
 \end_layout
 
 \begin_layout Subsubsection
-Typical Trial Structure
+Typical
+\emph on
+ i
+\emph default
+PD Trial Structure
 \end_layout
 
 \begin_layout Standard
 The sequence of events within a single trial was as follows.
- (1) The stimulus light was turned on stating that trails was started.
+ (1) The stimulus light was turned on stating that trail was started.
  The focal rats had both lights turned on (this was done throughout the
  iPD experiment) and the opponent only one for the tit for tat strategy.
- (2)after both rats done their response, the light was turned off and the
+ (2) After both rats done their response, the light was turned off and the
  rewards computed.
  (3) The feeder's light was lighting one second before a reward was delivered.
  If the opponent pressed the lever always received one pellet irrespective
@@ -822,7 +834,7 @@ The sequence of events within a single trial was as follows.
  one pellet reward was delivered.
  (5) After either five second eating time expired or punishment time complete,
  all light was turned off.
- Then, the focal and opponent waited for fixed ITI time.
+ Then, the focal and opponent wait the end of fixed ITI time in the darkness.
  The next trials started.
 \end_layout
 
@@ -890,7 +902,8 @@ Results
 The experiment result are show below.
  To assessing whether a subject was abled to solve the iPD game, we first
  need to know whether either the subjects adopt some strategy or play in
- random mode and then we have to sort the type of strategy.
+ random mode.
+ We have to sort the type of strategy.
  The full data set that we record had difference length for each rat, because
  after recorded 20 sessions the experiment for each rat stop when the means
  of cooperation reached a plateau.

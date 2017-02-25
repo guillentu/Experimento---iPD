@@ -18,7 +18,7 @@ controlFallas=zeros(1,_nSujetos);
 auxFallas=1;
 %_ultimosX=10;
 for i=_vSujetos
-  ultimo=_iniSujExp(i)-1+nfields(matricesQxExp.(indiceSujeto(i,:)));
+  ultimo=_iniSujExp(i)-1+numfields(matricesQxExp.(indiceSujeto(i,:)));
   primero=ultimo-_ultimosX+1;
   for j=primero:ultimo
     for k=_trialIni:_trialFin  % nºtrials x Exp. 
@@ -103,7 +103,7 @@ probxExpTotalN=zeros(4,2,_nSujetos);
 probxExpTotal=zeros(4,2,_nSujetos);
 probxExpN=[];
 for i=_vSujetos
-  ultimo=_iniSujExp(i)-1+nfields(matricesQxExp.(indiceSujeto(i,:)))
+  ultimo=_iniSujExp(i)-1+numfields(matricesQxExp.(indiceSujeto(i,:)))
   primero=ultimo-_ultimosX+1;
   for j=primero:ultimo
     for l=1:4
@@ -127,7 +127,9 @@ endfor
 % transformar frecuencias de elecion total del exp 
 probTotalN=zeros(4,2,_nSujetos);
 for i=1:_nSujetos
-  probTotalN(:,:,i)=probTotal.(indiceSujeto(i,:))/sum(sum(probTotal.(indiceSujeto(i,:))));
+  if (sum(sum(probTotal.(indiceSujeto(i,:)))))>0
+    probTotalN(:,:,i)=probTotal.(indiceSujeto(i,:))/sum(sum(probTotal.(indiceSujeto(i,:))));
+  endif
 endfor
 
 % Prob de ellcion dado un determinado estado. P(c|T) P(c|R) P(c|S) P(c|P)
@@ -142,7 +144,7 @@ endfor
 
 probEleccionSem=zeros(size(probxExpTotal));
 for i=_vSujetos
-  ultimo=_iniSujExp(i)-1+nfields(matricesQxExp.(indiceSujeto(i,:)));
+  ultimo=_iniSujExp(i)-1+numfields(matricesQxExp.(indiceSujeto(i,:)));
   primero=ultimo-_ultimosX+1;
   aux1=[];
   aux2=[];

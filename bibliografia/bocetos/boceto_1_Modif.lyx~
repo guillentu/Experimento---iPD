@@ -3269,7 +3269,7 @@ reference "fig_2state_markovChain"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset space \hfill{}
@@ -3897,7 +3897,7 @@ Means of reward.
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset CommandInset label
@@ -4120,7 +4120,7 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
-\begin_inset Formula $p<0.0{\color{red}}125$
+\begin_inset Formula $p<0.0125$
 \end_inset
 
 
@@ -4613,7 +4613,7 @@ cooperation
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Float figure
@@ -4766,7 +4766,7 @@ name "fig_REV_4state_markovChain-1"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -4909,6 +4909,10 @@ Discussion
 \end_layout
 
 \begin_layout Standard
+.
+\end_layout
+
+\begin_layout Standard
 Podemos decir que quizás las ratas en esrado salvaje no cooperan por en
  una población 
 \end_layout
@@ -4918,8 +4922,8 @@ Podemos decir que quizás las ratas en esrado salvaje no cooperan por en
 \end_layout
 
 \begin_layout Standard
-Decir que si una rata tubiera una estrategia no cooperativa como alternar
- que tambien obtiene la maxima recompenza estaría hubicada en la base del
+Decir que si una rata tuviera una estrategia no cooperativa, como alternar,
+ que donde obtienga la maxima recompenza estaría hubicada en la base del
  grafico de coop mutua.
 \end_layout
 

@@ -78,7 +78,7 @@ _mediaXsujeto=zeros(1,_nSujetos);
 _medianaXsujeto=zeros(1,_nSujetos);
 _stdXsujeto=zeros(1,_nSujetos);
 for i=_vSujetos
-  ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
+  ultimo=_iniSujExp(i)-1+numfields(matricesQxExp.(indiceSujeto(i,:)));
   primero=ultimo-_ultimosX+1;
   _mediaXsujeto(i)=mean(_promediosC(primero:ultimo,i));
   _mediaFallasXsujeto(i)=mean(_nada(primero:ultimo,i));
@@ -92,7 +92,7 @@ h=errorbar(1:length(_vSujetos),_mediaXsujeto(_vSujetos), _stdXsujeto(_vSujetos),
 set (h, "linewidth", 3);
 hh=ylabel("% of cooperation");set(hh, "fontsize", 14);
 hh=title("Cooperation Mean");set(hh, "fontsize", 14);
-hold on
+hold on;
 axis ("tic[yz]", "labely[xyz]");
 bar(1:length(_vSujetos),_mediaXsujeto(_vSujetos));
 h2=plot(1:length(_vSujetos),_criterio*ones(1,length(_vSujetos)),'--r');
@@ -102,7 +102,7 @@ legend("SEM","MEAN","half",0);
 t=text([1:length(_vSujetos)]-0.1, .1*ones(1,length(_vSujetos)), _txtSujetos(_vSujetos,:),"fontsize",13);
 hh=xlabel("Subjects");set(hh, "fontsize", 14);
 axis([0 5 0 1.05])
-hold off
+hold off;
 name=strcat("figura_iPD_1_2_9s_13s/fig_finales/cooperation_mean_reversion",".png");
 print(hhh, name);
 % MEDIANA
@@ -112,7 +112,7 @@ set (h, "linewidth", 3);
 hh=xlabel("Subjects");set(hh, "fontsize", 14);
 hh=ylabel("% of cooperation");set(hh, "fontsize", 14);
 hh=title("Cooperation Median");set(hh, "fontsize", 14);
-hold on
+hold on;
 bar(1:length(_vSujetos),_medianaXsujeto(_vSujetos));
 h2=plot(1:length(_vSujetos),_criterio*ones(1,length(_vSujetos)),'--r');
 set (h2, "linewidth", 3);
@@ -121,7 +121,7 @@ legend("SEM","MEAN","half",0);
 axis ("tic[yz]", "labely[xyz]");
 t=text([1:length(_vSujetos)]-0.1, .1*ones(1,length(_vSujetos)), _txtSujetos(_vSujetos,:),"fontsize",13);
 axis([0 5 0 1.05])
-hold off
+hold off;
 name=strcat("figura_iPD_1_2_9s_13s/fig_finales/cooperation_median_reversion",".png");
 print(hhh, name);
 
