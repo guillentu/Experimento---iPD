@@ -3,8 +3,6 @@
 %        estados T R P S
 %        Acumula las veces que aparece 2 (coop) luego de un determinado estados
 %        durante los 30 trials de cada experimento
-T=zeros(_nSujetos,length(inicio:fin));C=zeros(_nSujetos,length(inicio:fin));
-P=zeros(_nSujetos,length(inicio:fin));S=zeros(_nSujetos,length(inicio:fin));
 
 probxExp=[];
 probAux=[];

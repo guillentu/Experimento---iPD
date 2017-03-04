@@ -138,15 +138,15 @@ for i=_sujetosCooperadores%1:_nSujetos
 endfor
 legend(_txtSujetos(_sujetosCooperadores,:),4);
 
-figure();hold on;
+figure();
 for i=_sujetosCooperadores%1:_nSujetos
   finAux=_iniSujExp(i)-1+expXsuj(i);
   inicioAux=finAux-_ultimosX+1;
-  h=plot([1:10],_promediosC(inicioAux:finAux,i),_colores(i,:));set(h, "linewidth", 2);
+  h=plot([1:length(_promediosC(inicioAux:finAux,i))],_promediosC(inicioAux:finAux,i),_colores(i,:));set(h, "linewidth", 2);hold on;
   hh=xlabel("sessions(Last ten sessions)");set(hh, "fontsize", 14);
   hh=ylabel("% of cooperacion");set(hh, "fontsize", 14);
   %hh=title(strcat("Cooperacion en iPD en sujetos que alcanzaron Criterio: ",num2str(_criterio,2)));
-  axis([1 10 0 1]);set(hh, "fontsize", 14);
+  axis([1 length(_promediosC(inicioAux:finAux,i)) 0 1]);set(hh, "fontsize", 14);
   grid on;
 endfor
 legend(_txtSujetos(_sujetosCooperadores,:),4);
@@ -168,12 +168,12 @@ figure();hold on;
 for i=_sujetosNocooperadores%1:_nSujetos
   finAux=_iniSujExp(i)-1+expXsuj(i);
   inicioAux=finAux-_ultimosX+1;
-  h=plot([1:10],_promediosC(inicioAux:finAux,i),_colores(i,:));
+  h=plot([1:length(_promediosC(inicioAux:finAux,i))],_promediosC(inicioAux:finAux,i),_colores(i,:));
   set(h, "linewidth", 2);
   hh=xlabel("n de sesiones");set(hh, "fontsize", 14);
   hh=ylabel("% de cooperacion");set(hh, "fontsize", 14);
   hh=title(strcat("Cooperacion en iPDen Sujetos que No alcanzaron Criterio: ",num2str(_criterio,2)));
-  axis([1 10 0 1]);set(hh, "fontsize", 14);
+  axis([1 length(_promediosC(inicioAux:finAux,i)) 0 1]);set(hh, "fontsize", 14);
   grid on;
 endfor
 legend(_txtSujetos(_sujetosNocooperadores,:),4);

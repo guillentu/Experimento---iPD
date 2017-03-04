@@ -103,7 +103,7 @@ plot([inicio:fin],_promediosC(3,:),'--ok');
 xlabel("n de sesiones");ylabel("% de cooperacion");title("Cooperacion en iPD");
 legend(_txtSujetos(3,:));
 figure;
-plot([inicio:fin],_promediosC(7,:),'--ob');
+plot([inicio:fin],_promediosC(7,:),"--ob");
 xlabel("n de sesiones");ylabel("% de cooperacion");title("Cooperacion en iPD");
 legend(_txtSujetos(7,:));
 figure;
@@ -146,6 +146,7 @@ endfor
 T=zeros(_nSujetos,length(inicio:fin));C=zeros(_nSujetos,length(inicio:fin));
 P=zeros(_nSujetos,length(inicio:fin));S=zeros(_nSujetos,length(inicio:fin));
 controlFallas=zeros(1,_nSujetos);
+controlFallasXexp=zeros(_nSujetos,length(inicio:fin));
 auxFallas=1;
 for j=inicio:fin
   if j<07
@@ -164,11 +165,13 @@ for j=inicio:fin
       if ((todo.(indice(j+1,:))(i)._respuestasEXP(k)==0)||(todo.(indice(j+1,:))(i)._respuestasOPO(k)==0))
         if (k==1)
           ++controlFallas(i);%%%
+          %++controlFallasXexp(i,j);
         elseif (k==2) 
           if (todo.(indice(j+1,:))(i)._respuestasEXP(k-1)!=0)% k=1 y K=2 son ceros no se cuenta una falla auxiluar
-            auxFallas+=1;  
+            auxFallas+=1;
           endif
           ++controlFallas(i);%%%
+          ++controlFallasXexp(i,j);
         elseif (k==3)
           if (todo.(indice(j+1,:))(i)._respuestasEXP(k-2)==0)&&(todo.(indice(j+1,:))(i)._respuestasEXP(k-1)==0)
             % nada
@@ -178,9 +181,11 @@ for j=inicio:fin
             a="MIERDA!!!"
           endif
           ++controlFallas(i);%%%
+          ++controlFallasXexp(i,j);
         else
           auxFallas+=1;
           ++controlFallas(i);
+          ++controlFallasXexp(i,j);
         endif
       elseif (todo.(indice(j+1,:))(i)._respuestasEXP(k)==1)&&(todo.(indice(j+1,:))(i)._respuestasOPO(k)==2)
         T(i,j-inicio+1)++; %TRAICIONAR DADO :
@@ -250,7 +255,7 @@ for j=inicio:fin
             ++matricesQaux.(indiceSujeto(i,:))(3,4);            
           elseif (todo.(indice(j+1,:))(i)._respuestasEXP(k-auxFallas)==2)&&(todo.(indice(j+1,:))(i)._respuestasOPO(k-auxFallas)==1)%fue estafado%
             ++matricesQ.(indiceSujeto(i,:))(4,4);
-            ++matricesQaux.(indiceSujeto(i,:))(4,4);             
+            ++matricesQaux.(indiceSujeto(i,:))(4,4);
           endif
         endif
         auxFallas=1;
@@ -263,34 +268,24 @@ for j=inicio:fin
     matricesQaux.(indiceSujeto(i,:)) = zeros(4,4);
   endfor
 endfor
+_vSujetos=_vSujetos3;
+T=T./(30-controlFallasXexp);
+C=C./(30-controlFallasXexp);
+P=P./(30-controlFallasXexp);
+S=S./(30-controlFallasXexp);
+
 
 %                    uno menos por en elprimer trial no cuenta
 _vSujetos=_vSujetos3;
 for i=_vSujetos
   Q(:,:,i)=matricesQ.(indiceSujeto(i,:))./(29*(fin-inicio+1)-controlFallas(i));
 endfor
-%Q(:,:,1)=matricesQ.(indiceSujeto(1,:))./(29*(fin-inicio+1)-controlFallas(1));
-%Q(:,:,2)=matricesQ.(indiceSujeto(2,:))./(29*(fin-inicio+1)-controlFallas(2));
-%Q(:,:,3)=matricesQ.(indiceSujeto(3,:))./(29*(fin-inicio+1)-controlFallas(3));
-%Q(:,:,4)=matricesQ.(indiceSujeto(4,:))./(29*(fin-inicio+1)-controlFallas(4));
-%Q(:,:,5)=matricesQ.(indiceSujeto(5,:))./(29*(fin-inicio+1)-controlFallas(5));
-%Q(:,:,6)=matricesQ.(indiceSujeto(6,:))./(29*(fin-inicio+1)-controlFallas(6));
-%Q(:,:,7)=matricesQ.(indiceSujeto(7,:))./(29*(fin-inicio+1)-controlFallas(7));
-%Q(:,:,8)=matricesQ.(indiceSujeto(8,:))./(29*(fin-inicio+1)-controlFallas(8));
-%Q(:,:,9)=matricesQ.(indiceSujeto(9,:))./(29*(fin-inicio+1)-controlFallas(9));
-%Q(:,:,10)=matricesQ.(indiceSujeto(10,:))./(29*(fin-inicio+1)-controlFallas(10));
-%Q(:,:,11)=matricesQ.(indiceSujeto(11,:))./(29*(fin-inicio+1)-controlFallas(11));
-%Q(:,:,12)=matricesQ.(indiceSujeto(12,:))./(29*(fin-inicio+1)-controlFallas(12));
+
 
 Qmean=mean(Q,3);
 Qmedian=median(Q,3);
 Qvar=var(Q,0,3);
 %Falta la median y variancia de Q
-
-% VER COMO OBTENER LA MATRIZ DE ESTADO DE MARKOV
-
-T(:,:)=T(:,:)/length(_trialIni:_trialFin);C(:,:)=C(:,:)/length(_trialIni:_trialFin);P(:,:)=P(:,:)/length(_trialIni:_trialFin);S(:,:)=S(:,:)/length(_trialIni:_trialFin);
-% una por una
 
 %for i=_vSujetos
 %  figure;
@@ -310,12 +305,15 @@ T(:,:)=T(:,:)/length(_trialIni:_trialFin);C(:,:)=C(:,:)/length(_trialIni:_trialF
 %%%%%%%%%%%%%%%%%%%%%%%% Copy MArkov %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 TT=T;CC=C;
 PP=P;SS=S;
+
 % Analizando las ultimas X sesiones
-_ultimosX=10;
+_ultimosX=9;
+
 %   Normalizacion para todos los sujetos en todos los experimentos
 Q_antes=matricesQ;
 for i=1:_nSujetos % Ceros para todos
   matricesQ.(indiceSujeto(i,:)) = zeros(4,4); % [T C P S]'                %agregar matrices Q para cada sujeto en estructura
+  Q(:,:,i)=zeros(4,4);
 endfor
 %   Promedio total --------------------------------------
 for i=_vSujetos
@@ -329,7 +327,7 @@ endfor
 for i=_vSujetos
   for j=1:4
     if sum(matricesQ.(indiceSujeto(i,:))(j,:))!=0
-      Q(j,:,i)=matricesQ.(indiceSujeto(i,:))(j,:)/sum(matricesQ.(indiceSujeto(i,:))(j,:));
+      Q(j,:,i)=matricesQ.(indiceSujeto(i,:))(j,:)./sum(matricesQ.(indiceSujeto(i,:))(j,:))
       %Q(j,:,i)=matricesQ.(indiceSujeto(i,:))(j,:);%/sum(matricesQ.(indiceSujeto(i,:))(j,:));
     endif
   endfor
@@ -360,7 +358,7 @@ for i=_vSujetos
   for v=_iniSujExp(i):(_iniSujExp(i)-1+numfields(matricesQxExp.(indiceSujeto(i,:)))) % experimentos
     for j=1:4 %Estados TRPS
       if sum(matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))(j,:))!=0
-         matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))(j,:)=matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))(j,:)/sum(matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))(j,:));
+         matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))(j,:)=matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))(j,:)./sum(matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))(j,:));
          %matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))(j,:)=matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))(j,:);%/sum(matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))(j,:));
       endif
     endfor
@@ -371,7 +369,7 @@ for i=_vSujetos
   ultimo=_iniSujExp(i)-1+numfields(matricesQxExp.(indiceSujeto(i,:)));
   primero=ultimo-_ultimosX+1;
   for v=primero:ultimo % matricesQ borrada arriba
-        Q2(:,:,i)=Q2(:,:,i)+(matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))/length(primero:ultimo));
+        Q2(:,:,i)=Q2(:,:,i)+(matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))./length(primero:ultimo));
         %Q2(:,:,i)=Q2(:,:,i)+(matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:)));%/length(primero:ultimo));
   endfor
 endfor
@@ -426,7 +424,9 @@ for i=_vSujetos
   ultimo=_iniSujExp(i)-1+numfields(matricesQxExp.(indiceSujeto(i,:)));
   primero=ultimo-_ultimosX+1;
   T_mean(i)=mean(T2(i,primero:ultimo),2);R_mean(i)=mean(R2(i,primero:ultimo),2);P_mean(i)=mean(P2(i,primero:ultimo),2);S_mean(i)=mean(S2(i,primero:ultimo),2);
+  
   T_median(i)=median(T2(i,primero:ultimo),2);R_median(i)=median(R2(i,primero:ultimo),2);P_median(i)=median(P2(i,primero:ultimo),2);S_median(i)=median(S2(i,primero:ultimo),2);
+  
   T_sem(i)=sem(T2(i,primero:ultimo),2);R_sem(i)=sem(R2(i,primero:ultimo),2);P_sem(i)=sem(P2(i,primero:ultimo),2);S_sem(i)=sem(S2(i,primero:ultimo),2);
 %  figure;
 %  %plot(1,T_mean(i), 2,R_mean(i) ,3, P_mean(i),4,S_mean(i));
@@ -440,15 +440,18 @@ for i=_vSujetos
 %  bar(1:4,[T_mean(i),R_mean(i),P_mean(i),S_mean(i)])
 %  hold off
 endfor
+
+_criterio=.5;
+graficos_iPD_1_2_9s_13s_12Ratas_reversion_medias_y_medianas_reversion % se obtienen los sujetos que superan el .75 porciento de cooperación
+%_sujetosCooperadores=find(_mediaXsujeto>_criterio); % indice de sujetos que pasaron el criterios 
+
 for i=_vSujetos
   i
   _probC_ToerProbTotal=Q(2,2,i)*R_mean(i)+Q(4,2,i)*S_mean(i)+Q(1,4,i)*T_mean(i)+Q(3,4,i)*P_mean(i)
   _mediaXsujeto(i)
 endfor
 %%%%%%%%%%%%%%%%%%%%%%%%%
-_criterio=.5;
-graficos_iPD_1_2_9s_13s_12Ratas_reversion_medias_y_medianas_reversion % se obtienen los sujetos que superan el .75 porciento de cooperación
-%_sujetosCooperadores=find(_mediaXsujeto>_criterio); % indice de sujetos que pasaron el criterios 
+
 _sujetosCooperadores=find(_mediaXsujeto>_criterio); % indice de sujetos que pasaron el criterios 
 _sujetosNocooperadores=complemento(_sujetosCooperadores,[_vSujetos]);
 QmediaC=zeros(4,4);
@@ -508,7 +511,7 @@ _semP=sem(P_mean(_sujetosCooperadores));
 _semS=sem(S_mean(_sujetosCooperadores));
 hhh=figure;
 hold on;
-h=errorbar(1,_mediaT, _semT,'*r', 2,_mediaR,_semR,'*b', 3,_mediaP, _semP,'*m', 4,_mediaS, _semS,'*k');
+h=errorbar([1],_mediaT, _semT,'*r', [2],_mediaR,_semR,'*b', [3],_mediaP, _semP,'*m', [4],_mediaS, _semS,'*k');
 %h=errorbar([1 2 3 4],[_mediaT _mediaR _mediaP _mediaS],[_semT _semR _semP _semS],'*b');
 %h=errorbar(1,_mediaT, _semT, 2,_mediaR,_semR, 3,_mediaP, _semP, 4,_mediaS, _semS,'*k');
 set (h, "linewidth", 3);

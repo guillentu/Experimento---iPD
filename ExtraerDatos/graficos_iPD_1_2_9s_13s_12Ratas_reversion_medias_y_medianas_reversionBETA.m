@@ -88,7 +88,7 @@ endfor
 
 % MEDIA 
 hhh=figure; 
-errorbar([1:length(_vSujetos)],_mediaXsujeto(_vSujetos),_stdXsujeto(_vSujetos));
+h=errorbar([1:length(_vSujetos)],_mediaXsujeto(_vSujetos),_stdXsujeto(_vSujetos));
 set (h, "linewidth", 3);
 hh=ylabel("% of cooperation");set(hh, "fontsize", 14);
 hh=title("Cooperation Mean");set(hh, "fontsize", 14);
@@ -108,7 +108,7 @@ hold off;
 
 % MEDIANA
 hhh=figure
-errorbar(1:length(_vSujetos),_medianaXsujeto(_vSujetos), _stdXsujeto(_vSujetos));
+errorbar([1:length(_vSujetos)],_medianaXsujeto(_vSujetos), _stdXsujeto(_vSujetos));
 set (h, "linewidth", 3);
 hh=xlabel("Subjects");set(hh, "fontsize", 14);
 hh=ylabel("% of cooperation");set(hh, "fontsize", 14);

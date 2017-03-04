@@ -53,7 +53,7 @@ _trialIni=1;
 _trialFin=30;
 inicio=01;
 
-_ultimosX=10;
+_ultimosX=7;
             %R T S P
 _vRefuerzos=[1 2 0  0];
 _vDelay4eat=[5 5 13 9];%[cc dc cd dd]
@@ -100,9 +100,126 @@ fin=numfields(todo)
 T=zeros(_nSujetos,length(inicio:fin));C=zeros(_nSujetos,length(inicio:fin));
 P=zeros(_nSujetos,length(inicio:fin));S=zeros(_nSujetos,length(inicio:fin));
 controlFallas=zeros(1,_nSujetos);
+controlFallasXexp=zeros(_nSujetos,length(inicio:fin));
 auxFallas=1;
 
-for j=inicio:numfields(todo)
+%for j=inicio:numfields(todo)
+%  if j<07
+%    _vSujetos=_vSujetos1;
+%  elseif (j>=07 && j<09)
+%    _vSujetos=_vSujetos2;
+%  elseif (j>=09 && j<25)
+%    _vSujetos=_vSujetos3;
+%  elseif (j>=25 && j<43)
+%    _vSujetos=_vSujetos4;
+%  elseif (j>=43)
+%    _vSujetos=_vSujetos5;
+%  endif
+%  for i=_vSujetos
+%    for k=_trialIni:_trialFin  % nºtrials x Exp.  TRAICIONAR DADO QUE
+%      if ((todo.(indice(j+1,:))(i)._respuestasEXP(k)==0)||(todo.(indice(j+1,:))(i)._respuestasOPO(k)==0))
+%        if (k==1)
+%          ++controlFallas(i);%%%
+%        elseif (k==2) 
+%          if (todo.(indice(j+1,:))(i)._respuestasEXP(k-1)!=0)% k=1 y K=2 son ceros no se cuenta una falla auxiluar
+%            auxFallas+=1;  
+%          endif
+%          ++controlFallas(i);%%%
+%        elseif (k==3)
+%          if (todo.(indice(j+1,:))(i)._respuestasEXP(k-2)==0)&&(todo.(indice(j+1,:))(i)._respuestasEXP(k-1)==0)
+%            % nada
+%          elseif (todo.(indice(j+1,:))(i)._respuestasEXP(k-1)!=0)
+%            auxFallas+=1;
+%          else
+%            a="MIERDA!!!"
+%          endif
+%          ++controlFallas(i);%%%
+%        else
+%          auxFallas+=1;
+%          ++controlFallas(i);
+%        endif
+%      elseif (todo.(indice(j+1,:))(i)._respuestasEXP(k)==1)&&(todo.(indice(j+1,:))(i)._respuestasOPO(k)==2)
+%        T(i,j-inicio+1)++; %TRAICIONAR DADO :
+%        if (k>1) 
+%          if (todo.(indice(j+1,:))(i)._respuestasEXP(k-auxFallas)==1)&&(todo.(indice(j+1,:))(i)._respuestasOPO(k-auxFallas)==2)%que Traiciono (imposible x TFT)%
+%            ++matricesQ.(indiceSujeto(i,:))(1,1);
+%            ++matricesQaux.(indiceSujeto(i,:))(1,1); 
+%          elseif (todo.(indice(j+1,:))(i)._respuestasEXP(k-auxFallas)==2)&&(todo.(indice(j+1,:))(i)._respuestasOPO(k-auxFallas)==2) %Cooperacion mutua%
+%            ++matricesQ.(indiceSujeto(i,:))(2,1);
+%            ++matricesQaux.(indiceSujeto(i,:))(2,1); 
+%          elseif (todo.(indice(j+1,:))(i)._respuestasEXP(k-auxFallas)==1)&&(todo.(indice(j+1,:))(i)._respuestasOPO(k-auxFallas)=1) %Nocooperacion mutua %
+%            ++matricesQ.(indiceSujeto(i,:))(3,1);
+%            ++matricesQaux.(indiceSujeto(i,:))(3,1);
+%          elseif (todo.(indice(j+1,:))(i)._respuestasEXP(k-auxFallas)==2)&&(todo.(indice(j+1,:))(i)._respuestasOPO(k-auxFallas)==1)%fue estafado%
+%            ++matricesQ.(indiceSujeto(i,:))(4,1);
+%            ++matricesQaux.(indiceSujeto(i,:))(4,1); 
+%          endif  
+%        endif
+%        auxFallas=1;
+%      elseif (todo.(indice(j+1,:))(i)._respuestasEXP(k)==2)&&(todo.(indice(j+1,:))(i)._respuestasOPO(k)==2)
+%        C(i,j-inicio+1)++; % COOPERACION MUTUA DADO :
+%        if (k>1) 
+%          if (todo.(indice(j+1,:))(i)._respuestasEXP(k-auxFallas)==1)&&(todo.(indice(j+1,:))(i)._respuestasOPO(k-auxFallas)==2)%que Traiciono (imposible x TFT)%
+%            ++matricesQ.(indiceSujeto(i,:))(1,2); 
+%            ++matricesQaux.(indiceSujeto(i,:))(1,2);
+%          elseif (todo.(indice(j+1,:))(i)._respuestasEXP(k-auxFallas)==2)&&(todo.(indice(j+1,:))(i)._respuestasOPO(k-auxFallas)==2) %Cooperacion mutua%
+%            ++matricesQ.(indiceSujeto(i,:))(2,2);
+%            ++matricesQaux.(indiceSujeto(i,:))(2,2);
+%          elseif (todo.(indice(j+1,:))(i)._respuestasEXP(k-auxFallas)==1)&&(todo.(indice(j+1,:))(i)._respuestasOPO(k-auxFallas)=1)%Nocooperacion mutua %
+%            ++matricesQ.(indiceSujeto(i,:))(3,2);
+%            ++matricesQaux.(indiceSujeto(i,:))(3,2);
+%          elseif (todo.(indice(j+1,:))(i)._respuestasEXP(k-auxFallas)==2)&&(todo.(indice(j+1,:))(i)._respuestasOPO(k-auxFallas)==1)%fue estafado%
+%            ++matricesQ.(indiceSujeto(i,:))(4,2);
+%            ++matricesQaux.(indiceSujeto(i,:))(4,2); 
+%          endif
+%        endif
+%        auxFallas=1;
+%      elseif (todo.(indice(j+1,:))(i)._respuestasEXP(k)==1)&&(todo.(indice(j+1,:))(i)._respuestasOPO(k)=1)
+%        P(i,j-inicio+1)++; % NO COOPERACION MUTUA DADO :
+%        if (k>1) 
+%          if (todo.(indice(j+1,:))(i)._respuestasEXP(k-auxFallas)==1)&&(todo.(indice(j+1,:))(i)._respuestasOPO(k-auxFallas)==2) %que Traiciono (imposible x TFT)%
+%            ++matricesQ.(indiceSujeto(i,:))(1,3);
+%            ++matricesQaux.(indiceSujeto(i,:))(1,3); 
+%          elseif (todo.(indice(j+1,:))(i)._respuestasEXP(k-auxFallas)==2)&&(todo.(indice(j+1,:))(i)._respuestasOPO(k-auxFallas)==2)%Cooperacion mutua%
+%            ++matricesQ.(indiceSujeto(i,:))(2,3);
+%            ++matricesQaux.(indiceSujeto(i,:))(2,3); 
+%          elseif (todo.(indice(j+1,:))(i)._respuestasEXP(k-auxFallas)==1)&&(todo.(indice(j+1,:))(i)._respuestasOPO(k-auxFallas)=1) %Nocooperacion mutua %
+%            ++matricesQ.(indiceSujeto(i,:))(3,3);
+%            ++matricesQaux.(indiceSujeto(i,:))(3,3);            
+%          elseif (todo.(indice(j+1,:))(i)._respuestasEXP(k-auxFallas)==2)&&(todo.(indice(j+1,:))(i)._respuestasOPO(k-auxFallas)==1)%fue estafado%
+%            ++matricesQ.(indiceSujeto(i,:))(4,3);
+%            ++matricesQaux.(indiceSujeto(i,:))(4,3);             
+%          endif
+%        endif
+%        auxFallas=1;
+%      elseif (todo.(indice(j+1,:))(i)._respuestasEXP(k)==2)&&(todo.(indice(j+1,:))(i)._respuestasOPO(k)==1)
+%        S(i,j-inicio+1)++; % ESTAFAR DADO :
+%        if (k>1) 
+%          if (todo.(indice(j+1,:))(i)._respuestasEXP(k-auxFallas)==1)&&(todo.(indice(j+1,:))(i)._respuestasOPO(k-auxFallas)==2)%que Traiciono (imposible x TFT)%
+%            ++matricesQ.(indiceSujeto(i,:))(1,4);
+%            ++matricesQaux.(indiceSujeto(i,:))(1,4);             
+%          elseif (todo.(indice(j+1,:))(i)._respuestasEXP(k-auxFallas)==2)&&(todo.(indice(j+1,:))(i)._respuestasOPO(k-auxFallas)==2)%Cooperacion mutua%
+%            ++matricesQ.(indiceSujeto(i,:))(2,4);
+%            ++matricesQaux.(indiceSujeto(i,:))(2,4);             
+%          elseif (todo.(indice(j+1,:))(i)._respuestasEXP(k-auxFallas)==1)&&(todo.(indice(j+1,:))(i)._respuestasOPO(k-auxFallas)=1)%Nocooperacion mutua %
+%            ++matricesQ.(indiceSujeto(i,:))(3,4);
+%            ++matricesQaux.(indiceSujeto(i,:))(3,4);            
+%          elseif (todo.(indice(j+1,:))(i)._respuestasEXP(k-auxFallas)==2)&&(todo.(indice(j+1,:))(i)._respuestasOPO(k-auxFallas)==1)%fue estafado%
+%            ++matricesQ.(indiceSujeto(i,:))(4,4);
+%            ++matricesQaux.(indiceSujeto(i,:))(4,4);             
+%          endif
+%        endif
+%        auxFallas=1;
+%      endif
+%    endfor
+%    auxFallas=1;
+%    matricesQxExp.(indiceSujeto(i,:)).(indice(j+1,:))=matricesQaux.(indiceSujeto(i,:));
+%  endfor
+%  for i=1:_nSujetos
+%    matricesQaux.(indiceSujeto(i,:)) = zeros(4,4);
+%  endfor
+%endfor
+for j=inicio:fin
   if j<07
     _vSujetos=_vSujetos1;
   elseif (j>=07 && j<09)
@@ -119,11 +236,13 @@ for j=inicio:numfields(todo)
       if ((todo.(indice(j+1,:))(i)._respuestasEXP(k)==0)||(todo.(indice(j+1,:))(i)._respuestasOPO(k)==0))
         if (k==1)
           ++controlFallas(i);%%%
+          %++controlFallasXexp(i,j);
         elseif (k==2) 
           if (todo.(indice(j+1,:))(i)._respuestasEXP(k-1)!=0)% k=1 y K=2 son ceros no se cuenta una falla auxiluar
-            auxFallas+=1;  
+            auxFallas+=1;
           endif
           ++controlFallas(i);%%%
+          ++controlFallasXexp(i,j);
         elseif (k==3)
           if (todo.(indice(j+1,:))(i)._respuestasEXP(k-2)==0)&&(todo.(indice(j+1,:))(i)._respuestasEXP(k-1)==0)
             % nada
@@ -133,9 +252,11 @@ for j=inicio:numfields(todo)
             a="MIERDA!!!"
           endif
           ++controlFallas(i);%%%
+          ++controlFallasXexp(i,j);
         else
           auxFallas+=1;
           ++controlFallas(i);
+          ++controlFallasXexp(i,j);
         endif
       elseif (todo.(indice(j+1,:))(i)._respuestasEXP(k)==1)&&(todo.(indice(j+1,:))(i)._respuestasOPO(k)==2)
         T(i,j-inicio+1)++; %TRAICIONAR DADO :
@@ -205,7 +326,7 @@ for j=inicio:numfields(todo)
             ++matricesQaux.(indiceSujeto(i,:))(3,4);            
           elseif (todo.(indice(j+1,:))(i)._respuestasEXP(k-auxFallas)==2)&&(todo.(indice(j+1,:))(i)._respuestasOPO(k-auxFallas)==1)%fue estafado%
             ++matricesQ.(indiceSujeto(i,:))(4,4);
-            ++matricesQaux.(indiceSujeto(i,:))(4,4);             
+            ++matricesQaux.(indiceSujeto(i,:))(4,4);
           endif
         endif
         auxFallas=1;
@@ -218,13 +339,16 @@ for j=inicio:numfields(todo)
     matricesQaux.(indiceSujeto(i,:)) = zeros(4,4);
   endfor
 endfor
-
 %                    uno menos por en elprimer trial no cuenta
 _vSujetos=_vSujetos3;
 
 TT=T;CC=C;
 PP=P;SS=S;
-T(:,:)=T(:,:)/length(_trialIni:_trialFin);C(:,:)=C(:,:)/length(_trialIni:_trialFin);P(:,:)=P(:,:)/length(_trialIni:_trialFin);S(:,:)=S(:,:)/length(_trialIni:_trialFin);
+T=T./(30-controlFallasXexp);
+C=C./(30-controlFallasXexp);
+P=P./(30-controlFallasXexp);
+S=S./(30-controlFallasXexp);
+
 T2(:,:)=T(:,:);R2(:,:)=C(:,:);P2(:,:)=P(:,:);S2(:,:)=S(:,:);
 
 T_mean=zeros(1,_nSujetos);R_mean=zeros(1,_nSujetos);P_mean=zeros(1,_nSujetos);S_mean=zeros(1,_nSujetos);
@@ -291,15 +415,15 @@ probD=1-_mediaXsujeto;
 N=1; % numero de trials
 %_vRefuerzos=[1 2 0 0];
 _alimento=zeros(1,_nSujetos); %                      
-for i=_vSujetos   % vec [a b;c d] -> [a c b d] = [c|c d|c c|d d|d]
-  _alimento(i)=N*_vRefuerzos*(vec(QQTotmarkov(:,:,i)).*[probC(i);probD(i);probC(i);probD(i)]);
+for i=_vSujetos   % vec [a b;c d] -> [a c b d] = [c|c c|d d|c d|d]                           mal[c|c d|c c|d d|d]
+  _alimento(i)=N*_vRefuerzos*(vec(QQTotmarkov(:,:,i)).*[probC(i);probC(i);probD(i);probD(i)]);
   % VER meanFoodXsuj desde cantidad  de alimento
 endfor
 % vec(QQTotmarkov(:,:,1)) y reshape(ans,2,2)
 %_vDelay4eat=[0 0 8 4];
 _delay4eat=zeros(1,_nSujetos);
 for i=_vSujetos   % vec [a b;c d] -> [a c b d] = [c|c c|d d|c d|d]
-  _delay4eat(i)=30*_vDelay4eat*(vec(QQTotmarkov(:,:,i)).*[probC(i);probD(i);probC(i);probD(i)]);
+  _delay4eat(i)=30*_vDelay4eat*(vec(QQTotmarkov(:,:,i)).*[probC(i);probC(i);probD(i);probD(i)]);
   % VER meanFoodXsuj desde cantidad  de alimento
 endfor
 
@@ -331,7 +455,7 @@ endfor
 % Prob de Coop dado que antes C o D
 for i=_vSujetos
   hhh=figure;
-  errorbar([1:4],vec(QQTotmarkov(:,:,i)),vec(QQTotmarkovSem(:,:,i)));
+  h=errorbar([1:4],vec(QQTotmarkov(:,:,i))',vec(QQTotmarkovSem(:,:,i))');
   hold on;set(h, "linewidth", 2);     
   h=bar([1:4],vec(QQTotmarkov(:,:,i)),'facecolor', 'g', 'edgecolor','b', "linewidth",2);
   h=plot([0:5],[.5 .5 .5 .5 .5 .5],"--r");
