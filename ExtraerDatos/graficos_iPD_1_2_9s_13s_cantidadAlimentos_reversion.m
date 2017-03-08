@@ -55,11 +55,12 @@ endfor
 
 
 hhh=figure;
-h=errorbar([1:_nSujetos],foodMedia/30,foodSem/30,'*b');set (h, "linewidth", 2);
+%h=errorbar([1:_nSujetos],foodMedia/30,foodSem/30,'*b');set (h, "linewidth", 2);
+h=errorbar([1:_nSujetos],foodMedia,foodSem,'*b');set (h, "linewidth", 2);
 hold on;
 axis("tic[yz]", "labely[xyz]");
-h=bar(foodMedia/30,"facecolor", "g","edgecolor","k");set (h, "linewidth", 2);
-
+%h=bar(foodMedia/30,"facecolor", "g","edgecolor","k");set (h, "linewidth", 2);
+h=bar(foodMedia,"facecolor", "g","edgecolor","k");set (h, "linewidth", 2);
 hh=xlabel("Sujets - Last 10 sesions");set(hh, "fontsize", 14);
 hh=ylabel("% total reward");set(hh, "fontsize", 14);
 hh=title(" Mean of reward");set(hh, "fontsize", 14);

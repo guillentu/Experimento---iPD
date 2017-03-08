@@ -53,7 +53,7 @@ _trialIni=1;
 _trialFin=30;
 inicio=01;
 
-_ultimosX=7;
+_ultimosX=9;
             %R T S P
 _vRefuerzos=[1 2 0  0];
 _vDelay4eat=[5 5 13 9];%[cc dc cd dd]
@@ -341,14 +341,12 @@ for j=inicio:fin
 endfor
 %                    uno menos por en elprimer trial no cuenta
 _vSujetos=_vSujetos3;
-
-TT=T;CC=C;
-PP=P;SS=S;
 T=T./(30-controlFallasXexp);
 C=C./(30-controlFallasXexp);
 P=P./(30-controlFallasXexp);
 S=S./(30-controlFallasXexp);
-
+TT=T;CC=C;
+PP=P;SS=S;
 T2(:,:)=T(:,:);R2(:,:)=C(:,:);P2(:,:)=P(:,:);S2(:,:)=S(:,:);
 
 T_mean=zeros(1,_nSujetos);R_mean=zeros(1,_nSujetos);P_mean=zeros(1,_nSujetos);S_mean=zeros(1,_nSujetos);
@@ -380,6 +378,7 @@ for i=_vSujetos
   for j=primero:ultimo %Experimentos
     jj++;  %| la P(c|c) es igual a la sumatorias en "sum(x ,1)" de P(c|R) y P(c|S) y las otras filas lsa compo ponentes son cero
     aux = sum(QxExp_ante.(indiceSujeto(i,:)).(indice(j+1,:)));% P(d|c) P(c|c) P(d|d) P(c|d) 
+    
     %aux2=[aux2 aux'./[aux(1)+aux(3);aux(2)+aux(4);aux(1)+aux(3);aux(2)+aux(4)]];
     aux2=[aux2 aux'./[aux(1)+aux(2);aux(2)+aux(1);aux(4)+aux(3);aux(3)+aux(4)]];
     QQTot(:,:,i)=QQTot(:,:,i) + [aux(sort(1:4,'descend'))(3:4); aux(sort(1:4,'descend'))(1:2)];% se ordena par que tengal a lforma 2x2
@@ -415,8 +414,10 @@ probD=1-_mediaXsujeto;
 N=1; % numero de trials
 %_vRefuerzos=[1 2 0 0];
 _alimento=zeros(1,_nSujetos); %                      
-for i=_vSujetos   % vec [a b;c d] -> [a c b d] = [c|c c|d d|c d|d]                           mal[c|c d|c c|d d|d]
-  _alimento(i)=N*_vRefuerzos*(vec(QQTotmarkov(:,:,i)).*[probC(i);probC(i);probD(i);probD(i)]);
+for i=_vSujetos   % vec [a b;c d] -> [a c b d] = [c|c c|d d|c d|d]              mal[c|c d|c c|d d|d]
+  %_alimento(i)=N*_vRefuerzos*(vec(QQTotmarkov(:,:,i)).*[probC(i);probC(i);probD(i);probD(i)]);
+  %                           R S T P
+  _alimento(i)=N*_vRefuerzos([1 4 2 3])*(vec(QQTotmarkov(:,:,i)).*[probC(i);probD(i);probC(i);probD(i)]);
   % VER meanFoodXsuj desde cantidad  de alimento
 endfor
 % vec(QQTotmarkov(:,:,1)) y reshape(ans,2,2)
@@ -455,7 +456,7 @@ endfor
 % Prob de Coop dado que antes C o D
 for i=_vSujetos
   hhh=figure;
-  h=errorbar([1:4],vec(QQTotmarkov(:,:,i))',vec(QQTotmarkovSem(:,:,i))');
+  h=errorbar([1:4],vec(QQTotmarkov(:,:,i))',vec(QQTotmarkovSem(:,:,i))','*');
   hold on;set(h, "linewidth", 2);     
   h=bar([1:4],vec(QQTotmarkov(:,:,i)),'facecolor', 'g', 'edgecolor','b', "linewidth",2);
   h=plot([0:5],[.5 .5 .5 .5 .5 .5],"--r");

@@ -154,9 +154,10 @@ for i=_vSujetos
   probEleccionSem(:,2,i)=sem(aux2,2);
 endfor
 
+
 for i=_vSujetos
   hhh=figure;
-  h=errorbar([1:4]',probEleccion(:,1,i),probEleccionSem(:,1,i),'*k');
+  h=errorbar([1:4]',probEleccion(:,1,i), probEleccionSem(:,1,i),'*k');
   hold on;%set(h, "linewidth", 2);     
   bar([1:4],probEleccion(:,1,i),'facecolor', 'g', 'edgecolor','b', "linewidth", 2);
   h=plot([0:5],[.5 .5 .5 .5 .5 .5],"--r");

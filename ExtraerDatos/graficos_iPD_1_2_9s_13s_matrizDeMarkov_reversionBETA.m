@@ -479,7 +479,7 @@ vals_sem=[(T_sem(_sujetosCooperadores));
           (S_sem(_sujetosCooperadores))];
 
 dd=friedmanGuille(vals,0.05,0);
-dd.diff    
+dd.diff
 %rangos=ranks(vals,1)';
 
 if (length(_sujetosNocooperadores)>1)
@@ -511,7 +511,9 @@ _semP=sem(P_mean(_sujetosCooperadores));
 _semS=sem(S_mean(_sujetosCooperadores));
 hhh=figure;
 hold on;
+
 h=errorbar([1],_mediaT, _semT,'*r', [2],_mediaR,_semR,'*b', [3],_mediaP, _semP,'*m', [4],_mediaS, _semS,'*k');
+
 %h=errorbar([1 2 3 4],[_mediaT _mediaR _mediaP _mediaS],[_semT _semR _semP _semS],'*b');
 %h=errorbar(1,_mediaT, _semT, 2,_mediaR,_semR, 3,_mediaP, _semP, 4,_mediaS, _semS,'*k');
 set (h, "linewidth", 3);
@@ -575,7 +577,6 @@ _semT=sem(T_mean(_sujetosCooperadores));
 _semR=sem(R_mean(_sujetosCooperadores));
 _semP=sem(P_mean(_sujetosCooperadores));
 _semS=sem(S_mean(_sujetosCooperadores));
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ------------------ Test CHI_2 de bondad de ajuste---------------------------
@@ -730,7 +731,7 @@ chi_2_nocoop=(100.*probEleccionMean(:,1,2)-frec_teo).^2./frec_teo + (100.*probEl
 
 if (length(_sujetosNocooperadores)>0)
   figure;
-  h=errorbar([1:4],probEleccionMean(:,1,2),probEleccionSem(:,1,2),'*k');
+  h=errorbar([1:4]',probEleccionMean(:,1,2),probEleccionSem(:,1,2),'*k');
   hold on;set(h, "linewidth", 2);     
   h=bar([1:4],probEleccionMean(:,1,2),'facecolor', 'g', 'edgecolor','b', "linewidth", 2);
   h=plot([0:5],[.5 .5 .5 .5 .5 .5],"--r");
@@ -847,5 +848,6 @@ for i=_vSujetos
     errores(i,k)=fallasxExp.(indiceSujeto(i,:)).(indice(j+1,:));
   endfor
 endfor
+
 figure;
 plot(errores');
