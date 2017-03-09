@@ -370,26 +370,48 @@ QQ=[];
 QQTot=zeros(2,2,_nSujetos);
 QQTotmarkov=zeros(2,2,_nSujetos);
 QQTotmarkovSem=zeros(2,2,_nSujetos);
+%for i=_vSujetos
+%  ultimo=_iniSujExp(i)-1+numfields(matricesQxExp.(indiceSujeto(i,:)));
+%  primero=ultimo-_ultimosX+1;
+%  jj=0;
+%  aux2=[];
+%  for j=primero:ultimo %Experimentos
+%    jj++;  %| la P(c|c) es igual a la sumatorias en "sum(x ,1)" de P(c|R) y P(c|S) y las otras filas lsa compo ponentes son cero
+%    aux = sum(QxExp_ante.(indiceSujeto(i,:)).(indice(j+1,:)));% P(d|c) P(c|c) P(d|d) P(c|d) 
+%    
+%    %aux2=[aux2 aux'./[aux(1)+aux(3);aux(2)+aux(4);aux(1)+aux(3);aux(2)+aux(4)]];
+%    aux2=[aux2 aux'./[aux(1)+aux(2);aux(2)+aux(1);aux(4)+aux(3);aux(3)+aux(4)]];
+%    QQTot(:,:,i)=QQTot(:,:,i) + [aux(sort(1:4,'descend'))(3:4); aux(sort(1:4,'descend'))(1:2)];% se ordena par que tengal a lforma 2x2
+%    QQ.(indiceSujeto(i,:)).(num2str(jj))=[aux(sort(1:4,'descend'))(3:4); aux(sort(1:4,'descend'))(1:2)];%./sum(sum(QxExp_ante.(indiceSujeto(i,:)).(indice(j+1,:)))),1)';
+%  endfor
+%  QQTotmarkov(1,:,i)=QQTot(1,:,i)./sum(QQTot(:,:,i),2)(1);%QQTot = P(c|c) P(d|c) => vec(QQTot)
+%  QQTotmarkov(2,:,i)=QQTot(2,:,i)./sum(QQTot(:,:,i),2)(2);%        P(c|d) P(d|d)  P(c|c) P(c|d) P(d|c) P(d|d)
+%                         % sem cc             dc           cd                dd
+%  QQTotmarkovSem(:,:,i)= [ sem(aux2,2)(2) sem(aux2,2)(1); sem(aux2,2)(4) sem(aux2,2)(3)];
+%endfor
 for i=_vSujetos
-  ultimo=expXsuj(i);
+  ultimo=_iniSujExp(i)-1+numfields(matricesQxExp.(indiceSujeto(i,:)));
   primero=ultimo-_ultimosX+1;
   jj=0;
   aux2=[];
   for j=primero:ultimo %Experimentos
     jj++;  %| la P(c|c) es igual a la sumatorias en "sum(x ,1)" de P(c|R) y P(c|S) y las otras filas lsa compo ponentes son cero
-    aux = sum(QxExp_ante.(indiceSujeto(i,:)).(indice(j+1,:)));% P(d|c) P(c|c) P(d|d) P(c|d) 
-    
-    %aux2=[aux2 aux'./[aux(1)+aux(3);aux(2)+aux(4);aux(1)+aux(3);aux(2)+aux(4)]];
-    aux2=[aux2 aux'./[aux(1)+aux(2);aux(2)+aux(1);aux(4)+aux(3);aux(3)+aux(4)]];
-    QQTot(:,:,i)=QQTot(:,:,i) + [aux(sort(1:4,'descend'))(3:4); aux(sort(1:4,'descend'))(1:2)];% se ordena par que tengal a lforma 2x2
-    QQ.(indiceSujeto(i,:)).(num2str(jj))=[aux(sort(1:4,'descend'))(3:4); aux(sort(1:4,'descend'))(1:2)];%./sum(sum(QxExp_ante.(indiceSujeto(i,:)).(indice(j+1,:)))),1)';
+    aux = QxExp_ante.(indiceSujeto(i,:)).(indice(j+1,:))./sum(QxExp_ante.(indiceSujeto(i,:)).(indice(j+1,:)),2)
+    aux(isnan(aux))=0 %%Elimina los valores NaN
+    %P(c|c)
+    QQTot(1,1,i)= QQTot(1,1,i) + aux(2,2)*C(i,j)+ aux(4,2)*S(i,j);
+    %P(d|c)
+    QQTot(1,2,i)= QQTot(1,2,i) + aux(2,1)*C(i,j)+ aux(4,1)*S(i,j);
+    %P(c|d)
+    QQTot(2,1,i)= QQTot(2,1,i) + aux(1,4)*T(i,j)+ aux(3,4)*P(i,j);
+    %P(d|d)
+    QQTot(2,2,i)= QQTot(2,2,i) + aux(1,3)*T(i,j)+ aux(3,3)*P(i,j);
   endfor
-  QQTotmarkov(1,:,i)=QQTot(1,:,i)./sum(QQTot(:,:,i),2)(1);%QQTot = P(c|c) P(d|c) => vec(QQTot)
-  QQTotmarkov(2,:,i)=QQTot(2,:,i)./sum(QQTot(:,:,i),2)(2);%        P(c|d) P(d|d)  P(c|c) P(c|d) P(d|c) P(d|d)
-                         % sem cc             dc           cd                dd
-  QQTotmarkovSem(:,:,i)= [ sem(aux2,2)(2) sem(aux2,2)(1); sem(aux2,2)(4) sem(aux2,2)(3)];
+  QQTot(:,:,i)
+  QQTot(:,:,i) = QQTot(:,:,i)./length([primero:ultimo]);
+  QQTot(:,:,i) = QQTot(:,:,i)./sum(QQTot(:,:,i),2);
 endfor
-
+QQTotmarkov=QQTot;
 % matriz para inkscape
 QQTotmarkovInk=zeros(2,2,_nSujetos);
 for i=1:_nSujetos
@@ -449,9 +471,11 @@ _effectiveness=(N*_vDelay4eat(1))./_delay4eat;
 %mean(food(inicioAux:finAux,i))
 _estadoEstacionario=zeros(2,_nSujetos);
 
-for i=_vSujetos
-  _estadoEstacionario(:,i) = dtmc(QQTotmarkov(:,:,i));
-endfor
+%for i=_vSujetos
+%  if (sum(sum(QQTotmarkov(:,:,i)))!=0)
+%    _estadoEstacionario(:,i) = dtmc(QQTotmarkov(:,:,i));
+%  endif
+%endfor
 
 % Prob de Coop dado que antes C o D
 for i=_vSujetos
@@ -479,7 +503,7 @@ endfor
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%55
 % grafico Alimentos versus Cooperacion
-[S I]=sort(_mediaXsujeto);
+[Ss I]=sort(_mediaXsujeto);
 figure;
 %h=plot(_mediaXsujeto(I),_alimento(I),'ko', "markersize",12,"markerfacecolor",'c', "linewidth", 2);
 h=scatter(_mediaXsujeto(I(find(sort(_mediaXsujeto)>0.5))),_alimento(I(find(sort(_mediaXsujeto)>0.5))),20,_delay4eat(I(find(sort(_mediaXsujeto)>0.5))),"filled");
@@ -515,7 +539,7 @@ hold off;
 
 
 % grafico Cooperacion Versus R
-[S I]=sort(_mediaXsujeto);
+[Ss I]=sort(_mediaXsujeto);
 figure;
 h=scatter(_mediaXsujeto(I(find(sort(_mediaXsujeto)>0.5))),R_mean(I(find(sort(_mediaXsujeto)>0.5))),20,(_delay4eat(I(find(sort(_mediaXsujeto)>0.5)))./120),"filled");
 ch=colormap(copper);
@@ -546,7 +570,7 @@ t=text(0.6,-0.37,{"Normalized accumulated timeout per sessions"},"fontsize",14);
 hold off;
 
 % grafico Reward Versus R
-[S I]=sort(R_mean);
+[Ss I]=sort(R_mean);
 figure;
 h=scatter(_alimento(I(find(sort(R_mean)>0.4))),R_mean(I(find(sort(R_mean)>0.4))),20,(_delay4eat(I(find(sort(R_mean)>0.4)))./120),"filled");
 ch=colormap(copper);
@@ -576,7 +600,7 @@ hold off;
 % Tasa de alimentacion
 _foodRate= _alimento(1:_nSujetos)./(_delay4eat/30);%_vDelay4eat(1));
 _delay2eat=_delay4eat;
-[S I]=sort(_foodRate);
+[Ss I]=sort(_foodRate);
 figure;
 h=plot(_mediaXsujeto(I),100.*_delay2eat(I)./120,'ko', "markersize",14,"markerfacecolor",'c', "linewidth", 2);
 hold on;
@@ -599,7 +623,7 @@ hold off;
 
 % Alimentacion Versus Delay to eat
 _delay2eat=_delay4eat;
-[S I]=sort(_alimento);
+[Ss I]=sort(_alimento);
 hhh=figure;
 %h=plot(_alimento(I),_delay2eat(I),'ko', "markersize",14,"markerfacecolor",'c', "linewidth", 2);
 h=scatter(_delay2eat(I(find(sort(_alimento)>0.8)))./120,_alimento(I(find(sort(_alimento)>0.8))),20, _mediaXsujeto(I(find(sort(_alimento)>0.8))),"filled");
