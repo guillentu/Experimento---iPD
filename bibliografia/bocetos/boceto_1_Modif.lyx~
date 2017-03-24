@@ -3897,7 +3897,7 @@ Means of reward.
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset CommandInset label
@@ -4906,6 +4906,11 @@ Discussion
 
 \begin_layout Standard
 .
+\end_layout
+
+\begin_layout Standard
+El contrate entre refuerzos y el castigo suave posiblemente dieron lugar
+ a una alta cooperación.
 \end_layout
 
 \begin_layout Standard

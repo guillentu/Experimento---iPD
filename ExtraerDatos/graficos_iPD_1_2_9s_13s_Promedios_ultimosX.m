@@ -76,7 +76,7 @@ indiceSujeto=["Q01";"Q02";"Q03";"Q04";"Q05";"Q06";"Q07";"Q08";"Q09";"Q10";"Q11";
 _colores=["--+k";"--om";"--*g";"--.r";"--xb";"--sc";"--^m";"--vg";"-->b";"--<c";"--pr";"--hr"];
 
 expXsuj=zeros(1,_nSujetos);
-for j=inicio:(nfields(todo)-8)
+for j=inicio:(numfields(todo)-8)
   for i=1:length(todo.(indice(j+1,:)))
     if length(todo.(indice(j+1,:))(i)._groupStr)!=0
       expXsuj(i)++;
@@ -89,7 +89,7 @@ endfor
 %  _sujetos.(indiceSujetos(i,:))=[];
 %endfor
 _sujetos=[];
-for j=inicio:(nfields(todo)-8)
+for j=inicio:(numfields(todo)-8)
   for i=1:_nSujetos
     if expXsuj(i)>=j
       _sujetos.(indiceSujeto(i,:)).(indice(j+1,:))=todo.(indice(j+1,:))(i);
@@ -122,35 +122,38 @@ endfor
 graficos_iPD_1_2_9s_13s_12Ratas_medias_y_medianas % se obtienen los sujetos que superan el .75 porciento de cooperación
 
 %%%%%  COOPERACION ESTABLE - PLATEAU 
-_ps2=zeros(2,_nSujetos);
-_values=zeros(_nSujetos,1);
-for i=1:_nSujetos
-  inicioAux=expXsuj(i)-_ultimosX+1;
-  finAux=expXsuj(i);
-  x=[1:_ultimosX]';%[inicio:fin]';
-  y=_promediosC(inicioAux:finAux,i);
-  F = [ ones(length(x),1) x];
-  [p,e_var,r,p_var,y_var] = LinearRegression(F,y(:,1));
-  yFit = F*p;
-  e_var
-  _ps2(1,i)=[1 5]*p;
-  %_ps2(1,i)
-  [_values(i) index]=max(abs(_ps2(1,i)-_promediosC(inicioAux:finAux,i)));
-  %mean(y)
-%  figure();
-%  plot(x,y(:,1),'+b',x,yFit,'-g',x,yFit+1.96*sqrt(y_var),'--r',x,yFit-1.96*sqrt(y_var),'--r');
-%  title('Behavior Stability - Lineal Regresion');
-%  xlabel("session");
-%  ylabel("% of cooperation");
-%  legend(strcat('C choice ',_txtSujetos(i,:)),'fit','+/-95% Desv. Std');
-%  axis([0 10 0.2 1.3])
-%  grid on
-endfor
+%_ps2=zeros(2,_nSujetos);
+%_values=zeros(_nSujetos,1);
+%for i=1:_nSujetos
+%  inicioAux=expXsuj(i)-_ultimosX+1;
+%  finAux=expXsuj(i);
+%  x=[1:_ultimosX]';%[inicio:fin]';
+%  y=_promediosC(inicioAux:finAux,i);
+%  F = [ ones(length(x),1) x];
+%  [p,e_var,r,p_var,y_var] = LinearRegression(F,y(:,1));
+%  yFit = F*p;
+%  e_var
+%  _ps2(1,i)=[1 5]*p;
+%  %_ps2(1,i)
+%  [_values(i) index]=max(abs(_ps2(1,i)-_promediosC(inicioAux:finAux,i)));
+%  %mean(y)
+%%  figure();
+%%  plot(x,y(:,1),'+b',x,yFit,'-g',x,yFit+1.96*sqrt(y_var),'--r',x,yFit-1.96*sqrt(y_var),'--r');
+%%  title('Behavior Stability - Lineal Regresion');
+%%  xlabel("session");
+%%  ylabel("% of cooperation");
+%%  legend(strcat('C choice ',_txtSujetos(i,:)),'fit','+/-95% Desv. Std');
+%%  axis([0 10 0.2 1.3])
+%%  grid on
+%endfor
 
 %%%%%%%%%%%5 COOPERADORES Y NO COOPERADORES %%%%%%%%%%%%%%%%%%%%
 %_sujetosCooperadores=find(_mediaXsujeto>_criterio); % indice de sujetos que pasaron el criterios 
-aux1=find(QQTotmarkov(1,1,:)(:)>_criterio);%   P(c|c) 
-aux2=find(QQTotmarkov(2,1,:)(:)>_criterio);%   P(c|d)
+
+aux1=find(_mediaXsujeto>_criterio);%   P(c|c)*PC) 
+aux2=find(_mediaXsujeto>_criterio);%   P(c|d)
+%aux1=find(QQTotmarkov(1,1,:)(:)>_criterio);%   P(c|c) 
+%aux2=find(QQTotmarkov(2,1,:)(:)>_criterio);%   P(c|d)
 if length(aux1)>length(aux2)
   aux3=ismember(aux1,aux2)
   aux1=aux1(aux3)
@@ -174,7 +177,7 @@ for i=aux1
 endfor
 _sujetosCooperadores=_vSujetos1(logical(pasan));
 %_sujetosCooperadores=find(aux1>_criterio); % indice de sujetos que pasaron el criterios 
-_sujetosNocooperadores=complemento(_sujetosCooperadores,_nSujetos); % Obtiene los indices de los no coop
+_sujetosNocooperadores=complemento(_sujetosCooperadores,1:_nSujetos); % Obtiene los indices de los no coop
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 _trialsOK=30*ones(length([inicio:fin]),_nSujetos);

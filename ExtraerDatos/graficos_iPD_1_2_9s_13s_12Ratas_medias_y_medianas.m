@@ -78,7 +78,7 @@ _mediaXsujeto=zeros(1,_nSujetos);
 _medianaXsujeto=zeros(1,_nSujetos);
 _stdXsujeto=zeros(1,_nSujetos);
 for i=1:_nSujetos
-  ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
+  ultimo=numfields(matricesQxExp.(indiceSujeto(i,:)));
   primero=ultimo-_ultimosX+1;
   _mediaXsujeto(i)=mean(_promediosC(primero:ultimo,i));
   _mediaFallasXsujeto(i)=mean(_nada(primero:ultimo,i));
@@ -125,7 +125,7 @@ name=strcat("figura_iPD_1_2_9s_13s/fig_finales/cooperation_median",".png");
 print(hhh, name);
 
 
-%%%  la media y sem de las ultimas 10 sesiones del vectos de media por sesion del grupo de cooperadores
-mean(_media_EndAtached(length(_media_EndAtached)-9:end))
-%ans =  0.85286
-mean(_semTodos_EndAttached(length(_semTodos_EndAttached):end))
+%%%%  la media y sem de las ultimas 10 sesiones del vectos de media por sesion del grupo de cooperadores
+%mean(_media_EndAtached(length(_media_EndAtached)-9:end))
+%%ans =  0.85286
+%mean(_semTodos_EndAttached(length(_semTodos_EndAttached):end))

@@ -78,8 +78,10 @@ _values=zeros(_nSujetos,1);
 
 %%%%%%%%%%%5 COOPERADORES Y NO COOPERADORES %%%%%%%%%%%%%%%%%%%%
 %_sujetosCooperadores=find(_mediaXsujeto>_criterio); % indice de sujetos que pasaron el criterios 
-aux1=find(QQTotmarkov(1,1,:)(:)>_criterio);%   P(c|c) 
-aux2=find(QQTotmarkov(2,1,:)(:)>_criterio);%   P(c|d)
+aux1=find(_mediaXsujeto>_criterio);%   P(c|c) 
+aux2=find(_mediaXsujeto>_criterio);%   P(c|d)
+%aux1=find(QQTotmarkov(1,1,:)(:)>_criterio);%   P(c|c) 
+%aux2=find(QQTotmarkov(2,1,:)(:)>_criterio);%   P(c|d)
 if length(aux1)>length(aux2)
   aux3=ismember(aux1,aux2)
   aux1=aux1(aux3)
@@ -136,9 +138,10 @@ for i=_sujetosCooperadores%1:_nSujetos
   set(hh, "fontsize", 14);
   grid on;
 endfor
+hold off;
 legend(_txtSujetos(_sujetosCooperadores,:),4);
 
-figure();
+figure();hold on;
 for i=_sujetosCooperadores%1:_nSujetos
   finAux=_iniSujExp(i)-1+expXsuj(i);
   inicioAux=finAux-_ultimosX+1;
@@ -149,6 +152,7 @@ for i=_sujetosCooperadores%1:_nSujetos
   axis([1 length(_promediosC(inicioAux:finAux,i)) 0 1]);set(hh, "fontsize", 14);
   grid on;
 endfor
+hold off;
 legend(_txtSujetos(_sujetosCooperadores,:),4);
 
 figure();hold on;
@@ -162,6 +166,7 @@ for i=_sujetosNocooperadores%1:_nSujetos
   %title(strcat("Cooperacion en iPDen Sujetos que No alcanzaron Criterio: ",num2str(_criterio,2)));
   grid on;
 endfor
+hold off;
 legend(_txtSujetos(_sujetosNocooperadores,:),4);
 
 figure();hold on;
@@ -176,6 +181,7 @@ for i=_sujetosNocooperadores%1:_nSujetos
   axis([1 length(_promediosC(inicioAux:finAux,i)) 0 1]);set(hh, "fontsize", 14);
   grid on;
 endfor
+hold off;
 legend(_txtSujetos(_sujetosNocooperadores,:),4);
 
 % Kluskal-Wallis ANOVA one-way a lo largo de un juego (ultimas 10sesiones) entre los promedios de cooperacion 
