@@ -1,7 +1,8 @@
 %clear all
 %close all
 %load "iPD_1_2_9s_13s/datos_modificados_sobre_errores";
-load "iPD_1_2_9s_13s/datosVariablesCOMIDA";
+%load "iPD_1_2_9s_13s/datosVariablesCOMIDA";
+
 indiceSujeto=["Q01";"Q02";"Q03";"Q04";"Q05";"Q06";"Q07";"Q08";"Q09";"Q10";"Q11";"Q12"];
 _colores=["--+k";"--om";"--*g";"--.r";"--xb";"--sc";"--^m";"--vg";"-->b";"--<c";"--pr";"--hr"];
 ptrn={"1A";"2A";"3A";"4A";"5A";"6A";"7A";"8A";"9A";"10A";"3B";"4B"};
@@ -52,16 +53,16 @@ endfor
 
 
 hhh=figure;
-h=errorbar([1:_nSujetos],foodMedia./30,foodSem./30,'*b');set (h, "linewidth", 2);
+h=errorbar([1:_nSujetos],foodMedia,foodSem,'*b');set (h, "linewidth", 2);
 hold on;
 axis("tic[yz]", "labely[xyz]");
-h=bar(foodMedia./30,"facecolor", "g","edgecolor","k");set (h, "linewidth", 2);
+h=bar(foodMedia,"facecolor", "g","edgecolor","k");set (h, "linewidth", 2);
 
 hh=xlabel("Sujets - Last 10 sesions");set(hh, "fontsize", 14);
 hh=ylabel("% total reward");set(hh, "fontsize", 14);
 hh=title(" Mean of reward");set(hh, "fontsize", 14);
 t=text(-.37+[1:_nSujetos], 0.55*ones(1,_nSujetos) , ptrn, "fontsize", 14);
-axis([0,13,0.5,1.05],"square");legend("SEM","MEAN");
+axis([0,13,0.48,1.05],"square");legend("SEM","MEAN");
 hold off;
 name=strcat("figura_iPD_1_2_9s_13s/fig_finales/mean_reward",".png");
 print(hhh, name);
@@ -75,7 +76,7 @@ h=bar((_timeOutMedia-_timeoutITI)./_timeoutLimit,"facecolor", "g","edgecolor","k
 hh=xlabel("Sujets - Last 10 sesions");set(hh, "fontsize", 14);
 hh=ylabel("Timeout per session");set(hh, "fontsize", 14);
 hh=title(" Mean of timeout");set(hh, "fontsize", 14);
-t=text(-.25+[1:_nSujetos], 0.55*ones(1,_nSujetos) , ptrn, "fontsize", 14);
+t=text(-.25+[1:_nSujetos], 0.1*ones(1,_nSujetos) , ptrn, "fontsize", 14);
 axis([0,13,0,1],"square");
 legend("SEM","MEAN");
 hold off;
@@ -101,7 +102,7 @@ hold off;
 
 %_criterio=.5;
 aux=_vSujetos;
-graficos_iPD_1_2_9s_13s_12Ratas_medias_y_medianas % se obtienen los sujetos que superan el .75 porciento de cooperación
+graficos_iPD_1_2_9s_13s_12Ratas_medias_y_medianas; % se obtienen los sujetos que superan el .75 porciento de cooperación
 _vSujetos=aux;
 
 %%%%%%%CRITERIO %%%% COOPERADORES Y NO COOPERADORES %%%%%%%%%%%%%%%%%%%%
@@ -111,17 +112,17 @@ aux2=find(_mediaXsujeto>_criterio);%
 %aux1=find(QQTotmarkov(1,1,:)(:)>_criterio);%   P(c|c) 
 %aux2=find(QQTotmarkov(2,1,:)(:)>_criterio);%   P(c|d)
 if length(aux1)>length(aux2)
-  aux3=ismember(aux1,aux2)
-  aux1=aux1(aux3)
+  aux3=ismember(aux1,aux2);
+  aux1=aux1(aux3);
 else
-  aux3=ismember(aux2,aux1)
-  aux1=aux2(aux3)  
+  aux3=ismember(aux2,aux1);
+  aux1=aux2(aux3);
 endif
 % chi_2 a sujetos que pasaron el criterio general (prob de c dado c o d mayor a la azar 0.5)
 frec_teo=100*[.5];
 for i=aux1
   chi_2_xSujetos(i)=sum((100*QQTotmarkov(:,1,i)-frec_teo).^2./frec_teo); % dos
-  sum((100*QQTotmarkov(:,1,i)-frec_teo).^2./frec_teo)
+  sum((100*QQTotmarkov(:,1,i)-frec_teo).^2./frec_teo);
 endfor
 pasan=zeros(1,_nSujetos);
 freedom=1;
@@ -151,7 +152,7 @@ for i=_sujetosCooperadores%1:_nSujetos
   grid on;
 endfor
 legend(_txtSujetos(_sujetosCooperadores,:),4);
-axis ([1, 10, 1, 33], "square");
+axis ([1,10, 0, 1.05], "square");
 hold off;
 %SOLO LOS NO COOPERADORES NO SUPERARON EL CRITERIO
 figure();hold on;
@@ -166,7 +167,7 @@ for i=_sujetosNocooperadores%1:_nSujetos
   grid on;
 endfor
 legend(_txtSujetos(_sujetosNocooperadores,:));
-axis ([1, 10, 1, 33], "square");
+axis ([1, 10, 0, 1.05], "square");
 hold off;
 
 %

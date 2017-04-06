@@ -600,6 +600,10 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Caption
 
 \begin_layout Plain Layout
@@ -612,6 +616,10 @@ Prisioner's Dilemma Pay-off Matrix
 \end_layout
 
 \begin_layout Plain Layout
+\begin_inset space \hfill{}
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="3">
 <features tabularvalignment="middle">
@@ -776,6 +784,20 @@ D
 \end_inset
 
 
+\begin_inset space \hfill{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "table_matrixIPD"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -795,7 +817,8 @@ In iPD experiment used a dual chamber without neither center lever and center
 \end_layout
 
 \begin_layout Standard
-The main experiment was conducted for 10 days and 2 session per day.
+The main experiment was conducted for at least 10 days and 2 session per
+ day.
  The session consisted in 30 trials.
  For individual subject, the experiment was stopped, if the average behavior
  didn't change along ten consecutive sessions.
@@ -804,15 +827,19 @@ The main experiment was conducted for 10 days and 2 session per day.
 \end_layout
 
 \begin_layout Subsubsection
-Typical Trial Structure
+Typical
+\emph on
+ i
+\emph default
+PD Trial Structure
 \end_layout
 
 \begin_layout Standard
 The sequence of events within a single trial was as follows.
- (1) The stimulus light was turned on stating that trails was started.
+ (1) The stimulus light was turned on stating that trail was started.
  The focal rats had both lights turned on (this was done throughout the
  iPD experiment) and the opponent only one for the tit for tat strategy.
- (2)after both rats done their response, the light was turned off and the
+ (2) After both rats done their response, the light was turned off and the
  rewards computed.
  (3) The feeder's light was lighting one second before a reward was delivered.
  If the opponent pressed the lever always received one pellet irrespective
@@ -822,7 +849,7 @@ The sequence of events within a single trial was as follows.
  one pellet reward was delivered.
  (5) After either five second eating time expired or punishment time complete,
  all light was turned off.
- Then, the focal and opponent waited for fixed ITI time.
+ Then, the focal and opponent wait the end of fixed ITI time in the darkness.
  The next trials started.
 \end_layout
 
@@ -890,7 +917,8 @@ Results
 The experiment result are show below.
  To assessing whether a subject was abled to solve the iPD game, we first
  need to know whether either the subjects adopt some strategy or play in
- random mode and then we have to sort the type of strategy.
+ random mode.
+ We have to sort the type of strategy.
  The full data set that we record had difference length for each rat, because
  after recorded 20 sessions the experiment for each rat stop when the means
  of cooperation reached a plateau.
@@ -966,7 +994,7 @@ status open
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1154,7 +1182,7 @@ Means of reward.
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset CommandInset label
@@ -1517,6 +1545,7 @@ cooperation
 
 \series bold
 \size tiny
+\color black
 2A
 \end_layout
 
@@ -1528,6 +1557,7 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
+\color black
 \begin_inset Formula $0.417$
 \end_inset
 
@@ -1542,6 +1572,7 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
+\color black
 \begin_inset Formula $0.469$
 \end_inset
 
@@ -1556,6 +1587,7 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
+\color black
 \begin_inset Formula $0.408$
 \end_inset
 
@@ -1570,6 +1602,7 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
+\color black
 \begin_inset Formula $0.446$
 \end_inset
 
@@ -1584,6 +1617,7 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
+\color black
 \begin_inset Formula $0.333$
 \end_inset
 
@@ -1598,6 +1632,7 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
+\color black
 \begin_inset Formula $8.02$
 \end_inset
 
@@ -1612,6 +1647,7 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
+\color black
 \begin_inset Formula $0.0456$
 \end_inset
 
@@ -1744,6 +1780,7 @@ cooperation
 
 \series bold
 \size tiny
+\color black
 4A
 \end_layout
 
@@ -1755,6 +1792,7 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
+\color black
 \begin_inset Formula $0.461$
 \end_inset
 
@@ -1769,6 +1807,7 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
+\color black
 \begin_inset Formula $0.5$
 \end_inset
 
@@ -1783,6 +1822,7 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
+\color black
 \begin_inset Formula $0.625$
 \end_inset
 
@@ -1797,6 +1837,7 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
+\color black
 \begin_inset Formula $0.348$
 \end_inset
 
@@ -1811,6 +1852,7 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
+\color black
 \begin_inset Formula $0.403$
 \end_inset
 
@@ -1825,6 +1867,7 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
+\color black
 \begin_inset Formula $9.60$
 \end_inset
 
@@ -1839,6 +1882,7 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
+\color black
 \begin_inset Formula $0.0223$
 \end_inset
 
@@ -1856,6 +1900,7 @@ cooperation
 
 \series bold
 \size tiny
+\color black
 5A
 \end_layout
 
@@ -1867,6 +1912,7 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
+\color black
 \begin_inset Formula $0.386$
 \end_inset
 
@@ -1881,6 +1927,7 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
+\color black
 \begin_inset Formula $0.359$
 \end_inset
 
@@ -1895,6 +1942,7 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
+\color black
 \begin_inset Formula $0.408$
 \end_inset
 
@@ -1909,6 +1957,7 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
+\color black
 \begin_inset Formula $0.351$
 \end_inset
 
@@ -1923,6 +1972,7 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
+\color black
 \begin_inset Formula $0.459$
 \end_inset
 
@@ -1937,6 +1987,7 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
+\color black
 \begin_inset Formula $10.42$
 \end_inset
 
@@ -1951,6 +2002,7 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
+\color black
 \begin_inset Formula $0.0152$
 \end_inset
 
@@ -1968,6 +2020,7 @@ cooperation
 
 \series bold
 \size tiny
+\color black
 6A
 \end_layout
 
@@ -1979,6 +2032,7 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
+\color black
 \begin_inset Formula $0.411$
 \end_inset
 
@@ -1993,6 +2047,7 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
+\color black
 \begin_inset Formula $0.493$
 \end_inset
 
@@ -2007,6 +2062,7 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
+\color black
 \begin_inset Formula $0.37$
 \end_inset
 
@@ -2021,6 +2077,7 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
+\color black
 \begin_inset Formula $0.381$
 \end_inset
 
@@ -2035,6 +2092,7 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
+\color black
 \begin_inset Formula $0.394$
 \end_inset
 
@@ -2049,6 +2107,7 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
+\color black
 \begin_inset Formula $8.45$
 \end_inset
 
@@ -2063,6 +2122,7 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
+\color black
 \begin_inset Formula $0.0375$
 \end_inset
 
@@ -2790,9 +2850,14 @@ reference "meanReward-1"
 \end_layout
 
 \begin_layout Standard
-Analyzing the not random strategy groups behaviors, we found that each rats
- had all components of strategic vector markedly above 0.5 suggesting that
- the rat's behaviors trend to be highly cooperative, see table 
+Theoretically, when a subject play iPD against TFT opponent, its the best
+ strategy is All C and not TFT, because TFT against TFT when one defeat
+ both remain in this state and never change.
+ Thus, if the rats make a wrong choice, defeat, then its probability to
+ cooperate must be high.
+ Analyzing the not random strategy groups behaviors, we found that each
+ rats had all components of strategic vector markedly above 0.5 suggesting
+ that the rat's behaviors trend to be highly cooperative, see table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "table_meanAndstrategies"
@@ -2807,17 +2872,9 @@ reference "table_meanAndstrategies"
 
 \end_inset
 
-) showed that there was high level of cooperation in the group.
- Also we calculated the mean of cooperation choice in the groups .
- Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig_meanC_strategy"
-
-\end_inset
-
- illustrates the mean and s.e.m.
- of cooperation, 
+) showed that each rat has a high level of cooperation.
+ Also we calculated the mean and s.e.m.
+ of cooperation choice in the groups, 
 \begin_inset Formula $0.852\pm0.0482$
 \end_inset
 
@@ -2849,6 +2906,13 @@ reference "fig_meanC_strategy"
 \begin_inset Formula $0.5$
 \end_inset
 
+, figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_meanC_strategy"
+
+\end_inset
+
 .
  In figure 
 \begin_inset CommandInset ref
@@ -2867,7 +2931,7 @@ reference "outcomes rate"
 \end_inset
 
 ) and Multiple pairwise comparison using Nemeyi's procedure point out that
- all outcomes levels are differents.
+ all outcomes levels are different.
 \end_layout
 
 \begin_layout Standard
@@ -2942,11 +3006,11 @@ reference "fig_evolutionCoop"
 
 \end_inset
 
- we show the means per session per rats and the means per sessions over
- the group of rats with non-random strategy.
+ we show the means of cooperation choice per session per rats and the group
+ means per sessions of rats with non-random strategy.
  Since the number of sessions was different along the rats, we aligned the
- last session of each rats and pooled the data from the 23 last sessions.
- The means ans standard error of the means of last ten session, that represent
+ last session of each rats and make a pooled of data from the 23 last sessions.
+ The means and standard error of the means of last ten session, that represent
  the plateau of the curve, was a
 \begin_inset Formula $mean\pm sem=0.853\pm0.0681$
 \end_inset
@@ -2958,13 +3022,13 @@ reference "fig_evolutionCoop"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -3258,8 +3322,8 @@ reference "fig_2state_markovChain"
  we show diagrams of transition probability between outcomes.
  The diagrams show the probabilities to transition given last outcomes.
  In each trials the subject can choose cooperation (blue arrow) or defect
- lever (red arrow) and its width is proportional to the probability of cooperate
- or to not cooperate.
+ lever (red arrow) and the arrow's width is proportional to the probability
+ of cooperate or to not cooperate.
  In both diagrams is clearly that the big blue arrow predominate indicating
  a hard trend to cooperate by all rats in the group.
  
@@ -3532,7 +3596,12 @@ The reciprocate strategy is mainly defined by the probability of mutual
  cooperation.
  Thus we made a graph of Mutual cooperations versus cooperation and saw
  that exist a directly proportional relationship between them, if mutual
- cooperate does down then the cooperate choice goes down.
+ cooperate does down then the cooperate choice goes down, the correlation
+ coefficient was 
+\begin_inset Formula $0.996$
+\end_inset
+
+, It result point out that both variable are related.
  See figure 
 \begin_inset CommandInset ref
 LatexCommand ref

@@ -87,7 +87,7 @@ for i=1:_nSujetos
 endfor
 % MEDIA 
 hhh=figure; 
-h=errorbar([1:12],_mediaXsujeto, _stdXsujeto,'*c');
+h=errorbar([1:12]',_mediaXsujeto', _stdXsujeto','*c');
 set (h, "linewidth", 3);
 hh=ylabel("% of cooperation");set(hh, "fontsize", 14);
 hh=title("Cooperation Mean");set(hh, "fontsize", 14);
@@ -106,7 +106,7 @@ name=strcat("figura_iPD_1_2_9s_13s/fig_finales/cooperation_mean",".png");
 print(hhh, name);
 % MEDIANA
 hhh=figure; 
-h=errorbar([1:12],_medianaXsujeto, _stdXsujeto,'*c');
+h=errorbar([1:12]',_medianaXsujeto', _stdXsujeto','*c');
 set (h, "linewidth", 3);
 hh=xlabel("Subjects");set(hh, "fontsize", 14);
 hh=ylabel("% of cooperation");set(hh, "fontsize", 14);
