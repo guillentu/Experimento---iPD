@@ -3319,13 +3319,21 @@ reference "fig_2state_markovChain"
 
 \end_inset
 
- we show diagrams of transition probability given the last outcomes.
- In each trials the subject can choose cooperation (blue arrow) or defect
- lever (red arrow) and the arrow's width is proportional to the probability
- of cooperate or to not cooperate.
- In both diagrams the big blue arrow are predominate and these indicate
+ we show diagrams of transition probability given the last outcomes, respect
+ four and two state.
+ This diagrams means that in each trials the subject can choose cooperation
+ (blue arrow) or defect lever (red arrow) with a specific probability.
+ The arrow's width is proportional to the probability of cooperate or to
+ not cooperate.
+ In both diagrams the big blue arrow are predominates and these indicate
  a strong trend to cooperate by all rats in the group.
- 
+ This diagrams show the rats trend to stay on mutual cooperation or quickly
+ come back to this state.
+ In all cases, the probability to cooperate was over 
+\begin_inset Formula $80\%$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3388,58 +3396,6 @@ status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/coopMutuaVsReward_delay.png
-	lyxscale 35
-	width 45col%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Mutual Cooperation versus reward
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig_coopMutualVsReward"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset space \hfill{}
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset space \hfill{}
-\end_inset
-
-
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Graphics
 	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperacionVsReward_delay_sinrandom.png
 	lyxscale 35
 	width 45col%
@@ -3478,10 +3434,17 @@ name "fig_rewardVScoop"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hfill{}
+\end_inset
+
+
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -3509,7 +3472,52 @@ Total Reward versus accumulated timeout
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "reward VS timeout"
+name "fig_reward VS timeout"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/coefficientOfPreference2.png
+	lyxscale 35
+	width 45col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Preference Coefficient.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig_CoeffPreference"
 
 \end_inset
 
@@ -3549,27 +3557,18 @@ reference "fig_coopMutua"
  
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig_coopMutualVsReward"
+reference "fig_rewardVScoop"
 
 \end_inset
 
-) The graph show the mutual cooperation versus total reward.
+) The graph show the percentage of cooperation versus total reward.
  All animals obtain more that 80% of total reward per session.
  The simulated agent (filled square) help to understand the strategies used
  by animals.
  
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig_rewardVScoop"
-
-\end_inset
-
-) The mean of total reward don't change significantly respect to cooperation
- level.
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "reward VS timeout"
+reference "fig_reward VS timeout"
 
 \end_inset
 
@@ -3578,6 +3577,28 @@ reference "reward VS timeout"
  Since the graph we observe that the highest reward corresponds to the subject
  with less accumulated timeout punishment and they also have the highest
  cooperation choice level.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_CoeffPreference"
+
+\end_inset
+
+) The Coefficient of preference is the quotient between reward and punishment
+ that each rat got as result to used one strategy.
+ the blue circle are the coefficient of preference per rat and the size
+ are the level of cooperation.
+ The red circle are the coefficient for the simulated rats.
+ All rats has a strategy more cooperative than the simulated rats with alternate
+d 
+\begin_inset Quotes eld
+\end_inset
+
+CD
+\begin_inset Quotes erd
+\end_inset
+
+ strategy.
 \end_layout
 
 \end_inset
@@ -3600,7 +3621,11 @@ The reciprocate strategy is mainly defined by the probability of mutual
 \begin_inset Formula $0.996$
 \end_inset
 
-.
+(
+\emph on
+Pearson coefficient
+\emph default
+).
  It result point out that both variable are related.
  See figure 
 \begin_inset CommandInset ref
@@ -3612,10 +3637,20 @@ reference "fig_coopMutua"
 .
  The color bar represent average accumulated punishment (second) that each
  subject obtain per sessions in the last ten session and also is drive by
- same relationship respect either mutual cooperation or cooperation choice.
- The square point represent theoretical simulated behaviors and used to
- compare the real average rat behavior respect to these repetitive simulated
- agent.
+ same relationship respect both mutual cooperation or cooperation choice,
+ the correlation coefficient was 
+\begin_inset Formula $-0.998$
+\end_inset
+
+ and 
+\begin_inset Formula $-0.935$
+\end_inset
+
+ respectively.
+ When cooperation up, the punishment down.
+ In the figure, the square point represent theoretical simulated behaviors
+ and used to compare the real average rat behavior respect to these repetitive
+ simulated agent.
  We created the follow behaviors: 
 \emph on
 1º)
@@ -3686,7 +3721,7 @@ All rats got the high level of reward, over 80%, despite of the dispersion
  
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig_coopMutualVsReward"
+reference "fig_reward VS timeout"
 
 \end_inset
 
@@ -3716,33 +3751,28 @@ Switch CCCD
 \end_layout
 
 \begin_layout Standard
-The payoff matrix used in the experiment gives the same amount of reward
- to one that always cooperator as one that always alternate between cooperate
- and defect options.
- Nevertheless, there is a best strategy (
-\emph on
-pareto optimum
-\emph default
-) because the first strategy doesn't receive timeout punishment and the
- second does.
- Since the figure 
+Relating rewards with punishment level we develop a coefficient that helped
+ to understand the preference that each rat for chose some lever, C or D,
+ figure 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "reward VS timeout"
+reference "fig_CoeffPreference"
 
 \end_inset
 
- we observe that the highest reward corresponds to the subject with less
- accumulated timeout punishment and also with the subjects with the highest
- cooperation choice level.
- The simulated agent that used alternate strategy got the maximum punishment.
-\end_layout
+.
+ The left side from 
+\begin_inset Quotes eld
+\end_inset
 
-\begin_layout Standard
-These results give evidence to conclude that the rats learned to solve the
- iPD when they face an opponent with TIT FOR TAT strategy.
- The animals shown a high mutual cooperation as a result to the learning
- into the operant box.
+CD
+\begin_inset Quotes erd
+\end_inset
+
+ simulated agent represent strategies in which chose D more than one time,
+ consecutively.
+ And the right side represent the strategies in which chose C more than
+ one time, consecutively.
 \end_layout
 
 \begin_layout Subsubsection
@@ -3822,7 +3852,7 @@ name "fig1_REV_meansAnd significance-1"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -4968,6 +4998,33 @@ Discussion
 \end_layout
 
 \begin_layout Standard
+The payoff matrix used in the experiment gives the same amount of reward
+ to one that always cooperator as one that always alternate between cooperate
+ and defect options.
+ Nevertheless, there is a best strategy (
+\emph on
+pareto optimum
+\emph default
+) because the first strategy doesn't receive timeout punishment and the
+ second does.
+ Since the figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_reward VS timeout"
+
+\end_inset
+
+ we observe that the highest reward corresponds to the subject with less
+ accumulated timeout punishment and also with the subjects with the highest
+ cooperation choice level.
+ The simulated agent that used alternate strategy got the maximum punishment.
+\end_layout
+
+\begin_layout Standard
+.
+\end_layout
+
+\begin_layout Standard
 .receive the double amount of pellet es mas tentados que la mitad.
  esp hace que las ratas tiendan a alternar palanca
 \end_layout
@@ -5014,6 +5071,21 @@ Quizas una dificultades para resolver iPD es la apreciación de las diferencias
  en las recompenzas a lo largo de cada sesion.
  - we show that the iPD game gives to the random strategy group a amount
  that between 60% to 70% of total reward.
+\end_layout
+
+\begin_layout Standard
+hablar del paper 1-s2.0-S0003347216000130-main.pdf (en downloads)
+\end_layout
+
+\begin_layout Section
+Conclusions
+\end_layout
+
+\begin_layout Standard
+These results give evidence to conclude that the rats learned to solve the
+ iPD when they face an opponent with TIT FOR TAT strategy.
+ The animals shown a high mutual cooperation as a result to the learning
+ into the operant box.
 \end_layout
 
 \begin_layout Section
