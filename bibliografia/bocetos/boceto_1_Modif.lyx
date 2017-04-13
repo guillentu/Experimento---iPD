@@ -3751,9 +3751,9 @@ Switch CCCD
 \end_layout
 
 \begin_layout Standard
-Relating rewards with punishment level we develop a coefficient that helped
- to understand the preference that each rat for chose some lever, C or D,
- figure 
+Relating rewards with punishment level we develop a coefficient that named
+ Preference, and it can help to understand the preference for choose lever
+ C, figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig_CoeffPreference"
@@ -3761,7 +3761,7 @@ reference "fig_CoeffPreference"
 \end_inset
 
 .
- The left side from 
+ The left side of 
 \begin_inset Quotes eld
 \end_inset
 
@@ -3769,14 +3769,22 @@ CD
 \begin_inset Quotes erd
 \end_inset
 
- simulated agent represent strategies in which chose D more than one time,
- consecutively.
- And the right side represent the strategies in which chose C more than
- one time, consecutively.
+ there are the simulated agent with strategies fewer cooperative, choose
+ D more than one time, consecutively.
+ And the right side of 
+\begin_inset Quotes eld
+\end_inset
+
+CD
+\begin_inset Quotes erd
+\end_inset
+
+ represent the strategies in which choose C more than one time, consecutively,
+ and only a time D.
 \end_layout
 
 \begin_layout Subsubsection
-Reversion
+Second Phase: reversion
 \end_layout
 
 \begin_layout Standard
@@ -3803,7 +3811,7 @@ status collapsed
 
 \size scriptsize
 \begin_inset Graphics
-	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperation_mean_with_significant_reversion.png
+	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperation_mean_reversion.png
 	lyxscale 35
 	width 45text%
 
@@ -3864,7 +3872,7 @@ FALTA
 \color inherit
 
 \begin_inset Graphics
-	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/mean_reward.png
+	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/mean_reward_reversion.png
 	lyxscale 35
 	width 45text%
 
@@ -3895,6 +3903,131 @@ Reward mean
 \begin_inset CommandInset label
 LatexCommand label
 name "fig_REV_meanReward-1-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+
+\size scriptsize
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+
+\size scriptsize
+\begin_inset Graphics
+	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/mean_timeout_reversion.png
+	lyxscale 35
+	width 45text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+
+\size scriptsize
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\size scriptsize
+Timeout mean
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+
+\size scriptsize
+\begin_inset CommandInset label
+LatexCommand label
+name "fig1_REV_meansTimeout"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+
+\size large
+\color red
+FALTA
+\size scriptsize
+\color inherit
+
+\begin_inset Graphics
+	filename /home/guille/Documents/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperation_mean_sem_last23session.png
+	lyxscale 35
+	width 45text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+
+\size scriptsize
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Evolution of cooperation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+
+\size scriptsize
+\begin_inset CommandInset label
+LatexCommand label
+name "fig_REV_evolution_coop_rev"
 
 \end_inset
 
@@ -3979,6 +4112,32 @@ Means of reward.
 ).
  The rats with random strategy (not chi-square significant) obtained the
  lowest level of reward, below 75% of total reward.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig1_REV_meansTimeout"
+
+\end_inset
+
+) Means of Timeout is the punishment that each rat got by develop a learned
+ strategy.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_REV_evolution_coop_rev"
+
+\end_inset
+
+) Evolution of cooperation choice from a data set with the last 23 sessions.
+ The blue and continuous and thicker line is the means per session of the
+ group and the dotter line is the standard error of the mean (
+\begin_inset Formula $mean\pm sem=0.853\pm0.0681$
+\end_inset
+
+over the las ten sessions).
+ The vertical dotter line mark the pool of data that was used to analyse
+ the strategies adopted by the rats.
+ 
 \end_layout
 
 \end_inset
@@ -4711,7 +4870,7 @@ cooperation
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Float figure

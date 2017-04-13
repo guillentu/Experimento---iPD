@@ -649,23 +649,96 @@ _selfishtheor=_idealSujeto(1,:)./((_idealSujeto(2,:))./_timeoutLimit);
 
 hhh=figure;%  {"switch CD"; "all C";      "switch CCDD";  "half C";            "switch 3Cx3D";   "switch CCD";  "switch CCCD"}
 
-t=text(-0.002+_selfish(_sujetosCooperadores),0.006*[1 1 1 1 1 1.8 1 1]+ones(1,length(_sujetosCooperadores)),_txtSujetos(_sujetosCooperadores,:),"fontsize",14);
+t=text(-0.002+_selfish(_sujetosCooperadores),0.06*[1 1 1 1 1 1.8 1 1]+ones(1,length(_sujetosCooperadores)),_txtSujetos(_sujetosCooperadores,:),"fontsize",14);
 hold on;
 %h=scatter(_selfishtheor([1 2 3 5 6]),ones(1,length(_selfishtheor([1 2 3 5 6]))),25,'r');
 %set(h, "linewidth", 2);  
-h=scatter(_selfish(_sujetosCooperadores),ones(1,length(_sujetosCooperadores)),30*_mediaXsujeto(_sujetosCooperadores),"b",c);
-h=scatter(_selfishtheor([1 2 3 5 6]),ones(1,length(_selfishtheor([1 2 3 5 6]))),25,'r');
-t=text(-0.005*[1 1 1 6 1]+_selfishtheor([1 2 3 5 6]),-0.007+ones(1,length(_selfishtheor([1 2 3 5 6]))),...
-                                       {"CD","AllC","2Cx2D","3Cx3D" ,"CCD"},"fontsize",12);
+h=scatter(_selfish(_sujetosCooperadores),ones(1,length(_sujetosCooperadores)),17,"k","filled");
+h=scatter(_selfishtheor([1 2 3 5 6 7]),ones(1,length(_selfishtheor([1 2 3 5 6 7]))),25,'r');
+t=text(-0.005*[1 1 1 11 1 1]+_selfishtheor([1 2 3 5 6 7]),-0.007+ones(1,length(_selfishtheor([1 2 3 5 6 7]))),...
+                                       {"CD","AllC","2Cx2D","3Cx3D" ,"CCD","CCCD"},"fontsize",12);
 %t=text([0.26 0.27 0.26 0.27],[1.055 1.055 1.045 1.045],
 %       {num2str(_vRefuerzos(1));num2str(_vRefuerzos(2));num2str(_vRefuerzos(3));num2str(_vRefuerzos(4))},"fontsize",13);                                     
 %t=text(0.005+[0.26 0.27 0.26 0.27],-0.005+[1.055 1.055 1.045 1.045],
 %       {num2str(_vDelay4eat(1));num2str(_vDelay4eat(2));num2str(_vDelay4eat(3));num2str(_vDelay4eat(4))},"fontsize",13);
-
-axis([.3 .85 .95 1.05]);
+plot([1 1], [1.05 0.95], '--k');
+axis([.73 1.86 .95 1.05]);
 %ylabel("");
 xlabel("Coefficient of preference");
 hold off;
 
 %name="figura_iPD_1_2_9s_13s/fig_finales/coefficientOfPreference.png";%strcat("figura_iPD_1_2_9s_13s/fig_finales/coefficientOfPreference",".png");
 %print(hhh, name);
+
+
+
+%-------  coopMedia/timeout
+_timeoutLimit=15*13+15*5;
+_selfish=_mediaXsujeto./((_timeOutMedia)./_timeoutLimit);
+
+_selfishInf=_mediaXsujeto.*_timeOutMedia;
+
+_selfishtheor=probC2'./((_idealSujeto(2,:))./_timeoutLimit);
+
+hhh=figure;%  {"switch CD"; "all C";      "switch CCDD";  "half C";            "switch 3Cx3D";   "switch CCD";  "switch CCCD"}
+
+t=text(-0.002+_selfish,-0.05*[1 .6 1 1 1 1 1 1 1 1.8 1 1 ]+foodMedia,_txtSujetos,"fontsize",14);
+hold on;
+%h=scatter(_selfishtheor([1 2 3 5 6]),ones(1,length(_selfishtheor([1 2 3 5 6]))),25,'r');
+%set(h, "linewidth", 2);  
+h=scatter(_selfish,foodMedia,17,"k","filled");
+h=scatter(_selfishtheor([1 2 3 5 6]),_idealSujeto(1,[1 2 3 5 6]),25,'k'); set(h, "linewidth", 3);
+
+t=text(-0.01*[1 1 5 -1 1]+_selfishtheor([1 2 3 5 6]),0.05*[ 2 1 1.5 1 1 ]'+probC2([1 2 3 5 6]),...
+                                       {"CD","AllC","2Cx2D","3Cx3D" ,"CCD"},"fontsize",12);
+%axis([.3 .85 .95 1.05]);
+ylabel("Cooperation [%]");
+xlabel("Coefficient of preference Coop/timeOut");
+hold off;
+
+%-------  coopMedia/timeout
+
+_selfish=_mediaXsujeto./((_timeOutMedia)./_timeoutLimit);
+
+_selfishInf=_mediaXsujeto.*_timeOutMedia;
+
+_selfishtheor=probC2'./((_idealSujeto(2,:))./_timeoutLimit);
+
+hhh=figure;%  {"switch CD"; "all C";      "switch CCDD";  "half C";            "switch 3Cx3D";   "switch CCD";  "switch CCCD"}
+
+t=text(foodMedia,-0.002+_selfish,_txtSujetos,"fontsize",14);
+hold on;
+%h=scatter(_selfishtheor([1 2 3 5 6]),ones(1,length(_selfishtheor([1 2 3 5 6]))),25,'r');
+%set(h, "linewidth", 2);  
+h=scatter(foodMedia,_selfish,17,"k","filled");
+h=scatter(_idealSujeto(1,[1 2 3 5 6 7]),_selfishtheor([1 2 3 5 6 7]),25,'k');set(h, "linewidth", 3);
+t=text(0.00*[ 2 1 1.5 1 1 1]+_idealSujeto(1,[1 2 3 5 6 7]),-0.00*[1 1 5 -1 1 1]+_selfishtheor([1 2 3 5 6 7]),...
+                                       {"CD","AllC","2Cx2D","3Cx3D" ,"CCD","CCCD"},"fontsize",12);
+%axis([.3 .85 .95 1.05]);
+xlabel("Reward [%] GG");
+ylabel("Coefficient of preference Coop/timeOut");
+hold off;
+
+
+%-------  coopMedia/timeout INFINITY
+
+%_selfish=_mediaXsujeto./((_timeOutMedia)./_timeoutLimit);
+%_selfishInf
+_selfish=log(_mediaXsujeto./((_timeOutMedia-_timeoutITI)./_timeoutLimit));
+
+_selfishtheor=log(probC2'./((_idealSujeto(2,:)-_timeoutITI)./_timeoutLimit));
+
+hhh=figure;%  {"switch CD"; "all C";      "switch CCDD";  "half C";            "switch 3Cx3D";   "switch CCD";  "switch CCCD"}
+
+t=text(foodMedia,-0.002+_selfish,_txtSujetos,"fontsize",14);
+hold on;
+%h=scatter(_selfishtheor([1 2 3 5 6]),ones(1,length(_selfishtheor([1 2 3 5 6]))),25,'r');
+%set(h, "linewidth", 2);  
+h=scatter(foodMedia,_selfish,17,"k","filled");
+h=scatter(_idealSujeto(1,[1 2 3 5 6 7]),_selfishtheor([1 2 3 5 6 7]),25,'k');set(h, "linewidth", 3);
+t=text(0.00*[ 2 1 1.5 1 1 1]+_idealSujeto(1,[1 2 3 5 6 7]),-0.00*[1 1 5 -1 1 1]+_selfishtheor([1 2 3 5 6 7]),...
+                                       {"CD","AllC","2Cx2D","3Cx3D" ,"CCD","CCCD"},"fontsize",12);
+%axis([.3 .85 .95 1.05]);
+xlabel("Reward [%]");
+ylabel("Coefficient of preference Coop/timeOut");
+hold off;

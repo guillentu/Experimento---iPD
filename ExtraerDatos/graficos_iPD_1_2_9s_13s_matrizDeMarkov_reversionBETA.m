@@ -90,13 +90,23 @@ _media=sum(_promediosC)/_nSujetos; % CHEQUEAR MEDIA con menos sujetos
 %media sin 1A
 %media=sum((_cooperacion([2 3 4 5 6],:)./(5*30)));
 
+
+%%%%%%% ACA 
+[r c]=size(_promediosC);
+if (r!=12)
+  _promediosC=_promediosC'
+Endif
 _vSujetos=_vSujetos3;
-
+%%%%%%%%    TODOS JUNTOS DESDE EL FINAL hasta -17 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 figure();
-plot([inicio:fin],_promediosC(3,:),'--ok',[inicio:fin],_promediosC(7,:),'--ob',[7:24],_promediosC(10,[7:24]),'--oc',[9:fin], _promediosC(9,[9:fin]),'--om');
-xlabel("n de sesiones");ylabel("% de cooperacion");title("Cooperacion en iPD");
+h=plot([1:18],_promediosC(3,(fin-17):fin),'--ok',[1:18],_promediosC(7,fin-17:fin),'--ok',...
+             [1:18],_promediosC(10,[7:24]),'--ok',[1:18], _promediosC(9,[fin-17:fin]),'--ok');
+set(h,"linewidth",2)
+hh=xlabel("n of sesiones");set(hh,"fontsize",20);
+hh=ylabel("% Cooperation");set(hh,"fontsize",20);
+hh=title("Evolution of Cooperation en iPD");set(hh,"fontsize",20)
 legend(_txtSujetos(3,:),_txtSujetos(7,:),_txtSujetos(10,:),_txtSujetos(9,:));
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 figure;
 plot([inicio:fin],_promediosC(3,:),'--ok');

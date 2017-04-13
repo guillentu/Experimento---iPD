@@ -73,7 +73,7 @@ datos=zeros(2,fin);
 
 % Experimentos por sujetos
 expXsuj=zeros(1,_nSujetos);
-for j=inicio:(nfields(todo)-8)
+for j=inicio:(numfields(todo)-8)
   for i=1:length(todo.(indice(j+1,:)))
     if length(todo.(indice(j+1,:))(i)._groupStr)!=0
       expXsuj(i)++;

@@ -1,26 +1,29 @@
 %-------------------------------------------------------------------
-%------- 
-% Experimentos por sujetos
-expXsuj=zeros(1,_nSujetos);
-for j=inicio:(numfields(todo)-8)
-  for i=1:length(todo.(indice(j+1,:)))
-    if length(todo.(indice(j+1,:))(i)._groupStr)!=0
-      expXsuj(i)++;
-    endif
-  endfor
-endfor
+%------- Alternar Random - Control ITI - Castigo
+clear all
+close all
+%load "iPD_1_2_9s_13s/datosCargadoWorkspace20160423";
+%load "iPD_1_2_9s_13s/datos_modificados_sobre_errores"
+
 
 _txtSujetos=["1A";"2A";"3A";"4A";"5A";"6A";"7A";"8A";"9A";"10A";"3B";"4B"];
+%_colores=["--+k";"--om";"--*g";"--.r";"--xb";"--sc";"--^m";"--vg";"-->b";"--<c";"--pr";"--hr"];
 _colores=["--+b";"--ob";"--*b";"--.b";"--xb";"--sb";"--^b";"--vb";"-->b";"--<b";"--pb";"--hb"];
+ptrn={"1A";"2A";"3A";"4A";"5A";"6A";"7A";"8A";"9A";"10A";"3B";"4B"};
 
 % PORCENTAJE DE COOPERACION
-_vSujetos1=[3 7 12];% desde el exp01
+_nSujetos=12;
+%_vSujetos1=[1 2 3 4 5 6 7 8 9 10 11 12];% desde exp01
+%_vSujetos2=[2 6 8 9 10 11];% a partir del exp24
+%_vSujetos3=[2 6 8 9 11]; % a partir del exp30
+%_vSujetos4=[2 8 11]; % a partir del exp32
+%_vSujetos5=[8]; % a partir del exp34
+%%%% SOLOS cooperadores_vSujetos1=[3 7 12];% desde el exp01
 _vSujetos2=[3 7 10 12];% desde el exp07  
 _vSujetos3=[3 7 9 10 12];% desde el exp09
 _vSujetos4=[3 7 9 12];% desde el exp25
 _vSujetos5=[3 7 9];% desde el exp43
 _iniSujExp=[0 0 1 0 0 0 1 0 9 7 0 1];
-_vSujetos=_vSujetos2;
 _coop=zeros(1,_nSujetos);
 _cooperacion=[];
 _nada=[];
@@ -31,7 +34,23 @@ inicio=1;
 fin=52;
 datos=zeros(2,fin);
 
-% se promedia solo los que siguen con IPD
+
+% Testeo ------------------------------
+%for j=inicio:fin
+%  for i=_vSujetos
+    %todo.(indice(j+1,:))(i)._respuestasEXP=[2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2];
+    %todo.(indice(j+1,:))(i)._respuestasEXP=[0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2];
+%    todo.(indice(j+1,:))(i)._respuestasEXP=[2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0];%0.533333
+    %todo.(indice(j+1,:))(i)._respuestasOPO=[2 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1 2 2];
+%    todo.(indice(j+1,:))(i)._respuestasOPO=[2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1];
+%  endfor
+%endfor
+%--------------------------------------
+
+_colores=["--+k";"--ok";"--*k";"--.k";"--xk";"--sk";"--^k";"--vk";"-->k";"--<k";"--pk";"--hk"];
+
+_cooperacion=[];
+_nada=[];
 for j=inicio:fin
   _coop=zeros(1,_nSujetos);
   _nadaAux=zeros(1,_nSujetos);
@@ -59,90 +78,32 @@ endfor
 %_cooperacion=_cooperacion';
 _trialsOK=30*ones(length([inicio:fin]),_nSujetos);
 _promediosC=zeros(length([inicio:fin]),_nSujetos);
+%for i=1:_vSujetos
+%  _promediosC(i,:)=_cooperacion(i,:)./(_trialsOK-_nada)(i,:);
+%endfor
 
 _promediosC=_cooperacion./(_trialsOK-_nada);
 
 _media=sum(_promediosC');%/_nSujetos; % CHEQUEAR MEDIA con menos sujetos
+_semTodos=zeros(1,length(_media));
 inicioAux=inicio;
 finAux=fin;
-figure;hold on;
 for j=inicio:fin
-  if j<07
-    _vSujetos=_vSujetos1;
-  elseif (j>=07 && j<09)
+  if j<24
+    _vSujetos=_vSujetos1;  
+  elseif (j>=24 && j<30)
     _vSujetos=_vSujetos2;
-  elseif (j>=09 && j<25)
+  elseif (j>=30 && j<32)
     _vSujetos=_vSujetos3;
-  elseif (j>=25 && j<43)
+  elseif (j>=32 && j<34)
     _vSujetos=_vSujetos4;
-  elseif (j>=43)
+  elseif (j>=34)
     _vSujetos=_vSujetos5;
   endif
   _media(j)=_media(j)/length(_vSujetos);
-  plot([1:_nSujetos],_media(j));
+  _semTodos(j)=sem(_promediosC(j,_vSujetos));
 endfor
-hold off;
-_vSujetos=[3 7 9 10];
-%   Promedio total de las ultimas 10 sesiones --------------------------------------
-_mediaXsujeto=zeros(1,_nSujetos);
-_medianaXsujeto=zeros(1,_nSujetos);
-_stdXsujeto=zeros(1,_nSujetos);
-figure; hold on;
-for i=_vSujetos
-  ultimo=_iniSujExp(i)-1 + expXsuj(i);
-  primero=ultimo-_ultimosX+1;
-  _mediaXsujeto(i)=mean(_promediosC(primero:ultimo,i));
-  _mediaFallasXsujeto(i)=mean(_nada(primero:ultimo,i));
-  _medianaXsujeto(i)=median(_promediosC(primero:ultimo,i));
-  _stdXsujeto(i)=sem(_promediosC(primero:ultimo,i));
-  plot([1:_ultimosX],_promediosC(primero:ultimo,i));
-endfor
-hold off;
 
-% MEDIA 
-hhh=figure; 
-h=errorbar([1:length(_vSujetos)],_mediaXsujeto(_vSujetos),_stdXsujeto(_vSujetos),'*k');
-set (h, "linewidth", 3);
-hh=ylabel("% of cooperation");set(hh, "fontsize", 14);
-hh=title("Cooperation Mean");set(hh, "fontsize", 14);
-hold on;
-axis ("tic[yz]", "labely[xyz]");
-bar(1:length(_vSujetos),_mediaXsujeto(_vSujetos));
-h2=plot(1:length(_vSujetos),_criterio*ones(1,length(_vSujetos)),'--r');
-set (h2, "linewidth", 3);
-%plot([0  5],.5*ones(1,2),'--k');
-legend("SEM","MEAN","half",0);
-t=text([1:length(_vSujetos)]-0.1, .1*ones(1,length(_vSujetos)), _txtSujetos(_vSujetos,:),"fontsize",13);
-hh=xlabel("Subjects");set(hh, "fontsize", 14);
-axis([0 5 0 1.05]);
-hold off;
-%name=strcat("figura_iPD_1_2_9s_13s/fig_finales/cooperation_mean_reversion",".png");
-%print(hhh, name);
-
-% MEDIANA
-hhh=figure
-errorbar([1:length(_vSujetos)],_medianaXsujeto(_vSujetos), _stdXsujeto(_vSujetos),'*k');
-set (h, "linewidth", 3);
-hh=xlabel("Subjects");set(hh, "fontsize", 14);
-hh=ylabel("% of cooperation");set(hh, "fontsize", 14);
-hh=title("Cooperation Median");set(hh, "fontsize", 14);
-hold on;
-bar(1:length(_vSujetos),_medianaXsujeto(_vSujetos));
-h2=plot(1:length(_vSujetos),_criterio*ones(1,length(_vSujetos)),'--r');
-set (h2, "linewidth", 3);
-%plot([1:12],.5*ones(1,12),'--k');
-legend("SEM","MEAN","half",0);
-axis ("tic[yz]", "labely[xyz]");
-t=text([1:length(_vSujetos)]-0.1, .1*ones(1,length(_vSujetos)), _txtSujetos(_vSujetos,:),"fontsize",13);
-axis([0 5 0 1.05])
-hold off;
-name=strcat("figura_iPD_1_2_9s_13s/fig_finales/cooperation_median_reversion",".png");
-print(hhh, name);
-
-
-_vSujetos=_vSujetos3;
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 inicioAux=inicio;
 finAux=fin;
 % PLOT sujeto Todos juntos
