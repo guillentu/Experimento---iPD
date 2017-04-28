@@ -91,22 +91,46 @@ _media=sum(_promediosC)/_nSujetos; % CHEQUEAR MEDIA con menos sujetos
 %media=sum((_cooperacion([2 3 4 5 6],:)./(5*30)));
 
 
-%%%%%%% ACA 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Experimentos por sujetos
+expXsuj=zeros(1,_nSujetos);
+for j=inicio:(numfields(todo))
+  for i=1:length(todo.(indice(j+1,:)))
+    if length(todo.(indice(j+1,:))(i)._groupStr)!=0
+      expXsuj(i)++;
+    endif
+  endfor
+endfor
+
 [r c]=size(_promediosC);
-if (r!=12)
+if(r!=12)
   _promediosC=_promediosC'
-Endif
+endif
 _vSujetos=_vSujetos3;
+
 %%%%%%%%    TODOS JUNTOS DESDE EL FINAL hasta -17 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+_promediosC_EndAttached=zeros(_nSujetos,18);
+for i=[3 7 9 10]
+  _promediosC_EndAttached(i,:)=...
+            _promediosC(i,[(expXsuj(i)-17)+_iniSujExp(i)-1:(expXsuj(i)+_iniSujExp(i)-1)]);
+endfor
+_media_EndAtached=mean(_promediosC_EndAttached([3 7 9 10],:))
+_semTodos_EndAttached=sem(_promediosC_EndAttached([3 7 9 10],:),1)
+
 figure();
-h=plot([1:18],_promediosC(3,(fin-17):fin),'--ok',[1:18],_promediosC(7,fin-17:fin),'--ok',...
-             [1:18],_promediosC(10,[7:24]),'--ok',[1:18], _promediosC(9,[fin-17:fin]),'--ok');
-set(h,"linewidth",2)
+h=plot([1:18],_promediosC(3,(fin-17):fin),'--ok',[1:18],_promediosC(7,fin-17:fin),'--ok',[1:18],_promediosC(10,[7:24]),'--ok',[1:18], _promediosC(9,[fin-17:fin]),'--ok');
+set(h,"linewidth",2);
+hold on;
+hh=plot(_media_EndAtached);set(hh, "linewidth", 3);
+hh=plot(_media_EndAtached+_semTodos_EndAttached,'--r');set(hh, "linewidth", 3);
+hh=plot(_media_EndAtached-_semTodos_EndAttached,'--r');set(hh, "linewidth", 3);
+hold off;
 hh=xlabel("n of sesiones");set(hh,"fontsize",20);
 hh=ylabel("% Cooperation");set(hh,"fontsize",20);
 hh=title("Evolution of Cooperation en iPD");set(hh,"fontsize",20)
-legend(_txtSujetos(3,:),_txtSujetos(7,:),_txtSujetos(10,:),_txtSujetos(9,:));
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+legend(_txtSujetos(3,:),_txtSujetos(7,:),_txtSujetos(10,:),_txtSujetos(9,:),4);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 figure;
 plot([inicio:fin],_promediosC(3,:),'--ok');

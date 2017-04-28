@@ -48,7 +48,8 @@ endfor
 %endfor
 
 %_criterio=.50;
-graficos_iPD_1_2_9s_13s_12Ratas_reversion_medias_y_medianas_reversionBETA % se obtienen los sujetos que superan el .75 porciento de cooperación
+
+%% Estaba descomentado %%%graficos_iPD_1_2_9s_13s_12Ratas_reversion_medias_y_medianas_reversionBETA % se obtienen los sujetos que superan el .75 porciento de cooperación
 
 %%%%%  COOPERACION ESTABLE - PLATEAU 
 _ps2=zeros(2,_nSujetos);
@@ -77,36 +78,36 @@ _values=zeros(_nSujetos,1);
 %endfor
 
 %%%%%%%%%%%5 COOPERADORES Y NO COOPERADORES %%%%%%%%%%%%%%%%%%%%
-%_sujetosCooperadores=find(_mediaXsujeto>_criterio); % indice de sujetos que pasaron el criterios 
-aux1=find(_mediaXsujeto>_criterio);%   P(c|c) 
-aux2=find(_mediaXsujeto>_criterio);%   P(c|d)
-%aux1=find(QQTotmarkov(1,1,:)(:)>_criterio);%   P(c|c) 
-%aux2=find(QQTotmarkov(2,1,:)(:)>_criterio);%   P(c|d)
-if length(aux1)>length(aux2)
-  aux3=ismember(aux1,aux2)
-  aux1=aux1(aux3)
-else
-  aux3=ismember(aux2,aux1)
-  aux1=aux2(aux3)  
-endif
-% chi_2 a sujetos que pasaron el criterio general (prob de c dado c o d mayor a la azar 0.5)
-frec_teo=100*[.5];
-for i=aux1
-  chi_2_xSujetos(i)=sum((100*QQTotmarkov(:,1,i)-frec_teo).^2./frec_teo); % dos
-  sum((100*QQTotmarkov(:,1,i)-frec_teo).^2./frec_teo)
-endfor
-pasan=zeros(1,_nSujetos);
-freedom=1;
-% Nivel de signidicacia Sin correccion de Bonferroni
-for i=aux1
-  if (1-chi2cdf(chi_2_xSujetos(i),freedom))<0.05 
-    pasan(i)=1;% Se rechaza la HIP NULA
-  endif
-endfor
-%_sujetosCooperadores=_vSujetos1(logical(pasan));
-_sujetosCooperadores=find(_mediaXsujeto>_criterio)
-%_sujetosCooperadores=find(aux1>_criterio); % indice de sujetos que pasaron el criterios 
-_sujetosNocooperadores=complemento(_sujetosCooperadores,_vSujetos); % Obtiene los indices de los no coop
+%%_sujetosCooperadores=find(_mediaXsujeto>_criterio); % indice de sujetos que pasaron el criterios 
+%aux1=find(_mediaXsujeto>_criterio);%   P(c|c) 
+%aux2=find(_mediaXsujeto>_criterio);%   P(c|d)
+%%aux1=find(QQTotmarkov(1,1,:)(:)>_criterio);%   P(c|c) 
+%%aux2=find(QQTotmarkov(2,1,:)(:)>_criterio);%   P(c|d)
+%if length(aux1)>length(aux2)
+%  aux3=ismember(aux1,aux2)
+%  aux1=aux1(aux3)
+%else
+%  aux3=ismember(aux2,aux1)
+%  aux1=aux2(aux3)  
+%endif
+%% chi_2 a sujetos que pasaron el criterio general (prob de c dado c o d mayor a la azar 0.5)
+%frec_teo=100*[.5];
+%for i=aux1
+%  chi_2_xSujetos(i)=sum((100*QQTotmarkov(:,1,i)-frec_teo).^2./frec_teo); % dos
+%  sum((100*QQTotmarkov(:,1,i)-frec_teo).^2./frec_teo)
+%endfor
+%pasan=zeros(1,_nSujetos);
+%freedom=1;
+%% Nivel de signidicacia Sin correccion de Bonferroni
+%for i=aux1
+%  if (1-chi2cdf(chi_2_xSujetos(i),freedom))<0.05 
+%    pasan(i)=1;% Se rechaza la HIP NULA
+%  endif
+%endfor
+%%_sujetosCooperadores=_vSujetos(logical(pasan));
+%_sujetosCooperadores=find(_mediaXsujeto>_criterio)
+%%_sujetosCooperadores=find(aux1>_criterio); % indice de sujetos que pasaron el criterios 
+%_sujetosNocooperadores=complemento(_sujetosCooperadores,_vSujetos); % Obtiene los indices de los no coop
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 _trialsOK=30*ones(length([inicio:fin]),_nSujetos);
@@ -126,20 +127,20 @@ endfor
 inicioAux=inicio;
 finAux=fin;
 % PLOT sujeto uno x uno
-figure();hold on;
-for i=_sujetosCooperadores%1:_nSujetos
-  finAux=_iniSujExp(i)-1+expXsuj(i);
-  inicioAux=finAux-_ultimosX+1;
-  h=plot([inicioAux:finAux],_promediosC(inicioAux:finAux,i),_colores(i,:));
-  set(h, "linewidth", 2);
-  hh=xlabel("n de sesiones");set(hh, "fontsize", 14);
-  hh=ylabel("% de cooperacion");set(hh, "fontsize", 14);
-  hh=title(strcat("Cooperation ",num2str(_criterio,2)));
-  set(hh, "fontsize", 14);
-  grid on;
-endfor
-hold off;
-legend(_txtSujetos(_sujetosCooperadores,:),4);
+%figure();hold on;
+%for i=_sujetosCooperadores%1:_nSujetos
+%  finAux=_iniSujExp(i)-1+expXsuj(i);
+%  inicioAux=finAux-_ultimosX+1;
+%  h=plot([inicioAux:finAux],_promediosC(inicioAux:finAux,i),_colores(i,:));
+%  set(h, "linewidth", 2);
+%  hh=xlabel("n de sesiones");set(hh, "fontsize", 14);
+%  hh=ylabel("% de cooperacion");set(hh, "fontsize", 14);
+%  hh=title(strcat("Cooperation ",num2str(_criterio,2)));
+%  set(hh, "fontsize", 14);
+%  grid on;
+%endfor
+%hold off;
+%legend(_txtSujetos(_sujetosCooperadores,:),4);
 
 figure();hold on;
 for i=_sujetosCooperadores%1:_nSujetos
@@ -155,34 +156,34 @@ endfor
 hold off;
 legend(_txtSujetos(_sujetosCooperadores,:),4);
 
-figure();hold on;
-for i=_sujetosNocooperadores%1:_nSujetos
-  finAux=_iniSujExp(i)-1+expXsuj(i);
-  inicioAux=finAux-_ultimosX+1;
-  h=plot([inicioAux:finAux],_promediosC(inicioAux:finAux,i),_colores(i,:));
-  set(h, "linewidth", 2);
-  xlabel("sesiones (Last ten sessions)");
-  ylabel("% de cooperacion");
-  %title(strcat("Cooperacion en iPDen Sujetos que No alcanzaron Criterio: ",num2str(_criterio,2)));
-  grid on;
-endfor
-hold off;
-legend(_txtSujetos(_sujetosNocooperadores,:),4);
+%figure();hold on;
+%for i=_sujetosNocooperadores%1:_nSujetos
+%  finAux=_iniSujExp(i)-1+expXsuj(i);
+%  inicioAux=finAux-_ultimosX+1;
+%  h=plot([inicioAux:finAux],_promediosC(inicioAux:finAux,i),_colores(i,:));
+%  set(h, "linewidth", 2);
+%  xlabel("sesiones (Last ten sessions)");
+%  ylabel("% de cooperacion");
+%  %title(strcat("Cooperacion en iPDen Sujetos que No alcanzaron Criterio: ",num2str(_criterio,2)));
+%  grid on;
+%endfor
+%hold off;
+%legend(_txtSujetos(_sujetosNocooperadores,:),4);
 
-figure();hold on;
-for i=_sujetosNocooperadores%1:_nSujetos
-  finAux=_iniSujExp(i)-1+expXsuj(i);
-  inicioAux=finAux-_ultimosX+1;
-  h=plot([1:length(_promediosC(inicioAux:finAux,i))],_promediosC(inicioAux:finAux,i),_colores(i,:));
-  set(h, "linewidth", 2);
-  hh=xlabel("n de sesiones");set(hh, "fontsize", 14);
-  hh=ylabel("% de cooperacion");set(hh, "fontsize", 14);
-  hh=title(strcat("Cooperacion en iPDen Sujetos que No alcanzaron Criterio: ",num2str(_criterio,2)));
-  axis([1 length(_promediosC(inicioAux:finAux,i)) 0 1]);set(hh, "fontsize", 14);
-  grid on;
-endfor
-hold off;
-legend(_txtSujetos(_sujetosNocooperadores,:),4);
+%figure();hold on;
+%for i=_sujetosNocooperadores%1:_nSujetos
+%  finAux=_iniSujExp(i)-1+expXsuj(i);
+%  inicioAux=finAux-_ultimosX+1;
+%  h=plot([1:length(_promediosC(inicioAux:finAux,i))],_promediosC(inicioAux:finAux,i),_colores(i,:));
+%  set(h, "linewidth", 2);
+%  hh=xlabel("n de sesiones");set(hh, "fontsize", 14);
+%  hh=ylabel("% de cooperacion");set(hh, "fontsize", 14);
+%  hh=title(strcat("Cooperacion en iPDen Sujetos que No alcanzaron Criterio: ",num2str(_criterio,2)));
+%  axis([1 length(_promediosC(inicioAux:finAux,i)) 0 1]);set(hh, "fontsize", 14);
+%  grid on;
+%endfor
+%hold off;
+%legend(_txtSujetos(_sujetosNocooperadores,:),4);
 
 % Kluskal-Wallis ANOVA one-way a lo largo de un juego (ultimas 10sesiones) entre los promedios de cooperacion 
 % test de independencia entre muestras o individuos

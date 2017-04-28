@@ -106,4 +106,5 @@ hh=xlabel("n of sesiones");set(hh,"fontsize",20);
 hh=ylabel("% Cooperation");set(hh,"fontsize",20);
 hh=title("Evolution of Cooperation en iPD");set(hh,"fontsize",20)
 legend(_txtSujetos(3,:),_txtSujetos(7,:),_txtSujetos(10,:),_txtSujetos(9,:));
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+

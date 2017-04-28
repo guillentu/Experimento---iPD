@@ -217,8 +217,8 @@ figure();
 hold on;
 finAux=max(shft);
 for i=[1 3 7 8 9 10 11 12]
-  
-  h=plot(1:length([shft(3)+1:finAux]),_promediosC_EndAttached(shft(3)+1:finAux,i),_colores(i,:));set (h, "linewidth", 1);
+  h=plot(1:length([shft(3)+1:finAux]),_promediosC_EndAttached(shft(3)+1:finAux,i),_colores(i,:));...
+         set (h, "linewidth", 1);
 endfor
 
 hh=plot(_media_EndAtached(28:finAux));set(hh, "linewidth", 3);
@@ -235,8 +235,7 @@ hh=plot(_media_EndAtached(28:finAux)-_semTodos_EndAttached(28:finAux),'--r');set
 hhh=xlabel("n of sesiones");set(hhh, "fontsize", 14);
 hhh=ylabel("% of cooperation");set(hhh, "fontsize", 14);
 %title("Cooperacion en iPD");
-strLegend=strcat({_txtSujetos([1 3 7 8 9 10 11 12],:)},{"Mean";"sem"});
-%legend(,4);
+hhh=legend({"1A";"3A";"7A";"8A";"9A";"10A";"3B";"4B";"Mean";"sem"},4);
 t=text(13.5, 0.25, {"Last 10 sessions"},"fontsize",14);
 hhh=plot(40*ones(1,length([0.05:0.02:0.95]))-shft(3),[0.05:0.02:0.95],'*m');set(hhh, "linewidth", 1);
 grid on;

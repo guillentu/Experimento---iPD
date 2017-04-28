@@ -1,6 +1,6 @@
 %-------------------------------------------------------------------
 %------- Alternar Random - Control ITI - Castigo
-clear all
+%clear all
 close all
 %load "iPD_1_2_9s_13s/datosCargadoWorkspace20160423";
 %load "iPD_1_2_9s_13s/datos_modificados_sobre_errores"
@@ -18,7 +18,8 @@ _nSujetos=12;
 %_vSujetos3=[2 6 8 9 11]; % a partir del exp30
 %_vSujetos4=[2 8 11]; % a partir del exp32
 %_vSujetos5=[8]; % a partir del exp34
-%%%% SOLOS cooperadores_vSujetos1=[3 7 12];% desde el exp01
+%%%% SOLOS cooperadores
+_vSujetos1=[3 7 12];% desde el exp01
 _vSujetos2=[3 7 10 12];% desde el exp07  
 _vSujetos3=[3 7 9 10 12];% desde el exp09
 _vSujetos4=[3 7 9 12];% desde el exp25
@@ -149,66 +150,66 @@ grid on;
 
 hold off;
 
-%%%%%%%%%%%%%%%%    todos alineados al final           %%%%%%%%%%%%%%%%%%%%%
-
-_promediosC_EndAttached=_promediosC;
-
-_shft=zeros(1,_nSujetos);
-for i=1:_nSujetos
-  shft(i)=length(find(_promediosC(:,i)==0));
-  _promediosC_EndAttached(:,i)=shift(_promediosC(:,i),shft(i));
-endfor
-_media_EndAtached=sum(_promediosC_EndAttached,2);
-_semTodos_EndAttached=zeros(size(_media_EndAtached));
-b=shft;
-bb=10000;bbb=10000;bbbb=10000;bbbbb=10000;
-for j=inicio:fin
-  if (j>min(bbbbb))
-    _vSujetos=_vSujetos1;
-  elseif j>min(bbbb)
-    _vSujetos=_vSujetos2;
-    bbbbb = bbbb(bbbb~=min(bbbb)) ;
-  elseif j>min(bbb)
-    _vSujetos=_vSujetos3;
-    bbbb = bbb(bbb~=min(bbb)); 
-  elseif j>min(bb)
-    _vSujetos=_vSujetos4;
-    bbb = bb(bb~=min(bb)) ;
-  elseif j>min(b)
-    _vSujetos=_vSujetos5;
-     bb = b(b~=min(b));
-  endif
-  _media_EndAtached(j)=_media_EndAtached(j)/length(_vSujetos);
-  _semTodos_EndAttached(j)=sem(_promediosC_EndAttached(j,_vSujetos));
-endfor
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-figure();
-hold on;
-finAux=max(shft);
-for i=[1 3 7 8 9 10 11 12]
-  
-  h=plot(1:length([shft(3)+1:finAux]),_promediosC_EndAttached(shft(3)+1:finAux,i),_colores(i,:));set (h, "linewidth", 1);
-endfor
-
-hh=plot(_media_EndAtached(28:finAux));set(hh, "linewidth", 3);
-hh=plot(_media_EndAtached(28:finAux)+_semTodos_EndAttached(28:finAux),'--r');set(hh, "linewidth", 3);
-hh=plot(_media_EndAtached(28:finAux)-_semTodos_EndAttached(28:finAux),'--r');set(hh, "linewidth", 3);
-%x=[inicio:50]';
-%y=(_media(inicio:50))';
-%F = [ ones(length(x),1) x];
-%[p,e_var,r,p_var,y_var] = LinearRegression(F,y);
-%yFit = F*p;
-%%figure();
-%%hh=plot(x,y,'+b',x,yFit,'-g',x,yFit+1.96*sqrt(y_var),'--r',x,yFit-1.96*sqrt(y_var),'--r');
-%set(hh, "linewidth", 3);
-hhh=xlabel("n of sesiones");set(hhh, "fontsize", 14);
-hhh=ylabel("% of cooperation");set(hhh, "fontsize", 14);
-%title("Cooperacion en iPD");
-strLegend=strcat({_txtSujetos([1 3 7 8 9 10 11 12],:)},{"Mean";"sem"});
-%legend(,4);
-t=text(13.5, 0.25, {"Last 10 sessions"},"fontsize",14);
-hhh=plot(40*ones(1,length([0.05:0.02:0.95]))-shft(3),[0.05:0.02:0.95],'*m');set(hhh, "linewidth", 1);
-grid on;
-
-hold off;
+%%%%%%%%%%%%%%%%%    todos alineados al final           %%%%%%%%%%%%%%%%%%%%%
+%
+%_promediosC_EndAttached=_promediosC;
+%
+%_shft=zeros(1,_nSujetos);
+%for i=1:_nSujetos
+%  shft(i)=length(find(_promediosC(:,i)==0));
+%  _promediosC_EndAttached(:,i)=shift(_promediosC(:,i),shft(i));
+%endfor
+%_media_EndAtached=sum(_promediosC_EndAttached,2);
+%_semTodos_EndAttached=zeros(size(_media_EndAtached));
+%b=shft;
+%bb=10000;bbb=10000;bbbb=10000;bbbbb=10000;
+%for j=inicio:fin
+%  if (j>min(bbbbb))
+%    _vSujetos=_vSujetos1;
+%  elseif j>min(bbbb)
+%    _vSujetos=_vSujetos2;
+%    bbbbb = bbbb(bbbb~=min(bbbb)) ;
+%  elseif j>min(bbb)
+%    _vSujetos=_vSujetos3;
+%    bbbb = bbb(bbb~=min(bbb)); 
+%  elseif j>min(bb)
+%    _vSujetos=_vSujetos4;
+%    bbb = bb(bb~=min(bb)) ;
+%  elseif j>min(b)
+%    _vSujetos=_vSujetos5;
+%     bb = b(b~=min(b));
+%  endif
+%  _media_EndAtached(j)=_media_EndAtached(j)/length(_vSujetos);
+%  _semTodos_EndAttached(j)=sem(_promediosC_EndAttached(j,_vSujetos));
+%endfor
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%figure();
+%hold on;
+%finAux=max(shft);
+%for i=[1 3 7 8 9 10 11 12]
+%  
+%  h=plot(1:length([shft(3)+1:finAux]),_promediosC_EndAttached(shft(3)+1:finAux,i),_colores(i,:));set (h, "linewidth", 1);
+%endfor
+%
+%hh=plot(_media_EndAtached(28:finAux));set(hh, "linewidth", 3);
+%hh=plot(_media_EndAtached(28:finAux)+_semTodos_EndAttached(28:finAux),'--r');set(hh, "linewidth", 3);
+%hh=plot(_media_EndAtached(28:finAux)-_semTodos_EndAttached(28:finAux),'--r');set(hh, "linewidth", 3);
+%%x=[inicio:50]';
+%%y=(_media(inicio:50))';
+%%F = [ ones(length(x),1) x];
+%%[p,e_var,r,p_var,y_var] = LinearRegression(F,y);
+%%yFit = F*p;
+%%%figure();
+%%%hh=plot(x,y,'+b',x,yFit,'-g',x,yFit+1.96*sqrt(y_var),'--r',x,yFit-1.96*sqrt(y_var),'--r');
+%%set(hh, "linewidth", 3);
+%hhh=xlabel("n of sesiones");set(hhh, "fontsize", 14);
+%hhh=ylabel("% of cooperation");set(hhh, "fontsize", 14);
+%%title("Cooperacion en iPD");
+%strLegend=strcat({_txtSujetos([1 3 7 8 9 10 11 12],:)},{"Mean";"sem"});
+%%legend(,4);
+%t=text(13.5, 0.25, {"Last 10 sessions"},"fontsize",14);
+%hhh=plot(40*ones(1,length([0.05:0.02:0.95]))-shft(3),[0.05:0.02:0.95],'*m');set(hhh, "linewidth", 1);
+%grid on;
+%
+%hold off;

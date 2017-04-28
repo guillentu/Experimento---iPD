@@ -3,6 +3,15 @@
 % Se utiliza la media en cooperacion dado cada estado a lo largo de las ultimas 10 
 % sesiones
 % CORRER ...matrizDeMarkov.m
+
+probCXestadoReversion;  
+probEleccionC=zeros(4,_nSujetos);
+probEleccionD=zeros(4,_nSujetos);
+for i=1:_nSujetos
+  probEleccionC(:,i)=probEleccion(:,1,i);
+  probEleccionD(:,i)=probEleccion(:,2,i);
+endfor
+
   frec_teo=100*[.5];
   chi_2_xSujetos_probCdadoX=zeros(1,_nSujetos);
   

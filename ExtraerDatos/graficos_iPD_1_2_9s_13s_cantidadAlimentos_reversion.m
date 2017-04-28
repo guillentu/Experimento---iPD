@@ -89,7 +89,6 @@ hold off;
 name=strcat("figura_iPD_1_2_9s_13s/fig_finales/mean_timeout_reversion",".png");
 print(hhh, name);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 % TODOS JUNTOS
 figure();hold on;
 for i=_vSujetos
@@ -110,37 +109,38 @@ aux=_vSujetos;
 graficos_iPD_1_2_9s_13s_12Ratas_reversion_medias_y_medianas_reversionBETA; % se obtienen los sujetos que superan el .75 porciento de cooperación
 _vSujetos=aux;
 %%%%%%%CRITERIO %%%% COOPERADORES Y NO COOPERADORES %%%%%%%%%%%%%%%%%%%%
-%_sujetosCooperadores=find(_mediaXsujeto>_criterio); % indice de sujetos que pasaron el criterios 
-aux1=find(_mediaXsujeto>_criterio);%  
-aux2=find(_mediaXsujeto>_criterio);%  
-%aux1=find(QQTotmarkov(1,1,:)(:)>_criterio);%   P(c|c) 
-%aux2=find(QQTotmarkov(2,1,:)(:)>_criterio);%   P(c|d)
-if length(aux1)>length(aux2)
-  aux3=ismember(aux1,aux2)
-  aux1=aux1(aux3)
-else
-  aux3=ismember(aux2,aux1)
-  aux1=aux2(aux3)  
-endif
-% chi_2 a sujetos que pasaron el criterio general (prob de c dado c o d mayor a la azar 0.5)
-frec_teo=100*[.5];
-for i=aux1
-  chi_2_xSujetos(i)=sum((100*QQTotmarkov(:,1,i)-frec_teo).^2./frec_teo); % dos
-  sum((100*QQTotmarkov(:,1,i)-frec_teo).^2./frec_teo)
-endfor
-pasan=zeros(1,_nSujetos);
-freedom=1;
-% Nivel de signidicacia Sin correccion de Bonferroni
-for i=aux1
-  if (1-chi2cdf(chi_2_xSujetos(i),freedom))<0.05 
-    pasan(i)=1;% Se rechaza la HIP NULA
-  endif
-endfor
+chi_2_xSujetosProbCxEstados_reversion;
+%%_sujetosCooperadores=find(_mediaXsujeto>_criterio); % indice de sujetos que pasaron el criterios 
+%aux1=find(_mediaXsujeto>_criterio);%  
+%aux2=find(_mediaXsujeto>_criterio);%  
+%%aux1=find(QQTotmarkov(1,1,:)(:)>_criterio);%   P(c|c) 
+%%aux2=find(QQTotmarkov(2,1,:)(:)>_criterio);%   P(c|d)
+%if length(aux1)>length(aux2)
+%  aux3=ismember(aux1,aux2)
+%  aux1=aux1(aux3)
+%else
+%  aux3=ismember(aux2,aux1)
+%  aux1=aux2(aux3)  
+%endif
+%% chi_2 a sujetos que pasaron el criterio general (prob de c dado c o d mayor a la azar 0.5)
+%frec_teo=100*[.5];
+%for i=aux1
+%  chi_2_xSujetos(i)=sum((100*QQTotmarkov(:,1,i)-frec_teo).^2./frec_teo); % dos
+%  sum((100*QQTotmarkov(:,1,i)-frec_teo).^2./frec_teo)
+%endfor
+%pasan=zeros(1,_nSujetos);
+%freedom=1;
+%% Nivel de signidicacia Sin correccion de Bonferroni
+%for i=aux1
+%  if (1-chi2cdf(chi_2_xSujetos(i),freedom))<0.05 
+%    pasan(i)=1;% Se rechaza la HIP NULA
+%  endif
+%endfor
+%
+%_sujetosCooperadores=find(_mediaXsujeto>_criterio)
+_sujetosCooperadores=(1:_nSujetos)(logical(pasan));%% deberia ser asi(1:_nSujetos)(logical(pasan))
 
-_sujetosCooperadores=find(_mediaXsujeto>_criterio)
-%_sujetosCooperadores=_vSujetos1(logical(pasan));
-%_sujetosCooperadores=find(aux1>_criterio); % indice de sujetos que pasaron el criterios 
-_sujetosNocooperadores=complemento(_sujetosCooperadores,_vSujetos); % Obtiene los indices de los no coop
+_sujetosNocooperadores=complemento(_sujetosCooperadores,[3 7 9 10 12]); % Obtiene los indices de los no coop
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %_sujetosCooperadores=find(_mediaXsujeto>_criterio); % indice de sujetos que pasaron el criterios 
 %_sujetosNocooperadores=complemento(_sujetosCooperadores,_nSujetos); % Obtiene los indices de los no coop

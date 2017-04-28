@@ -23,7 +23,7 @@ indice=["exp00";"exp01";"exp02";"exp03";"exp04";"exp05";
 todo.exp01=exp01;todo.exp02=exp02;todo.exp03=exp03;todo.exp04=exp04;todo.exp05=exp05;
 todo.exp06=exp06;todo.exp07=exp07;todo.exp08=exp08;todo.exp09=exp09;todo.exp10=exp10;
 todo.exp11=exp11;todo.exp12=exp12;todo.exp13=exp13;todo.exp14=exp14;todo.exp15=exp15;
-todo.exp16=exp16;todo.exp17=exp17;todo.exp18=exp18;todo.exp19=exp19,todo.exp20=exp20;
+todo.exp16=exp16;todo.exp17=exp17;todo.exp18=exp18;todo.exp19=exp19;todo.exp20=exp20;
 todo.exp21=exp21;todo.exp22=exp22;todo.exp23=exp23;todo.exp24=exp24;todo.exp25=exp25;
 todo.exp26=exp26;todo.exp27=exp27;todo.exp28=exp28;todo.exp29=exp29;todo.exp30=exp30;
 todo.exp31=exp31;todo.exp32=exp32;todo.exp33=exp33;todo.exp34=exp34;todo.exp35=exp35;
@@ -53,7 +53,7 @@ _trialIni=1;
 _trialFin=30;
 inicio=01;
 
-_ultimosX=6;
+_ultimosX=9;
             %R T P  S
 _vRefuerzos=[1 2 0  0];
 _vDelay4eat=[5 5 9 13];%[cc dc cd dd] [R T S P]
@@ -299,12 +299,12 @@ for i=_vSujetos
     aux3=[aux(2,2)*C(i,j)+ aux(4,2)*S(i,j) aux(2,1)*C(i,j)+ aux(4,1)*S(i,j);%c|c% %d|c%
           aux(1,4)*T(i,j)+ aux(3,4)*P(i,j) aux(1,3)*T(i,j)+ aux(3,3)*P(i,j);%c|d% %d|d%
           ];
-    aux3=aux3./sum(aux3,2)
+    aux3=aux3./sum(aux3,2);
     %aux2=aux2./[aux2(1)+aux2(3) aux2(2)+aux2(4) aux2(1)+aux2(3) aux2(2)+aux2(4)];
     aux2=[aux2 vec(aux3)]; % vec -> %c|c  c|d  d|c  d|d %
                            %          R    S    T    P
   endfor
-  QQTot(:,:,i)
+  QQTot(:,:,i);
   QQTot(:,:,i) = QQTot(:,:,i)./length([primero:ultimo]);
   QQTot(:,:,i) = QQTot(:,:,i)./sum(QQTot(:,:,i),2);
   QQTotmarkovSem(:,:,i)=[sem(aux2,2)(1) sem(aux2,2)(2); sem(aux2,2)(3) sem(aux2,2)(4)];% R T P S
@@ -320,9 +320,10 @@ for i=1:_nSujetos
 endfor
 
 % Alimento obtenido por cada animal
+
 graficos_iPD_1_2_9s_13s_cantidadAlimentos_reversion;
 
-graficos_iPD_1_2_9s_13s_Promedios_ultimosX_reversion;
+%graficos_iPD_1_2_9s_13s_Promedios_ultimosX_reversion;
 
 % Probabilidad d estar en C o en D
 
