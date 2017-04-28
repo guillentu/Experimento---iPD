@@ -164,8 +164,8 @@ l altruism behavior in animals and whether non-human animals with less cognitive
  Green, Price and Hamburger (1995) assessed the iPD game on pigeons and
  observed that birds are very impulsive and prefer small immediate rewards
  rather than big, long-term, delayed rewards.
- Stevens and Stephens (2003) trained blue jays (Cyanocitta cristata) using
- four different pay-off matrices, where one of them was the iPD matrix,
+ Stevens and Stephens (19952003) trained blue jays (Cyanocitta cristata)
+ using four different pay-off matrices, where one of them was the iPD matrix,
  with a special dual operant box.
  This study found little cooperation in PD treatment and this findings suggest
  that blue jays don't cooperate when immediate benefit is available (defect
@@ -913,6 +913,10 @@ We compute the strategies for each rats by diagram of probability of transition
 Results
 \end_layout
 
+\begin_layout Subsection
+First Phase: Iterated PD with opponent 
+\end_layout
+
 \begin_layout Standard
 The experiment result are show below.
  To assessing whether a subject was abled to solve the iPD game, we first
@@ -1138,7 +1142,7 @@ delay against a TFT opponent.
 \end_inset
 
 ).
- The Asterix denote when strategy adopted by a rat had significant difference
+ The Asterisk denote when strategy adopted by a rat had significant difference
  from chance strategy (
 \begin_inset Formula $\chi{}^{2}$
 \end_inset
@@ -3785,6 +3789,34 @@ CD
 
 \begin_layout Subsubsection
 Second Phase: reversion
+\end_layout
+
+\begin_layout Standard
+The second phase experiment was developed to understand if the behaviours
+ exhibit by the rats was either learned through the experience into the
+ iPD game or was simply the choice of one lever, cooperation, by chance.
+ If the rats chose lever by the chance and not understood the task, they
+ should choose the same lever even if the lever was changed.
+ We used four rats that got the best score in the previous experiment.
+ In this phase, the levers order was inverted and if in the previous experiment
+ the lever meant cooperate, it became to defeat lever.
+ We procedures in the same way as in the first experiment and the only parameter
+ that had been modify was the long of sessions.
+ The rats per sessions were: 
+\size scriptsize
+3A/52; 7A/52; 9A/52; 10A/24;
+\size default
+.
+ The means of cooperation from the last 10 session is showed in the figure
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig1_REV_meansAnd significance-1"
+
+\end_inset
+
+ and the asterisk denote the rats with some fix strategy and that it is
+ different to the random strategy.
 \end_layout
 
 \begin_layout Standard

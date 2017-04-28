@@ -149,8 +149,8 @@ on.
  They present a ESS for iPD that combines robustness and stability with
  initial viability, called TIT FOR TAT.
  This strategy arised as the winner strategy, submitted by Anatol Rapoport,
- in the Robert Axelrod's computer tournament, because it can survive invations
- from other strategies.
+ in the Robert Axelrod's computer tournament (Axelrod, 1984), because it
+ can survive invations from other strategies.
  The highly simple strategy consists in cooperating on the first move and
  then doing whatever the opponent did on the preceding move.
  ..............
@@ -164,12 +164,12 @@ l altruism behavior in animals and whether non-human animals with less cognitive
  Green, Price and Hamburger (1995) assessed the iPD game on pigeons and
  observed that birds are very impulsive and prefer small immediate rewards
  rather than big, long-term, delayed rewards.
- Stevens and Stephens (19952003) trained blue jays (Cyanocitta cristata)
- using four different pay-off matrices, where one of them was the iPD matrix,
- with a special dual operant box.
+ Stephens (1995) trained blue jays (Cyanocitta cristata) using four different
+ pay-off matrices, where one of them was the iPD matrix, with a special
+ dual operant box.
  This study found little cooperation in PD treatment and this findings suggest
  that blue jays don't cooperate when immediate benefit is available (defect
- only), even if a long-term benefit may exist.
+ only), even if a long-term larger benefit may exist.
  Then Steven and colleages (2002 and 2005) inspired by the low levels of
  cooperation observed (Gardner et al., 1984; Clements and Stephens, 1995;
  Flood et al., 1983; Green et al., 1995) proposed assess over iPD frame to
@@ -185,7 +185,15 @@ l altruism behavior in animals and whether non-human animals with less cognitive
  Adams and Mesterton-Gibbons pointed out that in a different study by Stevens
  And colleages (2002) birds care less about the immediacy of reward if seeds
  accumulation in a transparent food tray for some time before being delivered.
- 
+\end_layout
+
+\begin_layout Standard
+In the last work make by Stephens, we can explain improve cooperation levels
+ trough the 
+\emph on
+Behaviorism
+\emph default
+ theory in with the improve cooperation levels is landed 
 \end_layout
 
 \begin_layout Standard
