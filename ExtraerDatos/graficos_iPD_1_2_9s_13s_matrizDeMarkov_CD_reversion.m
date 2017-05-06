@@ -404,6 +404,7 @@ _estadoEstacionario=zeros(2,_nSujetos);
 %endfor
 
 % Prob de Coop dado que antes C o D
+%%% ACA para abajo %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 for i=_vSujetos
   hhh=figure;
   h=errorbar([1 2 3 4],vec(QQTotmarkov(:,:,i))',vec(QQTotmarkovSem(:,:,i))','*k');
