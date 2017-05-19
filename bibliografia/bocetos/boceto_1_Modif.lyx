@@ -3810,17 +3810,17 @@ Second Phase: reversion
 \end_layout
 
 \begin_layout Standard
-The second phase experiment was developed to understand if the behaviours
+The second phase experiment was developed to understand if the behaviors
  exhibit by the rats was either learned through the experience into the
  iPD game or was simply the choice of one lever, cooperation, by chance.
- If the rats chose lever by the chance and not understood the task, they
- should choose the same lever even if the lever was changed.
+ If was by chance and now levers position change, the rats is going to choose
+ same lever.
  We used four rats that got the best score in the previous experiment.
- In this phase, the levers order was inverted and if in the previous experiment
- the lever meant cooperate, it became to defeat lever.
- We procedures in the same way as in the first experiment and the only parameter
- that had been modify was the long of sessions.
- The rats per sessions were: 
+ In this phase, the levers order was inverted, i.e.
+ if in previous experiment the lever meant cooperate, it became to defeat
+ lever.
+ We procedures in the same way as in the first experiment.
+ The sessions duration per rat were: 
 \size scriptsize
 3A/52; 7A/52; 9A/52; 10A/24;
 \size default
