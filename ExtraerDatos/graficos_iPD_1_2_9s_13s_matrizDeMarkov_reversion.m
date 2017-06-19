@@ -269,18 +269,6 @@ _vSujetos=_vSujetos3;
 for i=_vSujetos
   Q(:,:,i)=matricesQ.(indiceSujeto(i,:))./(29*(fin-inicio+1)-controlFallas(i));
 endfor
-%Q(:,:,1)=matricesQ.(indiceSujeto(1,:))./(29*(fin-inicio+1)-controlFallas(1));
-%Q(:,:,2)=matricesQ.(indiceSujeto(2,:))./(29*(fin-inicio+1)-controlFallas(2));
-%Q(:,:,3)=matricesQ.(indiceSujeto(3,:))./(29*(fin-inicio+1)-controlFallas(3));
-%Q(:,:,4)=matricesQ.(indiceSujeto(4,:))./(29*(fin-inicio+1)-controlFallas(4));
-%Q(:,:,5)=matricesQ.(indiceSujeto(5,:))./(29*(fin-inicio+1)-controlFallas(5));
-%Q(:,:,6)=matricesQ.(indiceSujeto(6,:))./(29*(fin-inicio+1)-controlFallas(6));
-%Q(:,:,7)=matricesQ.(indiceSujeto(7,:))./(29*(fin-inicio+1)-controlFallas(7));
-%Q(:,:,8)=matricesQ.(indiceSujeto(8,:))./(29*(fin-inicio+1)-controlFallas(8));
-%Q(:,:,9)=matricesQ.(indiceSujeto(9,:))./(29*(fin-inicio+1)-controlFallas(9));
-%Q(:,:,10)=matricesQ.(indiceSujeto(10,:))./(29*(fin-inicio+1)-controlFallas(10));
-%Q(:,:,11)=matricesQ.(indiceSujeto(11,:))./(29*(fin-inicio+1)-controlFallas(11));
-%Q(:,:,12)=matricesQ.(indiceSujeto(12,:))./(29*(fin-inicio+1)-controlFallas(12));
 
 Qmean=mean(Q,3);
 Qmedian=median(Q,3);
@@ -289,23 +277,28 @@ Qvar=var(Q,0,3);
 
 % VER COMO OBTENER LA MATRIZ DE ESTADO DE MARKOV
 
-T(:,:)=T(:,:)/length(_trialIni:_trialFin);C(:,:)=C(:,:)/length(_trialIni:_trialFin);P(:,:)=P(:,:)/length(_trialIni:_trialFin);S(:,:)=S(:,:)/length(_trialIni:_trialFin);
+T(:,:)=T(:,:)/(length(_trialIni:_trialFin));C(:,:)=C(:,:)/length(_trialIni:_trialFin);P(:,:)=P(:,:)/length(_trialIni:_trialFin);S(:,:)=S(:,:)/length(_trialIni:_trialFin);
+auxOutComes=T(:,:)+C(:,:)+P(:,:)+S(:,:);
+T=T./auxOutComes;T(isnan(T(:,:)))=0;
+C=C./auxOutComes;C(isnan(C(:,:)))=0;
+P=P./auxOutComes;P(isnan(P(:,:)))=0;
+S=S./auxOutComes;S(isnan(S(:,:)))=0;
 % una por una
 
-%for i=_vSujetos
-%  figure;
-%  plot([inicio:fin],T(i,:),'--ob',[inicio:fin],C(i,:),'--or',
-%       [inicio:fin],P(i,:),'--oc',[inicio:fin],S(i,:),'--om');
-%  xlabel("n de sesiones");
-%  ylabel("% Tasa de comportamientos");
-%  title(strcat("Estrategias probabilistica en iPD: ",_txtSujetos(i,:)));
-%  legend("T=D-C","C=C-C","P=D-D","S=C-D");
-%  %grid on;
-%  %name=strcat(_txtSujetos(i,:),".pdf");
-%  %name=strcat("temp_figs/tasa_TRPS_",name);
-%  %print -deps name;
-%  % VER saveas() SAVEAS
-%endfor
+for i=_vSujetos
+  figure;
+  plot([inicio:fin],T(i,:),'--ob',[inicio:fin],C(i,:),'--or',
+       [inicio:fin],P(i,:),'--oc',[inicio:fin],S(i,:),'--om');
+  xlabel("n de sesiones");
+  ylabel("% Tasa de comportamientos");
+  title(strcat("Estrategias probabilistica en iPD: ",_txtSujetos(i,:)));
+  legend("T=D-C","C=C-C","P=D-D","S=C-D");
+  %grid on;
+  %name=strcat(_txtSujetos(i,:),".pdf");
+  %name=strcat("temp_figs/tasa_TRPS_",name);
+  %print -deps name;
+  % VER saveas() SAVEAS
+endfor
 
 %%%%%%%%%%%%%%%%%%%%%%%% Copy MArkov %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 TT=T;CC=C;
@@ -406,17 +399,17 @@ endfor
 T2(:,:)=T(:,:);R2(:,:)=C(:,:);P2(:,:)=P(:,:);S2(:,:)=S(:,:);
 %%%%%%%%%%%%%%%%%%%%%%%%% 
 %% Frecuencia de ESTADOS ULTIMOS 10 SESIONES - POR SUJETOS
-%for i=1:_nSujetos
-%  ultimo=numfields(matricesQxExp.(indiceSujeto(i,:)));
-%  primero=ultimo-_ultimosX+1;
-%  figure()
-%  plot([primero:ultimo],T2(i,primero:ultimo),'--ob',[primero:ultimo],R2(i,primero:ultimo),'--or',[primero:ultimo],P2(i,primero:ultimo),'-->k',[primero:ultimo],S2(i,primero:ultimo),'--.m');
-%  xlabel(strcat("n de sesiones - Ultimas ",_ultimosX));
-%  ylabel("% Proporcion entre estados");
-%  title(strcat("Estrategias probabilistica en iPD: ",_txtSujetos(i,:)));
-%  legend("T=D-C","R=C-C","P=D-D","S=C-D");
-%  grid on;
-%endfor
+for i=1:_nSujetos
+  ultimo=numfields(matricesQxExp.(indiceSujeto(i,:)));
+  primero=ultimo-_ultimosX+1;
+  figure()
+  plot([primero:ultimo],T2(i,primero:ultimo),'--ob',[primero:ultimo],R2(i,primero:ultimo),'--or',[primero:ultimo],P2(i,primero:ultimo),'-->k',[primero:ultimo],S2(i,primero:ultimo),'--.m');
+  xlabel(strcat("n de sesiones - Ultimas ",_ultimosX));
+  ylabel("% Proporcion entre estados");
+  title(strcat("Estrategias probabilistica en iPD: ",_txtSujetos(i,:)));
+  legend("T=D-C","R=C-C","P=D-D","S=C-D");
+  grid on;
+endfor
 %%%%%%%%%%%%%%%%%%%%%%%%%
 %% Frecuencia de estados - PROMEDIOS DE LAS ULTIMAS 10 SESIONES
 T_mean=zeros(1,_nSujetos);R_mean=zeros(1,_nSujetos);P_mean=zeros(1,_nSujetos);S_mean=zeros(1,_nSujetos);
@@ -425,20 +418,20 @@ T_std=zeros(1,_nSujetos);R_std=zeros(1,_nSujetos);P_std=zeros(1,_nSujetos);S_std
 for i=_vSujetos
   ultimo=_iniSujExp(i)-1+numfields(matricesQxExp.(indiceSujeto(i,:)));
   primero=ultimo-_ultimosX+1;
-  T_mean(i)=mean(T2(i,primero:ultimo),2);R_mean(i)=mean(R2(i,primero:ultimo),2);P_mean(i)=mean(P2(i,primero:ultimo),2);S_mean(i)=mean(S2(i,primero:ultimo),2);
-  T_median(i)=median(T2(i,primero:ultimo),2);R_median(i)=median(R2(i,primero:ultimo),2);P_median(i)=median(P2(i,primero:ultimo),2);S_median(i)=median(S2(i,primero:ultimo),2);
-  T_std(i)=std(T2(i,primero:ultimo),2);R_std(i)=std(R2(i,primero:ultimo),2);P_std(i)=std(P2(i,primero:ultimo),2);S_std(i)=std(S2(i,primero:ultimo),2);
-%  figure;
-%  %plot(1,T_mean(i), 2,R_mean(i) ,3, P_mean(i),4,S_mean(i));
-%  h=errorbar(1,T_mean(i), T_std(i),'*r', 2,R_mean(i),R_std(i),'*b', 3,P_mean(i), P_std(i),'*m', 4,S_mean(i), S_std(i),'*c');
-%  set (h, "linewidth", 3);
-%  xlabel("Estados");
-%  ylabel("% de ocurrencia");
-%  title(strcat("Tasa de ocurrencia de cada estado en iPD: ",_txtSujetos(i,:)));
-%  legend("T=D-C","R=C-C","P=D-D","S=C-D");
-%  hold on
-%  bar(1:4,[T_mean(i),R_mean(i),P_mean(i),S_mean(i)])
-%  hold off
+%  T_mean(i)=mean(T2(i,primero:ultimo),2);R_mean(i)=mean(R2(i,primero:ultimo),2);P_mean(i)=mean(P2(i,primero:ultimo),2);S_mean(i)=mean(S2(i,primero:ultimo),2);
+%  T_median(i)=median(T2(i,primero:ultimo),2);R_median(i)=median(R2(i,primero:ultimo),2);P_median(i)=median(P2(i,primero:ultimo),2);S_median(i)=median(S2(i,primero:ultimo),2);
+%  T_std(i)=std(T2(i,primero:ultimo),2);R_std(i)=std(R2(i,primero:ultimo),2);P_std(i)=std(P2(i,primero:ultimo),2);S_std(i)=std(S2(i,primero:ultimo),2);
+  figure;
+  %plot(1,T_mean(i), 2,R_mean(i) ,3, P_mean(i),4,S_mean(i));
+  h=errorbar(1,T_mean(i), T_std(i),'*r', 2,R_mean(i),R_std(i),'*b', 3,P_mean(i), P_std(i),'*m', 4,S_mean(i), S_std(i),'*c');
+  set (h, "linewidth", 3);
+  xlabel("Estados");
+  ylabel("% de ocurrencia");
+  title(strcat("Tasa de ocurrencia de cada estado en iPD: ",_txtSujetos(i,:)));
+  legend("T=D-C","R=C-C","P=D-D","S=C-D");
+  hold on
+  bar(1:4,[T_mean(i),R_mean(i),P_mean(i),S_mean(i)])
+  hold off
 endfor
 %%%%%%%%%%%%%%%%%%%%%%%%%
 _criterio=.5;

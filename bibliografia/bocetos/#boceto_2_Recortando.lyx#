@@ -160,7 +160,8 @@ on.
 \begin_layout Standard
 Thus, many experimenters have tried to understand different aspects of reciproca
 l altruism behavior in animals and whether non-human animals with less cognitive
- abilities can solve iPD.
+ abilities can solve iPD (Mendres & Waal,2000; Waal, 2000; Hause & colleagues,
+ 2003; Taborsky, 2007, 2008, 2011 and 2015, Wood, 2016; Kalenscher, 2015).
  Green, Price and Hamburger (1995) assessed the iPD game on pigeons and
  observed that birds are very impulsive and prefer small immediate rewards
  rather than big, long-term, delayed rewards.
@@ -182,48 +183,29 @@ l altruism behavior in animals and whether non-human animals with less cognitive
  arguing that each accumulation block the iPD payoff matrix becomes stag
  hung matrix (whereby the temptation outcome, T, leave to be the best reward,
  R>T≥P>S) because the bird quantify the effective amount after four trials.
- Adams and Mesterton-Gibbons pointed out that in a different study by Stevens
- And colleages (2002) birds care less about the immediacy of reward if seeds
- accumulation in a transparent food tray for some time before being delivered.
-\end_layout
-
-\begin_layout Standard
-.
-\end_layout
-
-\begin_layout Standard
-From the point of view of Operant conditioning, the improve on cooperation
- levels of Stephen's work is explained by adding a new conditioning stimulus
- to the game, transparent food storage, that become more easy to predict
- where is the maximum reward in the game.
- 
-\end_layout
-
-\begin_layout Standard
-Reciprocal altruism in Long Evans male and female rats was tested by Wood
- and colleagues (2016) using iPD and the cooperation level barely surpassing
- chance choice.
- In Moita's study (Viana et al., 2010) mimicking a tit-for-tat strategy on
- the opponent in a double T-maze chamber reached levels of cooperation,
- that in ours further analyzed their Markov chain diagram and observed that
- the strategy performed by rats was more selfish than cooperative because
- it adopted an alternating decision's rule among sucker and temptation outcomes.
- 
-\end_layout
-
-\begin_layout Standard
-The rats often develop on social groups and studies have demonstrated that
- they prefer social reward rather than being rewarded in isolation.
- The result showed that he rats had a tendency to perform pro-social acts
- barely over the chance (Moita, 2015;Kalenscher, 2015).
- 
+ The Stephens' studies is timely because it forces behavioral ecologists,
+ and other behavioral researcher, not only to rethink the potential importance
+ of temporal discounting, but also to address a number of other issues (Mesterto
+n-Gibbons, 2002).
+ Indeed, we can explain from the point of view of Operant Conditioning,
+ the improve on cooperation levels in Stephen's work by adding a new conditionin
+g stimulus to the game, transparent food storage, and in this way the game
+ become more easy to predict where is the maximum reward in the game.
+ Other issue to keep in mind is the kind of reinforcement and punishment
+ used in the experiments, a iPD study with rats (Viana et al., 2010) using
+ mimicking a tit-for-tat strategy on the opponent and positive reinforcement
+ and punishment in a double T-maze chamber achieved an apparent level of
+ cooperation that in ours further analyzed of their Markov chain diagram
+ shown that the strategy performed by rats was more selfish than cooperative
+ because it adopted an alternating decision's rule among sucker and temptation
+ outcomes, basically they flees from punishment.
 \end_layout
 
 \begin_layout Standard
 Why all iPD-based studies haven't found high levels of reciprocity? In the
  aforementioned previous studies, rats don't learn iPD probably due to the
- fact that the test box and stimulus contingency are inadequate for its
- natural expectation, i.e.
+ fact that the reinforcement and punishment and stimulus contingency are
+ inadequate for its natural expectation, i.e.
  the rat maybe has the ability to achieve a approximated optimal solution
  but for example the length of time used to make the contingency is longer
  than what rats can keep in mind or maybe they don't realized the real differenc
@@ -235,6 +217,8 @@ e within outcomes in the pay-off matrix.
 Given these consideration, the present study was conduct to assess reciprocal
  altruism behaviors using a particular structure that combine iPD matrix
  pay-off and delay's punishment and a tit for tat opponent's strategy.
+ We assess a iterated PD in two phase: first normal iPD and then, in a second
+ phase, a reversion iPD using the previous animals set.
  We found that this combination achieve high level of reciprocal altruism
  behavior in rats.
 \end_layout
@@ -258,7 +242,7 @@ Subject
 \end_layout
 
 \begin_layout Standard
-Two groups of male LongEvans rats (300–330 g) of two months of age were
+Two groups of male Long-Evans rats (300–330 g) of two months of age were
  provided by the IBYME-CONICET.
  Twelves males were subjects and six (Nstooge=6) identical rats were opponents.
  At weaning time all subjects were housed in groups of two rats per cage
@@ -278,7 +262,7 @@ l cages.
 \end_layout
 
 \begin_layout Standard
-The subject was named in succesive order: 1A, 2A, 3A, 4A, 5A, 6A, 7A, 8A,
+The subject was named in successive order: 1A, 2A, 3A, 4A, 5A, 6A, 7A, 8A,
  9A, 10A, 3B, 4B.
 \end_layout
 
@@ -495,7 +479,14 @@ The main experiment was designed to study the reciprocal cooperation lever
  in a iterated prisioner's dilemma game.
  We used a pay-off matrix in which T>R>P>S.
  The T and R outcomes were positive reinforcement and P and S was punishment.
- The matrix coefficient are shown in TABLE 1.
+ The matrix coefficient are shown in table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "table_matrixIPD"
+
+\end_inset
+
+.
  Thus, If opponent choose the cooperation option (C) and the subject choose
  C or defection option (D), the subject received one pellet or 2 pellet,
  respectability.
@@ -740,7 +731,14 @@ In iPD experiment used a dual chamber without neither center lever and center
  The rats had only two lever option and the contact between chamber was
  restored.
  There was one chamber for the subject and one for the opponent fixed during
- all the experiment, see the figure xxx(figura 1 de ARRIBA).
+ all the experiment, see the figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "table_matrixIPD"
+
+\end_inset
+
+.
  
 \end_layout
 
@@ -859,13 +857,19 @@ The experiment result are show below.
  We have to sort the type of strategy.
  The full data set that we record had difference length for each rat, because
  after recorded 20 sessions the experiment for each rat stop when the means
- of cooperation reached a plateau.
- (
+ of cooperation reached a plateau(
+\color red
+Conditions were terminated once a subject’s prefer- ence for cooperation
+ appeared to be stable, based on visual inspec- tion of the data.
+\color inherit
+).
+ The total session per rats was: (
 \size scriptsize
-Rat/sessions: 1A/23; 2A/33; 3A/23; 4A/23; 5A/23; 6A/31; 7A/23; 8A/50; 9A/31;
- 10A/29; 3B/33; 4B/23
+1A/23; 2A/33; 3A/23; 4A/23; 5A/23; 6A/31; 7A/23; 8A/50; 9A/31; 10A/29; 3B/33;
+ 4B/23
 \size default
-) We compute the rat behaviors from last ten session data set.
+).
+ We compute the rat behaviors from last ten session data set.
  A strategy was defined by a transition vector that reflects the probability
  of cooperation when the previous trials resulted in outcomes of R, T, S
  or P, respectively (
@@ -2966,7 +2970,7 @@ status open
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -3015,7 +3019,7 @@ name "fig_meanC_strategy"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -3278,7 +3282,7 @@ reference "fig_2state_markovChain"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset space \hfill{}
@@ -3288,7 +3292,7 @@ status collapsed
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -3330,7 +3334,7 @@ name "fig_coopMutua"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -3382,7 +3386,7 @@ name "fig_rewardVScoop"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -3427,7 +3431,7 @@ name "fig_reward VS timeout"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -3726,9 +3730,9 @@ Second Phase: reversion
 \end_layout
 
 \begin_layout Standard
-The second phase experiment was developed to understand if the behaviors
- exhibit by the rats was either learned through the experience into the
- iPD game or was simply the choice of one lever, cooperation, by chance.
+The second phase experiment was developed to evaluate if the behaviors exhibit
+ by the rats was either learned through the experience into the iPD game
+ or was simply the choice of one lever, cooperation, by chance.
  If was by chance and now levers position change, the rats is going to choose
  same lever.
  We used four rats that got the best score in the previous experiment.
@@ -3749,8 +3753,8 @@ reference "fig1_REV_meansAnd significance-1"
 
 \end_inset
 
- and the asterisk denote the rats with some fix strategy and that it is
- different to the random strategy.
+ and the asterisk denote the rats with a some fix strategy that differs
+ to the random strategy.
 \end_layout
 
 \begin_layout Standard
@@ -3770,7 +3774,7 @@ status open
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -3826,7 +3830,7 @@ name "fig1_REV_meansAnd significance-1"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -3890,7 +3894,7 @@ name "fig_REV_meanReward-1-1"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -3946,7 +3950,7 @@ name "fig1_REV_meansTimeout"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -4109,6 +4113,47 @@ over the las ten sessions).
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+All rats reached the level of reward near 1(i.e.
+\begin_inset Formula $100\%$
+\end_inset
+
+, see fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig1_REV_meansAnd significance-1"
+
+\end_inset
+
+) and the total punishment under 0.4 (40%, see fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig1_REV_meansTimeout"
+
+\end_inset
+
+).
+ In the Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "table_REV_meanAndstrategies-1"
+
+\end_inset
+
+ is showed the means of cooperation and strategy vectors per rat, all subject
+ overpass the 
+\begin_inset Formula $0.5(50\%)$
+\end_inset
+
+ probability and the strategy vectors are very different to chance.
+ Only the 10A rat has a strategy that need a additional explanation about
+ because the probabilities to cooperate given P or T outcomes are very low.
+ But If we look at the frequency .
+ 
 \end_layout
 
 \begin_layout Standard
@@ -4367,7 +4412,8 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
-\begin_inset Formula $0.796$
+\color blue
+\begin_inset Formula $0.787$
 \end_inset
 
 
@@ -4381,7 +4427,8 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
-\begin_inset Formula $0.89130$
+\color blue
+\begin_inset Formula $0.868$
 \end_inset
 
 
@@ -4396,7 +4443,8 @@ cooperation
 
 \series bold
 \size tiny
-\begin_inset Formula $0.794$
+\color blue
+\begin_inset Formula $0.786$
 \end_inset
 
 
@@ -4410,6 +4458,7 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
+\color blue
 \begin_inset Formula $1$
 \end_inset
 
@@ -4424,7 +4473,8 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
-\begin_inset Formula $0.778$
+\color blue
+\begin_inset Formula $0.769$
 \end_inset
 
 
@@ -4438,6 +4488,7 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
+\color blue
 \begin_inset Formula $113.336$
 \end_inset
 
@@ -4482,7 +4533,8 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
-\begin_inset Formula $0.861$
+\color blue
+\begin_inset Formula $0.865$
 \end_inset
 
 
@@ -4496,7 +4548,8 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
-\begin_inset Formula $0.875$
+\color blue
+\begin_inset Formula $0.885$
 \end_inset
 
 
@@ -4511,7 +4564,8 @@ cooperation
 
 \series bold
 \size tiny
-\begin_inset Formula $0.889$
+\color blue
+\begin_inset Formula $0.891$
 \end_inset
 
 
@@ -4525,6 +4579,7 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
+\color blue
 \begin_inset Formula $1$
 \end_inset
 
@@ -4539,7 +4594,8 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
-\begin_inset Formula $0.719$
+\color blue
+\begin_inset Formula $0.714$
 \end_inset
 
 
@@ -4553,6 +4609,7 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
+\color blue
 \begin_inset Formula $117.942$
 \end_inset
 
@@ -4597,7 +4654,8 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
-\begin_inset Formula $0.840$
+\color blue
+\begin_inset Formula $0.849$
 \end_inset
 
 
@@ -4611,7 +4669,8 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
-\begin_inset Formula $0.677$
+\color blue
+\begin_inset Formula $0.697$
 \end_inset
 
 
@@ -4626,7 +4685,8 @@ cooperation
 
 \series bold
 \size tiny
-\begin_inset Formula $0.871$
+\color blue
+\begin_inset Formula $0.877$
 \end_inset
 
 
@@ -4640,6 +4700,7 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
+\color blue
 \begin_inset Formula $1$
 \end_inset
 
@@ -4654,7 +4715,8 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
-\begin_inset Formula $0.767$
+\color blue
+\begin_inset Formula $0.781$
 \end_inset
 
 
@@ -4668,6 +4730,7 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
+\color blue
 \begin_inset Formula $98.041$
 \end_inset
 
@@ -4712,7 +4775,8 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
-0.996
+\color blue
+0.963
 \end_layout
 
 \end_inset
@@ -4723,7 +4787,8 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
-\begin_inset Formula $1$
+\color blue
+\begin_inset Formula $0.333$
 \end_inset
 
 
@@ -4738,6 +4803,7 @@ cooperation
 
 \series bold
 \size tiny
+\color blue
 \begin_inset Formula $1$
 \end_inset
 
@@ -4752,7 +4818,8 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
-\begin_inset Formula $0.000$
+\color blue
+\begin_inset Formula $0.250$
 \end_inset
 
 
@@ -4766,7 +4833,8 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
-\begin_inset Formula $1$
+\color blue
+\begin_inset Formula $0.660$
 \end_inset
 
 
@@ -4780,6 +4848,7 @@ cooperation
 \begin_layout Plain Layout
 
 \size tiny
+\color blue
 \begin_inset Formula $200.000$
 \end_inset
 
@@ -4834,7 +4903,7 @@ status open
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -4883,7 +4952,7 @@ name "fig_REV_meanC_strategy-1"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -5039,17 +5108,17 @@ reference "fig_REV_meanC_strategy-1"
 
 ) Mean of cooperation over not random strategy rats (8 rats) was performed
  and the measured is shown on the first magenta bar (
-\begin_inset Formula $mean=0.852$
+\begin_inset Formula $mean=0.866$
 \end_inset
 
  and 
-\begin_inset Formula $s.e.m.=\pm0.0482$
+\begin_inset Formula $s.e.m.=\pm0.036$
 \end_inset
 
  ).
  The next four green bars represent the mean strategy over the group and
  each bar agree with the transition vector,
-\begin_inset Formula $v=[0.794,0.856,0.801,0.890]$
+\begin_inset Formula $v=[0.696,0.889,0.812,0.733]$
 \end_inset
 
 .
@@ -5068,13 +5137,12 @@ reference "fig_REV_outcomes rate-1"
 
 ) The bar graph shows the outcomes rates and suggest that R outcomes had
  very high incidence in the experiment over the last 10 sessions.
- .
  We found significant difference between outcomes (Friedman's ANOVA test
  was performed with bonferroni correction (
 \begin_inset Formula $\alpha=0.0125,p>3.3e-5;\chi^{2}=23.4$
 \end_inset
 
-) and Multiple pairwise comparison's using Nemeyi's procedure ).
+) and Multiple pairwise comparison's using Nemeyi's procedure).
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -5530,6 +5598,18 @@ From an operant conditioning perspective, we believe they have actually
  altruistic behavior.
  Because rats don't receive punishment for either punishment or temptation
  outcomes they rather assessed a different type of reciprocity----- 
+\end_layout
+
+\begin_layout Standard
+_
+\end_layout
+
+\begin_layout Standard
+_
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Section
