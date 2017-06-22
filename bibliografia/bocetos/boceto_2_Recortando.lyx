@@ -857,7 +857,12 @@ The experiment result are show below.
  We have to sort the type of strategy.
  The full data set that we record had difference length for each rat, because
  after recorded 20 sessions the experiment for each rat stop when the means
- of cooperation reached a plateau.
+ of cooperation reached a plateau(
+\color red
+Conditions were terminated once a subject’s prefer- ence for cooperation
+ appeared to be stable, based on visual inspec- tion of the data.
+\color inherit
+).
  The total session per rats was: (
 \size scriptsize
 1A/23; 2A/33; 3A/23; 4A/23; 5A/23; 6A/31; 7A/23; 8A/50; 9A/31; 10A/29; 3B/33;
@@ -5593,6 +5598,18 @@ From an operant conditioning perspective, we believe they have actually
  altruistic behavior.
  Because rats don't receive punishment for either punishment or temptation
  outcomes they rather assessed a different type of reciprocity----- 
+\end_layout
+
+\begin_layout Standard
+_
+\end_layout
+
+\begin_layout Standard
+_
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Section
