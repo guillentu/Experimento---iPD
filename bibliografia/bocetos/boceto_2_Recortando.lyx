@@ -123,8 +123,11 @@ Research on cooperative behaviors between non-related organisms has gained
  (reward), and if both chose defection they both get payed a smaller reward
  P (punishment) than R.
  However if one cooperates and the second player defects, the first one
- gets payed S (sucker) and other receives the best amount T (temptation)
- where the pay-off matrix maintains the inequality 
+ gets payed S (sucker) and other receives the best amount T (temptation).
+\end_layout
+
+\begin_layout Standard
+where the pay-off matrix maintains the inequality 
 \begin_inset Formula $T>R>P>S$
 \end_inset
 

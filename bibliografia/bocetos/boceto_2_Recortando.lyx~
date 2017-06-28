@@ -73,9 +73,9 @@ Ever since Darwin's theory of evolution was proposed, cooperative traits
  Both appended theories are capable to explain social altruism behavior
  through natural selection.
  In evolutionary biology, reciprocal altruism is a behavior whereby an organism
- performs a costly act that benefits another organism with the expectation
- that the recipient will act similarly later time or even in the next generation.
- 
+ performs a costly act that benefits another organism and if this behavior
+ is reciprocal by others organism later time or even in the next generation,
+ they increase a long-time reward or their fitness.
 \end_layout
 
 \begin_layout Standard
@@ -87,17 +87,16 @@ The kinship theory that after landed on kin Selection and Maynar Smith use
  organisms whereas Triver's theroy does.
  The term “reciprocal altruism” was first used by Trivers to refer to this
  type of behavior and therefore explain how selection favors altruistic
- behaviors in the long run when there is reciprocity in the population .
+ behaviors in the long run when there is reciprocity in the interaction.
  Some of the most relevant and reliable examples about this type of cooperation
  are the Wilkinson studies in reciprocal food sharing behavior in vampires
  bats (Desmodus rotundus), (Wilkinson, 1984).
  In these experiments, animals share a part of the harvested food only to
  a partner that previously shared with them.
- Other examples, ....
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Quotation
 Different conditions must be fulfilled to ensure that reciprocally altruistic
  behaviors will be selected.
  Wilkinson makes a clear summary of these conditions : (1) the behavior
@@ -125,7 +124,15 @@ Research on cooperative behaviors between non-related organisms has gained
  P (punishment) than R.
  However if one cooperates and the second player defects, the first one
  gets payed S (sucker) and other receives the best amount T (temptation)
- where the pay-off matrix maintains the inequality T>R>P>S.
+ where the pay-off matrix maintains the inequality 
+\begin_inset Formula $T>R>P>S$
+\end_inset
+
+ and 
+\begin_inset Formula $2R>T+P$
+\end_inset
+
+.
  
 \end_layout
 
