@@ -140,23 +140,29 @@ T=zeros(_nSujetos,length(inicio:fin));C=zeros(_nSujetos,length(inicio:fin));
 P=zeros(_nSujetos,length(inicio:fin));S=zeros(_nSujetos,length(inicio:fin));
 controlFallas=zeros(1,_nSujetos);
 auxFallas=1;
-for j=inicio:fin
-  if j>48
-  endif
-  if j<24
-    _vSujetos=_vSujetos1;
-  elseif (j>=24 && j<30)
-    _vSujetos=_vSujetos2;
-  elseif (j>=30 && j<32)
-    _vSujetos=_vSujetos3;
-  elseif (j>=32 && j<34)
-    _vSujetos=_vSujetos4;
-  elseif (j>=34)
-    _vSujetos=_vSujetos5;
-  else
-    _vSujetos=_vSujetosNull;
-  endif
-  for i=_vSujetos
+
+for i=1:_nSujetos
+  ultimo=expXsuj(i);
+  primero=1;
+  for j=primero:ultimo %Experimentos
+
+%for j=inicio:fin
+%  if j>48
+%  endif
+%  if j<24
+%    _vSujetos=_vSujetos1;
+%  elseif (j>=24 && j<30)
+%    _vSujetos=_vSujetos2;
+%  elseif (j>=30 && j<32)
+%    _vSujetos=_vSujetos3;
+%  elseif (j>=32 && j<34)
+%    _vSujetos=_vSujetos4;
+%  elseif (j>=34)
+%    _vSujetos=_vSujetos5;
+%  else
+%    _vSujetos=_vSujetosNull;
+%  endif
+%  for i=_vSujetos
     for k=_trialIni:_trialFin  % nºtrials x Exp.  TRAICIONAR DADO QUE
       if ((todo.(indice(j+1,:))(i)._respuestasEXP(k)==0)||(todo.(indice(j+1,:))(i)._respuestasOPO(k)==0))
         if (k==1)
@@ -272,7 +278,7 @@ for i=1:_nSujetos % Ceros para todos
 endfor
 %   Promedio total --------------------------------------
 for i=1:_nSujetos
-  ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
+  ultimo=numfields(matricesQxExp.(indiceSujeto(i,:)));
   primero=ultimo-_ultimosX+1;
   for v=primero:ultimo % matricesQ borrada arriba
         matricesQ.(indiceSujeto(i,:))=matricesQ.(indiceSujeto(i,:))+matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:));
@@ -310,7 +316,7 @@ endfor
 QxExp_ante=matricesQxExp;
 indQ=[];
 for i=1:_nSujetos
-  for v=1:nfields(matricesQxExp.(indiceSujeto(i,:))) % experimentos
+  for v=1:numfields(matricesQxExp.(indiceSujeto(i,:))) % experimentos
     for j=1:4 %Estados TRPS
       if sum(matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))(j,:))!=0
          matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))(j,:)=matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))(j,:)/sum(matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))(j,:));
@@ -321,7 +327,7 @@ for i=1:_nSujetos
 endfor
 Q2=zeros(4,4,_nSujetos);
 for i=1:_nSujetos
-  ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
+  ultimo=numfields(matricesQxExp.(indiceSujeto(i,:)));
   primero=ultimo-_ultimosX+1;
   for v=primero:ultimo % matricesQ borrada arriba
         Q2(:,:,i)=Q2(:,:,i)+(matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))/length(primero:ultimo));
@@ -341,7 +347,7 @@ endfor
 stdQ=[];
 for i=1:_nSujetos
   aux=[];
-  ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
+  ultimo=numfields(matricesQxExp.(indiceSujeto(i,:)));
   primero=ultimo-_ultimosX+1;
   for j=primero:ultimo % experimentos
     aux=[aux;vec(matricesQxExp.(indiceSujeto(i,:)).(indice(j+1,:))')'];
@@ -359,7 +365,7 @@ T2(:,:)=T(:,:)/length(_trialIni:_trialFin);R2(:,:)=C(:,:)/length(_trialIni:_tria
 %%%%%%%%%%%%%%%%%%%%%%%%% 
 %% Frecuencia de ESTADOS ULTIMOS 10 SESIONES - POR SUJETOS
 %for i=1:_nSujetos
-%  ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
+%  ultimo=numfields(matricesQxExp.(indiceSujeto(i,:)));
 %  primero=ultimo-_ultimosX+1;
 %  figure()
 %  plot([primero:ultimo],T2(i,primero:ultimo),'--ob',[primero:ultimo],R2(i,primero:ultimo),'--or',[primero:ultimo],P2(i,primero:ultimo),'-->k',[primero:ultimo],S2(i,primero:ultimo),'--.m');
@@ -375,7 +381,7 @@ T2(:,:)=T(:,:)/length(_trialIni:_trialFin);R2(:,:)=C(:,:)/length(_trialIni:_tria
 %T_median=zeros(1,_nSujetos);R_median=zeros(1,_nSujetos);P_median=zeros(1,_nSujetos);S_median=zeros(1,_nSujetos);
 %T_std=zeros(1,_nSujetos);R_std=zeros(1,_nSujetos);P_std=zeros(1,_nSujetos);S_std=zeros(1,_nSujetos);
 %for i=1:_nSujetos
-%  ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
+%  ultimo=numfields(matricesQxExp.(indiceSujeto(i,:)));
 %  primero=ultimo-_ultimosX+1;
 %  T_mean(i)=mean(T2(i,primero:ultimo));R_mean(i)=mean(R2(i,primero:ultimo));P_mean(i)=mean(P2(i,primero:ultimo));S_mean(i)=mean(S2(i,primero:ultimo));
 %  T_median(i)=median(T2(i,primero:ultimo));R_median(i)=median(R2(i,primero:ultimo));P_median(i)=median(P2(i,primero:ultimo));S_median(i)=median(S2(i,primero:ultimo));
@@ -436,8 +442,9 @@ vals_std2=[(T_std(_sujetosNocooperadores));
 
 %vals2=30.*[(T_mean(_sujetosCooperadores));(R_mean(_sujetosCooperadores));(P_mean(_sujetosCooperadores));(S_mean(_sujetosCooperadores))]
 %myfriedman(vals2')
+
 dd=friedmanGuille(vals,0.05,1);
-dd.diff
+%dd.diff
 ff=friedmanGuille(vals2,0.05,1);
 %ff.diff
 % promediar las tasas de cooperacion y tasas de estados de los animales que superaron el criterio
@@ -482,22 +489,22 @@ _semT=sem(T_mean(_sujetosNocooperadores));
 _semR=sem(R_mean(_sujetosNocooperadores));
 _semP=sem(P_mean(_sujetosNocooperadores));
 _semS=sem(S_mean(_sujetosNocooperadores));
-hh=figure;
-h=errorbar(1,_mediaT, _semT,'*r', 2,_mediaR,_semR,'*b', 3,_mediaP, _semP,'*m', 4,_mediaS, _semS,'*c');
-set (h, "linewidth", 3);
-%xlabel("Estados");
-ylabel("% outcome rate","fontsize", 14);
-title(strcat("Incidence Rate of all outcome. Down level C: ",num2str(_criterio*100),"% de C"),"fontsize", 14);
-h=legend("T=D-C","R=C-C","P=D-D","S=C-D");set(h, "fontsize", 14);
-hold on;
-bar(1:4,[_mediaT,_mediaR,_mediaP,_mediaS]);
-axis ("tic[yz]", "labely[xyz]");
-t=text([1:4], -.04*ones(1,4), {"T"; "R";"P";"S"},"fontsize",14);
-t=text([1:(4-1)/(length(_sujetosNocooperadores)-1):4], -.08*ones(1,length(_sujetosNocooperadores)), _txtSujetos(_sujetosNocooperadores,:),"fontsize",13);
-axis([0 5 0 1]);
-hold off;
-name=strcat("figura_iPD_1_2_9s_13s/fig_finales/outcomeRate_downLevel",".png");
-print(hh, name);
+%hh=figure;
+%h=errorbar(1,_mediaT, _semT,'*r', 2,_mediaR,_semR,'*b', 3,_mediaP, _semP,'*m', 4,_mediaS, _semS,'*c');
+%set (h, "linewidth", 3);
+%%xlabel("Estados");
+%ylabel("% outcome rate","fontsize", 14);
+%title(strcat("Incidence Rate of all outcome. Down level C: ",num2str(_criterio*100),"% de C"),"fontsize", 14);
+%h=legend("T=D-C","R=C-C","P=D-D","S=C-D");set(h, "fontsize", 14);
+%hold on;
+%bar(1:4,[_mediaT,_mediaR,_mediaP,_mediaS]);
+%axis ("tic[yz]", "labely[xyz]");
+%t=text([1:4], -.04*ones(1,4), {"T"; "R";"P";"S"},"fontsize",14);
+%t=text([1:(4-1)/(length(_sujetosNocooperadores)-1):4], -.08*ones(1,length(_sujetosNocooperadores)), _txtSujetos(_sujetosNocooperadores,:),"fontsize",13);
+%axis([0 5 0 1]);
+%hold off;
+%name=strcat("figura_iPD_1_2_9s_13s/fig_finales/outcomeRate_downLevel",".png");
+%print(hh, name);
 
 _mediaT=mean(T_mean(_sujetosCooperadores));
 _mediaR=mean(R_mean(_sujetosCooperadores));
@@ -556,7 +563,7 @@ _stdS=std(S_mean(_sujetosCooperadores));
 % Prueba de homocedasticidad de Bartlett  http://www.itl.nist.gov/div898/handbook/eda/section3/eda357.htm
 %_vBartlett=zeros(_nSujetos,5);
 %for i=1:_nSujetos
-%  ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
+%  ultimo=numfields(matricesQxExp.(indiceSujeto(i,:)));
 %  primero=ultimo-_ultimosX+1;
 %
 %  [a b c]=bartlett_test(T2(i,primero:ultimo),R2(i,primero:ultimo),P2(i,primero:ultimo),S2(i,primero:ultimo));
@@ -643,7 +650,9 @@ _stdS=std(S_mean(_sujetosCooperadores));
 % Se utiliza la distribucion chi 2 para comparar los valores criticos 
 % se testea la desviación de las probabilidad de eleccion dado un estado respecto a un ditribucion uniforme
 % REQUIERE LAS PROB de COOPERAR DADO LOS DIFERENTES ESTADOS
-probEleccionXestadoPrimeroUltimo;
+%probEleccionXestadoPrimeroUltimo;
+probEleccionXestadoPrimeroUltimoBETAsinbasura;
+
 % Se testea que las probabilidades indiciduales sobre cada sujeto es diferente del azar
 % Prob. P(c|X) -> teorica = n_total_en_X / 2. La Frec Teoria se calcula como la suma de los casos de elección de C y D cuando caen 
 % en un determinado X.  
@@ -854,7 +863,7 @@ hold off;grid on;
 % fila T 
 err= [];
 for j=1:_nSujetos
-  for i=1:nfields(matricesQxExp.(indiceSujeto(j,:)))
+  for i=1:numfields(matricesQxExp.(indiceSujeto(j,:)))
     if length(find(QxExp_ante.(indiceSujeto(j,:)).(indice(i+1,:))(1,1:2)>0))!=0
       err=[err; j i find(QxExp_ante.(indiceSujeto(j,:)).(indice(i+1,:))(1,1:2)>0) 1];
     endif
@@ -863,7 +872,7 @@ endfor
 % fila R 
 
 for j=1:_nSujetos
-  for i=1:nfields(matricesQxExp.(indiceSujeto(j,:)))
+  for i=1:numfields(matricesQxExp.(indiceSujeto(j,:)))
     if length(find(QxExp_ante.(indiceSujeto(j,:)).(indice(i+1,:))(2,3:4)>0))!=0
       err=[err; j i find(QxExp_ante.(indiceSujeto(j,:)).(indice(i+1,:))(2,3:4)>0) 2];
     endif
@@ -872,7 +881,7 @@ endfor
 % fila P 
 
 for j=1:_nSujetos
-  for i=1:nfields(matricesQxExp.(indiceSujeto(j,:)))
+  for i=1:numfields(matricesQxExp.(indiceSujeto(j,:)))
     if length(find(QxExp_ante.(indiceSujeto(j,:)).(indice(i+1,:))(3,1:2)>0))!=0
       err=[err; j i find(QxExp_ante.(indiceSujeto(j,:)).(indice(i+1,:))(3,1:2)>0) 3];
     endif
@@ -881,7 +890,7 @@ endfor
 % fila S 
 
 for j=1:_nSujetos
-  for i=1:nfields(matricesQxExp.(indiceSujeto(j,:)))
+  for i=1:numfields(matricesQxExp.(indiceSujeto(j,:)))
     if length(find(QxExp_ante.(indiceSujeto(j,:)).(indice(i+1,:))(4,3:4)>0))!=0
       err=[err; j i find(QxExp_ante.(indiceSujeto(j,:)).(indice(i+1,:))(4,3:4)>0) 4];
     endif
@@ -893,7 +902,7 @@ endfor
 errores=zeros(length(1:_nSujetos),_ultimosX);
 abscisa=zeros(length(1:_nSujetos),_ultimosX);
 for i=1:_nSujetos
-  ultimo=nfields(matricesQxExp.(indiceSujeto(i,:)));
+  ultimo=numfields(matricesQxExp.(indiceSujeto(i,:)));
   primero=ultimo-_ultimosX+1;
   abscisa(i,:)=primero:ultimo;
   k=0;

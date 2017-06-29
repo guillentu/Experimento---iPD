@@ -7,6 +7,7 @@ _txtSujetos=["1A";"2A";"3A";"4A";"5A";"6A";"7A";"8A";"9A";"10A";"3B";"4B"];
 % PORCENTAJE DE COOPERACION
 _nSujetos=12;
 _vSujetos1=[1 2 3 4 5 6 7 8 9 10 11 12];% desde exp01
+_vSujetos6=[2 3 4 5 6 7 8 9 10 11 12];% desde exp22
 _vSujetos2=[2 6 8 9 10 11];% a partir del exp24
 _vSujetos3=[2 6 8 9 11]; % a partir del exp30
 _vSujetos4=[2 8 11]; % a partir del exp32
@@ -26,8 +27,10 @@ datos=zeros(2,fin);
 for j=inicio:fin
   _coop=zeros(1,_nSujetos);
   _nadaAux=zeros(1,_nSujetos);
-  if j<24
+  if j<22
     _vSujetos=_vSujetos1;
+  elseif (j>=22 && j<24)
+    _vSujetos=_vSujetos6;
   elseif (j>=24 && j<30)
     _vSujetos=_vSujetos2;
   elseif (j>=30 && j<32)
@@ -58,7 +61,9 @@ inicioAux=inicio;
 finAux=fin;
 for j=inicio:fin
   if j<24
-    _vSujetos=_vSujetos1;  
+    _vSujetos=_vSujetos1;
+  elseif (j>=22 && j<24)
+    _vSujetos=_vSujetos6;
   elseif (j>=24 && j<30)
     _vSujetos=_vSujetos2;
   elseif (j>=30 && j<32)

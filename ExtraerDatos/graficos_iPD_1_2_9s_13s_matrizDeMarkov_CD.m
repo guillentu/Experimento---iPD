@@ -259,10 +259,18 @@ for i=1:_nSujetos
     matricesQaux.(indiceSujeto(i,:)) = zeros(4,4);
   endfor
 endfor
-T=T./(30-controlFallasXexp);
-C=C./(30-controlFallasXexp);
-P=P./(30-controlFallasXexp);
-S=S./(30-controlFallasXexp);
+
+T(:,:)=T(:,:)/(length(_trialIni:_trialFin));C(:,:)=C(:,:)/length(_trialIni:_trialFin);P(:,:)=P(:,:)/length(_trialIni:_trialFin);S(:,:)=S(:,:)/length(_trialIni:_trialFin);
+auxOutComes=T(:,:)+C(:,:)+P(:,:)+S(:,:);
+T=T./auxOutComes;T(isnan(T(:,:)))=0;
+C=C./auxOutComes;C(isnan(C(:,:)))=0;
+P=P./auxOutComes;P(isnan(P(:,:)))=0;
+S=S./auxOutComes;S(isnan(S(:,:)))=0;
+
+%T=T./(30-controlFallasXexp);
+%C=C./(30-controlFallasXexp);
+%P=P./(30-controlFallasXexp);
+%S=S./(30-controlFallasXexp);
 TT=[];CC=[];PP=[];SS=[];
 TT=T;CC=C;PP=P;SS=S;
 T2=T;R2=C;P2=P;S2=S;
@@ -485,7 +493,7 @@ set(hh, "fontsize", 14);
 hh=title("Reward versus Cooperation (Colorbar=Timeout)"); 
 set(hh, "fontsize", 14);
 grid off;%grid minor;
-t=text(-0.01*[1 1 1 1 1 1 1 -1]+_mediaXsujeto(aux),.08*[ 1 1 1 1 1 1 1 -1]+foodMedia(aux),_txtSujetos(aux,:));
+t=text(-0.01*[1 1 1 1 1 1 1 -1]+_mediaXsujeto(aux),.08*[ 1 1 -1 1 1 1 1 -1]+foodMedia(aux),_txtSujetos(aux,:));
 %t=text(-0.01*[1 2.5 1 1 1 1 1 1 1 1 1 -1]+_mediaXsujeto(I), .03*[1 1 1 1 1 1 1 1 1 1 1 -1]+foodMedia(I) ,_txtSujetos(I,:));
 %axis('auto');
 axis([.49 1.02 0 1.15]);
@@ -497,10 +505,10 @@ h=scatter(probC2([1 3 4 5 6 7])',_idealSujeto(1,[1 3 4 5 6 7]),15,'k','s',"linew
 %h=plot(probC([1 3 4 5]),_idealSujeto(1,[1 3 4 5]),'ko', "markersize",20,"markerfacecolor",'r', "linewidth", 2);
 t=text(0.025*[1 1 1 1 -.8 -.5]+ probC2([1 3 4 5 6 7])', 
         0.04*[.5 .5 .5 .5 2.9 2.9]+_idealSujeto(1,[1 3 4 5 6 7]) ,{"switch CD";"switch CCDD";"half C";"switch 3Cx3D";"switch CCD";"switch CCCD"});
-t=text(0.025*[1 1 1 1 -.8 -.5]+ probC2([1 3 4 5 6 7]), 
+t=text(0.025*[1 1 1 1 -.8 -.5]+ probC2([1 3 4 5 6 7])', 
        -0.025*[1.2 1 1 1 -3.2 -3.2]+_idealSujeto(1,[1 3 4 5 6 7]) ,
         {"coop 0.5";"coop 0.5";"coop 0.5";"coop 0.5";"coop 0.66%";"coop 0.75%"});
-t=text(0.6,-0.37,{"Normalized accumulated timeout per sessions"},"fontsize",14);
+t=text(0.6,-0.39,{"Normalized accumulated timeout per sessions"},"fontsize",14);
 hold off;
 
 
@@ -604,20 +612,20 @@ set(hh, "fontsize", 14);
 hh=title("Reward versus Timeout to eat (colorbar=cooperation)"); 
 set(hh, "fontsize", 14);
 grid on;
-t=text(0.02*[-1 -1 -1 -1 -1 -1 -1 -1]+_delay2eat(aux)./_timeoutLimit,-0.04*[1 1 1 1 1.2 -1 1 -1]+foodMedia(aux),_txtSujetos(aux,:));
+t=text(0.02*[-1 -1 0 -1 -1 0 -1 -1]+_delay2eat(aux),-0.04*[1 1 1 1 1.2 -.8 1 -1]+foodMedia(aux),_txtSujetos(aux,:));
 %axis('auto');
 axis([-.04, 1.1, .5, 1.1], "square");
 hold on;
 h=scatter((_idealSujeto(2,[1 3 4 5 6 7])-_timeoutITI)./_timeoutLimit,_idealSujeto(1,[1 3 4 5 6 7]),15,probC([1 3 4 5 6 7])','s',"filled");
 h=scatter((_idealSujeto(2,[1 3 4 5 6 7])-_timeoutITI)./_timeoutLimit,_idealSujeto(1,[1 3 4 5 6 7]),15,'k','s',"linewidth",2);
-t=text(-0.10*[1 1 1 1 1 1]+(_idealSujeto(2,[1 3 4 5 6 7])-_timeoutITI)./_timeoutLimit,
+t=text(-0.10*[1 1 1 1 0.2 1.5]+(_idealSujeto(2,[1 3 4 5 6 7])-_timeoutITI)./_timeoutLimit,
        0.05*ones(1,length(probC([1 3 4 5 6 7])))+ _idealSujeto(1,[1 3 4 5 6 7]), 
        {"switch CD";"switch CCDD";"half C";"switch 3Cx3D";"switch CCD";"switch CCCD"});
 
-t=text(-0.10*[1 1 1 1 1 1]+ (_idealSujeto(2,[1 3 4 5 6 7])-_timeoutITI)./_timeoutLimit,
+t=text(-0.10*[1 1 1 1 0.2 1.5]+ (_idealSujeto(2,[1 3 4 5 6 7])-_timeoutITI)./_timeoutLimit,
        0.03*[1 1 1 1 1 1]+ _idealSujeto(1,[1 3 4 5 6 7]),
        {"coop 0.5";"coop 0.5";"coop 0.5";"coop 0.5";"coop 0.66%";"coop 0.75%"}); 
-t=text(0.2,0.22,{"Normalized amoung of C choice"},"fontsize",14);       
+t=text(0.1,0.3,{"Normalized amoung of C choice"},"fontsize",14);       
 hold off;
 
 
