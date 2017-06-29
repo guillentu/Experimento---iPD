@@ -127,7 +127,13 @@ Research on cooperative behaviors between non-related organisms has gained
 \end_layout
 
 \begin_layout Standard
-where the pay-off matrix maintains the inequality 
+In iterated Prisoner's Dilemma (iPD), the Evolutionary Stable Strategies
+ (ESS)(von Neumann and Morgenstern, 1944; Nash, 1949) predict what behavior
+ (strategy) is likely to occur, for example if a ESS is adopt by the population,
+ in such a way, no minority using a another strategy can invade (Smith,
+ 1974).
+ When the 2x2 PD is played only for one time the best ESS is Defeat strategy.
+ Nevertheless, when the pay-off matrix employed meets 
 \begin_inset Formula $T>R>P>S$
 \end_inset
 
@@ -135,22 +141,9 @@ where the pay-off matrix maintains the inequality
 \begin_inset Formula $2R>T+P$
 \end_inset
 
-.
- 
-\end_layout
-
-\begin_layout Standard
-Both the iterated Prisoner's Dilemma (iPD) and the Evolutionary Stable Strategie
-s (ESS)(von Neumann and Morgenstern, 1944; Nash, 1949) predict, or suggest,
- what behavior (strategy) is likely to occur if a ESS is adopt by the population
-, in such a way, no minority using a another strategy can invade (Smith,
- 1974).
- When the 2x2 PD is played only for one time the best ESS is Defeat strategy.
- Nevertheless, when the pay-off matrix employed meets 2R>T+P and the game
- is played an indefinite numbers of times, the best strategy is mutual cooperati
-on.
- e.i.
- if one stop reciprocity behavior the best option change to defeat.
+ and the game is played an indefinite numbers of times, the best strategy
+ is mutual cooperation.
+ But if one stop reciprocity behavior the best option change to defeat.
  Axelrod and Hamilton (1981) showed that some organism's symbiosis can be
  understood through the reciprocal altruism's model and if organisms can
  remember the outcome of at least one previous interaction and they are
@@ -160,11 +153,9 @@ on.
  initial viability, called TIT FOR TAT.
  This strategy arised as the winner strategy, submitted by Anatol Rapoport,
  in the Robert Axelrod's computer tournament (Axelrod, 1984), because it
- can survive invations from other strategies.
+ can survive invasions from other strategies.
  The highly simple strategy consists in cooperating on the first move and
  then doing whatever the opponent did on the preceding move.
- ..............
- 
 \end_layout
 
 \begin_layout Standard
@@ -181,7 +172,7 @@ l altruism behavior in animals and whether non-human animals with less cognitive
  This study found little cooperation in PD treatment and this findings suggest
  that blue jays don't cooperate when immediate benefit is available (defect
  only), even if a long-term larger benefit may exist.
- Then Steven and colleages (2002 and 2005) inspired by the low levels of
+ Then Stephen and colleages (2002 and 2005) inspired by the low levels of
  cooperation observed (Gardner et al., 1984; Clements and Stephens, 1995;
  Flood et al., 1983; Green et al., 1995) proposed assess over iPD frame to
  the effect of a pay-off accumulation and temporal clumping treatment to
@@ -202,21 +193,24 @@ n-Gibbons, 2002).
 g stimulus to the game, transparent food storage, and in this way the game
  become more easy to predict where is the maximum reward in the game.
  Other issue to keep in mind is the kind of reinforcement and punishment
- used in the experiments, a iPD study with rats (Viana et al., 2010) using
- mimicking a tit-for-tat strategy on the opponent and positive reinforcement
- and punishment in a double T-maze chamber achieved an apparent level of
- cooperation that in ours further analyzed of their Markov chain diagram
- shown that the strategy performed by rats was more selfish than cooperative
- because it adopted an alternating decision's rule among sucker and temptation
- outcomes, basically they flees from punishment.
+ used in the experiments, such as a iPD study with rats (Viana et al., 2010)
+ that used mimicking a tit-for-tat strategy on the opponent and positive
+ reinforcement and punishment in a double T-maze chamber and they achieved
+ an apparent moderately high level of cooperation.
+ Then in ours further analyzed of their Markov chain diagram shown that
+ the strategy performed by rats was more selfish than cooperative because
+ it adopted an alternating decision's rule among sucker and temptation outcomes,
+ basically they flees from punishment(undisclosed data).
+ (siento la necesidad de tener que hacer algo oficial para que sea creible
+ lo último que decimos)
 \end_layout
 
 \begin_layout Standard
 Why all iPD-based studies haven't found high levels of reciprocity? In the
- aforementioned previous studies, rats don't learn iPD probably due to the
- fact that the reinforcement and punishment and stimulus contingency are
- inadequate for its natural expectation, i.e.
- the rat maybe has the ability to achieve a approximated optimal solution
+ aforementioned previous studies, animals don't learn iPD probably due to
+ the fact that the reinforcement and punishment and stimulus contingency
+ are inadequate for its natural acquisition capability, i.e.
+ the rat maybe has the ability to achieve an approximated optimal solution
  but for example the length of time used to make the contingency is longer
  than what rats can keep in mind or maybe they don't realized the real differenc
 e within outcomes in the pay-off matrix.
@@ -226,7 +220,7 @@ e within outcomes in the pay-off matrix.
 \begin_layout Standard
 Given these consideration, the present study was conduct to assess reciprocal
  altruism behaviors using a particular structure that combine iPD matrix
- pay-off and delay's punishment and a tit for tat opponent's strategy.
+ pay-off and timeout punishment with a tit for tat opponent's strategy.
  We assess a iterated PD in two phase: first normal iPD and then, in a second
  phase, a reversion iPD using the previous animals set.
  We found that this combination achieve high level of reciprocal altruism
@@ -240,7 +234,7 @@ Material and Method
 \begin_layout Standard
 All experimental procedures were approved by the ethics committee of the
  IByME-CONICET and were conducted according to the NIH Guide for Care and
- Use of Laboratory Animals.2.1 Subjects and Housing
+ Use of Laboratory Animals.2.1 Subjects and Housing.
 \end_layout
 
 \begin_layout Subsection
@@ -497,9 +491,9 @@ reference "table_matrixIPD"
 \end_inset
 
 .
- Thus, If opponent choose the cooperation option (C) and the subject choose
- C or defection option (D), the subject received one pellet or 2 pellet,
- respectability.
+ Thus, if both choose cooperation option (C) their pay-off was 1 for each
+ other, If opponent choose C and the subject choose C or defection option
+ (D), the subject received one pellet or 2 pellet, respectability.
  When the Opponent choose D and the subject choose C or D, the subject received
  8
 \begin_inset Quotes erd
@@ -510,10 +504,10 @@ reference "table_matrixIPD"
 \end_inset
 
  delay of punishment and no pellet in this trial.
- The opponent strategy was conducted by place in which the stimulus was
- lighting, e.i.
+ The opponent strategy was conducted by turn on a light stimulus over the
+ target lever, e.i.
  the opponent didn't choose freely and the side where light was turn on,
- the opponent pressed the lever.
+ the opponent had to develop a Fixed-ratio scheduler.
  The amount pellet preference was test previously and the rat shown more
  preferences for 2 pellet than 1 pellet.
  The delay discrimination had been tested in 
@@ -527,10 +521,6 @@ PAPER DE SELF CONTROL EN RATAS.
 wide false
 sideways false
 status open
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption
@@ -946,7 +936,7 @@ status open
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -964,7 +954,7 @@ Cooperation mean
 
 
 \begin_inset Graphics
-	filename /home/guille/Documents/github_Repository/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperation_mean_with_significant.png
+	filename ../../ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperation_mean_with_significant.png
 	lyxscale 35
 	width 45text%
 
@@ -996,7 +986,7 @@ name "fig1_meansAnd significance"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1018,7 +1008,7 @@ Reward mean
 
 \size scriptsize
 \begin_inset Graphics
-	filename /home/guille/Documents/github_Repository/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/mean_reward.png
+	filename ../../ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/mean_reward.png
 	lyxscale 35
 	width 45text%
 
@@ -2898,7 +2888,7 @@ status open
 
 
 \begin_inset Graphics
-	filename /home/guille/Documents/github_Repository/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperation_mean_sem_last23session.png
+	filename ../../ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperation_mean_sem_last23session.png
 	lyxscale 40
 	width 60col%
 
@@ -2985,7 +2975,7 @@ status collapsed
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /home/guille/Documents/github_Repository/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/mean_cooperation_and_strategy.png
+	filename ../../ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/mean_cooperation_and_strategy.png
 	lyxscale 40
 	width 45col%
 
@@ -3033,7 +3023,7 @@ status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/guille/Documents/github_Repository/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/outcomeRate_overLevel.png
+	filename ../../ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/outcomeRate_overLevel.png
 	lyxscale 35
 	width 45col%
 
@@ -3084,7 +3074,7 @@ status collapsed
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /home/guille/Documents/github_Repository/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/g26897-6.png
+	filename ../../ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/g26897-6.png
 	lyxscale 35
 	width 40col%
 
@@ -3131,7 +3121,7 @@ status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/guille/Documents/github_Repository/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/g33959.png
+	filename ../../ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/g33959.png
 	lyxscale 35
 	width 30col%
 
@@ -3302,11 +3292,11 @@ status open
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/guille/Documents/github_Repository/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperacionVscoopMutua_delay_sinrandom.png
+	filename ../../ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperacionVscoopMutua_delay_sinrandom.png
 	lyxscale 35
 	width 45col%
 
@@ -3344,11 +3334,11 @@ name "fig_coopMutua"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/guille/Documents/github_Repository/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperacionVsReward_delay_sinrandom.png
+	filename ../../ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperacionVsReward_delay_sinrandom.png
 	lyxscale 35
 	width 45col%
 
@@ -3396,11 +3386,11 @@ name "fig_rewardVScoop"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/guille/Documents/github_Repository/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/alimentoVstimeout_cooperation.png
+	filename ../../ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/alimentoVstimeout_cooperation.png
 	lyxscale 35
 	width 45col%
 
@@ -3445,7 +3435,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/guille/Documents/github_Repository/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/coefficientOfPreference2.png
+	filename ../../ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/coefficientOfPreference2.png
 	lyxscale 35
 	width 45col%
 
@@ -3784,16 +3774,16 @@ status open
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 
 \size scriptsize
 \begin_inset Graphics
-	filename /home/guille/Documents/github_Repository/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperation_mean_with_significant_reversion.png
-	lyxscale 35
-	width 45text%
+	filename ../../ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperation_mean_with_significant_reversion.png
+	lyxscale 20
+	width 40text%
 
 \end_inset
 
@@ -3840,15 +3830,15 @@ name "fig1_REV_meansAnd significance-1"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 
 \size scriptsize
 \begin_inset Graphics
-	filename /home/guille/Documents/github_Repository/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/mean_reward_reversion.png
-	lyxscale 35
+	filename ../../ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/mean_reward_reversion.png
+	lyxscale 30
 	width 45text%
 
 \end_inset
@@ -3904,15 +3894,15 @@ name "fig_REV_meanReward-1-1"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 
 \size scriptsize
 \begin_inset Graphics
-	filename /home/guille/Documents/github_Repository/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/mean_timeout_reversion.png
-	lyxscale 35
+	filename ../../ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/mean_timeout_reversion.png
+	lyxscale 30
 	width 45text%
 
 \end_inset
@@ -3957,23 +3947,9 @@ name "fig1_REV_meansTimeout"
 \end_inset
 
 
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-
-\size large
-\color red
-FALTA
-\size scriptsize
-\color inherit
-
 \begin_inset Graphics
-	filename /home/guille/Documents/github_Repository/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperation_mean_sem_last18session_Reversion.png
-	lyxscale 35
+	filename ../../ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperation_mean_sem_last18session_Reversion.png
+	lyxscale 30
 	width 45text%
 
 \end_inset
@@ -4003,11 +3979,6 @@ Evolution of cooperation
 \begin_inset CommandInset label
 LatexCommand label
 name "fig_REV_evolution_coop_rev"
-
-\end_inset
-
-
-\end_layout
 
 \end_inset
 
@@ -4913,12 +4884,12 @@ status open
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /home/guille/Documents/github_Repository/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/mean_cooperation_and_strategy_reversion.png
+	filename ../../ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/mean_cooperation_and_strategy_reversion.png
 	lyxscale 40
 	width 45col%
 
@@ -4962,11 +4933,11 @@ name "fig_REV_meanC_strategy-1"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/guille/Documents/github_Repository/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/outcomeRate_overLevel_reversion.png
+	filename ../../ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/outcomeRate_overLevel_reversion.png
 	lyxscale 35
 	width 45col%
 
@@ -5012,12 +4983,12 @@ name "fig_REV_outcomes rate-1"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /home/guille/Documents/github_Repository/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/markov_4estados_mean_reversion.png
+	filename ../../ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/markov_4estados_mean_reversion.png
 	lyxscale 35
 	width 40col%
 
@@ -5060,11 +5031,11 @@ name "fig_REV_4state_markovChain-1"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/guille/Documents/github_Repository/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/g33959.png
+	filename ../../ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/g33959.png
 	lyxscale 35
 	width 30col%
 
@@ -5214,7 +5185,7 @@ status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/guille/Documents/github_Repository/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperacionVscoopMutua_delay_Reversion.png
+	filename ../../ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperacionVscoopMutua_delay_Reversion.png
 	lyxscale 35
 	width 45col%
 
@@ -5256,7 +5227,7 @@ status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/guille/Documents/github_Repository/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperacionVsReward_delay_Reversion.png
+	filename ../../ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperacionVsReward_delay_Reversion.png
 	lyxscale 35
 	width 45col%
 
@@ -5304,13 +5275,13 @@ name "fig_REV_rewardVScoop"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/guille/Documents/github_Repository/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/alimentoVstimeout_cooperation_Reversion.png
+	filename ../../ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/alimentoVstimeout_cooperation_Reversion.png
 	lyxscale 35
-	width 45col%
+	width 50col%
 
 \end_inset
 
@@ -5349,21 +5320,13 @@ name "fig_REV_reward VS timeout"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/guille/Documents/github_Repository/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/coefficientOfPreference_Reversion.png
-	lyxscale 25
-	width 45text%
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename /home/guille/Documents/github_Repository/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/coefficientOfPreference_Reversion.png
+	filename ../../ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/coefficientOfPreference_Reversion.png
 	lyxscale 20
-	width 45text%
+	width 40text%
 
 \end_inset
 
@@ -5480,7 +5443,24 @@ CD
 \end_layout
 
 \begin_layout Section
-Discussion
+Discussion and conclusions
+\end_layout
+
+\begin_layout Standard
+We found a high lever of cooperation on all rats that develop some strategy,
+ because the mean of the group was over 85%, fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_evolutionCoop"
+
+\end_inset
+
+, and the transition vector depict the probability to cooperation given
+ each outcome uphold the trend(the mean of each component is near or over
+ 80%).
+ All animals learned that the best option wherever they are was cooperate
+ or comeback to cooperate.
 \end_layout
 
 \begin_layout Standard
@@ -5500,14 +5480,26 @@ reference "fig_reward VS timeout"
 
 \end_inset
 
- we observe that the highest reward corresponds to the subject with less
- accumulated timeout punishment and also with the subjects with the highest
- cooperation choice level.
+ we observe that the highest reward corresponds to the subject with the
+ shortest accumulated timeout punishment and the highest cooperation choice
+ level(light color).
  The simulated agent that used alternate strategy got the maximum punishment.
+ Although, we see that all rats stay on a thin scatter between 85 to 100%
+ of reward and the cooperation level spread out 65 to 100%, this means that
+ at these levels of cooperation iPD game become very hard to understand
+ whether the cooperation choice is still the best option or not and indeed
+ the timeout maybe is how modulate what the rats will choose, because surely
+ the rats with more sensitive to timeout avoid it and cooperate more.
+ We found 5 of 8 rats were under 30% of punishment.
 \end_layout
 
 \begin_layout Standard
-.
+The contrast between rewards and also between punishments is very important
+ for the animals can recognize the difference among behaviors.
+ We use a pay-off T as double of pay-off R and the punishment S as double
+ of P.
+ if a animal chose temptation and persist pushing Defect option, then it
+ will receive a big reward follow by timeout, but it 
 \end_layout
 
 \begin_layout Standard
@@ -5526,11 +5518,6 @@ El contrate entre refuerzos y el castigo suave posiblemente dieron lugar
 
 \begin_layout Standard
 .
-\end_layout
-
-\begin_layout Standard
-Podemos decir que quizás las ratas en esrado salvaje no cooperan por en
- una población 
 \end_layout
 
 \begin_layout Standard
@@ -5654,7 +5641,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/guille/Documents/github_Repository/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/Simulated_markov.png
+	filename ../../ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/Simulated_markov.png
 	lyxscale 20
 	width 95col%
 
@@ -5701,11 +5688,11 @@ status open
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/guille/Documents/github_Repository/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/nocoop_probabilidades.png
+	filename ../../ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/nocoop_probabilidades.png
 	lyxscale 35
 	width 95col%
 
@@ -5747,11 +5734,11 @@ name "fig_nocoop_statistic"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/guille/Documents/github_Repository/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/nocoop_markov.png
+	filename ../../ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/nocoop_markov.png
 	lyxscale 35
 	width 95col%
 
@@ -5853,7 +5840,7 @@ status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/guille/Documents/github_Repository/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/coop_statistic.png
+	filename ../../ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/coop_statistic.png
 	lyxscale 20
 	width 90col%
 
@@ -5897,11 +5884,11 @@ name "fig_coop_statistic"
 placement h
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/guille/Documents/github_Repository/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/coop_markov.png
+	filename ../../ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/coop_markov.png
 	lyxscale 20
 	width 95col%
 
