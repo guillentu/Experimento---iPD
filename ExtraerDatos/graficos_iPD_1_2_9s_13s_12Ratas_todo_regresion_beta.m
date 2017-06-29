@@ -49,6 +49,7 @@ _nSujetos=12;
 %_vSujetos5=[8]; % a partir del exp34
 %%%% SOLOS cooperadores
 _vSujetos1=[1 3 7 8 9 10 11 12];% desde exp01
+_vSujetos6=[3 7 8 9 10 11 12];% desde exp22
 _vSujetos2=[8 9 10 11];% a partir del exp24
 _vSujetos3=[8 9 11]; % a partir del exp30
 _vSujetos4=[8 11]; % a partir del exp32
@@ -84,8 +85,10 @@ _nada=[];
 for j=inicio:fin
   _coop=zeros(1,_nSujetos);
   _nadaAux=zeros(1,_nSujetos);
-  if j<24
+  if j<22
     _vSujetos=_vSujetos1;
+  elseif (j>=22 && j<24)
+    _vSujetos=_vSujetos6;
   elseif (j>=24 && j<30)
     _vSujetos=_vSujetos2;
   elseif (j>=30 && j<32)
@@ -119,8 +122,10 @@ _semTodos=zeros(1,length(_media));
 inicioAux=inicio;
 finAux=fin;
 for j=inicio:fin
-  if j<24
-    _vSujetos=_vSujetos1;  
+  if j<22
+    _vSujetos=_vSujetos1;
+  elseif (j>=22 && j<24)
+    _vSujetos=_vSujetos6;
   elseif (j>=24 && j<30)
     _vSujetos=_vSujetos2;
   elseif (j>=30 && j<32)
@@ -138,46 +143,57 @@ inicioAux=inicio;
 finAux=fin;
 % PLOT sujeto Todos juntos
 
-figure();
-hold on;
-for i=[1 3 7 8 9 10 11 12]
-  if i==1||i==3||i==4||i==5||i==7||i==12
-    finAux=23;
-  elseif i==10
-    finAux=29;
-  elseif i==6||i==9
-    finAux=31;
-  elseif i==2||i==11
-    finAux=33;
-  elseif i==8
-    finAux=fin;
-  endif
-  
-  %figure()
-  h=plot([inicioAux:finAux],_promediosC(inicioAux:finAux,i),_colores(i,:));set (h, "linewidth", 1);
-  
-  
-  
-endfor
-hh=plot(_media);set(hh, "linewidth", 3);
-hh=plot(_media);set(hh, "linewidth", 3);
-hh=plot(_media+_semTodos);set(hh, "linewidth", 3);
-hh=plot(_media-_semTodos);set(hh, "linewidth", 3);
-%x=[inicio:50]';
-%y=(_media(inicio:50))';
-%F = [ ones(length(x),1) x];
-%[p,e_var,r,p_var,y_var] = LinearRegression(F,y);
-%yFit = F*p;
-%%figure();
-%%hh=plot(x,y,'+b',x,yFit,'-g',x,yFit+1.96*sqrt(y_var),'--r',x,yFit-1.96*sqrt(y_var),'--r');
-%set(hh, "linewidth", 3);
-xlabel("n de sesiones");
-ylabel("% de cooperacion");
-title("Cooperacion en iPD");
-legend(_txtSujetos([1 3 7 8 9 10 11 12],:),4);
-grid on;
-
-hold off;
+%% Experimentos por sujetos
+%expXsuj=zeros(1,_nSujetos);
+%for j=inicio:(numfields(todo)-8)
+%  for i=1:length(todo.(indice(j+1,:)))
+%    if length(todo.(indice(j+1,:))(i)._groupStr)!=0
+%      expXsuj(i)++;
+%    endif
+%  endfor
+%endfor
+%
+%figure();
+%hold on;
+%for i=[1 3 7 8 9 10 11 12]
+%%  if i==1||i==3||i==4||i==5||i==7||i==12
+%%    finAux=23;
+%%  elseif i==10
+%%    finAux=29;
+%%  elseif i==6||i==9
+%%    finAux=31;
+%%  elseif i==2||i==11
+%%    finAux=33;
+%%  elseif i==8
+%%    finAux=fin;
+%%  endif
+%  finAux=expXsuj(i);
+%  %figure()
+%  h=plot([inicioAux:finAux],_promediosC(inicioAux:finAux,i),_colores(i,:));set (h, "linewidth", 1);
+%  
+%  
+%  
+%endfor
+%hh=plot(_media);set(hh, "linewidth", 3);
+%hh=plot(_media);set(hh, "linewidth", 3);
+%hh=plot(_media+_semTodos);set(hh, "linewidth", 3);
+%hh=plot(_media-_semTodos);set(hh, "linewidth", 3);
+%
+%%x=[inicio:50]';
+%%y=(_media(inicio:50))';
+%%F = [ ones(length(x),1) x];
+%%[p,e_var,r,p_var,y_var] = LinearRegression(F,y);
+%%yFit = F*p;
+%%%figure();
+%%%hh=plot(x,y,'+b',x,yFit,'-g',x,yFit+1.96*sqrt(y_var),'--r',x,yFit-1.96*sqrt(y_var),'--r');
+%%set(hh, "linewidth", 3);
+%xlabel("n de sesiones");
+%ylabel("% de cooperacion");
+%title("Cooperacion en iPD");
+%legend(_txtSujetos([1 3 7 8 9 10 11 12],:),4);
+%grid on;
+%
+%hold off;
 
 %%%%%%%%%%%%%%%%    todos alineados al final           %%%%%%%%%%%%%%%%%%%%%
 
