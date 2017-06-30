@@ -720,6 +720,38 @@ QmarkovmediaD=QmarkovmediaD./sum(QmarkovmediaD,2);
 
 
 
+
+
+%%% TODOS %%%%%%%%%%%%%%
+%%%%%% Calculo de coeficiente de preferencia  %%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%_selfish=foodMedia./((_timeOutMedia)./_timeoutLimit);
+%
+%_selfishInf=foodMedia.*_timeOutMedia;
+%
+%_selfishtheor=_idealSujeto(1,:)./((_idealSujeto(2,:))./_timeoutLimit);
+%
+%hhh=figure;%  {"switch CD"; "all C";      "switch CCDD";  "half C";            "switch 3Cx3D";   "switch CCD";  "switch CCCD"}
+%hold on;
+%scatter(_selfish,ones(1,_nSujetos),20,"filled");
+%t=text(-0.002+_selfish,0.013+ones(1,_nSujetos),_txtSujetos(:,:),"fontsize",14);
+%h=scatter(_selfishtheor([1 2 3 5 6]),ones(1,length(_selfishtheor([1 2 3 5 6]))),25,'r');
+%set(h, "linewidth", 2);  
+%t=text(-0.005+_selfishtheor([1 2 3 5 6]),-0.013+ones(1,length(_selfishtheor([1 2 3 5 6]))),
+%                                       {"CD","AllC","2Cx2D","3Cx3D" ,"CCD"},"fontsize",12);
+%t=text([0.26 0.27 0.26 0.27],[1.055 1.055 1.045 1.045],
+%       {num2str(_vRefuerzos(1));num2str(_vRefuerzos(2));num2str(_vRefuerzos(3));num2str(_vRefuerzos(4))},"fontsize",13);                                     
+%t=text(0.005+[0.26 0.27 0.26 0.27],-0.005+[1.055 1.055 1.045 1.045],
+%       {num2str(_vDelay4eat(1));num2str(_vDelay4eat(2));num2str(_vDelay4eat(3));num2str(_vDelay4eat(4))},"fontsize",13);
+%hold off;
+%ylabel("");
+%xlabel("Coefficient of preference");
+%
+%
+%name=strcat("figura_iPD_1_2_9s_13s/fig_finales/coefficientOfPreference",_txtSujetos(i,:));
+%name=strcat(name,".png");
+%print(hhh, name);
+
 %%%%% Calculo de coeficiente de preferencia  %%%%%%%%%%%%%%%%%%%%%%%%%
 
 _selfish=foodMedia./((_timeOutMedia)./_timeoutLimit);
@@ -730,26 +762,27 @@ _selfishtheor=_idealSujeto(1,:)./((_idealSujeto(2,:))./_timeoutLimit);
 
 hhh=figure;%  {"switch CD"; "all C";      "switch CCDD";  "half C";            "switch 3Cx3D";   "switch CCD";  "switch CCCD"}
 hold on;
-scatter(_selfish,ones(1,_nSujetos),20,"filled");
-t=text(-0.002+_selfish,0.013+ones(1,_nSujetos),_txtSujetos(:,:),"fontsize",14);
-h=scatter(_selfishtheor([1 2 3 5 6]),ones(1,length(_selfishtheor([1 2 3 5 6]))),25,'r');
+
+t=text(-0.002+_selfish(_sujetosCooperadores),0.013*[1 1 1 1 1 1.5 1 1]+ones(1,length(_sujetosCooperadores)),...
+                                            _txtSujetos(_sujetosCooperadores,:),"fontsize",12);
+h=scatter(_selfishtheor([1 2 3 5 6]),ones(1,length(_selfishtheor([1 2 3 5 6]))),20,'r');
 set(h, "linewidth", 2);  
-t=text(-0.005+_selfishtheor([1 2 3 5 6]),-0.013+ones(1,length(_selfishtheor([1 2 3 5 6]))),
+t=text(-0.005*[1 1 1.5 6 1]+_selfishtheor([1 2 3 5 6]),-0.013+ones(1,length(_selfishtheor([1 2 3 5 6]))),
                                        {"CD","AllC","2Cx2D","3Cx3D" ,"CCD"},"fontsize",12);
-t=text([0.26 0.27 0.26 0.27],[1.055 1.055 1.045 1.045],
-       {num2str(_vRefuerzos(1));num2str(_vRefuerzos(2));num2str(_vRefuerzos(3));num2str(_vRefuerzos(4))},"fontsize",13);                                     
-t=text(0.005+[0.26 0.27 0.26 0.27],-0.005+[1.055 1.055 1.045 1.045],
-       {num2str(_vDelay4eat(1));num2str(_vDelay4eat(2));num2str(_vDelay4eat(3));num2str(_vDelay4eat(4))},"fontsize",13);
-hold off;
+%t=text([0.26 0.27 0.26 0.27],[1.055 1.055 1.045 1.045],
+%       {num2str(_vRefuerzos(1));num2str(_vRefuerzos(2));num2str(_vRefuerzos(3));num2str(_vRefuerzos(4))},"fontsize",13);                                     
+%t=text(0.005+[0.26 0.27 0.26 0.27],-0.005+[1.055 1.055 1.045 1.045],
+%       {num2str(_vDelay4eat(1));num2str(_vDelay4eat(2));num2str(_vDelay4eat(3));num2str(_vDelay4eat(4))},"fontsize",13);
+hh=scatter(_selfish(_sujetosCooperadores),ones(1,length(_sujetosCooperadores)),15,'b');
+set(hh, "linewidth", 3);  
+axis([.3 .85 .9 1.1])
 ylabel("");
 xlabel("Coefficient of preference");
-
-
-name=strcat("figura_iPD_1_2_9s_13s/fig_finales/coefficientOfPreference",_txtSujetos(i,:));
-name=strcat(name,".png");
+aa=legend("Simulated","rats");  
+hold off;
+name="figura_iPD_1_2_9s_13s/fig_finales/coefficientOfPreference2.png";
+%name=strcat(name,".png");
 print(hhh, name);
-
-
 
 
 
