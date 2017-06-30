@@ -5494,9 +5494,7 @@ reference "fig_reward VS timeout"
 \end_layout
 
 \begin_layout Standard
-Probably, the animals fail to solve iterated iPD due to they fail to discern
- the difference in the reinforcements.
- The contrast between rewards and also between punishments is very important
+The contrast between rewards and also between punishments is very important
  for the animals can recognize the difference among behaviors.
  We use a pay-off T as double of pay-off R and the punishment S as double
  of P.
@@ -5505,9 +5503,18 @@ Probably, the animals fail to solve iterated iPD due to they fail to discern
  small reward and any timeout.
  However, if the animal strategy is alternate between both lever (C or D)
  it receive alternately the biggest reward and the longest timeout.
- Certainly, the high level of cooperation was possible by the fact that
- high contract reduce the range in which discriminate preference become
- hard..
+ Certainly, The high level of cooperation perhaps was possible for the fact
+ to reduce  
+\end_layout
+
+\begin_layout Standard
+.receive the double amount of pellet es mas tentados que la mitad.
+ esp hace que las ratas tiendan a alternar palanca
+\end_layout
+
+\begin_layout Standard
+El contrate entre refuerzos y el castigo suave posiblemente dieron lugar
+ a una alta cooperación.
 \end_layout
 
 \begin_layout Standard
