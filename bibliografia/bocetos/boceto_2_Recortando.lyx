@@ -2962,6 +2962,7 @@ reference "fig_evolutionCoop"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement p
 wide false
 sideways false
 status open
@@ -2970,7 +2971,7 @@ status open
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -3069,7 +3070,7 @@ name "outcomes rate"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -3334,7 +3335,7 @@ name "fig_coopMutua"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -3386,7 +3387,7 @@ name "fig_rewardVScoop"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -3431,7 +3432,7 @@ name "fig_reward VS timeout"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -3694,8 +3695,12 @@ Switch CCCD
 
 \begin_layout Standard
 Relating rewards with punishment level we develop a coefficient that named
- Preference, and it can help to understand the preference for choose lever
- C, figure 
+ 
+\emph on
+Preference
+\emph default
+, and it can help to understand the preference for choose lever C, figure
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig_CoeffPreference"
@@ -3703,7 +3708,8 @@ reference "fig_CoeffPreference"
 \end_inset
 
 .
- The left side of 
+ The red circles depict the simulated agent and blue circle the rats.
+ The 
 \begin_inset Quotes eld
 \end_inset
 
@@ -3711,9 +3717,20 @@ CD
 \begin_inset Quotes erd
 \end_inset
 
- there are the simulated agent with strategies fewer cooperative, choose
- D more than one time, consecutively.
- And the right side of 
+ symbolize 
+\begin_inset Quotes eld
+\end_inset
+
+switch CD
+\begin_inset Quotes erd
+\end_inset
+
+ simulated agent that develop a 
+\emph on
+alternate
+\emph default
+ strategy.
+ To the left side of 
 \begin_inset Quotes eld
 \end_inset
 
@@ -3721,8 +3738,30 @@ CD
 \begin_inset Quotes erd
 \end_inset
 
- represent the strategies in which choose C more than one time, consecutively,
- and only a time D.
+ are place the simulated agent and rats with strategies with less cooperation
+ than 50%, this means that choose D more than one time, consecutively.
+ On the right side of 
+\begin_inset Quotes eld
+\end_inset
+
+CD
+\begin_inset Quotes erd
+\end_inset
+
+ represent the strategies in which choose C more than one time, consecutively.
+ Holding the high level of cooperation we see that no one is close to the
+ 
+\begin_inset Quotes eld
+\end_inset
+
+CD
+\begin_inset Quotes erd
+\end_inset
+
+ and all rats place on the right side and since this picture we can infer
+ that the behaviors of rats trend to be such that cooperate at least two
+ time or more and then defect one time and quickly back to cooperate.
+ 
 \end_layout
 
 \begin_layout Subsubsection
@@ -3774,7 +3813,7 @@ status open
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -3830,7 +3869,7 @@ name "fig1_REV_meansAnd significance-1"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -3894,7 +3933,7 @@ name "fig_REV_meanReward-1-1"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -3947,6 +3986,15 @@ name "fig1_REV_meansTimeout"
 \end_inset
 
 
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+
+\size scriptsize
 \begin_inset Graphics
 	filename ../../ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperation_mean_sem_last18session_Reversion.png
 	lyxscale 30
@@ -3958,7 +4006,6 @@ name "fig1_REV_meansTimeout"
 \end_layout
 
 \begin_layout Plain Layout
-\align center
 
 \size scriptsize
 \begin_inset Caption
@@ -3979,6 +4026,11 @@ Evolution of cooperation
 \begin_inset CommandInset label
 LatexCommand label
 name "fig_REV_evolution_coop_rev"
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -4139,6 +4191,7 @@ reference "table_REV_meanAndstrategies-1"
 
 \begin_layout Standard
 \begin_inset Float table
+placement h
 wide false
 sideways false
 status open
@@ -4876,6 +4929,7 @@ cooperation
 
 \begin_layout Standard
 \begin_inset Float figure
+placement h
 wide false
 sideways false
 status open
@@ -4884,7 +4938,7 @@ status open
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -4933,7 +4987,7 @@ name "fig_REV_meanC_strategy-1"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -4983,7 +5037,7 @@ name "fig_REV_outcomes rate-1"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -5031,7 +5085,7 @@ name "fig_REV_4state_markovChain-1"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -5080,7 +5134,8 @@ name "fig_REV_2state_markovChain-1"
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
+\color magenta
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig_REV_meanC_strategy-1"
@@ -5160,15 +5215,8 @@ reference "fig_REV_2state_markovChain-1"
 \end_layout
 
 \begin_layout Standard
-,
-\end_layout
-
-\begin_layout Standard
-,
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -5275,7 +5323,7 @@ name "fig_REV_rewardVScoop"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -5320,7 +5368,7 @@ name "fig_REV_reward VS timeout"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -5369,7 +5417,8 @@ name "fig_REV_CoeffPreference"
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
+\color magenta
 There experiment's result was computed from last ten session pool data set.
  
 \begin_inset CommandInset ref
@@ -5442,8 +5491,15 @@ CD
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
-Discussion and conclusions
+Discussion
 \end_layout
 
 \begin_layout Standard
@@ -5464,15 +5520,36 @@ reference "fig_evolutionCoop"
 \end_layout
 
 \begin_layout Standard
-The payoff matrix used in the experiment gives the same amount of reward
+Probably, the animals fail to solve iterated iPD due to they fail to discern
+ the difference in the reinforcements.
+ The contrast between rewards and also between punishments is the key for
+ they can match dissimilar responses to different rewards.
+ Indeed, we use a pay-off T as double of pay-off R and the punishment S
+ as double of P.
+ if a animal chose temptation and persist pushing 
+\emph on
+defect
+\emph default
+ option, it will receive only one big reward and then timeout, but if it
+ prefer cooperate, will ear for each time small reward and any timeout.
+ However, if the animal strategy is alternate between both lever (C or D)
+ it receive alternately the biggest reward and the longest timeout.
+ The payoff matrix used in the experiment gives the same amount of reward
  to one that always cooperator as one that always alternate between cooperate
  and defect options.
- Nevertheless, there is a best strategy (
+ Nevertheless, the matrix on iPD has the best strategy (
 \emph on
 pareto optimum
 \emph default
-) because the first strategy doesn't receive timeout punishment and the
- second does.
+), because the 
+\emph on
+always cooperate
+\emph default
+ strategy doesn't receive timeout punishment and the 
+\emph on
+alternate
+\emph default
+ does.
  Since the figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -5483,65 +5560,34 @@ reference "fig_reward VS timeout"
  we observe that the highest reward corresponds to the subject with the
  shortest accumulated timeout punishment and the highest cooperation choice
  level(light color).
- The simulated agent that used alternate strategy got the maximum punishment.
+ The simulated agent with 
+\emph on
+alternate
+\emph default
+ strategy got the maximum punishment.
  Although, we see that all rats stay on a thin scatter between 85 to 100%
  of reward and the cooperation level spread out 65 to 100%, this means that
  at these levels of cooperation iPD game become very hard to understand
  whether the cooperation choice is still the best option or not and indeed
- the timeout maybe is how modulate what the rats will choose, because surely
+ the timeout maybe is who modulate what the rats will choose, because surely
  the rats with more sensitive to timeout avoid it and cooperate more.
  We found 5 of 8 rats were below 30% of punishment.
 \end_layout
 
 \begin_layout Standard
-Probably, the animals fail to solve iterated iPD due to they fail to discern
- the difference in the reinforcements.
- The contrast between rewards and also between punishments is very important
- for the animals can recognize the difference among behaviors.
- We use a pay-off T as double of pay-off R and the punishment S as double
- of P.
- if a animal chose temptation and persist pushing Defect option, it will
- receive only one big reward and then timeout, but it prefer cooperate ear
- small reward and any timeout.
- However, if the animal strategy is alternate between both lever (C or D)
- it receive alternately the biggest reward and the longest timeout.
- Certainly, the high level of cooperation was possible by the fact that
- high contract reduce the range in which discriminate preference become
- hard..
+Certainly, the high level of cooperation was possible by the fact that high
+ contract reduce the range in which discriminate preference become hard.
 \end_layout
 
 \begin_layout Standard
-.
-\end_layout
-
-\begin_layout Standard
-.
-\end_layout
-
-\begin_layout Standard
-Decir que si una rata tuviera una estrategia no cooperativa, como alternar,
- que donde obtienga la maxima recompenza estaría hubicada en la base del
- grafico de coop mutua.
-\end_layout
-
-\begin_layout Standard
-.
-\end_layout
-
-\begin_layout Standard
-Es muy pobables que lña dificultad para resolver iPD esté en la capacidad
- de apreciar las diferencia en recompensas a lo largo del tiempo
-\end_layout
-
-\begin_layout Standard
-Quizas una dificultades para resolver iPD es la apreciación de las diferencias
- en las recompenzas a lo largo de cada sesion.
- - we show that the iPD game gives to the random strategy group a amount
- that between 60% to 70% of total reward.
-\end_layout
-
-\begin_layout Standard
-hablar del paper 1-s2.0-S0003347216000130-main.pdf (en downloads)
+A way to know how are the behaviors of rats is to interpret the 
+\emph on
+coefficient of preference
+\emph default
+ graph because knowing some simulated strategies we can figure out what
+ strategy trend to use each rat.
+ Then, the results of markov chains graphs confirm the fact.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -5549,10 +5595,12 @@ hablar del paper 1-s2.0-S0003347216000130-main.pdf (en downloads)
 \end_layout
 
 \begin_layout Standard
-Los animales aprenden a predecir que cuando se tiene un oponente cooperador
- con estrategia TFT, si llegan a no cooperar deben inmediatamente volver
- a cooperar esperar el castigo por la falta de cooperación (S) y seguir
- cooperando.
+Since the Markov chains graph we see a very high value of transition to
+ mutual cooperation and very low value of transition from S (sucker) to
+ T (temptation).
+ This is a main discrepancy respect to the Moita's markov chain graph (moita
+ 2010) in which the animals trend to jump between cooperate and defect.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -5560,14 +5608,14 @@ Los animales aprenden a predecir que cuando se tiene un oponente cooperador
 \end_layout
 
 \begin_layout Standard
-.
-\end_layout
 
-\begin_layout Standard
+\color magenta
 Poner Taborsky
 \end_layout
 
 \begin_layout Standard
+
+\color magenta
 From an operant conditioning perspective, we believe they have actually
  assessed extinction rate of pulling behavior after focal rats have or not
  received food for several days rather than rising the frequency of behavior
@@ -5583,6 +5631,8 @@ From an operant conditioning perspective, we believe they have actually
 \end_layout
 
 \begin_layout Standard
+
+\color magenta
 -creo que este párrafo no va----In our search for altruistic behavior in
  non-humans and non-primate animals we maybe demur that rats behavior in
  Taborsky's experiment didn't meet all of the conditions for reciprocal
@@ -5596,11 +5646,24 @@ _
 \end_layout
 
 \begin_layout Standard
-_
+.
 \end_layout
 
 \begin_layout Standard
+hablar del paper 1-s2.0-S0003347216000130-main.pdf (en downloads)
+\end_layout
 
+\begin_layout Standard
+The payoff matrix used was a weak Prisoner's Dilemma, e.i.
+ pay-off Punishment was equal pay-off Sucker
+\end_layout
+
+\begin_layout Standard
+rats were tested in iPD with their cage-mate
+\end_layout
+
+\begin_layout Standard
+_
 \end_layout
 
 \begin_layout Section
@@ -5618,6 +5681,13 @@ These results give evidence to conclude that the rats learned to solve the
 Reference
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Supplementary Material
 \end_layout
@@ -5631,7 +5701,7 @@ Theorical subject statistics
 placement h
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -5676,7 +5746,7 @@ Non cooperator subject Statistics
 placement h
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Float figure
