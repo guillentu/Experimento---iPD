@@ -179,11 +179,7 @@ l altruism behavior in animals and whether non-human animals with less cognitive
  iPD game using blue jays in an apparatus that consisted of side by side
  V-shaped compartments.
  They found that combining both accumulation and clumping treatment birds
- showed a level of cooperation that scarcely surpassed chance choice.
- However, Danchin and colleages (2006) criticized the Steven's experiment
- arguing that each accumulation block the iPD payoff matrix becomes stag
- hung matrix (whereby the temptation outcome, T, leave to be the best reward,
- R>T≥P>S) because the bird quantify the effective amount after four trials.
+ showed a level of cooperation higher than previous experiments of iPD.
  The Stephens' studies is timely because it forces behavioral ecologists,
  and other behavioral researcher, not only to rethink the potential importance
  of temporal discounting, but also to address a number of other issues (Mesterto
@@ -5520,7 +5516,26 @@ reference "fig_evolutionCoop"
 \end_layout
 
 \begin_layout Standard
-Probably, the animals fail to solve iterated iPD due to they fail to discern
+In previous laboratory studies of iPD have tested amongst anothers (Waal,
+ 2000; Hause, 2003;St-Pierre et al., 2009) on birds and rats in diverse condition
+, the best results were achieved by Stephens with birds (Stephens, 2002)
+ and Moita with rats (Moita, 2010).
+ However, Danchin and colleages (2006) criticized the Steven's experiment
+ arguing that each accumulation block the iPD payoff matrix becomes stag
+ hung matrix (whereby the temptation outcome, T, leave to be the best reward,
+ R>T≥P>S) because the bird quantify the effective amount after four trials.
+ Further, they using a mutualist matrix to boost the cooperation level before
+ each iPD session.
+ We didn't use either any booster matrix or accumulation treatment for our
+ results.
+ About of Moita experiment we can conclude that low cooperation level, 
+\emph on
+near below 60%
+\emph default
+, was as a result of the type of punishment used, because the rats adopted
+ a behavior in order to avoid the aversive tails pinch.
+ For this reason, we implement a timeout as a punishment for selfish behaviors.
+ Probably, the animals fail to solve iterated iPD due to they fail to discern
  the difference in the reinforcements.
  The contrast between rewards and also between punishments is the key for
  they can match dissimilar responses to different rewards.
@@ -5569,33 +5584,31 @@ alternate
  of reward and the cooperation level spread out 65 to 100%, this means that
  at these levels of cooperation iPD game become very hard to understand
  whether the cooperation choice is still the best option or not and indeed
- the timeout maybe is who modulate what the rats will choose, because surely
- the rats with more sensitive to timeout avoid it and cooperate more.
+ the timeout maybe is who modulate what the rats will choose, because the
+ rats surely with more sensitive to timeout will try to avoid it and cooperate
+ more.
  We found 5 of 8 rats were below 30% of punishment.
+ Certainly, the high level of cooperation was possible by the fact that
+ high contract on both reward and punishment empower a drop in the range
+ where discriminate response-reinforcemente in IPD become hard.
 \end_layout
 
 \begin_layout Standard
-Certainly, the high level of cooperation was possible by the fact that high
- contract reduce the range in which discriminate preference become hard.
-\end_layout
-
-\begin_layout Standard
-A way to know how are the behaviors of rats is to interpret the 
+We building a 
 \emph on
 coefficient of preference
 \emph default
- graph because knowing some simulated strategies we can figure out what
- strategy trend to use each rat.
- Then, the results of markov chains graphs confirm the fact.
- 
+ to try to understand the rats behaviors and using the position of simulated
+ agent we can infer the strategy that each rats trend to use.
+ The coefficient of preference graph showed that all rats were positioned
+ themselves on the right side and this means that the cooperation option
+ had more frequently that defect.
+ Besides, we can estimate than all rats at least twice time cooperate.
 \end_layout
 
 \begin_layout Standard
-:
-\end_layout
-
-\begin_layout Standard
-Since the Markov chains graph we see a very high value of transition to
+Then, the results of markov chains graphs confirm the fact.
+ Since the Markov chains graph we see a very high value of transition to
  mutual cooperation and very low value of transition from S (sucker) to
  T (temptation).
  This is a main discrepancy respect to the Moita's markov chain graph (moita
@@ -5604,7 +5617,11 @@ Since the Markov chains graph we see a very high value of transition to
 \end_layout
 
 \begin_layout Standard
-.
+Other authors, 
+\end_layout
+
+\begin_layout Standard
+.In previous laboratory studies of iPD have tested 
 \end_layout
 
 \begin_layout Standard

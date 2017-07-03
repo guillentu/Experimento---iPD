@@ -179,11 +179,7 @@ l altruism behavior in animals and whether non-human animals with less cognitive
  iPD game using blue jays in an apparatus that consisted of side by side
  V-shaped compartments.
  They found that combining both accumulation and clumping treatment birds
- showed a level of cooperation that scarcely surpassed chance choice.
- However, Danchin and colleages (2006) criticized the Steven's experiment
- arguing that each accumulation block the iPD payoff matrix becomes stag
- hung matrix (whereby the temptation outcome, T, leave to be the best reward,
- R>T≥P>S) because the bird quantify the effective amount after four trials.
+ showed a level of cooperation higher than previous experiments of iPD.
  The Stephens' studies is timely because it forces behavioral ecologists,
  and other behavioral researcher, not only to rethink the potential importance
  of temporal discounting, but also to address a number of other issues (Mesterto
@@ -5520,12 +5516,34 @@ reference "fig_evolutionCoop"
 \end_layout
 
 \begin_layout Standard
-Probably, the animals fail to solve iterated iPD due to they fail to discern
- the difference in the reinforcements.
+In previous laboratory studies of iPD have tested amongst anothers (Waal,
+ 2000; Hause, 2003;St-Pierre et al., 2009) on birds and rats in diverse condition
+, the best results were achieved by Stephens with birds (Stephens, 2002)
+ and Moita with rats (Moita, 2010).
+ However, Danchin and colleages (2006) criticized the Steven's experiment
+ arguing that each accumulation block the iPD payoff matrix becomes stag
+ hung matrix (whereby the temptation outcome, T, leave to be the best reward,
+ R>T≥P>S) because the bird quantify the effective amount after four trials.
+ Further, they using a mutualist matrix to boost the cooperation level before
+ each iPD session.
+ We didn't use either any booster matrix or accumulation treatment for our
+ results.
+ About of Moita experiment we can conclude that low cooperation level, 
+\emph on
+near below 60%
+\emph default
+, was as a result of the type of punishment used, because the rats adopted
+ a behavior in order to avoid the aversive tails pinch.
+ For this reason, we implement a timeout as a punishment for selfish behaviors.
+ Probably, the animals fail to solve iterated iPD satisfactory due to they
+ fail to discern the difference in the reinforcements for their response.
  The contrast between rewards and also between punishments is the key for
  they can match dissimilar responses to different rewards.
- Indeed, we use a pay-off T as double of pay-off R and the punishment S
- as double of P.
+ Moita and Stephens used similar contrast matrix because they used 4 pellets
+ for R(mutual cooperation) and 6 pellets for T(temptation), these are both
+ big and similar amoung that are difficult to (Killeen, 1982a; Killeen,
+ 1985; McDowell and Kessel, 1979) and Indeed, we use a pay-off T as double
+ of pay-off R and the punishment S as double of P.
  if a animal chose temptation and persist pushing 
 \emph on
 defect
@@ -5606,11 +5624,7 @@ Other authors,
 \end_layout
 
 \begin_layout Standard
-
-\end_layout
-
-\begin_layout Standard
-.
+.In previous laboratory studies of iPD have tested 
 \end_layout
 
 \begin_layout Standard
