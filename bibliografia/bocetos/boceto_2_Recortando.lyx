@@ -5569,38 +5569,44 @@ alternate
  of reward and the cooperation level spread out 65 to 100%, this means that
  at these levels of cooperation iPD game become very hard to understand
  whether the cooperation choice is still the best option or not and indeed
- the timeout maybe is who modulate what the rats will choose, because surely
- the rats with more sensitive to timeout avoid it and cooperate more.
+ the timeout maybe is who modulate what the rats will choose, because the
+ rats surely with more sensitive to timeout will try to avoid it and cooperate
+ more.
  We found 5 of 8 rats were below 30% of punishment.
+ Certainly, the high level of cooperation was possible by the fact that
+ high contract on both reward and punishment empower a drop in the range
+ where discriminate response-reinforcemente in IPD become hard.
 \end_layout
 
 \begin_layout Standard
-Certainly, the high level of cooperation was possible by the fact that high
- contract reduce the range in which discriminate preference become hard.
-\end_layout
-
-\begin_layout Standard
-A way to know how are the behaviors of rats is to interpret the 
+We building a 
 \emph on
 coefficient of preference
 \emph default
- graph because knowing some simulated strategies we can figure out what
- strategy trend to use each rat.
- Then, the results of markov chains graphs confirm the fact.
- 
+ to try to understand the rats behaviors and using the position of simulated
+ agent we can infer the strategy that each rats trend to use.
+ The coefficient of preference graph showed that all rats were positioned
+ themselves on the right side and this means that the cooperation option
+ had more frequently that defect.
+ Besides, we can estimate than all rats at least twice time cooperate.
 \end_layout
 
 \begin_layout Standard
-:
-\end_layout
-
-\begin_layout Standard
-Since the Markov chains graph we see a very high value of transition to
+Then, the results of markov chains graphs confirm the fact.
+ Since the Markov chains graph we see a very high value of transition to
  mutual cooperation and very low value of transition from S (sucker) to
  T (temptation).
  This is a main discrepancy respect to the Moita's markov chain graph (moita
  2010) in which the animals trend to jump between cooperate and defect.
  
+\end_layout
+
+\begin_layout Standard
+Other authors, 
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Standard
