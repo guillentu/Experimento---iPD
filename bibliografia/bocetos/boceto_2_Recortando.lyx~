@@ -28,7 +28,7 @@
 \spacing single
 \use_hyperref false
 \papersize default
-\use_geometry false
+\use_geometry true
 \use_amsmath 1
 \use_esint 1
 \use_mhchem 1
@@ -43,6 +43,10 @@
 \shortcut idx
 \color #008000
 \end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
@@ -1374,7 +1378,7 @@ cooperation
 
 \size tiny
 \emph on
-\begin_inset Formula $0.639$
+\begin_inset Formula $0.671$
 \end_inset
 
 
@@ -1389,7 +1393,7 @@ cooperation
 
 \size tiny
 \emph on
-\begin_inset Formula $0.525$
+\begin_inset Formula $0.599$
 \end_inset
 
 
@@ -1405,7 +1409,7 @@ cooperation
 \series bold
 \size tiny
 \emph on
-\begin_inset Formula $0.691$
+\begin_inset Formula $0.721$
 \end_inset
 
 
@@ -1420,7 +1424,7 @@ cooperation
 
 \size tiny
 \emph on
-\begin_inset Formula $0.644$
+\begin_inset Formula $0.664$
 \end_inset
 
 
@@ -1435,7 +1439,7 @@ cooperation
 
 \size tiny
 \emph on
-\begin_inset Formula $0.667$
+\begin_inset Formula $0.687$
 \end_inset
 
 
@@ -3289,7 +3293,7 @@ status open
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -3769,7 +3773,7 @@ The second phase experiment was developed to evaluate if the behaviors exhibit
  by the rats was either learned through the experience into the iPD game
  or was simply the choice of one lever, cooperation, by chance.
  If was by chance and now levers position change, the rats is going to choose
- same lever.
+ same lever and will not modify her behavior.
  We used four rats that got the best score in the previous experiment.
  In this phase, the levers order was inverted, i.e.
  if in previous experiment the lever meant cooperate, it became to defeat
@@ -4145,7 +4149,7 @@ over the las ten sessions).
 \end_layout
 
 \begin_layout Standard
-All rats reached the level of reward near 1(i.e.
+All rats reached the level of reward close to 1(i.e.
 \begin_inset Formula $100\%$
 \end_inset
 
@@ -4193,13 +4197,6 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "table_REV_meanAndstrategies-1"
-
-\end_inset
-
-
 \begin_inset Caption
 
 \begin_layout Plain Layout
@@ -4910,6 +4907,16 @@ cooperation
 
 \end_layout
 
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "table_REV_meanAndstrategies-1"
+
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
 
@@ -5495,7 +5502,7 @@ CD
 \end_layout
 
 \begin_layout Section
-Discussion
+Discussion and conclusions
 \end_layout
 
 \begin_layout Standard
@@ -5516,9 +5523,9 @@ reference "fig_evolutionCoop"
 \end_layout
 
 \begin_layout Standard
-In previous laboratory studies of iPD have tested amongst anothers (Waal,
- 2000; Hause, 2003;St-Pierre et al., 2009) on birds and rats in diverse condition
-, the best results were achieved by Stephens with birds (Stephens, 2002)
+In previous laboratory studies of iPD have tested on birds and rats, amongst
+ anothers (Waal, 2000; Hause, 2003;St-Pierre et al., 2009), in diverse condition
+ and the best results were achieved by Stephens with birds (Stephens, 2002)
  and Moita with rats (Moita, 2010).
  However, Danchin and colleages (2006) criticized the Steven's experiment
  arguing that each accumulation block the iPD payoff matrix becomes stag
@@ -5526,21 +5533,40 @@ In previous laboratory studies of iPD have tested amongst anothers (Waal,
  R>T≥P>S) because the bird quantify the effective amount after four trials.
  Further, they using a mutualist matrix to boost the cooperation level before
  each iPD session.
- We didn't use either any booster matrix or accumulation treatment for our
- results.
  About of Moita experiment we can conclude that low cooperation level, 
 \emph on
 near below 60%
 \emph default
 , was as a result of the type of punishment used, because the rats adopted
  a behavior in order to avoid the aversive tails pinch.
- For this reason, we implement a timeout as a punishment for selfish behaviors.
- Probably, the animals fail to solve iterated iPD due to they fail to discern
- the difference in the reinforcements.
+ 
+\color magenta
+For this reason,
+\color inherit
+ 
+\color magenta
+we didn't use either any booster matrix or accumulation treatment and implement
+ a timeout as a punishment for selfish behaviors in our experiment.
+
+\color inherit
+ Probably, the animals fail to solve iterated iPD satisfactory due to they
+ fail to discern the difference in the reinforcements for their response.
  The contrast between rewards and also between punishments is the key for
  they can match dissimilar responses to different rewards.
- Indeed, we use a pay-off T as double of pay-off R and the punishment S
- as double of P.
+ Moita and Stephens used similar contrast matrix because they used 4 pellets
+ for R(mutual cooperation) and 6 pellets for T(temptation), these are both
+ big and similar amoung that according Killen's 
+\emph on
+Incentive Model
+\emph default
+ are magnitud difficult to differentiate by the animals (Killeen, 1982a;
+ Killeen, 1985; McDowell and Kessel, 1979).
+ 
+\color magenta
+Indeed, we use a pay-off T as double of pay-off R and the punishment S as
+ double of P
+\color inherit
+.
  if a animal chose temptation and persist pushing 
 \emph on
 defect
@@ -5582,28 +5608,33 @@ alternate
  strategy got the maximum punishment.
  Although, we see that all rats stay on a thin scatter between 85 to 100%
  of reward and the cooperation level spread out 65 to 100%, this means that
- at these levels of cooperation iPD game become very hard to understand
- whether the cooperation choice is still the best option or not and indeed
- the timeout maybe is who modulate what the rats will choose, because the
- rats surely with more sensitive to timeout will try to avoid it and cooperate
- more.
- We found 5 of 8 rats were below 30% of punishment.
- Certainly, the high level of cooperation was possible by the fact that
- high contract on both reward and punishment empower a drop in the range
- where discriminate response-reinforcemente in IPD become hard.
+ at these levels of cooperation the iPD game become very hard to understand
+ whether the cooperation choice is still the best option and indeed the
+ timeout maybe is who modulate what the rats choose.
+ We found 5 of 8 rats were below 30% of punishment and surely the rats with
+ more timeout's sensitivity will try to avoid more it and cooperate more.
+ 
+\color magenta
+Certainly, the high level of cooperation was possible by the fact that high
+ contract on both reward and punishment empower a drop in the range where
+ discriminate response-reinforcemente in IPD become hard.
 \end_layout
 
 \begin_layout Standard
-We building a 
+We can infer the strategy that each rats trend to use by a 
 \emph on
 coefficient of preference
 \emph default
- to try to understand the rats behaviors and using the position of simulated
- agent we can infer the strategy that each rats trend to use.
+ and comparing positions among rats and simulated agent.
  The coefficient of preference graph showed that all rats were positioned
- themselves on the right side and this means that the cooperation option
- had more frequently that defect.
- Besides, we can estimate than all rats at least twice time cooperate.
+ themselves on the right side of 
+\emph on
+alternate (CD)
+\emph default
+ agent and this means that the frequency of cooperation option was higher
+ than defect.
+ Besides, we can estimate than all rats at least cooperate twice time before
+ defect.
 \end_layout
 
 \begin_layout Standard
@@ -5612,86 +5643,83 @@ Then, the results of markov chains graphs confirm the fact.
  mutual cooperation and very low value of transition from S (sucker) to
  T (temptation).
  This is a main discrepancy respect to the Moita's markov chain graph (moita
- 2010) in which the animals trend to jump between cooperate and defect.
+ 2010) in which the animals trend to jump between cooperate and defect that
+ is between T and S outcomes.
  
 \end_layout
 
 \begin_layout Standard
-Other authors, 
-\end_layout
-
-\begin_layout Standard
-.In previous laboratory studies of iPD have tested 
-\end_layout
-
-\begin_layout Standard
-
+The reciprocal altruism is cooperation among unrelated individuals where
+ in turn each individual help each other and the decision of cooperate is
+ based on previous response and the partner's behavior.
+ When reciprocity is towards the same partner that previous cooperate the
+ behaviors is call 
+\emph on
+Direct
+\emph default
+ reciprocity and when is towards another is call 
+\emph on
+indirect
+\emph default
+ reciprocity.
+ Our experiment was design to the rats has 
+\emph on
+direct
+\emph default
+ reciprocity interaction.
+ Other authors as Taborsky and colleges (2007, 2008, 2012 and 2015) had
+ tested reciprocal altruism in rats using a adaptated Waals' setup (Waal,
+ 2000) to assess direct and general reciprocity in rats.
+ The task consisted of pull a stick in such a way that a partner meets a
+ food tray and then the roles is exchange.
+ They show that rats are more likely to cooperate in direct than indirect
+ or generalized reciprocity.
+ However, 
 \color magenta
-Poner Taborsky
-\end_layout
-
-\begin_layout Standard
-
+from an operant conditioning perspective, interchange roles with a rats
+ that not pulling is consistent with the extinction of the pulling rate
+ behavior that previously was learned.
+ To depict reciprocal altruism behaviors in laboratory experiment design
+ must to meets all constraint together.
+ Indeed, we keep in mind that not learned any cooperative behavior before
+ the iPD treatment in order that the rats build their own strategies.
+ Other example about is the work of wood and colleges (wood et.
+ al., 2016) in which test iPD among 
+\color inherit
+same-sex conspecific and cage-mate norway rats not attained the constraint
+ 
 \color magenta
-From an operant conditioning perspective, we believe they have actually
- assessed extinction rate of pulling behavior after focal rats have or not
- received food for several days rather than rising the frequency of behavior
- by interaction between players.
+that the individual must be unrelated (Trivers,1972).
 \end_layout
 
 \begin_layout Standard
-.
+In the second phase of the experiment we tested if the behavior develop
+ by the rats with high performance were learned as a consequence of the
+ interaction with the opponent strategy and amount of reward or solely by
+ the lever preference.
+ 
 \end_layout
 
 \begin_layout Standard
-.
+Our result suggest that norway rats have the cognitive ability to reach
+ the best strategy on iterated Prisoner's Dilemma when opponent is reciprocate
+ and have good pay-off matrix and contingency parameters.
+ The cooperation on iPD has been show in similar experiments, but the present
+ experiment is the first time in which a high level of cooperation and a
+ truly reciprocal behavior is reached.
+ The rats not only develop a high frequency of cooperation, but also learn
+ that is more suitable after one fail to cooperate come back to cooperate.
+ The probability of cooperate given outcomes vector show that no matter
+ what they chose previously, they always return to cooperate with high probabili
+ty when have a reciprocate opponent.
+ 
 \end_layout
 
 \begin_layout Standard
-
-\color magenta
--creo que este párrafo no va----In our search for altruistic behavior in
- non-humans and non-primate animals we maybe demur that rats behavior in
- Taborsky's experiment didn't meet all of the conditions for reciprocal
- altruistic behavior.
- Because rats don't receive punishment for either punishment or temptation
- outcomes they rather assessed a different type of reciprocity----- 
-\end_layout
-
-\begin_layout Standard
-_
-\end_layout
-
-\begin_layout Standard
-.
-\end_layout
-
-\begin_layout Standard
-hablar del paper 1-s2.0-S0003347216000130-main.pdf (en downloads)
-\end_layout
-
-\begin_layout Standard
-The payoff matrix used was a weak Prisoner's Dilemma, e.i.
- pay-off Punishment was equal pay-off Sucker
-\end_layout
-
-\begin_layout Standard
-rats were tested in iPD with their cage-mate
-\end_layout
-
-\begin_layout Standard
-_
-\end_layout
-
-\begin_layout Section
-Conclusions
-\end_layout
-
-\begin_layout Standard
-These results give evidence to conclude that the rats learned to solve the
- iPD when they face an opponent with TIT FOR TAT strategy.
- The animals shown a high mutual cooperation as a result to the learning
- into the operant box.
+After that these experiment were accomplished the need arose for test different
+ opponent strategy and pay-off matrices to evaluate animals behaviors and
+ now we are performing it.
+ 
 \end_layout
 
 \begin_layout Section
@@ -5715,7 +5743,7 @@ Theorical subject statistics
 
 \begin_layout Standard
 \begin_inset Float figure
-placement h
+placement H
 wide false
 sideways false
 status collapsed
@@ -5737,7 +5765,8 @@ status collapsed
 \begin_layout Plain Layout
 
 \size scriptsize
-Graph of transition probabilities.
+Graph of markov chain with transition probabilities for all simulates agent
+ used to compare behaviors.
 \end_layout
 
 \end_inset
@@ -5763,7 +5792,7 @@ Non cooperator subject Statistics
 placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Float figure
@@ -5863,7 +5892,7 @@ name "fig_nocoop_markov"
 \begin_layout Plain Layout
 
 \size scriptsize
-Statistic for the removed subject.
+Statistic for the discarded subject.
  These subject had a random behavior because.
  
 \begin_inset CommandInset ref
@@ -5982,7 +6011,7 @@ status collapsed
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Graph of markov transition probabilities per subjects
+Graph of markov chain transition probabilities per cooperative rats
 \end_layout
 
 \end_inset
