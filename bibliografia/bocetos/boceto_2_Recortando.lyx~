@@ -322,6 +322,17 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset Graphics
+	filename Figuras/box.png
+	lyxscale 60
+	width 60text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Caption
 
 \begin_layout Plain Layout
@@ -3465,7 +3476,7 @@ name "fig_reward VS timeout"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -5359,7 +5370,7 @@ name "fig_REV_rewardVScoop"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -5404,13 +5415,13 @@ name "fig_REV_reward VS timeout"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename ../../ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/coefficientOfPreference_Reversion.png
-	lyxscale 20
-	width 40text%
+	filename ../../ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/coefficientOfPreference_reversion_2.png
+	lyxscale 35
+	width 35col%
 
 \end_inset
 
