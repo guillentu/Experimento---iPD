@@ -77,9 +77,9 @@ Ever since Darwin's theory of evolution was proposed, cooperative traits
  Both appended theories are capable to explain social altruism behavior
  through natural selection.
  In evolutionary biology, reciprocal altruism is a behavior whereby an organism
- performs a costly act that benefits another organism and if this behavior
- is reciprocal by others organism later time or even in the next generation,
- they increase a long-time reward or their fitness.
+ performs a costly act that benefits another organism that if this behavior
+ is reciprocate by others organism later time, they increase a long-time
+ reward or their fitness.
 \end_layout
 
 \begin_layout Standard
@@ -100,13 +100,16 @@ The kinship theory that after landed on kin Selection and Maynar Smith use
  
 \end_layout
 
-\begin_layout Quotation
+\begin_layout Standard
 Different conditions must be fulfilled to ensure that reciprocally altruistic
  behaviors will be selected.
- Wilkinson makes a clear summary of these conditions : (1) the behavior
- must reduce a donor’s fitness relative to the selfish alternative, (2)
- the fitness of the recipient must be elevated relative to a non-recipient,
- (3) performance of the behavior must not depend on receipt of an immediate
+ Wilkinson makes a clear summary of these conditions : 
+\end_layout
+
+\begin_layout Quotation
+(1) the behavior must reduce a donor’s fitness relative to the selfish alternati
+ve, (2) the fitness of the recipient must be elevated relative to a non-recipien
+t, (3) performance of the behavior must not depend on receipt of an immediate
  benefit, (4) a mechanism for detecting individuals who receive benefits
  but never pay altruistic costs has to exist, and (5) a large but indefinite
  number of opportunities to exchange aid must exist within each individual’s
@@ -128,15 +131,12 @@ Research on cooperative behaviors between non-related organisms has gained
  P (punishment) than R.
  However if one cooperates and the second player defects, the first one
  gets payed S (sucker) and other receives the best amount T (temptation).
-\end_layout
-
-\begin_layout Standard
-In iterated Prisoner's Dilemma (iPD), the Evolutionary Stable Strategies
+ In iterated Prisoner's Dilemma (iPD), the Evolutionary Stable Strategies
  (ESS)(von Neumann and Morgenstern, 1944; Nash, 1949) predict what behavior
  (strategy) is likely to occur, for example if a ESS is adopt by the population,
  in such a way, no minority using a another strategy can invade (Smith,
  1974).
- When the 2x2 PD is played only for one time the best ESS is Defeat strategy.
+ When the 2x2 PD is played only for one time the best ESS is defect strategy.
  Nevertheless, when the pay-off matrix employed meets 
 \begin_inset Formula $T>R>P>S$
 \end_inset
@@ -145,9 +145,14 @@ In iterated Prisoner's Dilemma (iPD), the Evolutionary Stable Strategies
 \begin_inset Formula $2R>T+P$
 \end_inset
 
- and the game is played an indefinite numbers of times, the best strategy
- is mutual cooperation.
- But if one stop reciprocity behavior the best option change to defeat.
+ and the game is played an indefinite numbers of times the best strategy
+ is still mutual defection, but arise a strategy (in game theory is called
+ 
+\emph on
+Pareto Efficient
+\emph default
+) in which if both adopt it, both earn the big long-term reward.
+ But if one stop reciprocity behavior the best option change to defect.
  Axelrod and Hamilton (1981) showed that some organism's symbiosis can be
  understood through the reciprocal altruism's model and if organisms can
  remember the outcome of at least one previous interaction and they are
@@ -194,22 +199,25 @@ g stimulus to the game, transparent food storage, and in this way the game
  become more easy to predict where is the maximum reward in the game.
  Other issue to keep in mind is the kind of reinforcement and punishment
  used in the experiments, such as a iPD study with rats (Viana et al., 2010)
- that used mimicking a tit-for-tat strategy on the opponent and positive
- reinforcement and punishment in a double T-maze chamber and they achieved
- an apparent moderately high level of cooperation.
- Then in ours further analyzed of their Markov chain diagram shown that
- the strategy performed by rats was more selfish than cooperative because
- it adopted an alternating decision's rule among sucker and temptation outcomes,
- basically they flees from punishment(undisclosed data).
+ that used a mimicking a tit-for-tat strategy on the opponent in a double
+ T-maze chamber with positive reinforcement as pellets and punishment as
+ tails pinch.
+ They achieved an apparent moderately high level of cooperation, but in
+ ours further analyzed of their Markov chain diagram shown that the strategy
+ performed by rats was more selfish than cooperative because it adopted
+ an alternating decision's rule among sucker and temptation outcomes, basically
+ they flees from punishment(undisclosed data).
  (siento la necesidad de tener que hacer algo oficial para que sea creible
- lo último que decimos)
+ lo último que decimos).
+ 
 \end_layout
 
 \begin_layout Standard
-Why all iPD-based studies haven't found high levels of reciprocity? In the
- aforementioned previous studies, animals don't learn iPD probably due to
- the fact that the reinforcement and punishment and stimulus contingency
- are inadequate for its natural acquisition capability, i.e.
+Regarding the about, we ask ourselves Why iPD-based studies haven't found
+ high levels of reciprocity? In the aforementioned previous studies, animals
+ don't learn iPD probably due to the fact that the reinforcement and punishment
+ are inadequate and stimulus contingency not match with the natural acquisition
+ capability of animals, i.e.
  the rat maybe has the ability to achieve an approximated optimal solution
  but for example the length of time used to make the contingency is longer
  than what rats can keep in mind or maybe they don't realized the real differenc
@@ -218,9 +226,9 @@ e within outcomes in the pay-off matrix.
 \end_layout
 
 \begin_layout Standard
-Given these consideration, the present study was conduct to assess reciprocal
- altruism behaviors using a particular structure that combine iPD matrix
- pay-off and timeout punishment with a tit for tat opponent's strategy.
+The present study was conduct to assess reciprocal altruism behaviors using
+ a particular structure that combine iPD matrix pay-off and timeout punishment
+ with a tit for tat opponent's strategy.
  We assess a iterated PD in two phase: first normal iPD and then, in a second
  phase, a reversion iPD using the previous animals set.
  We found that this combination achieve high level of reciprocal altruism
@@ -305,6 +313,31 @@ k cycle, using a standard operant chambers (MED associates Inc., USA) with
  Each feeders were equipped with a stimulus light that turn on when foods
  is coming.
  
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Dual operant chamber equipped with levers, feeders, lights and windows.
+ The size of the chamber was 75cm width and 30cm depth and 35cm height.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -2793,9 +2826,9 @@ reference "meanReward-1"
 
 \begin_layout Standard
 Theoretically, when a subject play iPD against TFT opponent, its the best
- strategy is All C and not TFT, because TFT against TFT when one defeat
+ strategy is All C and not TFT, because TFT against TFT when one defect
  both remain in this state and never change.
- Thus, if the rats make a wrong choice, defeat, then its probability to
+ Thus, if the rats make a wrong choice, defect, then its probability to
  cooperate must be high.
  Analyzing the not random strategy groups behaviors, we found that each
  rats had all components of strategic vector markedly above 0.5 suggesting
@@ -3670,7 +3703,7 @@ reference "fig_reward VS timeout"
 
 .
  Since the simulated agent (filled square) are used to understand the kind
- of strategy used by the rats, we observe that the rats after make a defeat
+ of strategy used by the rats, we observe that the rats after make a defect
  choice trend to learned that they have to back to cooperate choice.
  The rats of the group with lowest mutual cooperation level are near the
  simulated agent with 
@@ -3776,7 +3809,7 @@ The second phase experiment was developed to evaluate if the behaviors exhibit
  same lever and will not modify her behavior.
  We used four rats that got the best score in the previous experiment.
  In this phase, the levers order was inverted, i.e.
- if in previous experiment the lever meant cooperate, it became to defeat
+ if in previous experiment the lever meant cooperate, it became to defect
  lever.
  We procedures in the same way as in the first experiment.
  The sessions duration per rat were: 

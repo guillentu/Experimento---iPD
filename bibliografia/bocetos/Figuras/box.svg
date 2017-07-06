@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg4630"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="box.svg">
+  <defs
+     id="defs4632">
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Mend-37"
+       style="overflow:visible">
+      <path
+         id="path4957-87"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker4520"
+       style="overflow:visible">
+      <path
+         id="path4522"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="DotM"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="DotM-0-0"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path7185-92-8"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(0.4,0,0,0.4,2.96,0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker4526"
+       style="overflow:visible">
+      <path
+         id="path4528"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker4530"
+       style="overflow:visible">
+      <path
+         id="path4532"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker4534"
+       style="overflow:visible">
+      <path
+         id="path4536"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="DotM"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker4538"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4540"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(0.4,0,0,0.4,2.96,0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker4542"
+       style="overflow:visible">
+      <path
+         id="path4544"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker4546"
+       style="overflow:visible">
+      <path
+         id="path4548"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker4550"
+       style="overflow:visible">
+      <path
+         id="path4552"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker4554"
+       style="overflow:visible">
+      <path
+         id="path4556"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="298.34265"
+     inkscape:cy="686.00778"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1366"
+     inkscape:window-height="718"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata4635">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/guille/Documents/investigacion/experimento/Experimento---iPD/bibliografia/bocetos/Figuras/box.png"
+       style="fill:none;stroke:#554400;stroke-width:3.40040445;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:53.99999237;display:inline"
+       id="rect4972-1-0-3"
+       width="265.70816"
+       height="257.58884"
+       x="-599.79529"
+       y="290.39719"
+       ry="0"
+       transform="scale(-1,1)" />
+    <rect
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/guille/Documents/investigacion/experimento/Experimento---iPD/bibliografia/bocetos/Figuras/box.png"
+       style="fill:none;stroke:#554400;stroke-width:3.40040445;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:53.99999237;display:inline"
+       id="rect4972-9-0"
+       width="265.70816"
+       height="257.58884"
+       x="62.893631"
+       y="290.44006"
+       ry="0" />
+    <rect
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/guille/Documents/investigacion/experimento/Experimento---iPD/bibliografia/bocetos/Figuras/box.png"
+       style="fill:none;stroke:#554400;stroke-width:3.33857894;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:53.99999237;display:inline"
+       id="rect4974-2-7"
+       width="13.248328"
+       height="68.891312"
+       x="298.82928"
+       y="309.74545" />
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/guille/Documents/investigacion/experimento/Experimento---iPD/bibliografia/bocetos/Figuras/box.png"
+       sodipodi:type="arc"
+       style="fill:none;stroke:#554400;stroke-width:3.26662469;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:53.99999237;display:inline"
+       id="path4978-5-3"
+       sodipodi:cx="-11985.521"
+       sodipodi:cy="-24275.639"
+       sodipodi:rx="54.875835"
+       sodipodi:ry="51.41909"
+       d="m -11930.646,-24275.639 a 54.875835,51.41909 0 1 1 -109.751,0 l 54.876,0 z"
+       sodipodi:start="0"
+       sodipodi:end="3.1415927"
+       transform="matrix(0,0.61825534,-0.61825534,0,-14685.705,7825.5684)" />
+    <rect
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/guille/Documents/investigacion/experimento/Experimento---iPD/bibliografia/bocetos/Figuras/box.png"
+       style="fill:none;stroke:#554400;stroke-width:3.33857894;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:53.99999237;display:inline"
+       id="rect4974-4-4-7"
+       width="13.248328"
+       height="68.891312"
+       x="299.80136"
+       y="456.18323" />
+    <path
+       transform="matrix(0.61825534,0,0,0.61825534,-14685.705,7825.5684)"
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/guille/Documents/investigacion/experimento/Experimento---iPD/bibliografia/bocetos/Figuras/box.png"
+       sodipodi:type="arc"
+       style="fill:#ffff00;fill-opacity:1;stroke:#ffcc00;stroke-width:5.4000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:53.99999237;display:inline"
+       id="path6732-16-6"
+       sodipodi:cx="24256.824"
+       sodipodi:cy="-12102.423"
+       sodipodi:rx="15.152287"
+       sodipodi:ry="15.152287"
+       d="m 24271.977,-12102.423 a 15.152287,15.152287 0 1 1 -0,-0.473"
+       sodipodi:start="0"
+       sodipodi:end="6.2519454"
+       sodipodi:open="true" />
+    <path
+       transform="matrix(0.61825534,0,0,0.61825534,-14685.705,7825.5684)"
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/guille/Documents/investigacion/experimento/Experimento---iPD/bibliografia/bocetos/Figuras/box.png"
+       sodipodi:type="arc"
+       style="fill:#ffff00;fill-opacity:1;stroke:#ffcc00;stroke-width:5.4000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:53.99999237;display:inline"
+       id="path6732-1-7-1"
+       sodipodi:cx="24256.467"
+       sodipodi:cy="-11867.282"
+       sodipodi:rx="15.152287"
+       sodipodi:ry="15.152287"
+       d="m 24271.619,-11867.282 a 15.152287,15.152287 0 1 1 -0,-0.474"
+       sodipodi:start="0"
+       sodipodi:end="6.2519454"
+       sodipodi:open="true" />
+    <path
+       transform="matrix(-0.61825534,0,0,-0.61825534,-14685.705,7825.5684)"
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/guille/Documents/investigacion/experimento/Experimento---iPD/bibliografia/bocetos/Figuras/box.png"
+       sodipodi:type="arc"
+       style="fill:#ffe6d5;fill-opacity:1;stroke:#808000;stroke-width:5.4000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:53.99999237;display:inline"
+       id="path6732-5-7-5"
+       sodipodi:cx="-24266.904"
+       sodipodi:cy="11982.325"
+       sodipodi:rx="15.152287"
+       sodipodi:ry="15.152287"
+       d="m -24251.752,11982.325 a 15.152287,15.152287 0 1 1 -0,-0.473"
+       sodipodi:start="0"
+       sodipodi:end="6.2519454"
+       sodipodi:open="true" />
+    <rect
+       transform="matrix(0,1,-1,0,0,0)"
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/guille/Documents/investigacion/experimento/Experimento---iPD/bibliografia/bocetos/Figuras/box.png"
+       style="fill:#ff6600;fill-opacity:0.83536545;fill-rule:nonzero;stroke:#e00000;stroke-width:1.34497285;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1.34497265, 4.03491796;stroke-dashoffset:0;display:inline"
+       id="rect4976-7-9-0"
+       width="81.018074"
+       height="12.866065"
+       x="296.1698"
+       y="-337.65982" />
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/guille/Documents/investigacion/experimento/Experimento---iPD/bibliografia/bocetos/Figuras/box.png"
+       xml:space="preserve"
+       style="font-size:14.83812714px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Sans;-inkscape-font-specification:Sans"
+       x="193.90228"
+       y="314.55292"
+       id="text7041-9-6"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan7043-4-5"
+         x="193.90228"
+         y="314.55292">Lights</tspan></text>
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/guille/Documents/investigacion/experimento/Experimento---iPD/bibliografia/bocetos/Figuras/box.png"
+       xml:space="preserve"
+       style="font-size:14.83812714px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Sans;-inkscape-font-specification:Sans"
+       x="87.285622"
+       y="314.55292"
+       id="text7049-26-1"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="87.285622"
+         y="314.55292"
+         id="tspan7057-0-2">Feeders</tspan></text>
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/guille/Documents/investigacion/experimento/Experimento---iPD/bibliografia/bocetos/Figuras/box.png"
+       xml:space="preserve"
+       style="font-size:14.83812714px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Sans;-inkscape-font-specification:Sans"
+       x="128.62469"
+       y="529.65363"
+       id="text7053-00-6"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan7055-7-9"
+         x="128.62469"
+         y="529.65363">Levers</tspan></text>
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/guille/Documents/investigacion/experimento/Experimento---iPD/bibliografia/bocetos/Figuras/box.png"
+       xml:space="preserve"
+       style="font-size:14.83812714px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Sans;-inkscape-font-specification:Sans"
+       x="138.46767"
+       y="279.19757"
+       id="text7045-0-2-1"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan7047-2-1-0"
+         x="138.46767"
+         y="279.19757">Transparent window</tspan></text>
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/guille/Documents/investigacion/experimento/Experimento---iPD/bibliografia/bocetos/Figuras/box.png"
+       xml:space="preserve"
+       style="font-size:18.73049355px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Sans;-inkscape-font-specification:Sans"
+       x="124.99478"
+       y="419.78741"
+       id="text7041-5-4-4"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan7043-9-8-2"
+         x="124.99478"
+         y="419.78741">Rat</tspan></text>
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/guille/Documents/investigacion/experimento/Experimento---iPD/bibliografia/bocetos/Figuras/box.png"
+       style="fill:none;stroke:#000000;stroke-width:2.22571921;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend-37);display:inline"
+       d="m 254.87558,316.94365 35.76574,19.36696"
+       id="path7115-3-0"
+       inkscape:connector-curvature="0" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/guille/Documents/investigacion/experimento/Experimento---iPD/bibliografia/bocetos/Figuras/box.png"
+       style="fill:none;stroke:#000000;stroke-width:1.41271353;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend-37);display:inline"
+       d="m 131.51066,329.78443 149.91123,66.78259"
+       id="path7115-0-2-3"
+       inkscape:connector-curvature="0" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/guille/Documents/investigacion/experimento/Experimento---iPD/bibliografia/bocetos/Figuras/box.png"
+       style="fill:none;stroke:#000000;stroke-width:2.10021329;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend-37);display:inline"
+       d="M 184.38277,524.55884 294.09983,478.83145"
+       id="path7115-8-7-8"
+       inkscape:connector-curvature="0" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/guille/Documents/investigacion/experimento/Experimento---iPD/bibliografia/bocetos/Figuras/box.png"
+       style="fill:none;stroke:#000000;stroke-width:2.10021329;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend-37);display:inline"
+       d="m 296.87942,276.70123 33.76549,10.88654"
+       id="path7115-8-8-9-0"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/guille/Documents/investigacion/experimento/Experimento---iPD/bibliografia/bocetos/Figuras/box.png"
+       sodipodi:type="arc"
+       style="fill:#c8b7b7;stroke:#000000;stroke-width:1.58378601;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline"
+       id="path7896-9-0-3"
+       sodipodi:cx="26636.854"
+       sodipodi:cy="-3269.2278"
+       sodipodi:rx="35.188423"
+       sodipodi:ry="39.535027"
+       d="m 26672.042,-3269.2278 a 35.188423,39.535027 0 1 1 -70.377,0 l 35.189,0 z"
+       sodipodi:start="0"
+       sodipodi:end="3.1415927"
+       transform="matrix(0.5161055,-0.34040383,-0.34019085,-0.51624592,-14685.705,7825.5684)" />
+    <ellipse
+       sodipodi:ry="3.4600954"
+       sodipodi:rx="3.0796816"
+       sodipodi:cy="3265.7156"
+       sodipodi:cx="-26673.471"
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/guille/Documents/investigacion/experimento/Experimento---iPD/bibliografia/bocetos/Figuras/box.png"
+       style="fill:#1a1a1a;stroke:#000000;stroke-width:1.88343215;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline"
+       id="path7924-5-1-7"
+       transform="matrix(-0.5161055,0.34040384,0.34019086,0.51624592,-14685.705,7825.5684)"
+       cx="-26673.471"
+       cy="3265.7156"
+       rx="3.0796816"
+       ry="3.4600954" />
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/guille/Documents/investigacion/experimento/Experimento---iPD/bibliografia/bocetos/Figuras/box.png"
+       style="fill:none;stroke:#000000;stroke-width:0.28824964px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;display:inline"
+       d="m 183.89953,428.55123 -6.46077,-6.98011 1.27546,6.34824"
+       id="path7926-1-2-0"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/guille/Documents/investigacion/experimento/Experimento---iPD/bibliografia/bocetos/Figuras/box.png"
+       style="fill:none;stroke:#000000;stroke-width:0.72809958;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#DotM-0-0);display:inline"
+       d="m 155.35097,457.88558 c 0,0 -3.15372,1.28844 -5.34235,0.70791 -2.18924,-0.57746 -4.07306,-2.89344 -4.07306,-2.89344 0,0 -2.74567,-3.48573 -3.17227,-7.58909 -0.42721,-4.10274 1.10421,-4.86381 0.69307,-7.00235 -0.41176,-2.13793 -1.94071,-4.62393 -4.538,-5.69537 -2.59729,-1.07206 -4.92069,0.89647 -4.92069,0.89647"
+       id="path7946-1-6-0"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="czczzzc" />
+    <rect
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/guille/Documents/investigacion/experimento/Experimento---iPD/bibliografia/bocetos/Figuras/box.png"
+       style="fill:none;stroke:#554400;stroke-width:3.33857894;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:53.99999237;display:inline"
+       id="rect4974-5-1-4"
+       width="13.248328"
+       height="68.891312"
+       x="-363.85962"
+       y="309.702"
+       transform="scale(-1,1)" />
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/guille/Documents/investigacion/experimento/Experimento---iPD/bibliografia/bocetos/Figuras/box.png"
+       sodipodi:type="arc"
+       style="fill:none;stroke:#554400;stroke-width:3.26662469;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:53.99999237;display:inline"
+       id="path4978-3-9-2"
+       sodipodi:cx="11978.264"
+       sodipodi:cy="-24708.84"
+       sodipodi:rx="54.875835"
+       sodipodi:ry="51.41909"
+       d="m 12033.14,-24708.84 a 54.875835,51.41909 0 1 1 -109.752,0 l 54.876,0 z"
+       sodipodi:start="0"
+       sodipodi:end="3.1415927"
+       transform="matrix(0,-0.61825534,-0.61825534,0,-14685.705,7825.5684)" />
+    <rect
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/guille/Documents/investigacion/experimento/Experimento---iPD/bibliografia/bocetos/Figuras/box.png"
+       style="fill:none;stroke:#554400;stroke-width:3.33857894;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:53.99999237;display:inline"
+       id="rect4974-4-8-5-7"
+       width="13.248328"
+       height="68.891312"
+       x="-362.88754"
+       y="456.14038"
+       transform="scale(-1,1)" />
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/guille/Documents/investigacion/experimento/Experimento---iPD/bibliografia/bocetos/Figuras/box.png"
+       sodipodi:type="arc"
+       style="fill:#b3b3b3;fill-opacity:1;stroke:#cccccc;stroke-width:5.4000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:53.99999237;display:inline"
+       id="path6732-3-8-4"
+       sodipodi:cx="-24319.396"
+       sodipodi:cy="-12104.778"
+       sodipodi:rx="15.152287"
+       sodipodi:ry="15.152287"
+       d="m -24304.244,-12104.778 a 15.152287,15.152287 0 1 1 -0,-0.474"
+       sodipodi:start="0"
+       sodipodi:end="6.2519454"
+       sodipodi:open="true"
+       transform="matrix(-0.61825534,0,0,0.61825534,-14685.705,7825.5684)" />
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/guille/Documents/investigacion/experimento/Experimento---iPD/bibliografia/bocetos/Figuras/box.png"
+       transform="matrix(-0.61825534,0,0,0.61825534,-14685.705,7825.5684)"
+       sodipodi:type="arc"
+       style="fill:#ffff00;fill-opacity:1;stroke:#ffcc00;stroke-width:5.4000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:53.99999237;display:inline"
+       id="path6732-1-4-8-2"
+       sodipodi:cx="-24322.326"
+       sodipodi:cy="-11865.352"
+       sodipodi:rx="15.152287"
+       sodipodi:ry="15.152287"
+       d="m -24307.174,-11865.352 a 15.152287,15.152287 0 1 1 -0,-0.473"
+       sodipodi:start="0"
+       sodipodi:end="6.2519454"
+       sodipodi:open="true" />
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/guille/Documents/investigacion/experimento/Experimento---iPD/bibliografia/bocetos/Figuras/box.png"
+       transform="matrix(-0.61825534,0,0,0.61825534,-14685.705,7825.5684)"
+       sodipodi:type="arc"
+       style="fill:#ffe6d5;fill-opacity:1;stroke:#808000;stroke-width:5.4000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:53.99999237;display:inline"
+       id="path6732-5-0-9-5"
+       sodipodi:cx="-24700.104"
+       sodipodi:cy="-11981.458"
+       sodipodi:rx="15.152287"
+       sodipodi:ry="15.152287"
+       d="m -24684.951,-11981.458 a 15.152287,15.152287 0 1 1 -0,-0.473"
+       sodipodi:start="0"
+       sodipodi:end="6.2519454"
+       sodipodi:open="true" />
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/guille/Documents/investigacion/experimento/Experimento---iPD/bibliografia/bocetos/Figuras/box.png"
+       style="fill:none;stroke:#000000;stroke-width:1.41271353;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend-37);display:inline"
+       d="m 547.57856,354.06796 24.01396,27.07605"
+       id="path7115-0-9-5-5"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/guille/Documents/investigacion/experimento/Experimento---iPD/bibliografia/bocetos/Figuras/box.png"
+       sodipodi:type="arc"
+       style="fill:#808080;stroke:#000000;stroke-width:1.58378601;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline"
+       id="path7896-9-9-8-5"
+       sodipodi:cx="-13994.792"
+       sodipodi:cy="23451.9"
+       sodipodi:rx="35.188423"
+       sodipodi:ry="39.535027"
+       d="m -13959.604,23451.9 a 35.188423,39.535027 0 1 1 -70.376,0 l 35.188,0 z"
+       sodipodi:start="0"
+       sodipodi:end="3.1415927"
+       transform="matrix(-0.5161055,-0.34040383,0.34019085,-0.51624592,-14783.69,7844.7613)" />
+    <ellipse
+       sodipodi:ry="3.4600954"
+       sodipodi:rx="3.0796816"
+       sodipodi:cy="-23455.412"
+       sodipodi:cx="13958.176"
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/guille/Documents/investigacion/experimento/Experimento---iPD/bibliografia/bocetos/Figuras/box.png"
+       style="fill:#1a1a1a;stroke:#000000;stroke-width:1.88343215;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline"
+       id="path7924-5-8-1-7"
+       transform="matrix(0.5161055,0.34040384,-0.34019086,0.51624592,-14783.69,7844.7613)"
+       cx="13958.176"
+       cy="-23455.412"
+       rx="3.0796816"
+       ry="3.4600954" />
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/guille/Documents/investigacion/experimento/Experimento---iPD/bibliografia/bocetos/Figuras/box.png"
+       style="fill:none;stroke:#000000;stroke-width:0.28824964px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;display:inline"
+       d="m 407.20657,484.23912 6.46077,-6.98011 -1.27546,6.34763"
+       id="path7926-1-8-9-1"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/guille/Documents/investigacion/experimento/Experimento---iPD/bibliografia/bocetos/Figuras/box.png"
+       style="fill:none;stroke:#000000;stroke-width:0.72809958;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#DotM-0-0);display:inline"
+       d="m 435.75514,513.57347 c 0,0 3.15371,1.28845 5.34233,0.70791 2.18925,-0.57745 4.07308,-2.89343 4.07308,-2.89343 0,0 2.74567,-3.48573 3.17226,-7.58909 0.42722,-4.10274 -1.1042,-4.86381 -0.69306,-7.00236 0.41176,-2.13792 1.9407,-4.62393 4.538,-5.69537 2.59729,-1.07206 4.92069,0.89647 4.92069,0.89647"
+       id="path7946-1-4-9-6"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="czczzzc" />
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/guille/Documents/investigacion/experimento/Experimento---iPD/bibliografia/bocetos/Figuras/box.png"
+       xml:space="preserve"
+       style="font-size:19.78417015px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="164.2766"
+       y="239.10368"
+       id="text8412-9-9"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan8414-9-8"
+         x="164.2766"
+         y="239.10368">Rat box</tspan></text>
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/guille/Documents/investigacion/experimento/Experimento---iPD/bibliografia/bocetos/Figuras/box.png"
+       xml:space="preserve"
+       style="font-size:19.78417015px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="387.14175"
+       y="239.10368"
+       id="text8416-4-1"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan8418-9-3"
+         x="387.14175"
+         y="239.10368">Opponent box</tspan></text>
+    <rect
+       transform="matrix(0,1,-1,0,0,0)"
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/guille/Documents/investigacion/experimento/Experimento---iPD/bibliografia/bocetos/Figuras/box.png"
+       style="fill:#ff6600;fill-opacity:0.83536545;fill-rule:nonzero;stroke:#e00000;stroke-width:1.39588833;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1.39588823, 4.18766468;stroke-dashoffset:0;display:inline"
+       id="rect4976-7-9-0-7"
+       width="87.614975"
+       height="12.815149"
+       x="453.68549"
+       y="-336.88699" />
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/guille/Documents/investigacion/experimento/Experimento---iPD/bibliografia/bocetos/Figuras/box.png"
+       xml:space="preserve"
+       style="font-size:14.83812714px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Sans;-inkscape-font-specification:Sans"
+       x="516.93219"
+       y="350.78711"
+       id="text7049-26-1-1"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="516.93219"
+         y="350.78711"
+         id="tspan7057-0-2-4">Feeders</tspan></text>
+  </g>
+</svg>
