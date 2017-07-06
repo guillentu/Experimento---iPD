@@ -298,7 +298,15 @@ k cycle, using a standard operant chambers (MED associates Inc., USA) with
  The experiment was conducted in special ad hoc dual chamber.
  We placed two Med association standard operant chambers facing each other
  in such manner that each rat could make olfactory and eye contact through
- metal windows (FIGURA 1 CAJAS).
+ metal windows (see fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_box"
+
+\end_inset
+
+).
  Each standard chamber was equipped with: two not retractable levers at
  the sides of the same wall and two stimulus light were placed over each
  levers, and in the center put a illuminated feeder.
@@ -316,16 +324,19 @@ k cycle, using a standard operant chambers (MED associates Inc., USA) with
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Float figure
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename Figuras/box.png
 	lyxscale 60
 	width 60text%
+	rotateOrigin center
 
 \end_inset
 
@@ -340,6 +351,16 @@ Dual operant chamber equipped with levers, feeders, lights and windows.
  The size of the chamber was 75cm width and 30cm depth and 35cm height.
  
 \end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig_box"
 
 \end_inset
 
@@ -436,10 +457,10 @@ Shaping
 
  (Mazur, 1994, page 122) on a single chamber.
  The chamber was equipped as described above and was added a external lever.
- In this training, the external lever was manipulated by the operator to
- give reward as the rat go to the goal and finally when press lever.
+ In this training, the external lever was manipulated by the experimenter
+ to give reward as the rat go to the goal and finally when press lever.
  When the rat learned to press the lever after light onset, the operator
- left to gave reward with his lever.
+ left to gave reward with his external lever.
  It training finished when the rat made the task for at least two session.
  Trials procedure: each trial began when the center stimulus light was turned
  on and the lever below it was ejected, then if either inner or outer levers
@@ -449,13 +470,10 @@ Shaping
  turn-off and the feeder's light was turned on, one second later a 45mg
  pellet is automatically dispensed, when 5 second elapsed all light were
  turn off and the lever was retracted, finally 5 second ITI started.
- The procedure was performed during 3 days or until the rats met task goal.
-\end_layout
-
-\begin_layout Standard
-Following, we exposed the rat to the same task but now the center lever
+ The procedure was performed until the rats met task goal or up to 3 days.
+ Following, we exposed the rat to the same task but now the center lever
  during the session never more was retracted, the lever ejected at first
- trials and retracted at the last trials.
+ trials and retracted at the end of last trial.
  In this training, when the rat pressed lever on ITI was punished with 2
  second delays added to 5 second of ITI.
  This procedure went on for tree days or until pressing rate was below one
@@ -523,11 +541,26 @@ Iterated Prisoner's Dilemma Procedure
 \end_layout
 
 \begin_layout Standard
-The main experiment was designed to study the reciprocal cooperation lever
- in a iterated prisioner's dilemma game.
- We used a pay-off matrix in which T>R>P>S.
+The main experiment was designed to study the reciprocal altruism in a 
+\emph on
+iterated Prisoner's Dilemma
+\emph default
+ game(iPD).
+ We used a pay-off matrix in which the iPD states(outcomes) meets that 
+\begin_inset Formula $T>R>P>S$
+\end_inset
+
+ (Temptation, Reward, Punishment and Sucker respectability) and also 
+\begin_inset Formula $4R>T+3P$
+\end_inset
+
+ and 
+\begin_inset Formula $4R>2T+2S$
+\end_inset
+
+.
  The T and R outcomes were positive reinforcement and P and S was punishment.
- The matrix coefficient are shown in table 
+ The pay-off matrix is shown in table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "table_matrixIPD"
@@ -535,9 +568,9 @@ reference "table_matrixIPD"
 \end_inset
 
 .
- Thus, if both choose cooperation option (C) their pay-off was 1 for each
- other, If opponent choose C and the subject choose C or defection option
- (D), the subject received one pellet or 2 pellet, respectability.
+ Thus, if both choose cooperation option (C) their pay-off was 1 pellets
+ for each other, If opponent choose C and the subject choose C or defection
+ option (D), the subject received one pellet or 2 pellet, respectability.
  When the Opponent choose D and the subject choose C or D, the subject received
  8
 \begin_inset Quotes erd
@@ -548,16 +581,16 @@ reference "table_matrixIPD"
 \end_inset
 
  delay of punishment and no pellet in this trial.
+ The opponent's pay-off was alway 1 pellets if either both make responses
+ or the opponent meets the Fixed Ratio scheduler.
+ The FR scheduler was used to make a time interval in which opponent stays
+ opposite the selected lever and window.
  The opponent strategy was conducted by turn on a light stimulus over the
  target lever, e.i.
- the opponent didn't choose freely and the side where light was turn on,
- the opponent had to develop a Fixed-ratio scheduler.
- The amount pellet preference was test previously and the rat shown more
- preferences for 2 pellet than 1 pellet.
- The delay discrimination had been tested in 
-\color red
-PAPER DE SELF CONTROL EN RATAS.
- 
+ the opponent didn't choose lever freely, it had to develop a Fixed-ratio
+ scheduler on the side where light was turn on to be paid.
+ The amount pellets preference was previously tested on discrimination treatment
+ and the rat shown more preferences for 2 pellet than 1 pellet.
 \end_layout
 
 \begin_layout Standard
