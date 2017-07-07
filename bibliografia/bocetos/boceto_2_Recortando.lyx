@@ -22,7 +22,7 @@
 \graphics default
 \default_output_format default
 \output_sync 0
-\bibtex_command default
+\bibtex_command bibtex
 \index_command default
 \paperfontsize default
 \spacing single
@@ -64,6 +64,10 @@
 
 \begin_body
 
+\begin_layout Title
+High Level of Mutual Cooperation using Iterated Prisoner's Dilemma
+\end_layout
+
 \begin_layout Section
 Introduction
 \end_layout
@@ -73,7 +77,14 @@ Ever since Darwin's theory of evolution was proposed, cooperative traits
  in animals and humans were challenging to explain.
  In order to do so, Darwin's theory incorporates two novel kinds of extensions:
  the genetically kinship theory that Hamilton grounded mathematically (Hamilton,
-1964) and the reciprocal altruism theory (Trivers, 1971).
+1964) and the reciprocal altruism theory 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "trivers1971evolution"
+
+\end_inset
+
+(Trivers, 1971).
  Both appended theories are capable to explain social altruism behavior
  through natural selection.
  In evolutionary biology, reciprocal altruism is a behavior whereby an organism
@@ -3650,9 +3661,9 @@ reference "fig_coopMutua"
 \end_inset
 
 .
- The color bar represent average accumulated punishment (second) that each
- subject obtain per sessions in the last ten session and also is drive by
- same relationship respect both mutual cooperation or cooperation choice,
+ The color bar represent average accumulated punishment (in second) that
+ each subject obtain per sessions in the last ten session and also is drive
+ by same relationship respect both mutual cooperation or cooperation choice,
  the correlation coefficient was 
 \begin_inset Formula $-0.998$
 \end_inset
@@ -3663,9 +3674,13 @@ reference "fig_coopMutua"
 
  respectively.
  When cooperation up, the punishment down.
- In the figure, the square point represent theoretical simulated behaviors
- and used to compare the real average rat behavior respect to these repetitive
- simulated agent.
+ 
+\end_layout
+
+\begin_layout Standard
+In the figure, the square point represent theoretical simulated behaviors
+ and was used to compare the real average rat behavior respect to these
+ repetitive simulated agent.
  We created the follow behaviors: 
 \emph on
 1º)
@@ -3766,8 +3781,8 @@ Switch CCCD
 \end_layout
 
 \begin_layout Standard
-Relating rewards with punishment level we develop a coefficient that named
- 
+Relating rewards with timeout punishment level we develop a coefficient
+ that named 
 \emph on
 Preference
 \emph default
@@ -3810,8 +3825,8 @@ CD
 \begin_inset Quotes erd
 \end_inset
 
- are place the simulated agent and rats with strategies with less cooperation
- than 50%, this means that choose D more than one time, consecutively.
+ are place the simulated agent and rats that have a cooperation level less
+ than 50%.
  On the right side of 
 \begin_inset Quotes eld
 \end_inset
@@ -3821,8 +3836,7 @@ CD
 \end_inset
 
  represent the strategies in which choose C more than one time, consecutively.
- Holding the high level of cooperation we see that no one is close to the
- 
+ Holding the high level of cooperation no rats are close to the 
 \begin_inset Quotes eld
 \end_inset
 
@@ -3830,9 +3844,10 @@ CD
 \begin_inset Quotes erd
 \end_inset
 
- and all rats place on the right side and since this picture we can infer
- that the behaviors of rats trend to be such that cooperate at least two
- time or more and then defect one time and quickly back to cooperate.
+ and all rats place on the right side of it.
+ Since this picture we can infer that the behaviors of rats trend to be
+ such that at least cooperate two time or more and then defect one time
+ and quickly back to cooperate.
  
 \end_layout
 
@@ -5796,6 +5811,17 @@ After that these experiment were accomplished the need arose for test different
 
 \begin_layout Section
 Reference
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "bibliografia"
+options "plain"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
