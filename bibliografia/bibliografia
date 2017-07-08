@@ -1,3 +1,78 @@
+
+2006
+bartlett
+@article{bartlett2006gratitude,
+  title={Gratitude and prosocial behavior: Helping when it costs you},
+  author={Bartlett, Monica Y and DeSteno, David},
+  journal={Psychological science},
+  volume={17},
+  number={4},
+  pages={319--325},
+  year={2006},
+  publisher={SAGE Publications Sage CA: Los Angeles, CA}
+}
+
+
+
+2005
+nowak
+@article{nowak2005evolution,
+  title={Evolution of indirect reciprocity},
+  author={Nowak, Martin A and Sigmund, Karl},
+  journal={Nature},
+  volume={437},
+  number={7063},
+  pages={1291--1298},
+  year={2005},
+  publisher={Nature Publishing Group}
+}
+
+2001
+leimar
+@article{leimar2001evolution,
+  title={Evolution of cooperation through indirect reciprocity},
+  author={Leimar, Olof and Hammerstein, Peter},
+  journal={Proceedings of the Royal Society of London B: Biological Sciences},
+  volume={268},
+  number={1468},
+  pages={745--753},
+  year={2001},
+  publisher={The Royal Society}
+}
+
+
+1998
+nowak
+@article{nowak1998evolution,
+  title={Evolution of indirect reciprocity by image scoring, Nature},
+  author={Nowak, Martin A and Sigmund, Karl and Dieckmann, Ulf},
+  year={1998},
+  publisher={Citeseer}
+}
+
+1997
+smith
+@book{smith1997major,
+  title={The major transitions in evolution},
+  author={Smith, John Maynard and Szathmary, Eors},
+  year={1997},
+  publisher={Oxford University Press}
+}
+
+
+1997
+Smith, John Maynard
+The major transitions in evolution
+
+@book{smith1997major,
+  title={The major transitions in evolution},
+  author={Smith, John Maynard and Szathmary, Eors},
+  year={1997},
+  publisher={Oxford University Press}
+}
+
+
+
 1988
 Reciprocal altruism in bats and other mammals
 wilkinson
@@ -30,9 +105,21 @@ trivers
 }
 
 
+
 (1984)
 The Evolution of Cooperation, Basic Books, ISBN 0-465-02122-0
 Axelrod, Robert 
+
+@article{hamilton1981evolution,
+  title={The evolution of cooperation},
+  author={Hamilton, William D and Axelrod, Robert},
+  journal={Science},
+  volume={211},
+  number={27},
+  pages={1390--1396},
+  year={1981}
+}
+
 
 @book{axelrod2006evolution,
   title={The evolution of cooperation: revised edition},
@@ -170,6 +257,19 @@ SONIA KEFI, OLIVIER BONNET . ETIENNE DANCHIN
 
 2002 
 The Economics of Animal Cooperation Michael Mesterton-Gibbons, Eldridge S. Adams
+@article{mesterton2002economics,
+  title={The economics of animal cooperation},
+  author={Mesterton-Gibbons, Michael and Adams, Eldridge S},
+  journal={Science},
+  volume={298},
+  number={5601},
+  pages={2146--2147},
+  year={2002},
+  publisher={American Association for the Advancement of Science}
+}
+
+
+
 
 @article{flood19832,
   title={2$\times$ 2 Games played by rats: Different delays of reinforcement as payoffs},
@@ -310,6 +410,19 @@ Angèle St-Pierre, Karine Larose, Frédérique Dubois
   pages={4223--4228},
   year={2009},
   publisher={The Royal Society}
+}
+1995
+Green
+PRISONER'S DILEMMA AND THE PIGEON - CONTROL BY IMMEDIATE CONSEQUENCES
+@article{green1995prisoner,
+  title={Prisoner's dilemma and the pigeon: Control by immediate consequences},
+  author={Green, Leonard and Price, Paul C and Hamburger, Merle E},
+  journal={Journal of the experimental analysis of behavior},
+  volume={64},
+  number={1},
+  pages={1--17},
+  year={1995},
+  publisher={Wiley Online Library}
 }
 
 
