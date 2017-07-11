@@ -76,15 +76,21 @@ Introduction
 Ever since Darwin's theory of evolution was proposed, cooperative traits
  in animals and humans were challenging to explain.
  In order to do so, Darwin's theory incorporates two novel kinds of extensions:
- the genetically kinship theory that Hamilton grounded mathematically (Hamilton,
-1964) and the reciprocal altruism theory 
+ the genetically kinship theory that Hamilton grounded mathematically 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "axelrod2006evolution"
+
+\end_inset
+
+ and the reciprocal altruism theory 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "trivers1971evolution"
 
 \end_inset
 
-(Trivers, 1971).
+.
  Both appended theories are capable to explain social altruism behavior
  through natural selection.
  In evolutionary biology, reciprocal altruism is a behavior whereby an organism
@@ -95,9 +101,16 @@ key "trivers1971evolution"
 
 \begin_layout Standard
 The kinship theory that after landed on kin Selection and Maynar Smith use
- in first time (Smith,64), talk about, on knowledge of the genetic relationships
- of the organism involved, how altruistic behavior between closely related
- individuals can be selected though natural selection.
+ in first time 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "smith1997major"
+
+\end_inset
+
+, talk about, on knowledge of the genetic relationships of the organism
+ involved, how altruistic behavior between closely related individuals can
+ be selected though natural selection.
  This theory does not considers the altruistic act among distantly related
  organisms whereas Triver's theroy does.
  The term “reciprocal altruism” was first used by Trivers to refer to this
@@ -105,26 +118,29 @@ The kinship theory that after landed on kin Selection and Maynar Smith use
  behaviors in the long run when there is reciprocity in the interaction.
  Some of the most relevant and reliable examples about this type of cooperation
  are the Wilkinson studies in reciprocal food sharing behavior in vampires
- bats (Desmodus rotundus), (Wilkinson, 1984).
+ bats (Desmodus rotundus).
  In these experiments, animals share a part of the harvested food only to
  a partner that previously shared with them.
- 
-\end_layout
-
-\begin_layout Standard
-Different conditions must be fulfilled to ensure that reciprocally altruistic
+ Different conditions must be fulfilled to ensure that reciprocally altruistic
  behaviors will be selected.
  Wilkinson makes a clear summary of these conditions : 
-\end_layout
-
-\begin_layout Quotation
+\emph on
 (1) the behavior must reduce a donor’s fitness relative to the selfish alternati
 ve, (2) the fitness of the recipient must be elevated relative to a non-recipien
 t, (3) performance of the behavior must not depend on receipt of an immediate
  benefit, (4) a mechanism for detecting individuals who receive benefits
  but never pay altruistic costs has to exist, and (5) a large but indefinite
  number of opportunities to exchange aid must exist within each individual’s
- lifetime (Wilkinson, 1987).
+ lifetime
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "wilkinson1988reciprocal"
+
+\end_inset
+
+.
  
 \end_layout
 
@@ -143,10 +159,16 @@ Research on cooperative behaviors between non-related organisms has gained
  However if one cooperates and the second player defects, the first one
  gets payed S (sucker) and other receives the best amount T (temptation).
  In iterated Prisoner's Dilemma (iPD), the Evolutionary Stable Strategies
- (ESS)(von Neumann and Morgenstern, 1944; Nash, 1949) predict what behavior
- (strategy) is likely to occur, for example if a ESS is adopt by the population,
- in such a way, no minority using a another strategy can invade (Smith,
- 1974).
+ (ESS) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "von1944game,nash1950equilibrium"
+
+\end_inset
+
+ predict what behavior (strategy) is likely to occur, for example if a ESS
+ is adopt by the population, in such a way, no minority using a another
+ strategy can invade.
  When the 2x2 PD is played only for one time the best ESS is defect strategy.
  Nevertheless, when the pay-off matrix employed meets 
 \begin_inset Formula $T>R>P>S$
@@ -164,85 +186,237 @@ Pareto Efficient
 \emph default
 ) in which if both adopt it, both earn the big long-term reward.
  But if one stop reciprocity behavior the best option change to defect.
- Axelrod and Hamilton (1981) showed that some organism's symbiosis can be
- understood through the reciprocal altruism's model and if organisms can
- remember the outcome of at least one previous interaction and they are
- able to recognize different partners, then the strategies situation includes
- a much richer set of possibilities.
+ Axelrod and Hamilton 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "hamilton1981evolution"
+
+\end_inset
+
+ showed that some organism's symbiosis can be understood through the reciprocal
+ altruism's model and if organisms can remember the outcome of at least
+ one previous interaction and they are able to recognize different partners,
+ then the strategies situation includes a much richer set of possibilities.
  They present a ESS for iPD that combines robustness and stability with
  initial viability, called TIT FOR TAT.
  This strategy arised as the winner strategy, submitted by Anatol Rapoport,
- in the Robert Axelrod's computer tournament (Axelrod, 1984), because it
- can survive invasions from other strategies.
+ in the Robert Axelrod's computer tournament 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "robert1984evolution"
+
+\end_inset
+
+, because it can survive invasions from other strategies.
  The highly simple strategy consists in cooperating on the first move and
  then doing whatever the opponent did on the preceding move.
 \end_layout
 
 \begin_layout Standard
 Thus, many experimenters have tried to understand different aspects of reciproca
-l altruism behavior in animals and whether non-human animals with less cognitive
- abilities can solve iPD (Mendres & Waal,2000; Waal, 2000; Hause & colleagues,
- 2003; Taborsky, 2007, 2008, 2011 and 2015, Wood, 2016; Kalenscher, 2015).
- Green, Price and Hamburger (1995) assessed the iPD game on pigeons and
- observed that birds are very impulsive and prefer small immediate rewards
- rather than big, long-term, delayed rewards.
- Stephens (1995) trained blue jays (Cyanocitta cristata) using four different
- pay-off matrices, where one of them was the iPD matrix, with a special
- dual operant box.
- This study found little cooperation in PD treatment and this findings suggest
- that blue jays don't cooperate when immediate benefit is available (defect
- only), even if a long-term larger benefit may exist.
+l altruism behavior in animals and assess whether non-human animals with
+ less cognitive abilities can solve iPD.
+ Studies in 
+\emph on
+capuchin
+\emph default
+ monkeys using a pulling task point out that they modify their food sharing
+ behaviors according to the partner's presence and quality of own and partner
+ foods 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "mendres2000capuchins,de2000attitudinal"
+
+\end_inset
+
+.
+ Meanwhile using the same task in 
+\emph on
+tamarin
+\emph default
+ monkyes (
+\emph on
+Saguinus oedipus
+\emph default
+) showed that it behavior change taking account whom was altruistic and
+ whom not 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "hauser2003give"
+
+\end_inset
+
+.
+ In reciprocal behaviors the partner's interaction can be between pairs,
+ direct reciprocity 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "hamilton1981evolution"
+
+\end_inset
+
+ or among individual of the group, indirect and generalized reciprocity
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "nowak1998evolution,nowak2005evolution"
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "bartlett2006gratitude"
+
+\end_inset
+
+.
+ This kind of behaviors was evaluated using rats 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rutte2007generalized,rutte2008influence,schneeberger2012reciprocal,dolivo2015norway"
+
+\end_inset
+
+ through a adapted Waal's pulling task shown that the level of cooperated
+ was greater in direct reciprocity with a reciprocal opponent than others
+ type of interaction and also when the partner has a high quality of food.
+ On the other hand the pro-social behavior had been studies in rats 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "hernandez2014rats,marquez2015prosocial"
+
+\end_inset
+
+ and had demonstrated that they prefer social reward rather than being rewarded
+ in isolation.
+\end_layout
+
+\begin_layout Standard
+Experiments with pigeons 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "green1995prisoner"
+
+\end_inset
+
+ assessed the iPD game had observed that birds are very impulsive and prefer
+ small immediate rewards rather than big, long-term, delayed rewards and
+ other studies with blue jays (
+\emph on
+Cyanocitta cristata
+\emph default
+) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "clements1995testing"
+
+\end_inset
+
+ evaluating a iPD matrix with a special dual operant box and found little
+ cooperation in PD treatment.
+ This findings suggest that blue jays don't cooperate when immediate benefit
+ is available (defect only), even if a long-term larger benefit may exist.
  Then Stephen and colleages (2002 and 2005) inspired by the low levels of
- cooperation observed (Gardner et al., 1984; Clements and Stephens, 1995;
- Flood et al., 1983; Green et al., 1995) proposed assess over iPD frame to
- the effect of a pay-off accumulation and temporal clumping treatment to
- iPD game using blue jays in an apparatus that consisted of side by side
- V-shaped compartments.
+ cooperation 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "gardner1984prisoner,clements1995testing,flood19832,green1995prisoner"
+
+\end_inset
+
+ proposed assess over iPD frame to the effect of a pay-off accumulation
+ and temporal clumping treatment to iPD game using blue jays in an apparatus
+ that consisted of side by side V-shaped compartments.
  They found that combining both accumulation and clumping treatment birds
  showed a level of cooperation higher than previous experiments of iPD.
  The Stephens' studies is timely because it forces behavioral ecologists,
  and other behavioral researcher, not only to rethink the potential importance
- of temporal discounting, but also to address a number of other issues (Mesterto
-n-Gibbons, 2002).
- Indeed, we can explain from the point of view of Operant Conditioning,
- the improve on cooperation levels in Stephen's work by adding a new conditionin
-g stimulus to the game, transparent food storage, and in this way the game
- become more easy to predict where is the maximum reward in the game.
- Other issue to keep in mind is the kind of reinforcement and punishment
- used in the experiments, such as a iPD study with rats (Viana et al., 2010)
- that used a mimicking a tit-for-tat strategy on the opponent in a double
+ of temporal discounting, but also to address a number of other issues 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "mesterton2002economics"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Using iPD game 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "wood2016cooperation"
+
+\end_inset
+
+ find out that Long Evans conspecific and cage-mate female rats are more
+ altruistic than male.
+ Other study with rats 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "viana2010cognitive"
+
+\end_inset
+
+ had used a mimicking a tit-for-tat strategy on the opponent in a double
  T-maze chamber with positive reinforcement as pellets and punishment as
  tails pinch.
- They achieved an apparent moderately high level of cooperation, but in
- ours further analyzed of their Markov chain diagram shown that the strategy
- performed by rats was more selfish than cooperative because it adopted
- an alternating decision's rule among sucker and temptation outcomes, basically
- they flees from punishment(undisclosed data).
- (siento la necesidad de tener que hacer algo oficial para que sea creible
- lo último que decimos).
+ They achieved than rats has ability to adaptated their behavior in order
+ to the pay-off matrix opponent strategy.
+\end_layout
+
+\begin_layout Standard
+A really simple and clear way to figure out the dynamic system behavior
+ is using the 
+\emph on
+Markov chain
+\emph default
+ diagram and the associated transition probability vector.
+ To build diagram need to know the all possible system state and their probabili
+ties to transition among state interconnected by arrows.
+ The prisoner dilemma can be well characterized by the four state (T, R,
+ P and S outcomes) and both the probability to cooperate and not cooperate
+ given last outcomes.
+ This tools have already been used in some works 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "viana2010cognitive,stephens2002discounting,stevens2004economic,kefi2007accumulated"
+
+\end_inset
+
+ to draw animals behaviors, but until now there are no studies using this
+ tools that show a high level of cooperation.
+ If reciprocal altruism behavior is dominant in the game, the conditional
+ probability to cooperate given R must be close to 1, i.e., high probability
+ to cooperate given that in the last interaction both cooperate.
  
 \end_layout
 
 \begin_layout Standard
-Regarding the about, we ask ourselves Why iPD-based studies haven't found
- high levels of reciprocity? In the aforementioned previous studies, animals
- don't learn iPD probably due to the fact that the reinforcement and punishment
- are inadequate and stimulus contingency not match with the natural acquisition
- capability of animals, i.e.
+In the aforementioned previous studies, animals maybe don't learn iPD probably
+ due to the fact that the reinforcement and punishment are inadequate and
+ stimulus contingency not match with the natural acquisition capability
+ of animals, i.e.
  the rat maybe has the ability to achieve an approximated optimal solution
- but for example the length of time used to make the contingency is longer
- than what rats can keep in mind or maybe they don't realized the real differenc
-e within outcomes in the pay-off matrix.
+ but the length of time used to make contingency is longer than the rats
+ can keep in mind or maybe they don't realized the real difference within
+ outcomes in the pay-off matrix.
  
 \end_layout
 
 \begin_layout Standard
-The present study was conduct to assess reciprocal altruism behaviors using
- a particular structure that combine iPD matrix pay-off and timeout punishment
- with a tit for tat opponent's strategy.
- We assess a iterated PD in two phase: first normal iPD and then, in a second
- phase, a reversion iPD using the previous animals set.
- We found that this combination achieve high level of reciprocal altruism
+In the present study we assess reciprocal altruism behaviors using a iPD
+ game structure in which merge a particular iPD matrix pay-off and timeout
+ punishment with a tit for tat opponent's strategy.
+ The organization of the paper is as follow: section X iterated PD treatment,
+ section XX Reversion iPD using the previous animals and section XXX Discussion
+ and Conclusion.
+ 
+\end_layout
+
+\begin_layout Standard
+We found that this combination achieve high level of reciprocal altruism
  behavior in rats.
 \end_layout
 
@@ -276,7 +450,11 @@ l cages.
  All rats were food restricted to maintain animals at between 90-95% or
  80-85% of free feeding body weight for subjects and stooges respectively.
  All animals were kept in a well-ventilated, temperature-controlled room
- (22 ± 2 °C) with a 12/12 h light/dark cycle (lights on at 8 am).
+ (
+\begin_inset Formula $22±2°C$
+\end_inset
+
+) with a 12/12 h light/dark cycle (lights on at 8 am).
  Tap water was available ad libitum.
  To ensure that animals obtained sufficient food to survive, we provided
  supplementary food (at 22hs) for any rats that obtained the average amount
@@ -928,10 +1106,24 @@ ly (Stevens and Stephens,2002).
 
 \begin_layout Section
 Results
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Results"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
-First Phase: Iterated PD with opponent 
+Iterated PD with opponent 
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Iterated-PD-with"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1012,9 +1204,10 @@ reference "table_meanAndstrategies"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1215,16 +1408,9 @@ Means of reward.
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "table_meanAndstrategies"
-
-\end_inset
-
-
 \begin_inset Caption
 
 \begin_layout Plain Layout
@@ -2862,6 +3048,16 @@ cooperation
 
 \end_layout
 
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "table_meanAndstrategies"
+
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
 
@@ -2961,9 +3157,10 @@ reference "outcomes rate"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset space \hfill{}
@@ -3045,10 +3242,10 @@ reference "fig_evolutionCoop"
 
 \begin_layout Standard
 \begin_inset Float figure
-placement p
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Float figure
@@ -3364,9 +3561,10 @@ reference "fig_2state_markovChain"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset space \hfill{}
@@ -3851,8 +4049,15 @@ CD
  
 \end_layout
 
-\begin_layout Subsubsection
-Second Phase: reversion
+\begin_layout Subsection
+Reversion
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Reversion"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3885,6 +4090,7 @@ reference "fig1_REV_meansAnd significance-1"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement h
 wide false
 sideways false
 status open
@@ -5019,10 +5225,10 @@ name "table_REV_meanAndstrategies-1"
 
 \begin_layout Standard
 \begin_inset Float figure
-placement h
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Float figure
@@ -5309,7 +5515,7 @@ reference "fig_REV_2state_markovChain-1"
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset space \hfill{}
@@ -5590,10 +5796,20 @@ CD
 
 \begin_layout Section
 Discussion and conclusions
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Discussion-and-conclusions"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-We found a high lever of cooperation on all rats that develop some strategy,
+We found a high lever of cooperation on all rats 
+\color green
+that develop some strategy,
+\color inherit
  because the mean of the group was over 85%, fig.
  
 \begin_inset CommandInset ref
@@ -5603,32 +5819,50 @@ reference "fig_evolutionCoop"
 \end_inset
 
 , and the transition vector depict the probability to cooperation given
- each outcome uphold the trend(the mean of each component is on or over
- 80%).
- All animals learned that the best option wherever they are was cooperate
- or comeback to cooperate.
+ each outcome had each component on or over 80%.
+ Regarding that if a animal face an opponent with 
+\emph on
+tit for tat
+\emph default
+ stratigy its best strategy is 
+\emph on
+All C
+\emph default
+ (alway cooperate), all our animals learned that the best choice wherever
+ they are was cooperate or comeback to cooperate.
 \end_layout
 
 \begin_layout Standard
-In previous laboratory studies of iPD have tested on birds and rats, amongst
- anothers (Waal, 2000; Hause, 2003;St-Pierre et al., 2009), in diverse condition
- and the best results were achieved by Stephens with birds (Stephens, 2002)
- and Moita with rats (Moita, 2010).
- However, Danchin and colleages (2006) criticized the Steven's experiment
- arguing that each accumulation block the iPD payoff matrix becomes stag
- hung matrix (whereby the temptation outcome, T, leave to be the best reward,
- R>T≥P>S) because the bird quantify the effective amount after four trials.
- Further, they using a mutualist matrix to boost the cooperation level before
- each iPD session.
- About of Moita experiment we can conclude that low cooperation level, 
-\emph on
-near below 60%
-\emph default
-, was as a result of the type of punishment used, because the rats adopted
- a behavior in order to avoid the aversive tails pinch.
- 
+In previous laboratory studies in iPD have tested on birds and rats in diverse
+ condition (Stephens, 2002)(Moita, 2010), but Danchin and colleages 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "kefi2007accumulated"
+
+\end_inset
+
+ criticized the Steven's experiment arguing that each accumulation block
+ the iPD payoff matrix becomes stag hung matrix (whereby the temptation
+ outcome, T, leave to be the best reward, R>T≥P>S) because the bird quantify
+ the effective amount after four trials.
+ Further, they using a mutualistic matrix to boost the cooperation level
+ before each iPD session.
+
+\color red
+ Indeed, we can explain from the point of view of Operant Conditioning,
+ the improve on cooperation levels in Stephen's work by adding a new conditionin
+g stimulus to the game, transparent food storage, and in this way the game
+ become more easy to predict where is the maximum reward in the game.
+
+\color inherit
+ When the markov chains are evolved show up more probably states and if
+ the rats Moita's diagrams for the iPD treatment are evolved obtain that
+ the more probably states are T and S.
+ The mean that rats adopt a behavior in order to avoid the aversive tails
+ pinch.
+
 \color magenta
-For this reason,
+ For this reason,
 \color inherit
  
 \color magenta
@@ -5636,13 +5870,13 @@ we didn't use either any booster matrix or accumulation treatment and implement
  a timeout as a punishment for selfish behaviors in our experiment.
 
 \color inherit
- Probably, the animals fail to solve iterated iPD satisfactory due to they
- fail to discern the difference in the reinforcements for their response.
+ Probably, the animals fail to solve iterated iPD due to they fail to discern
+ the difference in the reinforcements for their response.
  The contrast between rewards and also between punishments is the key for
  they can match dissimilar responses to different rewards.
- Moita and Stephens used similar contrast matrix because they used 4 pellets
- for R(mutual cooperation) and 6 pellets for T(temptation), these are both
- big and similar amoung that according Killen's 
+ In cites works previouly used similar contrast matrix because they used
+ 4 pellets for R(mutual cooperation) and 6 pellets for T(temptation), these
+ are both big and similar amoung that according Killen's 
 \emph on
 Incentive Model
 \emph default
@@ -5650,22 +5884,21 @@ Incentive Model
  Killeen, 1985; McDowell and Kessel, 1979).
  
 \color magenta
-Indeed, we use a pay-off T as double of pay-off R and the punishment S as
+Indeed, we use a T pay-off as double of R pay-off and the S punishment as
  double of P
 \color inherit
-.
- if a animal chose temptation and persist pushing 
+, in such as way that if a animal chose temptation and persist pushing 
 \emph on
 defect
 \emph default
  option, it will receive only one big reward and then timeout, but if it
- prefer cooperate, will ear for each time small reward and any timeout.
+ prefer cooperate, will earn for each time small reward and any timeout.
  However, if the animal strategy is alternate between both lever (C or D)
  it receive alternately the biggest reward and the longest timeout.
  The payoff matrix used in the experiment gives the same amount of reward
  to one that always cooperator as one that always alternate between cooperate
  and defect options.
- Nevertheless, the matrix on iPD has the best strategy (
+ Nevertheless, the iPD pay-off matrix used had the best strategy (
 \emph on
 pareto optimum
 \emph default
@@ -5708,11 +5941,11 @@ Certainly, the high level of cooperation was possible by the fact that high
 \end_layout
 
 \begin_layout Standard
-We can infer the strategy that each rats trend to use by a 
+The strategy that each rats trend to use can be infer by a 
 \emph on
 coefficient of preference
 \emph default
- and comparing positions among rats and simulated agent.
+ and comparing the positions among rats and simulated agent.
  The coefficient of preference graph showed that all rats were positioned
  themselves on the right side of 
 \emph on
@@ -5725,13 +5958,19 @@ alternate (CD)
 \end_layout
 
 \begin_layout Standard
-Then, the results of markov chains graphs confirm the fact.
- Since the Markov chains graph we see a very high value of transition to
- mutual cooperation and very low value of transition from S (sucker) to
- T (temptation).
- This is a main discrepancy respect to the Moita's markov chain graph (moita
- 2010) in which the animals trend to jump between cooperate and defect that
- is between T and S outcomes.
+Then, the results given by markov chains graphs confirm the fact.
+ Since we can see a very high value of transition probability to mutual
+ cooperation and very low value of transition probability from S (sucker)
+ to T (temptation).
+ This is a main discrepancy respect to the Moita's markov chain graph 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "viana2010cognitive"
+
+\end_inset
+
+ in which the animals trend to jump between cooperate and defect that is
+ between T and S outcomes.
  
 \end_layout
 
@@ -5746,7 +5985,7 @@ Direct
 \emph default
  reciprocity and when is towards another is call 
 \emph on
-indirect
+indirect or generalized
 \emph default
  reciprocity.
  Our experiment was design to the rats has 
@@ -5754,9 +5993,15 @@ indirect
 direct
 \emph default
  reciprocity interaction.
- Other authors as Taborsky and colleges (2007, 2008, 2012 and 2015) had
- tested reciprocal altruism in rats using a adaptated Waals' setup (Waal,
- 2000) to assess direct and general reciprocity in rats.
+ Other authors 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rutte2008influence,schneeberger2012reciprocal,rutte2007generalized,dolivo2015norway"
+
+\end_inset
+
+ had tested reciprocal altruism in rats using a adaptated Waals' setup to
+ assess direct and general reciprocity in rats.
  The task consisted of pull a stick in such a way that a partner meets a
  food tray and then the roles is exchange.
  They show that rats are more likely to cooperate in direct than indirect
@@ -5768,10 +6013,17 @@ from an operant conditioning perspective, interchange roles with a rats
  behavior that previously was learned.
  To depict reciprocal altruism behaviors in laboratory experiment design
  must to meets all constraint together.
- Indeed, we keep in mind that not learned any cooperative behavior before
- the iPD treatment in order that the rats build their own strategies.
- Other example about is the work of wood and colleges (wood et.
- al., 2016) in which test iPD among 
+ Indeed, we keep in mind for our experiment design not learned any cooperative
+ behavior before the iPD treatment in order that the rats build their own
+ strategies.
+ Other example about is the work of wood and colleges 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "wood2016cooperation"
+
+\end_inset
+
+ in which test iPD among 
 \color inherit
 same-sex conspecific and cage-mate norway rats not attained the constraint
  
@@ -5780,17 +6032,18 @@ that the individual must be unrelated (Trivers,1972).
 \end_layout
 
 \begin_layout Standard
-In the second phase of the experiment we tested if the behavior develop
- by the rats with high performance were learned as a consequence of the
- interaction with the opponent strategy and amount of reward or solely by
- the lever preference.
- 
+In the Reversion experiment, we tested if the behavior develop by the rats
+ with high performance were learned by both a consequence of the interaction
+ with the opponent strategy and amount of reward or solely by the lever
+ preference.
+ We saw all rats in the reversion treatment achieved the choice with big
+ long-term reward.
 \end_layout
 
 \begin_layout Standard
 Our result suggest that norway rats have the cognitive ability to reach
  the best strategy on iterated Prisoner's Dilemma when opponent is reciprocate
- and have good pay-off matrix and contingency parameters.
+ and have good both pay-off matrix and contingency parameters.
  The cooperation on iPD has been show in similar experiments, but the present
  experiment is the first time in which a high level of cooperation and a
  truly reciprocal behavior is reached.
@@ -5802,15 +6055,15 @@ ty when have a reciprocate opponent.
  
 \end_layout
 
-\begin_layout Standard
-After that these experiment were accomplished the need arose for test different
- opponent strategy and pay-off matrices to evaluate animals behaviors and
- now we are performing it.
- 
-\end_layout
-
 \begin_layout Section
 Reference
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Reference"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -5894,7 +6147,7 @@ name "sub:Non-cooperator-subject"
 
 \begin_layout Standard
 \begin_inset Float figure
-placement h
+placement H
 wide false
 sideways false
 status open
@@ -6048,16 +6301,17 @@ Cooperatos statistics
 
 \begin_layout Standard
 \begin_inset Float figure
-placement h
+placement H
 wide false
 sideways false
 status collapsed
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename ../../ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/coop_statistic.png
 	lyxscale 20
-	width 90col%
+	width 75col%
 
 \end_inset
 
@@ -6096,7 +6350,7 @@ name "fig_coop_statistic"
 
 \begin_layout Standard
 \begin_inset Float figure
-placement h
+placement H
 wide false
 sideways false
 status collapsed
@@ -6105,7 +6359,7 @@ status collapsed
 \begin_inset Graphics
 	filename ../../ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/coop_markov.png
 	lyxscale 20
-	width 95col%
+	width 70col%
 
 \end_inset
 
