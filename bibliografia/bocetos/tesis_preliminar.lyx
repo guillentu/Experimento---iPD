@@ -2,10 +2,10 @@
 \lyxformat 413
 \begin_document
 \begin_header
-\textclass paper
+\textclass report
 \use_default_options true
 \maintain_unincluded_children false
-\language english
+\language spanish
 \language_package default
 \inputencoding auto
 \fontencoding global
@@ -65,25 +65,26 @@
 \begin_body
 
 \begin_layout Title
-High Level of Mutual Cooperation using Iterated Prisoner's Dilemma
+Alto nivel de cooperación Mutua en Ratas usando Dilema del prisionero Iterado
 \end_layout
 
 \begin_layout Section
-Introduction
+Introdicción
 \end_layout
 
 \begin_layout Standard
-Ever since Darwin's theory of evolution was proposed, cooperative traits
- in animals and humans were challenging to explain.
- In order to do so, Darwin's theory incorporates two novel kinds of extensions:
- the genetically kinship theory that Hamilton grounded mathematically 
+Desde que la teoría Evolutiva de Darwin fue propuesta, explicar los rasgos
+ cooperativos animales y humanos fue un desafío.
+ A fin de poder explicar comportamientos altruistas a través de selección
+ natural surgieron dos nuevas teorías: la teoría de Selección por castas,
+ que Hamilton explico matemáticamente 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "axelrod2006evolution"
 
 \end_inset
 
- and the reciprocal altruism theory 
+ y la teoría de Altruismo Recipro desarrollada por Trivers 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "trivers1971evolution"
@@ -91,124 +92,129 @@ key "trivers1971evolution"
 \end_inset
 
 .
- Both appended theories are capable to explain social altruism behavior
- through natural selection.
- In evolutionary biology, reciprocal altruism is a behavior whereby an organism
- performs a costly act that benefits another organism that if this behavior
- is reciprocate by others organism later time, they increase a long-time
- reward or their fitness.
+ En la biología evolutiva, el altruismo reciproco es el comportamientos
+ por el cual un organismo desarrollo una acción que resulta costosa para
+ el actor y beneficiosa para el receptor, que si luego este comportamientos
+ es reciproco por parte del receptor u otros organismos del medio, obtendrán
+ una recompensa mayor a largo plazo que si hubieran optado por acciones
+ egoístas.
 \end_layout
 
 \begin_layout Standard
-The kinship theory that after landed on kin Selection and Maynar Smith use
- in first time 
+La teoría de selección por casta, o como se denomina en ingles Kin selection,
+ utilizada por primera vez por Maynar Smith 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "smith1997major"
 
 \end_inset
 
-, talk about, on knowledge of the genetic relationships of the organism
- involved, how altruistic behavior between closely related individuals can
- be selected though natural selection.
- This theory does not considers the altruistic act among distantly related
- organisms whereas Triver's theroy does.
- The term “reciprocal altruism” was first used by Trivers to refer to this
- type of behavior and therefore explain how selection favors altruistic
- behaviors in the long run when there is reciprocity in the interaction.
- Some of the most relevant and reliable examples about this type of cooperation
- are the Wilkinson studies in reciprocal food sharing behavior in vampires
- bats (Desmodus rotundus), (Wilkinson, 1984).
- In these experiments, animals share a part of the harvested food only to
- a partner that previously shared with them.
- 
-\end_layout
-
-\begin_layout Standard
-Different conditions must be fulfilled to ensure that reciprocally altruistic
- behaviors will be selected.
- Wilkinson makes a clear summary of these conditions : 
-\emph on
-(1) the behavior must reduce a donor’s fitness relative to the selfish alternati
-ve, (2) the fitness of the recipient must be elevated relative to a non-recipien
-t, (3) performance of the behavior must not depend on receipt of an immediate
- benefit, (4) a mechanism for detecting individuals who receive benefits
- but never pay altruistic costs has to exist, and (5) a large but indefinite
- number of opportunities to exchange aid must exist within each individual’s
- lifetime
-\emph default
- 
+, explica como los comportamientos altruistas entre individuos genéticamente
+ relacionados pueden ser explicados por selección natural.
+ A diferencia de esta, la teoría de Altruismo Reciproco de Trivers considera
+ los comportamientos altruistas entre individuos no relacionados y exlica
+ como la selección favorece al altruismo reciproco a largo plazo cuando
+ existe reciprocidad en el comportamiento.
+ Uno de los ejemplos mas fieles y relevantes acerca de este tipo de cooperación
+ son los estudios de Wilkinson 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "wilkinson1988reciprocal"
 
 \end_inset
 
-.
- 
+, donde observa que los murciélagos vampiros solo comparten parte del alimento
+ obtenido con pares que previamente han compartido los oportunamente logrado.
 \end_layout
 
 \begin_layout Standard
-Research on cooperative behaviors between non-related organisms has gained
- a new impulse since Trivers connected reciprocal altruism behaviors with
- the famous mathematical Prisoner's Dilemma (PD) (originally developped
- by Merrill Flood and Melvin Dresher 1950).
- The PD game is one class of 2x2 game that involves two players who must
- choose between two options, generally called cooperation and defection.
- The size of the reward delivered is established according both player's
- choice.
- If both chose the cooperation option both get payed a certain amount R
- (reward), and if both chose defection they both get payed a smaller reward
- P (punishment) than R.
- However if one cooperates and the second player defects, the first one
- gets payed S (sucker) and other receives the best amount T (temptation).
- In iterated Prisoner's Dilemma (iPD), the Evolutionary Stable Strategies
- (ESS) (von Neumann and Morgenstern, 1944; Nash, 1949) predict what behavior
- (strategy) is likely to occur, for example if a ESS is adopt by the population,
- in such a way, no minority using a another strategy can invade (Smith,
- 1974).
- When the 2x2 PD is played only for one time the best ESS is defect strategy.
- Nevertheless, when the pay-off matrix employed meets 
+Diferentes condiciones deben ser reunidas para asegurar que el comportamiento
+ de altruismo reciproco sea seleccionado.
+ Wilkinson realiza un claro resumen de estas condiciones: (1) EL fitness
+ debe reducir el fitness del actor comparado con una alternativa egoísta.
+ (2) El fitness del receptor debe ser elevado respecto de uno que no recibe
+ un acto altruista.
+ (3) Realizar el comportamiento no debe depender del receptor del beneficio
+ inmediato.
+ (4) Debe existir un mecanismo para detectar individuos que reciben beneficios
+ pero nunca pagan el costo por acto altruista.
+ (5) Una indefinido número de oportunidades para intercambiar ayuda altruista
+ debe existir en la vida de cada individuo.
+\end_layout
+
+\begin_layout Standard
+Las investigaciones sobre cooperación entre organismos no relacionados tomó
+ un nuevo impulso luego de que Trivers conectará los comportamientos altruistas
+ con el famoso Juego matemático Dilema del Prisionero (PD)(originalmente
+ desarrollado por Merrill Flood and Melvin Dresher en 1950).
+ El PD es un juego definido por una matriz de 2x2 que involucra a dos jugadores
+ quienes deben elegir entre dos opciones o comportamientos, cooperar o no
+ cooperar.
+ En cada encuentro los jugadores reciben su paga de acuerdo a la matriz
+ de pago y sus correspondientes elecciones.
+ Si ambos eligen la opción cooperar ambos recibirán la paga de R (reward)
+ de acuerdo a la matriz y si ambos eligen no cooperar recibirán una paga
+ menor P (punishment).
+ Sin embargo, si uno coopera y el otro no el promero ganara una paga de
+ S (sucker) y el otro una de T (temptation).
+ En el dilema del prisionero iterado (iPD), las estrategias evolutivamente
+ estable (ESS, von Neumann and Morgenstern, 1944; Nash, 1949) predicen qué
+ comportamiento (estrategia) podrá sobrevivir al ser invadido por otras
+ estrategias (Smith, 1974).
+ La mejor estrategia cuando el 2x2 PD es jugado por única vez es la no cooperaci
+ón.
+ No obstante, cuando se juega por tiempo indefinido y los valores de la
+ matriz cumplen con que 
 \begin_inset Formula $T>R>P>S$
 \end_inset
 
- and 
+, 
 \begin_inset Formula $2R>T+P$
 \end_inset
 
- and the game is played an indefinite numbers of times the best strategy
- is still mutual defection, but arise a strategy (in game theory is called
- 
+, la mejor estrategia es aún la no cooperación, pero surge una nueva estrategia
+ (llamada en teoría de juegos, 
 \emph on
-Pareto Efficient
+Eficiencia de pareto
 \emph default
-) in which if both adopt it, both earn the big long-term reward.
- But if one stop reciprocity behavior the best option change to defect.
- Axelrod and Hamilton (1981) showed that some organism's symbiosis can be
- understood through the reciprocal altruism's model and if organisms can
- remember the outcome of at least one previous interaction and they are
- able to recognize different partners, then the strategies situation includes
- a much richer set of possibilities.
- They present a ESS for iPD that combines robustness and stability with
- initial viability, called TIT FOR TAT.
- This strategy arised as the winner strategy, submitted by Anatol Rapoport,
- in the Robert Axelrod's computer tournament (Axelrod, 1984), because it
- can survive invasions from other strategies.
- The highly simple strategy consists in cooperating on the first move and
- then doing whatever the opponent did on the preceding move.
+) en la cual si ambos optan por cooperar obtendrán a largo plazo una recompensa
+ mayor que si optan por cualquier otra combinación en sus elecciones.
+ Axelrod and Hamilton (1981) mostraron que algunas simbiosis entre organismos
+ pueden ser explicadas a través del modelo de altruismo reciproco y que
+ se despliega una amplio ser de estrategia posible si los organismos son
+ capaces de recordar los resultados de iteraciones (encuentros) pasados
+ y reconocer a distintos oponentes.
+ Los autores presentaron una ESS para iPD que combina robustez y estabilidad
+ con capacidad de sobrevivir, llamada Tit For Tat.
+ Esta estrategia, presentada por Anatol Rapoport en el torneo de simulación
+ por computadoras llevado a cabo por Axelrod 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "robert1984evolution"
+
+\end_inset
+
+, surge como ganadora gracias a que soporta invasiones de otras estrategias.
+ Su simplicidad la hace aún mas atractiva, ya que se basaen dos reglas fundament
+ales, empezar cooperando y luego hacer lo mismo que hizo el oponente en
+ la iteración anterior, o sea, si en oponente coopera en el siguiente encuentro
+ cooperará y en su defecto si no cooperar cambiará a no cooperar.
+ 
 \end_layout
 
 \begin_layout Standard
-Thus, many experimenters have tried to understand different aspects of reciproca
-l altruism behavior in animals and assess whether non-human animals with
- less cognitive abilities can solve iPD.
- Studies in 
+En efecto, muchos experimentos han tratado de entender diferentes aspectos
+ de los comportamientos altruistas en animales y especialmente evaluar si
+ animales no humanos con menos capacidades cognitivas son capaces de resolver
+ iPD.
+ Estudios en monos 
 \emph on
 capuchin
 \emph default
- monkeys using a pulling task point out that they modify their food sharing
- behaviors according to the partner's presence and quality of own and partner
- foods 
+ en tareas donde debían tirar una vara para dar comida a un par mostraron
+ que los animales modifican el comportamiento de compartir comida de acuerdo
+ a la reputación del oponente y a la calidad del alimento propio y del oponente
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "mendres2000capuchins,de2000attitudinal"
@@ -216,16 +222,16 @@ key "mendres2000capuchins,de2000attitudinal"
 \end_inset
 
 .
- Meanwhile using the same task in 
+ Mientras tanto, utilizando la misma tarea en monots 
 \emph on
 tamarin
 \emph default
- monkyes (
+ (
 \emph on
 Saguinus oedipus
 \emph default
-) showed that it behavior change taking account whom was altruistic and
- whom not 
+) Se ha mostrado que su comportamiento cambia de acuerdo a quien fue altruista
+ en el pasado y quien no 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "hauser2003give"
@@ -233,16 +239,18 @@ key "hauser2003give"
 \end_inset
 
 .
- In reciprocal behaviors the partner's interaction can be between pairs,
- direct reciprocity 
+\end_layout
+
+\begin_layout Standard
+En comportamientos reciproco las interacciones entre individuos puede ser
+ de a pares, reciprocidad directa 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "hamilton1981evolution"
 
 \end_inset
 
- or among individual of the group, indirect and generalized reciprocity
- 
+ o entre un grupo de individuos, reciprocidad indirecta o generalizada 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "nowak1998evolution,nowak2005evolution"
@@ -257,25 +265,27 @@ key "bartlett2006gratitude"
 \end_inset
 
 .
- This kind of behaviors was evaluated using rats 
+ Estos tipos de comportamientos fueron evaluados en ratas 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "rutte2007generalized,rutte2008influence,schneeberger2012reciprocal,dolivo2015norway"
 
 \end_inset
 
- through a adapted Waal's pulling task shown that the level of cooperated
- was greater in direct reciprocity with a reciprocal opponent than others
- type of interaction and also when the partner has a high quality of food.
- On the other hand the pro-social behavior had been studies in rats 
+ mediante una adaptación de la tarea de tira la vara de Waal, donde se mostró
+ que el nivel de cooperación fue mellos en reciprocidad directa con oponentes
+ cooperadores que en los otros tipos de interación y también cuando el oponente
+ tenia una alta calidad de alimento.
+ Por otro lado, comportamientos pro-sociales han sido estudiados en ratas
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "hernandez2014rats,marquez2015prosocial"
 
 \end_inset
 
- and had demonstrated that they prefer social reward rather than being rewarded
- in isolation.
+ señalando que los animales prefieren recibir recompensas en ambientes donde
+ existe interacción social mas de forma aislada.
 \end_layout
 
 \begin_layout Standard
