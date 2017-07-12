@@ -289,16 +289,16 @@ key "hernandez2014rats,marquez2015prosocial"
 \end_layout
 
 \begin_layout Standard
-Experiments with pigeons 
+Experimentos con palomas 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "green1995prisoner"
 
 \end_inset
 
- assessed the iPD game had observed that birds are very impulsive and prefer
- small immediate rewards rather than big, long-term, delayed rewards and
- other studies with blue jays (
+ usando iPD han mostrado que los pájaros son muy impulsivos y prefieren
+ una recompensa inmediata y pequeña a una grande a largo plazo y otros estudios
+ con Jay azules (
 \emph on
 Cyanocitta cristata
 \emph default
@@ -309,96 +309,116 @@ key "clements1995testing"
 
 \end_inset
 
- evaluating a iPD matrix with a special dual operant box and found little
- cooperation in PD treatment.
- This findings suggest that blue jays don't cooperate when immediate benefit
- is available (defect only), even if a long-term larger benefit may exist.
- Then Stephen and colleages (2002 and 2005) inspired by the low levels of
- cooperation 
+ utilizando la matriz de pago estándar y una caja operante doble, también
+ se observó la misma tendencia a no cooperar.
+ Estas investigaciones no cooperan cuando un beneficio inmediato está disponible
+, aun cuando un beneficio mayor existe y sea conocido.
+ Investigaciones posteriores inspiradas en los bajo niveles de cooperación
+ (as 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "gardner1984prisoner,clements1995testing,flood19832,green1995prisoner"
 
 \end_inset
 
- proposed assess over iPD frame to the effect of a pay-off accumulation
- and temporal clumping treatment to iPD game using blue jays in an apparatus
- that consisted of side by side V-shaped compartments.
- They found that combining both accumulation and clumping treatment birds
- showed a level of cooperation higher than previous experiments of iPD.
- The Stephens' studies is timely because it forces behavioral ecologists,
- and other behavioral researcher, not only to rethink the potential importance
- of temporal discounting, but also to address a number of other issues 
+) proponen evaluar en el marco del iPD los efectos de recompensas acumuladas
+ y ensayos en rafaga 
+\begin_inset Quotes eld
+\end_inset
+
+clumping
+\begin_inset Quotes erd
+\end_inset
+
+ utilizando blue jays y una caja operante en forma de V 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "stephens2002discounting"
+
+\end_inset
+
+.
+ Estos experimentos mostraron que los pájaros alcanzaban un nivel de cooperar
+ mayor a los registrados anteriormente.
+ Los estudios de Stephens fueron movilizadores, ya que mostraron que existen
+ distintos aspectos que deben ser evaluados para rechazar o confirmar que
+ los animales con capacidades inferiores a la de los humanos pueden realizar
+ estos tipos de comportamientos.
+ Por otro lado, también incentivos la critica de algunos autores
 \begin_inset CommandInset citation
 LatexCommand cite
 key "mesterton2002economics"
 
 \end_inset
 
-.
+, que objetan mantener la formas del juego.
 \end_layout
 
 \begin_layout Standard
-Using iPD game 
+Usando el marco de iPD 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "wood2016cooperation"
 
 \end_inset
 
- find out that Long Evans conspecific and cage-mate female rats are more
- altruistic than male.
- Other study with rats 
+ encontraron que ratas hembras conespecíficas long-evans criadas en la misma
+ jaula son mas cooperadoras que los machos.
+ Un muy interesante estudio en iPD con ratas machos 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "viana2010cognitive"
 
 \end_inset
 
- had used a mimicking a tit-for-tat strategy on the opponent in a double
- T-maze chamber with positive reinforcement as pellets and punishment as
- tails pinch.
- They achieved than rats has ability to adaptated their behavior in order
- to the pay-off matrix opponent strategy.
+ en el cual utilizaron una combinación de oponentes con estrategia 
+\emph on
+tit for tat
+\emph default
+ forzada, un doble laberinto en T con pelles de refuerzos positivo y pinchazos
+ en la cola como castigo, mostraron que los animales son capaces de adaptar
+ su comportamientos de acuerdo a la matriz de pago y a la estrategia del
+ oponente.
 \end_layout
 
 \begin_layout Standard
-A really simple and clear way to figure out the dynamic system behavior
- is using the 
+Una manera simple y clara de representar el comportamientos de un sistema
+ dinámico es mediante los diagramas o cadenas de 
 \emph on
-Markov chain
+Markov
 \emph default
- diagram and the associated transition probability vector.
- To build diagram need to know the all possible system state and their probabili
-ties to transition among state interconnected by arrows.
- The prisoner dilemma can be well characterized by the four state (T, R,
- P and S outcomes) and both the probability to cooperate and not cooperate
- given last outcomes.
- This tools have already been used in some works 
+ y su vector de transición de estados asociado.
+ El diagrama se construye conociendo los diferentes estados posible del
+ sistema y las probabilidades condicionales de transición entre estados.
+ El Dilema del prisionero puede ser bien caracterizado considerando los
+ cuatro estados posibles y conociendo las probabilidades condicionales de
+ cooperar y de no cooperar dado el estado anterior.
+ Esta herramiento ya a sido utilizada en varios trabajos 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "viana2010cognitive,stephens2002discounting,stevens2004economic,kefi2007accumulated"
 
 \end_inset
 
- to draw animals behaviors, but until now there are no studies using this
- tools that show a high level of cooperation.
- If reciprocal altruism behavior is dominant in the game, the conditional
- probability to cooperate given R must be close to 1, i.e., high probability
- to cooperate given that in the last interaction both cooperate.
- 
+ para esquematizar loscomportamientos animales, pero hasta el momento no
+ se han publicado estudios que muestren una alta tasa de cooperacion en
+ iPD.
+ Esto significa que si el comportamiento de reciprocidad altruista es dominante
+ en el juego, las probabilidades condicionales por cooperar dado el estado
+ R o S deben ser cercana a 1, o sea, alta probabilidad de cooperar dado
+ que en la ultimo encuentro ambos cooperaron o el oponente cooperó.
 \end_layout
 
 \begin_layout Standard
-In the aforementioned previous studies, animals maybe don't learn iPD probably
- due to the fact that the reinforcement and punishment are inadequate and
- stimulus contingency not match with the natural acquisition capability
- of animals, i.e.
- the rat maybe has the ability to achieve an approximated optimal solution
- but the length of time used to make contingency is longer than the rats
- can keep in mind or maybe they don't realized the real difference within
- outcomes in the pay-off matrix.
- 
+En los trabajos anteriormente mencionados, los animales posiblemente no
+ aprendan a resolver satisfactoriamente iPD debido a que los refuerzo o
+ castigos utilizados posiblemente fueron inadecuados o quizás las contingencias
+ entre refuerzo-respuesta y estímulos no son acordes a las capacidades de
+ adquisición de los animales, i.e.
+ una rata quizás tenga la capacidad de aprender una solución aproximada
+ de la óptima pero los tiempos de contingencia sean mayores a los que el
+ animal puede tener en mente o por otro lado, pueden no apreciar las diferencias
+ reales entre diferentes refuerzos debido a los comportamientos realizados.
 \end_layout
 
 \begin_layout Standard

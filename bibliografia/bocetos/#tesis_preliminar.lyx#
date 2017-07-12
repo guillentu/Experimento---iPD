@@ -362,7 +362,7 @@ key "wood2016cooperation"
 
 \end_inset
 
- encontraron que ratas hembras consepecíficas long-evans criadas en la misma
+ encontraron que ratas hembras conespecíficas long-evans criadas en la misma
  jaula son mas cooperadoras que los machos.
  Un muy interesante estudio en iPD con ratas machos 
 \begin_inset CommandInset citation
@@ -375,63 +375,66 @@ key "viana2010cognitive"
 \emph on
 tit for tat
 \emph default
- forzada, un doble laberinto en T con refuerzos como pellets y castigos
- como pinchazos en la cola, lograron  than rats has ability to adaptated
- their behavior in order to the pay-off matrix opponent strategy.
+ forzada, un doble laberinto en T con pelles de refuerzos positivo y pinchazos
+ en la cola como castigo, mostraron que los animales son capaces de adaptar
+ su comportamientos de acuerdo a la matriz de pago y a la estrategia del
+ oponente.
 \end_layout
 
 \begin_layout Standard
-A really simple and clear way to figure out the dynamic system behavior
- is using the 
+Una manera simple y clara de representar el comportamientos de un sistema
+ dinámico es mediante los diagramas o cadenas de 
 \emph on
-Markov chain
+Markov
 \emph default
- diagram and the associated transition probability vector.
- To build diagram need to know the all possible system state and their probabili
-ties to transition among state interconnected by arrows.
- The prisoner dilemma can be well characterized by the four state (T, R,
- P and S outcomes) and both the probability to cooperate and not cooperate
- given last outcomes.
- This tools have already been used in some works 
+ y su vector de transición de estados asociado.
+ El diagrama se construye conociendo los diferentes estados posible del
+ sistema y las probabilidades condicionales de transición entre estados.
+ El Dilema del prisionero puede ser bien caracterizado considerando los
+ cuatro estados posibles y conociendo las probabilidades condicionales de
+ cooperar y de no cooperar dado el estado anterior.
+ Esta herramiento ya a sido utilizada en varios trabajos 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "viana2010cognitive,stephens2002discounting,stevens2004economic,kefi2007accumulated"
 
 \end_inset
 
- to draw animals behaviors, but until now there are no studies using this
- tools that show a high level of cooperation.
- If reciprocal altruism behavior is dominant in the game, the conditional
- probability to cooperate given R must be close to 1, i.e., high probability
- to cooperate given that in the last interaction both cooperate.
+ para esquematizar loscomportamientos animales, pero hasta el momento no
+ se han publicado estudios que muestren una alta tasa de cooperacion en
+ iPD.
+ Esto significa que si el comportamiento de reciprocidad altruista es dominante
+ en el juego, las probabilidades condicionales por cooperar dado el estado
+ R o S deben ser cercana a 1, o sea, alta probabilidad de cooperar dado
+ que en la ultimo encuentro ambos cooperaron o el oponente cooperó.
+\end_layout
+
+\begin_layout Standard
+En los trabajos anteriormente mencionados, los animales posiblemente no
+ aprendan a resolver satisfactoriamente iPD debido a que los refuerzo o
+ castigos utilizados posiblemente fueron inadecuados o quizás las contingencias
+ entre refuerzo-respuesta y estímulos no son acordes a las capacidades de
+ adquisición de los animales, i.e.
+ una rata quizás tenga la capacidad de aprender una solución aproximada
+ de la óptima pero los tiempos de contingencia sean mayores a los que el
+ animal puede tener en mente o por otro lado, pueden no apreciar las diferencias
+ reales entre diferentes refuerzos debido a los comportamientos realizados.
  
 \end_layout
 
 \begin_layout Standard
-In the aforementioned previous studies, animals maybe don't learn iPD probably
- due to the fact that the reinforcement and punishment are inadequate and
- stimulus contingency not match with the natural acquisition capability
- of animals, i.e.
- the rat maybe has the ability to achieve an approximated optimal solution
- but the length of time used to make contingency is longer than the rats
- can keep in mind or maybe they don't realized the real difference within
- outcomes in the pay-off matrix.
- 
+En el presente trabajo se evalúa el comportamiento de altruismo reciproco
+ utilizando el marco del dilema del prisionero en el cual se conjuga una
+ matriz de pago particular que utiliza refuerzos positivos y tiempos como
+ castigo con un oponente que desarrolla una estrategia definida por el experimet
+ados.
+ El trabajo se organiza de la siguiente manera: sección X Experimento en
+ iPD, sección XX Reversión en iPD y sección XXX Discusión y conclusiones.
 \end_layout
 
 \begin_layout Standard
-In the present study we assess reciprocal altruism behaviors using a iPD
- game structure in which merge a particular iPD matrix pay-off and timeout
- punishment with a tit for tat opponent's strategy.
- The organization of the paper is as follow: section X iterated PD treatment,
- section XX Reversion iPD using the previous animals and section XXX Discussion
- and Conclusion.
- 
-\end_layout
-
-\begin_layout Standard
-We found that this combination achieve high level of reciprocal altruism
- behavior in rats.
+Nosotros encontramos que la combinación propuesta logra en ratas un alto
+ nivel de altruismo reciproco.
 \end_layout
 
 \begin_layout Section
@@ -6047,7 +6050,7 @@ name "sec:Reference"
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 bibfiles "bibliografia"
-options "plain"
+options "plos2015"
 
 \end_inset
 
