@@ -2,7 +2,7 @@
 %------- 
 
 
-_txtSujetos=["1A";"2A";"3A";"4A";"5A";"6A";"7A";"8A";"9A";"10A";"3B";"4B"];
+_txtSujetos=["1A";"2A";"3A";"4A";"5A";"6A";"7A";"8A";"9A";"10A";"11A";"12A"];
 
 % PORCENTAJE DE COOPERACION
 _nSujetos=12;
@@ -108,7 +108,7 @@ hh=xlabel("Subjects");set(hh, "fontsize", 14);
 axis([0 13 0 1.05])
 hold off
 name=strcat("figura_iPD_1_2_9s_13s/fig_finales/cooperation_mean",".png");
-print(hhh, name);
+%print(hhh, name);
 % MEDIANA
 hhh=figure; 
 h=errorbar([1:12]',_medianaXsujeto', _stdXsujeto','*c');
@@ -127,7 +127,7 @@ t=text([1:12]-0.25, .1*ones(1,12), _txtSujetos(:,:),"fontsize",13);
 axis([0 13 0 1.05])
 hold off
 name=strcat("figura_iPD_1_2_9s_13s/fig_finales/cooperation_median",".png");
-print(hhh, name);
+%%print(hhh, name);
 
 
 %%%%  la media y sem de las ultimas 10 sesiones del vectos de media por sesion del grupo de cooperadores

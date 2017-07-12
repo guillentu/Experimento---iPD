@@ -35,10 +35,10 @@ todo.exp52=exp52;todo.exp53=exp53;
 todo.exp54=exp54;todo.exp55=exp55;
 todo.exp56=exp56;todo.exp57=exp57;todo.exp58=exp58;
 
-_txtSujetos=["1A";"2A";"3A";"4A";"5A";"6A";"7A";"8A";"9A";"10A";"3B";"4B"];
+_txtSujetos=["1A";"2A";"3A";"4A";"5A";"6A";"7A";"8A";"9A";"10A";"11A";"12A"];
 %_colores=["--+k";"--om";"--*g";"--.r";"--xb";"--sc";"--^m";"--vg";"-->b";"--<c";"--pr";"--hr"];
 _colores=["--+b";"--ob";"--*b";"--.b";"--xb";"--sb";"--^b";"--vb";"-->b";"--<b";"--pb";"--hb"];
-ptrn={"1A";"2A";"3A";"4A";"5A";"6A";"7A";"8A";"9A";"10A";"3B";"4B"};
+ptrn={"1A";"2A";"3A";"4A";"5A";"6A";"7A";"8A";"9A";"10A";"11A";"12A"};
 
 % PORCENTAJE DE COOPERACION
 _nSujetos=12;
