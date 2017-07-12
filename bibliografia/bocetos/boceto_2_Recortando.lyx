@@ -367,7 +367,7 @@ key "viana2010cognitive"
 \end_layout
 
 \begin_layout Standard
-A really simple and clear way to figure out the dynamic system behavior
+A clear way to figure out the animal behavior, and in dynamic system behavior
  is using the 
 \emph on
 Markov chain
@@ -5834,7 +5834,7 @@ All C
 
 \begin_layout Standard
 In previous laboratory studies in iPD have tested on birds and rats in diverse
- condition (Stephens, 2002)(Moita, 2010), but Danchin and colleages 
+ condition (Stephens, 2002), but Danchin and colleages 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "kefi2007accumulated"
@@ -5855,9 +5855,13 @@ g stimulus to the game, transparent food storage, and in this way the game
  become more easy to predict where is the maximum reward in the game.
 
 \color inherit
- When the markov chains are evolved show up more probably states and if
- the rats Moita's diagrams for the iPD treatment are evolved obtain that
- the more probably states are T and S.
+ 
+\end_layout
+
+\begin_layout Standard
+When the markov chains are evolved show up more probably states and if the
+ rats Moita's diagrams for the iPD treatment are evolved obtain that the
+ more probably states are T and S.
  The mean that rats adopt a behavior in order to avoid the aversive tails
  pinch.
 
