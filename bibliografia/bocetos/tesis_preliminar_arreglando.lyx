@@ -637,27 +637,26 @@ Material and Method
 \end_layout
 
 \begin_layout Standard
-Los procedimeitnos fueron aprobados por el comite de Etica del IByME-CONICET
- y fueron conducidos de acuerdo a las guía de cuidad y uso de animales de
- laboratorio NIH.
+Los procedimeitnos All experimental procedures were approved by the ethics
+ committee of the IByME-CONICET and were conducted according to the NIH
+ Guide for Care and Use of Laboratory Animals.2.1 Subjects and Housing.
 \end_layout
 
-\begin_layout Subsection*
-Sujetos y cajas experimental
+\begin_layout Subsection
+Subjects and Housing
 \end_layout
 
-\begin_layout Subsubsection*
-Sujetos
+\begin_layout Subsubsection
+Subject
 \end_layout
 
 \begin_layout Standard
-Las ratas utilizadas fueron machos de la cepa Long-Evans (300–330 g) de
- 2 meses de edad proveidas por el IBYME-CONICET.
- Se emplearon 12 machos como sujetos experimentatales y 6 macho como oponentes.
- Al tiempo del destete todos los sujetos fueron colocados de a pares en
- jaulas donde se les permitia interactuar, mientras que cada oponentes se
- colocaron en jaulas individuales y nunca tuvieron contacto con los experimental
-es.
+Two groups of male Long-Evans rats (300–330 g) of two months of age were
+ provided by the IBYME-CONICET.
+ Twelves males were subjects and six (Nstooge=6) identical rats were opponents.
+ At weaning time all subjects were housed in groups of two rats per cage
+ to allow social interaction, whereas each stooge was housed in single individua
+l cages.
  We had 12 stainless-steel cages altogether with sawdust as bedding and
  metal lids.
  All rats were food restricted to maintain animals at between 90-95% or
@@ -6634,6 +6633,9 @@ cooperacion media por sesion
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Float figure
 wide false
 sideways false
@@ -6672,13 +6674,10 @@ cooperación Mutua
 \end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -6713,6 +6712,9 @@ Cooperación media por sesion
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Float figure
 wide false
 sideways false
@@ -6766,9 +6768,6 @@ reference "table_matrixIPD_T4"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Float figure
 wide false
 sideways false
@@ -6790,13 +6789,10 @@ name "tabla_T3"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Graphics
 	filename figuras_meli/table_coopYmutua_EXP_T4.eps
 	lyxscale 30
-	width 80col%
+	width 40col%
 
 \end_inset
 
@@ -6823,7 +6819,7 @@ reference "fig_comp_T3_T4"
 
 \end_inset
 
- 
+: 
 \color blue
 Gráfico del promedio de la cooperación (ratas 1S, 1M y 2M, grupo cooperador)
  durante la primera y segunda etapa del iPD.
@@ -6849,7 +6845,7 @@ Gráfico del promedio de la cooperación (ratas 1S, 1M y 2M, grupo cooperador)
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Graficos Experimentos: evaluación de comportamiento no cooperativos utilizando
+graficos Experimentos: evaluación de comportamiento no cooperativos utilizando
  matriz con refuerzo por traición elevado, T.
 \end_layout
 
@@ -6959,7 +6955,7 @@ dom.
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Float figure
@@ -7000,10 +6996,13 @@ cooperacion media por sesion
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -7044,7 +7043,7 @@ cooperacion media por sesion
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -7079,10 +7078,13 @@ cooperación Mutua
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -7118,9 +7120,6 @@ tabla de tasa de cooperación y cooperación mutua.
 \end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Float figure
 wide false
 sideways false
@@ -7130,7 +7129,7 @@ status open
 \begin_inset Graphics
 	filename figuras_meli/table_mutuaYalimento_EXP_Pseudo.eps
 	lyxscale 30
-	width 80col%
+	width 40col%
 
 \end_inset
 
@@ -7148,7 +7147,7 @@ name "tabla_alimento_Pseudo-1"
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Tabla: tasa de cooperación mutua y alimento ganado.
+tabla de tasa de cooperación mutua y alimento ganado.
  
 \end_layout
 
@@ -7247,7 +7246,7 @@ status open
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -7282,10 +7281,13 @@ cooperacion media por sesion
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -7326,7 +7328,7 @@ cooperacion media entre grupo.
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -7362,9 +7364,6 @@ tabla de tasa de cooperación y cooperación mutua.
 \end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Float figure
 wide false
 sideways false
@@ -7374,7 +7373,7 @@ status open
 \begin_inset Graphics
 	filename figuras_meli/table_mutuaYalimento_EXP_anti.eps
 	lyxscale 30
-	width 80col%
+	width 40col%
 
 \end_inset
 
