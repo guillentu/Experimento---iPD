@@ -261,35 +261,13 @@ Diferentes condiciones deben ser reunidas para asegurar que el comportamiento
 
 \color red
 Dado que el altruismo recíproco se encuentra en diferentes especies animales
- cuyos caminos divergen en gran medida de la evolución (Bren) [19, 18],
- se puede proponer que los mecanismos implicados en el aprendizaje de la
- cooperación tienen componentes similares.
+ cuyos caminos divergen en gran medida de la evolución (Brembs, 1996; Flood,
+ 1983) [19, 18], se puede proponer que los mecanismos implicados en el aprendiza
+je de la cooperación tienen componentes similares.
  Por lo tanto, se deben estudiar los mecanismos simples de aprendizaje que
  se encuentran en una gran variedad de especies y que podrían estar involucrados
  en el altruismo recíproco.
  
-\end_layout
-
-\begin_layout Standard
-
-\color red
-18.
- Flood, M., Lendenmann, K., &Rapoport, A.
- (1983).
- 2 × 2 games played by rats: Different delays of reinforcement as payoffs.
- Behavioural Science, 28, 65–78.
- 
-\end_layout
-
-\begin_layout Standard
-
-\color red
-19.
- Brembs, B.
- (1996).
- Chaos, cheating and cooperation: Potential solutions to the prisoner’s
- dilemma.
- Oikos, 76, 14–24.
 \end_layout
 
 \begin_layout Standard
@@ -660,41 +638,45 @@ Las ratas utilizadas fueron machos de la cepa Long-Evans (300–330 g) de
 es.
  Los animales fueron alojados en 12 cajas de acero inoxidable acondicionada
  con aserrín y bebederos con pico metálico.
- We had 12 stainless-steel cages altogether with sawdust as bedding and
- metal lids.
- All rats were food restricted to maintain animals at between 90-95% or
- 80-85% of free feeding body weight for subjects and stooges respectively.
- All animals were kept in a well-ventilated, temperature-controlled room
- (22 ± 2 °C) with a 12/12 h light/dark cycle (lights on at 8 am).
- Tap water was available ad libitum.
- To ensure that animals obtained sufficient food to survive, we provided
- supplementary food (at 22hs) for any rats that obtained the average amount
- of pellet to maintain body weight.
+ El pesos de las ratas experimentales se mantuvo entre 90-95% de su peso
  
-\end_layout
+\emph on
+ad-libitum
+\emph default
+ y las oponentes entre el 80-85%.
+ Los animales se mantuvieron en el vivario del laboratorio con ventilación
+ forzada, temperatura controlada a 
+\begin_inset Formula $22±2°C$
+\end_inset
 
-\begin_layout Standard
-The subject was named in successive order: 1A, 2A, 3A, 4A, 5A, 6A, 7A, 8A,
+ con ciclos de luz-noche de 12/12 horas (la luz se encendia a las 8am).
+ Los bebederos fueron habilitados 
+\emph on
+ad libitum
+\emph default
+.
+ Al finalizar el día (22h) los animales recibieron alimento suplementario
+ a fin de mantener el peso corporal.
+ Los sujetos fueron nombrados en orden: 1A, 2A, 3A, 4A, 5A, 6A, 7A, 8A,
  9A, 10A, 3B, 4B.
 \end_layout
 
-\begin_layout Subsubsection
-Housing
+\begin_layout Subsubsection*
+Cajas
 \end_layout
 
 \begin_layout Standard
-All behavioral procedures were performed during the light phase of the light/dar
-k cycle, using a standard operant chambers (MED associates Inc., USA) with
- Med PC IV software suit (Product SOF-735) and PCI Operating Package for
- up to Eight Chambers (Product MED-SYST-8) equipped with control of multiple
- devices SmartCtrl (Product DIG-716B) and pedestal mount pellet dispenser
- for rat, 45mg (Product ENV-203-45) and standard operant chambers (Product
- ENV 008).
- White noise with a flat power spectral density was used to reduce sensibility
- to ambient noise.
- The training was perform on a single standard operant chamber equipped
- with tree retractable levers and tree stimulus light over each lever, and
- in the back wall placed a illuminated feeder.
+Los experimentos fueron realizados durante los ciclos de luz, utilizando
+ una caja operante estándar (MED associates Inc., USA) equipado con el software
+ Med PC IV suit (Product SOF-735) y un PCI Operating Package para 8 cajas
+ (Product MED-SYST-8).
+ Las cajas fueron controladas con dispositivos SmartCtrl (Product DIG-716B),
+ una torre automática dispensadora de pellets calibrados de 45mg (Product
+ ENV-203-45) y un modelo de caja operante estándar (Product ENV 008).
+ Se empleó ruido blanco con densidad espectral de potencia plana para reducir
+ los ruidos del ambiente.
+ Las cajas fueron equipadas con dos palancas señala luces frontales y dos
+ palancas , and in the back wall placed a illuminated feeder.
  The experiment was conducted in special ad hoc dual chamber.
  We placed two Med association standard operant chambers facing each other
  in such manner that each rat could make olfactory and eye contact through
@@ -7762,6 +7744,28 @@ name "sec:Reference"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+
+\color red
+18.
+ Flood, M., Lendenmann, K., &Rapoport, A.
+ (1983).
+ 2 × 2 games played by rats: Different delays of reinforcement as payoffs.
+ Behavioural Science, 28, 65–78.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\color red
+19.
+ Brembs, B.
+ (1996).
+ Chaos, cheating and cooperation: Potential solutions to the prisoner’s
+ dilemma.
+ Oikos, 76, 14–24.
 \end_layout
 
 \begin_layout Standard
