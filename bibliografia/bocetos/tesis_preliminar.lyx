@@ -6,8 +6,8 @@
 \use_default_options true
 \maintain_unincluded_children false
 \language spanish
-\language_package default
-\inputencoding auto
+\language_package babel
+\inputencoding default
 \fontencoding global
 \font_roman default
 \font_sans default
@@ -70,6 +70,121 @@ Alto nivel de cooperación Mutua en Ratas usando Dilema del prisionero Iterado
 
 \begin_layout Section
 Introdicción
+\end_layout
+
+\begin_layout Standard
+
+\color red
+INTO TESIS
+\end_layout
+
+\begin_layout Standard
+El interés central de nuestro laboratorio es estudiar el comportamiento
+ como una propiedad emergente de circuitos neuronales.
+ La elaboración de teorías formales de las funciones superiores del cerebro,
+ tales como el aprendizaje de reglas y categorización, son necesarias para
+ el entendimiento de los mecanismos neuronales que hacen posible estas caracterí
+sticas cognitivas y conductuales.
+ Estos modelos tienen implicancias directas en la construcción de máquinas
+ inteligentes y su aplicación al ámbito de la robótica.
+\end_layout
+
+\begin_layout Standard
+El diseño de sistemas adaptativos es una de las claves en la investigación
+ en Bioingeniería en el presente siglo.
+ Frank (1996) afirma que los ingenieros enfrentan desafíos similares a los
+ que se encuentran en los sistemas biológicos, como el problema de almace­namien
+to, complejidad e impredictibilidad.
+ En los últimos años científicos e ingenieros han utilizado sistemas adaptativos
+ para resolver problemas en Bioingeniería.
+ La Inteligencia Artificial (IA) clásica tiene sus bases en fundamentos
+ defectuosos (Brooks, 1990); por ello, Touretzky y Saksida (1997) sugieren
+ poner más atención en la literatura del aprendizaje animal y realizar intentos
+ serios por modelar los efectos descriptos.
+ La nueva tendencia en robótica está formada por la coalición de distintos
+ tipos de investigaciones y motivaciones, como ser probar un modelo neuronal,
+ biológico o psicológico o incluso, una teoría general de comportamiento
+ adaptativo, y por otro lado desarrollar robots sencillos y eficientes y
+ utilizar el trabajo realizado en los sistemas naturales (Sharkey, 1997;
+ Sharkey y Ziemke, 1997).
+ Los animats son un intento por comprender la capacidad de los animales
+ para generar, de manera autónoma, comportamientos adaptativos en entornos
+ complejos cambiantes (Dean, 1998).
+ El comportamiento adaptativo se entiende de mejor manera focalizándose
+ en la interacción entre el individuo y su entorno.
+ Los conceptos para el desarrollo de animats, son tomados de la etología,
+ psicología, neurobiología, del conexionismo y de la biología evolutiva.
+ Cao et al.
+ (1997) sostienen que ha habido un incremento en el interés por investigar
+ sistemas de robots que muestren comportamientos cooperativos.
+ El interés radica en que las tareas pueden ser demasiado complejas para
+ que las lleve a cabo sólo un robot, o porque la eficiencia sería mayor
+ si se utilizaran varios robots de manera sinérgica.
+ Además, hacer varios robots más sencillos sería más económico, fácil, flexible
+ y tolerante a fallas, que construir un único robot poderoso para cada tarea.
+ Qué se entiende por cooperación en el ámbito de la robótica difiere con
+ lo entendido por la Biología Evolutiva.
+ La perspectiva que brinda la cooperación en animales no relacionados (altruismo
+ recíproco) nos da una serie de fundamentos para utilizar y constatar la
+ teoría que la sostiene.
+
+\color red
+ En este trabajo se desarrollará un modelo para explicar cooperación entre
+ múltiples agentes, con bases biológicas.
+\end_layout
+
+\begin_layout Standard
+En la misma línea de pensamiento, Dung Ngo y Schioler (2006) plantean la
+ investigación sobre robots móviles autónomos haciendo hincapié en la interacció
+n y coordinación inspirada en comportamientos biológicos existentes en la
+ naturaleza, como ser en aves, insectos y peces: flocado, búsqueda de alimento,
+ la recolección y el intercambio.
+ Además, gran parte de la investigación se ha centrado únicamente en comportamie
+ntos autónomos a fin de generar en robots comportamiento animal, mientras
+ que existe una carencia en áreas de la sustentabilidad energética.
+ Acercándose a enjambres en donde la principal actividad es la cooperación
+ entre los individuos, es que proponen una aproximación a los robots sociables
+ y el uso de la energía auto-mantenida producto de la cooperación entre
+ ellos, que es predominantemente inspirada en el comportamiento de enjambre
+ de recoger y compartir comida (abeja y hormiga).
+ Para ello, Dung Ngo y Schioler plantean la implementación de algoritmos
+ de intercambio de baterías gobernados por modelos probabilísticos de la
+ energía total de cada robot situado en la vecindad local.
+ Este enfoque es de principal importancia en ámbitos industriales que utilizan
+ cadena de robots móviles, en problemáticas de rescate, reparación.
+ Duffy [Duffy B.R, 2001, 2002, 2004] introduce el termino “Social robot”
+ en correspondencia a inteligencia social o comportamientos cooperativos
+ en ambientes multi-agentes y describe como factor generador de este comportamie
+nto al altruismo recíproco entre individuos.
+ Fong [Fong T.
+ et al (2003)] utiliza este comportamiento social para describir comportamiento
+ en enjambres de insectos y luego Breazeal et al [Breazeal.
+ C, 2003] relaciona el término “Social robot” con comportamientos sociales
+ antropomórficos.
+\end_layout
+
+\begin_layout Standard
+Se estudió el problema de la cooperación desde la perspectiva de la biología
+ evolutiva y la teoría de juegos, para lo cual debimos cuestionar los modelos
+ actuales por haber relegado el papel del aprendizaje en la cooperación
+ entre individuos no relacionados (Gutnisky y Zanutto, 2004b), ya que si
+ bien la cooperación entre animales es un área de estudio central en la
+ biología evolutiva, ésta no se preocupa por los mecanismos de aprendizaje
+ involucrados en las tareas cooperativas.
+ Uno de los factores esenciales para comenzar a proponer modelos de cooperación
+ es intentar responder la pregunta de cuál es la mínima capacidad cognitiva
+ necesaria para que un agente aprenda a cooperar con otros y cuales son
+ los principales factores que intervienen en el aprendizaje del comportamiento.
+\end_layout
+
+\begin_layout Standard
+.
+\end_layout
+
+\begin_layout Standard
+
+\color red
+INTO TESIS
 \end_layout
 
 \begin_layout Standard
@@ -140,6 +255,19 @@ Diferentes condiciones deben ser reunidas para asegurar que el comportamiento
  pero nunca pagan el costo por acto altruista.
  (5) Una indefinido número de oportunidades para intercambiar ayuda altruista
  debe existir en la vida de cada individuo.
+\end_layout
+
+\begin_layout Standard
+
+\color red
+Dado que el altruismo recíproco se encuentra en diferentes especies animales
+ cuyos caminos divergen en gran medida de la evolución (Brembs, 1996; Flood,
+ 1983) [19, 18], se puede proponer que los mecanismos implicados en el aprendiza
+je de la cooperación tienen componentes similares.
+ Por lo tanto, se deben estudiar los mecanismos simples de aprendizaje que
+ se encuentran en una gran variedad de especies y que podrían estar involucrados
+ en el altruismo recíproco.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -362,7 +490,7 @@ key "wood2016cooperation"
 
 \end_inset
 
- encontraron que ratas hembras consepecíficas long-evans criadas en la misma
+ encontraron que ratas hembras conespecíficas long-evans criadas en la misma
  jaula son mas cooperadoras que los machos.
  Un muy interesante estudio en iPD con ratas machos 
 \begin_inset CommandInset citation
@@ -375,64 +503,111 @@ key "viana2010cognitive"
 \emph on
 tit for tat
 \emph default
- forzada, un doble laberinto en T con refuerzos como pellets y castigos
- como pinchazos en la cola, mostraron que los animales son capaces de adaptar
+ forzada, un doble laberinto en T con pelles de refuerzos positivo y pinchazos
+ en la cola como castigo, mostraron que los animales son capaces de adaptar
  su comportamientos de acuerdo a la matriz de pago y a la estrategia del
  oponente.
 \end_layout
 
 \begin_layout Standard
-A really simple and clear way to figure out the dynamic system behavior
- is using the 
+Una manera simple y clara de representar el comportamientos de un sistema
+ dinámico es mediante los diagramas o cadenas de 
 \emph on
-Markov chain
+Markov
 \emph default
- diagram and the associated transition probability vector.
- To build diagram need to know the all possible system state and their probabili
-ties to transition among state interconnected by arrows.
- The prisoner dilemma can be well characterized by the four state (T, R,
- P and S outcomes) and both the probability to cooperate and not cooperate
- given last outcomes.
- This tools have already been used in some works 
+ y su vector de transición de estados asociado.
+ El diagrama se construye conociendo los diferentes estados posible del
+ sistema y las probabilidades condicionales de transición entre estados.
+ El Dilema del prisionero puede ser bien caracterizado considerando los
+ cuatro estados posibles y conociendo las probabilidades condicionales de
+ cooperar y de no cooperar dado el estado anterior.
+ Esta herramiento ya a sido utilizada en varios trabajos 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "viana2010cognitive,stephens2002discounting,stevens2004economic,kefi2007accumulated"
 
 \end_inset
 
- to draw animals behaviors, but until now there are no studies using this
- tools that show a high level of cooperation.
- If reciprocal altruism behavior is dominant in the game, the conditional
- probability to cooperate given R must be close to 1, i.e., high probability
- to cooperate given that in the last interaction both cooperate.
+ para esquematizar loscomportamientos animales, pero hasta el momento no
+ se han publicado estudios que muestren una alta tasa de cooperacion en
+ iPD.
+ Esto significa que si el comportamiento de reciprocidad altruista es dominante
+ en el juego, las probabilidades condicionales por cooperar dado el estado
+ R o S deben ser cercana a 1, o sea, alta probabilidad de cooperar dado
+ que en la ultimo encuentro ambos cooperaron o el oponente cooperó.
+\end_layout
+
+\begin_layout Standard
+En los trabajos anteriormente mencionados, los animales posiblemente no
+ aprendan a resolver satisfactoriamente iPD debido a que los refuerzo o
+ castigos utilizados posiblemente fueron inadecuados o quizás las contingencias
+ entre refuerzo-respuesta y estímulos no son acordes a las capacidades de
+ adquisición de los animales, i.e.
+ una rata quizás tenga la capacidad de aprender una solución aproximada
+ de la óptima pero los tiempos de contingencia sean mayores a los que el
+ animal puede tener en mente o por otro lado, pueden no apreciar las diferencias
+ reales entre diferentes refuerzos debido a los comportamientos realizados.
  
 \end_layout
 
 \begin_layout Standard
-In the aforementioned previous studies, animals maybe don't learn iPD probably
- due to the fact that the reinforcement and punishment are inadequate and
- stimulus contingency not match with the natural acquisition capability
- of animals, i.e.
- the rat maybe has the ability to achieve an approximated optimal solution
- but the length of time used to make contingency is longer than the rats
- can keep in mind or maybe they don't realized the real difference within
- outcomes in the pay-off matrix.
+En el presente trabajo se evalúan distintas configuraciones para el juego
+ Dilema del prisionero iterado (iPD), paradigma principal para el estudio
+ de comportamientos cooperativos de caracter altruista, con el fin de estudiar
+ en ratas los principales factores que intervienen en el aprendizaje del
+ comportamiento.
+ Se propuso un marco del dilema del prisionero en el cual se conjuga una
+ matriz de pago que utiliza refuerzos positivos y tiempos de castigo con
+ un oponente que desarrolla una estrategia definida por el experimetados.
  
+\color red
+Primero se evalua el aprendizaje de las ratas en iPD con un matrix y estrategia
+ de oponente que favorece la cooperación.
+ Luego se presentan los resultados obtenidos en los experimentos desarrollados
+ en conjunto con la tesistas Melanie Marino, donde evalúamos las capacidades
+ de adaptación de las ratas frente a distintos parametros de juego.
+ Se evaluó la capacidad de adaptar el comportamientos frente una matriz
+ donde economicamente la cooperación no resulta la estrategia optima y frente
+ a un oponente que desarrolla una estrategia pseudo aleatoria, donde el
+ comportamiento cooperativo no es favorecido.
+ Por ultimo, se eliminó el oponente del juego, reemplazandolo por un estímulo
+ luminoso, para constatar si el papel social es determinante en la resolución
+ del iPD.
 \end_layout
 
 \begin_layout Standard
-In the present study we assess reciprocal altruism behaviors using a iPD
- game structure in which merge a particular iPD matrix pay-off and timeout
- punishment with a tit for tat opponent's strategy.
- The organization of the paper is as follow: section X iterated PD treatment,
- section XX Reversion iPD using the previous animals and section XXX Discussion
- and Conclusion.
+Gutnisky y Zanutto (2004b) propusieron que el condicionamiento operante
+ es una condición suficiente para aprender a cooperar en el Dilema del Prisioner
+o Iterado y utilizando como teoría de aprendizaje operante presentaron un
+ modelo neuronal con importantes ventajas en los tiempo de aprendizaje (Zanutto
+ y Lew, 2000; Lew et al., 2000; Lew et al., 2001 y Zanutto et al., 2001).
+ Estudios previos realizados en nuestro laboratorio (Martino Coscia y Zanutto,
+ 2001; Gutnisky y Zanutto, 2002; Zelmann et al.
+ 2002) demostraron el papel fundamental del aprendizaje operante en la cooperaci
+ón, abriendo así un nuevo camino para su aplicación a robots que aprenden
+ a cooperar.
+ En base a los antecedentes por simulación de redes neuronales y sumando
+ los resultados obtenidos en experimentos en animales, que dan soporte a
  
-\end_layout
-
-\begin_layout Standard
-We found that this combination achieve high level of reciprocal altruism
- behavior in rats.
+\color red
+la hipótesis de que la cooperación recíproca de carácter altruista se puede
+ establecer si el animal es capaz de aprender por condicionamiento operante
+\color inherit
+, se propuso 
+\color red
+estudiar matemáticamente la convergencia de aprendizaje de altruismo recíproco
+ en agentes que aprenden por condicionamiento operante.
+ Primero se estudiaron los distintos modelos matemáticos existentes, como
+ la teoría de bonificación (Meloration) de Herrnstein (1991), la teoria
+ de asociación de Rescola-Wagner (1972), el principio matemático de reforzamient
+o (MPR) de Killeen (1994), entre otros.
+ Se desarrolló un modelo matemático basado en los principios de reforzamiento
+ de Killeen (1978, 1984, 1994) para evaluar el aprendizaje en agentes que
+ interactúan reiteradamente dentro del marco del Dilema del prisionero,
+ alterando parámetros internos y externos que definen el sistema de estudio,
+ como la memoria, los tiempos de contingencia entre estímulos recompensa,
+ la intensidad de percepción de los estímulos, la tasa de respuesta, la
+ matriz de iPD, la estrategia del oponente, etc.
 \end_layout
 
 \begin_layout Section
@@ -440,65 +615,75 @@ Material and Method
 \end_layout
 
 \begin_layout Standard
-All experimental procedures were approved by the ethics committee of the
- IByME-CONICET and were conducted according to the NIH Guide for Care and
- Use of Laboratory Animals.2.1 Subjects and Housing.
+Los procedimeitnos fueron aprobados por el comite de Etica del IByME-CONICET
+ y fueron conducidos de acuerdo a las guía de cuidad y uso de animales de
+ laboratorio NIH.
 \end_layout
 
-\begin_layout Subsection
-Subjects and Housing
+\begin_layout Subsection*
+Sujetos y cajas experimental
 \end_layout
 
-\begin_layout Subsubsection
-Subject
+\begin_layout Subsubsection*
+Sujetos
 \end_layout
 
 \begin_layout Standard
-Two groups of male Long-Evans rats (300–330 g) of two months of age were
- provided by the IBYME-CONICET.
- Twelves males were subjects and six (Nstooge=6) identical rats were opponents.
- At weaning time all subjects were housed in groups of two rats per cage
- to allow social interaction, whereas each stooge was housed in single individua
-l cages.
- We had 12 stainless-steel cages altogether with sawdust as bedding and
- metal lids.
- All rats were food restricted to maintain animals at between 90-95% or
- 80-85% of free feeding body weight for subjects and stooges respectively.
- All animals were kept in a well-ventilated, temperature-controlled room
- (22 ± 2 °C) with a 12/12 h light/dark cycle (lights on at 8 am).
- Tap water was available ad libitum.
- To ensure that animals obtained sufficient food to survive, we provided
- supplementary food (at 22hs) for any rats that obtained the average amount
- of pellet to maintain body weight.
+Las ratas utilizadas fueron machos de la cepa Long-Evans (300–330 g) de
+ 2 meses de edad proveidas por el IBYME-CONICET.
+ Se emplearon 12 machos como sujetos experimentatales y 6 macho como oponentes.
+ Al tiempo del destete todos los sujetos fueron colocados de a pares en
+ jaulas donde se les permitia interactuar, mientras que cada oponentes se
+ colocaron en jaulas individuales y nunca tuvieron contacto con los experimental
+es.
+ Los animales fueron alojados en 12 cajas de acero inoxidable acondicionada
+ con aserrín y bebederos con pico metálico.
+ El pesos de las ratas experimentales se mantuvo entre 90-95% de su peso
  
-\end_layout
+\emph on
+ad-libitum
+\emph default
+ y las oponentes entre el 80-85%.
+ Los animales se mantuvieron en el vivario del laboratorio con ventilación
+ forzada, temperatura controlada a 
+\begin_inset Formula $22±2°C$
+\end_inset
 
-\begin_layout Standard
-The subject was named in successive order: 1A, 2A, 3A, 4A, 5A, 6A, 7A, 8A,
+ con ciclos de luz-noche de 12/12 horas (la luz se encendia a las 8am).
+ Los bebederos fueron habilitados 
+\emph on
+ad libitum
+\emph default
+.
+ Al finalizar el día (22h) los animales recibieron alimento suplementario
+ a fin de mantener el peso corporal.
+ Los sujetos fueron nombrados en orden: 1A, 2A, 3A, 4A, 5A, 6A, 7A, 8A,
  9A, 10A, 3B, 4B.
 \end_layout
 
-\begin_layout Subsubsection
-Housing
+\begin_layout Subsubsection*
+Cajas
 \end_layout
 
 \begin_layout Standard
-All behavioral procedures were performed during the light phase of the light/dar
-k cycle, using a standard operant chambers (MED associates Inc., USA) with
- Med PC IV software suit (Product SOF-735) and PCI Operating Package for
- up to Eight Chambers (Product MED-SYST-8) equipped with control of multiple
- devices SmartCtrl (Product DIG-716B) and pedestal mount pellet dispenser
- for rat, 45mg (Product ENV-203-45) and standard operant chambers (Product
- ENV 008).
- White noise with a flat power spectral density was used to reduce sensibility
- to ambient noise.
- The training was perform on a single standard operant chamber equipped
- with tree retractable levers and tree stimulus light over each lever, and
- in the back wall placed a illuminated feeder.
- The experiment was conducted in special ad hoc dual chamber.
- We placed two Med association standard operant chambers facing each other
- in such manner that each rat could make olfactory and eye contact through
- metal windows (see fig.
+Los experimentos fueron realizados durante los ciclos de luz, utilizando
+ una caja operante estándar (MED associates Inc., USA) equipado con el software
+ Med PC IV suit (Product SOF-735) y un PCI Operating Package para 8 cajas
+ (Product MED-SYST-8).
+ Las cajas fueron controladas con dispositivos SmartCtrl (Product DIG-716B),
+ una torre automática dispensadora de pellets calibrados de 45mg (Product
+ ENV-203-45) y un modelo de caja operante estándar (Product ENV 008).
+ Se empleó ruido blanco con densidad espectral de potencia plana para reducir
+ los ruidos del ambiente.
+ Tanto las palancas como los comederos fueron señalizados con estimulos
+ luminosos que se encendias según se requeria contingencia.
+ Las cajas fueron equipadas con dos palancas en la pared frontal y para
+ la caja experimental un comedero en el medio y para la caja del oponente
+ un comedero en la pared del fondo.
+ El experimento fue realizado en una caja doble, donde ambas paredes frontales,
+ caja experimental y oponente, fueron enfrentadas.
+ Mediante ventanas metalicas en las paredes frontales, los animales podian
+ tener contacto visual y olfativo, (ver fig.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -507,20 +692,10 @@ reference "fig_box"
 \end_inset
 
 ).
- Each standard chamber was equipped with: two not retractable levers at
- the sides of the same wall and two stimulus light were placed over each
- levers, and in the center put a illuminated feeder.
- The boxes were faced by the wall that has levers and stimulus light.
- To allow the contact among rats we placed a aluminum rectangular windows
- below each levers.
- The window's height were such that the lever's height was 80% of maximum
- height of the forepaws while rearing (F.
+ Las ventanas fueron colocadas debajo de cada para estímulo palanca.
+ La altura de cada ventana fue tal que las palancas quedaran a un 80% de
+ la altura máxima de las patas delanteras (F.
  Cabrera et al., 2013).
- The subject's feeder placed in same wall and the opponent's feeder placed
- in back wall.
- Each feeders were equipped with a stimulus light that turn on when foods
- is coming.
- 
 \end_layout
 
 \begin_layout Standard
@@ -573,45 +748,46 @@ name "fig_box"
 \end_layout
 
 \begin_layout Subsection
-Procedures
+Procedimientos
 \end_layout
 
 \begin_layout Standard
-During the whole duration of experiment, every actor were trained for 2
- session per day regardless of treatment (handing, habituation, training
- and iPD).
- Each typical trial began in the darkness during 5 second inter-trial interval(I
-TI) and then the stimulus light were illuminated for either 45 second or
- until a lever was press.
- Before deliver any reward the feeder light was 1 second turn on.
- The standard experiment session had 30 trials.
+A lo largo de todos los experimentos los animales recibieron 2 sesiones
+ por día sin importar la etapa en la que estuviesen.
+ Un Trial típico comenzaba en la oscuridad, que duraba 5 segundos, que represent
+aba el intervalo entre ensayo (o ITI como son sus siglas en ingles) y luego
+ los estímulos luminosos se encendian durante hasta que el animal presionaba
+ un palanca o por 45 segundos.
+ Si una de las palancas eran presionadas, los estimuls de palancas se apagaban
+ y se encendía la luz del comedero, un segundo después el alimento era entregado.
+ Una sesión estándar se comprendía de 30 ensayos.
  
 \end_layout
 
 \begin_layout Subsubsection
-Training procedure
+Procedimientos de entrenamientos
 \end_layout
 
 \begin_layout Paragraph
-Handing
+Handling
 \end_layout
 
 \begin_layout Standard
-At weaning time when the animals were moved to housing room started a handing
- procedure to decrease the stress by experimenter manipulation and finished
- when animals had 60 days old.
- 
+AL tiempo de destete, luego de que los animales fueron ubicados en cajas
+ individuales o de a pares, se comenzó el prodedimiento de handling para
+ disminuir el estress por la manipulación del experimentados.
+ El prodedimiento termino cuando los animales cumplian los 60 días.
 \end_layout
 
 \begin_layout Paragraph
-Habituation
+Acostumbramiento
 \end_layout
 
 \begin_layout Standard
-The animals were habituated to the single and double operant chamber for
- a days in session of 3 minute.
- In this treatment, there were either no stimulus-reward contingencies or
- reward, only a back-light that marked the beginning and the end of sessions.
+Los animales fueron habituados a las cajas experimentales durante un día
+ en sesioes de 3 minutos.
+ Durante este entrenamientos ningún estimulo luminoso ni refuerzo fue utilizado,
+ solo la luz de fondo fue encendida marcando el comienzo de sesión.
 \end_layout
 
 \begin_layout Paragraph
@@ -619,31 +795,19 @@ Magazine
 \end_layout
 
 \begin_layout Standard
-To learn the place in which the food is given, the rat were exposed for
- a days to a 
-\begin_inset Quotes eld
-\end_inset
-
-
-\emph on
-Magazine
-\emph default
-
-\begin_inset Quotes erd
-\end_inset
-
- procedure in the single chamber.
- It consisted in variable ratio reinforcement scheduler.
- 
+ESte entrenamiento duró un día y los animales debían aprender el lugar donde
+ se entregaba alimento.
+ Se utilizó una programa de tasa variable para la entrega de refuerzo y
+ ningún palanqueo fue requerido.
 \end_layout
 
 \begin_layout Paragraph
-Shaping
+Aproccimaciones Sucesivas
 \end_layout
 
 \begin_layout Standard
-The pressing lever training on rats was done through a successive approximations
- procedure, 
+El entrenamiento de presionar la palanca fue realizado a través del procedimient
+o de aproximaciones sucesivas, 
 \begin_inset Quotes eld
 \end_inset
 
@@ -655,152 +819,143 @@ Shaping
 \begin_inset Quotes erd
 \end_inset
 
- (Mazur, 1994, page 122) on a single chamber.
- The chamber was equipped as described above and was added a external lever.
- In this training, the external lever was manipulated by the experimenter
- to give reward as the rat go to the goal and finally when press lever.
- When the rat learned to press the lever after light onset, the operator
- left to gave reward with his external lever.
- It training finished when the rat made the task for at least two session.
- Trials procedure: each trial began when the center stimulus light was turned
- on and the lever below it was ejected, then if either inner or outer levers
- wasn't pressed and 45 second had elapsed, the trials finished and not reward
- was given.
- But nevertheless, if either inner or outer levers was pressed, the light
- turn-off and the feeder's light was turned on, one second later a 45mg
- pellet is automatically dispensed, when 5 second elapsed all light were
- turn off and the lever was retracted, finally 5 second ITI started.
- The procedure was performed until the rats met task goal or up to 3 days.
- When the rats reached the criteria (80% trials with reward), we exposed
- the rat to the same task but now the center lever during the session never
- more was retracted, the lever ejected at first trials and retracted at
- the end of last trial.
- In this phase, when the rat pressed lever on ITI was punished with 2 second
- delays that was added to ITI.
- This procedure went on for tree days or until pressing rate was below one
- per trials.
+ (Mazur, 1994, page 122) sobre una caja simple.
+ La caja fue equipada como se describe arriba y se le colocó una palanca
+ externa.
+ La palanca externa fue utilizada por el experimentador para entregar refuerzos
+ a medida que el animal se aproximaba a la palanca y finalmente cuando presionab
+a la palanca interna.
+ Si el animla presionaba la palanca interna antes que el experimentador
+ la externa, esta no tenia efecto y el animal se auto entregaba alimento.
+ El entrenamiento terminó cuando la rata realizaba la tarea al menos durante
+ dos sesiones.
+ Procedimientos del ensayo: luego del ITI el estímulo luminoso fue encendido
+ y la palanca retractil fue eyectada, luego si la palanca interna o la externa
+ no fue presionada y transcurrió 45 segundos las luces se apagan y el ensayo
+ finaliza, pero si alguna palanca fue presionada se enciende la luz del
+ comedero y un segundo después se entre un pellets, 5 segundos después la
+ luz se apaga.
+ El procedimientos se desarrollo hasta que la rata llegó a criterio (aproximadam
+ente 2días).
+ El criterio utilizado fue 80% de ensayos con refuerzo.
+ Una vez alcanzado el criterio los animales fuero expuestos a la misma tarea
+ pero con la salvedad deque la palanca ya no se retrae en cada ensayo y
+ si presiona la palanca durante el ITI el animal recibe 2 segundos de castigo.
 \end_layout
 
 \begin_layout Paragraph
-Basic toggle task for subject
+Balanceo de preferencia
 \end_layout
 
 \begin_layout Standard
-The subject rats group was exposed to a training called 
-\begin_inset Quotes eld
-\end_inset
-
-toggle 8x8
-\begin_inset Quotes erd
-\end_inset
-
- in dual iPD chamber.
- The purposed of the training was to incorporate two lever and balance their
- lever's preference.
- The experiment was performed for 2 days in which at first day a rat use
- chamber 1 and at day 2 used chamber 2.
- This last allow not placed preference.
- The chamber communication windows were closed and any contact was suppressed.
- Each rat had two lever option and two light stimulus.
- When session started the first to eighth trials only one pair stimulus
- light and lever worked and the next 8 trials(9-16) the another pair light-lever
- worked.
- What pair light lever started was randomly and in the second day was maintained
- in the same way.
- The trials procedure was the same as that used in shaping treatment.
+Los sujetos fueron expuestos a una tarea para encenarles a lasratasque existen
+ dos palancas y balancerar la preferencia.
+ El entrenamiento duró dos días, el primer día la rata estuvo en un de los
+ dos compartimentos de la caja experimental de iPD y durante el segundo
+ día en el otro compartimento.
+ La ventanas fueron cerradas para evitar todo contacto visual y olfativo.
+ La sesión consistió de 16 ensayos, donde durante los primeros 8 ensayos
+ consecutivos una misma palanca entregaba refuerzo y la otra no, y luego
+ en los siguientes ocho la otra palanca entregaba alimento.
+ Que palanca comenzaba entregando alimento fue configurada de forma azarosa.
+ El procedimientos del ensayo fue el mismo que el descripto en el procedimiento
+ anterior.
 \end_layout
 
 \begin_layout Paragraph
-Mimic tit for tat for opponent
+Imitación de estrategia Tit for Tat para oponente
 \end_layout
 
 \begin_layout Standard
-The opponent learned to develop a mimic tit for tat strategy by to learn
- a basic operant task.
- The opponent rat group was exposed to a fixed ratio (FR) schedule in dual
- operant chamber and the pair light-lever was randomly assigned in each
- trials along the session.
- In this training, the rat must to press the lever that had light turned
- on.
- The other lever did not work during the trials and on the next trials the
- light-lever pair that worked was pseudo-randomly assigned.
- Pseudo-randomly means that the assigned was random but not allowed the
- same assigned for more than four time.
- The training was developed during five days and the FR schedule was increased
- step by step: day 1º the FR=2 and day 2º to 3º the FR=3, then day 4º the
- FR=4 and finally day 5º the FR=5.
- If the rat presses the lever on ITI time, it received 2 second as punishment
- that was added to ITI.
+El oponente es conducido a desarrollar un estrategia tit for tat a través
+ del aprendizaje de una tarea simple.
+ El oponente aprende a presionar la palanca en el lugar donde se enciende
+ la lus de palanca y de esta forma el programa enciende la luz de acuerdo
+ a la elección anterior de la rata experimental.
+ Para que el refuerzo sea entregado el oponente debía realizar un programa
+ de tasa fija (FR).
+ El par luz palanca fue asignado durante el entrenamiento de forma aleatoria.
+ La asignación aleatoria fue desarrollada por una secuencia pseudo-aleatoria
+ para evitar que se asignara la misma palanca por mas de cuatro veces consecutiv
+as.
+ El entrenamiento en FR se incremento progresivamente: día 1º:FR=2, día
+ 2º y 3º: FR=3, día 4º : FR=4 y finalmente día 5º: FR=5.
+ Si las ratas presionaba la palanca en el ITI eran castigadas con tiempo
+ de espera.
 \end_layout
 
-\begin_layout Subsubsection
-Iterated Prisoner's Dilemma Procedure
+\begin_layout Subsubsection*
+Procedimiento para Dilema del Prisionero Iterado
 \end_layout
 
 \begin_layout Standard
-The main experiment was designed to study the reciprocal altruism in a 
-\emph on
-iterated Prisoner's Dilemma
-\emph default
- game(iPD).
- We used a pay-off matrix in which the iPD states(outcomes) meets that 
+El experimento principal fue diseñado para estudiar el comportamiento de
+ altruismo reciproco a través del juego del dilema del prisionero.
+ Se utilizó una matriz de pago que cumpliese con las sigientes desigualdades
+ 
 \begin_inset Formula $T>R>P>S$
 \end_inset
 
- (Temptation, Reward, Punishment and Sucker respectability) and also 
+ (Temptation, Reward, Punishment and Sucker respectability), 
 \begin_inset Formula $4R>T+3P$
 \end_inset
 
- and 
+ y 
 \begin_inset Formula $4R>2T+2S$
 \end_inset
 
 .
- The T and R outcomes were positive reinforcement and P and S was punishment.
- The pay-off matrix is shown in table 
+ Los estados T y R se reforzaron positivamente, mientras que P y S fueron
+ castigados con tiempo de espera.
+ La matriz de pago se muestra en la tabla 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "table_matrixIPD"
+reference "table_matrixIPD_C"
 
 \end_inset
 
 .
- Thus, if both choose cooperation option (C) their pay-off was 1 pellets
- for each other, If opponent choose C and the subject choose C or defection
- option (D), the subject received one pellet or 2 pellet, respectability.
- When the Opponent choose D and the subject choose C or D, the subject received
- 8
-\begin_inset Quotes erd
-\end_inset
-
- or 4
-\begin_inset Quotes erd
-\end_inset
-
- delay of punishment and no pellet in this trial.
- The opponent's pay-off was alway 1 pellets if either both make responses
- or the opponent meets the Fixed Ratio scheduler.
- The FR scheduler was used to make a time interval in which opponent stays
- opposite the selected lever and window.
- The opponent strategy was conducted by turn on a light stimulus over the
- target lever, e.i.
- the opponent didn't choose lever freely, it had to develop a Fixed-ratio
- scheduler on the side where light was turn on to be paid.
- The amount pellets preference was previously tested on discrimination treatment
- and the rat shown more preferences for 2 pellet than 1 pellet.
+ Así, si el oponente elige cooperar, C, y el sujeto C o D, el sujeto recibe
+ 1 o 2 pellets de refuerzo.
+ En cambio si el oponent elige no cooperar, D, el experimental recibe 8
+ o 4 segundos de castigo y no se entregan pellets.
+ El oponente simepre que presiones la palanca recibirá un pellet de refuerzo.
+ La preferencia por dos pellets frenta a un solo fue evaluada y los animales
+ mostraron fuerte preferencia por 2 pellets.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Prisioner's Dilemma Pay-off Matrix
+Matriz de pago que: 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "table_matrixIPD_C"
+
+\end_inset
+
+ favorece la cooperación ,
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "table_matrixIPD_T3"
+
+\end_inset
+
+ con T = 3 y 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "table_matrixIPD_T4"
+
+\end_inset
+
+ con T=4 que favorecen la no cooperación.
 \end_layout
 
 \end_inset
@@ -809,10 +964,12 @@ Prisioner's Dilemma Pay-off Matrix
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset space \hfill{}
-\end_inset
+\begin_inset Float table
+wide false
+sideways false
+status open
 
-
+\begin_layout Plain Layout
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="3">
 <features tabularvalignment="middle">
@@ -977,7 +1134,15 @@ D
 \end_inset
 
 
-\begin_inset space \hfill{}
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Matriz de pago que favorece la cooperación
+\end_layout
+
 \end_inset
 
 
@@ -986,7 +1151,414 @@ D
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "table_matrixIPD"
+name "table_matrixIPD_C"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Opponent choice
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+C
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+D
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Subject choice
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+C
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 pellet
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8
+\begin_inset Quotes erd
+\end_inset
+
+ delay
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+D
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3 pellets
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\begin_inset Quotes erd
+\end_inset
+
+ delay
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Matriz de pago con T aumentado, favoreciendo la no cooperación
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "table_matrixIPD_T3"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Opponent choice
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+C
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+D
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Subject choice
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+C
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 pellet
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8
+\begin_inset Quotes erd
+\end_inset
+
+ delay
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+D
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4 pellets
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\begin_inset Quotes erd
+\end_inset
+
+ delay
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Matriz de pago con T aumentado, que favorece ma no cooperación
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "table_matrixIPD_T4"
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -999,124 +1571,107 @@ name "table_matrixIPD"
 \end_layout
 
 \begin_layout Standard
-In iPD experiment used a dual chamber without neither center lever and center
- light.
- The windows cover was removed.
- The rats had only two lever option and the contact between chamber was
- restored.
- There was one chamber for the subject and one for the opponent fixed during
- all the experiment, see the figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "table_matrixIPD"
-
-\end_inset
-
-.
- 
+In el experimento de iPD se utilizó la caja doble descripta anteriormente
+ y se permitió el contacto visual y olfativo.
+ Las parejas Experimenta y oponente se asignaron al comienzo del experimento
+ y se mantuvieron a lo largo de todo el experimento.
+ El experimento duró al menos 10 días con 2 sesiones por día.
+ Cada sesión consistió de 30 ensayos y el experimento se detuvo cualdo el
+ animal no mostraba combios en el comportamiento por al menos 10 sesiones.
 \end_layout
 
-\begin_layout Standard
-The main experiment was conducted for at least 10 days and 2 session per
- day.
- The session consisted in 30 trials.
- For individual subject, the experiment was stopped, if the average behavior
- didn't change along ten consecutive sessions.
- To some subject was exposed more than 20 days when rise its behavior tendency.
- 
-\end_layout
-
-\begin_layout Subsubsection
-Typical
+\begin_layout Subsubsection*
+Estructura tipica del ensayo en 
 \emph on
- i
+i
 \emph default
-PD Trial Structure
+PD
 \end_layout
 
 \begin_layout Standard
-The sequence of events within a single trial was as follows.
- (1) The stimulus light was turned on stating that trail was started.
- The focal rats had both lights turned on (this was done throughout the
- iPD experiment) and the opponent only one for the tit for tat strategy.
- (2) After both rats done their response, the light was turned off and the
- rewards computed.
- (3) The feeder's light was lighting one second before a reward was delivered.
- If the opponent pressed the lever always received one pellet irrespective
- the focal rat's choice.
- If punishment was assigned, the focal rat feeder's light remained off and
- the punishment time started, but the opponent's feed was lighted and its
- one pellet reward was delivered.
- (5) After either five second eating time expired or punishment time complete,
- all light was turned off.
- Then, the focal and opponent wait the end of fixed ITI time in the darkness.
- The next trials started.
+Secuencia de eventos dentro del ensayo: (1) Estímulos luminosos se encienden
+ indicando el inicio del ensayo.
+ La rata experimental tiene ambas luces encendidas yel oponente son una,
+ según la elección gobernada por la estrategia.
+ (2) Luego que las ratas han realizado su elección las luces se apagan y
+ se calculan los refuerzos.
+ (3) La luz del comedero se enciende y un segundo despues se entrega el
+ refuerzo.
+ Si la rata experimental recibe castigo, su luz de comedero no se enciende
+ pero la del oponente si y este recibe su refuerzo.
+ (5) Luego de transcurrido los 5 segundos de alimentación o por el castigo
+ todas las luces se apagan y el intervalo entre ensayo comienza.
 \end_layout
 
 \begin_layout Subsection
-Statistical Analysis
+Análisis estadístico
 \end_layout
 
 \begin_layout Standard
-Al statistical analysis were performed using statistic library from octave
- open source software.
+Todos los análisis estadísticos fueron desarrollados utilizando las librerias
+ codigo abierto del programa octave.
+\end_layout
+
+\begin_layout Subsubsection*
+Estabilidad en cooperación
+\end_layout
+
+\begin_layout Standard
+El análisis de la estabilidad en cooperación se realizó utilizando las últimas
+ diéz sesiones de cada individuo.
+ La media de cooperación por sesion fue obtenido contabilizando el número
+ de elecciones de la palanca cooperar a lo largo de cada sesión.
+ Se calcula la media y el error estandar de la media.
+\end_layout
+
+\begin_layout Subsubsection*
+Probabilidad de cooperación dad cada estado
+\end_layout
+
+\begin_layout Standard
+La probabilidad condicional de cooperar o no cooperar dado cada estado se
+ calculo contabilizando la cantidad de ocurrencias del estado y la cantidad
+ de cooperación cooperaciones o no cooperaciones que lo preceden.
+ La discriminación entre estrategias aleatoreas y no aleatorias se realizó
+ a través del test de bondad de ajuste 
+\begin_inset Formula $\chi{}^{2}$
+\end_inset
+
+ con corrección de bonferroni con valor 0.05/n.
+\end_layout
+
+\begin_layout Subsubsection*
+Tasa de los diferentes estados
+\end_layout
+
+\begin_layout Standard
+Se utilizó el test Friedman's ANOVA y comparaciones multiples 
+\emph on
+post-hoc
+\emph default
+ de a pares usando el procedimiento Nemenyi’s /Two-tailed con correción
+ de Bonferroni, 0.0125.
+\end_layout
+
+\begin_layout Subsubsection*
+Diagrama de cadenas de Markov
+\end_layout
+
+\begin_layout Standard
+El altruismo reciproco se describe perfectamente a través del vector de
+ transición de estado t, r, p, s, que refleja la probabilidad de cooperar
+ dado el resultado del ensayo anterior.
+ Si todas las componentes de vector son .5 , la desición del individuo será
+ irremediablemente aleatoria.
+ El diagrama se markov se construyó a partir de 4 estados (T, R, P, S) y
+ 2 estados (C, D), donde cada estado se conecta con los inmediatamente proximos
+ a traves de una flecha que representa la probabilidad de transisionar de
+ una estado a otro.
  
-\end_layout
-
-\begin_layout Subsubsection
-Stability of cooperation
-\end_layout
-
-\begin_layout Standard
-To analysis the choice stability of rats in the iterated game, we used the
- last 10 session as a pool of data due to the rat's behaviors had reached
- a plateau.
- The mean of cooperation per rat was obtained by count the number of times
- a rat chose the cooperation lever per session over the last ten session.
- 
-\end_layout
-
-\begin_layout Subsubsection
-Probability of cooperation after outcomes
-\end_layout
-
-\begin_layout Standard
-The animals probability to cooperate after each outcomes was assess using
- a chi square test.
- The probability of cooperation given specific outcomes was compared from
- chance, 0.5.
- We performed a Chi-square goodness of fit test with bonferroni corrected
- value of 0.05/n.
-\end_layout
-
-\begin_layout Subsubsection
-Rate of difference outcomes
-\end_layout
-
-\begin_layout Standard
-We used Friedman's ANOVA test and multiple post-hoc pairwise comparisons
- using the Nemenyi’s procedure/Two-tailed tests were performed, with the
- Bonferroni corrected a value of 0.0125.
-\end_layout
-
-\begin_layout Subsubsection
-Markov chain diagram
-\end_layout
-
-\begin_layout Standard
-Reciprocal altruism has been widely tested by iPD, but the individual's
- decision rules can be described by a transition vector t, r, p, s that
- reflects the probability of cooperation when the previous trials resulted
- in outcomes of R(reward), T(temptation), S(sucker) or P(punishment), respective
-ly (Stevens and Stephens,2002).
- If every component of this vector is 0.5, the agent's decision rule is random
- irrespective of the last outcome.
- Also we used diagram of probability of transition between outcome to computed
- a complete making decision rule of each rats.
 \end_layout
 
 \begin_layout Section
-Results
+Resultados
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Results"
@@ -1127,7 +1682,11 @@ name "sec:Results"
 \end_layout
 
 \begin_layout Subsection
-Iterated PD with opponent 
+Experimentos con animales en iPD
+\end_layout
+
+\begin_layout Subsubsection*
+Dilema del Prisionero Iterado con oponente 
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:Iterated-PD-with"
@@ -1138,39 +1697,31 @@ name "sub:Iterated-PD-with"
 \end_layout
 
 \begin_layout Standard
-The experiment result are show below.
- To assessing whether a subject has ability to solve the iPD game, we first
- need to know whether either the subjects adopt some strategy or play the
- game in random mode.
- The total session per rats was: (
+Los resultados del experimento se muestran a continuación.
+ Evaluar la habilidad para resolver el juego de iPD, es necesario conocer
+ si el animal adopto alguna estrategia definida o simplemente jugo aleatoriament
+e.
+ El total de sesiones por ratas fue: (
 \size scriptsize
 1A/23; 2A/33; 3A/23; 4A/23; 5A/23; 6A/31; 7A/23; 8A/50; 9A/31; 10A/29; 3B/33;
  4B/23
 \size default
 ).
- The full data set used had difference length, because after recorded 20
- sessions on each rats the experiment stop when the means of cooperation
- reached a plateau at least in the last ten sessions, 
-\emph on
-i.e.
-\emph default
-, the end of experiment for each rat was extended beyond 20 session in order
- to the rat was progressively finding some strategy.
- We compute the rat behaviors from last ten session of the full data set.
- A strategy was defined by a transition vector that reflects the probability
- of cooperation when the previous trials resulted in outcomes of R, T, S
- or P, respectively (
+ Se utilizaron los datos de las ultimas 10 sesiones de cada rata.
+ Una estrategia es definida por medio de su vector de transición de estado
+ (
 \begin_inset Formula $v=[p(c|t),p(c|r),p(c|p),p(c|s)]$
 \end_inset
 
 ).
- The rat that maintained a random strategy beyond 20 session was discarded.
- To test if rat strategy differs from chance strategy (v=[.5 .5 .5 .5]), we
- perform a 
+ Los animales que mantuvieron una estrategia aleatoria mas allá de las primeras
+ 20 sesiones fueron descartadas.
+ Se analizó si una animal presentaba una estrategia diferentes del azar
+ (v=[.5 .5 .5 .5]), utilizando el método de bondad de ajuste de 
 \begin_inset Formula $\chi{}^{2}$
 \end_inset
 
- goodness of fit test on last ten session, see 
+sobre las últimas 10 sesiones, ver 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "table_meanAndstrategies"
@@ -1178,46 +1729,35 @@ reference "table_meanAndstrategies"
 \end_inset
 
 .
- After compute the parameter 
-\begin_inset Formula $\chi{}^{2}$
-\end_inset
-
-with bonferroni correction for each rat we obtained two group of subject.
- Those who adopted some strategy and those who did not.
- The figure 
+ Se observo que 8 de 12 ratas (color azul) adoptaron una estrategia determinada
+ y 4 no.
+ La figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig1_meansAnd significance"
 
 \end_inset
 
- shows the mean of cooperation for all rats and the asterisks marks denoted
- subject that had significant difference respect the chance.
- The subject 2A, 4A, 5A, 6A were removed from data pool because they not
- had a fixed strategy (See Supplementary materials 
+ muestra la media en cooperación para cada rata y los asteriscos indican
+ que rata tuvo diferencia significativa con una aleatoria.
+ Los sujetos 2A, 4A, 5A, 6A fueron removidos por no mostrar diferencias
+ significativas en le test de bondad de ajuste (ver material suplementario
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sub:Non-cooperator-subject"
 
 \end_inset
 
- the graph of markov chain with probabilities of transition).
- Since the table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "table_meanAndstrategies"
-
-\end_inset
-
- we can see that there is a group of 8 rats with had a fixed no random strategy
- (blue color text).
+ y los gráficos de cadenas de markov).
+ 
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1280,7 +1820,7 @@ name "fig1_meansAnd significance"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1418,7 +1958,7 @@ Means of reward.
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset CommandInset label
@@ -3071,102 +3611,25 @@ cooperation
 \end_layout
 
 \begin_layout Standard
-In figure 
+En la figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "meanReward-1"
 
 \end_inset
 
- we show the mean of reward per subject.
- The rats with not random strategies got many more reward than the removed
- group.
- But nevertheless, we show that the iPD game gives to the random strategy
- group a amount that between 60% to 70% of total reward.
-\end_layout
-
-\begin_layout Standard
-Theoretically, when a subject play iPD against TFT opponent, its the best
- strategy is All C and not TFT, because TFT against TFT when one defect
- both remain in this state and never change.
- Thus, if the rats make a wrong choice, defect, then its probability to
- cooperate must be high.
- Analyzing the not random strategy groups behaviors, we found that each
- rats had all components of strategic vector markedly above 0.5 suggesting
- that the rat's behaviors trend to be highly cooperative, see table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "table_meanAndstrategies"
-
-\end_inset
-
-.
- We calculated the mean and s.e.m.
- of cooperation choice in the groups, 
-\begin_inset Formula $0.852\pm0.0482$
-\end_inset
-
- and the average strategy,
-\series bold
+ se muestra el refuerzo promedio por sujeto.
+ Las ratas que mostraron alguna estrategia definida obtiene un nivel de
+ refuerzo entre el 85 a 100% de máximo, a diferencia de las ratas con comportami
+ento aleatorio que obtuvieron entre un 60 a 70%.
  
-\begin_inset Formula $p(c|T)=0.794$
-\end_inset
-
-, 
-\begin_inset Formula $p(c|R)=0.856$
-\end_inset
-
-, 
-\begin_inset Formula $p(c|P)=0.801$
-\end_inset
-
-, 
-\begin_inset Formula $p(c|S)=0.890$
-\end_inset
-
-
-\series default
-, tested by 
-\begin_inset Formula $\chi{}^{2}$
-\end_inset
-
- goodness of fit with theory frequency 
-\begin_inset Formula $0.5$
-\end_inset
-
-, figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig_meanC_strategy"
-
-\end_inset
-
-.
- In figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "outcomes rate"
-
-\end_inset
-
-, the rate outcomes suggest that R outcomes(i.e.
- both subject and opponent chose cooperation lever option in the trial)
- had very high incidence in the experiment over the last 10 sessions into
- the group.
- We found that exist significant difference between outcomes rate, a Friedman's
- ANOVA test was performed with bonferroni correction (
-\begin_inset Formula $\alpha=0.0125,p>3.33e-5;\chi^{2}=23.4$
-\end_inset
-
-) and Multiple pairwise comparison using Nemeyi's procedure point out that
- all outcomes levels are different.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset space \hfill{}
@@ -3227,19 +3690,16 @@ name "fig_evolutionCoop"
 \end_layout
 
 \begin_layout Standard
-In the figure 
+En el gráfico 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig_evolutionCoop"
 
 \end_inset
 
- we show the means of cooperation choice per session per rats and the mean
- of the group with non-random strategy per sessions.
- Since the number of sessions was different along the rats, we aligned the
- last session of each rats and make a pooled of data from the 23 last sessions.
- The means and standard error of the means of last ten session, that represent
- the plateau of the curve, was a
+ se observa la evolución en cooperación sobre las últimas 23 sesiones de
+ cada rata y la media general del grupo.
+ La media y error cuadrático de la media fue de 
 \begin_inset Formula $mean\pm sem=0.853\pm0.0681$
 \end_inset
 
@@ -3247,11 +3707,81 @@ reference "fig_evolutionCoop"
 \end_layout
 
 \begin_layout Standard
+Teóricamente, cuando se juega iPD en contra de una oponente con estrategia
+ TFT, la mejor estrategia es siempre cooperar, ya que si se emplea la misma
+ estrategia de TFT cuando uno de los dos falla a la cooperación quedarán
+ no cooperando hasta el final de la sesión.
+ En efecto, una buena estrategia si se falto a la cooperación, se eligió
+ No cooperar, es volver a cooperar.
+ Utilizando el set de animales que mostraron estrategia diferente al azar,
+ se analizaron los comportamientos de cada rata y se observó que todas tienen
+ probabilidades de cooperar dado cada estado por encima de .5, sugiriendo
+ que sus comportamientos tiende a ser cooperativos, ver tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "table_meanAndstrategies"
+
+\end_inset
+
+.
+ La media en cooperación del grupo y s.e.m.
+ fue 
+\begin_inset Formula $0.852\pm0.0482$
+\end_inset
+
+ y las probabilidades condicionales de cooperar promedios fueron:
+\series bold
+ 
+\begin_inset Formula $p(c|T)=0.794$
+\end_inset
+
+, 
+\begin_inset Formula $p(c|R)=0.856$
+\end_inset
+
+, 
+\begin_inset Formula $p(c|P)=0.801$
+\end_inset
+
+, 
+\begin_inset Formula $p(c|S)=0.890$
+\end_inset
+
+
+\series default
+, fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_meanC_strategy"
+
+\end_inset
+
+.
+ En la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "outcomes rate"
+
+\end_inset
+
+ se muestra la frecuencia normalizada para los cuatro estados posibles,
+ se puede apreciar la marcada diferencia del estado R respecto a T, P y
+ S, dando un p signidicativo (
+\begin_inset Formula $\alpha=0.0125,p>3.33e-5;\chi^{2}=23.4$
+\end_inset
+
+) al analizarlo mediante el tes de Friedman's ANOVA y el procedimiento para
+ múltiples comparaciones de Nemeyi's indica que el estado R es diferente
+ al resto.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement p
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Float figure
@@ -3356,7 +3886,7 @@ name "outcomes rate"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -3404,7 +3934,7 @@ name "fig_4state_markovChain"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -3534,42 +4064,38 @@ reference "fig_2state_markovChain"
 \end_layout
 
 \begin_layout Standard
-In figure 
+En la figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig_4state_markovChain"
 
 \end_inset
 
- and 
+ y 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig_2state_markovChain"
 
 \end_inset
 
- we show diagrams of transition probability given the last outcomes, respect
- four and two state.
- The diagrams represent the probability to cooperation (blue arrow) or defect
- lever (red arrow) given the actual state (T, R, P, S or C, D).
- The arrow width is proportional to the probability of transition, i.e., cooperate
- or not cooperate.
- In both diagrams the big blue arrow predominate and these indicate a strong
- trend to mutual cooperate.
- This diagrams point out that the rats trend to stay on mutual cooperation
- or quickly come back to this state.
- In all cases, the probability to cooperate was over 
+ se observan los diagramas de cadenas de Markov donde la probabilidad de
+ transición de estado se indica mediante flechas azules para cooperación
+ y rojas para no cooperación.
+ El tamaño de las flechas son proporcionales a las probabilidades.
+ En ambos diagramas las flecha azules son predominantes en tamaño indicando
+ una fuerte tendencia a cooperar, ya que la probabilidad de cooperar es
+ mayor al 
 \begin_inset Formula $80\%$
 \end_inset
 
-
+en todos los casos.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset space \hfill{}
@@ -3673,7 +4199,7 @@ name "fig_rewardVScoop"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -3718,7 +4244,7 @@ name "fig_reward VS timeout"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -3841,12 +4367,10 @@ CD
 \end_layout
 
 \begin_layout Standard
-The reciprocate strategy is mainly defined by the probability of mutual
- cooperation.
- Thus we made a graph of Mutual cooperations versus cooperation and saw
- that exist a directly proportional relationship between them, if mutual
- cooperate does down then the cooperate choice goes down, the correlation
- coefficient was 
+Una estrategia reciproca es principalmente definida por la probabilidad
+ de cooperación mutua.
+ Gráficos de cooperación mutua versus cooperación muestran que existe una
+ correlación de 
 \begin_inset Formula $0.996$
 \end_inset
 
@@ -3854,9 +4378,18 @@ The reciprocate strategy is mainly defined by the probability of mutual
 \emph on
 Pearson coefficient
 \emph default
-).
- It result point out that both variable are related.
- See figure 
+) entre estos dos parámetros, respecto a los valores de castigo en tiempo
+ se calcularon los mismos coeficientes respecto a cooperación mutua
+\begin_inset Formula $-0.998$
+\end_inset
+
+ y a cooperación 
+\begin_inset Formula $-0.935$
+\end_inset
+
+, indicando que a medida que aumenta la cooperación disminuye el castigo,
+ ver fig.
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig_coopMutua"
@@ -3864,27 +4397,35 @@ reference "fig_coopMutua"
 \end_inset
 
 .
- The color bar represent average accumulated punishment (in second) that
- each subject obtain per sessions in the last ten session and also is drive
- by same relationship respect both mutual cooperation or cooperation choice,
- the correlation coefficient was 
-\begin_inset Formula $-0.998$
-\end_inset
-
- and 
-\begin_inset Formula $-0.935$
-\end_inset
-
- respectively.
- When cooperation up, the punishment down.
  
 \end_layout
 
 \begin_layout Standard
-In the figure, the square point represent theoretical simulated behaviors
- and was used to compare the real average rat behavior respect to these
- repetitive simulated agent.
- We created the follow behaviors: 
+En las figuras 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_coopMutua"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_rewardVScoop"
+
+\end_inset
+
+ y 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_reward VS timeout"
+
+\end_inset
+
+, los rectángulos representan comportamientos simulados y se utiliza para
+ compara los promedios reales respecto de los simulados, de los cuales se
+ conoce su comportamiento.
+ Nosotros creamos los siguientes comportamientos de referencia:: 
 \emph on
 1º)
 \begin_inset Quotes eld
@@ -3896,8 +4437,8 @@ switch CD
 
 
 \emph default
- in which the theoretical subject always alternated between cooperate (C)
- lever and defect (D) lever; 2º) 
+ en el cual el sujeto alterna su elección entre cooperar (C) y no cooperar
+ (D); 2º) 
 \begin_inset Quotes eld
 \end_inset
 
@@ -3905,9 +4446,8 @@ switch CCDD
 \begin_inset Quotes erd
 \end_inset
 
- is similar to the previous but the subject choose consecutively 2 time
- the same lever and then change to the other lever and repeat the action;
- 3º) 
+ similar al anterior pero realiza dos elecciones consecutivas iguales, cambia
+ a la otra palanca y repite el comportamiento; 3º) 
 \begin_inset Quotes eld
 \end_inset
 
@@ -3915,8 +4455,7 @@ switch 3C3D
 \begin_inset Quotes erd
 \end_inset
 
- the subject choose consecutively 3 time the same lever and then change;
- 4º) 
+ igual con tres consecutivas para cambiar; 4º) 
 \begin_inset Quotes eld
 \end_inset
 
@@ -3924,8 +4463,8 @@ half C
 \begin_inset Quotes erd
 \end_inset
 
- the subject choose the same lever until the middle of session, then change
- and doesn't change at the end; 5º) 
+ el sujeto elige la misma palanca hasta la mitad de la sesión y luego cambia
+ a la otra y permanece hasta el final; 5º) 
 \begin_inset Quotes eld
 \end_inset
 
@@ -3933,8 +4472,8 @@ switch CCD
 \begin_inset Quotes erd
 \end_inset
 
- in which choose 2 time C lever and then choose only a time the D lever
- and go back to the previous C lever and repeat the action.
+ elige dos veces consecutiva C y solo una vez D, vuelve a C y repite el
+ comportamiento.
  6º) 
 \begin_inset Quotes eld
 \end_inset
@@ -3943,14 +4482,15 @@ switch CCCD
 \begin_inset Quotes erd
 \end_inset
 
- is similar to the previous but the subject choose 3 time C lever.
- These simulations allow to visualize specific behavior and make assumptions
- about rats behaviors.
+ similar al anterior para realiza consecutivamente 3 elecciones de C.
+ Esto comportamiento permiten visualizar comportamientos específicos y realizar
+ inferencias acerca de los comportamientos mostrados por los animales.
 \end_layout
 
 \begin_layout Standard
-All rats got the high level of reward, over 80%, despite of the dispersion
- of mutual cooperation data, fig.
+Respecto a los niveles de refuerzo, todas las ratas obtuvieron un nivel
+ por encima del 80% a pesar de la dispersión observada en cooperación mutua,
+ fig.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -3959,11 +4499,8 @@ reference "fig_reward VS timeout"
 \end_inset
 
 .
- Since the simulated agent (filled square) are used to understand the kind
- of strategy used by the rats, we observe that the rats after make a defect
- choice trend to learned that they have to back to cooperate choice.
- The rats of the group with lowest mutual cooperation level are near the
- simulated agent with 
+ Se observó que las ratas 1A, 3A y 8A con menor tasa de cooperación mutua
+ del grupo se situaron cerca de los sujetos simulados 
 \begin_inset Quotes eld
 \end_inset
 
@@ -3971,7 +4508,7 @@ Switch CCD
 \begin_inset Quotes erd
 \end_inset
 
- and 
+ y 
 \begin_inset Quotes eld
 \end_inset
 
@@ -3979,17 +4516,19 @@ Switch CCCD
 \begin_inset Quotes erd
 \end_inset
 
- behaviors.
+, indicando que estos animales desarrollar un comportamiento similar volviendo
+ a cooperar luego de una no cooperación.
  
 \end_layout
 
 \begin_layout Standard
-Relating rewards with timeout punishment level we develop a coefficient
- that named 
+Relacionando los resultados en refuerzos obtenido respecto del castigo acumulado
+ se generó un coeficiente, llamado 
 \emph on
 Preference
 \emph default
-, and it can help to understand the preference for choose lever C, figure
+, que se utilizó como herramienta para entender la preferencia por cooperar
+ de los animales, fig.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -3998,16 +4537,9 @@ reference "fig_CoeffPreference"
 \end_inset
 
 .
- The red circles depict the simulated agent and blue circle the rats.
- The 
-\begin_inset Quotes eld
-\end_inset
-
-CD
-\begin_inset Quotes erd
-\end_inset
-
- symbolize 
+ Los círculos rojos representan los agentes simulados y los azules las ratas.
+ Se observó que los animales cooperadores se ubicaron del lado derecho respecto
+ al agente simulado 
 \begin_inset Quotes eld
 \end_inset
 
@@ -4015,46 +4547,13 @@ switch CD
 \begin_inset Quotes erd
 \end_inset
 
- simulated agent that develop a 
-\emph on
-alternate
-\emph default
- strategy.
- To the left side of 
-\begin_inset Quotes eld
-\end_inset
-
-CD
-\begin_inset Quotes erd
-\end_inset
-
- are place the simulated agent and rats that have a cooperation level less
- than 50%.
- On the right side of 
-\begin_inset Quotes eld
-\end_inset
-
-CD
-\begin_inset Quotes erd
-\end_inset
-
- represent the strategies in which choose C more than one time, consecutively.
- Holding the high level of cooperation no rats are close to the 
-\begin_inset Quotes eld
-\end_inset
-
-CD
-\begin_inset Quotes erd
-\end_inset
-
- and all rats place on the right side of it.
- Since this picture we can infer that the behaviors of rats trend to be
- such that at least cooperate two time or more and then defect one time
- and quickly back to cooperate.
- 
+ que cooperaba el 50% y obtiene el máximo refuerzo.
+ Por lo tanto, podemos inferir que el comportamiento de las ratas tiende
+ a ser un que al menos coopera dos veces y si falta a la cooperación vuelve
+ rápidamente a cooperar.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection*
 Reversion
 \begin_inset CommandInset label
 LatexCommand label
@@ -4097,7 +4596,7 @@ reference "fig1_REV_meansAnd significance-1"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -4491,7 +4990,7 @@ reference "table_REV_meanAndstrategies-1"
 placement h
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption
@@ -5220,19 +5719,11 @@ name "table_REV_meanAndstrategies-1"
 \end_layout
 
 \begin_layout Standard
-,
-\end_layout
-
-\begin_layout Standard
-,
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float figure
 placement h
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Float figure
@@ -5519,7 +6010,7 @@ reference "fig_REV_2state_markovChain-1"
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset space \hfill{}
@@ -5791,6 +6282,1006 @@ CD
 
 \end_layout
 
+\begin_layout Subsubsection*
+Experimento en iPD y matriz con T aumentado
+\end_layout
+
+\begin_layout Standard
+Se utiliza el esquema del dilema del prisionero para evaluar el nivel decooperac
+ión cuando las ratas experimentales se enfrentan a un oponente que desarrolla
+ la estrategia Tit for Tat, (1972, Maynard Smith 1982), con una matriz que
+ favorece la traición, T, ver tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "table_matrixIPD_T3"
+
+\end_inset
+
+ .
+ Este experimento fué realizado con 11 ratas (6 experimentales naive, 5
+ oponentes adultas).
+ En este experimento se utilizó la matriz de pago 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "table_matrixIPD_T3"
+
+\end_inset
+
+ y el procedimiento fue identico al experimento anterior.
+ 
+\end_layout
+
+\begin_layout Standard
+En el gráfico de la tasa de cooperación, ver fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_coop_T3"
+
+\end_inset
+
+, se observó una tasa de cooperación media en los sujetos 
+\begin_inset Formula $1S=26$
+\end_inset
+
+, 
+\begin_inset Formula $1M=25.8$
+\end_inset
+
+ y 
+\begin_inset Formula $2M=27.2$
+\end_inset
+
+ y cooperación mutua 1S=23,4, 1M=22,8 y 2M=25,4 mas elevada que los observador
+ en cooperación media para 
+\begin_inset Formula $2S=15$
+\end_inset
+
+ , 
+\begin_inset Formula $1T=15,6$
+\end_inset
+
+ y 
+\begin_inset Formula $2T=19,8$
+\end_inset
+
+ y cooperación mutua, 
+\begin_inset Formula $2S=7$
+\end_inset
+
+ , 
+\begin_inset Formula $1T=9$
+\end_inset
+
+ y 
+\begin_inset Formula $2T=14,8$
+\end_inset
+
+.
+ ver tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tabla_T3"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Teniendo en cuenta la cooperación mutua y el alimento recibido (tabla 1.4
+ y gráfico 1.9) se mostró que las todas las ratas comieron en promedio la
+ misma cantidad de alimento.
+\end_layout
+
+\begin_layout Standard
+Se utilizó el test estadístico Mann Whitney en función de los resultados
+ observados en la tasa de cooperación con el fin de comparar las medias
+ de los dos grupos establecidos, grupo cooperador (1S,1M,2M) y grupo no
+ cooperador (2S,1T,2T).
+ Dado que el valor de 
+\begin_inset Formula $p<0,001$
+\end_inset
+
+ fue menor a 0,05 se concluye que la distribución de ambos grupos es distinta.
+\end_layout
+
+\begin_layout Standard
+.
+\end_layout
+
+\begin_layout Standard
+Luego, se reemplazó la matriz por una con mayor refuerzo en T, para promover
+ la no cooperación en las ratas cooperadoras.
+ Se observó que las ratas 2S, 1T y2T modificaron su tasa de cooperación.
+ fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_coop_T4"
+
+\end_inset
+
+ y tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tabla_T4"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Se utilizó el test estadístico Mann Whitney en función de los resultados
+ observados con la matriz 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "table_matrixIPD_T3"
+
+\end_inset
+
+ y con 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "table_matrixIPD_T4"
+
+\end_inset
+
+ respecto de las medias en cooperación con el fin de comprobar si estos
+ grupos eran significativamente diferentes.
+ Efectivamente con un 
+\begin_inset Formula $p>0.0001$
+\end_inset
+
+ se confirma que los grupos tiene medias significativamente diferentes y
+ que el aumento del refuerzo por traicionar (T) hace que las ratas dejen
+ el comportamiento cooperativo.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figuras_meli/cooperacionXsessions_EXP_I.eps
+	lyxscale 30
+	width 40col%
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig_coop_T3"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+cooperacion media por sesion
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figuras_meli/cooperacionMutuaXsessions_EXP_T3.eps
+	lyxscale 30
+	width 40col%
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig_mutua_T3"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+cooperación Mutua
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figuras_meli/cooperacionXsessions_EXP_T4.eps
+	lyxscale 30
+	width 40col%
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig_coop_T4"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Cooperación media por sesion
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figuras_meli/cooperacion_ant_despues_EXP_T.eps
+	lyxscale 30
+	width 40col%
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig_comp_T3_T4"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Comparación entre medias de cooperación entre matriz 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "table_matrixIPD_T3"
+
+\end_inset
+
+ y 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "table_matrixIPD_T4"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figuras_meli/table_coopYmutua_EXP_T3.eps
+	lyxscale 30
+	width 40col%
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tabla_T3"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figuras_meli/table_coopYmutua_EXP_T4.eps
+	lyxscale 30
+	width 80col%
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tabla_T4"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+tabla de cooperación y cooperación mutua.
+ Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_comp_T3_T4"
+
+\end_inset
+
+ 
+\color blue
+Gráfico del promedio de la cooperación (ratas 1S, 1M y 2M, grupo cooperador)
+ durante la primera y segunda etapa del iPD.
+ El resultado para el grupo en la primera etapa fue de 26,33 y en la segunda
+ etapa de 17.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Graficos Experimentos: evaluación de comportamiento no cooperativos utilizando
+ matriz con refuerzo por traición elevado, T.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Experimento en iPD con oponente pseudo-aleatorio
+\end_layout
+
+\begin_layout Standard
+Se utilizó el esquema del dilema del prisionero con una estrategia del oponente
+ que no favorece la de cooperación para evaluar el aprendizaje de ratas
+ long evans naive.
+ La estrategia a utilizar para el oponente fue pseudo-random, donde cada
+ elección es establecida de forma al azar y las probabilidades de elección
+ de cada palanca son iguales, permitiendo la asignación de una misma palanca
+ por más de 3 veces.
+ Para dicho experimento se utilizaron 16 ratas en total , 8 ratas naive
+ que representaban a las experimentales y 8 ratas adultas que ya habían
+ sido utilizadas en otro entrenamiento.
+\end_layout
+
+\begin_layout Standard
+Se observó una elevada tasa de cooperación en las ratas 
+\begin_inset Formula $1D=21$
+\end_inset
+
+, 
+\begin_inset Formula $2D=21.6$
+\end_inset
+
+, 
+\begin_inset Formula $3D=22$
+\end_inset
+
+, 
+\begin_inset Formula $4D=29.4$
+\end_inset
+
+ y 
+\begin_inset Formula $8D=24.2$
+\end_inset
+
+, fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_coop_Pseudo"
+
+\end_inset
+
+ y tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tabla_coop_mutua_Pseudo"
+
+\end_inset
+
+.
+ A su vez, este grupo fue significativamente diferenta al resto, ratas 5D=13.8,
+ 6D=13.8 y 7D=3.2, con un p<0.001 analizado a través del metodo de Mann Whitney.
+ 
+\end_layout
+
+\begin_layout Standard
+En el gráfico de cooperación vs cooperación mutua (fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_mutua_Pseudo"
+
+\end_inset
+
+) se puede observar claramente la diferencia altamente marcada entre la
+ rata 4D y 7D, donde la primera evidenció tasas de cooperación mas alta
+ y la menor tasa de cooperación mutua e inversamente para la segunda.
+\end_layout
+
+\begin_layout Standard
+En función del alimento recibido (tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tabla_alimento_Pseudo-1"
+
+\end_inset
+
+) se observó que la rata 4D obtuvo un 52% de alimento, afirmando que las
+ estrategias cooperadoras no son la más óptima en un iPD con oponente pseudo-ran
+dom.
+ Las rata 7D que mostró una estrategia no cooperadora, obtuvo un cantidad
+ de alimento del 96%.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figuras_meli/cooperacionXsessions_EXP_pseudo.eps
+	lyxscale 30
+	width 40col%
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig_coop_Pseudo"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+cooperacion media por sesion
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figuras_meli/cooperacionMediaXsujetos_EXP_pseudo.eps
+	lyxscale 30
+	width 40col%
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig_coopMedia_Pseudo-1"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+cooperacion media por sesion
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figuras_meli/cooperacionMutuaXsessions_EXP_Pseudo.eps
+	lyxscale 30
+	width 40col%
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig_mutua_Pseudo"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+cooperación Mutua
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figuras_meli/table_coopYmutua_EXP_Pseudo.eps
+	lyxscale 30
+	width 40col%
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tabla_coop_mutua_Pseudo"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+tabla de tasa de cooperación y cooperación mutua.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figuras_meli/table_mutuaYalimento_EXP_Pseudo.eps
+	lyxscale 30
+	width 80col%
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tabla_alimento_Pseudo-1"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Tabla: tasa de cooperación mutua y alimento ganado.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Gráficos Experimentos: eliminación de interación social.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Experimento en iPD sin interacción social
+\end_layout
+
+\begin_layout Standard
+Se utiliza el esquema del dilema del prisionero para evaluar el nivel de
+ cooperación cuando las ratas experimentales se enfrentan a un oponente,
+ 
+\emph on
+representado por un estímulo luminoso
+\emph default
+, que desarrollan la estrategia Tit forTat (Trivers 1972, Maynard Smith
+ 1982) con matriz pago que favorecia la cooperación mutua, R.
+ En este caso se utlilizaron 8 ratas naive las cuales fueron en su totalidad
+ designadas como experimentales.
+\end_layout
+
+\begin_layout Standard
+Se observó una elevada tasa de cooperación en las ratas 2A, 2B, 1C, 2C y
+ 1D (fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_coop_anti"
+
+\end_inset
+
+) y la media del grupo fue de 24,72 sobre 30, en contraposición al grupo
+ 1B, 2D que mostró bajos niveles de cooperación y un tasa media de 12,6
+ sobre 30(fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_coopMedia_grupo_coop_nocoop_anti"
+
+\end_inset
+
+).
+ A dichos grupos se les realizó el test estadístico Mann Whitney con el
+ fin de comparar las medias entre grupos, resultando un valor de p<0.001.
+\end_layout
+
+\begin_layout Standard
+Teniendo en cuenta la cooperación mutua y el alimento recibido (tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tabla_alimento_anti"
+
+\end_inset
+
+) se observó que el grupo cooperador (2A, 1C, 2B, 1D y 2C) presentaron alta
+ tasa de cooperación mutua y un mayor consumo de alimento.
+ Comparando los resultados con respecto a un animal que siempre coopera,
+ y sin contemplar el delay (tiempo de castigo), las ratas 2A, 2B, 1C, 2C
+ y 1D obtuvieron un 100%, 100%, 85%, 98% y 89% de alimento respectivamente
+ en comparación con las ratas 1B y 2D que obtuvieron un 68% y 67% de alimento.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figuras_meli/cooperacionXsessions_EXP_pseudo.eps
+	lyxscale 30
+	width 40col%
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig_coop_anti"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+cooperacion media por sesion
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figuras_meli/cooperacion_coop_Nocoop_EXP_anti.eps
+	lyxscale 30
+	width 40col%
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig_coopMedia_grupo_coop_nocoop_anti"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+cooperacion media entre grupo.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figuras_meli/table_coopYmutua_EXP_anti.eps
+	lyxscale 30
+	width 40col%
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tabla_coop_mutua_anti"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+tabla de tasa de cooperación y cooperación mutua.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figuras_meli/table_mutuaYalimento_EXP_anti.eps
+	lyxscale 30
+	width 80col%
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tabla_alimento_anti"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+tabla de tasa de cooperación mutua y alimento ganado.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Gráficos Experimentos: eliminación de interación social.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Modelo Matemático
+\end_layout
+
+\begin_layout Standard
+jj
+\end_layout
+
 \begin_layout Standard
 \begin_inset Newpage pagebreak
 \end_inset
@@ -6033,6 +7524,84 @@ ty when have a reciprocate opponent.
  
 \end_layout
 
+\begin_layout Subsection*
+Experimentos secundarios
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\shape italic
+\color blue
+Experimento matriz No ccoperadora,T aumentada:
+\series default
+\shape default
+\color inherit
+ los resultados de la primera etapa del experimento (matriz T=3 pellet,
+ C=1pellet, S=8” y P=4”) nos permitio entender que la matriz utilizada con
+ el fin de favorecer la traición no era suficientemente diferente a una
+ matriz que favorece la cooperación.
+ Dado que la mitad del grupo de ratas mostraron una estrategia no cooperadora
+ y la otra mitad cooperadora.
+ Esto podría ser a raíz de que todas las ratas, sin considerar la estrategia
+ utilizada, obtuvieron en promedio la misma cantidad de alimento y por ello
+ no lograron una tendencia hacia una estrategia única.
+ En la 2da etapa (matriz T=4 pellet, C=1pellet, S=8” y P=4”) las ratas que
+ habían cooperado modificaron significativa su comportamiento con respecto
+ a la primera etapa adoptando un comportamiento menos cooperativo.
+ Esto se pudo deber a que dichas ratas no tuvieron que modificar su comportamien
+to, sino acentuarlo ya que alternaban entre una palanca y otra por lo que
+ les resultó más sencillo entender que había alimento en otra palanca.
+ 
+\series bold
+\shape italic
+\color blue
+Experimento sin interacción social:
+\series default
+\shape default
+\color inherit
+ se observó que 5 de 7 ratas mostraron el comportamiento esperado.
+ Comparando con el primer experimento de este trabajo, donde 8 de 12 animales
+ aprendieron a cooperar, podemos inferir que el factor de interacción social,
+ a pesar de que debe afectar la resolución del juego, no es determinante
+ para lograr una tasa elevada de cooperación que maximice la recompensa.
+ 
+\series bold
+\shape italic
+\color blue
+Experimento matriz oponente pseudo-aleatorio:
+\series default
+\shape default
+\color inherit
+ La matriz T=2pellet, C=1pellet, S=8” y P=4” favorece la no cooperación
+ cuando se enfrentan a un oponente con estrategia no cooperadora (Pseudo
+ aleatoria).
+ Los resultados obtenidos muestran que 6 de 8 ratas evidenciaron una alta
+ tasa de no cooperacion y lograron una respuesta similar a la esperada,
+ es decir, un comportamiento no cooperador.
+ Fue interesante observar que la rata 4D que desarolló una estrategia cooperador
+a obtuvo el menor consumo de alimento en contraposicion a la 7D que obtuvo
+ el mayor consumo al aprender la estrategia menos cooperadora.
+ 
+\end_layout
+
+\begin_layout Standard
+Encontramos que las ratas son menos propensas a cooperar cuando se enfrentan
+ a un oponente que no es cooperador.
+ De la misma forma que al enfrentarse a un oponente cooperador con una matriz
+ que desestima la cooperacion.
+ Por lo tanto esto nos puede indicar que las ratas son capaces de modificar
+ su comportamiento en funcion de las condiciones del entorno.
+ De acuerdo a los resultados obtenidos podemos inferir que el factor social
+ no es determinante sobre la tasa de cooperacion, la cual posiblemente se
+ encuentre modulada por la recompensa u otro factor a determinar.
+ Estos resultados dan evidencia de que el altruismo reciproco constituye
+ un factor central en el aprendizaje de este comportamiento.
+ En conjunto, estos resultados muestran que las ratas poseen capacidades
+ cognitivas necesarias que les permite resolver el dilema del prisionero.
+ 
+\end_layout
+
 \begin_layout Section
 Reference
 \begin_inset CommandInset label
@@ -6042,6 +7611,28 @@ name "sec:Reference"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+
+\color red
+18.
+ Flood, M., Lendenmann, K., &Rapoport, A.
+ (1983).
+ 2 × 2 games played by rats: Different delays of reinforcement as payoffs.
+ Behavioural Science, 28, 65–78.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\color red
+19.
+ Brembs, B.
+ (1996).
+ Chaos, cheating and cooperation: Potential solutions to the prisoner’s
+ dilemma.
+ Oikos, 76, 14–24.
 \end_layout
 
 \begin_layout Standard
@@ -6128,7 +7719,7 @@ name "sub:Non-cooperator-subject"
 placement h
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Float figure
