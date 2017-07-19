@@ -65,7 +65,7 @@
 \begin_body
 
 \begin_layout Title
-Alto nivel de cooperación Mutua en Ratas usando Dilema del prisionero Iterado
+Aprendizaje de Altruismo Recíproco en Animales y Máquinas Inteligentes
 \end_layout
 
 \begin_layout Section
@@ -4514,21 +4514,37 @@ name "sub:Reversion"
 
 \begin_layout Standard
 Este experimento fue desarrollado para evaluar si los comportamientos exhibidos
- por las ratas fue aprendido a través de la experiencia en el juego o por
- preferencia de lugar.
- Si este fue por preferencia y ahora la posiciones de las palancas son modificad
-as, la rata debería seguir eligiendo el mismo lado.
- Se utilizaron cuatro ratas que obtubieron los mejores rendimientos en el
- experimento anterior.
- Las palancas fueron cambiadas de lugar y ahora el lado que contenía la
- palanca cooperación, tendrá la palanca de no cooperación.
+ por las ratas fueron aprendido a través de la experiencia en el juego o
+ por preferencia de lugar.
+ Si este fue por preferencia y se modifican las posiciones de las palancas,
+ la rata debería seguir eligiendo el mismo lado.
+ Se utilizaron cuatro de las ratas que obtuvieron los mejores rendimientos
+ en el experimento anterior.
+ Las palancas fueron cambiadas de lugar, el lado que contenía la palanca
+ cooperación pasó a tener la palanca de no cooperación y viceversa.
  El procedimiento utilizado fue idéntico al del experimento previo.
  Las sesiones por ratas fue: 
 \size scriptsize
 3A/52; 7A/52; 9A/52; 10A/24;
 \size default
 .
- La Media de cooperación se muestra en la fig.
+ La Media de cooperación fueron 
+\begin_inset Formula $3A=0.79$
+\end_inset
+
+, 
+\begin_inset Formula $7A=0.86$
+\end_inset
+
+, 
+\begin_inset Formula $9A=0.85$
+\end_inset
+
+ y
+\begin_inset Formula $10A=0.96$
+\end_inset
+
+, fig.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -4536,15 +4552,40 @@ reference "fig1_REV_meansAnd significance-1"
 
 \end_inset
 
- and the asterisk denote the rats with a some fix strategy that differs
- to the random strategy.
+ y tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "table_REV_meanAndstrategies-1"
+
+\end_inset
+
+.
+ Se encontró diferencias significativas respecto a estrategias aleatorias
+ en el vector de transición de estados, ver tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "table_REV_meanAndstrategies-1"
+
+\end_inset
+
+, denotadas en el gráfico de cooperación media mediante asteriscos.
+ En la fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_REV_evolution_coop_rev"
+
+\end_inset
+
+ se muestra la cooperación media por sesión y la cooperación media del grupo
+ por sesión.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -4557,7 +4598,7 @@ status collapsed
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -4733,7 +4774,7 @@ name "fig1_REV_meansTimeout"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -4893,11 +4934,7 @@ over the las ten sessions).
 \end_layout
 
 \begin_layout Standard
-All rats reached the level of reward close to 1(i.e.
-\begin_inset Formula $100\%$
-\end_inset
-
-, see fig.
+Todas las ratas alcanzaron una nivel de cooperación cercano al 100%, fig.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -4905,7 +4942,7 @@ reference "fig1_REV_meansAnd significance-1"
 
 \end_inset
 
-) and the total punishment under 0.4 (40%, see fig.
+, y un total de castigos en tiempo menor al 40%, fig.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -4913,23 +4950,7 @@ reference "fig1_REV_meansTimeout"
 
 \end_inset
 
-).
- In the Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "table_REV_meanAndstrategies-1"
-
-\end_inset
-
- is showed the means of cooperation and strategy vectors per rat, all subject
- overpass the 
-\begin_inset Formula $0.5(50\%)$
-\end_inset
-
- probability and the strategy vectors are very different to chance.
- Only the 10A rat has a strategy that need a additional explanation about
- because the probabilities to cooperate given P or T outcomes are very low.
- But If we look at the frequency .
+.
  
 \end_layout
 
@@ -5958,7 +5979,7 @@ reference "fig_REV_2state_markovChain-1"
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset space \hfill{}
@@ -5968,7 +5989,7 @@ status collapsed
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -6010,7 +6031,7 @@ name "fig_REV_coopMutua"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -6228,6 +6249,33 @@ CD
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Observando las figuras 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_REV_rewardVScoop"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_REV_coopMutua"
+
+\end_inset
+
+y 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_REV_CoeffPreference"
+
+\end_inset
+
+ se extrae que existe menos dispersión en los comportamientos entre animales
+ y que tienden a cooperar tres o mas veces consecutivas antes de dejar de
+ cooperar.
 \end_layout
 
 \begin_layout Subsubsection*
