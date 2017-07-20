@@ -77,10 +77,6 @@ Ing.
 Instituto de Ingeniería Biomédica - UBA
 \end_layout
 
-\begin_layout Standard
-
-\end_layout
-
 \begin_layout Section
 Introdicción
 \end_layout
@@ -7269,7 +7265,324 @@ Modelo Matemático
 \end_layout
 
 \begin_layout Standard
-jj
+El modelo matematico propuestos, se basa el el principio de reforzamiento
+ de Killen 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "killeen1982incentive,killeen1985incentive"
+
+\end_inset
+
+, donde se propone un modelo de aprendizaje por condicionamiento operante.
+ En este trabajo se presenta un modelo dinámico basado en el principio de
+ reforzamiento de Killen (A,arousal) y memoria de corto plazo (STM).
+ Este modelo fue propuesto para evaluar el alcance del aprendizaje por condicion
+amiento operante y especialmente constatar si es posible resolver el iPD
+ unicamente con un sistema simple de condicionaiento operante y memoria
+ de corto plazo.
+ A continuación se presenta el sistema de ecuaciones propuestos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+stm_{AP_{1}(n)}=(1-\beta_{AP})*stm_{AP_{1}(n-1)}+\alpha_{AP}*Rf_{AP_{1}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+stm_{AP_{2}(n)}=(1-\beta_{AP})*stm_{AP_{2}(n-1)}+\alpha_{AP}*Rf_{AP_{2}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+stm_{AV_{1}(n)}=(1-\beta_{AV})*stm_{AV_{1}(n-1)}+\alpha_{AV}*Rf_{AV_{1}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+stm_{AV_{2}(n)}=(1-\beta_{AV})*stm_{AV_{2}(n-1)}+\alpha_{AV}*Rf_{AV_{2}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+A_{1(n)}=(1-\gamma)*A_{1(n)}+\delta_{AP}*stm_{AP_{1}(n)}-\delta_{AV}*stm_{AV_{1}(n)}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang english
+\begin_inset Formula 
+\begin{equation}
+A_{2(n)}=(1-\gamma)*A_{2(n)}+\delta_{AP}*stm_{AP_{2}(n)}-\delta_{AV}*stm_{AV_{2}(n)}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde las ecuaciones 
+\begin_inset Formula $stm_{x}$
+\end_inset
+
+representan los valores de las trazas de memoria de trabajo relacionada
+ con estímulos apetitivos o aversivos y las ecuaciones 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang english
+
+\begin_inset Formula $A_{X(n)}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang spanish
+ es el valor de la excitación probocada por el refuerzo.
+ 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang english
+
+\begin_inset Formula $Rf_{AP_{1}}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang spanish
+ Es el valor o apreciación con que el agente reconoce el refuerzo físico.
+ La relacion ente la cantidad material y la apreciación no es una relación
+ lineal, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "killeen1982incentive"
+
+\end_inset
+
+.
+ Las constantes 
+\begin_inset Formula $\alpha,\beta,\gamma,\delta$
+\end_inset
+
+ son constantes de tiempo que representan la dinamica del sostema.
+ 
+\end_layout
+
+\begin_layout Standard
+El sistema de ecuaciones propuesto, utiliza como entrada los refuerzos recibidos
+ por una respuesta, que pueden ser positivos (apetitivo) o negativos (aversivo).
+ El sistema STM reacciona frente a una refuerzo incrementando la traza que
+ con el paso del tiempo tiende a cero, si ningún otros refuerzo ocurre.
+ El sistema STM es la entrada para el sistema A(arousal) que a medida que
+ crece tiene inferencia sobre la respuesta a realizarse.
+ se presenta que representa de t y presentado en este trabajo es una que
+ toda acción reforzada producirá un nivel de excitación.
+\end_layout
+
+\begin_layout Standard
+Se encontró que comportamiento del sistema se puede modular modificando
+ únicamente la contantes de tiempo del arousal, para lo cual y si se tiene
+ las constantes adecuadas el modelo aprende a resolver el juego del Dilema
+ del Prisionero o en su defecto no lo aprende.
+ Los valores registrados donde se obtiene el comportamiento descrito fueron:
+\begin_inset Formula $\gamma=0.0067$
+\end_inset
+
+ para el caso en que aprende, ver fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_mm_aprende"
+
+\end_inset
+
+ y 
+\begin_inset Formula $\gamma=0.00134$
+\end_inset
+
+ para el caso en que no aprende, ver fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_mm_no aprende"
+
+\end_inset
+
+.
+ Estos valores fueron dimensionados considerando el tiempo de extinción
+ de la traza de arousal, que en el primer caso fue de 2 sesiones y en el
+ segundo de 1 sesión.
+ La duración de las sesiones fue un parámetro proveniente del protocolo
+ utilizado para el entrenamiento con animales.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/guille/Documents/github_Repository/operantModel4iPD/Modelo version 2/imagenes/iPD_ap_av_1248_Aprende.pdf
+	lyxscale 60
+	width 100col%
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig_mm_aprende"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Trazas de stm y arousal para el caso en el sistem logra aprender a resolver
+ el Dilema del Prisionero
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/guille/Documents/github_Repository/operantModel4iPD/Modelo version 2/imagenes/iPD_ap_av_1248_noAprende.pdf
+	lyxscale 60
+	width 100col%
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig_mm_no aprende"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Trazas de stm y arousal para el caso en el sistem no logra aprender a resolver
+ el Dilema del Prisionero
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard

@@ -65,7 +65,20 @@
 \begin_body
 
 \begin_layout Title
-Alto nivel de cooperación Mutua en Ratas usando Dilema del prisionero Iterado
+Aprendizaje de Altruismo Recíproco en Animales y Máquinas Inteligentes
+\end_layout
+
+\begin_layout Author
+Ing.
+ Delmas Guillermo Ezequiel
+\end_layout
+
+\begin_layout Right Address
+Instituto de Ingeniería Biomédica - UBA
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Section
@@ -121,8 +134,6 @@ to, complejidad e impredictibilidad.
  La perspectiva que brinda la cooperación en animales no relacionados (altruismo
  recíproco) nos da una serie de fundamentos para utilizar y constatar la
  teoría que la sostiene.
-
-\color red
  En este trabajo se desarrollará un modelo para explicar cooperación entre
  múltiples agentes, con bases biológicas.
 \end_layout
@@ -504,9 +515,7 @@ En el presente trabajo se evalúan distintas configuraciones para el juego
  Se propuso un marco del dilema del prisionero en el cual se conjuga una
  matriz de pago que utiliza refuerzos positivos y tiempos de castigo (timeout)
  con un oponente que desarrolla una estrategia definida por el experimetador.
- 
-\color red
-Primero se evaluará en ratas el aprendizaje en iPD con un matriz con alto
+ Primero se evaluará en ratas el aprendizaje en iPD con un matriz con alto
  contraste entre refuerzos positivos y entre negativos y estrategia de oponente
  que favorece la cooperación, Tit for tat.
  Luego se presentan los resultados obtenidos en los experimentos donde evaluamos
@@ -7282,10 +7291,9 @@ name "sec:Discussion-and-conclusions"
 \end_layout
 
 \begin_layout Standard
-Nosotros encontramos altos niveles de cooperación en ratas.
- Utilizando la matriz de pago propuesta se observó que todas las ratas,
- con estrategia diferente a comportamiento azaroso, alcanzaron niveles de
- cooperación por encima del 85%, fig.
+En los experimentos realizados se observó que todas las ratas, con estrategia
+ diferente a comportamiento azaroso, alcanzaron niveles de cooperación por
+ encima del 85%, fig.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -7296,8 +7304,7 @@ reference "fig_evolutionCoop"
 , y el vector de transición de estado, que representa la probabilidad de
  cooperar dado el estado anterior, sostiene esta tendencia, ya que todas
  sus probabilidades son mayores al 80%.
- Al tener un oponente reciproco con estrategia Tit for tat, todo los animales
- aprendieron que la mejor opción, sin importar el estado, es volver a cooperar.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -7322,29 +7329,6 @@ key "kefi2007accumulated"
  el refuerzo mayor a corto plazo, R>T≥P>S).
  Además, ellos utilizan entrenamientos para elevar la preferencia por la
  opción cooperar antes de cada sesión.
- 
-\color red
-En efecto, se puede explicar desde el punto de vista del condicionamiento
- operante, que los incrementos en los niveles de cooperación son resultado
- de la adición de estímulos condicionales, como la caja transparente, que
- permiten una mejor predicción del máximo refuerzo.
-
-\color inherit
- 
-\end_layout
-
-\begin_layout Standard
-AL evolucionar una cadena de Markov se encuentran los estados mas probables.
- Aplicando este método a los diagramas de markov del trabajo de moita 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "viana2010cognitive"
-
-\end_inset
-
- se obtiene que los estados mas probables son T y S.
- Indicando que las ratas adoptan un comportamiento en orden de evadir el
- castigo mas que buscar el máximo refuerzo.
  
 \end_layout
 
@@ -7424,11 +7408,11 @@ switch CD
  opción y en estos momentos, seguramente sea el castigo en tiempo quien
  module la elección.
  Nosotros encontramos que 5 de 8 ratas estuvieron por debajo del 30% del
- total de castigo acumulado, seguramente las ratas con mayor sensibilidad
- al timeout cooperen mas porque quieren eviten este castigo.
- Indudablemente , el alto nivel de cooperación fue posible gracias al alto
- contraste en refuerzos y castigos, que permitió una disminución en el rango
- donde la discriminación respuesta-refuerzo se vuelve difícil.
+ total de castigo acumulado, posiblemente las ratas con mayor sensibilidad
+ al timeout cooperen para evitar el castigo.
+ El alto nivel de cooperación puede explicarse por al alto contraste en
+ refuerzos y castigos, que permitió una disminución en el rango donde la
+ discriminación respuesta-refuerzo se vuelve difícil.
 \end_layout
 
 \begin_layout Standard
@@ -7455,56 +7439,17 @@ key "viana2010cognitive"
 
 , en los cuales los animales saltaban ente los estados S y T con mayor frecuenci
 a que de R a R.
-\end_layout
+ Indicando que las ratas adoptan un comportamiento en orden de evadir el
+ castigo mas que buscar el máximo refuerzo.
+ Esto se puede demostrar evolucionando los diagramas de markov del trabajo
+ de moita 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "viana2010cognitive"
 
-\begin_layout Standard
+\end_inset
 
-\color red
-CREO QUE NO VA
-\end_layout
-
-\begin_layout Standard
-
-\color red
-The reciprocal altruism is cooperation among unrelated individuals where
- in turn each individual help each other and the decision of cooperate is
- based on previous response and the partner's behavior.
- When reciprocity is towards the same partner that previous cooperate the
- behaviors is call 
-\emph on
-Direct
-\emph default
- reciprocity and when is towards another is call 
-\emph on
-indirect
-\emph default
- reciprocity.
- Our experiment was design to the rats has 
-\emph on
-direct
-\emph default
- reciprocity interaction.
- Other authors as Taborsky and colleges (2007, 2008, 2012 and 2015) had
- tested reciprocal altruism in rats using a adaptated Waals' setup (Waal,
- 2000) to assess direct and general reciprocity in rats.
- The task consisted of pull a stick in such a way that a partner meets a
- food tray and then the roles is exchange.
- They show that rats are more likely to cooperate in direct than indirect
- or generalized reciprocity.
- However, from an operant conditioning perspective, interchange roles with
- a rats that not pulling is consistent with the extinction of the pulling
- rate behavior that previously was learned.
- To depict reciprocal altruism behaviors in laboratory experiment design
- must to meets all constraint together.
- Indeed, we keep in mind that not learned any cooperative behavior before
- the iPD treatment in order that the rats build their own strategies.
- 
-\end_layout
-
-\begin_layout Standard
-
-\color red
-NONONO
+.
 \end_layout
 
 \begin_layout Standard
@@ -7621,8 +7566,6 @@ Encontramos que las ratas son menos propensas a cooperar cuando se enfrentan
 \end_layout
 
 \begin_layout Standard
-
-\color red
 Estudios previos realizados en nuestro laboratorio (Martino Coscia y Zanutto,
  2001; Gutnisky y Zanutto, 2002; Zelmann et al.
  2002) demostraron el papel fundamental del aprendizaje operante en la cooperaci
