@@ -77,10 +77,6 @@ Ing.
 Instituto de Ingeniería Biomédica - UBA
 \end_layout
 
-\begin_layout Standard
-
-\end_layout
-
 \begin_layout Section
 Introdicción
 \end_layout
@@ -7269,7 +7265,324 @@ Modelo Matemático
 \end_layout
 
 \begin_layout Standard
-jj
+El modelo matematico propuestos, se basa el el principio de reforzamiento
+ de Killen 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "killeen1982incentive,killeen1985incentive"
+
+\end_inset
+
+, donde se propone un modelo de aprendizaje por condicionamiento operante.
+ En este trabajo se presenta un modelo dinámico basado en el principio de
+ reforzamiento de Killen (A,arousal) y memoria de corto plazo (STM).
+ Este modelo fue propuesto para evaluar el alcance del aprendizaje por condicion
+amiento operante y especialmente constatar si es posible resolver el iPD
+ unicamente con un sistema simple de condicionaiento operante y memoria
+ de corto plazo.
+ A continuación se presenta el sistema de ecuaciones propuestos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+stm_{AP_{1}(n)}=(1-\beta_{AP})*stm_{AP_{1}(n-1)}+\alpha_{AP}*Rf_{AP_{1}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+stm_{AP_{2}(n)}=(1-\beta_{AP})*stm_{AP_{2}(n-1)}+\alpha_{AP}*Rf_{AP_{2}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+stm_{AV_{1}(n)}=(1-\beta_{AV})*stm_{AV_{1}(n-1)}+\alpha_{AV}*Rf_{AV_{1}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+stm_{AV_{2}(n)}=(1-\beta_{AV})*stm_{AV_{2}(n-1)}+\alpha_{AV}*Rf_{AV_{2}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+A_{1(n)}=(1-\gamma)*A_{1(n)}+\delta_{AP}*stm_{AP_{1}(n)}-\delta_{AV}*stm_{AV_{1}(n)}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang english
+\begin_inset Formula 
+\begin{equation}
+A_{2(n)}=(1-\gamma)*A_{2(n)}+\delta_{AP}*stm_{AP_{2}(n)}-\delta_{AV}*stm_{AV_{2}(n)}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde las ecuaciones 
+\begin_inset Formula $stm_{x}$
+\end_inset
+
+representan los valores de las trazas de memoria de trabajo relacionada
+ con estímulos apetitivos o aversivos y las ecuaciones 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang english
+
+\begin_inset Formula $A_{X(n)}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang spanish
+ es el valor de la excitación probocada por el refuerzo.
+ 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang english
+
+\begin_inset Formula $Rf_{AP_{1}}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang spanish
+ Es el valor o apreciación con que el agente reconoce el refuerzo físico.
+ La relacion ente la cantidad material y la apreciación no es una relación
+ lineal, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "killeen1982incentive"
+
+\end_inset
+
+.
+ Las constantes 
+\begin_inset Formula $\alpha,\beta,\gamma,\delta$
+\end_inset
+
+ son constantes de tiempo que representan la dinamica del sostema.
+ 
+\end_layout
+
+\begin_layout Standard
+El sistema de ecuaciones propuesto, utiliza como entrada los refuerzos recibidos
+ por una respuesta, que pueden ser positivos (apetitivo) o negativos (aversivo).
+ El sistema STM reacciona frente a una refuerzo incrementando la traza que
+ con el paso del tiempo tiende a cero, si ningún otros refuerzo ocurre.
+ El sistema STM es la entrada para el sistema A(arousal) que a medida que
+ crece tiene inferencia sobre la respuesta a realizarse.
+ se presenta que representa de t y presentado en este trabajo es una que
+ toda acción reforzada producirá un nivel de excitación.
+\end_layout
+
+\begin_layout Standard
+Se encontró que comportamiento del sistema se puede modular modificando
+ únicamente la contantes de tiempo del arousal, para lo cual y si se tiene
+ las constantes adecuadas el modelo aprende a resolver el juego del Dilema
+ del Prisionero o en su defecto no lo aprende.
+ Los valores registrados donde se obtiene el comportamiento descrito fueron:
+\begin_inset Formula $\gamma=0.0067$
+\end_inset
+
+ para el caso en que aprende, ver fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_mm_aprende"
+
+\end_inset
+
+ y 
+\begin_inset Formula $\gamma=0.00134$
+\end_inset
+
+ para el caso en que no aprende, ver fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_mm_no aprende"
+
+\end_inset
+
+.
+ Estos valores fueron dimensionados considerando el tiempo de extinción
+ de la traza de arousal, que en el primer caso fue de 2 sesiones y en el
+ segundo de 1 sesión.
+ La duración de las sesiones fue un parámetro proveniente del protocolo
+ utilizado para el entrenamiento con animales.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/guille/Documents/github_Repository/operantModel4iPD/Modelo version 2/imagenes/iPD_ap_av_1248_Aprende.pdf
+	lyxscale 60
+	width 100col%
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig_mm_aprende"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Trazas de stm y arousal para el caso en el sistem logra aprender a resolver
+ el Dilema del Prisionero
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/guille/Documents/github_Repository/operantModel4iPD/Modelo version 2/imagenes/iPD_ap_av_1248_noAprende.pdf
+	lyxscale 60
+	width 100col%
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig_mm_no aprende"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Trazas de stm y arousal para el caso en el sistem no logra aprender a resolver
+ el Dilema del Prisionero
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7291,64 +7604,44 @@ name "sec:Discussion-and-conclusions"
 \end_layout
 
 \begin_layout Standard
-En los experimentos realizados se observó que todas las ratas, con estrategia
- diferente a comportamiento azaroso, alcanzaron niveles de cooperación por
- encima del 85%, fig.
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig_evolutionCoop"
-
-\end_inset
-
-, y el vector de transición de estado, que representa la probabilidad de
- cooperar dado el estado anterior, sostiene esta tendencia, ya que todas
- sus probabilidades son mayores al 80%.
- 
-\end_layout
-
-\begin_layout Standard
-En estudios previos con iPD se ha evaluado el comportamiento de pájaros
- en diversas condiciones 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "stephens2002discounting"
-
-\end_inset
-
-, pero Danchin y colegas 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "kefi2007accumulated"
-
-\end_inset
-
- han criticado los experimentos de Stephens argumentando que los bloques
- de acumulación propuestos en el iPD modifican la matriz de pago, convirtiendola
- en una matriz del juego Cazador de venado (donde el estado T deja de ser
- el refuerzo mayor a corto plazo, R>T≥P>S).
- Además, ellos utilizan entrenamientos para elevar la preferencia por la
- opción cooperar antes de cada sesión.
+El altruismo reciproco es un comportamiento cooperativos en el cual se requiere
+ de reciprocidad para garantizar la supervivencia en el entorno o equivalentemen
+te el máximo refuerzo posible.
+ Estos significa que se requiere de un individuo que desarrolle un acto
+ cooperativo, costos, en beneficio de otro y luego un segundo individuo
+ que beneficie al primero, la reciprocidad es fundamental.
+ Sin ella, no existe altruismos reciproco o, dicho de otro modo, no existe
+ maximización del refuerzo a largo plazo.
+ Desde los años 70's con los trabajos de Trivers, se ha evaluado el aprendizaje
+ del comportamiento altruista a través del Dilema del Prisionero en animales
+ con diferentes capacidades cognitivas.
+ Actualmente se conoce que estos comportamientos están bien arraigados en
+ humanos y monos, pero aun no se logró entender si animales, como pájaros
+ o ratas, efectivamente logran aprender el comportamientos.
  
 \end_layout
 
 \begin_layout Standard
-Por esta razón, en nuestros experimentos no utilizamos elevador alguno de
- preferencias e implementamos tiempo de espera (timeout) como castigos a
- comportamientos egoístas, ya que probablemente, en los trabajos previos
+En este trabajo se presenta una matriz de pago para el Dilema del prisionero
+ que permite altos niveles de cooperación en ratas cuando se enfrentas a
+ oponentes recíprocos.
+ Todas las ratas analizada alcanzaron niveles de cooperación por encima
+ del 85% y el vector de transición de estado que representa la probabilidad
+ de cooperar dada las elecciones en el ultimo encuentro sostiene la tendencia,
+ ya que todas sus probabilidades son mayores al 80%.
+ Es importante destacas que 
+\end_layout
+
+\begin_layout Standard
+En nuestros experimentos no se utilizaron entrenamientos para potenciar
+ la preferencia por la palanca cooperar e implementamos tiempo de espera
+ (timeout) como castigos a comportamientos egoístas, dado que probablemente,
  los animales fallan en la resolución del iPD debido a que no logran discernir
- las diferencias en refuerzos producidas los distintos comportamientos (secuenci
-a de elecciones).
- En base a los resultados obtenidos, podemos proponer que el contraste entre
- recompensas y entre castigos es la clave para que los animales logren conectar
- comportamientos con refuerzos.
- 
-\end_layout
-
-\begin_layout Standard
-En los trabajos citados, se utilizan matrices con contrastes similares,
- 4 pellets para R y 6 pelles para T, que de acuerdo con el modelo de Incentivos
- de Killen
+ las diferencias en refuerzos recibidos producto de los distintos comportamiento
+s (secuencia de elecciones).
+ En los trabajos citados, se utilizan matrices con contrastes similares,
+ 4 pellets para R y 6 pelles para T, que de acuerdo con el modelo de Incentivos,
+ como el de Killen
 \emph on
  
 \begin_inset CommandInset citation
@@ -7357,42 +7650,24 @@ key "killeen1985incentive,killeen1982incentive,mcdowell1979multivariate"
 
 \end_inset
 
-
+,
 \emph default
- son magnitudes, que luego de varias iteraciones, son difíciles de discriminar
- por los animales.
- En consecuencia, en nuestro experimento se utilizaron cantidades pequeñas
- pero significativamente diferentes, T fue el doble de R y del mismo modo
- S el doble de P.
- 
+ son magnitudes difíciles de discriminar por los animales luego de varias
+ iteracciones.
+ En efecto, para nuestro experimento se utilizaron cantidades pequeñas pero
+ significativamente diferentes, T fue el doble de R y del mismo modo S el
+ doble de P, que en base a los resultados obtenidos, se puede afirmar que
+ es el contraste entre recompensas y entre castigos la clave para que los
+ animales logren conectar comportamientos con refuerzos y consecuentemente
+ encontrar la estrategia óptima.
 \end_layout
 
 \begin_layout Standard
-En este experimentos la matriz propuesta da al animal un refuerzo grande
- e inmediato y luego solo castigos de tiempo si persiste en la opción no
- cooperar (D), pero si elige cooperar (C) recibirá constantes refuerzos
- pequeños sin castigos.
- Sin embargo, si el animal elige una estrategia donde alterna ente C y D
- recibirá la misma cantidad de alimento que un cooperador, pero en forma
- de refuerzos grande y largos castigos.
- Mas allá de esto, la matriz utilizada en iPD con oponente tit for tat tiene
- una estrategia que maximiza el refuerzo (
-\emph on
-Pareto Optimum
-\emph default
-), gracias a que el cooperador no recibe castigos.
- En la fig.
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig_reward VS timeout"
-
-\end_inset
-
- se observa que a refuerzos mayores corresponden a sujetos con bajos tiempos
- acumulados de castigo y alta tasa de cooperación (color claro), estos resultado
-s se hacen mas evidentes al contrastarlos con el agente simulado con estrategia
- 
+La matriz utilizada en este experimentos da al animal no cooperador un refuerzo
+ grande e inmediato y luego que si persiste en la opción no cooperar (D)
+ solo castigos en tiempo (timeout).
+ Por otro lado, si el animal elige una estrategia en la cual alterna ente
+ C y D (
 \begin_inset Quotes eld
 \end_inset
 
@@ -7400,28 +7675,83 @@ switch CD
 \begin_inset Quotes erd
 \end_inset
 
- que obtiene grandes refuerzos y castigos.
- Se observó que todas las ratas tenían una baja dispersión en los valores
+), recibirá la misma cantidad de alimento que si cooperase siempre, pero
+ en forma de refuerzos grande y largos castigos.
+ Sin embargo, aunque dos estrategias den la máxima recompensa a largo plazo,
+ la matriz utilizada con oponente tit for tat tiene una unica estrategia
+ que maximiza el refuerzo (
+\emph on
+Pareto Optimum
+\emph default
+), gracias a que el cooperador no recibe castigos (timeout) y con ellos
+ mas refuerzos en menor tiempo.
+ En los resultados (fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_reward VS timeout"
+
+\end_inset
+
+) se observa que refuerzos mayores se corresponde con sujetos con bajos
+ tiempos acumulados de castigo y alta tasa de cooperación, además de que
+ los animales con mayor rendimientos quedaron distantes a los agente simulado
+ con estrategia 
+\begin_inset Quotes eld
+\end_inset
+
+switch CD
+\begin_inset Quotes erd
+\end_inset
+
+ .
+ 
+\series bold
+Se observó que todas las ratas tenían una baja dispersión en los valores
  de refuerzos (85% a 100%) y no así respecto al nivel de cooperación (65%
  a 100%), mostrando que a altos niveles de cooperación, en el juego iPD,
  se vuelve muy difícil discernir si la cooperación sigue siendo la mejor
  opción y en estos momentos, seguramente sea el castigo en tiempo quien
  module la elección.
+
+\series default
  Nosotros encontramos que 5 de 8 ratas estuvieron por debajo del 30% del
  total de castigo acumulado, posiblemente las ratas con mayor sensibilidad
- al timeout cooperen para evitar el castigo.
- El alto nivel de cooperación puede explicarse por al alto contraste en
- refuerzos y castigos, que permitió una disminución en el rango donde la
- discriminación respuesta-refuerzo se vuelve difícil.
+ al timeout han cooperado mas para evitar el castigo.
+ El alto nivel de cooperación puede explicarse por el alto contraste entre
+ refuerzos y entre castigos, que permitió una disminución en el rango donde
+ la discriminación respuesta-refuerzo se vuelve difícil.
+ En observaciones sobre los animales que no aprendieron un estrategia definida
+ o que jugaron de forma aleatoria, se encontró que el nivel de refuerzo
+ obtenido fue elevado, entre un 60 y un 75%, indicando la dificultad que
+ presenta el iPD parar diferenciar contingencias entre comportamientos y
+ refuerzos.
 \end_layout
 
 \begin_layout Standard
-Nosotros pudimos inferir la estrategia a la que tienden los animales mediante
- la construcción de un coeficiente de preferencia y comparando los coeficientes
- de cada animal con los agentes simulados.
+Nosotros pudimos inferir la estrategia de los animales mediante la construcción
+ de un coeficiente de preferencia para cada animal y su comparación con
+ respecto al de los agentes simulados.
  Estos resultados indican que la frecuencia de cooperación de las ratas
- es mayor que la no cooperación y que las ratas al menos tiende a cooperar
- dos o mas veces antes de cambiar de elección.
+ es mayor que la no cooperación y que las ratas aprenden que luego de una
+ no cooperación lo mas conveniente es cooperar y permanecer cooperando por
+ mas de dos veces consecutivas.
+\end_layout
+
+\begin_layout Standard
+En el experimento de reversión se comprobó que el alto desempeño de las
+ ratas se debió al aprendizaje a partir de la interacción con la estrategia
+ del oponente y en consecuencia del refuerzo recibido; y no por una mera
+ preferencia de palanca.
+\end_layout
+
+\begin_layout Standard
+El presente trabajo es el primero en mostrar que es posible alcanzar alto
+ niveles de cooperación y cooperación mutua, además de mostrar que las ratas
+ aprenden que es mas conveniente volver a cooperar luego de no hacerlo hecho.
+ Nuestros resultados sugieren que las ratas de la cepa Long-evans tiene
+ la capacidad cognitiva para encontrar la mejor estrategia en el iPD cuando
+ el oponente es reciproco y se utiliza una matriz adecuada de refuerzos.
  
 \end_layout
 
@@ -7437,10 +7767,10 @@ key "viana2010cognitive"
 
 \end_inset
 
-, en los cuales los animales saltaban ente los estados S y T con mayor frecuenci
-a que de R a R.
- Indicando que las ratas adoptan un comportamiento en orden de evadir el
- castigo mas que buscar el máximo refuerzo.
+, en los cuales los animales saltaban entre los estados S y T con mayor
+ frecuencia que de R a R (cooperación mutua).
+ Indicando que las ratas adoptan un comportamiento en orden de obtener el
+ máximo refuerzo sin importar los castigos.
  Esto se puede demostrar evolucionando los diagramas de markov del trabajo
  de moita 
 \begin_inset CommandInset citation
@@ -7450,6 +7780,36 @@ key "viana2010cognitive"
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+En estudios previos con iPD se ha evaluado el comportamiento de pájaros
+ en diversas condiciones 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "stephens2002discounting"
+
+\end_inset
+
+, a lo que Danchin y colegas 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "kefi2007accumulated"
+
+\end_inset
+
+ han realizados críticas argumentando que los bloques de acumulación propuestos
+ en los experimentos de iPD modifican la matriz de pago, convirtiéndola
+ en una matriz del juego Cazador de venado (donde la ganancia en el estado
+ de traición (T) deja de ser el refuerzo mayor a corto plazo, R>T≥P>S).
+ Por otro lado, en estos experimentos antes de casa sesión se utiliza un
+ entrenamiento para aumentar la preferencia a cooperar, matriz de mutualismo
+ que rompe con la imparcialidad del experimento en el aprendizaje.
+ 
+\end_layout
+
+\begin_layout Standard
+Animales hambreados 
 \end_layout
 
 \begin_layout Standard
@@ -7463,24 +7823,6 @@ key "wood2016cooperation"
  han evaluado el comportamiento cooperativo entre ratas del mismo sexo,
  machos y hembras, con-especificas y criadas en la misma jaulas sin lograr
  niveles significativos de cooperación.
-\end_layout
-
-\begin_layout Standard
-En el experimento de reversión se comprobó que el alto desempeño de las
- ratas se debió al aprendizaje desarrollado a partir de la interacción con
- la estrategia del oponente y en consecuencia del refuerzo recibido; y no
- por una mera preferencia de palanca.
-\end_layout
-
-\begin_layout Standard
-Nuestros resultados sugieren que las ratas de la cepa Long-evans tiene la
- capacidad cognitiva para encontrar la mejor estrategia en el iPD cuando
- el oponente es reciproco y se utiliza una matriz adecuada de refuerzos.
- La cooperación ha sido mostrada en experimentos similares, pero el presente
- trabajo es el primero en mostrar que es posible alcanzar alto niveles de
- cooperación y cooperación mutua, además de mostrar que las ratas aprenden
- que es mas conveniente volver a cooperar luego de no hacerlo hecho.
- 
 \end_layout
 
 \begin_layout Subsection*
