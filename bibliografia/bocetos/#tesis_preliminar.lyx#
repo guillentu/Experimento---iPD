@@ -6796,7 +6796,7 @@ dom.
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Float figure
@@ -7605,8 +7605,7 @@ name "sec:Discussion-and-conclusions"
 
 \begin_layout Standard
 El altruismo reciproco es un comportamiento cooperativos en el cual se requiere
- de reciprocidad para garantizar la supervivencia en el entorno o equivalentemen
-te maximizar la obtención de refuerzo.
+ de reciprocidad para garantizar la supervivencia en el entorno.
  Esto significa que se requiere de un individuo que desarrolle un acto cooperati
 vo, costoso, en beneficio de otro y luego un segundo individuo que beneficie
  al primero, la reciprocidad.
@@ -7623,11 +7622,12 @@ vo, costoso, en beneficio de otro y luego un segundo individuo que beneficie
 
 \begin_layout Standard
 Posiblemente, los animales fallan en la resolución del iPD debido a que
- no logran discernir las diferencias en refuerzos recibidos producto de
- los distintos comportamientos (secuencia de elecciones).
- En los trabajos citados, se utilizan matrices con contrastes similares,
- 4 pellets para cooperación mutua (R) y 6 pelles para traición (T), que
- de acuerdo con los modelos de incentivos, como los de Killen
+ no logran discernir las cantidades entre los refuerzos percibidos productos
+ de los distintos comportamientos (secuencia de elecciones).
+ En los trabajos citados, se utilizan matrices de pago similares con poco
+ contrastes, como por ejemplo 4 pellets para cooperación mutua (R) y 6 pellets
+ para traición (T, la rata experimental elige no cooperar y el oponente
+ cooperar), que de acuerdo con los modelos de incentivos, como los de Killen
 \emph on
  
 \begin_inset CommandInset citation
@@ -7640,18 +7640,22 @@ key "killeen1985incentive,killeen1982incentive,mcdowell1979multivariate"
 \emph default
  son magnitudes difíciles de discriminar por los animales luego de varias
  iteraciones.
- En nuestros experimentos no se utilizaron entrenamientos para potenciar
- la preferencia por la palanca cooperar e implementamos tiempo de espera
- (timeout) como castigos a comportamientos egoístas.
- Se utilizaron cantidades pequeñas pero significativamente diferentes, T
- fue el doble de R y del mismo modo S el doble de P.
+ Sosteniendo esta hipótesis para la asignación de refuerzos y castigos,
+ en nuestro experimento se utilizaron cantidades pequeñas de refuerzos apetitivo
+s pero significativamente diferentes, el refuerzo en el estado T fue el
+ doble que en R y con el mismo criterio para los castigos a comportamientos
+ egoístas se asignó para el estado P, no cooperación mutua, tiempos de espera
+ (timeout) que fue la mitad del recibido en el estado S, donde la rata experimen
+tal coopera y el oponente no.
  Este diseño de la matriz de pago para el Dilema del prisionero mostró que
- las ratas logran desarrollar altos niveles de cooperación cuando se enfrentas
- a oponentes recíprocos, alcanzando niveles promedios por encima del 85%
- y un vector de transición de estado que representa la probabilidad de cooperar
- dada las elecciones en el ultimo encuentro que sostiene la tendencia, ya
- que todas sus probabilidades son mayores al 80%.
- 
+ las ratas logran desarrollar altos niveles de cooperación al enfrentarse
+ a oponentes recíprocos, alcanzando niveles de cooperación promedio por
+ encima del 85% y un vector de transición de estado medio que sostiene la
+ tendencia, ya que representa la probabilidad de cooperar dada las elecciones
+ del ultimo encuentro y todas sus componentes de probabilidad estuvieron
+ arriba del 80%.
+ Esto indicó que al enfrentarse a un oponente cooperador, las ratas aprendieron
+ que la menor estrategia es cooperar.
 \end_layout
 
 \begin_layout Standard
@@ -7663,28 +7667,20 @@ En base a los resultados obtenidos, se puede sostener que es el contraste
 
 \begin_layout Standard
 La matriz utilizada en este experimentos da al animal no cooperador un refuerzo
- grande e inmediato y luego que si persiste en la opción no cooperar (D)
- solo castigos en tiempo (timeout).
- Por otro lado, si el animal elige una estrategia en la cual alterna ente
- C y D (
-\begin_inset Quotes eld
-\end_inset
-
-switch CD
-\begin_inset Quotes erd
-\end_inset
-
-), recibirá la misma cantidad de alimento que si cooperase siempre, pero
- en forma de refuerzos grande y largos castigos.
- Sin embargo, aunque dos estrategias den la máxima recompensa a largo plazo,
- la matriz utilizada con oponente tit for tat tiene una unica estrategia
- que maximiza el refuerzo (
+ grande e inmediato y luego en el próximo encuentros un castigos en tiempo
+ (timeout) sin importar la elección.
+ En este caso si el animal elige una estrategia en la cual alterna entre
+ C y D, recibirá la misma cantidad de alimento que si cooperara siempre,
+ pero en intervalos de refuerzos grande y largos castigos.
+ Sin embargo, aunque dos estrategias den la máxima recompensa en la misma
+ cantidad de experimentos, la matriz utilizada con oponente tit for tat
+ tiene una única estrategia que maximiza el refuerzo (
 \emph on
 Pareto Optimum
 \emph default
-), gracias a que el cooperador no recibe castigos (timeout) y con ellos
- mas refuerzos en menor tiempo.
- En los resultados (fig.
+), dado que el cooperador no recibe castigos (timeout) y por lo tanto mas
+ refuerzos en menos tiempo.
+ En efecto, los resultados (fig.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -7692,10 +7688,10 @@ reference "fig_reward VS timeout"
 
 \end_inset
 
-) se observa que refuerzos mayores se corresponde con sujetos con bajos
- tiempos acumulados de castigo y alta tasa de cooperación, además de que
- los animales con mayor rendimientos quedaron distantes a los agente simulado
- con estrategia 
+) muestran que refuerzos mayores se corresponde con sujetos con bajos tiempos
+ acumulados de castigo y alta tasa de cooperación.
+ Paralelamente, los coeficientes de preferencia de los animal con mayor
+ rendimientos quedaron distantes de los agente simulado con estrategia 
 \begin_inset Quotes eld
 \end_inset
 
@@ -7703,34 +7699,25 @@ switch CD
 \begin_inset Quotes erd
 \end_inset
 
- .
- Se observó que todas las ratas tenían una baja dispersión en los valores
+, indicando que los comportamientos aprendidos se basaban en cooperaciones
+ consecutivas y traiciones esporádicas.
+ 
+\end_layout
+
+\begin_layout Standard
+Se observó que todas las ratas tenían una baja dispersión en los valores
  de refuerzos (85% a 100%) y no así respecto al nivel de cooperación (65%
- a 100%), mostrando que a altos niveles de cooperación, en el juego iPD,
- se vuelve muy difícil discernir si la cooperación sigue siendo la mejor
- opción y en estos momentos, seguramente sea el castigo en tiempo quien
- module la elección.
+ a 100%), mostrando que a altos niveles de cooperación se vuelve muy difícil
+ discernir si la cooperación sigue siendo la mejor opción.
+ En está situación, seguramente sea el castigo en tiempo quien module la
+ elección.
  Nosotros encontramos que 5 de 8 ratas estuvieron por debajo del 30% del
  total de castigo acumulado, posiblemente las ratas con mayor sensibilidad
  al timeout han cooperado mas para evitar el castigo.
  El alto nivel de cooperación puede explicarse por el alto contraste entre
  refuerzos y entre castigos, que permitió una disminución en el rango donde
  la discriminación respuesta-refuerzo se vuelve difícil.
- En observaciones sobre los animales que no aprendieron un estrategia definida
- o que jugaron de forma aleatoria, se encontró que el nivel de refuerzo
- obtenido fue elevado, entre un 60 y un 75%, indicando la dificultad que
- presenta el iPD parar diferenciar contingencias entre comportamientos y
- refuerzos.
-\end_layout
-
-\begin_layout Standard
-Nosotros pudimos inferir la estrategia de los animales mediante la construcción
- de un coeficiente de preferencia para cada animal y su comparación con
- respecto al de los agentes simulados.
- Estos resultados indican que la frecuencia de cooperación de las ratas
- es mayor que la no cooperación y que las ratas aprenden que luego de una
- no cooperación lo mas conveniente es cooperar y permanecer cooperando por
- mas de dos veces consecutivas.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -7771,6 +7758,7 @@ key "viana2010cognitive"
 \end_inset
 
 .
+ 
 \end_layout
 
 \begin_layout Standard
@@ -7796,15 +7784,7 @@ key "kefi2007accumulated"
  Por otro lado, en estos experimentos antes de casa sesión se utiliza un
  entrenamiento para aumentar la preferencia a cooperar, matriz de mutualismo
  que rompe con la imparcialidad del experimento en el aprendizaje.
- 
-\end_layout
-
-\begin_layout Standard
-Animales hambreados 
-\end_layout
-
-\begin_layout Standard
-Otros trabajos relativos a este 
+ Otros trabajos relativos a este 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "wood2016cooperation"
