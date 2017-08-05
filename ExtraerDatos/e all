@@ -1,0 +1,67 @@
+'set' is a built-in function from the file libinterp/corefcn/graphics.cc
+
+ -- Built-in Function: set (H, PROPERTY, VALUE, ...)
+ -- Built-in Function: set (H, PROPERTIES, VALUES)
+ -- Built-in Function: set (H, PV)
+ -- Built-in Function: VALUE_LIST = set (H, PROPERTY)
+ -- Built-in Function: ALL_VALUE_LIST = set (H)
+     Set named property values for the graphics handle (or vector of
+     graphics handles) H.
+
+     There are three ways to give the property names and values:
+
+        * as a comma separated list of PROPERTY, VALUE pairs
+
+          Here, each PROPERTY is a string containing the property name,
+          each VALUE is a value of the appropriate type for the
+          property.
+
+        * as a cell array of strings PROPERTIES containing property
+          names and a cell array VALUES containing property values.
+
+          In this case, the number of columns of VALUES must match the
+          number of elements in PROPERTIES.  The first column of VALUES
+          contains values for the first entry in PROPERTIES, etc.  The
+          number of rows of VALUES must be 1 or match the number of
+          elements of H.  In the first case, each handle in H will be
+          assigned the same values.  In the latter case, the first
+          handle in H will be assigned the values from the first row of
+          VALUES and so on.
+
+        * as a structure array PV
+
+          Here, the field names of PV represent the property names, and
+          the field values give the property values.  In contrast to the
+          previous case, all elements of PV will be set in all handles
+          in H independent of the dimensions of PV.
+
+     'set' is also used to query the list of values a named property
+     will take.  'CLIST = set (H, "property")' will return the list of
+     possible values for "property" in the cell list CLIST.  If no
+     output variable is used then the list is formatted and printed to
+     the screen.
+
+     If no property is specified ('SLIST = set (H)') then a structure
+     SLIST is returned where the fieldnames are the properties of the
+     object H and the fields are the list of possible values for each
+     property.  If no output variable is used then the list is formatted
+     and printed to the screen.
+
+     For example,
+
+          hf = figure ();
+          set (hf, "paperorientation")
+          =>  paperorientation:  [ landscape | {portrait} | rotated ]
+
+     shows the paperorientation property can take three values with the
+     default being "portrait".
+
+     See also: get.
+
+Additional help for built-in functions and operators is
+available in the online version of the manual.  Use the command
+'doc <topic>' to search the manual index.
+
+Help and information about Octave is also available on the WWW
+at http://www.octave.org and via the help@octave.org
+mailing list.

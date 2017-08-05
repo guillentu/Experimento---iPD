@@ -170,20 +170,20 @@ for i=_vSujetos
   hhh=figure;
   h=errorbar([1:4],probEleccion(:,1,i),probEleccionSem(:,1,i),'*k');
   hold on;set(h, "linewidth", 2);
-  h=bar([1:4],probEleccion(:,1,i),'facecolor', 'g', 'edgecolor','b', "linewidth", 2);
-  h=plot([0:5],[.5 .5 .5 .5 .5 .5],"--r");
+  h=bar([1:4],probEleccion(:,1,i),'facecolor', 'k', 'edgecolor','k', "linewidth", 2);
+  h=plot([0:5],[.5 .5 .5 .5 .5 .5],"--k");
   axis ("tic[yz]", "labely[xyz]");
   set(h, "linewidth", 2);  
-  legend("SEM","MEAN","Half prob");
+%  legend("SEM","MEAN","Half prob");
   %hh=xlabel("T=1 --- R=2 --- P=3 --- S=4");set(hh, "fontsize", 14);
   hh=ylabel("P(C|X)");set(hh, "fontsize", 14);
   hh=title(strcat("Probability of Cooperation given outcome: ",_txtSujetos(i,:)));
-  set(hh, "fontsize", 14);
+  set(hh, "fontsize", 16);
   axis ("tic[yz]", "labely[xyz]");
-  t=text([1:4], -.04*ones(1,4), {"P(c|T)"; "P(c|R)";"P(c|P)";"P(c|S)"},"fontsize",14);
+  t=text([1:4], -.04*ones(1,4), {"P(c|T)"; "P(c|R)";"P(c|P)";"P(c|S)"},"fontsize",16);
   axis([0 5 0 1]);
   hold off;grid on;  
   name=strcat("figura_iPD_1_2_9s_13s/fig_finales/prob_C_giveno_Outcome/",_txtSujetos(i,:));
-  name=strcat(name,".png");
-  print(hhh, name);
+  name=strcat(name,".eps");
+  %print(hhh, name);
 endfor

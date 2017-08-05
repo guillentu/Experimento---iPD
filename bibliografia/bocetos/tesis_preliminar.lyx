@@ -7659,7 +7659,7 @@ tal coopera y el oponente no.
 \end_layout
 
 \begin_layout Standard
-En base a los resultados obtenidos, se puede sostener que es el contraste
+En base a los resultados obtenidos, se puede sostener que son el contraste
  entre recompensas y entre castigos una de las claves principales para que
  los animales logren conectar comportamientos con refuerzos y consecuentemente
  encontrar la estrategia óptima.
@@ -7705,40 +7705,35 @@ switch CD
 \end_layout
 
 \begin_layout Standard
-Se observó que todas las ratas tenían una baja dispersión en los valores
- de refuerzos (85% a 100%) y no así respecto al nivel de cooperación (65%
- a 100%), mostrando que a altos niveles de cooperación se vuelve muy difícil
- discernir si la cooperación sigue siendo la mejor opción.
- En está situación, seguramente sea el castigo en tiempo quien module la
- elección.
- Nosotros encontramos que 5 de 8 ratas estuvieron por debajo del 30% del
- total de castigo acumulado, posiblemente las ratas con mayor sensibilidad
- al timeout han cooperado mas para evitar el castigo.
- El alto nivel de cooperación puede explicarse por el alto contraste entre
- refuerzos y entre castigos, que permitió una disminución en el rango donde
- la discriminación respuesta-refuerzo se vuelve difícil.
- En observaciones sobre los animales que no aprendieron un estrategia definida
- o que jugaron de forma aleatoria, se encontró que el nivel de refuerzo
- obtenido fue elevado, entre un 60 y un 75%, indicando la dificultad que
- presenta el iPD parar diferenciar contingencias entre comportamientos y
- refuerzos.
+.
 \end_layout
 
 \begin_layout Standard
-Nosotros pudimos inferir la estrategia de los animales mediante la construcción
- de un coeficiente de preferencia para cada animal y su comparación con
- respecto al de los agentes simulados.
- Estos resultados indican que la frecuencia de cooperación de las ratas
- es mayor que la no cooperación y que las ratas aprenden que luego de una
- no cooperación lo mas conveniente es cooperar y permanecer cooperando por
- mas de dos veces consecutivas.
+Se observó que todas las ratas tuvieron una baja dispersión en los valores
+ de refuerzos (85% a 100%) en comparación con los rango de cooperación (65%
+ a 100%), demostrando que a altos valores de cooperación entender diferencias
+ en los refuerzo obtenidos se vuelve una tarea difícil.
+ Estos resultados indican que en iPD la entrega de refuerzos es poco sensible
+ a cambios sobre altos niveles de cooperación y, en está situación, el castigo
+ en tiempo es posiblemente quien module la elección.
+ Nosotros encontramos que 5 de 8 ratas estuvieron por debajo del 30% del
+ total de castigo acumulado, posiblemente las ratas con mayor sensibilidad
+ al timeout han cooperado mas para evitar los castigos.
+ La sensibilidad a altos valores de cooperación de la entrega de refuerzos
+ se puede calcular y ajustar teóricamente modificando los valores de la
+ matriz de pago, como por ejemplo R=4 y T=6, pero incrementar las cantidades
+ de refuerzo implica una degradación en la apreciación efectiva por parte
+ de los animales, ya que está demostrado que los animales pueden discriminan
+ linealmente linealmente pequeñas cantidades y alinealmente cantidades mayores.(K
+illeen, 1982a, Equation 4; McDowell and Kessel, 1979)
 \end_layout
 
 \begin_layout Standard
 En el experimento de reversión se comprobó que el alto desempeño de las
  ratas se debió al aprendizaje a partir de la interacción con la estrategia
  del oponente y en consecuencia del refuerzo recibido; y no por una mera
- preferencia de palanca.
+ preferencia de palanca, ya que las ratas que habían aprendido un el comportamie
+ntos óptimo lo modificaron con el cambio de contingencia de las palancas.
 \end_layout
 
 \begin_layout Standard
@@ -7748,8 +7743,8 @@ Nuestros resultados sugieren que las ratas de la cepa Long-evans tiene la
  Los diagramas de cadenas de Markov confirman los hecho, al mostrar que
  los animales obtenían altas probabilidades de cooperación mutua y bajas
  respecto a la transición de S(sucker) a T(temptation).
- Siendo S el estado donde la experimental eligió cooperar y el oponente
- no y T la situación inversa.
+ Siendo S el estado donde la rata elige cooperar y el oponente no y T la
+ situación inversa.
  Esta es la principal discrepancia respecto a los diagramas de cadenas de
  markov presentados en el trabajo de Moita 
 \begin_inset CommandInset citation
@@ -7772,7 +7767,11 @@ key "viana2010cognitive"
 \end_inset
 
 .
- En estudios previos con iPD se ha evaluado el comportamiento de pájaros
+ 
+\end_layout
+
+\begin_layout Standard
+En estudios previos con iPD se ha evaluado el comportamiento de pájaros
  en diversas condiciones 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -7780,7 +7779,8 @@ key "stephens2002discounting"
 
 \end_inset
 
-, a lo que Danchin y colegas 
+ logrando niveles significativos de cooperación al utilizar secuencias de
+ acumulación de refuerzo, que luego Danchin y colegas 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "kefi2007accumulated"
@@ -7794,13 +7794,6 @@ key "kefi2007accumulated"
  Por otro lado, en estos experimentos antes de casa sesión se utiliza un
  entrenamiento para aumentar la preferencia a cooperar, matriz de mutualismo
  que rompe con la imparcialidad del experimento en el aprendizaje.
- 
-\series bold
-\color red
-Animales hambreados 
-\series default
-\color inherit
-.
  Otros trabajos relativos a este 
 \begin_inset CommandInset citation
 LatexCommand cite

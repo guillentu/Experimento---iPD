@@ -1,0 +1,45 @@
+'colormap' is a function from the file /usr/share/octave/4.0.2/m/image/colormap.m
+
+ -- Function File: CMAP = colormap ()
+ -- Function File: CMAP = colormap (MAP)
+ -- Function File: CMAP = colormap ("default")
+ -- Function File: CMAP = colormap ("MAP_NAME")
+ -- Function File: CMAP = colormap (HAX, ...)
+ -- Command: colormap MAP_NAME
+ -- Function File: CMAPS = colormap ("list")
+ -- Function File: colormap ("register", "NAME")
+ -- Function File: colormap ("unregister", "NAME")
+     Query or set the current colormap.
+
+     With no input arguments, 'colormap' returns the current color map.
+
+     'colormap (MAP)' sets the current colormap to MAP.  The colormap
+     should be an N row by 3 column matrix.  The columns contain red,
+     green, and blue intensities respectively.  All entries must be
+     between 0 and 1 inclusive.  The new colormap is returned.
+
+     'colormap ("default")' restores the default colormap (the 'jet' map
+     with 64 entries).  The default colormap is returned.
+
+     The map may also be specified by a string, "MAP_NAME", where
+     MAP_NAME is the name of a function that returns a colormap.
+
+     If the first argument HAX is an axes handle, then the colormap for
+     the parent figure of HAX is queried or set.
+
+     For convenience, it is also possible to use this function with the
+     command form, 'colormap MAP_NAME'.
+
+     'colormap ("list")' returns a cell array with all of the available
+     colormaps.  The options "register" and "unregister" add or remove
+     the colormap NAME from this list.
+
+     See also: jet.
+
+Additional help for built-in functions and operators is
+available in the online version of the manual.  Use the command
+'doc <topic>' to search the manual index.
+
+Help and information about Octave is also available on the WWW
+at http://www.octave.org and via the help@octave.org
+mailing list.

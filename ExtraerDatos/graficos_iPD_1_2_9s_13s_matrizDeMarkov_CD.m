@@ -474,7 +474,7 @@ for i=1:_nSujetos
   hold off;grid on;
   name=strcat("figura_iPD_1_2_9s_13s/fig_finales/prob_C_dado_X/",_txtSujetos(i,:));
   name=strcat(name,".png");
-  print(hhh, name);
+  %print(hhh, name);
 endfor
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%55
 % grafico Alimentos versus Cooperacion
@@ -782,7 +782,7 @@ aa=legend("Simulated","rats");
 hold off;
 name="figura_iPD_1_2_9s_13s/fig_finales/coefficientOfPreference2.png";
 %name=strcat(name,".png");
-print(hhh, name);
+%print(hhh, name);
 
 
 

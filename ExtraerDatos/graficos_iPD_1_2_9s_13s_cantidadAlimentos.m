@@ -65,7 +65,7 @@ t=text(-.37+[1:_nSujetos], 0.55*ones(1,_nSujetos) , ptrn, "fontsize", 14);
 axis([0,13,0.48,1.05],"square");legend("SEM","MEAN");
 hold off;
 name=strcat("figura_iPD_1_2_9s_13s/fig_finales/mean_reward",".png");
-print(hhh, name);
+%print(hhh, name);
 %%%%%%%%%%%%%%%%  GRAPH OF TIMTEOUT   %%%%%%%%%%%%%%%%55
 hhh=figure;
 h=errorbar([1:_nSujetos],(_timeOutMedia-_timeoutITI)./_timeoutLimit,_timeOutSem,'*b');set (h, "linewidth", 2);
@@ -80,7 +80,7 @@ t=text(-.25+[1:_nSujetos], 0.1*ones(1,_nSujetos) , ptrn, "fontsize", 14);
 axis([0,13,0,1],"square");
 legend("SEM","MEAN");
 hold off;
-name=strcat("figura_iPD_1_2_9s_13s/fig_finales/mean_timeout",".png");
+%name=strcat("figura_iPD_1_2_9s_13s/fig_finales/mean_timeout",".png");
 print(hhh, name);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
