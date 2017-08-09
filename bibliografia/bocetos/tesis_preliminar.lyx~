@@ -257,7 +257,7 @@ matriz de pago
  comportamiento (estrategia) podrá sobrevivir al enfrentarse a otras estrategias
  (Smith, 1974).
  La mejor estrategia cuando el 2x2 PD es jugado por única vez es la no cooperaci
-ón.
+ón (Doebeli & Hauert 2005).
  No obstante, cuando se juega por tiempo indefinido y los valores de la
  matriz cumplen con que 
 \begin_inset Formula $T>R>P>S$
@@ -1695,7 +1695,7 @@ reference "sub:Non-cooperator-subject"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1758,7 +1758,7 @@ name "fig1_meansAnd significance"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1780,8 +1780,8 @@ Reward mean
 
 \size scriptsize
 \begin_inset Graphics
-	filename ../../ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/mean_reward.png
-	lyxscale 35
+	filename /home/guille/Documents/github_Repository/experimento/Experimento---iPD/ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/mean_reward.eps
+	lyxscale 70
 	width 45text%
 
 \end_inset
@@ -3719,7 +3719,7 @@ reference "outcomes rate"
 placement p
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Float figure
@@ -3774,7 +3774,7 @@ name "fig_meanC_strategy"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -7605,64 +7605,135 @@ name "sec:Discussion-and-conclusions"
 
 \begin_layout Standard
 El altruismo reciproco es un comportamiento cooperativos en el cual se requiere
- de reciprocidad para garantizar la supervivencia en el entorno.
+ de reciprocidad para beneficiar la supervivencia en el entorno.
  Esto significa que se requiere de un individuo que desarrolle un acto cooperati
 vo, costoso, en beneficio de otro y luego un segundo individuo que beneficie
  al primero, la reciprocidad.
- Sin ello, no existe altruismos reciproco o, dicho de otro modo, no existe
- la maximización del refuerzo a largo plazo.
- Desde los años 70's con los trabajos de Trivers, se ha evaluado el aprendizaje
- del comportamiento altruista a través del Dilema del Prisionero en animales
- con diferentes capacidades cognitivas.
- Actualmente se conoce que estos comportamientos están bien arraigados en
- humanos y monos, pero aun no se logró entender si animales, como pájaros
- o ratas, efectivamente logran aprender el comportamientos.
+ Desde los años 70's con los trabajos de
+\emph on
+ Trivers
+\emph default
+, se ha evaluado el aprendizaje del comportamiento altruista a través del
+ Dilema del Prisionero en animales con diferentes capacidades cognitivas.
+ En el Dilema del Prisionero iterado (iPD) , donde dos jugadores se enfrentan,
+ se desarrolla altruismo reciproco cuando la frecuencia de cooperación mutua
+ es mayor que la elección de la recompensa inmediata (tentación).
+ En experimentos de laboratorios con humanos y monos 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "baker2002teaching,stewart2007altruism,hauser2003give,de2000attitudinal,yi2007relationship"
+
+\end_inset
+
+ se han logrado niveles de reciprocidad altruista que hasta el momento no
+ habían sido visto en ratas o pájaros, sin modificar modificar la matriz
+ de pago o potenciar la preferencia por un comportamiento.
+ En este trabajo se muestra por primera vez que es posible alcanzar alto
+ niveles de cooperación y cooperación mutua en ratas donde aprenden que
+ la mejor opción es cooperar cuando el oponente es reciproco.
  
 \end_layout
 
 \begin_layout Standard
-Posiblemente, los animales fallan en la resolución del iPD debido a que
- no logran discernir las cantidades entre los refuerzos percibidos productos
- de los distintos comportamientos (secuencia de elecciones).
- En los trabajos citados, se utilizan matrices de pago similares con poco
- contrastes, como por ejemplo 4 pellets para cooperación mutua (R) y 6 pellets
- para traición (T, la rata experimental elige no cooperar y el oponente
- cooperar), que de acuerdo con los modelos de incentivos, como los de Killen
+En los trabajos publicados donde los animales, al enfrentarse a un oponente
+ reciproco con una matriz de iPD, no han aprendido que la alta preferencia
+ por cooperación maximiza el refuerzo, posiblemente se deba a que no han
+ logrado discernir los tamaños entre los refuerzos percibidos por los distintos
+ comportamientos (secuencia de elecciones) y el motivo de esto subyace en
+ que las matrices de paga utilizadas presentan poco contraste entre refuerzos
+ positivos y negativos 
 \emph on
- 
+
 \begin_inset CommandInset citation
 LatexCommand cite
 key "killeen1985incentive,killeen1982incentive,mcdowell1979multivariate"
 
 \end_inset
 
-,
+
 \emph default
- son magnitudes difíciles de discriminar por los animales luego de varias
- iteraciones.
- Sosteniendo esta hipótesis para la asignación de refuerzos y castigos,
- en nuestro experimento se utilizaron cantidades pequeñas de refuerzos apetitivo
+ (como por ejemplo 4 pellets para cooperación mutua (R) y 6 pellets para
+ traición T, donde la rata experimental elige no cooperar y el oponente
+ cooperar).
+ En nuestro experimento se utilizaron cantidades pequeñas de refuerzos apetitivo
 s pero significativamente diferentes, el refuerzo en el estado T fue el
  doble que en R y con el mismo criterio para los castigos a comportamientos
  egoístas se asignó para el estado P, no cooperación mutua, tiempos de espera
- (timeout) que fue la mitad del recibido en el estado S, donde la rata experimen
-tal coopera y el oponente no.
+ (
+\emph on
+timeout
+\emph default
+) que fue la mitad del recibido en el estado S, donde la rata experimental
+ coopera y el oponente no.
  Este diseño de la matriz de pago para el Dilema del prisionero mostró que
  las ratas logran desarrollar altos niveles de cooperación al enfrentarse
  a oponentes recíprocos, alcanzando niveles de cooperación promedio por
- encima del 85% y un vector de transición de estado medio que sostiene la
- tendencia, ya que representa la probabilidad de cooperar dada las elecciones
- del ultimo encuentro y todas sus componentes de probabilidad estuvieron
- arriba del 80%.
+ encima del 85% (fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig1_meansAnd significance"
+
+\end_inset
+
+) y un vector de transición de estado medio que sostiene la tendencia, ya
+ que representa la probabilidad de cooperar dada las elecciones del ultimo
+ encuentro y todas sus componentes de probabilidad estuvieron en o arriba
+ del 80% (fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_meanC_strategy"
+
+\end_inset
+
+).
  Esto indicó que al enfrentarse a un oponente cooperador, las ratas aprendieron
- que la menor estrategia es cooperar.
+ que la mejor estrategia es cooperar.
 \end_layout
 
 \begin_layout Standard
-En base a los resultados obtenidos, se puede sostener que son el contraste
- entre recompensas y entre castigos una de las claves principales para que
- los animales logren conectar comportamientos con refuerzos y consecuentemente
- encontrar la estrategia óptima.
+En base a los resultados obtenidos con este protocolo, se puede sostener
+ que son el contraste entre recompensas y entre estímulos aversivos una
+ de las claves principales para que los animales logren conectar comportamientos
+ con refuerzos y consecuentemente encontrar la estrategia óptima.
+ En el experimento de reversión se comprobó que el alto desempeño de las
+ ratas se debió al aprendizaje a partir de la interacción con la estrategia
+ del oponente y en consecuencia del refuerzo recibido; y no por una mera
+ preferencia de palanca, ya que las ratas que habían aprendido el comportamiento
+s óptimo lo modificaron con el cambio de contingencia de las palancas para
+ volver a aprender iPD.
+\end_layout
+
+\begin_layout Standard
+Los comportamientos de los animales se pueden estimar observando las frecuencias
+ de los estados del diagrama de cadena de markov.
+ Considerando el juego contra un oponente tit for tat, si un animal muestra
+ todos los estados con la misma frecuencia, en este caso 0.25 por estar normaliza
+da, indica que realizó elecciones aleatorias con distribución uniforme.
+ Si se desarrolla una estrategia alternando entre cooperar y no cooperar
+ los estados mas frecuentas serían S y T, con probabilidad 0.5.
+ En la fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "outcomes rate"
+
+\end_inset
+
+ se observa que el estado medio mas probable resultados del entrenamiento
+ en iPD fue R, indicando que los comportamientos aprendidos no eran aleatorios
+ y que junto con las probabilidades condicionales de cooperar dado el estado
+ anterior se deduce que los animales permanecían en la elección cooperadora,
+ fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_meanC_strategy"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -7711,109 +7782,131 @@ switch CD
 \begin_layout Standard
 Se observó que todas las ratas tuvieron una baja dispersión en los valores
  de refuerzos (85% a 100%) en comparación con los rango de cooperación (65%
- a 100%), demostrando que a altos valores de cooperación entender diferencias
- en los refuerzo obtenidos se vuelve una tarea difícil en iPD.
+ a 100%), demostrando que a altos valores de cooperación aprender diferencias
+ en los refuerzo obtenidos se vuelve una tarea difícil, fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig_rewardVScoop"
+
+\end_inset
+
+.
  Estos resultados indican que la entrega de refuerzos es poco sensible a
  cambios sobre altos niveles de cooperación y, en está situación, el castigo
  en tiempo es posiblemente quien module la elección.
  Nosotros encontramos que 5 de 8 ratas estuvieron por debajo del 30% del
  total de castigo acumulado, posiblemente las ratas con mayor sensibilidad
- al timeout han cooperado mas para evitar el castigo.
- Los altos niveles de cooperación puede explicarse por el uso de valores
- pequeños y el alto contraste entre refuerzos y entre castigos, que permitió
- una disminución en el rango donde la discriminación respuesta-refuerzo
- se vuelve difícil.
- La sensibilidad sobre altos valores de cooperación en la entrega de refuerzos
- se puede calcular y ajustar teóricamente modificando los valores de la
- matriz de pago, como por ejemplo R=4 y T=6, pero incrementar las cantidades
- de refuerzo implica una degradación en la apreciación efectiva por parte
- de los animales, ya que está demostrado que los animales pueden discriminan
- linealmente linealmente pequeñas cantidades y alinealmente cantidades grandes.(K
-illeen, 1982a, Equation 4; McDowell and Kessel, 1979)
+ al timeout han cooperado mas para evitar los castigos.
+ Teóricamente se puede ajustar la matriz de pago para aumenta la sensibilidad
+ al cambio de nivel de cooperación, como por ejemplo R=4 y T=6, pero incrementar
+ las cantidades de refuerzo implica una degradación en la apreciación efectiva
+ por parte de los animales, ya que está demostrado que los animales pueden
+ discriminan linealmente pequeñas cantidades y alinealmente cantidades mayores.(
+\begin_inset CommandInset citation
+LatexCommand cite
+key "killeen1982incentive"
+
+\end_inset
+
+ eq.
+ 4; 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "mcdowell1979multivariate"
+
+\end_inset
+
+)
 \end_layout
 
 \begin_layout Standard
-En el experimento de reversión se comprobó que el alto desempeño de las
- ratas se debió al aprendizaje a partir de la interacción con la estrategia
- del oponente y en consecuencia del refuerzo recibido; y no por una mera
- preferencia de palanca.
-\end_layout
-
-\begin_layout Standard
-Nuestros resultados sugieren que las ratas de la cepa Long-evans tiene la
- capacidad cognitiva para encontrar la mejor estrategia en el iPD cuando
- el oponente es reciproco y se utiliza una matriz adecuada de refuerzos.
+Nuestros resultados sugieren que las ratas tiene la capacidad cognitiva
+ para encontrar la mejor estrategia en el iPD cuando el oponente es reciproco
+ y se utiliza una matriz adecuada de refuerzos.
  Los diagramas de cadenas de Markov confirman los hecho, al mostrar que
  los animales obtenían altas probabilidades de cooperación mutua y bajas
  respecto a la transición de S(sucker) a T(temptation).
- Siendo S el estado donde la experimental eligió cooperar y el oponente
- no y T la situación inversa.
- Esta es la principal discrepancia respecto a los diagramas de cadenas de
- markov presentados en el trabajo de Moita 
+ Siendo S el estado donde la rata actor elige cooperar y el oponente no
+ y T la situación inversa.
+ Esta es la principal discrepancia con trabajos anteriores (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "baker2002teaching,clements1995testing,flood19832,gardner1984prisoner,green1995prisoner,marquez2015prosocial,mesterton2002economics,stephens2001adaptive,stephens2006effects,stevens2004economic,wood2016cooperation"
+
+\end_inset
+
+citas); 
+\emph on
+i.e.,
+\emph default
+ en el trabajo previo 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "viana2010cognitive"
 
 \end_inset
 
-, donde los animales aprendían evolutivamente que la mejor estrategia era
- saltar entre los estados S y T con mayor frecuencia que de R a R (cooperación
- mutua).
- Indicando que las ratas adoptan un comportamiento en orden de obtener el
- máximo refuerzo inmediato sin importar los castigos.
- Esto se puede demostrar evolucionando los diagramas de markov presentes
- en el trabajo de Moita 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "viana2010cognitive"
-
-\end_inset
-
-.
+ se presentan resultados que indican que las ratas adoptan un comportamientos
+ mas cooperativo cuando se el oponente es reciproco, los diagramas de cadenas
+ de markov muestras que los animales aprendían un estrategia basada en saltar
+ entre los estados S y T con mayor frecuencia que de R a R (cooperación
+ mutua), indicando que las ratas adoptan un comportamiento no cooperativo
+ en orden de obtener el máximo refuerzo inmediato sin importar los castigos.
  
 \end_layout
 
 \begin_layout Standard
-En estudios previos con iPD se ha evaluado el comportamiento de pájaros
- en diversas condiciones 
+En estudios previos, también se evaluó el aprendizaje de iPD en pájaros
+ bajo diversas condiciones, donde se logró niveles significativos de cooperación
+ al utilizar secuencias de acumulación de refuerzo 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "stephens2002discounting"
 
 \end_inset
 
- logrando niveles significativos de cooperación al utilizar secuencias de
- acumulación de refuerzo, que luego Danchin y colegas 
+, sin embargo luego fueron criticados argumentando que los bloques de acumulació
+n propuestos en los experimentos de iPD modifican la matriz de pago, convirtiénd
+ola en una matriz del juego Cazador de venado (donde la ganancia en el estado
+ de traición (T) deja de ser el refuerzo mayor a corto plazo, R>T≥P>S)
 \begin_inset CommandInset citation
 LatexCommand cite
 key "kefi2007accumulated"
 
 \end_inset
 
- han realizados críticas argumentando que los bloques de acumulación propuestos
- en los experimentos de iPD modifican la matriz de pago, convirtiéndola
- en una matriz del juego Cazador de venado (donde la ganancia en el estado
- de traición (T) deja de ser el refuerzo mayor a corto plazo, R>T≥P>S).
+.
  Por otro lado, en estos experimentos antes de casa sesión se utiliza un
  entrenamiento para aumentar la preferencia a cooperar, matriz de mutualismo
  que rompe con la imparcialidad del experimento en el aprendizaje.
- Otros trabajos relativos a este 
+ Otros trabajos relativos muestran que parejas hembra-macho de aves zebra
+ finches han logrado altos niveles de cooperación solo si son previamente
+ entrenarlos con una matriz de mutualizmo, que aumenta la preferencia de
+ la opción cooperadora 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "st2009long"
+
+\end_inset
+
+.
+ En ratas también se evaluó el comportamiento cooperativo entre animales
+ del mismo sexo, con-especificas y criadas en la misma jaulas sin lograr
+ niveles significativos de cooperación 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "wood2016cooperation"
 
 \end_inset
 
- han evaluado el comportamiento cooperativo entre ratas del mismo sexo,
- machos y hembras, con-especificas y criadas en la misma jaulas sin lograr
- niveles significativos de cooperación.
+.
 \end_layout
 
 \begin_layout Standard
-El presente trabajo es el primero en mostrar que es posible alcanzar alto
- niveles de cooperación y cooperación mutua, además de mostrar que las ratas
- aprenden que es mas conveniente volver a cooperar cuando el oponente es
- reciproco.
+El presente trabajo se mostró que es posible alcanzar alto niveles de cooperació
+n y cooperación mutua en ratas, además de mostrar que aprenden que la estrategia
+ mas conveniente es volver a cooperar cuando el oponente es reciproco.
  
 \end_layout
 
