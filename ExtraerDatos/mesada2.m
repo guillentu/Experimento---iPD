@@ -1,4 +1,4 @@
-_vRefuerzos=[4 6 0 0];
+_vRefuerzos=[5 6 0 1];
 _vDelay4eat=[5 5 9 13];%[cc dc cd dd] [R T S P]
 %_timeoutLimit=10*0+10*8+10*4;%10*5+10*13+10*9;% 270s en 30trials  %195; %13*15 or T+29*P=
 %_timeoutITI=30*5;
