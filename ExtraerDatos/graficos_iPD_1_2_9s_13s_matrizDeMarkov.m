@@ -366,7 +366,8 @@ endfor
 
 
 
-T2(:,:)=T(:,:)/length(_trialIni:_trialFin);R2(:,:)=C(:,:)/length(_trialIni:_trialFin);P2(:,:)=P(:,:)/length(_trialIni:_trialFin);S2(:,:)=S(:,:)/length(_trialIni:_trialFin);
+T2(:,:)=T(:,:)/length(_trialIni:_trialFin);R2(:,:)=C(:,:)/length(_trialIni:_trialFin);
+P2(:,:)=P(:,:)/length(_trialIni:_trialFin);S2(:,:)=S(:,:)/length(_trialIni:_trialFin);
 %%%%%%%%%%%%%%%%%%%%%%%%% 
 %% Frecuencia de ESTADOS ULTIMOS 10 SESIONES - POR SUJETOS
 %for i=1:_nSujetos
@@ -412,7 +413,7 @@ _sujetosNocooperadores=complemento(_sujetosCooperadores,[1:_nSujetos]);
 QmediaC=zeros(4,4);
 QmediaD=zeros(4,4);
 for i=_sujetosCooperadores
-  QmediaC=QmediaC+Q(:,:,i);
+  QmediaC=QmediaC+Q2(:,:,i);
 endfor
 QmediaC=QmediaC./sum(QmediaC,2);
 

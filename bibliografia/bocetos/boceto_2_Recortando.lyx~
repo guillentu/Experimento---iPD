@@ -384,6 +384,15 @@ key "viana2010cognitive,stephens2002discounting,stevens2004economic,kefi2007accu
 \end_layout
 
 \begin_layout Standard
+
+\color green
+Aca se estudia si las ratas pueden aprender iPD utilizando una matrsi refuerzo
+ positivo y timeout cmo refuerzo negativo
+\end_layout
+
+\begin_layout Standard
+
+\color red
 In the aforementioned previous studies, animals maybe don't learn iPD probably
  due to the fact that the reinforcement and punishment are inadequate and
  stimulus contingency not match with the natural acquisition capability
@@ -393,11 +402,6 @@ In the aforementioned previous studies, animals maybe don't learn iPD probably
  can keep in mind or maybe they don't realized the real difference within
  outcomes in the pay-off matrix.
  
-\end_layout
-
-\begin_layout Standard
-We found that rats achieve high level of reciprocal altruism behavior using
- a combination of pay-off matrix and timeout punishment.
 \end_layout
 
 \begin_layout Section
@@ -5843,6 +5847,10 @@ reference "table_meanAndstrategies"
 
 .
  
+\end_layout
+
+\begin_layout Standard
+.
 \end_layout
 
 \begin_layout Standard

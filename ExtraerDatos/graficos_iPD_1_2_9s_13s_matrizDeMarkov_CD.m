@@ -600,21 +600,21 @@ _delay2eat=(_timeOutMedia-_timeoutITI)./_timeoutLimit;
 hhh=figure;
 aux=I(find(sort(foodMedia)>0.8));
 h=scatter(_delay2eat(aux),foodMedia(aux),20, _mediaXsujeto(aux),"filled");
-ch=colormap(copper);
+ch=colormap(gray);
 h=colorbar('southoutside');
 hold on;
 %h=errorbar(_delay2eat(I(find(sort(foodMedia)>0.8)))./_timeOutMedia,foodMedia(I(find(sort(foodMedia)>0.8))),,'*k');
 %set(hhh, "linewidth", 2);
 hh=ylabel("% of total Reward");
-set(hh, "fontsize", 14);
+set(hh, "fontsize", 16);
 hh=xlabel("% total acumulated Timeout per sessions");
-set(hh, "fontsize", 14);
+set(hh, "fontsize", 16);
 hh=title("Reward versus Timeout to eat (colorbar=cooperation)"); 
-set(hh, "fontsize", 14);
+set(hh, "fontsize", 16);
 grid on;
 t=text(0.02*[-1 -1 0 -1 -1 0 -1 -1]+_delay2eat(aux),-0.04*[1 1 1 1 1.2 -.8 1 -1]+foodMedia(aux),_txtSujetos(aux,:));
 %axis('auto');
-axis([-.04, 1.1, .5, 1.1], "square");
+axis([-.04, 1.1, .5, 1.1]);
 hold on;
 h=scatter((_idealSujeto(2,[1 3 4 5 6 7])-_timeoutITI)./_timeoutLimit,_idealSujeto(1,[1 3 4 5 6 7]),15,probC([1 3 4 5 6 7])','s',"filled");
 h=scatter((_idealSujeto(2,[1 3 4 5 6 7])-_timeoutITI)./_timeoutLimit,_idealSujeto(1,[1 3 4 5 6 7]),15,'k','s',"linewidth",2);
@@ -625,7 +625,7 @@ t=text(-0.10*[1 1 1 1 0.2 1.5]+(_idealSujeto(2,[1 3 4 5 6 7])-_timeoutITI)./_tim
 t=text(-0.10*[1 1 1 1 0.2 1.5]+ (_idealSujeto(2,[1 3 4 5 6 7])-_timeoutITI)./_timeoutLimit,
        0.03*[1 1 1 1 1 1]+ _idealSujeto(1,[1 3 4 5 6 7]),
        {"coop 0.5";"coop 0.5";"coop 0.5";"coop 0.5";"coop 0.66%";"coop 0.75%"}); 
-t=text(0.1,0.3,{"Normalized amoung of C choice"},"fontsize",14);       
+t=text(0.1,0.3,{"Normalized amoung of C choice"},"fontsize",16);       
 hold off;
 
 

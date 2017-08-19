@@ -1,0 +1,1670 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="http://www.nongnu.org/elyxer/">
+<meta name="create-date" content="2017-08-11">
+<link rel="stylesheet" href="http://elyxer.nongnu.org/lyx.css" type="text/css" media="all">
+<title>Aprendizaje de Altruismo Recíproco en Animales y Máquinas Inteligentes</title>
+</head>
+<body>
+<div id="globalWrapper">
+<h1 class="title">
+Aprendizaje de Altruismo Recíproco en Animales y Máquinas Inteligentes
+</h1>
+<h2 class="author">
+Ing. Delmas Guillermo Ezequiel
+</h2>
+<div class="Right">
+Instituto de Ingeniería Biomédica - UBA
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-None.1">None.1</a> Introdicción
+</h2>
+<div class="Unindented">
+Desde que la teoría Evolutiva de Darwin fue propuesta, explicar los rasgos cooperativos animales y humanos fue un desafío. A fin de poder explicar comportamientos altruistas a través de selección natural surgieron dos nuevas teorías: la teoría de Selección por castas, propuesta por Hamilton <span class="bibcites">[<a class="bibliocite" name="cite-1" href="#biblio-1"><span class="bib-index">1</span></a>]</span> y la teoría de Altruismo Reciproco desarrollada por Trivers <span class="bibcites">[<a class="bibliocite" name="cite-33" href="#biblio-33"><span class="bib-index">33</span></a>]</span>. En la biología evolutiva, el altruismo reciproco es el comportamientos por el cual un organismo desarrollo una conducta que, si en ocasiones, resulta costosa para el actor y beneficiosa para el receptor y en otras al actor es el beneficiado, reciprocidad, el par o grupo obtendrá una recompensa mayor a largo plazo que si hubieran optado por conductas egoístas.
+</div>
+<div class="Indented">
+La teoría de selección por casta, <i>Kin selection</i>, utilizada por primera vez por Maynar Smith <span class="bibcites">[<a class="bibliocite" name="cite-26" href="#biblio-26"><span class="bib-index">26</span></a>]</span>, explica como los comportamientos altruistas entre individuos genéticamente relacionados pueden ser explicados por selección natural. A diferencia de esta, la teoría de Altruismo Reciproco de Trivers considera los comportamientos altruistas entre individuos no relacionados y exlica como la selección favorece al altruismo reciproco a largo plazo cuando existe reciprocidad en el comportamiento. Uno de los ejemplos mas conocidos acerca de este tipo de cooperación son los estudios de Wilkinson <span class="bibcites">[<a class="bibliocite" name="cite-35" href="#biblio-35"><span class="bib-index">35</span></a>]</span>, donde observa que los murciélagos vampiros comparten parte del alimento obtenido con pares que previamente han compartido los oportunamente logrado.
+</div>
+<div class="Indented">
+Las investigaciones sobre cooperación entre organismos no relacionados tomó un nuevo impulso luego de que Trivers conectará los comportamientos altruistas con el juego matemático Dilema del Prisionero (PD)(originalmente desarrollado por Merrill Flood and Melvin Dresher en 1950). El PD es un juego definido por una matriz de 2x2 que involucra a dos jugadores quienes deben elegir entre dos opciones o comportamientos, cooperar o no cooperar. En cada encuentro los jugadores reciben su paga de acuerdo a una <i>matriz de pago</i> y a las elecciones realizadas. Si ambos eligen la opción cooperar ambos recibirán la paga de R (reward) y si ambos eligen no cooperar recibirán una paga menor P (punishment). Sin embargo, si uno coopera y el otro no el primero ganará una paga de S (sucker) y el otro una de T (temptation). En el dilema del prisionero iterado (iPD), las estrategias evolutivamente estable (ESS, von Neumann and Morgenstern, 1944; Nash, 1949) predicen qué comportamiento (estrategia) podrá sobrevivir al enfrentarse a otras estrategias (Smith, 1974). La mejor estrategia cuando el 2x2 PD es jugado por única vez es la no cooperación (Doebeli &amp; Hauert 2005). No obstante, cuando se juega por tiempo indefinido y los valores de la matriz cumplen con que <span class="formula"><i>T</i> &gt; <i>R</i> &gt; <i>P</i> &gt; <i>S</i></span>, <span class="formula">2<i>R</i> &gt; <i>T</i> + <i>P</i></span>, surge una nueva estrategia (llamada en teoría de juegos, <i>Eficiencia de pareto</i>) en la cual, si ambos optan por cooperar, obtendrán a largo plazo una recompensa mayor que hubieran optado por cualquier otra estrategia. Axelrod and Hamilton (1981) mostraron que algunas simbiosis entre organismos pueden ser explicadas a través del modelo de altruismo reciproco y que si los organismos era capaces de recordar los resultados y elecciones de iteraciones (encuentros) pasadas, se despliega una amplio ser de estrategia posible. Los autores presentaron una ESS para iPD que combina robustez y estabilidad con capacidad de sobrevivir, llamada Tit For Tat, basaba en dos reglas simples: <i>empezar cooperando y luego hacer lo mismo que hizo el oponente en la iteración anterior</i>. Esta estrategia, presentada por Anatol Rapoport en el torneo de simulación por computadoras llevado a cabo por Axelrod <span class="bibcites">[<a class="bibliocite" name="cite-22" href="#biblio-22"><span class="bib-index">22</span></a>]</span>, surge como ganadora gracias a su capacidad de supervivencia al enfrentarse a cualquier otra estrategia.
+</div>
+<div class="Indented">
+Se han realizado muchos experimentos para explicar diferentes aspectos de los comportamientos altruistas en animales no humanos, utilizando el Dilemma del Prisionero como paragirma de evaluación. Estudios con monos <i>capuchin</i> en tareas donde debían tirar una vara para dar comida a otro mostraron que los animales modifican el comportamiento de compartir comida de acuerdo a la reputación del oponente y a la calidad del alimento propio y del oponente <span class="bibcites">[<a class="bibliocite" name="cite-18" href="#biblio-18"><span class="bib-index">18</span></a>, <a class="bibliocite" name="cite-5" href="#biblio-5"><span class="bib-index">5</span></a>]</span>. Mientras tanto, utilizando la misma tarea en monos <i>tamarin</i> (<i>Saguinus oedipus</i>) se ha mostrado que su comportamiento cambia de acuerdo a quien fue altruista en el pasado<span class="bibcites">[<a class="bibliocite" name="cite-11" href="#biblio-11"><span class="bib-index">11</span></a>]</span>.
+</div>
+<div class="Indented">
+En comportamientos reciproco las interacciones entre individuos puede ser de a pares, reciprocidad directa <span class="bibcites">[<a class="bibliocite" name="cite-10" href="#biblio-10"><span class="bib-index">10</span></a>]</span> o entre un grupo de individuos, reciprocidad indirecta o generalizada <span class="bibcites">[<a class="bibliocite" name="cite-20" href="#biblio-20"><span class="bib-index">20</span></a>, <a class="bibliocite" name="cite-21" href="#biblio-21"><span class="bib-index">21</span></a>]</span><span class="bibcites">[<a class="bibliocite" name="cite-3" href="#biblio-3"><span class="bib-index">3</span></a>]</span>. Estos tipos de comportamientos fueron evaluados en ratas <span class="bibcites">[<a class="bibliocite" name="cite-23" href="#biblio-23"><span class="bib-index">23</span></a>, <a class="bibliocite" name="cite-24" href="#biblio-24"><span class="bib-index">24</span></a>, <a class="bibliocite" name="cite-25" href="#biblio-25"><span class="bib-index">25</span></a>, <a class="bibliocite" name="cite-6" href="#biblio-6"><span class="bib-index">6</span></a>]</span> mediante una adaptación de la tarea de tira la vara de Waal, donde se mostró que el nivel de cooperación fue mayor en reciprocidad directa con oponentes cooperadores que en los otros tipos de interacción y también cuando el oponente tenia una alta calidad de alimento. Por otro lado, comportamientos pro-sociales han sido estudiados en ratas <span class="bibcites">[<a class="bibliocite" name="cite-12" href="#biblio-12"><span class="bib-index">12</span></a>, <a class="bibliocite" name="cite-16" href="#biblio-16"><span class="bib-index">16</span></a>]</span> señalando que los animales prefieren recibir recompensas en ambientes donde existe interacción social.
+</div>
+<div class="Indented">
+Experimentos con palomas <span class="bibcites">[<a class="bibliocite" name="cite-9" href="#biblio-9"><span class="bib-index">9</span></a>]</span> usando iPD han mostrado que los pájaros son muy impulsivos y prefieren una recompensa inmediata y pequeña a una grande a largo plazo y otros estudios con Jay azules (<i>Cyanocitta cristata</i>) <span class="bibcites">[<a class="bibliocite" name="cite-4" href="#biblio-4"><span class="bib-index">4</span></a>]</span>, también se observó la misma tendencia a no cooperar. En estas investigaciones los animales no cooperan cuando un beneficio inmediato está disponible, aun cuando un beneficio mayor existe y sea conocido (<span class="bibcites">[<a class="bibliocite" name="cite-8" href="#biblio-8"><span class="bib-index">8</span></a>, <a class="bibliocite" name="cite-4" href="#biblio-4"><span class="bib-index">4</span></a>, <a class="bibliocite" name="cite-7" href="#biblio-7"><span class="bib-index">7</span></a>, <a class="bibliocite" name="cite-9" href="#biblio-9"><span class="bib-index">9</span></a>]</span>). Investigaciones posteriores proponen evaluar en el marco del iPD los efectos de recompensas acumuladas y ensayos en ráfaga &ldquo;clumping&rdquo; utilizando blue jays <span class="bibcites">[<a class="bibliocite" name="cite-28" href="#biblio-28"><span class="bib-index">28</span></a>]</span>. Estos experimentos mostraron que los pájaros alcanzaban un nivel de cooperar mayor a los registrados anteriormente. Sin embargo, algunos autores objetaron que la metodología modifica las condiciones del juego <span class="bibcites">[<a class="bibliocite" name="cite-19" href="#biblio-19"><span class="bib-index">19</span></a>]</span>.
+</div>
+<div class="Indented">
+En estudio con ratas machos <span class="bibcites">[<a class="bibliocite" name="cite-34" href="#biblio-34"><span class="bib-index">34</span></a>]</span> utilizando iPD, una combinación de oponentes con estrategia <i>tit for tat</i> forzada y una matriz de pago con refuerzos positivos, pelles, y pinchazos en la cola como castigo, mostraron que los animales son capaces de adaptar su comportamientos de acuerdo a la matriz de pago y a la estrategia del oponente, pero mostraron alcanzarón niveles de cooperación mutua, R, mayores al 50%, indicando que la cooperación mutua no es el estado mas probable. En trabajos recientes se ha evaluado, utilizando el marco de iPD <span class="bibcites">[<a class="bibliocite" name="cite-36" href="#biblio-36"><span class="bib-index">36</span></a>]</span>, los comportamientos cooperativos entre ratas macho y entre hembras conespecíficas long-evans mostraron que entre ratas hembras la cooperación es mayor que entre machos. 
+</div>
+<div class="Indented">
+Una manera útil de representar el comportamientos de un sistema dinámico es mediante los diagramas o cadenas de <i>Markov</i> y su vector de transición de estados asociado. El diagrama se construye conociendo los diferentes estados posible del sistema y las probabilidades condicionales de transición entre estados. El Dilema del prisionero puede ser bien caracterizado considerando los cuatro estados posibles y conociendo las probabilidades condicionales de cooperar y de no cooperar dado el estado anterior. Esto significa que si el comportamiento de reciprocidad altruista es dominante en el juego, las probabilidades condicionales por cooperar dado el estado R o S deben ser cercana a 1, o sea, alta probabilidad de cooperar dado que en la ultimo encuentro ambos cooperaron o el oponente cooperó. Esta herramienta ya a sido utilizada en varios trabajos <span class="bibcites">[<a class="bibliocite" name="cite-34" href="#biblio-34"><span class="bib-index">34</span></a>, <a class="bibliocite" name="cite-28" href="#biblio-28"><span class="bib-index">28</span></a>, <a class="bibliocite" name="cite-30" href="#biblio-30"><span class="bib-index">30</span></a>, <a class="bibliocite" name="cite-13" href="#biblio-13"><span class="bib-index">13</span></a>]</span> para esquematizar los comportamientos animales, pero hasta el momento no se han publicado estudios que muestren una alta tasa de cooperación en iPD. 
+</div>
+<div class="Indented">
+En el presente trabajo se evalúan distintas configuraciones para el juego Dilema del prisionero iterado (iPD) para el estudio de comportamientos cooperativos de carácter altruista, con el fin de estudiar en ratas los principales factores que intervienen en el aprendizaje del comportamiento. Se propuso un marco del dilema del prisionero en el cual se conjuga una matriz de pago que utiliza refuerzos positivos y tiempos de castigo (timeout) con un oponente que desarrolla una estrategia definida por el experimetador. Primero se evaluará en ratas el aprendizaje en iPD con un matriz con alto contraste entre refuerzos positivos y entre negativos y estrategia de oponente que favorece la cooperación, Tit for tat. Luego se presentan los resultados obtenidos en los experimentos donde evaluamos las capacidades de adaptación de las ratas frente a distintos parámetros de juego. Se evaluó la capacidad de adaptar el comportamientos frente una matriz donde económicamente la cooperación no resulta la estrategia óptima y frente a un oponente que desarrolla una estrategia sin reciprocidad al realizar elecciones pseudo aleatorias. Por ultimo, se eliminó el oponente del juego, reemplazándolo por un estímulo luminoso, con el propósito de constatar si el papel social es determinante en la resolución del iPD.
+</div>
+<div class="Indented">
+En base a los antecedentes por simulación de redes neuronales y sumando los resultados obtenidos en experimentos en animales, que dan soporte a la hipótesis de que la cooperación recíproca de carácter altruista se puede establecer si el animal es capaz de aprender por condicionamiento operante, se propuso estudiar matemáticamente la convergencia de aprendizaje de altruismo recíproco en agentes que aprenden por condicionamiento operante (Gutnisky y Zanutto, 2004b; Zanutto y Lew, 2000; Lew et al., 2000; Lew et al., 2001 y Zanutto et al., 2001). Primero se estudiaron los distintos modelos matemáticos existentes, como la teoría de bonificación (Meloration) de Herrnstein (1991), la teoria de asociación de Rescola-Wagner (1972), el principio matemático de reforzamiento (MPR) de Killeen (1994), entre otros. Se desarrolló un modelo matemático basado en los principios de reforzamiento de Killeen (1978, 1984, 1994) para evaluar el aprendizaje en agentes que interactúan reiteradamente dentro del marco del Dilema del prisionero, alterando parámetros internos y externos que definen el sistema de estudio, como la memoria, los tiempos de contingencia entre estímulos recompensa, la intensidad de percepción de los estímulos, la tasa de respuesta, la matriz de iPD, la estrategia del oponente, etc.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-None.2">None.2</a> Material and Method
+</h2>
+<div class="Unindented">
+Los procedimeitnos fueron aprobados por el comite de Etica del IByME-CONICET y fueron conducidos de acuerdo a las guía de cuidad y uso de animales de laboratorio NIH.
+</div>
+<h3 class="Subsection-">
+<a class="toc" name="toc-Subsection--1"></a>Sujetos y cajas experimental
+</h3>
+<h4 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--1"></a>Sujetos
+</h4>
+<div class="Unindented">
+Las ratas utilizadas fueron machos de la cepa Long-Evans (300–330 g) de 2 meses de edad proveídas por el IBYME-CONICET. Se emplearon 12 machos como sujetos experimentales y 6 macho como oponentes. Al tiempo del destete todos los sujetos fueron colocados de a pares en jaulas donde se les permitía interactuar, mientras que cada oponentes se colocaron en jaulas individuales y nunca tuvieron contacto con los experimentales. Los animales fueron alojados en 12 cajas de acero inoxidable acondicionada con aserrín y bebederos con pico metálico. El pesos de las ratas experimentales se mantuvo entre 90-95% de su peso <i>ad-libitum</i> y las oponentes entre el 80-85%. Los animales se mantuvieron en el vivario del laboratorio con ventilación forzada, temperatura controlada a <span class="formula">22±2°<i>C</i></span> con ciclos de luz-noche de 12/12 horas (la luz se encendía a las 8am). Los bebederos fueron habilitados <i>ad libitum</i>. Al finalizar el día (22h) los animales recibieron alimento suplementario a fin de mantener el peso corporal. Los sujetos fueron nombrados en orden: 1A, 2A, 3A, 4A, 5A, 6A, 7A, 8A, 9A, 10A, 3B, 4B.
+</div>
+<h4 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--2"></a>Cajas
+</h4>
+<div class="Unindented">
+Los experimentos fueron realizados durante los ciclos de luz, utilizando una caja operante estándar (MED associates Inc., USA) equipado con el software Med PC IV suit (Product SOF-735) y un PCI Operating Package para 8 cajas (Product MED-SYST-8). Las cajas fueron controladas con dispositivos SmartCtrl (Product DIG-716B), una torre automática dispensadora de pellets calibrados de 45mg (Product ENV-203-45) y un modelo de caja operante estándar (Product ENV 008). Se empleó ruido blanco con densidad espectral de potencia plana para reducir los ruidos del ambiente. Tanto las palancas como los comederos fueron señalizados con estímulos luminosos que se encendían según se requería contingencia. Las cajas fueron equipadas con dos palancas en la pared frontal y para la caja experimental un comedero en el medio y para la caja del oponente un comedero en la pared del fondo. El experimento fue realizado en una caja doble, donde ambas paredes frontales, caja experimental y oponente, fueron enfrentadas. Mediante ventanas metálicas en las paredes frontales, los animales podían tener contacto visual y olfativo, (ver fig. <a class="Reference" href="#fig_box">None.1↓</a>). Las ventanas fueron colocadas debajo de cada para estímulo palanca. La altura de cada ventana fue tal que las palancas quedaran a un 80% de la altura máxima de las patas delanteras (F. Cabrera et al., 2013).
+</div>
+<div class="Indented">
+<div class="center">
+<div class="float">
+<a class="Label" name="Figura-None.1"> </a><div class="figure" style="max-width: 60%;">
+<div class="center">
+<img class="figure" src="Figuras/box.png" alt="figura Figuras/box.png" style="max-width: 540px; max-height: 326px;">
+
+</div>
+<div class="caption">
+Figura None.1 Dual operant chamber equipped with levers, feeders, lights and windows. The size of the chamber was 75cm width and 30cm depth and 35cm height. 
+</div>
+<a class="Label" name="fig_box"> </a>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-None.2.1">None.2.1</a> Procedimientos
+</h3>
+<div class="Unindented">
+A lo largo de todos los experimentos los animales recibieron 2 sesiones por día sin importar la etapa en la que estuviesen. Un Trial típico comenzaba en la oscuridad, que duraba 5 segundos, que representaba el intervalo entre ensayo (o ITI como son sus siglas en ingles) y luego los estímulos luminosos se encendían durante hasta que el animal presionaba un palanca o por 45 segundos. Si una de las palancas eran presionadas, los estímulos de palancas se apagaban y se encendía la luz del comedero, un segundo después el alimento era entregado. Una sesión estándar se comprendía de 30 ensayos. 
+</div>
+<h4 class="Subsubsection">
+<a class="toc" name="toc-Subsubsection-None.2.1.1">None.2.1.1</a> Procedimientos de entrenamientos
+</h4>
+<div class="Paragraph">
+<a class="toc" name="toc-Paragraph-1"></a>Handling
+</div>
+<div class="Unindented">
+AL tiempo de destete, luego de que los animales fueron ubicados en cajas individuales o de a pares, se comenzó el procedimiento de handling para disminuir el estress por la manipulación del experimentados. El procedimiento termino cuando los animales cumplían los 60 días.
+</div>
+<div class="Paragraph">
+<a class="toc" name="toc-Paragraph-2"></a>Acostumbramiento
+</div>
+<div class="Unindented">
+Los animales fueron habituados a las cajas experimentales durante un día en sesioes de 3 minutos. Durante este entrenamientos ningún estimulo luminoso ni refuerzo fue utilizado, solo la luz de fondo fue encendida marcando el comienzo de sesión.
+</div>
+<div class="Paragraph">
+<a class="toc" name="toc-Paragraph-3"></a>Magazine
+</div>
+<div class="Unindented">
+Este entrenamiento duró un día y los animales debían aprender el lugar donde se entregaba alimento. Se utilizó una programa de tasa variable para la entrega de refuerzo y ningún palanqueo fue requerido.
+</div>
+<div class="Paragraph">
+<a class="toc" name="toc-Paragraph-4"></a>Aproximaciones Sucesivas
+</div>
+<div class="Unindented">
+El entrenamiento de presionar la palanca fue realizado a través del procedimiento de aproximaciones sucesivas, &ldquo;<i>Shaping</i>&rdquo; (Mazur, 1994, page 122) sobre una caja simple. La caja fue equipada como se describe arriba y se le colocó una palanca externa. La palanca externa fue utilizada por el experimentador para entregar refuerzos a medida que el animal se aproximaba a la palanca y finalmente cuando presionaba la palanca interna. Si el animla presionaba la palanca interna antes que el experimentador la externa, esta no tenia efecto y el animal se auto entregaba alimento. El entrenamiento terminó cuando la rata realizaba la tarea al menos durante dos sesiones. Procedimientos del ensayo: luego del ITI el estímulo luminoso fue encendido y la palanca retractil fue eyectada, luego si la palanca interna o la externa no fue presionada y transcurrió 45 segundos las luces se apagan y el ensayo finaliza, pero si alguna palanca fue presionada se enciende la luz del comedero y un segundo después se entre un pellets, 5 segundos después la luz se apaga. El procedimientos se desarrollo hasta que la rata llegó a criterio (aproximadamente 2días). El criterio utilizado fue 80% de ensayos con refuerzo. Una vez alcanzado el criterio los animales fuero expuestos a la misma tarea pero con la salvedad deque la palanca ya no se retrae en cada ensayo y si presiona la palanca durante el ITI el animal recibe 2 segundos de castigo.
+</div>
+<div class="Paragraph">
+<a class="toc" name="toc-Paragraph-5"></a>Balanceo de preferencia
+</div>
+<div class="Unindented">
+Los sujetos fueron expuestos a una tarea para encenarles a lasratasque existen dos palancas y balancerar la preferencia. El entrenamiento duró dos días, el primer día la rata estuvo en un de los dos compartimentos de la caja experimental de iPD y durante el segundo día en el otro compartimento. La ventanas fueron cerradas para evitar todo contacto visual y olfativo. La sesión consistió de 16 ensayos, donde durante los primeros 8 ensayos consecutivos una misma palanca entregaba refuerzo y la otra no, y luego en los siguientes ocho la otra palanca entregaba alimento. Que palanca comenzaba entregando alimento fue configurada de forma azarosa. El procedimientos del ensayo fue el mismo que el descripto en el procedimiento anterior.
+</div>
+<div class="Paragraph">
+<a class="toc" name="toc-Paragraph-6"></a>Imitación de estrategia Tit for Tat para oponente
+</div>
+<div class="Unindented">
+El oponente es conducido a desarrollar un estrategia tit for tat a través del aprendizaje de una tarea simple. El oponente aprende a presionar la palanca en el lugar donde se enciende la lus de palanca y de esta forma el programa enciende la luz de acuerdo a la elección anterior de la rata experimental. Para que el refuerzo sea entregado el oponente debía realizar un programa de tasa fija (FR). El par luz palanca fue asignado durante el entrenamiento de forma aleatoria. La asignación aleatoria fue desarrollada por una secuencia pseudo-aleatoria para evitar que se asignara la misma palanca por mas de cuatro veces consecutivas. El entrenamiento en FR se incremento progresivamente: día 1º:FR=2, día 2º y 3º: FR=3, día 4º : FR=4 y finalmente día 5º: FR=5. Si las ratas presionaba la palanca en el ITI eran castigadas con tiempo de espera.
+</div>
+<h4 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--3"></a>Procedimiento para Dilema del Prisionero Iterado
+</h4>
+<div class="Unindented">
+El experimento principal fue diseñado para estudiar el comportamiento de altruismo reciproco a través del juego del dilema del prisionero. Se utilizó una matriz de pago que cumpliese con las sigientes desigualdades <span class="formula"><i>T</i> &gt; <i>R</i> &gt; <i>P</i> &gt; <i>S</i></span> (Temptation, Reward, Punishment and Sucker respectability), <span class="formula">4<i>R</i> &gt; <i>T</i> + 3<i>P</i></span> y <span class="formula">4<i>R</i> &gt; 2<i>T</i> + 2<i>S</i></span>. Los estados T y R se reforzaron positivamente, mientras que P y S fueron castigados con tiempo de espera. La matriz de pago se muestra en la tabla <a class="Reference" href="#table_matrixIPD_C">a↓</a>. Así, si el oponente elige cooperar, C, y el sujeto C o D, el sujeto recibe 1 o 2 pellets de refuerzo. En cambio si el oponent elige no cooperar, D, el experimental recibe 8 o 4 segundos de castigo y no se entregan pellets. El oponente simepre que presiones la palanca recibirá un pellet de refuerzo. La preferencia por dos pellets frenta a un solo fue evaluada y los animales mostraron fuerte preferencia por 2 pellets.
+</div>
+<div class="Indented">
+<div class="float">
+<a class="Label" name="Tabla-None.1"> </a><div class="multitable">
+<div class="caption">
+Tabla None.1 Matriz de pago que: <a class="Reference" href="#table_matrixIPD_C">a↓</a> favorece la cooperación ,<a class="Reference" href="#table_matrixIPD_T3">b↓</a> con T = 3 y <a class="Reference" href="#table_matrixIPD_T4">c↓</a> con T=4 que favorecen la no cooperación.
+</div>
+<span class="float">
+<div class="table">
+<table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top" colspan="2">
+Opponent choice
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+C
+</td>
+<td align="center" valign="top">
+D
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+Subject choice
+</td>
+<td align="center" valign="top" colspan="2">
+
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+C
+</td>
+<td align="center" valign="top">
+1 pellet
+</td>
+<td align="center" valign="top">
+8&rdquo; delay
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+D
+</td>
+<td align="center" valign="top">
+2 pellets
+</td>
+<td align="center" valign="top">
+4&rdquo; delay
+</td>
+
+</tr>
+
+</table>
+<div class="caption">
+(a) Matriz de pago que favorece la cooperación
+</div>
+<a class="Label" name="table_matrixIPD_C"> </a>
+</div>
+
+</span>
+<span class="hfill"> </span><span class="float">
+<div class="table">
+<table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top" colspan="2">
+Opponent choice
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+C
+</td>
+<td align="center" valign="top">
+D
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+Subject choice
+</td>
+<td align="center" valign="top" colspan="2">
+
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+C
+</td>
+<td align="center" valign="top">
+1 pellet
+</td>
+<td align="center" valign="top">
+8&rdquo; delay
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+D
+</td>
+<td align="center" valign="top">
+3 pellets
+</td>
+<td align="center" valign="top">
+4&rdquo; delay
+</td>
+
+</tr>
+
+</table>
+<div class="caption">
+(b) Matriz de pago con T aumentado, favoreciendo la no cooperación
+</div>
+<a class="Label" name="table_matrixIPD_T3"> </a>
+</div>
+
+</span>
+<span class="hfill"> </span><span class="float">
+<div class="table">
+<table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top" colspan="2">
+Opponent choice
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+C
+</td>
+<td align="center" valign="top">
+D
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+Subject choice
+</td>
+<td align="center" valign="top" colspan="2">
+
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+C
+</td>
+<td align="center" valign="top">
+1 pellet
+</td>
+<td align="center" valign="top">
+8&rdquo; delay
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+D
+</td>
+<td align="center" valign="top">
+4 pellets
+</td>
+<td align="center" valign="top">
+4&rdquo; delay
+</td>
+
+</tr>
+
+</table>
+<div class="caption">
+(c) Matriz de pago con T aumentado, que favorece ma no cooperación
+</div>
+<a class="Label" name="table_matrixIPD_T4"> </a>
+</div>
+
+</span>
+
+</div>
+
+</div>
+
+</div>
+<div class="Indented">
+In el experimento de iPD se utilizó la caja doble descripta anteriormente y se permitió el contacto visual y olfativo. Las parejas Experimenta y oponente se asignaron al comienzo del experimento y se mantuvieron a lo largo de todo el experimento. El experimento duró al menos 10 días con 2 sesiones por día. Cada sesión consistió de 30 ensayos y el experimento se detuvo cualdo el animal no mostraba combios en el comportamiento por al menos 10 sesiones.
+</div>
+<h4 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--4"></a>Estructura típica del ensayo en <i>i</i>PD
+</h4>
+<div class="Unindented">
+Secuencia de eventos dentro del ensayo: (1) Estímulos luminosos se encienden indicando el inicio del ensayo. La rata experimental tiene ambas luces encendidas yel oponente son una, según la elección gobernada por la estrategia. (2) Luego que las ratas han realizado su elección las luces se apagan y se calculan los refuerzos. (3) La luz del comedero se enciende y un segundo despues se entrega el refuerzo. Si la rata experimental recibe castigo, su luz de comedero no se enciende pero la del oponente si y este recibe su refuerzo. (5) Luego de transcurrido los 5 segundos de alimentación o por el castigo todas las luces se apagan y el intervalo entre ensayo comienza.
+</div>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-None.2.2">None.2.2</a> Análisis estadístico
+</h3>
+<div class="Unindented">
+Todos los análisis estadísticos fueron desarrollados utilizando las librerias codigo abierto del programa octave.
+</div>
+<h4 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--5"></a>Estabilidad en cooperación
+</h4>
+<div class="Unindented">
+El análisis de la estabilidad en cooperación se realizó utilizando las últimas diéz sesiones de cada individuo. La media de cooperación por sesion fue obtenido contabilizando el número de elecciones de la palanca cooperar a lo largo de cada sesión. Se calcula la media y el error estandar de la media.
+</div>
+<h4 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--6"></a>Probabilidad de cooperación dado cada estado
+</h4>
+<div class="Unindented">
+La probabilidad condicional de cooperar o no cooperar dado cada estado se calculo contabilizando la cantidad de ocurrencias del estado y la cantidad de cooperación cooperaciones o no cooperaciones que lo preceden. La discriminación entre estrategias aleatoreas y no aleatorias se realizó a través del test de bondad de ajuste <span class="formula">χ<sup>2</sup></span> con corrección de bonferroni con valor 0.05/n.
+</div>
+<h4 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--7"></a>Tasa de los diferentes estados
+</h4>
+<div class="Unindented">
+Se utilizó el test Friedman’s ANOVA y comparaciones multiples <i>post-hoc</i> de a pares usando el procedimiento Nemenyi’s /Two-tailed con correción de Bonferroni, 0.0125.
+</div>
+<h4 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--8"></a>Diagrama de cadenas de Markov
+</h4>
+<div class="Unindented">
+El altruismo reciproco se describe perfectamente a través del vector de transición de estado t, r, p, s, que refleja la probabilidad de cooperar dado el resultado del ensayo anterior. Si todas las componentes de vector son .5 , la desición del individuo será irremediablemente aleatoria. El diagrama se markov se construyó a partir de 4 estados (T, R, P, S) y 2 estados (C, D), donde cada estado se conecta con los inmediatamente proximos a traves de una flecha que representa la probabilidad de transisionar de una estado a otro. 
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-None.3">None.3</a> Resultados<a class="Label" name="sec:Results"> </a>
+</h2>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-None.3.1">None.3.1</a> Experimentos con animales en iPD
+</h3>
+<h4 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--9"></a>Dilema del Prisionero Iterado con oponente <a class="Label" name="sub:Iterated-PD-with"> </a>
+</h4>
+<div class="Unindented">
+Los resultados del experimento se muestran a continuación. Evaluar la habilidad para resolver el juego de iPD, es necesario conocer si el animal adopto alguna estrategia definida o simplemente jugo aleatoriamente. El total de sesiones por ratas fue: (<span class="scriptsize">1A/23; 2A/33; 3A/23; 4A/23; 5A/23; 6A/31; 7A/23; 8A/50; 9A/31; 10A/29; 3B/33; 4B/23</span><span class="default">). Se utilizaron los datos de las ultimas 10 sesiones de cada rata. Una estrategia es definida por medio de su vector de transición de estado (<span class="formula"><i>v</i> = [<i>p</i>(<i>c</i>|<i>t</i>), <i>p</i>(<i>c</i>|<i>r</i>), <i>p</i>(<i>c</i>|<i>p</i>), <i>p</i>(<i>c</i>|<i>s</i>)]</span>). Los animales que mantuvieron una estrategia aleatoria mas allá de las primeras 20 sesiones fueron descartadas. Se analizó si una animal presentaba una estrategia diferentes del azar (v=[.5 .5 .5 .5]), utilizando el método de bondad de ajuste de <span class="formula">χ<sup>2</sup></span>sobre las últimas 10 sesiones, ver <a class="Reference" href="#table_meanAndstrategies">None.2↓</a>. Se observo que 8 de 12 ratas (color azul) adoptaron una estrategia determinada y 4 no. La figura <a class="Reference" href="#fig1_meansAnd significance">a↓</a> muestra la media en cooperación para cada rata y los asteriscos indican que rata tuvo diferencia significativa con una aleatoria. Los sujetos 2A, 4A, 5A, 6A fueron removidos por no mostrar diferencias significativas en le test de bondad de ajuste (ver material suplementario <a class="Reference" href="#sub:Non-cooperator-subject">None.6.2↓</a> y los gráficos de cadenas de markov). </span>
+</div>
+<div class="Indented">
+<div class="float">
+<a class="Label" name="Figura-None.2"> </a><div class="multifigure">
+<div class="PlainVisible">
+<div class="center">
+<span class="scriptsize"><span class="hfill"> </span><span class="float">
+<div class="figure" style="max-width: 45%;">
+<div class="PlainVisible">
+<div class="center">
+<span class="scriptsize"><div class="caption">
+(a) <span class="scriptsize">Cooperation mean</span>
+</div>
+<img class="figure" src="ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperation_mean_with_significant.png" alt="figura ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperation_mean_with_significant.png" style="max-width: 1200px; max-height: 900px;">
+</span>
+</div>
+<br>
+<div class="center">
+<span class="scriptsize"><a class="Label" name="fig1_meansAnd significance"> </a></span>
+</div>
+
+</div>
+
+</div>
+
+</span>
+<span class="hfill"> </span><span class="float">
+<div class="figure" style="max-width: 45%;">
+<div class="PlainVisible">
+<div class="center">
+<span class="scriptsize"><div class="caption">
+(b) Reward mean 
+</div>
+</span>
+</div>
+<br>
+<div class="center">
+<span class="scriptsize"><img class="figure" src="mean_reward.png" alt="figura mean_reward.png" style="max-width: 800px; max-height: 600px;">
+</span>
+</div>
+<br>
+<div class="center">
+<span class="scriptsize"><a class="Label" name="meanReward-1"> </a></span>
+</div>
+
+</div>
+
+</div>
+
+</span>
+<span class="hfill"> </span></span>
+</div>
+<br>
+<span class="scriptsize"><div class="caption">
+Figura None.2 <span class="scriptsize"><a class="Reference" href="#fig1_meansAnd significance">a↑</a>)<b>Mean and </b><span class="formula">χ<sup>2</sup></span><b>test</b>: The rats with 95% of free feeding body weight played under a matrix pay-off T=2, R=1,P=4&rdquo;delay, S=8&rdquo;delay against a TFT opponent. We show means of the numbers of times rats chose the cooperate option (<span class="formula"><i>mean</i>±<i>s</i>.<i>e</i>.<i>m</i>.</span>). The Asterisk denote when strategy adopted by a rat had significant difference from chance strategy (<span class="formula">χ<sup>2</sup></span> goodness of fit test with bonferroni corrected, p&gt;0.125). The rats without significant difference did not surpass 0.5 probability of cooperation. <a class="Reference" href="#meanReward-1">b↑</a>) <b>Means of reward.</b> Bar line shows the mean of obtained reward per session over the last 10 session (<span class="formula"><i>mean</i>±<i>s</i>.<i>e</i>.<i>m</i>.</span>). The rats with random strategy (not chi-square significant) obtained the lowest level of reward, below 75% of total reward.</span>
+</div>
+</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="Indented">
+<div class="float">
+<a class="Label" name="Tabla-None.2"> </a><div class="table">
+<a class="Label" name="table_meanAndstrategies"> </a><div class="caption">
+Tabla None.2 <span class="scriptsize">We show the mean of cooperation and the probabilities of cooperation given each outcomes (outcomes: T, R, P and S). The <span class="formula">χ<sup>2</sup></span>goodness of fit with bonferroni correction was performed used a theorical frecuency of 0.5. The significance value show the subject that developed a specific strategy. The subject underlined and in blue text color had significant different respect random strategy. </span>
+</div>
+<span class="scriptsize"><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+<span class="scriptsize">Mean</span>
+</td>
+<td align="center" valign="top" colspan="4">
+Strategies
+</td>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+<span class="scriptsize">Subject</span>
+</td>
+<td align="center" valign="top">
+<span class="scriptsize">cooperation</span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula"><i>p</i>(<i>c</i>|<i>T</i>)</span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula"><i>p</i>(<i>c</i>|<i>R</i>)</span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula"><i>p</i>(<i>c</i>|<i>P</i>)</span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula"><i>p</i>(<i>c</i>|<i>S</i>)</span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula">χ<sub><i>bonferroni</i></sub><sup>2</sup></span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula"><i>p</i> &lt; 0.0125</span></span>
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+<b><span class="tiny"><i><span class="blue">1A</span></i></span></b>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><i><span class="formula">0.671</span></i></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><i><span class="formula">0.599</span></i></span>
+</td>
+<td align="center" valign="top">
+<b><span class="tiny"><i><span class="formula">0.721</span></i></span></b>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><i><span class="formula">0.664</span></i></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><i><span class="formula">0.687</span></i></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><i><span class="formula">17.15</span></i></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><i><span class="blue"><span class="formula">6.583<i>e</i><sup> − 4</sup></span></span></i></span>
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+<b><span class="tiny"><span class="black">2A</span></span></b>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="black"><span class="formula">0.417</span></span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="black"><span class="formula">0.469</span></span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="black"><span class="formula">0.408</span></span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="black"><span class="formula">0.446</span></span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="black"><span class="formula">0.333</span></span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="black"><span class="formula">8.02</span></span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="black"><span class="formula">0.0456</span></span></span>
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+<b><span class="tiny"><span class="blue">3A</span></span></b>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula">0.997</span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula">1</span></span>
+</td>
+<td align="center" valign="top">
+<b><span class="tiny"><span class="formula">0.996</span></span></b>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula">0</span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula">1</span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula">199.30</span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="blue"><span class="formula">0.0000</span></span></span>
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+<b><span class="tiny"><span class="black">4A</span></span></b>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="black"><span class="formula">0.461</span></span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="black"><span class="formula">0.5</span></span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="black"><span class="formula">0.625</span></span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="black"><span class="formula">0.348</span></span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="black"><span class="formula">0.403</span></span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="black"><span class="formula">9.60</span></span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="black"><span class="formula">0.0223</span></span></span>
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+<b><span class="tiny"><span class="black">5A</span></span></b>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="black"><span class="formula">0.386</span></span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="black"><span class="formula">0.359</span></span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="black"><span class="formula">0.408</span></span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="black"><span class="formula">0.351</span></span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="black"><span class="formula">0.459</span></span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="black"><span class="formula">10.42</span></span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="black"><span class="formula">0.0152</span></span></span>
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+<b><span class="tiny"><span class="black">6A</span></span></b>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="black"><span class="formula">0.411</span></span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="black"><span class="formula">0.493</span></span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="black"><span class="formula">0.37</span></span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="black"><span class="formula">0.381</span></span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="black"><span class="formula">0.394</span></span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="black"><span class="formula">8.45</span></span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="black"><span class="formula">0.0375</span></span></span>
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+<b><span class="tiny"><span class="blue">7A</span></span></b>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula">0.886</span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula">0.778</span></span>
+</td>
+<td align="center" valign="top">
+<b><span class="tiny"><span class="formula">0.904</span></span></b>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula">0.857</span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula">0.885</span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula">103.23</span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="blue"><span class="formula">0.0000</span></span></span>
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+<b><span class="tiny"><span class="blue">8A</span></span></b>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula">0.762</span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula">0.638</span></span>
+</td>
+<td align="center" valign="top">
+<b><span class="tiny"><span class="formula">0.75</span></span></b>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula">0.682</span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula">0.864</span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula">49.38</span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="blue"><span class="formula">1.081<i>e</i><sup> − 10</sup></span></span></span>
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+<b><span class="tiny"><span class="blue">9A</span></span></b>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula">0.862</span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula">0.781</span></span>
+</td>
+<td align="center" valign="top">
+<b><span class="tiny"><span class="formula">0.851</span></span></b>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula">0.778</span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula">1</span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula">105.91</span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="blue"><span class="formula">0.0000</span></span></span>
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+<b><span class="tiny"><span class="blue">10A</span></span></b>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula">0.997</span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula">1</span></span>
+</td>
+<td align="center" valign="top">
+<b><span class="tiny"><span class="formula">0.996</span></span></b>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula">0</span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula">1</span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula">199.30</span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="blue"><span class="formula">0.0000</span></span></span>
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+<b><span class="tiny"><span class="blue">3B</span></span></b>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula">0.715</span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula">0.742</span></span>
+</td>
+<td align="center" valign="top">
+<b><span class="tiny"><span class="formula">0.687</span></span></b>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula">0.842</span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula">0.705</span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula">50.51</span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="blue"><span class="formula">6.217<i>e</i><sup> − 11</sup></span></span></span>
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+<b><span class="tiny"><span class="blue">4B</span></span></b>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula">0.966</span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula">0.889</span></span>
+</td>
+<td align="center" valign="top">
+<b><span class="tiny"><span class="formula">0.97</span></span></b>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula">1</span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula">1</span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula">174.45</span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="blue"><span class="formula">0.0000</span></span></span>
+</td>
+
+</tr>
+
+</table>
+</span>
+</div>
+
+</div>
+
+</div>
+<div class="Indented">
+En la figura <a class="Reference" href="#meanReward-1">b↑</a> se muestra el refuerzo promedio por sujeto. Las ratas que mostraron alguna estrategia definida obtiene un nivel de refuerzo entre el 85 a 100% de máximo, a diferencia de las ratas con comportamiento aleatorio que obtuvieron entre un 60 a 70%. 
+</div>
+<div class="Indented">
+<div class="float">
+<a class="Label" name="Figura-None.3"> </a><div class="figure" style="max-width: 60%;">
+<span class="hfill"> </span><img class="figure" src="ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperation_mean_sem_last23session.png" alt="figura ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperation_mean_sem_last23session.png" style="max-width: 1200px; max-height: 902px;">
+<span class="hfill"> </span><div class="caption">
+Figura None.3 <span class="scriptsize">Evolution of cooperation choice from cooperator group data set with the last 23 sessions. The blue and continuous and thicker line is the means per session of the group and the dotter line is the standard error of the mean (<span class="formula"><i>mean</i>±<i>sem</i> = 0.853±0.0681</span>over the las ten sessions). The vertical dotter line mark the pool of data that was used to analyse the strategies adopted by the rats. </span>
+</div>
+<a class="Label" name="fig_evolutionCoop"> </a>
+</div>
+
+</div>
+
+</div>
+<div class="Indented">
+En el gráfico <a class="Reference" href="#fig_evolutionCoop">None.3↑</a> se observa la evolución en cooperación sobre las últimas 23 sesiones de cada rata y la media general del grupo. La media y error cuadrático de la media fue de <span class="formula"><i>mean</i>±<i>sem</i> = 0.853±0.0681</span>.
+</div>
+<div class="Indented">
+Teóricamente, cuando se juega iPD en contra de una oponente con estrategia TFT, la mejor estrategia es siempre cooperar, ya que si se emplea la misma estrategia de TFT cuando uno de los dos falla a la cooperación quedarán no cooperando hasta el final de la sesión. En efecto, una buena estrategia si se falto a la cooperación, se eligió No cooperar, es volver a cooperar. Utilizando el set de animales que mostraron estrategia diferente al azar, se analizaron los comportamientos de cada rata y se observó que todas tienen probabilidades de cooperar dado cada estado por encima de .5, sugiriendo que sus comportamientos tiende a ser cooperativos, ver tabla <a class="Reference" href="#table_meanAndstrategies">None.2↑</a>. La media en cooperación del grupo y s.e.m. fue <span class="formula">0.852±0.0482</span> y las probabilidades condicionales de cooperar promedios fueron:<b> <span class="formula"><i>p</i>(<i>c</i>|<i>T</i>) = 0.794</span>, <span class="formula"><i>p</i>(<i>c</i>|<i>R</i>) = 0.856</span>, <span class="formula"><i>p</i>(<i>c</i>|<i>P</i>) = 0.801</span>, <span class="formula"><i>p</i>(<i>c</i>|<i>S</i>) = 0.890</span></b>, fig. <a class="Reference" href="#fig_meanC_strategy">a↓</a>. En la figura <a class="Reference" href="#outcomes rate">b↓</a> se muestra la frecuencia normalizada para los cuatro estados posibles, se puede apreciar la marcada diferencia del estado R respecto a T, P y S, dando un p signidicativo (<span class="formula"><i>α</i> = 0.0125, <i>p</i> &gt; 3.33<i>e</i> − 5;χ<sup>2</sup> = 23.4</span>) al analizarlo mediante el tes de Friedman’s ANOVA y el procedimiento para múltiples comparaciones de Nemeyi’s indica que el estado R es diferente al resto.
+</div>
+<div class="Indented">
+<div class="float">
+<a class="Label" name="Figura-None.4"> </a><div class="multifigure">
+<span class="float">
+<div class="figure" style="max-width: 45%;">
+<div class="PlainVisible">
+<div class="center">
+<img class="figure" src="ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/mean_cooperation_and_strategy.png" alt="figura ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/mean_cooperation_and_strategy.png" style="max-width: 1200px; max-height: 900px;">
+
+</div>
+<br>
+<div class="center">
+<div class="caption">
+(a) <span class="scriptsize">Mean of cooperation and means of transition vector</span>
+</div>
+
+</div>
+
+</div>
+<a class="Label" name="fig_meanC_strategy"> </a>
+</div>
+
+</span>
+<span class="hfill"> </span><span class="float">
+<div class="figure" style="max-width: 45%;">
+<img class="figure" src="ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/outcomeRate_overLevel.png" alt="figura ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/outcomeRate_overLevel.png" style="max-width: 1200px; max-height: 900px;">
+<div class="caption">
+(b) <span class="scriptsize">Outcomes rates over the last ten sessions.</span>
+</div>
+<a class="Label" name="outcomes rate"> </a>
+</div>
+
+</span>
+<span class="hfill"> </span><span class="float">
+<div class="figure" style="max-width: 40%;">
+<div class="center">
+<img class="figure" src="ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/g26897-6.png" alt="figura ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/g26897-6.png" style="max-width: 459px; max-height: 226px;">
+
+</div>
+<div class="caption">
+(c) <span class="scriptsize">Markov chain graph of four state</span>
+</div>
+<a class="Label" name="fig_4state_markovChain"> </a>
+</div>
+
+</span>
+<span class="hfill"> </span><span class="float">
+<div class="figure" style="max-width: 30%;">
+<img class="figure" src="ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/g33959.png" alt="figura ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/g33959.png" style="max-width: 295px; max-height: 309px;">
+<div class="caption">
+(d) Markov chain graph of two state
+</div>
+<a class="Label" name="fig_2state_markovChain"> </a>
+</div>
+
+</span>
+<span class="hfill"> </span><div class="caption">
+Figura None.4 <span class="scriptsize"><a class="Reference" href="#fig_meanC_strategy">a↑</a>) Mean of cooperation over not random strategy rats (8 rats) was performed and the measured is shown on the first magenta bar (<span class="formula"><i>mean</i> = 0.852</span> and <span class="formula"><i>s</i>.<i>e</i>.<i>m</i>. = ±0.0482</span> ). The next four green bars represent the mean strategy over the group and each bar agree with the transition vector,<span class="formula"><i>v</i> = [0.794, 0.856, 0.801, 0.890]</span>. The asterisk indicates significant difference respect the half probability of chose cooperation lever and we tested by <span class="formula">χ<sup>2</sup></span> goodness of fit with theory frequency 0.5. <a class="Reference" href="#outcomes rate">b↑</a>) The bar graph shows the outcomes rates and suggest that R outcomes had very high incidence in the experiment over the last 10 sessions. . We found significant difference between outcomes (Friedman’s ANOVA test was performed with bonferroni correction (<span class="formula"><i>α</i> = 0.0125, <i>p</i> &gt; 3.3<i>e</i> − 5;χ<sup>2</sup> = 23.4</span>) and Multiple pairwise comparison’s using Nemeyi’s procedure ). <a class="Reference" href="#fig_4state_markovChain">c↑</a> and <a class="Reference" href="#fig_2state_markovChain">d↑</a>) Graph of Markov chain of four and two state, in which the arrow represent the transition probability between outcomes. A blue arrow signalized when the subject chose cooperate lever given the las outcome and a red arrow signalized when it chose defect lever. The words mean temptation (T), mutual cooperation (R), punishment (P) and sucker (S). Pay atemption that the arrows width are proportional to the transition probability. </span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="Indented">
+En la figura <a class="Reference" href="#fig_4state_markovChain">c↑</a> y <a class="Reference" href="#fig_2state_markovChain">d↑</a> se observan los diagramas de cadenas de Markov donde la probabilidad de transición de estado se indica mediante flechas azules para cooperación y rojas para no cooperación. El tamaño de las flechas son proporcionales a las probabilidades. En ambos diagramas las flecha azules son predominantes en tamaño indicando una fuerte tendencia a cooperar, ya que la probabilidad de cooperar es mayor al <span class="formula">80%</span>en todos los casos.
+</div>
+<div class="Indented">
+<div class="float">
+<a class="Label" name="Figura-None.5"> </a><div class="multifigure">
+<span class="hfill"> </span><span class="float">
+<div class="figure" style="max-width: 45%;">
+<img class="figure" src="ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperacionVscoopMutua_delay_sinrandom.png" alt="figura ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperacionVscoopMutua_delay_sinrandom.png" style="max-width: 1200px; max-height: 902px;">
+<div class="caption">
+(a) Mutual Cooperation versus cooperation choice 
+</div>
+<a class="Label" name="fig_coopMutua"> </a>
+</div>
+
+</span>
+<span class="hfill"> </span><span class="float">
+<div class="figure" style="max-width: 45%;">
+<img class="figure" src="ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperacionVsReward_delay_sinrandom.png" alt="figura ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperacionVsReward_delay_sinrandom.png" style="max-width: 1200px; max-height: 902px;">
+<div class="caption">
+(b) Total reward versus cooperation choice
+</div>
+<a class="Label" name="fig_rewardVScoop"> </a>
+</div>
+
+</span>
+<span class="hfill"> </span><span class="hfill"> </span><span class="float">
+<div class="figure" style="max-width: 45%;">
+<img class="figure" src="ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/alimentoVstimeout_cooperation.png" alt="figura ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/alimentoVstimeout_cooperation.png" style="max-width: 1200px; max-height: 900px;">
+<div class="caption">
+(c) Total Reward versus accumulated timeout
+</div>
+<a class="Label" name="fig_reward VS timeout"> </a>
+</div>
+
+</span>
+<span class="hfill"> </span><span class="float">
+<div class="figure" style="max-width: 45%;">
+<img class="figure" src="ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/coefficientOfPreference2.png" alt="figura ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/coefficientOfPreference2.png" style="max-width: 1167px; max-height: 875px;">
+<div class="caption">
+(d) Preference Coefficient.
+</div>
+<a class="Label" name="fig_CoeffPreference"> </a>
+</div>
+
+</span>
+<span class="hfill"> </span><div class="caption">
+Figura None.5 <span class="scriptsize">There experiment’s result was computed from last ten session pool data set. <a class="Reference" href="#fig_coopMutua">a↑</a>) The graph of Mutual cooperations versus cooperation show that the subject (filled circle) had a directly proportional relationship, mutual cooperate less when cooperate less. The color bar represent average accumulated punishment (second) that each subject obtain per sessions and also is drive by same relationship respect . The square represent theoretical behaviors. <a class="Reference" href="#fig_rewardVScoop">b↑</a>) The graph show the percentage of cooperation versus total reward. All animals obtain more that 80% of total reward per session. The simulated agent (filled square) help to understand the strategies used by animals. <a class="Reference" href="#fig_reward VS timeout">c↑</a>) The figure show the relation between rewards and timeout punishment, the color bar point out the level cooperation choice. Since the graph we observe that the highest reward corresponds to the subject with less accumulated timeout punishment and they also have the highest cooperation choice level. <a class="Reference" href="#fig_CoeffPreference">d↑</a>) The Coefficient of preference is the quotient between reward and punishment that each rat got as result to used one strategy. the blue circle are the coefficient of preference per rat and the size are the level of cooperation. The red circle are the coefficient for the simulated rats. All rats has a strategy more cooperative than the simulated rats with alternated &ldquo;CD&rdquo; strategy.</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="Indented">
+Una estrategia reciproca es principalmente definida por la probabilidad de cooperación mutua. Gráficos de cooperación mutua versus cooperación muestran que existe una correlación de <span class="formula">0.996</span>(<i>Pearson coefficient</i>) entre estos dos parámetros, respecto a los valores de castigo en tiempo se calcularon los mismos coeficientes respecto a cooperación mutua<span class="formula"> − 0.998</span> y a cooperación <span class="formula"> − 0.935</span>, indicando que a medida que aumenta la cooperación disminuye el castigo, ver fig. <a class="Reference" href="#fig_coopMutua">a↑</a>. 
+</div>
+<div class="Indented">
+En las figuras <a class="Reference" href="#fig_coopMutua">a↑</a>, <a class="Reference" href="#fig_rewardVScoop">b↑</a> y <a class="Reference" href="#fig_reward VS timeout">c↑</a>, los rectángulos representan comportamientos simulados y se utiliza para compara los promedios reales respecto de los simulados, de los cuales se conoce su comportamiento. Nosotros creamos los siguientes comportamientos de referencia:: <i>1º)&ldquo;switch CD&rdquo;</i> en el cual el sujeto alterna su elección entre cooperar (C) y no cooperar (D); 2º) &ldquo;switch CCDD&rdquo; similar al anterior pero realiza dos elecciones consecutivas iguales, cambia a la otra palanca y repite el comportamiento; 3º) &ldquo;switch 3C3D&rdquo; igual con tres consecutivas para cambiar; 4º) &ldquo;half C&rdquo; el sujeto elige la misma palanca hasta la mitad de la sesión y luego cambia a la otra y permanece hasta el final; 5º) &ldquo;switch CCD&rdquo; elige dos veces consecutiva C y solo una vez D, vuelve a C y repite el comportamiento. 6º) &ldquo;switch CCCD&rdquo; similar al anterior para realiza consecutivamente 3 elecciones de C. Esto comportamiento permiten visualizar comportamientos específicos y realizar inferencias acerca de los comportamientos mostrados por los animales.
+</div>
+<div class="Indented">
+Respecto a los niveles de refuerzo, todas las ratas obtuvieron un nivel por encima del 80% a pesar de la dispersión observada en cooperación mutua, fig. <a class="Reference" href="#fig_reward VS timeout">c↑</a>. Se observó que las ratas 1A, 3A y 8A con menor tasa de cooperación mutua del grupo se situaron cerca de los sujetos simulados &ldquo;Switch CCD&rdquo; y &ldquo;Switch CCCD&rdquo;, indicando que estos animales desarrollar un comportamiento similar volviendo a cooperar luego de una no cooperación. 
+</div>
+<div class="Indented">
+Relacionando los resultados en refuerzos obtenido respecto del castigo acumulado se generó un coeficiente, llamado <i>Preference</i>, que se utilizó como herramienta para entender la preferencia por cooperar de los animales, fig. <a class="Reference" href="#fig_CoeffPreference">d↑</a>. Los círculos rojos representan los agentes simulados y los azules las ratas. Se observó que los animales cooperadores se ubicaron del lado derecho respecto al agente simulado &ldquo;switch CD&rdquo; que cooperaba el 50% y obtiene el máximo refuerzo. Por lo tanto, podemos inferir que el comportamiento de las ratas tiende a ser un que al menos coopera dos veces y si falta a la cooperación vuelve rápidamente a cooperar.
+</div>
+<h4 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--10"></a>Reversion<a class="Label" name="sub:Reversion"> </a>
+</h4>
+<div class="Unindented">
+Este experimento fue desarrollado para evaluar si los comportamientos exhibidos por las ratas fueron aprendido a través de la experiencia en el juego o por preferencia de lugar. Si este fue por preferencia y se modifican las posiciones de las palancas, la rata debería seguir eligiendo el mismo lado. Se utilizaron cuatro de las ratas que obtuvieron los mejores rendimientos en el experimento anterior. Las palancas fueron cambiadas de lugar, el lado que contenía la palanca cooperación pasó a tener la palanca de no cooperación y viceversa. El procedimiento utilizado fue idéntico al del experimento previo. Las sesiones por ratas fue: <span class="scriptsize">3A/52; 7A/52; 9A/52; 10A/24;</span><span class="default">. La Media de cooperación fueron <span class="formula">3<i>A</i> = 0.79</span>, <span class="formula">7<i>A</i> = 0.86</span>, <span class="formula">9<i>A</i> = 0.85</span> y<span class="formula">10<i>A</i> = 0.96</span>, fig. <a class="Reference" href="#fig1_REV_meansAnd significance-1">a↓</a> y tabla <a class="Reference" href="#table_REV_meanAndstrategies-1">None.3↓</a>. Se encontró diferencias significativas respecto a estrategias aleatorias en el vector de transición de estados, ver tabla <a class="Reference" href="#table_REV_meanAndstrategies-1">None.3↓</a>, denotadas en el gráfico de cooperación media mediante asteriscos. En la fig. <a class="Reference" href="#fig_REV_evolution_coop_rev">d↓</a> se muestra la cooperación media por sesión y la cooperación media del grupo por sesión.</span>
+</div>
+<div class="Indented">
+<div class="float">
+<a class="Label" name="Figura-None.6"> </a><div class="multifigure">
+<div class="PlainVisible">
+<div class="center">
+<span class="scriptsize"><span class="hfill"> </span><span class="float">
+<div class="figure" style="max-width: 40%;">
+<div class="PlainVisible">
+<div class="center">
+<span class="scriptsize"><img class="figure" src="ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperation_mean_with_significant_reversion.png" alt="figura ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperation_mean_with_significant_reversion.png" style="max-width: 1200px; max-height: 902px;">
+</span>
+</div>
+<br>
+<div class="center">
+<span class="scriptsize"><div class="caption">
+(a) <span class="scriptsize">Cooperation mean</span>
+</div>
+</span>
+</div>
+<br>
+<div class="center">
+<span class="scriptsize"><a class="Label" name="fig1_REV_meansAnd significance-1"> </a></span>
+</div>
+
+</div>
+
+</div>
+
+</span>
+<span class="hfill"> </span><span class="float">
+<div class="figure" style="max-width: 45%;">
+<div class="PlainVisible">
+<div class="center">
+<span class="scriptsize"><img class="figure" src="ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/mean_reward_reversion.png" alt="figura ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/mean_reward_reversion.png" style="max-width: 1200px; max-height: 902px;">
+</span>
+</div>
+<br>
+<div class="center">
+<span class="scriptsize"><div class="caption">
+(b) Reward mean 
+</div>
+</span>
+</div>
+<br>
+<div class="center">
+<span class="scriptsize"><a class="Label" name="fig_REV_meanReward-1-1"> </a></span>
+</div>
+
+</div>
+
+</div>
+
+</span>
+<span class="hfill"> </span></span>
+</div>
+<br>
+<div class="center">
+<span class="scriptsize"><span class="hfill"> </span><span class="float">
+<div class="figure" style="max-width: 45%;">
+<div class="PlainVisible">
+<div class="center">
+<span class="scriptsize"><img class="figure" src="ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/mean_timeout_reversion.png" alt="figura ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/mean_timeout_reversion.png" style="max-width: 1200px; max-height: 902px;">
+</span>
+</div>
+<br>
+<div class="center">
+<span class="scriptsize"><div class="caption">
+(c) <span class="scriptsize">Timeout mean</span>
+</div>
+</span>
+</div>
+<br>
+<div class="center">
+<span class="scriptsize"><a class="Label" name="fig1_REV_meansTimeout"> </a></span>
+</div>
+
+</div>
+
+</div>
+
+</span>
+<span class="hfill"> </span><span class="float">
+<div class="figure" style="max-width: 45%;">
+<div class="PlainVisible">
+<div class="center">
+<span class="scriptsize"><img class="figure" src="ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperation_mean_sem_last18session_Reversion.png" alt="figura ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperation_mean_sem_last18session_Reversion.png" style="max-width: 1200px; max-height: 902px;">
+</span>
+</div>
+<br>
+<span class="scriptsize"><div class="caption">
+(d) Evolution of cooperation
+</div>
+</span><br>
+<div class="center">
+<span class="scriptsize"><a class="Label" name="fig_REV_evolution_coop_rev"> </a></span>
+</div>
+
+</div>
+
+</div>
+
+</span>
+<span class="hfill"> </span></span>
+</div>
+<br>
+<span class="scriptsize"><div class="caption">
+Figura None.6 <span class="scriptsize"><a class="Reference" href="#fig1_REV_meansAnd significance-1">a↑</a>)<b>Mean and </b><span class="formula">χ<sup>2</sup></span><b>test</b>: The rats with 95% of free feeding body weight played under a matrix pay-off T=2, R=1,P=4&rdquo;delay, S=8&rdquo;delay against a TFT opponent. We show means of the numbers of times rats chose the cooperate option (<span class="formula"><i>mean</i>±<i>s</i>.<i>e</i>.<i>m</i>.</span>). The Asterix denote when the rat adopted a strategy that had significant difference from chance strategy (<span class="formula">χ<sup>2</sup></span> goodness of fit test with bonferroni corrected, p&gt;0.125). The rats without significant difference did not surpass 0.5 probability of cooperation. <a class="Reference" href="#fig_REV_meanReward-1-1">b↑</a>) <b>Means of reward.</b> Bar line shows the mean of obtained reward per session over the last 10 session (<span class="formula"><i>mean</i>±<i>s</i>.<i>e</i>.<i>m</i>.</span>). The rats with random strategy (not chi-square significant) obtained the lowest level of reward, below 75% of total reward. <a class="Reference" href="#fig1_REV_meansTimeout">c↑</a>) Means of Timeout is the punishment that each rat got by develop a learned strategy. <a class="Reference" href="#fig_REV_evolution_coop_rev">d↑</a>) Evolution of cooperation choice from a data set with the last 18 sessions. The blue and continuous and thicker line is the means per session of the group and the dotter line is the standard error of the mean (<span class="formula"><i>mean</i>±<i>sem</i> = [0.866±0.015]</span>over the las ten sessions). The vertical dotter line mark the pool of data that was used to analyse the strategies adopted by the rats. </span>
+</div>
+</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="Indented">
+Todas las ratas alcanzaron una nivel de cooperación cercano al 100%, fig. <a class="Reference" href="#fig1_REV_meansAnd significance-1">a↑</a>, y un total de castigos en tiempo menor al 40%, fig. <a class="Reference" href="#fig1_REV_meansTimeout">c↑</a>. 
+</div>
+<div class="Indented">
+<div class="float">
+<a class="Label" name="Tabla-None.3"> </a><div class="table">
+<div class="caption">
+Tabla None.3 <span class="scriptsize">We show the mean of cooperation and the probabilities of cooperation given each outcomes. The <span class="formula">χ<sup>2</sup></span>goodness of fit with bonferroni correction was performed used a theorical frecuency of 0.5. The significance value show the subject that developed a specific strategy. The subject underlined and in blue text color had significant different respect random strategy. </span>
+</div>
+<span class="scriptsize"><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+<span class="scriptsize">Mean</span>
+</td>
+<td align="center" valign="top" colspan="4">
+Strategies
+</td>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+<span class="scriptsize">Subject</span>
+</td>
+<td align="center" valign="top">
+<span class="scriptsize">cooperation</span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula"><i>p</i>(<i>c</i>|<i>T</i>)</span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula"><i>p</i>(<i>c</i>|<i>R</i>)</span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula"><i>p</i>(<i>c</i>|<i>P</i>)</span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula"><i>p</i>(<i>c</i>|<i>S</i>)</span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula">χ<sub><i>bonferroni</i></sub><sup>2</sup></span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="formula"><i>p</i> &lt; 0.0125</span></span>
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+<b><span class="tiny"><span class="blue">3A</span></span></b>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="blue"><span class="formula">0.787</span></span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="blue"><span class="formula">0.868</span></span></span>
+</td>
+<td align="center" valign="top">
+<b><span class="tiny"><span class="blue"><span class="formula">0.786</span></span></span></b>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="blue"><span class="formula">1</span></span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="blue"><span class="formula">0.769</span></span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="blue"><span class="formula">113.336</span></span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="blue"><span class="formula">0.0000</span></span></span>
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+<b><span class="tiny"><span class="blue">7A</span></span></b>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="blue"><span class="formula">0.865</span></span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="blue"><span class="formula">0.885</span></span></span>
+</td>
+<td align="center" valign="top">
+<b><span class="tiny"><span class="blue"><span class="formula">0.891</span></span></span></b>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="blue"><span class="formula">1</span></span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="blue"><span class="formula">0.714</span></span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="blue"><span class="formula">117.942</span></span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="blue"><span class="formula">0.0000</span></span></span>
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+<b><span class="tiny"><span class="blue">9A</span></span></b>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="blue"><span class="formula">0.849</span></span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="blue"><span class="formula">0.697</span></span></span>
+</td>
+<td align="center" valign="top">
+<b><span class="tiny"><span class="blue"><span class="formula">0.877</span></span></span></b>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="blue"><span class="formula">1</span></span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="blue"><span class="formula">0.781</span></span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="blue"><span class="formula">98.041</span></span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="blue"><span class="formula">0.0000</span></span></span>
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+<b><span class="tiny"><span class="blue">10A</span></span></b>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="blue">0.963</span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="blue"><span class="formula">0.333</span></span></span>
+</td>
+<td align="center" valign="top">
+<b><span class="tiny"><span class="blue"><span class="formula">1</span></span></span></b>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="blue"><span class="formula">0.250</span></span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="blue"><span class="formula">0.660</span></span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="blue"><span class="formula">200.000</span></span></span>
+</td>
+<td align="center" valign="top">
+<span class="tiny"><span class="blue"><span class="formula">0.0000</span></span></span>
+</td>
+
+</tr>
+
+</table>
+</span><a class="Label" name="table_REV_meanAndstrategies-1"> </a>
+</div>
+
+</div>
+
+</div>
+<div class="Indented">
+<div class="float">
+<a class="Label" name="Figura-None.7"> </a><div class="multifigure">
+<span class="float">
+<div class="figure" style="max-width: 45%;">
+<div class="PlainVisible">
+<div class="center">
+<img class="figure" src="ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/mean_cooperation_and_strategy_reversion.png" alt="figura ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/mean_cooperation_and_strategy_reversion.png" style="max-width: 1200px; max-height: 902px;">
+
+</div>
+<br>
+<div class="center">
+<div class="caption">
+(a) <span class="scriptsize">Mean of cooperation and means of transition vector</span>
+</div>
+
+</div>
+
+</div>
+<a class="Label" name="fig_REV_meanC_strategy-1"> </a>
+</div>
+
+</span>
+<span class="hfill"> </span><span class="float">
+<div class="figure" style="max-width: 45%;">
+<img class="figure" src="ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/outcomeRate_overLevel_reversion.png" alt="figura ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/outcomeRate_overLevel_reversion.png" style="max-width: 1200px; max-height: 902px;">
+<div class="caption">
+(b) <span class="scriptsize">Outcomes rates over the last ten sessions.</span>
+</div>
+<a class="Label" name="fig_REV_outcomes rate-1"> </a>
+</div>
+
+</span>
+<span class="hfill"> </span><span class="float">
+<div class="figure" style="max-width: 40%;">
+<div class="center">
+<img class="figure" src="ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/markov_4estados_mean_reversion.png" alt="figura ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/markov_4estados_mean_reversion.png" style="max-width: 1045px; max-height: 642px;">
+
+</div>
+<div class="caption">
+(c) <span class="scriptsize">Markov chain graph of four state</span>
+</div>
+<a class="Label" name="fig_REV_4state_markovChain-1"> </a>
+</div>
+
+</span>
+<span class="hfill"> </span><span class="float">
+<div class="figure" style="max-width: 30%;">
+<img class="figure" src="ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/g33959.png" alt="figura ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/g33959.png" style="max-width: 295px; max-height: 309px;">
+<div class="caption">
+(d) Markov chain graph of two state
+</div>
+<a class="Label" name="fig_REV_2state_markovChain-1"> </a>
+</div>
+
+</span>
+<span class="hfill"> </span><div class="caption">
+Figura None.7 <span class="tiny"><span class="magenta"><a class="Reference" href="#fig_REV_meanC_strategy-1">a↑</a>) Mean of cooperation over not random strategy rats (8 rats) was performed and the measured is shown on the first magenta bar (<span class="formula"><i>mean</i> = 0.866</span> and <span class="formula"><i>s</i>.<i>e</i>.<i>m</i>. = ±0.036</span> ). The next four green bars represent the mean strategy over the group and each bar agree with the transition vector,<span class="formula"><i>v</i> = [0.696, 0.889, 0.812, 0.733]</span>. The asterisk indicates significant difference respect the half probability of chose cooperation lever and we tested by <span class="formula">χ<sup>2</sup></span> goodness of fit with theory frequency 0.5. <a class="Reference" href="#fig_REV_outcomes rate-1">b↑</a>) The bar graph shows the outcomes rates and suggest that R outcomes had very high incidence in the experiment over the last 10 sessions. We found significant difference between outcomes (Friedman’s ANOVA test was performed with bonferroni correction (<span class="formula"><i>α</i> = 0.0125, <i>p</i> &gt; 3.3<i>e</i> − 5;χ<sup>2</sup> = 23.4</span>) and Multiple pairwise comparison’s using Nemeyi’s procedure). <a class="Reference" href="#fig_REV_4state_markovChain-1">c↑</a> and <a class="Reference" href="#fig_REV_2state_markovChain-1">d↑</a>) Graph of Markov chain of four and two state, in which the arrow represent the transition probability between outcomes. A blue arrow signalized when the subject chose cooperate lever given the las outcome and a red arrow signalized when it chose defect lever. The words mean temptation (T), mutual cooperation (R), punishment (P) and sucker (S). Pay atemption that the arrows width are proportional to the transition probability. </span></span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="Indented">
+<div class="float">
+<a class="Label" name="Figura-None.8"> </a><div class="multifigure">
+<span class="hfill"> </span><span class="float">
+<div class="figure" style="max-width: 45%;">
+<img class="figure" src="ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperacionVscoopMutua_delay_Reversion.png" alt="figura ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperacionVscoopMutua_delay_Reversion.png" style="max-width: 1200px; max-height: 902px;">
+<div class="caption">
+(a) Mutual Cooperation versus cooperation choice 
+</div>
+<a class="Label" name="fig_REV_coopMutua"> </a>
+</div>
+
+</span>
+<span class="hfill"> </span><span class="float">
+<div class="figure" style="max-width: 45%;">
+<img class="figure" src="ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperacionVsReward_delay_Reversion.png" alt="figura ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/cooperacionVsReward_delay_Reversion.png" style="max-width: 1200px; max-height: 902px;">
+<div class="caption">
+(b) Total reward versus cooperation choice
+</div>
+<a class="Label" name="fig_REV_rewardVScoop"> </a>
+</div>
+
+</span>
+<span class="hfill"> </span><span class="hfill"> </span><span class="float">
+<div class="figure" style="max-width: 50%;">
+<img class="figure" src="ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/alimentoVstimeout_cooperation_Reversion.png" alt="figura ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/alimentoVstimeout_cooperation_Reversion.png" style="max-width: 1200px; max-height: 902px;">
+<div class="caption">
+(c) Total Reward versus accumulated timeout
+</div>
+<a class="Label" name="fig_REV_reward VS timeout"> </a>
+</div>
+
+</span>
+<span class="hfill"> </span><span class="float">
+<div class="figure" style="max-width: 35%;">
+<img class="figure" src="ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/coefficientOfPreference_reversion_2.png" alt="figura ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/coefficientOfPreference_reversion_2.png" style="max-width: 1200px; max-height: 902px;">
+<div class="caption">
+(d) Preference Coefficient.
+</div>
+<a class="Label" name="fig_REV_CoeffPreference"> </a>
+</div>
+
+</span>
+<span class="hfill"> </span><div class="caption">
+Figura None.8 <span class="tiny"><span class="magenta">There experiment’s result was computed from last ten session pool data set. <a class="Reference" href="#fig_REV_coopMutua">a↑</a>) The graph of Mutual cooperations versus cooperation show that the subject (filled circle) had a directly proportional relationship, mutual cooperate less when cooperate less. The color bar represent average accumulated punishment (second) that each subject obtain per sessions and also is drive by same relationship respect . The square represent theoretical behaviors. <a class="Reference" href="#fig_REV_rewardVScoop">b↑</a>) The graph show the percentage of cooperation versus total reward. All animals obtain more that 80% of total reward per session. The simulated agent (filled square) help to understand the strategies used by animals. <a class="Reference" href="#fig_REV_reward VS timeout">c↑</a>) The figure show the relation between rewards and timeout punishment, the color bar point out the level cooperation choice. Since the graph we observe that the highest reward corresponds to the subject with less accumulated timeout punishment and they also have the highest cooperation choice level. <a class="Reference" href="#fig_REV_CoeffPreference">d↑</a>) The Coefficient of preference is the quotient between reward and punishment that each rat got as result to used one strategy. the blue circle are the coefficient of preference per rat and the size are the level of cooperation. The red circle are the coefficient for the simulated rats. All rats has a strategy more cooperative than the simulated rats with alternated &ldquo;CD&rdquo; strategy.</span></span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="Indented">
+Observando las figuras <a class="Reference" href="#fig_REV_rewardVScoop">b↑</a>, <a class="Reference" href="#fig_REV_coopMutua">a↑</a>y <a class="Reference" href="#fig_REV_CoeffPreference">d↑</a> se extrae que existe menos dispersión en los comportamientos entre animales y que tienden a cooperar tres o mas veces consecutivas antes de dejar de cooperar.
+</div>
+<div class="Indented">
+<p><br>
+</p>
+
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-None.4">None.4</a> Discusión <a class="Label" name="sec:Discussion-and-conclusions"> </a>
+</h2>
+<div class="Unindented">
+El altruismo reciproco es un comportamiento cooperativos en el cual se requiere de reciprocidad para beneficiar la supervivencia en el entorno. Esto significa que se requiere de un individuo que desarrolle un acto cooperativo con un costo implicado en beneficio de otro y luego un segundo individuo que beneficie al primero. Desde los años 70’s con los trabajos de<i> Trivers</i>, se ha evaluado el aprendizaje del comportamiento altruista a través del Dilema del Prisionero en animales con diferentes capacidades cognitivas. En el Dilema del Prisionero iterado (iPD) , donde dos jugadores se enfrentan, se desarrolla altruismo reciproco cuando la frecuencia de cooperación mutua es mayor a la frecuencia de cualquier otra combinación de elecciones. En experimentos de laboratorios con humanos y monos <span class="bibcites">[<a class="bibliocite" name="cite-2" href="#biblio-2"><span class="bib-index">2</span></a>, <a class="bibliocite" name="cite-31" href="#biblio-31"><span class="bib-index">31</span></a>, <a class="bibliocite" name="cite-11" href="#biblio-11"><span class="bib-index">11</span></a>, <a class="bibliocite" name="cite-5" href="#biblio-5"><span class="bib-index">5</span></a>, <a class="bibliocite" name="cite-37" href="#biblio-37"><span class="bib-index">37</span></a>]</span> se han logrado altos niveles de reciprocidad altruista que hasta el momento no habían sido visto en ratas o pájaros, sin modificar la matriz de pago o potenciar la preferencia por un comportamiento. En este trabajo se muestra por primera vez que es posible alcanzar alto niveles de cooperación y cooperación mutua en ratas, donde aprenden que la mejor opción es cooperar cuando el oponente es reciproco. 
+</div>
+<div class="Indented">
+En trabajos ya publicados sobre entrenamientos utilizando iPD se ha observado que los animales, al enfrentarse a oponentes recíprocos, no aprenden que la preferencia por cooperar maximiza el refuerzo. Esto se debe, posiblemente, a que no logran discernir los tamaños entre los refuerzos percibidos por los distintos comportamientos, o secuencias de estados. En iPD existen 4 estados según las diferentes combinaciones de elección, los estados R o P donde ambos eligen cooperar o no cooperar mutuamente, el estado T donde la experimental no coopera y el oponente si (traición) y el estado S (sucker) donde se da la situación inversa. De aquí subyace que, para las ratas, las matrices utilizadas con mayor frecuencia en experimentos de laboratorios presentan poco contraste entre los refuerzos positivos <i><span class="bibcites">[<a class="bibliocite" name="cite-15" href="#biblio-15"><span class="bib-index">15</span></a>, <a class="bibliocite" name="cite-14" href="#biblio-14"><span class="bib-index">14</span></a>, <a class="bibliocite" name="cite-17" href="#biblio-17"><span class="bib-index">17</span></a>]</span>.</i> Un ejemplo de estas matrices de pago son las que asigna a los estados refuerzos de R=4, T=6, P=1 y S=0 pellets, donde los animal deberían aprender a diferencias al corto plazo entre 4 y 6 pellets y luego de cuatro encuentros entre 16(CCCC) o 12(DCDC). Estas cantidades sobrepasan los limite de discriminación efectiva en ratas, dado que se conoce que son capaces de cuantificar hasta tres refuerzos con considerable precisión y para cantidades mayores esta capacidad disminuye (CITA Capaldi Miller 1988). En nuestro experimento, apuntando a mejorar la discriminación de refuerzos entre los cuatro estados posibles, se utilizaron cantidades pequeñas de refuerzos apetitivos pero significativamente diferentes, donde el refuerzo en el estado T fue el doble que en R y con el mismo criterio se utilizaron refuerzos negativos, asignando al estado P un <i>timeout</i> que fue la mitad del recibido en el estado S. La matriz de pago diseñada para este experimento mostró que las ratas logran desarrollar altos niveles de cooperación al enfrentarse a oponentes recíprocos, alcanzando niveles de cooperación promedio por encima del 85% (fig. <a class="Reference" href="#fig1_meansAnd significance">a↑</a>) y un vector de transición de estado medio que sostuvo la tendencia, ya que este representa la probabilidad de cooperar dadas las elecciones del último encuentro y todas sus componentes estuvieron en o por encima del 80% (fig. <a class="Reference" href="#fig_meanC_strategy">a↑</a>). En base a los resultados obtenidos con este protocolo, se puede sostener que son los contrastes entre refuerzos positivos y entre refuerzos negativos las claves principales para que los animales logren conectar comportamientos con refuerzos y consecuentemente encontrar la estrategia óptima. 
+</div>
+<div class="Indented">
+En el experimento de reversión se comprobó que el alto desempeño de las ratas se debió al aprendizaje de una estrategia determinada producto de la interacción con el oponente y en consecuencia de los refuerzos recibidos; y no por una mera preferencia de palanca, ya que las ratas que habían aprendido el comportamientos óptimo lo modificaron con el cambio de contingencia de las palancas para volver a aprender iPD.
+</div>
+<div class="Indented">
+Los comportamientos de los animales pueden ser estimados observando las frecuencias de los estados que conforman el diagrama de cadena de markov para iPD. Por ejemplo, si un animal muestra todos los estados con la misma frecuencia, en este caso 0.25, y el oponente utiliza la estrategia reciproca tit for tat, se puede deducir que realizó elecciones aleatorias con distribución uniforme. Si se desarrolla una estrategia alternando entre cooperar y no cooperar los estados mas frecuentas serían S y T, con probabilidades cercanas a 0.5. En la figura de frecuencias de estados, fig. <a class="Reference" href="#outcomes rate">b↑</a>, se observa que el estado medio mas probable luego del entrenamiento en iPD fue la cooperación mutua R, indicando que los comportamientos aprendidos no eran aleatorios. Esto, junto con los resultados de las probabilidades condicionales, fig. <a class="Reference" href="#fig_meanC_strategy">a↑</a>, se deduce que los animales permanecían la mayor parte del tiempo en la elección cooperadora, ya que la probabilidades de estar en R y de cambiar a C dado que estaba en una estado diferentes de R era elevada.
+</div>
+<div class="Indented">
+La matriz utilizada en este experimentos dará al animal no cooperador el mayor refuerzo posible en el primer encuentro y en los sucesivos solo estímulos displicente, timeout. Si un animal elige una estrategia en la cual alterna entre C y D, recibirá periódicamente el máximo estímulo apetitivo seguido del máximo estímulo aversivo. Este último comportamiento es importante, ya que el animal puede obtener una cantidad equivalente a la que obtendría con una estrategia de cooperar siempre. Sin embargo, aunque dos estrategias den la máxima recompensa en la misma cantidad de experimentos, la matriz utilizada con oponente tit for tat tiene una única estrategia que maximiza el refuerzo (<i>Pareto Optimum</i>), dado que el cooperador no recibe timeout y con ello mas alimento en menos tiempo. En efecto, los resultados, fig. <a class="Reference" href="#fig_reward VS timeout">c↑</a> y <a class="Reference" href="#fig_REV_reward VS timeout">c↑</a> , muestran que refuerzos mayores se corresponde con sujetos con bajos tiempos acumulados de castigo y alta tasa de cooperación. Paralelamente, los coeficientes de preferencia de los animal con mayor rendimientos quedaron distantes de los agente simulado con estrategia &ldquo;switch CD&rdquo;, indicando que los comportamientos aprendidos se basaban en cooperaciones consecutivas y traiciones esporádicas, ver fig. <a class="Reference" href="#fig_CoeffPreference">d↑</a> y <a class="Reference" href="#fig_REV_CoeffPreference">d↑</a>. 
+</div>
+<div class="Indented">
+Se observó que todas las ratas tuvieron una baja dispersión en los valores de refuerzos (85% a 100%) en comparación con los rango de cooperación (65% a 100%), demostrando que a altos valores de cooperación aprender diferencias en las cantidades de refuerzos obtenidos se vuelve una tarea difícil, fig. <a class="Reference" href="#fig_rewardVScoop">b↑</a>. Estos resultados indican que la entrega de refuerzos es poco sensible a cambios sobre altos niveles de cooperación y, en está situación, los timeout son posiblemente quienes estén modulando la elección. Nosotros encontramos que 5 de 8 ratas estuvieron por debajo del 30% del total de timeout acumulado, posiblemente las ratas con mayor sensibilidad al timeout han cooperado mas para evitar los estímulos indeseados. Teóricamente se puede ajustar la matriz de pago para aumenta la sensibilidad al cambio de nivel de cooperación, como por ejemplo R=4 y T=6, pero incrementar las cantidades de refuerzo implica una degradación en la apreciación efectiva por parte de los animales, ya que está demostrado que los animales pueden discriminan linealmente pequeñas cantidades y alinealmente cantidades mayores.(<span class="bibcites">[<a class="bibliocite" name="cite-14" href="#biblio-14"><span class="bib-index">14</span></a>]</span> eq. 4; <span class="bibcites">[<a class="bibliocite" name="cite-17" href="#biblio-17"><span class="bib-index">17</span></a>]</span>)
+</div>
+<div class="Indented">
+Nuestros resultados sugieren que las ratas tiene la capacidad cognitiva para encontrar la mejor estrategia en el iPD cuando el oponente es reciproco y se utiliza una matriz adecuada de refuerzos. Los diagramas de cadenas de Markov confirman esto, al mostrar que los animales obtenían altas probabilidades de cooperación mutua y bajas respecto a la transición de S(sucker) a T(temptation). Siendo S el estado donde la rata experimental elige cooperar y el oponente no y T la situación inversa. Esta es la principal discrepancia con trabajos anteriores (<span class="bibcites">[<a class="bibliocite" name="cite-2" href="#biblio-2"><span class="bib-index">2</span></a>, <a class="bibliocite" name="cite-4" href="#biblio-4"><span class="bib-index">4</span></a>, <a class="bibliocite" name="cite-7" href="#biblio-7"><span class="bib-index">7</span></a>, <a class="bibliocite" name="cite-8" href="#biblio-8"><span class="bib-index">8</span></a>, <a class="bibliocite" name="cite-9" href="#biblio-9"><span class="bib-index">9</span></a>, <a class="bibliocite" name="cite-16" href="#biblio-16"><span class="bib-index">16</span></a>, <a class="bibliocite" name="cite-19" href="#biblio-19"><span class="bib-index">19</span></a>, <a class="bibliocite" name="cite-27" href="#biblio-27"><span class="bib-index">27</span></a>, <a class="bibliocite" name="cite-29" href="#biblio-29"><span class="bib-index">29</span></a>, <a class="bibliocite" name="cite-30" href="#biblio-30"><span class="bib-index">30</span></a>, <a class="bibliocite" name="cite-36" href="#biblio-36"><span class="bib-index">36</span></a>]</span>citas); <i>i.e.,</i> en un trabajo previo <span class="bibcites">[<a class="bibliocite" name="cite-34" href="#biblio-34"><span class="bib-index">34</span></a>]</span> se presentan resultados que indican que las ratas adoptan un comportamientos mas cooperativo cuando el oponente es reciproco, pero los diagramas de cadenas de markov muestras que los animales aprendían una estrategia basada en saltar entre los estados S y T con mayor frecuencia que de R a R (cooperación mutua), indicando que las ratas adoptan un comportamiento no cooperativo en orden de obtener el máximo refuerzo inmediato sin importar los <b><span class="black">castigos</span></b>. Este es un caso relevante, ya que muestra la importancia el análisis de los comportamientos a través de las cadenas de markov.
+</div>
+<div class="Indented">
+En estudios previos, también se evaluó el aprendizaje de iPD en pájaros bajo diversas condiciones, donde se logró niveles significativos de cooperación al utilizar secuencias de refuerzos acumulados <span class="bibcites">[<a class="bibliocite" name="cite-28" href="#biblio-28"><span class="bib-index">28</span></a>]</span>, sin embargo luego surgieron criticas argumentando que los bloques de acumulación propuestos en los experimentos de iPD modifican la matriz de pago, convirtiéndola en una matriz del juego Cazador de venado (donde la ganancia en el estado de traición (T) deja de ser el refuerzo mayor a corto plazo, R&gt;T≥P&gt;S)<span class="bibcites">[<a class="bibliocite" name="cite-13" href="#biblio-13"><span class="bib-index">13</span></a>]</span>. Por otro lado, en estos experimentos antes de cada sesión se utilizó una matriz de mutualismo para aumentar la preferencia por cooperar, que polariza la elección de los animales. Otros trabajos relacionados muestran que parejas hembra-macho de aves <i>zebra finches</i> han logrado altos niveles de cooperación solo si son previamente entrenarlos con una matriz de mutualizmo, <span class="bibcites">[<a class="bibliocite" name="cite-32" href="#biblio-32"><span class="bib-index">32</span></a>]</span>. En ratas también se evaluó el comportamiento altruista entre animales del mismo sexo, con-especificas y criadas en la misma jaulas sin lograr niveles significativos de cooperación <span class="bibcites">[<a class="bibliocite" name="cite-36" href="#biblio-36"><span class="bib-index">36</span></a>]</span>.
+</div>
+<div class="Indented">
+El presente trabajo mostró que es posible alcanzar alto niveles de cooperación y cooperación mutua en ratas, cuando los estímulos apetitivos y aversivos son los adecuados y el oponente reciproco. Además, se logró estimar que los animales aprendían que la mejor estrategia era cooperar luego de haber fallado en la cooperación.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-None.5">None.5</a> Reference<a class="Label" name="sec:Reference"> </a>
+</h2>
+<div class="Unindented">
+<h1 class="biblio">
+Bibliografía
+</h1>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-1"><span class="bib-index">1</span></a>] </span> <span class="bib-authors">Robert M Axelrod</span>. <i><span class="bib-title">The evolution of cooperation: revised edition</span></i>. <span class="bib-publisher">Basic books</span>, <span class="bib-year">2006</span>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-2"><span class="bib-index">2</span></a>] </span> <span class="bib-authors">Forest Baker, Howard Rachlin</span>. <span class="bib-title">Teaching and learning in a probabilistic prisoner's dilemma</span>. <i><span class="bib-journal">Behavioural Processes</span></i>, <span class="bib-volume">57</span>(<span class="bib-number">2</span>):<span class="bib-pages">211—226</span>, <span class="bib-year">2002</span>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-3"><span class="bib-index">3</span></a>] </span> <span class="bib-authors">Monica Y Bartlett, David DeSteno</span>. <span class="bib-title">Gratitude and prosocial behavior: Helping when it costs you</span>. <i><span class="bib-journal">Psychological science</span></i>, <span class="bib-volume">17</span>(<span class="bib-number">4</span>):<span class="bib-pages">319—325</span>, <span class="bib-year">2006</span>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-4"><span class="bib-index">4</span></a>] </span> <span class="bib-authors">Kevin C Clements, David W Stephens</span>. <span class="bib-title">Testing models of non-kin cooperation: mutualism and the Prisoner's Dilemma</span>. <i><span class="bib-journal">Animal Behaviour</span></i>, <span class="bib-volume">50</span>(<span class="bib-number">2</span>):<span class="bib-pages">527—535</span>, <span class="bib-year">1995</span>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-5"><span class="bib-index">5</span></a>] </span> <span class="bib-authors">Frans BM De Waal</span>. <span class="bib-title">Attitudinal reciprocity in food sharing among brown capuchin monkeys</span>. <i><span class="bib-journal">Animal Behaviour</span></i>, <span class="bib-volume">60</span>(<span class="bib-number">2</span>):<span class="bib-pages">253—261</span>, <span class="bib-year">2000</span>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-6"><span class="bib-index">6</span></a>] </span> <span class="bib-authors">Vassilissa Dolivo, Michael Taborsky</span>. <span class="bib-title">Norway rats reciprocate help according to the quality of help they received</span>. <i><span class="bib-journal">Biology letters</span></i>, <span class="bib-volume">11</span>(<span class="bib-number">2</span>):<span class="bib-pages">20140959</span>, <span class="bib-year">2015</span>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-7"><span class="bib-index">7</span></a>] </span> <span class="bib-authors">Merrill Flood, Karl Lendenmann, Anatol Rapoport</span>. <span class="bib-title">2<span class="formula"> × </span> 2 Games played by rats: Different delays of reinforcement as payoffs</span>. <i><span class="bib-journal">Systems Research and Behavioral Science</span></i>, <span class="bib-volume">28</span>(<span class="bib-number">1</span>):<span class="bib-pages">65—78</span>, <span class="bib-year">1983</span>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-8"><span class="bib-index">8</span></a>] </span> <span class="bib-authors">Rick M Gardner, Terry L Corbin, Janelle S Beltramo, Gary S Nickell</span>. <span class="bib-title">The Prisoner's Dilemma game and cooperation in the rat</span>. <i><span class="bib-journal">Psychological Reports</span></i>, <span class="bib-volume">55</span>(<span class="bib-number">3</span>):<span class="bib-pages">687—696</span>, <span class="bib-year">1984</span>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-9"><span class="bib-index">9</span></a>] </span> <span class="bib-authors">Leonard Green, Paul C Price, Merle E Hamburger</span>. <span class="bib-title">Prisoner's dilemma and the pigeon: Control by immediate consequences</span>. <i><span class="bib-journal">Journal of the experimental analysis of behavior</span></i>, <span class="bib-volume">64</span>(<span class="bib-number">1</span>):<span class="bib-pages">1—17</span>, <span class="bib-year">1995</span>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-10"><span class="bib-index">10</span></a>] </span> <span class="bib-authors">William D Hamilton, Robert Axelrod</span>. <span class="bib-title">The evolution of cooperation</span>. <i><span class="bib-journal">Science</span></i>, <span class="bib-volume">211</span>(<span class="bib-number">27</span>):<span class="bib-pages">1390—1396</span>, <span class="bib-year">1981</span>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-11"><span class="bib-index">11</span></a>] </span> <span class="bib-authors">Marc D Hauser, M Keith Chen, Frances Chen, Emmeline Chuang</span>. <span class="bib-title">Give unto others: genetically unrelated cotton-top tamarin monkeys preferentially give food to those who altruistically give food back</span>. <i><span class="bib-journal">Proceedings of the Royal Society of London B: Biological Sciences</span></i>, <span class="bib-volume">270</span>(<span class="bib-number">1531</span>):<span class="bib-pages">2363—2370</span>, <span class="bib-year">2003</span>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-12"><span class="bib-index">12</span></a>] </span> <span class="bib-authors">Julen Hernandez-Lallement, Marijn van Wingerden, Christine Marx, Milan Srejic, Tobias Kalenscher</span>. <span class="bib-title">Rats prefer mutual rewards in a prosocial choice task</span>. <i><span class="bib-journal">Frontiers in neuroscience</span></i>, <span class="bib-volume">8</span>, <span class="bib-year">2014</span>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-13"><span class="bib-index">13</span></a>] </span> <span class="bib-authors">Sonia Kéfi, Olivier Bonnet, Etienne Danchin</span>. <span class="bib-title">Accumulated gain in a Prisoner's Dilemma: which game is carried out by the players?</span>. <i><span class="bib-journal">Animal Behaviour</span></i>, <span class="bib-volume">4</span>(<span class="bib-number">74</span>):<span class="bib-pages">e1—e6</span>, <span class="bib-year">2007</span>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-14"><span class="bib-index">14</span></a>] </span> <span class="bib-authors">Peter R Killeen</span>. <span class="bib-title">Incentive theory: II. Models for choice</span>. <i><span class="bib-journal">Journal of the Experimental Analysis of Behavior</span></i>, <span class="bib-volume">38</span>(<span class="bib-number">2</span>):<span class="bib-pages">217—232</span>, <span class="bib-year">1982</span>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-15"><span class="bib-index">15</span></a>] </span> <span class="bib-authors">Peter R Killeen</span>. <span class="bib-title">Incentive theory: IV. Magnitude of reward</span>. <i><span class="bib-journal">Journal of the experimental analysis of behavior</span></i>, <span class="bib-volume">43</span>(<span class="bib-number">3</span>):<span class="bib-pages">407—417</span>, <span class="bib-year">1985</span>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-16"><span class="bib-index">16</span></a>] </span> <span class="bib-authors">Cristina Márquez, Scott M Rennie, Diana F Costa, Marta A Moita</span>. <span class="bib-title">Prosocial choice in rats depends on food-seeking behavior displayed by recipients</span>. <i><span class="bib-journal">Current Biology</span></i>, <span class="bib-volume">25</span>(<span class="bib-number">13</span>):<span class="bib-pages">1736—1745</span>, <span class="bib-year">2015</span>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-17"><span class="bib-index">17</span></a>] </span> <span class="bib-authors">Jack J McDowell, Robert Kessel</span>. <span class="bib-title">A MULTIVARIATE RATE EQUATION FOR VARIABLE-INTERVAL PERFORMANCE</span>. <i><span class="bib-journal">Journal of the Experimental Analysis of Behavior</span></i>, <span class="bib-volume">31</span>(<span class="bib-number">2</span>):<span class="bib-pages">267—283</span>, <span class="bib-year">1979</span>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-18"><span class="bib-index">18</span></a>] </span> <span class="bib-authors">Kimberly A Mendres, Frans BM de Waal</span>. <span class="bib-title">Capuchins do cooperate: the advantage of an intuitive task</span>. <i><span class="bib-journal">Animal Behaviour</span></i>, <span class="bib-volume">60</span>(<span class="bib-number">4</span>):<span class="bib-pages">523—529</span>, <span class="bib-year">2000</span>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-19"><span class="bib-index">19</span></a>] </span> <span class="bib-authors">Michael Mesterton—Gibbons, Eldridge S Adams</span>. <span class="bib-title">The economics of animal cooperation</span>. <i><span class="bib-journal">Science</span></i>, <span class="bib-volume">298</span>(<span class="bib-number">5601</span>):<span class="bib-pages">2146—2147</span>, <span class="bib-year">2002</span>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-20"><span class="bib-index">20</span></a>] </span> <span class="bib-authors">Martin A Nowak, Karl Sigmund, Ulf Dieckmann</span>. <span class="bib-title">Evolution of indirect reciprocity by image scoring, Nature</span>. <i><span class="bib-journal"></span></i>, <span class="bib-year">1998</span>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-21"><span class="bib-index">21</span></a>] </span> <span class="bib-authors">Martin A Nowak, Karl Sigmund</span>. <span class="bib-title">Evolution of indirect reciprocity</span>. <i><span class="bib-journal">Nature</span></i>, <span class="bib-volume">437</span>(<span class="bib-number">7063</span>):<span class="bib-pages">1291—1298</span>, <span class="bib-year">2005</span>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-22"><span class="bib-index">22</span></a>] </span> <span class="bib-authors">Robert Axelrod, Robert M. Axelrod</span>. <i><span class="bib-title">The evolution of cooperation</span></i>. <span class="bib-publisher">Basic Books (AZ)</span>, <span class="bib-year">1984</span>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-23"><span class="bib-index">23</span></a>] </span> <span class="bib-authors">Claudia Rutte, Michael Taborsky</span>. <span class="bib-title">Generalized reciprocity in rats</span>. <i><span class="bib-journal">PLoS biology</span></i>, <span class="bib-volume">5</span>(<span class="bib-number">7</span>):<span class="bib-pages">e196</span>, <span class="bib-year">2007</span>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-24"><span class="bib-index">24</span></a>] </span> <span class="bib-authors">Claudia Rutte, Michael Taborsky</span>. <span class="bib-title">The influence of social experience on cooperative behaviour of rats (Rattus norvegicus): direct vs generalised reciprocity</span>. <i><span class="bib-journal">Behavioral Ecology and Sociobiology</span></i>, <span class="bib-volume">62</span>(<span class="bib-number">4</span>):<span class="bib-pages">499—505</span>, <span class="bib-year">2008</span>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-25"><span class="bib-index">25</span></a>] </span> <span class="bib-authors">Karin Schneeberger, Melanie Dietz, Michael Taborsky</span>. <span class="bib-title">Reciprocal cooperation between unrelated rats depends on cost to donor and benefit to recipient</span>. <i><span class="bib-journal">BMC evolutionary biology</span></i>, <span class="bib-volume">12</span>(<span class="bib-number">1</span>):<span class="bib-pages">41</span>, <span class="bib-year">2012</span>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-26"><span class="bib-index">26</span></a>] </span> <span class="bib-authors">John Maynard Smith, Eors Szathmary</span>. <i><span class="bib-title">The major transitions in evolution</span></i>. <span class="bib-publisher">Oxford University Press</span>, <span class="bib-year">1997</span>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-27"><span class="bib-index">27</span></a>] </span> <span class="bib-authors">David W Stephens, Dack Anderson</span>. <span class="bib-title">The adaptive value of preference for immediacy: when shortsighted rules have farsighted consequences</span>. <i><span class="bib-journal">Behavioral Ecology</span></i>, <span class="bib-volume">12</span>(<span class="bib-number">3</span>):<span class="bib-pages">330—339</span>, <span class="bib-year">2001</span>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-28"><span class="bib-index">28</span></a>] </span> <span class="bib-authors">David W Stephens, Colleen M McLinn, Jeffery R Stevens</span>. <span class="bib-title">Discounting and reciprocity in an iterated prisoner's dilemma</span>. <i><span class="bib-journal">Science</span></i>, <span class="bib-volume">298</span>(<span class="bib-number">5601</span>):<span class="bib-pages">2216—2218</span>, <span class="bib-year">2002</span>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-29"><span class="bib-index">29</span></a>] </span> <span class="bib-authors">David W Stephens, Colleen M McLinn, Jeffrey R Stevens</span>. <span class="bib-title">Effects of temporal clumping and payoff accumulation on impulsiveness and cooperation</span>. <i><span class="bib-journal">Behavioural processes</span></i>, <span class="bib-volume">71</span>(<span class="bib-number">1</span>):<span class="bib-pages">29—40</span>, <span class="bib-year">2006</span>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-30"><span class="bib-index">30</span></a>] </span> <span class="bib-authors">Jeffrey R Stevens, David W Stephens</span>. <span class="bib-title">The economic basis of cooperation: tradeoffs between selfishness and generosity</span>. <i><span class="bib-journal">Behavioral Ecology</span></i>, <span class="bib-volume">15</span>(<span class="bib-number">2</span>):<span class="bib-pages">255—261</span>, <span class="bib-year">2004</span>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-31"><span class="bib-index">31</span></a>] </span> <span class="bib-authors">Steve Stewart-Williams</span>. <span class="bib-title">Altruism among kin vs. nonkin: effects of cost of help and reciprocal exchange</span>. <i><span class="bib-journal">Evolution and human behavior</span></i>, <span class="bib-volume">28</span>(<span class="bib-number">3</span>):<span class="bib-pages">193—198</span>, <span class="bib-year">2007</span>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-32"><span class="bib-index">32</span></a>] </span> <span class="bib-authors">Angéle St—Pierre, Karine Larose, Frédérique Dubois</span>. <span class="bib-title">Long-term social bonds promote cooperation in the iterated Prisoner's Dilemma</span>. <i><span class="bib-journal">Proceedings of the Royal Society of London B: Biological Sciences</span></i>, <span class="bib-volume">276</span>(<span class="bib-number">1676</span>):<span class="bib-pages">4223—4228</span>, <span class="bib-year">2009</span>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-33"><span class="bib-index">33</span></a>] </span> <span class="bib-authors">Robert L Trivers</span>. <span class="bib-title">The evolution of reciprocal altruism</span>. <i><span class="bib-journal">The Quarterly review of biology</span></i>, <span class="bib-volume">46</span>(<span class="bib-number">1</span>):<span class="bib-pages">35—57</span>, <span class="bib-year">1971</span>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-34"><span class="bib-index">34</span></a>] </span> <span class="bib-authors">Duarte S Viana, Isabel Gordo, Elio Sucena, Marta AP Moita</span>. <span class="bib-title">Cognitive and motivational requirements for the emergence of cooperation in a rat social game</span>. <i><span class="bib-journal">PloS one</span></i>, <span class="bib-volume">5</span>(<span class="bib-number">1</span>):<span class="bib-pages">e8483</span>, <span class="bib-year">2010</span>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-35"><span class="bib-index">35</span></a>] </span> <span class="bib-authors">Gerald S Wilkinson</span>. <span class="bib-title">Reciprocal altruism in bats and other mammals</span>. <i><span class="bib-journal">Ethology and Sociobiology</span></i>, <span class="bib-volume">9</span>(<span class="bib-number">2—4</span>):<span class="bib-pages">85—100</span>, <span class="bib-year">1988</span>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-36"><span class="bib-index">36</span></a>] </span> <span class="bib-authors">Ruth I Wood, Jessica Y Kim, Grace R Li</span>. <span class="bib-title">Cooperation in rats playing the iterated Prisoner's Dilemma game</span>. <i><span class="bib-journal">Animal behaviour</span></i>, <span class="bib-volume">114</span>:<span class="bib-pages">27—35</span>, <span class="bib-year">2016</span>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-37"><span class="bib-index">37</span></a>] </span> <span class="bib-authors">Richard Yi, August R Buchhalter, Kirstin M Gatchalian, Warren K Bickel</span>. <span class="bib-title">The relationship between temporal discounting and the prisoner's dilemma game in intranasal abusers of prescription opioids</span>. <i><span class="bib-journal">Drug and alcohol dependence</span></i>, <span class="bib-volume">87</span>(<span class="bib-number">1</span>):<span class="bib-pages">94—97</span>, <span class="bib-year">2007</span>.
+</p>
+
+</div>
+<div class="Indented">
+<p><br>
+</p>
+
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-None.6">None.6</a> Supplementary Material
+</h2>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-None.6.1">None.6.1</a> Theorical subject statistics
+</h3>
+<div class="Unindented">
+<div class="float">
+<a class="Label" name="Figura-None.9"> </a><div class="figure" style="max-width: 95%;">
+<img class="figure" src="ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/Simulated_markov.png" alt="figura ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/Simulated_markov.png" style="max-width: 3402px; max-height: 2448px;">
+<div class="caption">
+Figura None.9 <span class="scriptsize">Graph of markov chain with transition probabilities for all simulates agent used to compare behaviors.</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-None.6.2">None.6.2</a> Non cooperator subject Statistics<a class="Label" name="sub:Non-cooperator-subject"> </a>
+</h3>
+<div class="Unindented">
+<div class="float">
+<a class="Label" name="Figura-None.10"> </a><div class="multifigure">
+<span class="float">
+<div class="figure" style="max-width: 95%;">
+<img class="figure" src="ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/nocoop_probabilidades.png" alt="figura ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/nocoop_probabilidades.png" style="max-width: 737px; max-height: 528px;">
+<div class="caption">
+(a) <span class="scriptsize">Probabilities of cooperate given each outcomes</span>
+</div>
+<a class="Label" name="fig_nocoop_statistic"> </a>
+</div>
+
+</span>
+<span class="float">
+<div class="figure" style="max-width: 95%;">
+<img class="figure" src="ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/nocoop_markov.png" alt="figura ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/nocoop_markov.png" style="max-width: 591px; max-height: 350px;">
+<div class="caption">
+(b) <span class="scriptsize">Graph of markov transition probabilities per subject</span>
+</div>
+<a class="Label" name="fig_nocoop_markov"> </a>
+</div>
+
+</span>
+<div class="caption">
+Figura None.10 <span class="scriptsize">Statistic for the discarded subject. These subject had a random behavior because. <a class="Reference" href="#fig_nocoop_statistic">a↑</a>) All probabilities of cooperate given each outcome are near 50 percent and this means that their haven’t any preference choice. See significant value of <span class="formula"><i>X</i><sup>2</sup></span>test in table <a class="Reference" href="#table_meanAndstrategies">None.2↑</a>. <a class="Reference" href="#fig_nocoop_markov">b↑</a>) The graph of markov chain show that the transition probabilities are very closed to 50%. </span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-None.6.3">None.6.3</a> Cooperatos statistics
+</h3>
+<div class="Unindented">
+<div class="float">
+<a class="Label" name="Figura-None.11"> </a><div class="figure" style="max-width: 90%;">
+<img class="figure" src="ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/coop_statistic.png" alt="figura ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/coop_statistic.png" style="max-width: 2400px; max-height: 4376px;">
+<div class="caption">
+Figura None.11 Probabilities of cooperate given each outcomes for cooperator subjects (T:temptation to cheat; R:reward when both cooperated; P:punishment’s payoff when neither cooperate;S:sucket’s payoff that an altruist gets when cheated). 
+</div>
+<a class="Label" name="fig_coop_statistic"> </a>
+</div>
+
+</div>
+
+</div>
+<div class="Indented">
+<div class="float">
+<a class="Label" name="Figura-None.12"> </a><div class="figure" style="max-width: 95%;">
+<img class="figure" src="ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/coop_markov.png" alt="figura ExtraerDatos/figura_iPD_1_2_9s_13s/fig_finales/coop_markov.png" style="max-width: 2482px; max-height: 3368px;">
+<div class="caption">
+Figura None.12 Graph of markov chain transition probabilities per cooperative rats
+</div>
+<a class="Label" name="fig_coop_markov"> </a>
+</div>
+
+</div>
+
+</div>
+
+<hr class="footer">
+<div class="footer" id="generated-by">
+Documento generado con <a href="http://elyxer.nongnu.org/">eLyXer 1.2.5 (2013-03-10)</a> en <span class="create-date">2017-08-11T14:56:03.536987</span>
+</div>
+</div>
+</body>
+</html>
