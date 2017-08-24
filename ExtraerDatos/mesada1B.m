@@ -421,39 +421,39 @@
 %
 %%%%% Calculo de coeficiente de preferencia  %%%%%%%%%%%%%%%%%%%%%%%%%
 %aux=I(find(sort(foodMedia)>0.8));
-_selfish=foodMedia./((_timeOutMedia)./_timeoutLimit);
-
-_selfishInf=foodMedia.*_timeOutMedia;
-
-_selfishtheor=_idealSujeto(1,:)./((_idealSujeto(2,:))./_timeoutLimit);
-
-hhh=figure;%  {"switch CD"; "all C";      "switch CCDD";  "half C";            "switch 3Cx3D";   "switch CCD";  "switch CCCD"}
-
-scatter(_selfish(find(_mediaXsujeto>0.5)),ones(1,length(find(_mediaXsujeto>0.5))),20,"filled");
-hold on;
-%t=text(-0.002+_selfish(find(_mediaXsujeto>0.5)),0.013+ones(1,length(find(_mediaXsujeto>0.5))),{_txtSujetos(_vSujetos(1:4),:)},"fontsize",14);
-t=text(-0.002*[1 -1.15 1 1]+_selfish(find(_mediaXsujeto>0.5)),0.013*[1 1 1 1]+ones(1,length(find(_mediaXsujeto>0.5))),_txtSujetos(_vSujetos(1:4),:),"fontsize",14);
-h=scatter(_selfishtheor([1 2 3 5 6]),ones(1,length(_selfishtheor([1 2 3 5 6]))),25,'r');
-set(h, "linewidth", 2);  
-t=text(-0.005+_selfishtheor([1 2 3 5 6]),-0.013+ones(1,length(_selfishtheor([1 2 3 5 6]))),
-                                       {"CD","AllC","2Cx2D","3Cx3D" ,"CCD"},"fontsize",12);
-%t=text([0.26 0.27 0.26 0.27],[1.055 1.055 1.045 1.045],
-%       {num2str(_vRefuerzos(1));num2str(_vRefuerzos(2));num2str(_vRefuerzos(3));num2str(_vRefuerzos(4))},"fontsize",13);                                     
-%t=text(0.005+[0.26 0.27 0.26 0.27],-0.005+[1.055 1.055 1.045 1.045],
-%       {num2str(_vDelay4eat(1));num2str(_vDelay4eat(2));num2str(_vDelay4eat(3));num2str(_vDelay4eat(4))},"fontsize",13);
-hold off;
-ylabel("");
-xlabel("Coefficient of preference","fontsize",16);
-
-
-name=strcat("figura_iPD_1_2_9s_13s/fig_finales/coefficientOfPreference_reversion",_txtSujetos(i,:));
-name=strcat(name,".png");
-print(hhh, name);
-
-
-
-%_selfish=foodMedia./((_timeOutMedia)./_timeoutLimit);
-%
+%%%%%%_selfish=foodMedia./((_timeOutMedia)./_timeoutLimit);
+%%%%%%
+%%%%%%_selfishInf=foodMedia.*_timeOutMedia;
+%%%%%%
+%%%%%%_selfishtheor=_idealSujeto(1,:)./((_idealSujeto(2,:))./_timeoutLimit);
+%%%%%%
+%%%%%%hhh=figure;%  {"switch CD"; "all C";      "switch CCDD";  "half C";            "switch 3Cx3D";   "switch CCD";  "switch CCCD"}
+%%%%%%
+%%%%%%scatter(_selfish(find(_mediaXsujeto>0.5)),ones(1,length(find(_mediaXsujeto>0.5))),20,"filled");
+%%%%%%hold on;
+%%%%%%%t=text(-0.002+_selfish(find(_mediaXsujeto>0.5)),0.013+ones(1,length(find(_mediaXsujeto>0.5))),{_txtSujetos(_vSujetos(1:4),:)},"fontsize",14);
+%%%%%%t=text(-0.002*[1 -1.15 1 1]+_selfish(find(_mediaXsujeto>0.5)),0.013*[1 1 1 1]+ones(1,length(find(_mediaXsujeto>0.5))),_txtSujetos(_vSujetos(1:4),:),"fontsize",14);
+%%%%%%h=scatter(_selfishtheor([1 2 3 5 6]),ones(1,length(_selfishtheor([1 2 3 5 6]))),25,'r');
+%%%%%%set(h, "linewidth", 2);  
+%%%%%%t=text(-0.005+_selfishtheor([1 2 3 5 6]),-0.013+ones(1,length(_selfishtheor([1 2 3 5 6]))),
+%%%%%%                                       {"CD","AllC","2Cx2D","3Cx3D" ,"CCD"},"fontsize",12);
+%%%%%%%t=text([0.26 0.27 0.26 0.27],[1.055 1.055 1.045 1.045],
+%%%%%%%       {num2str(_vRefuerzos(1));num2str(_vRefuerzos(2));num2str(_vRefuerzos(3));num2str(_vRefuerzos(4))},"fontsize",13);                                     
+%%%%%%%t=text(0.005+[0.26 0.27 0.26 0.27],-0.005+[1.055 1.055 1.045 1.045],
+%%%%%%%       {num2str(_vDelay4eat(1));num2str(_vDelay4eat(2));num2str(_vDelay4eat(3));num2str(_vDelay4eat(4))},"fontsize",13);
+%%%%%%hold off;
+%%%%%%ylabel("");
+%%%%%%xlabel("Coefficient of preference","fontsize",16);
+%%%%%%
+%%%%%%
+%%%%%%name=strcat("figura_iPD_1_2_9s_13s/fig_finales/coefficientOfPreference_reversion",_txtSujetos(i,:));
+%%%%%%name=strcat(name,".png");
+%%%%%%print(hhh, name);
+%%%%%
+%%%%
+%%%
+%%%_selfish=foodMedia./((_timeOutMedia)./_timeoutLimit);
+%%
 %_selfishInf=foodMedia.*_timeOutMedia;
 %
 %_selfishtheor=_idealSujeto(1,:)./((_idealSujeto(2,:))./_timeoutLimit);
@@ -478,3 +478,81 @@ print(hhh, name);
 %name=strcat("figura_iPD_1_2_9s_13s/fig_finales/coefficientOfPreference",_txtSujetos(i,:));
 %name=strcat(name,".png");
 %print(hhh, name);
+
+%% Experimentos por sujetos
+%expXsuj=zeros(1,_nSujetos);
+%for j=inicio:(numfields(todo)-8)
+%  for i=1:length(todo.(indice(j+1,:)))
+%    if length(todo.(indice(j+1,:))(i)._groupStr)!=0
+%      expXsuj(i)++;
+%    endif
+%  endfor
+%endfor
+%expXsuj(1)=21;
+%
+%mediasXratas=zeros(12,(50/5));
+%for i=1:_nSujetos
+%  k=0;
+%  for j=1:5:expXsuj(i)
+%    k++;
+%    if ((j+4)<expXsuj(i))
+%      mediasXratas(i,k)=mean(_promediosC(j:j+4,i));
+%    else
+%      mediasXratas(i,k)=mean(_promediosC(j:expXsuj(i),i));
+%    endif
+%  endfor
+%endfor
+%
+%%_colores=["--+b";"--ob";"--*b";"--.b";"--xb";"--sb";"--^b";"--vb";"-->b";"--<b";"--pb";"--hb"];
+%_colores=["--+k";"--om";"--*g";"--.r";"--xb";"--sc";"--^m";"--vg";"-->b";"--<c";"--pr";"--hr"];
+%figure;
+%hold on;
+%for i=[1 3 7 8 9 10 11 12]
+%  %h=plot(1:expXsuj(i),_promediosC(1:expXsuj(i),i),_colores(i,:));
+%  h=plot(1:ceil(expXsuj(i)/5),mediasXratas(i,1:ceil(expXsuj(i)/5)),_colores(i,:));
+%  set (h, "linewidth", 1);
+%endfor
+%hold off;
+%
+%figure;
+%hold on;
+%for i=[1 3 7 8 9 10 11 12]
+%  %h=plot(1:expXsuj(i),_promediosC(1:expXsuj(i),i),_colores(i,:));
+%  h=plot(1:ceil(expXsuj(i)/5),mediasXratas(i,1:ceil(expXsuj(i)/5)),'k');
+%  set (h, "linewidth", 1);
+%endfor
+%hold off;
+
+
+%%%%%%%% TIMEOUT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+_timeoutC_EndAttached=(_timeOut(:,i)-_timeoutITI)./_timeoutLimit; %% ejecutar cantidad de alimentos.m
+
+_shft=zeros(1,_nSujetos);
+for i=1:_nSujetos
+  shft(i)=length(find(_timeOut(:,i)==0));
+  _timeoutC_EndAttached(:,i)=shift((_timeOut(:,i)-_timeoutITI)./_timeoutLimit,shft(i));
+endfor
+_media_EndAtached=sum(_timeoutC_EndAttached,2);
+_semTodos_EndAttached=zeros(size(_media_EndAtached));
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+hf=figure();
+hold on;
+finAux=max(shft);
+%for i=[1 3 7 8 9 10 11 12]
+%  %h=plot(1:length([shft(3)+1:finAux]),_promediosC_EndAttached(shft(3)+1:finAux,i),_colores(i,:));
+%  h=plot(1:length([shft(3)+1:finAux]),_promediosC_EndAttached(shft(3)+1:finAux,i),'k');
+%  set (h, "linewidth", 1);
+%endfor
+
+hh=plot(_media_EndAtached(28:finAux),'k');set(hh, "linewidth", 3);
+%h=errorbar(_media_EndAtached(28:finAux),_semTodos_EndAttached(28:finAux),'--k');set(hh, "linewidth", 3);
+hh=plot(_media_EndAtached(28:finAux)+_semTodos_EndAttached(28:finAux),'--k');set(hh, "linewidth", 3);
+hh=plot(_media_EndAtached(28:finAux)-_semTodos_EndAttached(28:finAux),'--k');set(hh, "linewidth", 3);
+
+hhh=xlabel("n of sesiones");set(hhh, "fontsize", 18);
+hhh=ylabel("% of cooperation");set(hhh, "fontsize", 18);
+
+hhh=plot(40*ones(1,length([0.45:0.02:0.95]))-shft(3),[0.05:0.02:0.95],'*k');set(hhh, "linewidth", 1);
+grid on;
