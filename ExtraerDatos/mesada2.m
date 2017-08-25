@@ -30,27 +30,57 @@ endfor
 %vec(ans)
 %ans.*[probC2(i);probD2(i);probC2(i);probD2(i)]
 %_vRefuerzos([1 4 2 3])*ans
-for ag=[2 6]
-  n=1000;
-  agente1=zeros(1,n);
-  agente1_reward=zeros(1,n);
-  agente1(find(rand(1,n)<=probC2(ag)))=1;
-  %length(find(agente1==1))
-  if agente1(1)==1
-    agente1_reward(1)=_vRefuerzos(1);
-  else
-    agente1_reward(1)=_vRefuerzos(2);
+%for ag=[1 6]
+%  n=1000;
+%  agente1=zeros(1,n);
+%  agente1_reward=zeros(1,n);
+%  agente1(find(rand(1,n)<=probC2(ag)))=1;
+% %length(find(agente1==1))
+%  if agente1(1)==1
+%    agente1_reward(1)=_vRefuerzos(1);
+%  else
+%    agente1_reward(1)=_vRefuerzos(2);
+%  endif
+%  for k=2:n
+%    if agente1(k)==1 && agente1(k-1)==1
+%      agente1_reward(k)=_vRefuerzos(1);
+%    elseif agente1(k)==0 && agente1(k-1)==1
+%      agente1_reward(k)=_vRefuerzos(2);
+%    elseif agente1(k)==1 && agente1(k-1)==0
+%      agente1_reward(k)=_vRefuerzos(3);
+%    elseif agente1(k)==0 && agente1(k-1)==0
+%      agente1_reward(k)=_vRefuerzos(4);
+%    endif
+%  endfor
+%    sum(agente1_reward)/n/_vRefuerzos(1)
+%endfor
+
+
+n=16;
+perm=2^16;
+agente1=zeros(1,perm);
+agente1_reward=zeros(1,perm);
+agente1_timeout=zeros(1,perm);
+for i=1:perm
+agente1(find(rand(1,n)<=probC2(ag)))=1;
+
+if agente1(1)==1
+  agente1_reward(1)=_vRefuerzos(1);
+else
+  agente1_reward(1)=_vRefuerzos(2);
+endif
+for k=2:n
+  if agente1(k)==1 && agente1(k-1)==1
+    agente1_reward(k)=_vRefuerzos(1);
+  elseif agente1(k)==0 && agente1(k-1)==1
+    agente1_reward(k)=_vRefuerzos(2);
+  elseif agente1(k)==1 && agente1(k-1)==0
+    agente1_reward(k)=_vRefuerzos(3);
+  elseif agente1(k)==0 && agente1(k-1)==0
+    agente1_reward(k)=_vRefuerzos(4);
   endif
-  for k=2:n
-    if agente1(k)==1 && agente1(k-1)==1
-      agente1_reward(k)=_vRefuerzos(1);
-    elseif agente1(k)==0 && agente1(k-1)==1
-      agente1_reward(k)=_vRefuerzos(2);
-    elseif agente1(k)==1 && agente1(k-1)==0
-      agente1_reward(k)=_vRefuerzos(3);
-    elseif agente1(k)==0 && agente1(k-1)==0
-      agente1_reward(k)=_vRefuerzos(4);
-    endif
-  endfor
-  sum(agente1_reward)/n/_vRefuerzos(1)
 endfor
+sum(agente1_reward)/n/_vRefuerzos(1)
+  
+    
+    
