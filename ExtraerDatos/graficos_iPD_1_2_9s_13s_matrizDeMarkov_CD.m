@@ -74,6 +74,7 @@ datos=zeros(2,fin);
 _vRefuerzos=[1 2 0  0];
 _vDelay4eat=[5 5 9 13];%[cc dc cd dd] [R T S P]
 _timeoutLimit=10*0+10*8+10*4;%10*5+10*13+10*9;% 270s en 30trials  %195; %13*15 or T+29*P=
+_timeoutLimit=15*0+15*8;
 _timeoutITI=30*5;
 _foodLimit=2*15+0*15;% food por T y por S, alterna
 

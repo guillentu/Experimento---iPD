@@ -1,8 +1,8 @@
 %-------------------------------------------------------------------
 %------- Alternar Random - Control ITI - Castigo
-clear all
-close all
-%load "iPD_1_2_9s_13s/datosCargadoWorkspace20160423";
+%clear all
+%close all
+%%%%%%%%load "iPD_1_2_9s_13s/datosCargadoWorkspace20160423";
 load "iPD_1_2_9s_13s/datos_modificados_sobre_errores"
 
 indice=["exp00";"exp01";"exp02";"exp03";"exp04";"exp05";
@@ -81,6 +81,7 @@ datos=zeros(2,fin);
 _colores=["--+k";"--ok";"--*k";"--.k";"--xk";"--sk";"--^k";"--vk";"-->k";"--<k";"--pk";"--hk"];
 
 _cooperacion=[];
+timeout=[];
 _nada=[];
 for j=inicio:fin
   _coop=zeros(1,_nSujetos);
@@ -100,6 +101,7 @@ for j=inicio:fin
   endif
   for i=_vSujetos
     _coop(i)=length(find(todo.(indice(j+1,:))(i)._respuestasEXP(_trialIni:_trialFin)==2));
+
   endfor
   _cooperacion=[_cooperacion; _coop];
   for i=_vSujetos
@@ -256,9 +258,50 @@ hhh=ylabel("% of cooperation");set(hhh, "fontsize", 18);
 %title("Cooperacion en iPD");
 %hhh=legend({"1A";"3A";"7A";"8A";"9A";"10A";"3B";"4B";"Mean";"sem"},4);
 %t=text(13.5, 0.5, {"Last 10 sessions"},"fontsize",18);
-hhh=plot(40*ones(1,length([0.45:0.02:0.95]))-shft(3),[0.05:0.02:0.95],'*k');set(hhh, "linewidth", 1);
-grid on;
+%hhh=plot(40*ones(1,length([0.45:0.02:0.95]))-shft(3),[0.05:0.02:0.95],'*k');set(hhh, "linewidth", 1);
 
-hold off;
 name=strcat("figura_iPD_1_2_9s_13s/fig_finales/cooperation_mean_sem_last23session",".eps");
-print(hf, name);
+%print(hf, name);
+
+
+%%%%%%%% TIMEOUT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+_timeoutC_EndAttached=(_timeOut(:,i)-_timeoutITI)./_timeoutLimit; %% ejecutar cantidad de alimentos.m
+
+_shft=zeros(1,_nSujetos);
+for i=1:_nSujetos
+  shft(i)=length(find(_timeOut(:,i)==0));
+  _timeoutC_EndAttached(:,i)=shift((_timeOut(:,i)-_timeoutITI)./_timeoutLimit,shft(i));
+endfor
+_media_EndAtached=mean(_timeoutC_EndAttached(:,[1 3 7 8 9 10 11 12]),2);
+%_semTodos_EndAttached=zeros(size(_media_EndAtached(:,[1 3 7 8 9 10 11 12])));
+_semTodos_EndAttached=sem(_timeoutC_EndAttached(:,[1 3 7 8 9 10 11 12]),2);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+hf=figure();
+hold on;
+finAux=max(shft);
+%for i=[1 3 7 8 9 10 11 12]
+%  %h=plot(1:length([shft(3)+1:finAux]),_promediosC_EndAttached(shft(3)+1:finAux,i),_colores(i,:));
+%  h=plot(1:length([shft(3)+1:finAux]),_promediosC_EndAttached(shft(3)+1:finAux,i),'k');
+%  set (h, "linewidth", 1);
+%endfor
+
+hh=plot(_media_EndAtached(finAux:50),'k');set(hh, "linewidth", 3);
+%h=errorbar(_media_EndAtached(28:finAux),_semTodos_EndAttached(28:finAux),'--k');set(hh, "linewidth", 3);
+hh=plot(_media_EndAtached(finAux:50)+_semTodos_EndAttached(finAux:50),'--k');set(hh, "linewidth", 3);
+hh=plot(_media_EndAtached(finAux:50)-_semTodos_EndAttached(finAux:50),'--k');set(hh, "linewidth", 3);
+axis([0 24 0.1 .7]);
+hhh=xlabel("n of sesiones");set(hhh, "fontsize", 18);
+hhh=ylabel("% of timeout");set(hhh, "fontsize", 18);
+hold off;
+
+for i=[1 3 7 8 9 10 11 12]
+  figure;
+  plot(_timeoutC_EndAttached(finAux:50,i))
+  axis([0 24 0 1]);
+endfor
+
+%hold off;
+%name=strcat("figura_iPD_1_2_9s_13s/fig_finales/cooperation_mean_sem_last23session",".eps");
+%print(hf, name);
