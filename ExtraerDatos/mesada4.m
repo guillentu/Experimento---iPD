@@ -1,7 +1,5 @@
-
-
-_vRefuerzos=[1 2 0 0];
-_vDelay4eat=[5 5 13 9];%[cc dc cd dd] [R T S P]
+_vRefuerzos=[5 6 0 1];
+_vDelay4eat=[5 5 9 13];%[cc dc cd dd] [R T S P]
 %_timeoutLimit=10*0+10*8+10*4;%10*5+10*13+10*9;% 270s en 30trials  %195; %13*15 or T+29*P=
 %_timeoutITI=30*5;
 _foodLimit=_vRefuerzos(2)*15+0*15;% food por T y por S, alterna
@@ -57,74 +55,29 @@ endfor
 %    sum(agente1_reward)/n/_vRefuerzos(1)
 %endfor
 
-% combinatoria con repeticion de 30 elementos, 15 iguales y 15 iguales
-n=6;
 
-_timeoutLimit=5*5+5*13;%10*5+10*13+10*9;% 270s en 30trials  %195; %13*15 or T+29*P=
-             %10*P  o 9*P+1*8
-_timeoutITI=n*5;
-_foodLimit=_vRefuerzos(2)*5+_vRefuerzos(3)*5;% food por T y por S, alterna
-
-perm=factorial(n)/(factorial(n/2)*factorial(n/2));
-%aux=perms([1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2]);
-%aux=perms([1 1 1 1 1 2 2 2 2 2]);
-%agente1=unique(aux,'rows'); % Existen 'perm' distintas jugadas con 50% de cooperacion
-agente1_reward=zeros(perm,1); % cada jugada tiene una refuerzo caracteristico
-agente1_timeout=zeros(perm,1); % idem
+n=16;
+perm=2^16;
+agente1=zeros(1,perm);
+agente1_reward=zeros(1,perm);
+agente1_timeout=zeros(1,perm);
 for i=1:perm
-  if agente1(i,1)==2
-    agente1_reward(i)=_vRefuerzos(1);
-    agente1_timeout(i)+=_vDelay4eat(1);
-  else
-    agente1_reward(i)=_vRefuerzos(2);
-    agente1_timeout(i)+=_vDelay4eat(2);
+agente1(find(rand(1,n)<=probC2(ag)))=1;
+
+if agente1(1)==1
+  agente1_reward(1)=_vRefuerzos(1);
+else
+  agente1_reward(1)=_vRefuerzos(2);
+endif
+for k=2:n
+  if agente1(k)==1 && agente1(k-1)==1
+    agente1_reward(k)=_vRefuerzos(1);
+  elseif agente1(k)==0 && agente1(k-1)==1
+    agente1_reward(k)=_vRefuerzos(2);
+  elseif agente1(k)==1 && agente1(k-1)==0
+    agente1_reward(k)=_vRefuerzos(3);
+  elseif agente1(k)==0 && agente1(k-1)==0
+    agente1_reward(k)=_vRefuerzos(4);
   endif
-  for k=2:n
-    if agente1(i,k)==2 && agente1(i,k-1)==2
-      agente1_reward(i)+=_vRefuerzos(1);% R
-      agente1_timeout(i)+=_vDelay4eat(1);%R
-    elseif agente1(i,k)==1 && agente1(i,k-1)==2
-      agente1_reward(i)+=_vRefuerzos(2); %T
-      agente1_timeout(i)+=_vDelay4eat(2);%T
-    elseif agente1(i,k)==2 && agente1(i,k-1)==1
-      agente1_reward(i)+=_vRefuerzos(3); %S
-      agente1_timeout(i)+=_vDelay4eat(3);%S
-    elseif agente1(i,k)==1 && agente1(i,k-1)==1
-      agente1_reward(k)+=_vRefuerzos(4); %P
-      agente1_timeout(i)+=_vDelay4eat(4);%P
-    endif
-  endfor
-  %sum(agente1_reward)/n/_vRefuerzos(1)
 endfor
-
-agente1_reward=agente1_reward/_foodLimit;
-agente1_timeout=agente1_timeout/_timeoutLimit;
-
-scatter(agente1_timeout(77), agente1_reward(77),18,'r')
-
-%
-%agente2=[];
-%agente2(1,:)=ceil(randperm(n)/(n/2));
-%next=2;
-%while size(agente2)(1)<=perm
-%  agente2(next,:)=ceil(randperm(n)/(n/2));
-%  i=1
-%  while i<next && i>0
-%    if isequal(agente2(next,:),agente2(i,:))
-%      igual++;
-%      i=-1;
-%    endif
-%    if i~=-1
-%      next++;
-%    endif
-%  endwhile
-%endwhile
-%
-%    agente2(next,:)=ceil(randperm(n)/(n/2));
-%    [r c]=size(agente2);
-%    for j=1:(r-1)
-%    if isequal(agente2(1,:),agente2(next,:))
-%      next++;
-%    endif
-    
-
+sum(agente1_reward)/n/_vRefuerzos(1)

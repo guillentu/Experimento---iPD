@@ -72,7 +72,7 @@ fin=50;
 datos=zeros(2,fin);
             %R T P  S
 _vRefuerzos=[1 2 0  0];
-_vDelay4eat=[5 5 9 13];%[cc dc cd dd] [R T S P]
+_vDelay4eat=[5 5 13 9];%[cc dc cd dd] [R T S P]
 _timeoutLimit=10*0+10*8+10*4;%10*5+10*13+10*9;% 270s en 30trials  %195; %13*15 or T+29*P=
 _timeoutLimit=15*0+15*8;
 _timeoutITI=30*5;
@@ -599,10 +599,11 @@ hold off;
 _delay2eat=(_timeOutMedia-_timeoutITI)./_timeoutLimit;
 [Ss I]=sort(foodMedia);
 hhh=figure;
-aux=I(find(sort(foodMedia)>0.8));
+aux=I(find(sort(foodMedia)));
 h=scatter(_delay2eat(aux),foodMedia(aux),20, _mediaXsujeto(aux),"filled");
 ch=colormap(gray);
 h=colorbar('southoutside');
+aux=I(find(sort(foodMedia)));
 hold on;
 %h=errorbar(_delay2eat(I(find(sort(foodMedia)>0.8)))./_timeOutMedia,foodMedia(I(find(sort(foodMedia)>0.8))),,'*k');
 %set(hhh, "linewidth", 2);
@@ -628,6 +629,55 @@ t=text(-0.10*[1 1 1 1 0.2 1.5]+ (_idealSujeto(2,[1 3 4 5 6 7])-_timeoutITI)./_ti
        {"coop 0.5";"coop 0.5";"coop 0.5";"coop 0.5";"coop 0.66%";"coop 0.75%"}); 
 t=text(0.1,0.3,{"Normalized amoung of C choice"},"fontsize",16);       
 hold off;
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+n=10;
+
+_timeoutLimit=5*5+5*13;%10*5+10*13+10*9;% 270s en 30trials  %195; %13*15 or T+29*P=
+             %10*P  o 9*P+1*8
+_timeoutITI=n*5;
+%_foodLimit=_vRefuerzos(2)*5+_vRefuerzos(3)*5;% food por T y por S, alterna
+_foodLimit=_vRefuerzos(1)*9+_vRefuerzos(2)*1;
+perm=factorial(n)/(factorial(n/2)*factorial(n/2));
+%aux=perms([1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2]);
+aux=perms([1 1 1 1 1 2 2 2 2 2]);
+agente1=unique(aux,'rows'); % Existen 'perm' distintas jugadas con 50% de cooperacion
+agente1_reward=zeros(perm,1); % cada jugada tiene una refuerzo caracteristico
+agente1_timeout=zeros(perm,1); % idem
+for i=1:perm
+  if agente1(i,1)==2
+    agente1_reward(i)=_vRefuerzos(1);
+    agente1_timeout(i)+=_vDelay4eat(1);
+  else
+    agente1_reward(i)=_vRefuerzos(2);
+    agente1_timeout(i)+=_vDelay4eat(2);
+  endif
+  for k=2:n
+    if agente1(i,k)==2 && agente1(i,k-1)==2
+      agente1_reward(i)+=_vRefuerzos(1);% R
+      agente1_timeout(i)+=_vDelay4eat(1);%R
+    elseif agente1(i,k)==1 && agente1(i,k-1)==2
+      agente1_reward(i)+=_vRefuerzos(2); %T
+      agente1_timeout(i)+=_vDelay4eat(2);%T
+    elseif agente1(i,k)==2 && agente1(i,k-1)==1
+      agente1_reward(i)+=_vRefuerzos(3); %S
+      agente1_timeout(i)+=_vDelay4eat(3);%S
+    elseif agente1(i,k)==1 && agente1(i,k-1)==1
+      agente1_reward(k)+=_vRefuerzos(4); %P
+      agente1_timeout(i)+=_vDelay4eat(4);%P
+    endif
+  endfor
+  %sum(agente1_reward)/n/_vRefuerzos(1)
+endfor
+
+agente1_reward=agente1_reward/_foodLimit;
+agente1_timeout=agente1_timeout/_timeoutLimit;
+figure;
+scatter(agente1_timeout, agente1_reward,18,'r')
+%[s i]=sort(agente1_timeout);
+%plot(agente1_timeout(i), agente1_reward(i),'r')
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 

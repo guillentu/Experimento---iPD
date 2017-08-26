@@ -1,0 +1,116 @@
+a=1
+_vRefuerzos=[1 2 0 0];
+_vDelay4eat=[5 5 13 9];%[cc dc cd dd] [R T S P]
+%_timeoutLimit=10*0+10*8+10*4;%10*5+10*13+10*9;% 270s en 30trials  %195; %13*15 or T+29*P=
+%_timeoutITI=30*5;
+_foodLimit=_vRefuerzos(2)*15+0*15;% food por T y por S, alterna
+%N=30;
+%% alimento de sujetos ideales   markov       prob estaren C o D
+%probC2=zeros(1,7); % [alternador; cooperador; CyD de a pares; la mitad coop] 
+%probC2=[.5;1;0.5;.5;.5;2/3;3/4];
+%probD2=zeros(1,7);
+%probD2=1-probC2;
+%%         {"switch CD"; "all C";      "switch CCDD";  "half C";            "switch 3Cx3D";   "switch CCD";  "switch CCCD"}          R     S     T  P
+%QQideales=[[0; 1 ;1; 0],[1; 0; 0; 0],[.5; .5; .5; .5],[14/15; 0; 1/15; 1],[2/3;1/3;1/3;2/3],[.5; 1; .5; 0],[2/3; 1; 1/3; 0]];
+%_idealSujeto=zeros(2,length(probC2));% row 1 alimetno - row 2 delay to eat
+%for i=1:length(probC2)
+%%  _idealSujeto(1,i)= N *_vRefuerzos([1 4 2 3])*(vec((reshape(QQideales(:,i),2,2))^100).*[probC2(i);probD2(i);probC2(i);probD2(i)]);
+%%  _idealSujeto(2,i)= 30*_vDelay4eat([1 4 2 3])*(vec((reshape(QQideales(:,i),2,2))^100).*[probC2(i);probD2(i);probC2(i);probD2(i)]);
+%  %                                 % R  S .T P      % [R S T P]
+%  _idealSujeto(1,i)=1*_vRefuerzos([1 4 2 3])*(QQideales(:,i).*[probC2(i);probD2(i);probC2(i);probD2(i)]);
+%endfor
+%for i=1:length(probC2)
+%  _idealSujeto(2,i)=1*_vDelay4eat([1 4 2 3])*(QQideales(:,i).*[probC2(i);probD2(i);probC2(i);probD2(i)]);
+%endfor
+
+
+%probC2([1 2 4 6 7])'
+%_idealSujeto(:,[1 2 4 6 7])
+
+%i=1
+%_vRefuerzos([1 4 2 3])*(vec((reshape(QQideales(:,i),2,2))^100).*[probC2(i);probD2(i);probC2(i);probD2(i)])
+%(reshape(QQideales(:,i),2,2))^100
+%vec(ans)
+%ans.*[probC2(i);probD2(i);probC2(i);probD2(i)]
+%_vRefuerzos([1 4 2 3])*ans
+%for ag=[1 6]
+%  n=1000;
+%  agente1=zeros(1,n);
+%  agente1_reward=zeros(1,n);
+%  agente1(find(rand(1,n)<=probC2(ag)))=1;
+% %length(find(agente1==1))
+%  if agente1(1)==1
+%    agente1_reward(1)=_vRefuerzos(1);
+%  else
+%    agente1_reward(1)=_vRefuerzos(2);
+%  endif
+%  for k=2:n
+%    if agente1(k)==1 && agente1(k-1)==1
+%      agente1_reward(k)=_vRefuerzos(1);
+%    elseif agente1(k)==0 && agente1(k-1)==1
+%      agente1_reward(k)=_vRefuerzos(2);
+%    elseif agente1(k)==1 && agente1(k-1)==0
+%      agente1_reward(k)=_vRefuerzos(3);
+%    elseif agente1(k)==0 && agente1(k-1)==0
+%      agente1_reward(k)=_vRefuerzos(4);
+%    endif
+%  endfor
+%    sum(agente1_reward)/n/_vRefuerzos(1)
+%endfor
+
+
+n=1000;
+trials=100;
+agente1=zeros(n,trials);
+
+coop=[0.3 0.4 0.5 0.6 0.7 0.8 0.9 0.99];
+color=['r';'b';'r';'b';'r';'b';'r';'b'];
+for iter=1:length(coop)
+iter
+coop(iter)
+  for i=1:n
+    [q w]=find((randperm(trials)/trials)<=coop(iter));
+    agente1(i,:)=1;
+    agente1(i,w)=2;
+  endfor
+  agente1=unique(agente1,'rows');
+  [r c]=size(agente1);
+  agente1_reward=zeros(1,r);
+  agente1_timeout=zeros(1,r);
+  for i=1:r
+    if agente1(i,1)==2
+      agente1_reward(1)=_vRefuerzos(1);
+    else
+      agente1_reward(1)=_vRefuerzos(2);
+    endif
+    for k=2:trials
+      if agente1(i,k)==2 && agente1(i,k-1)==2
+        agente1_reward(i)+=_vRefuerzos(1);% R
+        agente1_timeout(i)+=_vDelay4eat(1);%R
+      elseif agente1(i,k)==1 && agente1(i,k-1)==2
+        agente1_reward(i)+=_vRefuerzos(2); %T
+        agente1_timeout(i)+=_vDelay4eat(2);%T
+      elseif agente1(i,k)==2 && agente1(i,k-1)==1
+        agente1_reward(i)+=_vRefuerzos(3); %S
+        agente1_timeout(i)+=_vDelay4eat(3);%S
+      elseif agente1(i,k)==1 && agente1(i,k-1)==1
+        agente1_reward(i)+=_vRefuerzos(4); %P
+        agente1_timeout(i)+=_vDelay4eat(4);%P
+      endif
+    endfor
+  endfor
+  %sum(agente1_reward)/n/_vRefuerzos(1)
+  _timeoutLimit=(trials/2)*0+(trials/2)*8;%10*5+10*13+10*9;% 270s en 30trials  %195; %13*15 or T+29*P=
+               %10*P  o 9*P+1*8
+  _timeoutITI=trials*5;
+  %_foodLimit=_vRefuerzos(2)*5+_vRefuerzos(3)*5;% food por T y por S, alterna
+  _foodLimit=_vRefuerzos(1)*(trials-1)+_vRefuerzos(2)*1;
+
+  agente1_reward=agente1_reward/_foodLimit;
+  agente1_timeout=(agente1_timeout-_timeoutITI)/_timeoutLimit;
+  %figure();
+  hold on;
+  scatter(agente1_timeout, agente1_reward,12-iter,color(iter,:))
+  hold off;
+  %print(hhh, "figura_iPD_1_2_9s_13s/reward_timeout_todos_simulados.png");
+endfor
