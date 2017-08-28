@@ -613,7 +613,7 @@ hh=xlabel("% total acumulated Timeout per sessions");
 set(hh, "fontsize", 16);
 hh=title("Reward versus Timeout to eat (colorbar=cooperation)"); 
 set(hh, "fontsize", 16);
-grid on;
+
 t=text(0.02*[-1 -1 0 -1 -1 0 -1 -1]+_delay2eat(aux),-0.04*[1 1 1 1 1.2 -.8 1 -1]+foodMedia(aux),_txtSujetos(aux,:));
 %axis('auto');
 axis([-.04, 1.1, .5, 1.1]);
