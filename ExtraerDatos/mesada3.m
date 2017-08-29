@@ -58,11 +58,14 @@ _foodLimit=_vRefuerzos(2)*15+0*15;% food por T y por S, alterna
 %    sum(agente1_reward)/n/_vRefuerzos(1)
 %endfor
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+_timeoutLimit=15*0+15*13;
+_timeoutITI=30*5;
+_foodLimit=2*15+0*15;% 
 _delay2eat=(_timeOutMedia-_timeoutITI)./_timeoutLimit;
 [Ss I]=sort(foodMedia);
 hhh=figure;
 aux=I(find(sort(foodMedia)));
-h=scatter(_delay2eat(aux),foodMedia(aux),2000, _mediaXsujeto(aux),"filled");
+h=scatter(_delay2eat(aux),foodMedia(aux),200, _mediaXsujeto(aux),"filled");
 ch=colormap(gray);
 h=colorbar('southoutside');
 aux=I(find(sort(foodMedia)));
@@ -92,21 +95,26 @@ t=text(-0.10*[1 1 1 1 0.2 1.5]+ (_idealSujeto(2,[1 3 4 5 6 7])-_timeoutITI)./_ti
 t=text(0.1,0.3,{"Normalized amoung of C choice"},"fontsize",16);       
 hold off;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-n=80000;
+n=10000;
 trials=30;
 agente1=zeros(n,trials);
-
-coop=[0.5 0.6];
+coop=[0.6];
 color=['r';'b';'r';'b';'r';'b';'r';'b'];
-for iter=1:length(coop)
-iter
-coop(iter)
+_vAgente1_reward=[];
+_vAgente1_timeout=[];
+for trials=[30 200]
+  _timeoutLimit=trials/2*_vDelay4eat(2)+trials/2*_vDelay4eat(3);
+  _timeoutITI=trials*5;
+  _foodLimit=_vRefuerzos(2)/(trials/2);% 
+  iter=1
+  coop(iter)
+  Sss=[ones(ceil(trials*coop),1);zeros(floor(trials*(1-coop)),1)]+1;
   for i=1:n
-    [q w]=find((randperm(trials)/trials)<=coop(iter));
-    agente1(i,:)=1;
-    agente1(i,w)=2;
+    %[q w]=find((randperm(trials)/trials)<=coop(iter));
+    agente1(i,randperm(length(Sss)))=Sss;
+    %agente1(i,w)=2;
   endfor
-  agente1=unique(agente1,'rows');
+  %agente1=unique(agente1,'rows');
   [r c]=size(agente1);
   agente1_reward=zeros(1,r);
   agente1_timeout=zeros(1,r);
@@ -139,11 +147,21 @@ coop(iter)
   %_foodLimit=_vRefuerzos(2)*5+_vRefuerzos(3)*5;% food por T y por S, alterna
   _foodLimit=_vRefuerzos(1)*(trials-1)+_vRefuerzos(2)*1;
 
-  agente1_reward=agente1_reward/_foodLimit;
-  agente1_timeout=(agente1_timeout-_timeoutITI)/_timeoutLimit;
+  _vAgente1_reward=[ _vAgente1_reward; agente1_reward/_foodLimit];
+  _vAgente1_timeout=[ _vAgente1_timeout; (agente1_timeout-_timeoutITI)/_timeoutLimit];
+%  agente2_reward=uniagente1_reward/_foodLimit
   %figure();
-  hold on;
-  scatter(agente1_timeout, agente1_reward,(12-iter)*150,color(iter,:))
-  hold off;
+%  hold on;
+%  scatter(unique([]),(12-iter)*15,color(iter,:))
+%  hold off;
   %print(hhh, "figura_iPD_1_2_9s_13s/reward_timeout_todos_simulados.png");
 endfor
+  %figure();
+  hold on;
+  vec=unique([_vAgente1_timeout(1,:)' _vAgente1_reward(1,:)'],'rows');
+  scatter(vec(:,1),vec(:,2),(12-iter)*15,color(iter,:))
+  vec=unique([_vAgente1_timeout(2,:)' _vAgente1_reward(2,:)'],'rows');
+  scatter(vec(:,1),vec(:,2),(12-iter)*15,color(iter,:))
+  hold off;
+axis([-.04, 1.1, .5, 1.1]);
+

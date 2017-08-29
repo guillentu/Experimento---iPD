@@ -19,7 +19,7 @@ endfor
 
 food=[];
 for i=1:_nSujetos
-food(:,i)=[TT(i,:).*_vRefuerzos(2) + CC(i,:).*_vRefuerzos(1) + PP(i,:).*_vRefuerzos(3) + SS(i,:).*_vRefuerzos(4)];
+food(:,i)=[TT(i,:).*_vRefuerzos(2) + CC(i,:).*_vRefuerzos(1) + PP(i,:).*_vRefuerzos(4) + SS(i,:).*_vRefuerzos(3)];
 endfor
 foodMedia=zeros(1,_nSujetos);
 foodSem=zeros(1,_nSujetos);
@@ -35,8 +35,8 @@ _timeOut=[];
 for i=1:_nSujetos
   _timeOut(:,i)=30*[TT(i,:).*_vDelay4eat(2) + ...
                  CC(i,:).*_vDelay4eat(1) + ...
-                 PP(i,:).*_vDelay4eat(3) + ...
-                 SS(i,:).*_vDelay4eat(4)];
+                 SS(i,:).*_vDelay4eat(3) + ...
+                 PP(i,:).*_vDelay4eat(4)];
 endfor
 
 _timeOutMedia=zeros(1,_nSujetos);

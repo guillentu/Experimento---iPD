@@ -74,7 +74,7 @@ datos=zeros(2,fin);
 _vRefuerzos=[1 2 0  0];
 _vDelay4eat=[5 5 13 9];%[cc dc cd dd] [R T S P]
 _timeoutLimit=10*0+10*8+10*4;%10*5+10*13+10*9;% 270s en 30trials  %195; %13*15 or T+29*P=
-_timeoutLimit=15*0+15*8;
+_timeoutLimit=15*0+15*13;
 _timeoutITI=30*5;
 _foodLimit=2*15+0*15;% food por T y por S, alterna
 
@@ -417,7 +417,7 @@ probD2=1-probC2;
 %         {"switch CD"; "all C";      "switch CCDD";  "half C";            "switch 3Cx3D";   "switch CCD";  "switch CCCD"}
 QQideales=[[0; 1 ;1; 0],[1; 0; 0; 0],[.5; .5; .5; .5],[14/15; 0; 1/15; 1],[2/3;1/3;1/3;2/3],[.5; 1; .5; 0],[2/3; 1; 1/3; 0]];
 _idealSujeto=zeros(2,length(probC2));% row 1 alimetno - row 2 delay to eat
-for i=1:length(probC2)
+for i=1:length(probC2) %                            R S T P
   _idealSujeto(1,i)=N*_vRefuerzos([1 4 2 3])*(QQideales(:,i).*[probC2(i);probD2(i);probC2(i);probD2(i)]);
 endfor
 for i=1:length(probC2)
