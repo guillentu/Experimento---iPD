@@ -2,7 +2,7 @@ a=1
 _vRefuerzos=[1 2 0 0];
 _vDelay4eat=[5 5 13 9];%[cc dc cd dd] [R T S P]
 %_timeoutLimit=10*0+10*8+10*4;%10*5+10*13+10*9;% 270s en 30trials  %195; %13*15 or T+29*P=
-%_timeoutITI=30*5;
+_timeoutITI=30*5;
 _foodLimit=_vRefuerzos(2)*15+0*15;% food por T y por S, alterna
 %N=30;
 %% alimento de sujetos ideales   markov       prob estaren C o D
@@ -58,17 +58,20 @@ _foodLimit=_vRefuerzos(2)*15+0*15;% food por T y por S, alterna
 %    sum(agente1_reward)/n/_vRefuerzos(1)
 %endfor
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-_timeoutLimit=15*0+15*13;
+_timeoutLimit=15*5+15*13;
 _timeoutITI=30*5;
 _foodLimit=2*15+0*15;% 
-_delay2eat=(_timeOutMedia-_timeoutITI)./_timeoutLimit;
+_delay2eat=(_timeOutMedia-_timeoutITI)./(_timeoutLimit-_timeoutITI);
 [Ss I]=sort(foodMedia);
 hhh=figure;
+%aux=I(find(sort(foodMedia)));
+h=scatter(_delay2eat(aux),foodMedia(aux),80, _mediaXsujeto(aux),"filled");
+%ch=colormap(gray);
+h=colormap(jet);
+h=colorbar('eastoutside');
 aux=I(find(sort(foodMedia)));
-h=scatter(_delay2eat(aux),foodMedia(aux),200, _mediaXsujeto(aux),"filled");
-ch=colormap(gray);
-h=colorbar('southoutside');
-aux=I(find(sort(foodMedia)));
+%t=text(-0.01*[1 1 1 1 1 1 1 -1 1 1 1 1]+_delay2eat(aux),.01*[ -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 1]+foodMedia(aux),_txtSujetos(aux,:));
+set(t, "fontsize", 16);
 hold on;
 %h=errorbar(_delay2eat(I(find(sort(foodMedia)>0.8)))./_timeOutMedia,foodMedia(I(find(sort(foodMedia)>0.8))),,'*k');
 %set(hhh, "linewidth", 2);
@@ -76,20 +79,20 @@ hh=ylabel("% of total Reward");
 set(hh, "fontsize", 16);
 hh=xlabel("% total acumulated Timeout per sessions");
 set(hh, "fontsize", 16);
-hh=title("Reward versus Timeout to eat (colorbar=cooperation)"); 
+%hh=title("Reward versus Timeout to eat (colorbar=cooperation)"); 
 set(hh, "fontsize", 16);
 
 %t=text(0.02*[-1 -1 0 -1 -1 0 -1 -1]+_delay2eat(aux),-0.04*[1 1 1 1 1.2 -.8 1 -1]+foodMedia(aux),_txtSujetos(aux,:));
 %axis('auto');
-axis([-.04, 1.1, .5, 1.1]);
+axis([0, 1, .55, 1]);
 hold on;
-h=scatter((_idealSujeto(2,[1 3 4 5 6 7])-_timeoutITI)./_timeoutLimit,_idealSujeto(1,[1 3 4 5 6 7]),15,probC([1 3 4 5 6 7])','s',"filled");
-h=scatter((_idealSujeto(2,[1 3 4 5 6 7])-_timeoutITI)./_timeoutLimit,_idealSujeto(1,[1 3 4 5 6 7]),15,'k','s',"linewidth",2);
-t=text(-0.10*[1 1 1 1 0.2 1.5]+(_idealSujeto(2,[1 3 4 5 6 7])-_timeoutITI)./_timeoutLimit,
+h=scatter((_idealSujeto(2,[1 3 4 5 6 7])-_timeoutITI)./(_timeoutLimit-_timeoutITI),_idealSujeto(1,[1 3 4 5 6 7]),35,probC([1 3 4 5 6 7])','square',"filled");
+h=scatter((_idealSujeto(2,[1 3 4 5 6 7])-_timeoutITI)./(_timeoutLimit-_timeoutITI),_idealSujeto(1,[1 3 4 5 6 7]),35,'k','s',"linewidth",2);
+t=text(-0.10*[1 1 1 1 0.2 1.5]+(_idealSujeto(2,[1 3 4 5 6 7])-_timeoutITI)./(_timeoutLimit-_timeoutITI),
        0.05*ones(1,length(probC([1 3 4 5 6 7])))+ _idealSujeto(1,[1 3 4 5 6 7]), 
        {"switch CD";"switch CCDD";"half C";"switch 3Cx3D";"switch CCD";"switch CCCD"});
 
-t=text(-0.10*[1 1 1 1 0.2 1.5]+ (_idealSujeto(2,[1 3 4 5 6 7])-_timeoutITI)./_timeoutLimit,
+t=text(-0.10*[1 1 1 1 0.2 1.5]+ (_idealSujeto(2,[1 3 4 5 6 7])-_timeoutITI)./(_timeoutLimit-_timeoutITI),
        0.03*[1 1 1 1 1 1]+ _idealSujeto(1,[1 3 4 5 6 7]),
        {"coop 0.5";"coop 0.5";"coop 0.5";"coop 0.5";"coop 0.66%";"coop 0.75%"}); 
 t=text(0.1,0.3,{"Normalized amoung of C choice"},"fontsize",16);       

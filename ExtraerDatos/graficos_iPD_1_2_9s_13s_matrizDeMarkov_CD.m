@@ -74,7 +74,7 @@ datos=zeros(2,fin);
 _vRefuerzos=[1 2 0  0];
 _vDelay4eat=[5 5 13 9];%[cc dc cd dd] [R T S P]
 _timeoutLimit=10*0+10*8+10*4;%10*5+10*13+10*9;% 270s en 30trials  %195; %13*15 or T+29*P=
-_timeoutLimit=15*0+15*13;
+_timeoutLimit=15*5+15*13;
 _timeoutITI=30*5;
 _foodLimit=2*15+0*15;% food por T y por S, alterna
 
@@ -483,7 +483,7 @@ endfor
 figure;
 aux=I(find(sort(_mediaXsujeto)>0.5));
 %h=plot(_mediaXsujeto(I),_alimento(I),'ko', "markersize",12,"markerfacecolor",'c', "linewidth", 2);
-h=scatter(_mediaXsujeto(aux),foodMedia(aux),20,(_timeOutMedia(aux)-_timeoutITI)./_timeoutLimit,"filled");
+h=scatter(_mediaXsujeto(aux),foodMedia(aux),20,(_timeOutMedia(aux)-_timeoutITI)./(_timeoutLimit-_timeoutITI),"filled");
 ch=colormap(copper);
 colorbar('southoutside');
 set(h, "linewidth", 2);
@@ -500,7 +500,7 @@ t=text(-0.01*[1 1 1 1 1 1 1 -1]+_mediaXsujeto(aux),.08*[ 1 1 -1 1 1 1 1 -1]+food
 axis([.49 1.02 0 1.15]);
 hold on;
 %h=plot(_mediaXsujeto(I(length(I))),foodMedia(I(length(I))),'ko', "markersize",20,"markerfacecolor",'none', "linewidth", 2);
-h=scatter(probC2([1 3 4 5 6 7])',_idealSujeto(1,[1 3 4 5 6 7]),15,(_idealSujeto(2,[1 3 4 5 6 7])-_timeoutITI)./_timeoutLimit,'s',"filled");
+h=scatter(probC2([1 3 4 5 6 7])',_idealSujeto(1,[1 3 4 5 6 7]),15,(_idealSujeto(2,[1 3 4 5 6 7])-_timeoutITI)./((_timeoutLimit-_timeoutITI)-_timeoutITI),'s',"filled");
 h=scatter(probC2([1 3 4 5 6 7])',_idealSujeto(1,[1 3 4 5 6 7]),15,'k','s',"linewidth",2);
 %h=scatter(_idealSujeto(1,[1 3 4 5 6 7]),_idealSujeto(2,[1 3 4 5 6 7]),15,probC([1 3 4 5 6 7])','s',"filled");
 %h=plot(probC([1 3 4 5]),_idealSujeto(1,[1 3 4 5]),'ko', "markersize",20,"markerfacecolor",'r', "linewidth", 2);
@@ -517,7 +517,7 @@ hold off;
 [Ss I]=sort(_mediaXsujeto);
 figure;
 aux=I(find(sort(_mediaXsujeto)>0.5));
-h=scatter(_mediaXsujeto(aux),R_mean(aux),20,((_timeOutMedia(aux)-_timeoutITI)./_timeoutLimit),"filled");
+h=scatter(_mediaXsujeto(aux),R_mean(aux),20,((_timeOutMedia(aux)-_timeoutITI)./(_timeoutLimit-_timeoutITI)),"filled");
 ch=colormap(copper);
 colorbar('southoutside');
 set(h, "linewidth", 2);
@@ -532,7 +532,7 @@ grid off;%grid minor;
 t=text(-0.01*[1 1 1 1 1 1 1 -1]+_mediaXsujeto(aux),.08*[-1 -1 -1 1 1 1 1 -1]+R_mean(aux),_txtSujetos(aux,:));
 axis([.49 1.05 -.04 1.15]);
 hold on;
-h=scatter(probC2([1 3 4 5 6 7])',QQideales(1,[1 3 4 5 6 7]),15,(_idealSujeto(2,[1 3 4 5 6 7])-_timeoutITI)./_timeoutLimit,'s',"filled");
+h=scatter(probC2([1 3 4 5 6 7])',QQideales(1,[1 3 4 5 6 7]),15,(_idealSujeto(2,[1 3 4 5 6 7])-_timeoutITI)./(_timeoutLimit-_timeoutITI),'s',"filled");
 h=scatter(probC2([1 3 4 5 6 7])',QQideales(1,[1 3 4 5 6 7]),15,'k','s',"linewidth",2);
 t=text(0.025*[1 1 1 1 -.8 -.5]+ probC2([1 3 4 5 6 7])', 
         0.04*[.5 .5 .5 .5 2.4 2.4]+QQideales(1,[1 3 4 5 6 7]) ,{"switch CD";"switch CCDD";"half C";"switch 3Cx3D";"switch CCD";"switch CCCD"});
@@ -546,7 +546,7 @@ hold off;
 [Ss I]=sort(R_mean);
 figure;
 aux=I(find(sort(R_mean)>0.4));
-h=scatter(foodMedia(aux),R_mean(aux),20,((_timeOutMedia(aux)-_timeoutITI)./_timeoutLimit),"filled");
+h=scatter(foodMedia(aux),R_mean(aux),20,((_timeOutMedia(aux)-_timeoutITI)./(_timeoutLimit-_timeoutITI)),"filled");
 ch=colormap(copper);
 colorbar('southoutside');
 set(h, "linewidth", 2);
@@ -561,7 +561,7 @@ t=text(-0.01*[1 1 1 1 1 3 1 -1] + foodMedia(aux),.07*[1 1 1 1 1 0.2 1 .5] + R_me
 %axis('auto');
 axis([.49 1.1 0 1.1]);
 hold on;
-h=scatter(_idealSujeto(1,[1 3 4 5 6 7]),QQideales(1,[1 3 4 5 6 7]),15,(_idealSujeto(2,[1 3 4 5 6 7])-_timeoutITI)./_timeoutLimit,'s',"filled");
+h=scatter(_idealSujeto(1,[1 3 4 5 6 7]),QQideales(1,[1 3 4 5 6 7]),15,(_idealSujeto(2,[1 3 4 5 6 7])-_timeoutITI)./(_timeoutLimit-_timeoutITI),'s',"filled");
 h=scatter(_idealSujeto(1,[1 3 4 5 6 7]),QQideales(1,[1 3 4 5 6 7]),15,'k','s',"linewidth",2);
 t=text(0.025*[.51 .51 .51 .51 -.8 -.5]+ _idealSujeto(1,[1 3 4 5 6 7]), 
         0.04*[.5 .5 .5 .5 1.4 1.4]+QQideales(1,[1 3 4 5 6 7]) ,{"switch CD";"switch CCDD";"half C";"switch 3Cx3D";"switch CCD";"switch CCCD"});
@@ -596,7 +596,7 @@ hold off;
 %hold off;
 
 % Alimentacion Versus Delay to eat
-_delay2eat=(_timeOutMedia-_timeoutITI)./_timeoutLimit;
+_delay2eat=(_timeOutMedia-_timeoutITI)./(_timeoutLimit-_timeoutITI);
 [Ss I]=sort(foodMedia);
 hhh=figure;
 aux=I(find(sort(foodMedia)));
@@ -618,13 +618,13 @@ t=text(0.02*[-1 -1 0 -1 -1 0 -1 -1]+_delay2eat(aux),-0.04*[1 1 1 1 1.2 -.8 1 -1]
 %axis('auto');
 axis([-.04, 1.1, .5, 1.1]);
 hold on;
-h=scatter((_idealSujeto(2,[1 3 4 5 6 7])-_timeoutITI)./_timeoutLimit,_idealSujeto(1,[1 3 4 5 6 7]),15,probC([1 3 4 5 6 7])','s',"filled");
-h=scatter((_idealSujeto(2,[1 3 4 5 6 7])-_timeoutITI)./_timeoutLimit,_idealSujeto(1,[1 3 4 5 6 7]),15,'k','s',"linewidth",2);
-t=text(-0.10*[1 1 1 1 0.2 1.5]+(_idealSujeto(2,[1 3 4 5 6 7])-_timeoutITI)./_timeoutLimit,
+h=scatter((_idealSujeto(2,[1 3 4 5 6 7])-_timeoutITI)./(_timeoutLimit-_timeoutITI),_idealSujeto(1,[1 3 4 5 6 7]),15,probC([1 3 4 5 6 7])','s',"filled");
+h=scatter((_idealSujeto(2,[1 3 4 5 6 7])-_timeoutITI)./(_timeoutLimit-_timeoutITI),_idealSujeto(1,[1 3 4 5 6 7]),15,'k','s',"linewidth",2);
+t=text(-0.10*[1 1 1 1 0.2 1.5]+(_idealSujeto(2,[1 3 4 5 6 7])-_timeoutITI)./(_timeoutLimit-_timeoutITI),
        0.05*ones(1,length(probC([1 3 4 5 6 7])))+ _idealSujeto(1,[1 3 4 5 6 7]), 
        {"switch CD";"switch CCDD";"half C";"switch 3Cx3D";"switch CCD";"switch CCCD"});
 
-t=text(-0.10*[1 1 1 1 0.2 1.5]+ (_idealSujeto(2,[1 3 4 5 6 7])-_timeoutITI)./_timeoutLimit,
+t=text(-0.10*[1 1 1 1 0.2 1.5]+ (_idealSujeto(2,[1 3 4 5 6 7])-_timeoutITI)./(_timeoutLimit-_timeoutITI),
        0.03*[1 1 1 1 1 1]+ _idealSujeto(1,[1 3 4 5 6 7]),
        {"coop 0.5";"coop 0.5";"coop 0.5";"coop 0.5";"coop 0.66%";"coop 0.75%"}); 
 t=text(0.1,0.3,{"Normalized amoung of C choice"},"fontsize",16);       
@@ -672,7 +672,7 @@ for i=1:perm
 endfor
 
 agente1_reward=agente1_reward/_foodLimit;
-agente1_timeout=agente1_timeout/_timeoutLimit;
+agente1_timeout=agente1_timeout/(_timeoutLimit-_timeoutITI);
 figure;
 scatter(agente1_timeout, agente1_reward,18,'r')
 %[s i]=sort(agente1_timeout);

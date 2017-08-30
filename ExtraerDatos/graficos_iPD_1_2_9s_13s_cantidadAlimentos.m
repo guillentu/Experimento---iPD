@@ -47,7 +47,7 @@ for i=1:_nSujetos
   finAux=expXsuj(i);
   _timeOutMedia(i) = mean(_timeOut(inicioAux:finAux,i));
   %_timeOutMediaN(i) = mean(_timeOut(inicioAux:finAux,i)-_timeoutITI);
-  _timeOutSem(i) = sem((_timeOut(inicioAux:finAux,i)-_timeoutITI)./_timeoutLimit);
+  _timeOutSem(i) = sem((_timeOut(inicioAux:finAux,i)-_timeoutITI)./(_timeoutLimit-_timeoutITI));
 endfor
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
