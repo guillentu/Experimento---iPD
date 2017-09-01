@@ -64,7 +64,7 @@ _foodLimit=2*15+0*15;%
 _delay2eat=(_timeOutMedia-_timeoutITI)./(_timeoutLimit-_timeoutITI);
 [Ss I]=sort(foodMedia);
 hhh=figure;
-%aux=I(find(sort(foodMedia)));
+aux=I(find(sort(foodMedia)));
 h=scatter(_delay2eat(aux),foodMedia(aux),80, _mediaXsujeto(aux),"filled");
 %ch=colormap(gray);
 h=colormap(jet);
@@ -165,6 +165,7 @@ endfor
   scatter(vec(:,1),vec(:,2),(12-iter)*15,color(iter,:))
   vec=unique([_vAgente1_timeout(2,:)' _vAgente1_reward(2,:)'],'rows');
   scatter(vec(:,1),vec(:,2),(12-iter)*15,color(iter,:))
-  hold off;
-axis([-.04, 1.1, .5, 1.1]);
+  hold off;axis([0, 1, .55, 1]);
+  
+
 

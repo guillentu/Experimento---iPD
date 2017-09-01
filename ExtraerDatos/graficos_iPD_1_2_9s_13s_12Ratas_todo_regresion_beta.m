@@ -239,12 +239,14 @@ finAux=max(shft);
 %  h=plot(1:length([shft(3)+1:finAux]),_promediosC_EndAttached(shft(3)+1:finAux,i),'k');
 %  set (h, "linewidth", 1);
 %endfor
-
+r1=_media_EndAtached(28:finAux);
 hh=plot(_media_EndAtached(28:finAux),'k');set(hh, "linewidth", 3);
 %h=errorbar(_media_EndAtached(28:finAux),_semTodos_EndAttached(28:finAux),'--k');set(hh, "linewidth", 3);
 hh=plot(_media_EndAtached(28:finAux)+_semTodos_EndAttached(28:finAux),'--k');set(hh, "linewidth", 3);
 hh=plot(_media_EndAtached(28:finAux)-_semTodos_EndAttached(28:finAux),'--k');set(hh, "linewidth", 3);
-
+r2=_media_EndAtached(28:finAux)+_semTodos_EndAttached(28:finAux);
+r3=_media_EndAtached(28:finAux)-_semTodos_EndAttached(28:finAux);
+area (1:length(y1), min ([r2; r3]), "FaceColor", "green");
 %x=[inicio:50]';
 %y=(_media(inicio:50))';
 %F = [ ones(length(x),1) x];
@@ -255,6 +257,7 @@ hh=plot(_media_EndAtached(28:finAux)-_semTodos_EndAttached(28:finAux),'--k');set
 %set(hh, "linewidth", 3);
 hhh=xlabel("n of sesiones");set(hhh, "fontsize", 18);
 hhh=ylabel("% of cooperation");set(hhh, "fontsize", 18);
+
 %title("Cooperacion en iPD");
 %hhh=legend({"1A";"3A";"7A";"8A";"9A";"10A";"3B";"4B";"Mean";"sem"},4);
 %t=text(13.5, 0.5, {"Last 10 sessions"},"fontsize",18);
@@ -265,16 +268,17 @@ name=strcat("figura_iPD_1_2_9s_13s/fig_finales/cooperation_mean_sem_last23sessio
 
 
 %%%%%%%% TIMEOUT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-_timeoutC_EndAttached=(_timeOut(:,i)-_timeoutITI)./_timeoutLimit; %% ejecutar cantidad de alimentos.m
+_timeoutC_EndAttached=(_timeOut(:,i)-_timeoutITI)./(_timeoutLimit-_timeoutITI); %% ejecutar cantidad de alimentos.m
 
 _shft=zeros(1,_nSujetos);
 for i=1:_nSujetos
   shft(i)=length(find(_timeOut(:,i)==0));
-  _timeoutC_EndAttached(:,i)=shift((_timeOut(:,i)-_timeoutITI)./_timeoutLimit,shft(i));
+  _timeoutC_EndAttached(:,i)=shift((_timeOut(:,i)-_timeoutITI)./(_timeoutLimit-_timeoutITI),shft(i));
 endfor
 _media_EndAtached=mean(_timeoutC_EndAttached(:,[1 3 7 8 9 10 11 12]),2);
 %_semTodos_EndAttached=zeros(size(_media_EndAtached(:,[1 3 7 8 9 10 11 12])));
 _semTodos_EndAttached=sem(_timeoutC_EndAttached(:,[1 3 7 8 9 10 11 12]),2);
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -286,12 +290,19 @@ finAux=max(shft);
 %  h=plot(1:length([shft(3)+1:finAux]),_promediosC_EndAttached(shft(3)+1:finAux,i),'k');
 %  set (h, "linewidth", 1);
 %endfor
-
+y1=_media_EndAtached(finAux:50);
 hh=plot(_media_EndAtached(finAux:50),'k');set(hh, "linewidth", 3);
+y2=_media_EndAtached(finAux:50)+_semTodos_EndAttached(finAux:50);
+y3=_media_EndAtached(finAux:50)-_semTodos_EndAttached(finAux:50);
 %h=errorbar(_media_EndAtached(28:finAux),_semTodos_EndAttached(28:finAux),'--k');set(hh, "linewidth", 3);
-hh=plot(_media_EndAtached(finAux:50)+_semTodos_EndAttached(finAux:50),'--k');set(hh, "linewidth", 3);
-hh=plot(_media_EndAtached(finAux:50)-_semTodos_EndAttached(finAux:50),'--k');set(hh, "linewidth", 3);
-axis([0 24 0.1 .7]);
+hh=plot(y1,'--k');set(hh, "linewidth", 3);
+area (y2, "FaceColor", "blue");
+hh=plot(y2,'--k');set(hh, "linewidth", 3);
+area (y3, "FaceColor", "w");
+%y1=_media_EndAtached(finAux:50)+_semTodos_EndAttached(finAux:50);
+%y2=_media_EndAtached(finAux:50)-_semTodos_EndAttached(finAux:50);
+%area (1:length(y1), ([y1; y2]), "FaceColor", "green");
+axis([1 length(y1) 0.1 0.75]);
 hhh=xlabel("n of sesiones");set(hhh, "fontsize", 18);
 hhh=ylabel("% of timeout");set(hhh, "fontsize", 18);
 hold off;

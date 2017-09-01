@@ -1,8 +1,8 @@
 %-------------------------------------------------------------------
 %------- IPD + TFT
 % Analisis de las ultimas 10 sesiones
-clear all
-close all
+%clear all
+%close all
 
 % load "iPD_1_2_9s_13s/datosCargadoWorkspace20160423";
 
@@ -70,7 +70,7 @@ _trialFin=30;
 inicio=01;
 fin=50;
 datos=zeros(2,fin);
-            %R T P  S
+            %R  T S  P
 _vRefuerzos=[1 2 0  0];
 _vDelay4eat=[5 5 13 9];%[cc dc cd dd] [R T S P]
 _timeoutLimit=10*0+10*8+10*4;%10*5+10*13+10*9;% 270s en 30trials  %195; %13*15 or T+29*P=
@@ -414,14 +414,15 @@ probC2=zeros(1,7); % [alternador; cooperador; CyD de a pares; la mitad coop]
 probC2=[.5;1;0.5;.5;.5;2/3;3/4];
 probD2=zeros(1,7);
 probD2=1-probC2;
-%         {"switch CD"; "all C";      "switch CCDD";  "half C";            "switch 3Cx3D";   "switch CCD";  "switch CCCD"}
+%         {"switch CD"; "all C";      "switch CCDD";  "half C";            "switch 3Cx3D";   "switch CCD";  "switch CCCD"}      p(c|c) p(c|d) p(d|c) p(d|d)
 QQideales=[[0; 1 ;1; 0],[1; 0; 0; 0],[.5; .5; .5; .5],[14/15; 0; 1/15; 1],[2/3;1/3;1/3;2/3],[.5; 1; .5; 0],[2/3; 1; 1/3; 0]];
+%          p(c|c) p(c|d) p(d|c) p(d|d)
 _idealSujeto=zeros(2,length(probC2));% row 1 alimetno - row 2 delay to eat
-for i=1:length(probC2) %                            R S T P
-  _idealSujeto(1,i)=N*_vRefuerzos([1 4 2 3])*(QQideales(:,i).*[probC2(i);probD2(i);probC2(i);probD2(i)]);
+for i=1:length(probC2) %              R S T P
+  _idealSujeto(1,i)=N*_vRefuerzos([1 3 2 4])*(QQideales(:,i).*[probC2(i);probC2(i);probD2(i);probD2(i)]);
 endfor
 for i=1:length(probC2)
-  _idealSujeto(2,i)=30*_vDelay4eat([1 4 2 3])*(QQideales(:,i).*[probC2(i);probD2(i);probC2(i);probD2(i)]);
+  _idealSujeto(2,i)=30*_vDelay4eat([1 3 2 4])*(QQideales(:,i).*[probC2(i);probC2(i);probD2(i);probD2(i)]);
 endfor
 
 
@@ -631,52 +632,75 @@ t=text(0.1,0.3,{"Normalized amoung of C choice"},"fontsize",16);
 hold off;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-n=10;
-
-_timeoutLimit=5*5+5*13;%10*5+10*13+10*9;% 270s en 30trials  %195; %13*15 or T+29*P=
-             %10*P  o 9*P+1*8
-_timeoutITI=n*5;
-%_foodLimit=_vRefuerzos(2)*5+_vRefuerzos(3)*5;% food por T y por S, alterna
-_foodLimit=_vRefuerzos(1)*9+_vRefuerzos(2)*1;
-perm=factorial(n)/(factorial(n/2)*factorial(n/2));
-%aux=perms([1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2]);
-aux=perms([1 1 1 1 1 2 2 2 2 2]);
-agente1=unique(aux,'rows'); % Existen 'perm' distintas jugadas con 50% de cooperacion
-agente1_reward=zeros(perm,1); % cada jugada tiene una refuerzo caracteristico
-agente1_timeout=zeros(perm,1); % idem
-for i=1:perm
-  if agente1(i,1)==2
-    agente1_reward(i)=_vRefuerzos(1);
-    agente1_timeout(i)+=_vDelay4eat(1);
-  else
-    agente1_reward(i)=_vRefuerzos(2);
-    agente1_timeout(i)+=_vDelay4eat(2);
-  endif
-  for k=2:n
-    if agente1(i,k)==2 && agente1(i,k-1)==2
-      agente1_reward(i)+=_vRefuerzos(1);% R
-      agente1_timeout(i)+=_vDelay4eat(1);%R
-    elseif agente1(i,k)==1 && agente1(i,k-1)==2
-      agente1_reward(i)+=_vRefuerzos(2); %T
-      agente1_timeout(i)+=_vDelay4eat(2);%T
-    elseif agente1(i,k)==2 && agente1(i,k-1)==1
-      agente1_reward(i)+=_vRefuerzos(3); %S
-      agente1_timeout(i)+=_vDelay4eat(3);%S
-    elseif agente1(i,k)==1 && agente1(i,k-1)==1
-      agente1_reward(k)+=_vRefuerzos(4); %P
-      agente1_timeout(i)+=_vDelay4eat(4);%P
-    endif
-  endfor
-  %sum(agente1_reward)/n/_vRefuerzos(1)
-endfor
-
-agente1_reward=agente1_reward/_foodLimit;
-agente1_timeout=agente1_timeout/(_timeoutLimit-_timeoutITI);
-figure;
-scatter(agente1_timeout, agente1_reward,18,'r')
-%[s i]=sort(agente1_timeout);
-%plot(agente1_timeout(i), agente1_reward(i),'r')
+%Simulados para generar recta
+%n=10000;
+%trials=30;
+%agente1=zeros(n,trials);
+%coop=[0.6];
+%color=['r';'b';'r';'b';'r';'b';'r';'b'];
+%_vAgente1_reward=[];
+%_vAgente1_timeout=[];
+%for trials=[30 200]
+%  _timeoutLimit=trials/2*_vDelay4eat(2)+trials/2*_vDelay4eat(3);
+%  _timeoutITI=trials*5;
+%  _foodLimit=_vRefuerzos(2)/(trials/2);% 
+%  iter=1
+%  coop(iter)
+%  Sss=[ones(ceil(trials*coop),1);zeros(floor(trials*(1-coop)),1)]+1;
+%  for i=1:n
+%    %[q w]=find((randperm(trials)/trials)<=coop(iter));
+%    agente1(i,randperm(length(Sss)))=Sss;
+%    %agente1(i,w)=2;
+%  endfor
+%  %agente1=unique(agente1,'rows');
+%  [r c]=size(agente1);
+%  agente1_reward=zeros(1,r);
+%  agente1_timeout=zeros(1,r);
+%  for i=1:r
+%    if agente1(i,1)==2
+%      agente1_reward(1)=_vRefuerzos(1);
+%    else
+%      agente1_reward(1)=_vRefuerzos(2);
+%    endif
+%    for k=2:trials
+%      if agente1(i,k)==2 && agente1(i,k-1)==2
+%        agente1_reward(i)+=_vRefuerzos(1);% R
+%        agente1_timeout(i)+=_vDelay4eat(1);%R
+%      elseif agente1(i,k)==1 && agente1(i,k-1)==2
+%        agente1_reward(i)+=_vRefuerzos(2); %T
+%        agente1_timeout(i)+=_vDelay4eat(2);%T
+%      elseif agente1(i,k)==2 && agente1(i,k-1)==1
+%        agente1_reward(i)+=_vRefuerzos(3); %S
+%        agente1_timeout(i)+=_vDelay4eat(3);%S
+%      elseif agente1(i,k)==1 && agente1(i,k-1)==1
+%        agente1_reward(i)+=_vRefuerzos(4); %P
+%        agente1_timeout(i)+=_vDelay4eat(4);%P
+%      endif
+%    endfor
+%  endfor
+%  %sum(agente1_reward)/n/_vRefuerzos(1)
+%  _timeoutLimit=(trials/2)*0+(trials/2)*8;%10*5+10*13+10*9;% 270s en 30trials  %195; %13*15 or T+29*P=
+%               %10*P  o 9*P+1*8
+%  _timeoutITI=trials*5;
+%  %_foodLimit=_vRefuerzos(2)*5+_vRefuerzos(3)*5;% food por T y por S, alterna
+%  _foodLimit=_vRefuerzos(1)*(trials-1)+_vRefuerzos(2)*1;
+%
+%  _vAgente1_reward=[ _vAgente1_reward; agente1_reward/_foodLimit];
+%  _vAgente1_timeout=[ _vAgente1_timeout; (agente1_timeout-_timeoutITI)/_timeoutLimit];
+%%  agente2_reward=uniagente1_reward/_foodLimit
+%  %figure();
+%%  hold on;
+%%  scatter(unique([]),(12-iter)*15,color(iter,:))
+%%  hold off;
+%  %print(hhh, "figura_iPD_1_2_9s_13s/reward_timeout_todos_simulados.png");
+%endfor
+%  %figure();
+%  hold on;
+%  vec=unique([_vAgente1_timeout(1,:)' _vAgente1_reward(1,:)'],'rows');
+%  scatter(vec(:,1),vec(:,2),(12-iter)*15,color(iter,:))
+%  vec=unique([_vAgente1_timeout(2,:)' _vAgente1_reward(2,:)'],'rows');
+%  scatter(vec(:,1),vec(:,2),(12-iter)*15,color(iter,:))
+%  hold off;axis([0, 1, .55, 1]);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -805,18 +829,19 @@ QmarkovmediaD=QmarkovmediaD./sum(QmarkovmediaD,2);
 
 %%%%% Calculo de coeficiente de preferencia  %%%%%%%%%%%%%%%%%%%%%%%%%
 
-_selfish=foodMedia./((_timeOutMedia)./_timeoutLimit);
+_selfish=foodMedia./((_timeOutMedia)./30);%_timeoutLimit);
 
 _selfishInf=foodMedia.*_timeOutMedia;
 
-_selfishtheor=_idealSujeto(1,:)./((_idealSujeto(2,:))./_timeoutLimit);
+_selfishtheor=_idealSujeto(1,:)./((_idealSujeto(2,:))./30);%(_timeoutLimit);
+_selfishtheor=_idealSujeto(1,:)./((_idealSujeto(2,:))./30);%_timeoutLimit);
 
 hhh=figure;%  {"switch CD"; "all C";      "switch CCDD";  "half C";            "switch 3Cx3D";   "switch CCD";  "switch CCCD"}
 hold on;
 
 t=text(-0.002+_selfish(_sujetosCooperadores),0.013*[1 1 1 1 1 1.5 1 1]+ones(1,length(_sujetosCooperadores)),...
                                             _txtSujetos(_sujetosCooperadores,:),"fontsize",12);
-h=scatter(_selfishtheor([1 2 3 5 6]),ones(1,length(_selfishtheor([1 2 3 5 6]))),20,'r');
+h=scatter(_selfishtheor([1 2 3 5 6]),ones(1,length(_selfishtheor([1 2 3 5 6]))),200,'r');
 set(h, "linewidth", 2);  
 t=text(-0.005*[1 1 1.5 6 1]+_selfishtheor([1 2 3 5 6]),-0.013+ones(1,length(_selfishtheor([1 2 3 5 6]))),
                                        {"CD","AllC","2Cx2D","3Cx3D" ,"CCD"},"fontsize",12);
@@ -824,9 +849,9 @@ t=text(-0.005*[1 1 1.5 6 1]+_selfishtheor([1 2 3 5 6]),-0.013+ones(1,length(_sel
 %       {num2str(_vRefuerzos(1));num2str(_vRefuerzos(2));num2str(_vRefuerzos(3));num2str(_vRefuerzos(4))},"fontsize",13);                                     
 %t=text(0.005+[0.26 0.27 0.26 0.27],-0.005+[1.055 1.055 1.045 1.045],
 %       {num2str(_vDelay4eat(1));num2str(_vDelay4eat(2));num2str(_vDelay4eat(3));num2str(_vDelay4eat(4))},"fontsize",13);
-hh=scatter(_selfish(_sujetosCooperadores),ones(1,length(_sujetosCooperadores)),15,'b');
+hh=scatter(_selfish(_sujetosCooperadores),ones(1,length(_sujetosCooperadores)),150,'b');
 set(hh, "linewidth", 3);  
-axis([.3 .85 .9 1.1])
+%axis([.3 .85 .9 1.1])
 ylabel("");
 xlabel("Coefficient of preference");
 aa=legend("Simulated","rats");  
