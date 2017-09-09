@@ -1,5 +1,5 @@
 a=1
-_vRefuerzos=[1 2 0 0];
+_vRefuerzos=[1 3 0 0];
 _vDelay4eat=[5 5 13 9];%[cc dc cd dd] [R T S P]
 %_timeoutLimit=10*0+10*8+10*4;%10*5+10*13+10*9;% 270s en 30trials  %195; %13*15 or T+29*P=
 _timeoutITI=30*5;
@@ -65,7 +65,7 @@ _delay2eat=(_timeOutMedia-_timeoutITI)./(_timeoutLimit-_timeoutITI);
 [Ss I]=sort(foodMedia);
 hhh=figure;
 aux=I(find(sort(foodMedia)));
-h=scatter(_delay2eat(aux),foodMedia(aux),80, _mediaXsujeto(aux),"filled");
+h=scatter(_delay2eat(aux),foodMedia(aux),200, _mediaXsujeto(aux),"filled");
 %ch=colormap(gray);
 h=colormap(jet);
 h=colorbar('eastoutside');
@@ -98,7 +98,7 @@ t=text(-0.10*[1 1 1 1 0.2 1.5]+ (_idealSujeto(2,[1 3 4 5 6 7])-_timeoutITI)./(_t
 t=text(0.1,0.3,{"Normalized amoung of C choice"},"fontsize",16);       
 hold off;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-n=10000;
+n=1000;
 trials=30;
 agente1=zeros(n,trials);
 coop=[0.6];
@@ -147,8 +147,8 @@ for trials=[30 200]
   _timeoutLimit=(trials/2)*0+(trials/2)*8;%10*5+10*13+10*9;% 270s en 30trials  %195; %13*15 or T+29*P=
                %10*P  o 9*P+1*8
   _timeoutITI=trials*5;
-  %_foodLimit=_vRefuerzos(2)*5+_vRefuerzos(3)*5;% food por T y por S, alterna
-  _foodLimit=_vRefuerzos(1)*(trials-1)+_vRefuerzos(2)*1;
+  _foodLimit=_vRefuerzos(2)*(trials/2)+_vRefuerzos(3)*(trials/2);% food por T y por S, alterna
+  %_foodLimit=_vRefuerzos(1)*(trials-1)+_vRefuerzos(2)*1;
 
   _vAgente1_reward=[ _vAgente1_reward; agente1_reward/_foodLimit];
   _vAgente1_timeout=[ _vAgente1_timeout; (agente1_timeout-_timeoutITI)/_timeoutLimit];

@@ -120,6 +120,7 @@ indiceSujeto=[];
 %for i=1:_nSujetos
 %  indiceSujeto=[indiceSujeto;strcat("Q",mat2str(i))];
 %endfor
+
 indiceSujeto=["Q01";"Q02";"Q03";"Q04";"Q05";"Q06";"Q07";"Q08";"Q09";"Q10";"Q11";"Q12"];
 % Probabilidades de transicion de estados
 %matricesQ1.Q1=[];matricesQ2.Q2=[];matricesQ3.Q3=[];matricesQ4.Q4=[];matricesQ5.Q5=[];matricesQ6.Q6=[];
@@ -133,10 +134,6 @@ for i=1:_nSujetos
   matricesQaux.(indiceSujeto(i,:)) = zeros(4,4);
 endfor
 
-
-
-
-% 
 % Brief: Carga las matrices de transicion de estado de cada sujeto.
 %        Es un promedio total 
 %        Acumula las veces que aparece la transicion durante los 29 trials a lo
@@ -144,8 +141,8 @@ endfor
 T=zeros(_nSujetos,length(inicio:fin));C=zeros(_nSujetos,length(inicio:fin));
 P=zeros(_nSujetos,length(inicio:fin));S=zeros(_nSujetos,length(inicio:fin));
 controlFallas=zeros(1,_nSujetos);
+controlFallasXexp=zeros(_nSujetos,length(inicio:fin));
 auxFallas=1;
-
 for i=1:_nSujetos
   ultimo=expXsuj(i);
   primero=1;
@@ -172,23 +169,28 @@ for i=1:_nSujetos
       if ((todo.(indice(j+1,:))(i)._respuestasEXP(k)==0)||(todo.(indice(j+1,:))(i)._respuestasOPO(k)==0))
         if (k==1)
           ++controlFallas(i);%%%
+          
         elseif (k==2) 
           if (todo.(indice(j+1,:))(i)._respuestasEXP(k-1)!=0)% k=1 y K=2 son ceros no se cuenta una falla auxiluar
             auxFallas+=1;  
           endif
           ++controlFallas(i);%%%
+          ++controlFallasXexp(i,j);
         elseif (k==3)
           if (todo.(indice(j+1,:))(i)._respuestasEXP(k-2)==0)&&(todo.(indice(j+1,:))(i)._respuestasEXP(k-1)==0)
-            % nada
+         
+         %% nada
           elseif (todo.(indice(j+1,:))(i)._respuestasEXP(k-1)!=0)
             auxFallas+=1;
           else
             a="MIERDA!!!"
           endif
           ++controlFallas(i);%%%
+          ++controlFallasXexp(i,j);
         else
           auxFallas+=1;
           ++controlFallas(i);
+          ++controlFallasXexp(i,j);
         endif
       elseif (todo.(indice(j+1,:))(i)._respuestasEXP(k)==1)&&(todo.(indice(j+1,:))(i)._respuestasOPO(k)==2)
         T(i,j-inicio+1)++; %TRAICIONAR DADO :
@@ -266,12 +268,18 @@ for i=1:_nSujetos
     endfor
     auxFallas=1;
     matricesQxExp.(indiceSujeto(i,:)).(indice(j+1,:))=matricesQaux.(indiceSujeto(i,:));
+    for nn=1:_nSujetos
+    matricesQaux.(indiceSujeto(nn,:)) = zeros(4,4);
+    endfor
   endfor
-  for i=1:_nSujetos
-    matricesQaux.(indiceSujeto(i,:)) = zeros(4,4);
-  endfor
+  
 endfor
 _vSujetos=_vSujetos1;
+T=T./(30-controlFallasXexp);
+C=C./(30-controlFallasXexp);
+P=P./(30-controlFallasXexp);
+S=S./(30-controlFallasXexp);
+
 TT=T;CC=C;
 PP=P;SS=S;
 % Analizando las ultimas X sesiones
@@ -324,7 +332,9 @@ for i=1:_nSujetos
   for v=1:numfields(matricesQxExp.(indiceSujeto(i,:))) % experimentos
     for j=1:4 %Estados TRPS
       if sum(matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))(j,:))!=0
-         matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))(j,:)=matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))(j,:)/sum(matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))(j,:));
+         matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))(j,:)=...
+                               matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))(j,:)/...
+                          sum(matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))(j,:));
          %matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))(j,:)=matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))(j,:);%/sum(matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))(j,:));
       endif
     endfor
@@ -335,8 +345,17 @@ for i=1:_nSujetos
   ultimo=numfields(matricesQxExp.(indiceSujeto(i,:)));
   primero=ultimo-_ultimosX+1;
   for v=primero:ultimo % matricesQ borrada arriba
-        Q2(:,:,i)=Q2(:,:,i)+(matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))/length(primero:ultimo));
+        %Q2(:,:,i)=Q2(:,:,i)+(matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:))/length(primero:ultimo));
+        Q2(:,:,i)=Q2(:,:,i)+matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:));
         %Q2(:,:,i)=Q2(:,:,i)+(matricesQxExp.(indiceSujeto(i,:)).(indice(v+1,:)));%/length(primero:ultimo));
+  endfor
+  for jj=1:4 
+    if sum(isnan(Q2(jj,:,i)))!=0
+      Q2(jj,:,i)=[0 0 0 0];
+    endif
+    if sum(Q2(jj,:,i))!=0
+      Q2(jj,:,i)=Q2(jj,:,i)./ sum(Q2(jj,:,i),2);
+    endif
   endfor
 endfor
 %     Normalizacion

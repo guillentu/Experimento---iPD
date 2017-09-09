@@ -414,15 +414,15 @@ probC2=zeros(1,7); % [alternador; cooperador; CyD de a pares; la mitad coop]
 probC2=[.5;1;0.5;.5;.5;2/3;3/4];
 probD2=zeros(1,7);
 probD2=1-probC2;
-%         {"switch CD"; "all C";      "switch CCDD";  "half C";            "switch 3Cx3D";   "switch CCD";  "switch CCCD"}      p(c|c) p(c|d) p(d|c) p(d|d)
+%         {"switch CD";          "all C";       "switch CCDD";            "half C";            "switch 3Cx3D";     "switch CCD";    "switch CCCD"}      p(c|c) p(c|d) p(d|c) p(d|d)
 QQideales=[[0; 1 ;1; 0],[1; 0; 0; 0],[.5; .5; .5; .5],[14/15; 0; 1/15; 1],[2/3;1/3;1/3;2/3],[.5; 1; .5; 0],[2/3; 1; 1/3; 0]];
 %          p(c|c) p(c|d) p(d|c) p(d|d)
 _idealSujeto=zeros(2,length(probC2));% row 1 alimetno - row 2 delay to eat
 for i=1:length(probC2) %              R S T P
-  _idealSujeto(1,i)=N*_vRefuerzos([1 3 2 4])*(QQideales(:,i).*[probC2(i);probC2(i);probD2(i);probD2(i)]);
+  _idealSujeto(1,i)=N*_vRefuerzos([1 3 2 4])*(QQideales(:,i).*[probC2(i);probD2(i);probC2(i);probD2(i)]);
 endfor
 for i=1:length(probC2)
-  _idealSujeto(2,i)=30*_vDelay4eat([1 3 2 4])*(QQideales(:,i).*[probC2(i);probC2(i);probD2(i);probD2(i)]);
+  _idealSujeto(2,i)=30*_vDelay4eat([1 3 2 4])*(QQideales(:,i).*[probC2(i);probD2(i);probC2(i);probD2(i)]);
 endfor
 
 
@@ -533,12 +533,12 @@ grid off;%grid minor;
 t=text(-0.01*[1 1 1 1 1 1 1 -1]+_mediaXsujeto(aux),.08*[-1 -1 -1 1 1 1 1 -1]+R_mean(aux),_txtSujetos(aux,:));
 axis([.49 1.05 -.04 1.15]);
 hold on;
-h=scatter(probC2([1 3 4 5 6 7])',QQideales(1,[1 3 4 5 6 7]),15,(_idealSujeto(2,[1 3 4 5 6 7])-_timeoutITI)./(_timeoutLimit-_timeoutITI),'s',"filled");
-h=scatter(probC2([1 3 4 5 6 7])',QQideales(1,[1 3 4 5 6 7]),15,'k','s',"linewidth",2);
+h=scatter(probC2([1 3 4 5 6 7])',QQideales(1,[1 3 4 5 6 7]).*probC2([1 3 4 5 6 7])',15,(_idealSujeto(2,[1 3 4 5 6 7])-_timeoutITI)./(_timeoutLimit-_timeoutITI),'s',"filled");
+h=scatter(probC2([1 3 4 5 6 7])',QQideales(1,[1 3 4 5 6 7]).*probC2([1 3 4 5 6 7])',15,'k','s',"linewidth",2);
 t=text(0.025*[1 1 1 1 -.8 -.5]+ probC2([1 3 4 5 6 7])', 
-        0.04*[.5 .5 .5 .5 2.4 2.4]+QQideales(1,[1 3 4 5 6 7]) ,{"switch CD";"switch CCDD";"half C";"switch 3Cx3D";"switch CCD";"switch CCCD"});
+        0.04*[.5 .5 .5 .5 2.4 2.4]+QQideales(1,[1 3 4 5 6 7]).*probC2([1 3 4 5 6 7])' ,{"switch CD";"switch CCDD";"half C";"switch 3Cx3D";"switch CCD";"switch CCCD"});
 t=text(0.025*[1 1 1 1 -.8 -.5]+ probC2([1 3 4 5 6 7])', 
-       -0.025*[1.2 1 1 1  -2.3 -2.3]+QQideales(1,[1 3 4 5 6 7]) ,
+       -0.025*[1.2 1 1 1  -2.3 -2.3]+QQideales(1,[1 3 4 5 6 7]).*probC2([1 3 4 5 6 7])' ,
         {"coop 0.5";"coop 0.5";"coop 0.5";"coop 0.5";"coop 0.66%";"coop 0.75%"});
 t=text(0.6,-0.44,{"Normalized accumulated timeout per sessions"},"fontsize",14);
 hold off;
@@ -546,8 +546,8 @@ hold off;
 % grafico Reward Versus R
 [Ss I]=sort(R_mean);
 figure;
-aux=I(find(sort(R_mean)>0.4));
-h=scatter(foodMedia(aux),R_mean(aux),20,((_timeOutMedia(aux)-_timeoutITI)./(_timeoutLimit-_timeoutITI)),"filled");
+aux=I(find(sort(R_mean)>0.04));
+h=scatter(foodMedia(aux),R_mean(aux),200,((_timeOutMedia(aux)-_timeoutITI)./(_timeoutLimit-_timeoutITI)),"filled");
 ch=colormap(copper);
 colorbar('southoutside');
 set(h, "linewidth", 2);
@@ -562,12 +562,13 @@ t=text(-0.01*[1 1 1 1 1 3 1 -1] + foodMedia(aux),.07*[1 1 1 1 1 0.2 1 .5] + R_me
 %axis('auto');
 axis([.49 1.1 0 1.1]);
 hold on;
-h=scatter(_idealSujeto(1,[1 3 4 5 6 7]),QQideales(1,[1 3 4 5 6 7]),15,(_idealSujeto(2,[1 3 4 5 6 7])-_timeoutITI)./(_timeoutLimit-_timeoutITI),'s',"filled");
-h=scatter(_idealSujeto(1,[1 3 4 5 6 7]),QQideales(1,[1 3 4 5 6 7]),15,'k','s',"linewidth",2);
+h=scatter(_idealSujeto(1,[1 3 4 5 6 7]),QQideales(1,[1 3 4 5 6 7]).*probC2([1 3 4 5 6 7])',15,(_idealSujeto(2,[1 3 4 5 6 7])-_timeoutITI)./(_timeoutLimit-_timeoutITI),'s',"filled");
+h=scatter(_idealSujeto(1,[1 3 4 5 6 7]),QQideales(1,[1 3 4 5 6 7]).*probC2([1 3 4 5 6 7])',15,'k','s',"linewidth",2);
 t=text(0.025*[.51 .51 .51 .51 -.8 -.5]+ _idealSujeto(1,[1 3 4 5 6 7]), 
-        0.04*[.5 .5 .5 .5 1.4 1.4]+QQideales(1,[1 3 4 5 6 7]) ,{"switch CD";"switch CCDD";"half C";"switch 3Cx3D";"switch CCD";"switch CCCD"});
+        0.04*[.5 .5 .5 .5 1.4 1.4]+QQideales(1,[1 3 4 5 6 7]).*probC2([1 3 4 5 6 7])'...
+          ,{"switch CD";"switch CCDD";"half C";"switch 3Cx3D";"switch CCD";"switch CCCD"});
 t=text(0.025*[.51 .51 .51 .51 -.8 -.5]+ _idealSujeto(1,[1 3 4 5 6 7]), 
-       -0.025*[1.2 1 1 1  1.9 1.9]+ QQideales(1,[1 3 4 5 6 7]),
+       -0.025*[1.2 1 1 1  1.9 1.9]+ QQideales(1,[1 3 4 5 6 7]).*probC2([1 3 4 5 6 7])',
         {"coop 0.5";"coop 0.5";"coop 0.5";"coop 0.5";"coop 0.66%";"coop 0.75%"});
 t=text(0.62,-0.38,{"Normalized accumulated timeout per sessions"},"fontsize",14);
 hold off;
@@ -601,7 +602,7 @@ _delay2eat=(_timeOutMedia-_timeoutITI)./(_timeoutLimit-_timeoutITI);
 [Ss I]=sort(foodMedia);
 hhh=figure;
 aux=I(find(sort(foodMedia)));
-h=scatter(_delay2eat(aux),foodMedia(aux),20, _mediaXsujeto(aux),"filled");
+h=scatter(_delay2eat(aux),foodMedia(aux),180, _mediaXsujeto(aux),"filled");
 ch=colormap(gray);
 h=colorbar('southoutside');
 aux=I(find(sort(foodMedia)));
