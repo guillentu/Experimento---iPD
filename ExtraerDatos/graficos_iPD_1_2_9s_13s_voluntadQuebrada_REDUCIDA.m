@@ -47,7 +47,7 @@ _dejarC=zeros(1,_combC+_iniFin+_fallas);% 31 termino 2 y 32 empezo en 2 y 33 nº
 voluntad=zeros(length(_dejarD),nfields(todo),_nSujetos);
 voluntadC=zeros(length(_dejarC),nfields(todo),_nSujetos);
 for i=1:_nSujetos
-  for j=1:expXsuj(i)
+  for j=expXsuj(i)-9:expXsuj(i)
     t=num2str(todo.(indice(j+1,:))(i)._respuestasEXP(:))';
     t=t(1:30);
     _dejarC(_iFallas)=0;
@@ -117,7 +117,7 @@ txt=txt(sort([1:32],'descend'),:);
 vPtr=strcat(vPtr,txt);
 vPtrC=strcat(vPtrC,txt);
 
-cuantoComeXexp;
+%cuantoComeXexp;
 
 vVoluntadDfood=zeros(32,_nSujetos);
 vVoluntadCfood=zeros(32,_nSujetos);
