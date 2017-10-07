@@ -1,0 +1,4 @@
+clear all
+load('datos_coop_reward_T2.mat')
+load('datos_coop_reward_T2r.mat')
+

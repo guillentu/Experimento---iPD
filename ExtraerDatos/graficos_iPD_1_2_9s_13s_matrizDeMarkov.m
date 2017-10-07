@@ -385,8 +385,10 @@ endfor
 
 
 
-T2(:,:)=T(:,:)/length(_trialIni:_trialFin);R2(:,:)=C(:,:)/length(_trialIni:_trialFin);
-P2(:,:)=P(:,:)/length(_trialIni:_trialFin);S2(:,:)=S(:,:)/length(_trialIni:_trialFin);
+T2(:,:)=T(:,:);%/length(_trialIni:_trialFin);
+R2(:,:)=C(:,:);%/length(_trialIni:_trialFin);
+P2(:,:)=P(:,:);%/length(_trialIni:_trialFin);
+S2(:,:)=S(:,:);%/length(_trialIni:_trialFin);
 %%%%%%%%%%%%%%%%%%%%%%%%% 
 %% Frecuencia de ESTADOS ULTIMOS 10 SESIONES - POR SUJETOS
 %for i=1:_nSujetos
@@ -401,28 +403,28 @@ P2(:,:)=P(:,:)/length(_trialIni:_trialFin);S2(:,:)=S(:,:)/length(_trialIni:_tria
 %  grid on;
 %endfor
 %%%%%%%%%%%%%%%%%%%%%%%%%
-%% Frecuencia de estados - PROMEDIOS DE LAS ULTIMAS 10 SESIONES
-%T_mean=zeros(1,_nSujetos);R_mean=zeros(1,_nSujetos);P_mean=zeros(1,_nSujetos);S_mean=zeros(1,_nSujetos);
-%T_median=zeros(1,_nSujetos);R_median=zeros(1,_nSujetos);P_median=zeros(1,_nSujetos);S_median=zeros(1,_nSujetos);
-%T_std=zeros(1,_nSujetos);R_std=zeros(1,_nSujetos);P_std=zeros(1,_nSujetos);S_std=zeros(1,_nSujetos);
-%for i=1:_nSujetos
-%  ultimo=numfields(matricesQxExp.(indiceSujeto(i,:)));
-%  primero=ultimo-_ultimosX+1;
-%  T_mean(i)=mean(T2(i,primero:ultimo));R_mean(i)=mean(R2(i,primero:ultimo));P_mean(i)=mean(P2(i,primero:ultimo));S_mean(i)=mean(S2(i,primero:ultimo));
-%  T_median(i)=median(T2(i,primero:ultimo));R_median(i)=median(R2(i,primero:ultimo));P_median(i)=median(P2(i,primero:ultimo));S_median(i)=median(S2(i,primero:ultimo));
-%  T_std(i)=std(T2(i,primero:ultimo));R_std(i)=std(R2(i,primero:ultimo));P_std(i)=std(P2(i,primero:ultimo));S_std(i)=std(S2(i,primero:ultimo));
-%  figure;
-%  %plot(1,T_mean(i), 2,R_mean(i) ,3, P_mean(i),4,S_mean(i));
-%  h=errorbar(1,T_mean(i), T_std(i),'*r', 2,R_mean(i),R_std(i),'*b', 3,P_mean(i), P_std(i),'*m', 4,S_mean(i), S_std(i),'*c');
-%  set (h, "linewidth", 3);
-%  xlabel("Estados");
-%  ylabel("% de ocurrencia");
-%  title(strcat("Tasa de ocurrencia de cada estado en iPD: ",_txtSujetos(i,:)));
-%  legend("T=D-C","R=C-C","P=D-D","S=C-D");
-%  hold on
-%  bar(1:4,[T_mean(i),R_mean(i),P_mean(i),S_mean(i)])
-%  hold off
-%endfor
+% Frecuencia de estados - PROMEDIOS DE LAS ULTIMAS 10 SESIONES
+T_mean=zeros(1,_nSujetos);R_mean=zeros(1,_nSujetos);P_mean=zeros(1,_nSujetos);S_mean=zeros(1,_nSujetos);
+T_median=zeros(1,_nSujetos);R_median=zeros(1,_nSujetos);P_median=zeros(1,_nSujetos);S_median=zeros(1,_nSujetos);
+T_std=zeros(1,_nSujetos);R_std=zeros(1,_nSujetos);P_std=zeros(1,_nSujetos);S_std=zeros(1,_nSujetos);
+for i=1:_nSujetos
+  ultimo=numfields(matricesQxExp.(indiceSujeto(i,:)));
+  primero=ultimo-_ultimosX+1;
+  T_mean(i)=mean(T2(i,primero:ultimo));R_mean(i)=mean(R2(i,primero:ultimo));P_mean(i)=mean(P2(i,primero:ultimo));S_mean(i)=mean(S2(i,primero:ultimo));
+  T_median(i)=median(T2(i,primero:ultimo));R_median(i)=median(R2(i,primero:ultimo));P_median(i)=median(P2(i,primero:ultimo));S_median(i)=median(S2(i,primero:ultimo));
+  T_std(i)=std(T2(i,primero:ultimo));R_std(i)=std(R2(i,primero:ultimo));P_std(i)=std(P2(i,primero:ultimo));S_std(i)=std(S2(i,primero:ultimo));
+  figure;
+  %plot(1,T_mean(i), 2,R_mean(i) ,3, P_mean(i),4,S_mean(i));
+  h=errorbar(1,T_mean(i), T_std(i),'*r', 2,R_mean(i),R_std(i),'*b', 3,P_mean(i), P_std(i),'*m', 4,S_mean(i), S_std(i),'*c');
+  set (h, "linewidth", 3);
+  xlabel("Estados");
+  ylabel("% de ocurrencia");
+  title(strcat("Tasa de ocurrencia de cada estado en iPD: ",_txtSujetos(i,:)));
+  legend("T=D-C","R=C-C","P=D-D","S=C-D");
+  hold on
+  bar(1:4,[T_mean(i),R_mean(i),P_mean(i),S_mean(i)])
+  hold off
+endfor
 %%%%%%%%%%%%%%%%%%%%%%%%%
 _criterio=.5;
 graficos_iPD_1_2_9s_13s_12Ratas_medias_y_medianas % se obtienen los sujetos que superan el .75 porciento de cooperación
