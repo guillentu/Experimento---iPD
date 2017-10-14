@@ -1,12 +1,12 @@
-mediaXsujeto_T4=_mediaXsujeto;
-timeOutMedia_T4=_timeOutMedia;
-foodMedia_T4=foodMedia;
-promediosC_T4=_promediosC;
-timeOutSem_T4=_timeOutSem;
-foodSem_T4=foodSem;
-semXsujeto_T4=_semXsujeto;
-timeOut_T4=_timeOut;
-food_T4=food;
+mediaXsujeto_T5=_mediaXsujeto;
+timeOutMedia_T5=_timeOutMedia;
+foodMedia_T5=foodMedia;
+promediosC_T5=_promediosC;
+timeOutSem_T5=_timeOutSem;
+foodSem_T5=foodSem;
+semXsujeto_T5=_stdXsujeto;
+timeOut_T5=_timeOut;
+food_T5=food;
 
 mediaXsujeto_T3=_mediaXsujeto;
 timeOutMedia_T3=_timeOutMedia;
@@ -53,6 +53,10 @@ save('-mat7-binary','datos_coop_reward_T4.mat','mediaXsujeto_T4','timeOutMedia_T
 save('datos_coop_reward_T4','mediaXsujeto_T4','timeOutMedia_T4','foodMedia_T4','promediosC_T4',...
          'timeOutSem_T4','foodSem_T4','semXsujeto_T4','timeOut_T4','food_T4');
          
+save('-mat7-binary','datos_coop_reward_T5.mat','mediaXsujeto_T5','timeOutMedia_T5','foodMedia_T5','promediosC_T5',...
+         'timeOutSem_T5','foodSem_T5','semXsujeto_T5','timeOut_T5','food_T5');
+save('datos_coop_reward_T5','mediaXsujeto_T5','timeOutMedia_T5','foodMedia_T5','promediosC_T5',...
+         'timeOutSem_T5','foodSem_T5','semXsujeto_T5','timeOut_T5','food_T5');
          
 R2_T2=R2;
 R_mean_T2=R_mean;
