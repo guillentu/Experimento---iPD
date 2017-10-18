@@ -11,6 +11,20 @@ hold on
 plot(promediosC_T3(:,[2 5 6]))
 plot(26+[1:14],promediosC_T5([1:14],[2 5 6]))
 
+figure;hold on;
+auxT3=[];
+auxT5=[];
+for i=1:6
+   if (2==i)||(5==i)||(6==i)
+    auxT3(i)=mean(promediosC_T3(23:27,i));
+    auxT5(i)=mean(promediosC_T5(10:14,i));
+   else
+    auxT3(i)=mean(promediosC_T3(14:18,i));
+    auxT5(i)=mean(promediosC_T5(13:17,i));
+   end
+end
+bar(auxT3)
+
 figure;plot([promediosC_T3(23:27,[5]); promediosC_T5(10:14,[5])])
 figure;plot([promediosC_T3(23:27,[6]); promediosC_T5(10:14,[6])])
 figure;plot([promediosC_T3(23:27,[2]); promediosC_T5(10:14,[2])])
@@ -59,7 +73,9 @@ errorbar([1; 2],[aux; aux2],[auxSem;aux2Sem],'.')
 bar([1; 2],[aux; aux2])
 title('cooperacion 2S 1T 2T en 1/3 -> 2/3')
 axis([0 3 0.3 0.8])
-
+aa=promediosC_T3(23:27,[2 6])
+bb=promediosC_T5(10:14,[2 6])
+ranksum(aa(:),bb(:))
 % Cooperacion 1/3 1/5   % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 figure;hold on;
 xx=[mean(promediosC_T3(14:18,[1 3 4]),1)' mean(promediosC_T5(13:17,[1 3 4]),1)']
@@ -80,6 +96,11 @@ figure;hold on;
 errorbar([1; 2],[aux; aux2],[auxSem;aux2Sem],'.')
 bar([1; 2],[aux; aux2])
 axis([0 3 0.3 1])
+
+ranksum(mean(promediosC_T3(14:18,[1 3 4])),mean(promediosC_T5(13:17,[1 3 4])))
+aa=promediosC_T3(14:18,[1 3 4]);
+bb=promediosC_T5(13:17,[1 3 4]);
+ranksum(aa(:),bb(:))
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 figure;

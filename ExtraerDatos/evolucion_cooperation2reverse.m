@@ -22,7 +22,7 @@ sem_last_T2=std(aux',1)'./sqrt(length([1 3 7 8 9 10 11 12]));
 niceBars([1:n],media_last_T2',sem_last_T2',[1 0 0],0.5)
 
 
-finRev=[0    0   44    0    0    0   44    0   36   18    0   42];
+finRev=[0    0   52    0    0    0   52    0   52   18    0   42];
 figure();
 hold on;
 nr=18;
@@ -37,9 +37,10 @@ end
 media_last_T2r=mean(auxr,2)
 sem_last_T2r=std(auxr',1)'./sqrt(length([3 79 10]));
 niceBars([1:nr],media_last_T2r',sem_last_T2r',[1 0 0],0.5)
-
+axis([1 18 0 1])
 
 figure;hold on;
 niceBars([1:n],media_last_T2',sem_last_T2',[0 0 1],0.5)
 niceBars(n+[1:nr],media_last_T2r',sem_last_T2r',[1 0 0],0.5)
 
+figure;plot(1:(size(aux,1)+size(auxr,1)),[aux;auxr])
