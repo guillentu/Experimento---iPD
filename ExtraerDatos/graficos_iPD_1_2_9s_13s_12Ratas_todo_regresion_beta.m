@@ -234,11 +234,11 @@ endfor
 hf=figure();
 hold on;
 finAux=max(shft);
-%for i=[1 3 7 8 9 10 11 12]
-%  %h=plot(1:length([shft(3)+1:finAux]),_promediosC_EndAttached(shft(3)+1:finAux,i),_colores(i,:));
-%  h=plot(1:length([shft(3)+1:finAux]),_promediosC_EndAttached(shft(3)+1:finAux,i),'k');
-%  set (h, "linewidth", 1);
-%endfor
+for i=[ 3 7 8 9 10 12]
+  %h=plot(1:length([shft(3)+1:finAux]),_promediosC_EndAttached(shft(3)+1:finAux,i),_colores(i,:));
+  h=plot(1:length([shft(3)+1:finAux]),_promediosC_EndAttached(shft(3)+1:finAux,i),'k');
+  set (h, "linewidth", 1);
+endfor
 r1=_media_EndAtached(28:finAux);
 hh=plot(_media_EndAtached(28:finAux),'k');set(hh, "linewidth", 3);
 %h=errorbar(_media_EndAtached(28:finAux),_semTodos_EndAttached(28:finAux),'--k');set(hh, "linewidth", 3);
