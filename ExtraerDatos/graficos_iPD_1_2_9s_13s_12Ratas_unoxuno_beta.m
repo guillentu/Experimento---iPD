@@ -127,8 +127,10 @@ finAux=fin;
 figure();
 hold on;
 for i=[1 3 7 8 9 10 11 12]
-  if i==1||i==3||i==4||i==5||i==7||i==12
+  if i==3||i==4||i==5||i==7||i==12
     finAux=23;
+  elseif i==1
+    finAux=21;
   elseif i==10
     finAux=29;
   elseif i==6||i==9
@@ -140,6 +142,8 @@ for i=[1 3 7 8 9 10 11 12]
   endif
   
   %figure()
+  
+  
   h=plot([inicioAux:finAux],_promediosC(inicioAux:finAux,i),_colores(i,:));set (h, "linewidth", 1);
   
   
@@ -154,7 +158,60 @@ grid on;
 hold off;
 
 
+% PLOT SUAVIZADO sujeto uno x uno
+figure();
+hold on;
+suavizado3=[];
+suavizado7=[];
+suavizado9=[];
+suavizado10=[];
+for i=[1 3 7 8 9 10 11 12]
+  if i==3||i==4||i==5||i==7||i==12
+    finAux=23;
+  elseif i==1
+    finAux=21;
+  elseif i==10
+    finAux=29;
+  elseif i==6||i==9
+    finAux=31;
+  elseif i==2||i==11
+    finAux=33;
+  elseif i==8
+    finAux=fin;
+  endif
+  
+  %figure()
+  last=1;
+  for j=[1:last:finAux]
+    if j> last*floor(finAux/last)
+      m=finAux-j;
+    else
+      m=last;
+    endif
+    if i==3
+      suavizado3=[suavizado3 mean(_promediosC(j:j+m,3))];
+    elseif i==7
+      suavizado7=[suavizado7 mean(_promediosC(j:j+m,7))];
+    elseif i==9
+      suavizado9=[suavizado9 mean(_promediosC(j:j+m,9))];
+    elseif i==10
+      suavizado10=[suavizado10 mean(_promediosC(j:j+m,10))];
+    endif
+  endfor
+  
+  h=plot([inicioAux:finAux],_promediosC(inicioAux:finAux,i),_colores(i,:));set (h, "linewidth", 1);
+  
+endfor
 
+save('datos_suavizado_1_coop','suavizado3','suavizado7','suavizado9','suavizado10')
+
+plot(_media);
+xlabel("n de sesiones");
+ylabel("% de cooperacion");
+title("Cooperacion en iPD");
+legend(_txtSujetos(:,:));
+grid on;
+hold off;
 
 
 

@@ -464,3 +464,82 @@
 %%%%%%%   QQTotmarkovInk(2,2,i)=30*QQTotmarkov(2,2,i)+0;
 %%%%%%%endfor
 
+
+%% %  EVOLUCION COOP Y REVERSION
+clear all;
+%close all;
+load datos_suavizado_5_coop;
+load datos_suavizado_5_rev;
+figure;hold on;
+h=plot([1-length(suavizado3):0],[suavizado3],'-o-k');set(h, "linewidth", 2,'MarkerSize',10);
+h=plot([1-length(suavizado7):0],[suavizado7],'-+k');set(h, "linewidth", 2,'MarkerSize',10);
+h=plot([1-length(suavizado9):0],[suavizado9],'-<k');set(h, "linewidth", 2,'MarkerSize',10);
+h=plot([1-length(suavizado10):0],[suavizado10],'-<k');set(h, "linewidth", 2,'MarkerSize',10);
+
+h=plot([0:length(suavizado_379_rev(1,:))-1],[ suavizado_379_rev(1,:)],'-o-k');set(h, "linewidth", 2,'MarkerSize',10);
+h=plot([0:length(suavizado_379_rev(2,:))-1],[ suavizado_379_rev(2,:)],'-+k');set(h, "linewidth", 2,'MarkerSize',10);
+h=plot([0:length(suavizado_379_rev(3,:))-1],[ suavizado_379_rev(3,:)],'-<k');set(h, "linewidth", 2,'MarkerSize',10);
+h=plot([0:length(suavizado10rev)-1],[ suavizado10rev],'-<k');set(h, "linewidth", 2,'MarkerSize',10);
+hold off;
+
+clear all;
+load datos_suavizado_4_coop;
+load datos_suavizado_4_rev;
+figure;hold on;
+h=plot([1-length(suavizado3):0],[suavizado3],'-o-k');set(h, "linewidth", 2,'MarkerSize',10);
+h=plot([1-length(suavizado7):0],[suavizado7],'-+k');set(h, "linewidth", 2,'MarkerSize',10);
+h=plot([1-length(suavizado9):0],[suavizado9],'-<k');set(h, "linewidth", 2,'MarkerSize',10);
+h=plot([1-length(suavizado10):0],[suavizado10],'-<k');set(h, "linewidth", 2,'MarkerSize',10);
+
+h=plot([0:length(suavizado_379_rev(1,:))-1],[ suavizado_379_rev(1,:)],'-o-k');set(h, "linewidth", 2,'MarkerSize',10);
+h=plot([0:length(suavizado_379_rev(2,:))-1],[ suavizado_379_rev(2,:)],'-+k');set(h, "linewidth", 2,'MarkerSize',10);
+h=plot([0:length(suavizado_379_rev(3,:))-1],[ suavizado_379_rev(3,:)],'-<k');set(h, "linewidth", 2,'MarkerSize',10);
+h=plot([0:length(suavizado10rev)-1],[ suavizado10rev],'-<k');set(h, "linewidth", 2,'MarkerSize',10);
+hold off;
+
+
+clear all;
+load datos_suavizado_3_coop;
+load datos_suavizado_3_rev;
+figure;hold on;
+h=plot([1-length(suavizado3):0],[suavizado3],'-ok');set(h, "linewidth", 2,'MarkerSize',7,'markerfacecolor','k');
+h=plot([1-length(suavizado7):0],[suavizado7],'-+k');set(h, "linewidth", 2,'MarkerSize',7,'markerfacecolor','k');
+h=plot([1-length(suavizado9):0],[suavizado9],'-<k');set(h, "linewidth", 2,'MarkerSize',7,'markerfacecolor','k');
+h=plot([1-length(suavizado10):0],[suavizado10],'-sk');set(h, "linewidth", 2,'MarkerSize',7,'markerfacecolor','k');
+
+h=plot([0:length(suavizado_379_rev(1,:))-1],[ suavizado_379_rev(1,:)],'-ok');set(h, "linewidth", 2,'MarkerSize',7,'markerfacecolor','k');
+h=plot([0:length(suavizado_379_rev(2,:))-1],[ suavizado_379_rev(2,:)],'-+k');set(h, "linewidth", 2,'MarkerSize',7,'markerfacecolor','k');
+h=plot([0:length(suavizado_379_rev(3,:))-1],[ suavizado_379_rev(3,:)],'-<k');set(h, "linewidth", 2,'MarkerSize',7,'markerfacecolor','k');
+h=plot([0:length(suavizado10rev)-1],[ suavizado10rev],'-sk');set(h, "linewidth", 2,'MarkerSize',7,'markerfacecolor','k');
+hold off;
+
+
+clear all;
+load datos_suavizado_2_coop;
+load datos_suavizado_2_rev;
+figure;hold on;
+h=plot([1-length(suavizado3):0],[suavizado3],'-o-k');set(h, "linewidth", 2,'MarkerSize',10);
+h=plot([1-length(suavizado7):0],[suavizado7],'-+k');set(h, "linewidth", 2,'MarkerSize',10);
+h=plot([1-length(suavizado9):0],[suavizado9],'-<k');set(h, "linewidth", 2,'MarkerSize',10);
+h=plot([1-length(suavizado10):0],[suavizado10],'-<k');set(h, "linewidth", 2,'MarkerSize',10);
+
+h=plot([0:length(suavizado_379_rev(1,:))-1],[ suavizado_379_rev(1,:)],'-o-k');set(h, "linewidth", 2,'MarkerSize',10);
+h=plot([0:length(suavizado_379_rev(2,:))-1],[ suavizado_379_rev(2,:)],'-+k');set(h, "linewidth", 2,'MarkerSize',10);
+h=plot([0:length(suavizado_379_rev(3,:))-1],[ suavizado_379_rev(3,:)],'-<k');set(h, "linewidth", 2,'MarkerSize',10);
+h=plot([0:length(suavizado10rev)-1],[ suavizado10rev],'-<k');set(h, "linewidth", 2,'MarkerSize',10);
+hold off;
+
+clear all;
+load datos_suavizado_1_coop;
+load datos_suavizado_1_rev;
+figure;hold on;
+h=plot([1-length(suavizado3):0],[suavizado3],'-o-k');set(h, "linewidth", 2,'MarkerSize',10);
+h=plot([1-length(suavizado7):0],[suavizado7],'-+k');set(h, "linewidth", 2,'MarkerSize',10);
+h=plot([1-length(suavizado9):0],[suavizado9],'-<k');set(h, "linewidth", 2,'MarkerSize',10);
+h=plot([1-length(suavizado10):0],[suavizado10],'-<k');set(h, "linewidth", 2,'MarkerSize',10);
+
+h=plot([0:length(suavizado_379_rev(1,:))-1],[ suavizado_379_rev(1,:)],'-o-k');set(h, "linewidth", 2,'MarkerSize',10);
+h=plot([0:length(suavizado_379_rev(2,:))-1],[ suavizado_379_rev(2,:)],'-+k');set(h, "linewidth", 2,'MarkerSize',10);
+h=plot([0:length(suavizado_379_rev(3,:))-1],[ suavizado_379_rev(3,:)],'-<k');set(h, "linewidth", 2,'MarkerSize',10);
+h=plot([0:length(suavizado10rev)-1],[ suavizado10rev],'-<k');set(h, "linewidth", 2,'MarkerSize',10);
+hold off;

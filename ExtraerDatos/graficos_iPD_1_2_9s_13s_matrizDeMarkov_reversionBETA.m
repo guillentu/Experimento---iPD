@@ -1,6 +1,7 @@
 %-------------------------------------------------------------------
 %------- Alternar Random - Control ITI - Castigo
-close all; clear all
+%close all; 
+clear all;
 
 load "iPD_1_2_9s_13s/reversion/datosCargadoWorkspace20160427"
 
@@ -131,27 +132,56 @@ hh=ylabel("% Cooperation");set(hh,"fontsize",20);
 hh=title("Evolution of Cooperation en iPD");set(hh,"fontsize",20)
 legend(_txtSujetos(3,:),_txtSujetos(7,:),_txtSujetos(10,:),_txtSujetos(9,:),4);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+suavizado=[];
+last=1;
+for i=[inicio:last:fin]
+  if i> last*floor(fin/last)
+    m=fin-i
+  else
+    m=last
+  endif
+  suavizado=[suavizado [mean(_promediosC(3,i:i+m-1));...
+                        mean(_promediosC(7,i:i+m-1));...
+                        mean(_promediosC(9,i:i+m-1))]];
+endfor
 
-figure;
-plot([inicio:fin],_promediosC(3,:),'--ok');
-xlabel("n de sesiones");ylabel("% de cooperacion");title("Cooperacion en iPD");
+suavizado2=[];
+for i=[1:last:24]
+  if i> last*floor(24/last)
+    m=24-i;
+  else
+    m=last;
+  endif
+  suavizado2=[suavizado2 mean(_promediosC(10,i:i+m-1))]
+endfor
+suavizado10rev=suavizado2;
+suavizado_379_rev=suavizado;
+save('datos_suavizado_1_rev','suavizado10rev','suavizado_379_rev')
+h=figure;hold on;
+h=plot(suavizado','--ok');set(h, "linewidth", 2);
+h=plot(suavizado2,'--ok');set(h, "linewidth", 2);
+
+h=figure;hold on;
+h=plot([inicio:fin],_promediosC(3,:),'--ok');set(h, "linewidth", 2);
+%xlabel("n de sesiones");ylabel("% de cooperacion");title("Cooperacion en iPD");
 legend(_txtSujetos(3,:));
-figure;
-plot([inicio:fin],_promediosC(7,:),"--ob");
-xlabel("n de sesiones");ylabel("% de cooperacion");title("Cooperacion en iPD");
-legend(_txtSujetos(7,:));
-figure;
-plot([inicio:42],_promediosC(12,inicio:42),'--or');
-xlabel("n de sesiones");ylabel("% de cooperacion");title("Cooperacion en iPD");
+%figure;
+h=plot([inicio:fin],_promediosC(7,:),"--ob");set(h, "linewidth", 2);
+%xlabel("n de sesiones");ylabel("% de cooperacion");title("Cooperacion en iPD");
+%legend(_txtSujetos(7,:));
+%figure;
+%plot([inicio:42],_promediosC(12,inicio:42),'--or');
+%xlabel("n de sesiones");ylabel("% de cooperacion");title("Cooperacion en iPD");
 legend(_txtSujetos(12,:));
-figure;
-plot([7:24],_promediosC(10,[7:24]),'--oc');
-xlabel("n de sesiones");ylabel("% de cooperacion");title("Cooperacion en iPD");
-legend(_txtSujetos(10,:));
-figure;
-plot([9:fin],_promediosC(9,[9:fin]),'--om');
-xlabel("n de sesiones");ylabel("% de cooperacion");title("Cooperacion en iPD");
-legend(_txtSujetos(9,:));
+%figure;
+h=plot([1:24],_promediosC(10,[1:24]),'--oc');set(h, "linewidth", 2);
+%xlabel("n de sesiones");ylabel("% de cooperacion");title("Cooperacion en iPD");
+%legend(_txtSujetos(10,:));
+%figure;
+h=plot([9:fin],_promediosC(9,[9:fin]),'--om');set(h, "linewidth", 2);
+%xlabel("n de sesiones");ylabel("% de cooperacion");title("Cooperacion en iPD");
+%legend(_txtSujetos(9,:));
+hold off;
 
 
 

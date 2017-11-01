@@ -61,7 +61,7 @@ _media=sum(_promediosC');%/_nSujetos; % CHEQUEAR MEDIA con menos sujetos
 inicioAux=inicio;
 finAux=fin;
 for j=inicio:fin
-  if j<24
+  if j<22
     _vSujetos=_vSujetos1;
   elseif (j>=22 && j<24)
     _vSujetos=_vSujetos6;
@@ -76,8 +76,27 @@ for j=inicio:fin
   endif
   _media(j)=_media(j)/length(_vSujetos);
   %plot([1:_nSujetos],_media(j));
+  
 endfor
 _vSujetos=_vSujetos1;
+
+
+for j=[1:5:finAux]
+  if j> 5*floor(finAux/5)
+    m=24-j;
+  else
+    m=5;
+  endif
+  if i==3
+    suavizado3=[suavizado3 mean(_promediosC(i,j:j+m))]
+  elseif i==7
+    suavizado7=[suavizado7 mean(_promediosC(i,j:j+m))]
+  elseif i==9
+    suavizado9=[suavizado9 mean(_promediosC(i,j:j+m))]
+  elseif i==10
+    suavizado10=[suavizado10 mean(_promediosC(i,j:j+m))]
+  endif
+endfor
 
 %   Promedio total de las ultimas 10 sesiones --------------------------------------
 _mediaXsujeto=zeros(1,_nSujetos);
