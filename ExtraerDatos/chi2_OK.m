@@ -3,10 +3,11 @@
 %% PARA LA MEDIA DE TODOS los SUJETOS COOPERADORES
 sujetos=[1 3 7 8 9 10 11 12];
 sujetos=[2 4 5 6];
-auxC=sum(100*probEleccionC(:,sujetos),2)
-auxD=sum(100*probEleccionD(:,sujetos),2)
-auxC=100*[.5 .5 .5 .5]';
-auxD=100*[.5 .5 .5 .5]';
+scale=1;
+auxC=sum(scale*probEleccionC(:,sujetos),2)
+auxD=sum(scale*probEleccionD(:,sujetos),2)
+auxC=scale*[.5 .5 .5 .5]';
+auxD=scale*[.5 .5 .5 .5]';
 marg_col=auxC+auxD;
 marg_fila=[sum(auxC) sum(auxD)];
 frecC_e=marg_col.*marg_fila(1)./sum(marg_col);

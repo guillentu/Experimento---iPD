@@ -1,8 +1,8 @@
 function dif = friedmanGuille(vals,alpha,bonferroni)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-rangos=ranks(vals,1)';
+rangos=ranks(vals',2);
 rangos_mean=sum(rangos);
-[k N] = size(vals); % N numero de sujetos
+[k N] = size(vals) % N numero de sujetos
 k%=4% k numero de clases (estados)
 if N>1
   chi_2 = 12/(N*k*(k+1)).*sum(rangos_mean.^2)-3*N*(k+1)
@@ -37,11 +37,15 @@ if N>1
     for i=1:k
       dif(i).diff=find(abs(rangos_mean-rangos_mean(i))>CD);
     end
-    %fprintf(': %i\n',)
-
   else
     disp("La hipotesis nula es CORRECTA: Todos los estados son igualmente probables.");
     dif=[];
+    q_alpha=_vQAlpha(size(vals,1)-1);%2,569; % alpha=0.05 -> 2,569  bonferroni correction alpha=0.05/N -> 2,394 
+    CD=q_alpha*sqrt((k*(k+1))/(6*N));
+    dif=[];
+    for i=1:k
+      dif(i).diff=find(abs(rangos_mean-rangos_mean(i))>CD);
+    end
   endif
 endif
 endfunction
