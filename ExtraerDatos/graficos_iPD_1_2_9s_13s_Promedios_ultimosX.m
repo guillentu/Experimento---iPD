@@ -217,7 +217,7 @@ figure();hold on;
 for i=_sujetosCooperadores%1:_nSujetos
   inicioAux=expXsuj(i)-_ultimosX+1;
   finAux=expXsuj(i);
-  h=plot([1:10],_promediosC(inicioAux:finAux,i),_colores(i,:));
+  h=plot([1:_ultimosX],_promediosC(inicioAux:finAux,i),_colores(i,:));
   set(h, "linewidth", 2);
   hh=xlabel("sessions(Last ten sessions)");set(hh, "fontsize", 14);
   hh=ylabel("% of cooperacion");set(hh, "fontsize", 14);
@@ -244,7 +244,7 @@ figure();hold on;
 for i=_sujetosNocooperadores%1:_nSujetos
   inicioAux=expXsuj(i)-_ultimosX+1;
   finAux=expXsuj(i);
-  h=plot([1:10],_promediosC(inicioAux:finAux,i),_colores(i,:));
+  h=plot([1:_ultimosX],_promediosC(inicioAux:finAux,i),_colores(i,:));
   set(h, "linewidth", 2);
   hh=xlabel("n de sesiones");set(hh, "fontsize", 14);
   hh=ylabel("% de cooperacion");set(hh, "fontsize", 14);

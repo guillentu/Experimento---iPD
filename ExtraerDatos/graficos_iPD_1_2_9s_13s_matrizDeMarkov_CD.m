@@ -1,8 +1,8 @@
 %-------------------------------------------------------------------
 %------- IPD + TFT
 % Analisis de las ultimas 10 sesiones
-%clear all
-%close all
+clear all
+close all
 
 % load "iPD_1_2_9s_13s/datosCargadoWorkspace20160423";
 
@@ -149,7 +149,7 @@ controlFallas=zeros(1,_nSujetos);
 controlFallasXexp=zeros(_nSujetos,length(inicio:(fin)));
 auxFallas=1;
 
-_ultimosX=10;
+_ultimosX=5;
 for i=1:_nSujetos
   ultimo=expXsuj(i);
   primero=1;
@@ -290,7 +290,7 @@ endfor
 
 QxExp_ante=matricesQxExp;
 % Analizando las ultimas X sesiones
-_ultimosX=10;
+_ultimosX=5;
 %   Normalizacion para todos los sujetos en todos los experimentos
 Q_antes=matricesQ;
 QQ=[];

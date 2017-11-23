@@ -1,7 +1,7 @@
 %-------------------------------------------------------------------
 %------- IPD + TFT
 % Analisis de las ultimas 10 sesiones
-%clear all
+clear all
 close all
 
 
@@ -283,7 +283,7 @@ S=S./(30-controlFallasXexp);
 TT=T;CC=C;
 PP=P;SS=S;
 % Analizando las ultimas X sesiones
-_ultimosX=10;
+_ultimosX=5;
 %   Normalizacion para todos los sujetos en todos los experimentos
 Q_antes=matricesQ;
 for i=1:_nSujetos % Ceros para todos
