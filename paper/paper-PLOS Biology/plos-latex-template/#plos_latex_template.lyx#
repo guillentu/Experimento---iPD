@@ -1,0 +1,2389 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+% Template for PLoS
+% Version 3.4 January 2017
+%
+% % % % % % % % % % % % % % % % % % % % % %
+%
+% -- IMPORTANT NOTE
+%
+% This template contains comments intended 
+% to minimize problems and delays during our production 
+% process. Please follow the template instructions
+% whenever possible.
+%
+% % % % % % % % % % % % % % % % % % % % % % % 
+%
+% Once your paper is accepted for publication, 
+% PLEASE REMOVE ALL TRACKED CHANGES in this file 
+% and leave only the final text of your manuscript. 
+% PLOS recommends the use of latexdiff to track changes during review, as this will help to maintain a clean tex file.
+% Visit https://www.ctan.org/pkg/latexdiff?lang=en for info or contact us at latex@plos.org.
+%
+%
+% There are no restrictions on package use within the LaTeX files except that 
+% no packages listed in the template may be deleted.
+%
+% Please do not include colors or graphics in the text.
+%
+% The manuscript LaTeX source should be contained within a single file (do not use \input, \externaldocument, or similar commands).
+%
+% % % % % % % % % % % % % % % % % % % % % % %
+%
+% -- FIGURES AND TABLES
+%
+% Please include tables/figure captions directly after the paragraph where they are first cited in the text.
+%
+% DO NOT INCLUDE GRAPHICS IN YOUR MANUSCRIPT
+% - Figures should be uploaded separately from your manuscript file. 
+% - Figures generated using LaTeX should be extracted and removed from the PDF before submission. 
+% - Figures containing multiple panels/subfigures must be combined into one image file before submission.
+% For figure citations, please use "Fig" instead of "Figure".
+% See http://journals.plos.org/plosone/s/figures for PLOS figure guidelines.
+%
+% Tables should be cell-based and may not contain:
+% - spacing/line breaks within cells to alter layout or alignment
+% - do not nest tabular environments (no tabular environments within tabular environments)
+% - no graphics or colored text (cell background color/shading OK)
+% See http://journals.plos.org/plosone/s/tables for table guidelines.
+%
+% For tables that exceed the width of the text column, use the adjustwidth environment as illustrated in the example table in text below.
+%
+% % % % % % % % % % % % % % % % % % % % % % % %
+%
+% -- EQUATIONS, MATH SYMBOLS, SUBSCRIPTS, AND SUPERSCRIPTS
+%
+% IMPORTANT
+% Below are a few tips to help format your equations and other special characters according to our specifications. For more tips to help reduce the possibility of formatting errors during conversion, please see our LaTeX guidelines at http://journals.plos.org/plosone/s/latex
+%
+% For inline equations, please be sure to include all portions of an equation in the math environment.  For example, x$^2$ is incorrect; this should be formatted as $x^2$ (or $\mathrm{x}^2$ if the romanized font is desired).
+%
+% Do not include text that is not math in the math environment. For example, CO2 should be written as CO\textsubscript{2} instead of CO$_2$.
+%
+% Please add line breaks to long display equations when possible in order to fit size of the column. 
+%
+% For inline equations, please do not include punctuation (commas, etc) within the math environment unless this is part of the equation.
+%
+% When adding superscript or subscripts outside of brackets/braces, please group using {}.  For example, change "[U(D,E,\gamma)]^2" to "{[U(D,E,\gamma)]}^2". 
+%
+% Do not use \cal for caligraphic font.  Instead, use \mathcal{}
+%
+% % % % % % % % % % % % % % % % % % % % % % % % 
+%
+% Please contact latex@plos.org with any questions.
+%
+% % % % % % % % % % % % % % % % % % % % % % % %
+
+
+
+
+% amsmath and amssymb packages, useful for mathematical formulas and symbols
+
+
+% Use adjustwidth environment to exceed column width (see example table in text)
+\usepackage{changepage}
+
+% Use Unicode characters when possible
+
+
+% textcomp package and marvosym package for additional characters
+\usepackage{marvosym}
+
+% cite package, to clean up citations in the main text. Do not remove.
+\usepackage{cite}
+
+% Use nameref to cite supporting information files (see Supporting Information section for more info)
+\usepackage{nameref}
+
+% line numbers
+\usepackage[right]{lineno}
+
+% ligatures disabled
+\usepackage{microtype}
+\DisableLigatures[f]{encoding = *, family = * }
+
+% color can be used to apply background shading to table cells only
+\usepackage[table]{xcolor}
+
+% array package and thick rules for tables
+\usepackage{array}
+
+% create "+" rule type for thick vertical lines
+\newcolumntype{+}{!{\vrule width 2pt}}
+
+% create \thickcline for thick horizontal lines of variable length
+\newlength\savedwidth
+\newcommand{\thickcline}[1]{%
+  \noalign{\global\savedwidth\arrayrulewidth\global\arrayrulewidth 2pt}%
+  \cline{#1}%
+  \noalign{\vskip\arrayrulewidth}%
+  \noalign{\global\arrayrulewidth\savedwidth}%
+}
+
+% \thickhline command for thick horizontal lines that span the table
+\newcommand{\thickhline}{\noalign{\global\savedwidth\arrayrulewidth\global\arrayrulewidth 2pt}%
+\hline
+\noalign{\global\arrayrulewidth\savedwidth}}
+
+
+% Remove comment for double spacing
+%\usepackage{setspace} 
+%\doublespacing
+
+% Text layout
+\raggedright
+
+\textwidth 5.25in 
+\textheight 8.75in
+
+% Bold the 'Figure #' in the caption and separate it from the title/caption with a period
+% Captions will be left justified
+\usepackage[aboveskip=1pt,labelfont=bf,labelsep=period,justification=raggedright,singlelinecheck=off]{caption}\renewcommand{\figurename}{Fig}
+
+% Use the PLoS provided BiBTeX style
+\bibliographystyle{plos2015}
+
+% Remove brackets from numbering in List of References
+
+\renewcommand{\@biblabel}[1]{\quad#1.}
+
+
+% Leave date blank
+
+
+% Header and Footer with logo
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage{epstopdf}
+
+\fancyhf{}
+\setlength{\headheight}{27.023pt}
+\lhead{\includegraphics[width=2.0in]{PLOS-submission.eps}}
+\rfoot{\thepage/\pageref{LastPage}}
+\renewcommand{\footrule}{\hrule height 2pt \vspace{2mm}}
+\fancyheadoffset[L]{2.25in}
+\fancyfootoffset[L]{2.25in}
+\lfoot{\sf PLOS}
+
+%% Include all macros below
+
+\newcommand{\lorem}{{\bf LOREM}}
+\newcommand{\ipsum}{{\bf IPSUM}}
+
+%% END MACROS SECTION
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package none
+\inputencoding utf8x
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 10
+\spacing single
+\use_hyperref true
+\pdf_bookmarks false
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref section
+\pdf_pdfusetitle false
+\papersize letterpaper
+\use_geometry true
+\use_amsmath 2
+\use_esint 1
+\use_mhchem 0
+\use_mathdots 0
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\footskip 0.75in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset VSpace 0.2in*
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Title must be 250 characters or less.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\size larger
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Title of submission to PLOS journals
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+% Please use "sentence case" for title and headings (capitalize only the
+ first word in a title (or heading), the first word in a subtitle (or subheading
+), and any proper nouns).
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Name1 Surname
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+1,2
+\end_layout
+
+\end_inset
+
+, Name2 Surname
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+
+, Name3 Surname
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+2,3
+\end_layout
+
+\end_inset
+
+, Name4 Surname
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+
+, Name5 Surname
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+2‡
+\end_layout
+
+\end_inset
+
+, Name6 Surname
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+2‡
+\end_layout
+
+\end_inset
+
+, Name7 Surname
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+1,2,3*
+\end_layout
+
+\end_inset
+
+, with the Lorem Ipsum Consortium
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+textpilcrow
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\series bold
+1
+\series default
+ Affiliation Dept/Program/Center, Institution Name, City, State, Country
+ 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\series bold
+2
+\series default
+ Affiliation Dept/Program/Center, Institution Name, City, State, Country
+ 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\series bold
+3
+\series default
+ Affiliation Dept/Program/Center, Institution Name, City, State, Country
+ 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+% Insert additional author notes using the symbols described below.
+ Insert symbol callouts after author names as necessary.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Remove or comment out the author notes below if they aren't used.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Primary Equal Contribution Note
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+ These authors contributed equally to this work.
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Additional Equal Contribution Note
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Also use this double-dagger symbol for special authorship notes, such
+ as senior authorship.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+‡These authors also contributed equally to this work.
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Current address notes
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+¤Current Address: Dept/Program/Center, Institution Name, City, State, Country
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% change symbol to "
+\backslash
+textcurrency a" if more than one current address note
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% 
+\backslash
+textcurrency b Insert second current address 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% 
+\backslash
+textcurrency c Insert third current address
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Deceased author note
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+†Deceased
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Group/Consortium Author Note
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+textpilcrow
+\end_layout
+
+\end_inset
+
+ Membership list can be found in the Acknowledgments section.
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Use the asterisk to denote corresponding authorship and provide email
+ address in note below.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+* correspondingauthor@institute.edu
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Please keep the abstract below 300 words
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Abstract
+\end_layout
+
+\begin_layout Standard
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+ Curabitur eget porta erat.
+ Morbi consectetur est vel gravida pretium.
+ Suspendisse ut dui eu ante cursus gravida non sed sem.
+ Nullam sapien tellus, commodo id velit id, eleifend volutpat quam.
+ Phasellus mauris velit, dapibus finibus elementum vel, pulvinar non tellus.
+ Nunc pellentesque pretium diam, quis maximus dolor faucibus id.
+ Nunc convallis sodales ante, ut ullamcorper est egestas vitae.
+ Nam sit amet enim ultrices, ultrices elit pulvinar, volutpat risus.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+% Please keep the Author Summary between 150 and 200 words
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+% Use first person.
+ PLOS ONE authors please skip this step.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+% Author Summary not valid for PLOS ONE submissions.
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Author summary
+\end_layout
+
+\begin_layout Standard
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+ Curabitur eget porta erat.
+ Morbi consectetur est vel gravida pretium.
+ Suspendisse ut dui eu ante cursus gravida non sed sem.
+ Nullam sapien tellus, commodo id velit id, eleifend volutpat quam.
+ Phasellus mauris velit, dapibus finibus elementum vel, pulvinar non tellus.
+ Nunc pellentesque pretium diam, quis maximus dolor faucibus id.
+ Nunc convallis sodales ante, ut ullamcorper est egestas vitae.
+ Nam sit amet enim ultrices, ultrices elit pulvinar, volutpat risus.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+linenumbers
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+% Use "Eq" instead of "Equation" for equation citations.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Introduction
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Section*
+Materials and methods
+\end_layout
+
+\begin_layout Subsection*
+Etiam eget sapien nibh
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% For figure citations, please use "Fig" instead of "Figure".
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+Nulla mi mi, Fig
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig1"
+
+\end_inset
+
+ venenatis sed ipsum varius, volutpat euismod diam.
+ Proin rutrum vel massa non gravida.
+ Quisque tempor sem et dignissim rutrum.
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+ Morbi at justo vitae nulla elementum commodo eu id massa.
+ In vitae diam ac augue semper tincidunt eu ut eros.
+ Fusce fringilla erat porttitor lectus cursus, 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+nameref
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+S1Video
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ vel sagittis arcu lobortis.
+ Aliquam in enim semper, aliquam massa id, cursus neque.
+ Praesent faucibus semper libero.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Place figure captions after the first paragraph in which they are cited.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement !h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\series bold
+Bold the figure title.
+
+\series default
+ Figure caption text here, please use this space for the figure panel descriptio
+ns instead of using subfigure commands.
+ A: Lorem ipsum dolor sit amet.
+ B: Consectetur adipiscing elit.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig1"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Results and Discussion can be combined.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Results
+\end_layout
+
+\begin_layout Standard
+Nulla mi mi, venenatis sed ipsum varius, Table
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "table1"
+
+\end_inset
+
+ volutpat euismod diam.
+ Proin rutrum vel massa non gravida.
+ Quisque tempor sem et dignissim rutrum.
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+ Morbi at justo vitae nulla elementum commodo eu id massa.
+ In vitae diam ac augue semper tincidunt eu ut eros.
+ Fusce fringilla erat porttitor lectus cursus, vel sagittis arcu lobortis.
+ Aliquam in enim semper, aliquam massa id, cursus neque.
+ Praesent faucibus semper libero.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+% Place tables after the first paragraph in which they are cited.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float table
+placement !ht
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{adjustwidth}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+-.25in
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+0in
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Comment out/remove adjustwidth environment if table fits in text column.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Caption
+
+\begin_layout Plain Layout
+ 
+\series bold
+Table caption Nulla mi mi, venenatis sed ipsum varius, volutpat euismod
+ diam.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="8">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0">
+<column alignment="none" valignment="top" width="0" special="+">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell multicolumn="1" alignment="none" valignment="top" topline="true" leftline="true" rightline="true" usebox="none" special="l">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Heading1
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="none" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none" special="l">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Heading2
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+thickhline
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $cell1row1$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+cell2 row 1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+cell3 row 1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+cell4 row 1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+cell5 row 1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+cell6 row 1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+cell7 row 1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+cell8 row 1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $cell1row2$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+cell2 row 2 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+cell3 row 2 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+cell4 row 2 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+cell5 row 2 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+cell6 row 2 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+cell7 row 2 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+cell8 row 2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $cell1row3$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+cell2 row 3 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+cell3 row 3 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+cell4 row 3 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+cell5 row 3 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+cell6 row 3 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+cell7 row 3 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+cell8 row 3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align left
+Table notes Phasellus venenatis, tortor nec vestibulum mattis, massa tortor
+ interdum felis, nec pellentesque metus tortor nec nisl.
+ Ut ornare mauris tellus, vel dapibus arcu suscipit sed.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "table1"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{adjustwidth}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%PLOS does not support heading levels beyond the 3rd (no 4th level headings).
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+lorem
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+and 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+ipsum
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+nunc blandit a tortor
+\end_layout
+
+\begin_layout Subsubsection*
+3rd level heading
+\end_layout
+
+\begin_layout Standard
+Maecenas convallis mauris sit amet sem ultrices gravida.
+ Etiam eget sapien nibh.
+ Sed ac ipsum eget enim egestas ullamcorper nec euismod ligula.
+ Curabitur fringilla pulvinar lectus consectetur pellentesque.
+ Quisque augue sem, tincidunt sit amet feugiat eget, ullamcorper sed velit.
+ Sed non aliquet felis.
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+ Mauris commodo justo ac dui pretium imperdiet.
+ Sed suscipit iaculis mi at feugiat.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+react
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+diffuse free particles
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Enumerate
+increment time by and go to 1
+\end_layout
+
+\begin_layout Enumerate
+j
+\end_layout
+
+\begin_layout Subsection*
+Sed ac quam id nisi malesuada congue
+\end_layout
+
+\begin_layout Standard
+Nulla mi mi, venenatis sed ipsum varius, volutpat euismod diam.
+ Proin rutrum vel massa non gravida.
+ Quisque tempor sem et dignissim rutrum.
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+ Morbi at justo vitae nulla elementum commodo eu id massa.
+ In vitae diam ac augue semper tincidunt eu ut eros.
+ Fusce fringilla erat porttitor lectus cursus, vel sagittis arcu lobortis.
+ Aliquam in enim semper, aliquam massa id, cursus neque.
+ Praesent faucibus semper libero.
+\end_layout
+
+\begin_layout Itemize
+First bulleted item.
+ 
+\end_layout
+
+\begin_layout Itemize
+Second bulleted item.
+ 
+\end_layout
+
+\begin_layout Itemize
+Third bulleted item.
+ 
+\end_layout
+
+\begin_layout Section*
+Discussion
+\end_layout
+
+\begin_layout Standard
+Nulla mi mi, venenatis sed ipsum varius, Table
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "table1"
+
+\end_inset
+
+ volutpat euismod diam.
+ Proin rutrum vel massa non gravida.
+ Quisque tempor sem et dignissim rutrum.
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+ Morbi at justo vitae nulla elementum commodo eu id massa.
+ In vitae diam ac augue semper tincidunt eu ut eros.
+ Fusce fringilla erat porttitor lectus cursus, vel sagittis arcu lobortis.
+ Aliquam in enim semper, aliquam massa id, cursus neque.
+ Praesent faucibus semper libero
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "bib3"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+Conclusion
+\end_layout
+
+\begin_layout Standard
+CO
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+
+ Maecenas convallis mauris sit amet sem ultrices gravida.
+ Etiam eget sapien nibh.
+ Sed ac ipsum eget enim egestas ullamcorper nec euismod ligula.
+ Curabitur fringilla pulvinar lectus consectetur pellentesque.
+ Quisque augue sem, tincidunt sit amet feugiat eget, ullamcorper sed velit.
+\end_layout
+
+\begin_layout Standard
+Sed non aliquet felis.
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+ Mauris commodo justo ac dui pretium imperdiet.
+ Sed suscipit iaculis mi at feugiat.
+ Ut neque ipsum, luctus id lacus ut, laoreet scelerisque urna.
+ Phasellus venenatis, tortor nec vestibulum mattis, massa tortor interdum
+ felis, nec pellentesque metus tortor nec nisl.
+ Ut ornare mauris tellus, vel dapibus arcu suscipit sed.
+ Nam condimentum sem eget mollis euismod.
+ Nullam dui urna, gravida venenatis dui et, tincidunt sodales ex.
+ Nunc est dui, sodales sed mauris nec, auctor sagittis leo.
+ Aliquam tincidunt, ex in facilisis elementum, libero lectus luctus est,
+ non vulputate nisl augue at dolor.
+ For more information, see 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+nameref
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+S1Appendix
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+Supporting information
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Include only the SI item label in the paragraph heading.
+ Use the 
+\backslash
+nameref{label} command to cite SI items in the text.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+S1 Fig.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "S1_Fig"
+
+\end_inset
+
+ 
+\series bold
+Bold the title sentence.
+
+\series default
+ Add descriptive text after the title of the item (optional).
+\end_layout
+
+\begin_layout Paragraph*
+S2 Fig.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "S2_Fig"
+
+\end_inset
+
+ 
+\series bold
+Lorem ipsum.
+
+\series default
+ Maecenas convallis mauris sit amet sem ultrices gravida.
+ Etiam eget sapien nibh.
+ Sed ac ipsum eget enim egestas ullamcorper nec euismod ligula.
+ Curabitur fringilla pulvinar lectus consectetur pellentesque.
+\end_layout
+
+\begin_layout Paragraph*
+S1 File.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "S1_File"
+
+\end_inset
+
+ 
+\series bold
+Lorem ipsum.
+
+\series default
+ Maecenas convallis mauris sit amet sem ultrices gravida.
+ Etiam eget sapien nibh.
+ Sed ac ipsum eget enim egestas ullamcorper nec euismod ligula.
+ Curabitur fringilla pulvinar lectus consectetur pellentesque.
+\end_layout
+
+\begin_layout Paragraph*
+S1 Video.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "S1_Video"
+
+\end_inset
+
+ 
+\series bold
+Lorem ipsum.
+
+\series default
+ Maecenas convallis mauris sit amet sem ultrices gravida.
+ Etiam eget sapien nibh.
+ Sed ac ipsum eget enim egestas ullamcorper nec euismod ligula.
+ Curabitur fringilla pulvinar lectus consectetur pellentesque.
+\end_layout
+
+\begin_layout Paragraph*
+S1 Appendix.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "S1_Appendix"
+
+\end_inset
+
+ 
+\series bold
+Lorem ipsum.
+
+\series default
+ Maecenas convallis mauris sit amet sem ultrices gravida.
+ Etiam eget sapien nibh.
+ Sed ac ipsum eget enim egestas ullamcorper nec euismod ligula.
+ Curabitur fringilla pulvinar lectus consectetur pellentesque.
+\end_layout
+
+\begin_layout Paragraph*
+S1 Table.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "S1_Table"
+
+\end_inset
+
+ 
+\series bold
+Lorem ipsum.
+
+\series default
+ Maecenas convallis mauris sit amet sem ultrices gravida.
+ Etiam eget sapien nibh.
+ Sed ac ipsum eget enim egestas ullamcorper nec euismod ligula.
+ Curabitur fringilla pulvinar lectus consectetur pellentesque.
+\end_layout
+
+\begin_layout Section*
+Acknowledgments
+\end_layout
+
+\begin_layout Standard
+Cras egestas velit mauris, eu mollis turpis pellentesque sit amet.
+ Interdum et malesuada fames ac ante ipsum primis in faucibus.
+ Nam id pretium nisi.
+ Sed ac quam id nisi malesuada congue.
+ Sed interdum aliquet augue, at pellentesque quam rhoncus vitae.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+nolinenumbers
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Either type in your references using
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% 
+\backslash
+begin{thebibliography}{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% 
+\backslash
+bibitem{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Text
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% 
+\backslash
+end{thebibliography}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% or
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Compile your BiBTeX database using our plos2015.bst
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% style file and paste the contents of your .bbl file
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% here.
+ See http://journals.plos.org/plosone/s/latex for 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% step-by-step instructions.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "bib1"
+
+\end_inset
+
+ Conant CG, Wolfe KH.
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+newblock
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+T
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+urning a hobby into a job: how duplicated genes find new functions
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+newblock
+\end_layout
+
+\end_inset
+
+ Nat Rev Genet.
+ 2008 Dec;9(12):938--950.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "bib2"
+
+\end_inset
+
+ Ohno S.
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+newblock
+\end_layout
+
+\end_inset
+
+ Evolution by gene duplication.
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+newblock
+\end_layout
+
+\end_inset
+
+ London: George Alien & Unwin Ltd.
+ Berlin, Heidelberg and New York: Springer-Verlag.; 1970.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "bib3"
+
+\end_inset
+
+ Magwire MM, Bayer F, Webster CL, Cao C, Jiggins FM.
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+newblock
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+S
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+uccessive increases in the resistance of 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+D
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+rosophila to viral infection through a transposon insertion followed by
+ a 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+D
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+uplication
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newblock
+\end_layout
+
+\end_inset
+
+ PLoS Genet.
+ 2011 Oct;7(10):e1002337.
+\end_layout
+
+\end_body
+\end_document
