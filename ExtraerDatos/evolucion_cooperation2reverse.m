@@ -13,7 +13,7 @@ media_last_T2=zeros(1,n);
 sem_last_T2=zeros(1,n);
 aux=zeros(n,4);
 j=0;
-for i=[3 7 9 10]
+for i=[2 4 5 6]
    j=j+1;
    aux(:,j)=promediosC_T2(fin(i)-n+1:fin(i),i);
 end
