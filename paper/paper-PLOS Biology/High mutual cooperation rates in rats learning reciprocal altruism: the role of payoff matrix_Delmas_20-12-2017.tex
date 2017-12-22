@@ -1,0 +1,567 @@
+% Template for PLoS
+% Version 3.4 January 2017
+%
+% % % % % % % % % % % % % % % % % % % % % %
+%
+% -- IMPORTANT NOTE
+%
+% This template contains comments intended 
+% to minimize problems and delays during our production 
+% process. Please follow the template instructions
+% whenever possible.
+%
+% % % % % % % % % % % % % % % % % % % % % % % 
+%
+% Once your paper is accepted for publication, 
+% PLEASE REMOVE ALL TRACKED CHANGES in this file 
+% and leave only the final text of your manuscript. 
+% PLOS recommends the use of latexdiff to track changes during review, as this will help to maintain a clean tex file.
+% Visit https://www.ctan.org/pkg/latexdiff?lang=en for info or contact us at latex@plos.org.
+%
+%
+% There are no restrictions on package use within the LaTeX files except that 
+% no packages listed in the template may be deleted.
+%
+% Please do not include colors or graphics in the text.
+%
+% The manuscript LaTeX source should be contained within a single file (do not use \input, \externaldocument, or similar commands).
+%
+% % % % % % % % % % % % % % % % % % % % % % %
+%
+% -- FIGURES AND TABLES
+%
+% Please include tables/figure captions directly after the paragraph where they are first cited in the text.
+%
+% DO NOT INCLUDE GRAPHICS IN YOUR MANUSCRIPT
+% - Figures should be uploaded separately from your manuscript file. 
+% - Figures generated using LaTeX should be extracted and removed from the PDF before submission. 
+% - Figures containing multiple panels/subfigures must be combined into one image file before submission.
+% For figure citations, please use "Fig" instead of "Figure".
+% See http://journals.plos.org/plosone/s/figures for PLOS figure guidelines.
+%
+% Tables should be cell-based and may not contain:
+% - spacing/line breaks within cells to alter layout or alignment
+% - do not nest tabular environments (no tabular environments within tabular environments)
+% - no graphics or colored text (cell background color/shading OK)
+% See http://journals.plos.org/plosone/s/tables for table guidelines.
+%
+% For tables that exceed the width of the text column, use the adjustwidth environment as illustrated in the example table in text below.
+%
+% % % % % % % % % % % % % % % % % % % % % % % %
+%
+% -- EQUATIONS, MATH SYMBOLS, SUBSCRIPTS, AND SUPERSCRIPTS
+%
+% IMPORTANT
+% Below are a few tips to help format your equations and other special characters according to our specifications. For more tips to help reduce the possibility of formatting errors during conversion, please see our LaTeX guidelines at http://journals.plos.org/plosone/s/latex
+%
+% For inline equations, please be sure to include all portions of an equation in the math environment.  For example, x$^2$ is incorrect; this should be formatted as $x^2$ (or $\mathrm{x}^2$ if the romanized font is desired).
+%
+% Do not include text that is not math in the math environment. For example, CO2 should be written as CO\textsubscript{2} instead of CO$_2$.
+%
+% Please add line breaks to long display equations when possible in order to fit size of the column. 
+%
+% For inline equations, please do not include punctuation (commas, etc) within the math environment unless this is part of the equation.
+%
+% When adding superscript or subscripts outside of brackets/braces, please group using {}.  For example, change "[U(D,E,\gamma)]^2" to "{[U(D,E,\gamma)]}^2". 
+%
+% Do not use \cal for caligraphic font.  Instead, use \mathcal{}
+%
+% % % % % % % % % % % % % % % % % % % % % % % % 
+%
+% Please contact latex@plos.org with any questions.
+%
+% % % % % % % % % % % % % % % % % % % % % % % %
+
+\documentclass[10pt,letterpaper]{article}
+\usepackage[top=0.85in,left=2.75in,footskip=0.75in]{geometry}
+
+% amsmath and amssymb packages, useful for mathematical formulas and symbols
+\usepackage{amsmath,amssymb}
+
+% Use adjustwidth environment to exceed column width (see example table in text)
+\usepackage{changepage}
+
+% Use Unicode characters when possible
+\usepackage[utf8x]{inputenc}
+
+% textcomp package and marvosym package for additional characters
+\usepackage{textcomp,marvosym}
+
+% cite package, to clean up citations in the main text. Do not remove.
+\usepackage{cite}
+
+% Use nameref to cite supporting information files (see Supporting Information section for more info)
+\usepackage{nameref,hyperref}
+
+% line numbers
+\usepackage[right]{lineno}
+
+% ligatures disabled
+\usepackage{microtype}
+\DisableLigatures[f]{encoding = *, family = * }
+
+% color can be used to apply background shading to table cells only
+\usepackage[table]{xcolor}
+
+% array package and thick rules for tables
+\usepackage{array}
+
+% create "+" rule type for thick vertical lines
+\newcolumntype{+}{!{\vrule width 2pt}}
+
+% create \thickcline for thick horizontal lines of variable length
+\newlength\savedwidth
+\newcommand\thickcline[1]{%
+  \noalign{\global\savedwidth\arrayrulewidth\global\arrayrulewidth 2pt}%
+  \cline{#1}%
+  \noalign{\vskip\arrayrulewidth}%
+  \noalign{\global\arrayrulewidth\savedwidth}%
+}
+
+% \thickhline command for thick horizontal lines that span the table
+\newcommand\thickhline{\noalign{\global\savedwidth\arrayrulewidth\global\arrayrulewidth 2pt}%
+\hline
+\noalign{\global\arrayrulewidth\savedwidth}}
+
+
+% Remove comment for double spacing
+%\usepackage{setspace} 
+%\doublespacing
+
+% Text layout
+\raggedright
+\setlength{\parindent}{0.5cm}
+\textwidth 5.25in 
+\textheight 8.75in
+
+% Bold the 'Figure #' in the caption and separate it from the title/caption with a period
+% Captions will be left justified
+\usepackage[aboveskip=1pt,labelfont=bf,labelsep=period,justification=raggedright,singlelinecheck=off]{caption}
+\renewcommand{\figurename}{Fig}
+
+% Use the PLoS provided BiBTeX style
+\bibliographystyle{plos2015}
+
+% Remove brackets from numbering in List of References
+\makeatletter
+\renewcommand{\@biblabel}[1]{\quad#1.}
+\makeatother
+
+% Leave date blank
+\date{}
+
+% Header and Footer with logo
+\usepackage{lastpage,fancyhdr,graphicx}
+\usepackage{epstopdf}
+\pagestyle{myheadings}
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{27.023pt}
+\lhead{\includegraphics[width=2.0in]{PLOS-submission.eps}}
+\rfoot{\thepage/\pageref{LastPage}}
+\renewcommand{\footrule}{\hrule height 2pt \vspace{2mm}}
+\fancyheadoffset[L]{2.25in}
+\fancyfootoffset[L]{2.25in}
+\lfoot{\sf PLOS}
+
+%% Include all macros below
+
+\newcommand{\lorem}{{\bf LOREM}}
+\newcommand{\ipsum}{{\bf IPSUM}}
+
+%% END MACROS SECTION
+
+
+\begin{document}
+\vspace*{0.2in}
+
+% Title must be 250 characters or less.
+\begin{flushleft}
+{\Large
+\textbf\newline{High mutual cooperation rates in rats learning reciprocal altruism: the role of payoff matrix} % Please use "sentence case" for title and headings (capitalize only the first word in a title (or heading), the first word in a subtitle (or subheading), and any proper nouns).
+}
+\newline
+% Insert author names, affiliations and corresponding author email (do not include titles, positions, or degrees).
+
+Guillermo Ezequiel Delmas\textsuperscript{1\Yinyang},
+Sergio Eduardo Lew\textsuperscript{1\ddag},
+Bonifacio Silvano Zanutto\textsuperscript{1,2\textcurrency},
+
+
+\bigskip
+\textbf{1} Instituto de Ingeniería Biomédica, Facultad de Ingeniería, Universidad de Buenos Aires, Buenos Aires, Argentina
+
+\textbf{2}  Instituto de Biología y Medicina Experimental (IBYME-CONICET), Laboratorio de Biología del Comportamiento, Ciudad de Buenos Aires, Buenos Aires, Argentina, Instituto de Ingeniería Biomédica, Universidad de Buenos Aires, Ciudad de Buenos Aires, Buenos Aires, Argentina 
+
+\bigskip
+
+% Insert additional author notes using the symbols described below. Insert symbol callouts after author names as necessary.
+% 
+% Remove or comment out the author notes below if they aren't used.
+%
+% Primary Equal Contribution Note
+\textsuperscript{\Yinyang}  Conceptualization, Data Curation, Formal Analysis, Funding Acquisition, Investigation, Methodology, Resources, Validation, Visualization, Writing–Original Draft, Writing – Review \& Editing.
+
+\textsuperscript{\ddag}  Formal Analysis, Validation, Visualization, Writing – Review \& Editing.
+
+\textsuperscript{\textcurrency} Conceptualization, Funding Acquisition, Investigation, Methodology, Resources, Supervision, Validation, Visualization, Writing–Original Draft, Writing – Review \& Editing.
+% Additional Equal Contribution Note
+% Also use this double-dagger symbol for special authorship notes, such as senior authorship.
+
+
+
+% Current address notes
+
+% Group/Consortium Author Note
+
+% Use the asterisk to denote corresponding authorship and provide email address in note below.
+\textsuperscript{\Yinyang} gedelmas@gmail.com
+
+\end{flushleft}
+% Please keep the abstract below 300 words
+\section*{Abstract}
+Cooperation is one of the most studied paradigms for the understanding of social interactions. Reciprocal altruism -a special type of cooperation that is taught by means of the iterated prisoner dilemma game (iPD)- has been shown to emerge in different species with different success rates. When playing iPD against a reciprocal opponent, the larger theoretical long-term reward is delivered when both players cooperate mutually. In previous experiments, rats showed low mutual cooperation rates. In this work, we trained rats in iPD against an opponent playing a Tit for Tat strategy, using a payoff matrix with positive and negative reinforcements, that is food and timeout respectively. We showed for the first time, that experimental rats were able to learn reciprocal altruism with a high average cooperation rate, where the most probable state was mutual cooperation (85\%), but if subjects defected the most probable behavior was to go back to mutual cooperation. When, we modified the matrix by increasing temptation rewards (T) or by increased cooperation rewards (R), the cooperation rate decreased. In conclusion, we observe that an iPD matrix with large positive reward improves less cooperation than one with small rewards, shown that satisfying the relationship among iPD reinforcement was not enough to achieve high mutual cooperation behavior. Therefore, using positive and negative reinforcements and an appropriate contrast between rewards, rats have cognitive capacity to learn reciprocal altruism. This finding allows to infer that the learning of reciprocal altruism has appeared early in evolution.
+
+
+% Please keep the Author Summary between 150 and 200 words
+% Use first person. PLOS ONE authors please skip this step. 
+% Author Summary not valid for PLOS ONE submissions.   
+\section*{Author summary}
+The reciprocal altruism is achieved when an individual makes a costly act in benefit of another and later it is benefited by the other in return. Subjects have to learn to maximize long term profitability using this reciprocal behavior instead of selfish behavior (getting a long-term reward). In human beings and some animals (as monkeys) this behavior had been observed in laboratory conditions, but in animals with less cognitive abilities (as rats or birds) cooperation has been poorly seen. We have studied if it is due to cognitive abilities or due to other reasons. The reciprocal altruism used to be studied in paradigms where an experimental subject faces an opponent repeatedly having two possible options: cooperate or defect, when the opponent uses a reciprocal strategy (TitForTat: start cooperating and then copy the other’s last choice). In this protocol, the best theoretical strategy is to cooperate. Using a matrix with positive and negative reinforcements, we found for the first time that rats developed high reciprocal altruism behaviour. Rats learned to cooperate mutually, and when they chose not to cooperate, they returned to cooperate in the following trial. In conclusion, rats learned the benefit of choosing the larger long-term reinforcement instead of an immediate, showing that even animals with less cognitive abilities are able to learn reciprocal altruism.
+
+
+
+\linenumbers
+
+% Use "Eq" instead of "Equation" for equation citations.
+\section*{Introduction}
+ 
+Altruism is a kind of behaviour by which individuals choose to favour others in detriment of their own benefit. Since Darwin’s evolution theory, which is not able to explain altruism, many proposals appeared in order to account for altruist behaviours: kin selection \cite{smith1964group}, group selection and reciprocal altruism \cite{trivers1971evolution} among others.  In the reciprocal altruism theory, the loss an individual get from being altruist returns later as part of the group gain. Thus, in the long term, being altruist become the most useful strategy. In this regard, Triver's theory of reciprocal altruism is able to explain how natural selection favours reciprocal altruism between non-related individuals. Perhaps the most insightful example of such behaviour are the observed among vampire bats, where individuals share blood with others who have previously shared their food \cite{wilkinson1988reciprocal}.
+Since 1971, Iterated Prisoner's Dilemma (iPD) has been proven a useful tool to study reciprocal altruism \cite{flood19832}. In the iPD, two players must choose between two possible behaviours: to cooperate or to defect. Rewards and punishments are defined in a 2x2 payoff matrix. When the game is played indefinitely, which is its iterated version, mutual cooperative behaviours are favoured. When played once,  to defect is the best strategy \cite{doebeli2005models}. However, when the game run indefinitely, evolutionary stable strategies (ESS) emerge (~\cite{von1944game}, \cite{nash1950equilibrium}) and, under certain constraints imposed to the payoff matrix, mutual cooperation appears as the best strategy whenever reciprocity is maintained (\textit{Pareto Optimum}). Among a huge number of reciprocal strategies, Tit-For-Tat is one of the most simple and robust \cite{hamilton1981evolution}. Tit-For-Tat is based on two simple rules: to start cooperating and to do what the other player (opponent) did in the last trial.
+
+Among many reciprocal behaviours, reciprocity and reciprocal altruism were well documented in several species. Although cooperation is needed in order to success in both reciprocity and reciprocal altruism, the latter add the possibility of getting reward by defecting an opponent. Some works had assessed reciprocal altruism behaviour by means of iPD paradigm in differents ways, but the experiments results were either low levels of cooperation \cite{wood2016cooperation} or depended on a treatment that enhance the cooperation preference (mutualism matrix) \cite{stephens2002discounting}, \cite{kefi2007accumulated}, \cite{st2009long}.  Direct reciprocity, which is established between two individuals, has been observed in monkeys \cite{de2000attitudinal} \cite{mendres2000capuchins} \cite{hauser2003give} and in rats \cite{rutte2007generalized}, \cite{rutte2008influence}, \cite{schneeberger2012reciprocal}, \cite{dolivo2015norway}. There, while food quality seemed to impact on the cooperative behaviour, a key factor to obtain reliable cooperation levels was the opponent behaviour. In this sense, individuals tended to be more cooperative with opponents that had cooperated in the past. However, when reciprocal altruism is studied, differences between species come to light. Thus, while reciprocal altruism has been proven in monkeys, birds and rats failed to reach high levels of cooperation, even for complex combinations of rewards and punishments in the payoff matrix and treatments to induce preference \cite{wood2016cooperation} \cite{green1995prisoner} \cite{st2009long} \cite{stephens2001adaptive} \cite{stephens2002discounting} \cite{gardner1984prisoner} \cite{viana2010cognitive}.
+The reasons why some species do not learn reciprocal altruism remain obscure. A possible explanation is that animals are not able to discriminate low contrast reward contingencies. Indeed, it was shown that rats failed to discriminate the amount of reward when the number of reward units was bigger than three \cite{capaldi1988counting}, \cite{killeen1982incentive}, \cite{killeen1985incentive}.
+Here, we used the iPD to test how payoff  matrix components promote or disrupt altruistic behaviors. In that sense, positive rewards (food) have been combined with negative ones (time-out) in a game where the opponent was trained to execute a Tit for tat strategy.
+
+
+\section*{Materials and methods}
+
+\subsubsection*{Subject} 
+We used thirty male Long-Evans rats (weight 300–330g and two months old) provided by the IBYME-CONICET. Divided in two experiments, in the first one of eighteen rats, twelve experimental and six opponent, and in the second, six experimental and six opponent. Experimental subjects were housed in pairs (to allow social interaction), and opponent rats were housed individually. All rats were food restricted and maintained at 90-95\% for experimental subjects, and 80-85\% for opponents of free feeding body weight. And with tap water available ad libitum. The housing room was at $22^\circ C\,\pm\,2^\circ C$ and 12/12 h light/dark cycle (with lights on at 9 am). Pre-training was performed on a single standard operant chamber (MED associates Inc., USA) equipped with two stimulus light and retractable levers below the light and feeders. Also the chambers were inside an anechoic chamber with white noise (with a flat power spectral density).
+The iPD experiments were performed in ad hoc dual chamber equipped with levers, lights and feeders (fig. 1A). The chambers were connected by windows in order that the rat could make olfactory and eye contact. The lever's height was 80\% of maximum height of the forepaws while rearing \cite{cabrera2013affordance}. At the end of daylight, supplementary food was provided in order that rats get the amount of pellets neccesary to maintain body weight.
+
+\subsubsection*{Pre-experimental training}
+All rats had a shaping procedure to learn the response (press a lever) to get a reinforcement (pellets). To prevent animals from choosing a lever place over the other, they learned to get reward from both sides by changing the side of conditioned stimulus. The side was changed after eight trials. All rats learned to press the correct lighting lever after four sessions. Each rat was trained in 2 sessions per day, each trial began with the inter-trial interval (ITI) during 5 seconds, it was followed by the conditioning stimulus (light) for either 45 seconds or until a lever was pressed. One second before food is delivered, the feeder was lighted. In the opponent's training they learned to press the lever when the light was on. In the task, the side of the active lever was chosen pseudo-randomly (allowing the same side no more than four times). The opponent subject had to perform a fix ratio treatment up to FR=5 to get rewards.
+%, so as to be enough time in front of the window until the experimental subject choose a lever.
+
+\subsubsection*{Experiment}
+To study the reciprocal altruism in an iterated Prisoner's Dilemma game (iPD), we used a payoff matrix with positive and negative reinforcements. Positive reinforcements were pellets (Bio-Serv 45 mg Dustless Precision Pellets) and negative reinforcement was timeout (a fix delay in starting a new trial). The payoff of the experimental subject was according to the matrix, and the opponent's payoff was 1 pellet when the correct lighted lever was pressed. The iPD game have four possible occupancy state where experimental and opponent individual behaviour can be as follows: both cooperate (mutual cooperation, R), both do not cooperate (mutual defection, P), experimental subject does not cooperate when the opponent cooperates (T), and experimental cooperates when the opponent does not cooperate (S). The amount of pellets preference was previously tested on a discrimination test, showing that rats prefer 2 pellets rather than 1 pellet. We performed two sessions per day and each session had 30 trials. Each experimental subject was trained with the same opponent. The training was finished after five consecutive sessions with no changes in the cooperation rate. We defined cooperation (C)  and defection (D) lever in the iPD box. The single iPD trial procedure was as follows: (1) ITI time, (2) then, the light (CS) was turned on, (3) after that both rats made their responses, the light was turned off and the reinforcement was delivered according to a payoff matrix, (4) if positive reinforcement was assigned, the feeder's light was turned on, and a second later a reward was delivered. The opponent Conditioned Stimulus (light) was controlled following a Tit for Tat strategy.The opponent received a pellet after pressing three times the lever (FR=3, so as to be enough time in front of the window until the experimental subject choose a lever). If negative reinforcement (timeout) was assigned, delay time started, and the opponent subject got a pellet reward. (5) After either five seconds eating time expired or timeout was completed, a new trial started. In the first experiment the payoff matrix was: 1 pellet for mutual cooperation (R=1), 2 pellets when the experimental subject defecated and the opponent cooperated (T=2), 4 seconds of timeout for mutual defecat (P=4), and 8 seconds of timeout when the experimental subject cooperated and the opponent defecated (S=8). 
+At the end of these experiment, the four rats with the best performance in cooperation were trained in a reversion treatment (see Fig. 1F).
+In the second experiment we used six naive experimental rats on a different payoff matrix with greater temptation (R=1, T=3, P=4, S=8). After training, we divided rats in two groups, depending on the cooperation levels. The first group with high cooperation rate was trained with the payoff matrix (R=1, T=5, P=4, S=8) with greater temptation (T). The other group (with low cooperation rate) was trained with the matrix (R=2, T=3, P=4, S=8) that enhances cooperative behaviour (in comparison with R=1, T=3, P=4, S=8), but with low contrast between positive rewards.
+All experimental procedures were approved by the ethics committee of the IByME-CONICET and were conducted according to the NIH Guide for Care and Use of Laboratory Animals.2.1 Subjects and Housing.               
+
+\subsection*{Statistic} 
+All statistical analysis were performed using statistics library from open source software Octave and MATLAB. We pooled the data from the last five sessions where cooperation rate was stable (to calculate cooperation rate we counted the number of times a rat chose the cooperation lever per session).
+We compared individual’s means of cooperation along treatment using a two-sided Wilcoxon rank sum test.
+To test whether the probability of cooperation after each outcome (T,R,P or S) was different from chance (0.5), we performed a Chi-square goodness of fit test with Bonferroni corrected value of 0.05/n.
+To compare mean rate of the different outcomes for each game, we performed an ANOVA two tails test. When significant $\alpha=0.05$, multiple post-hoc pairwise comparative tests were performed with Bonferroni corrected value of $\alpha=0.0125$.
+The individual's decision rules can be described by the components of transition vectors and Markov Chain diagram. The transition vector was made up of probabilities of cooperation when the previous trials resulted in state R(reward, P(c|R-1)), T(temptation,P(c|T-1)), S(sucker, P(c|S-1)) or P(punishment, P(c|P-1)) respectively. If every component of this vector is 0.5, the agent's decision rule is random mode. Markov Chain diagram show the graphic representation of the complete decision making rule for each rat.
+
+
+% Results and Discussion can be combined.
+\section*{Results}
+We trained twelve rats in iPD against an opponent that plays Tit for Tat strategy.  Tit-For-Tat is based on two simple rules: to start cooperating and to do what the other player (opponent) did in the last trial. Fig ~\ref{figHighC}A shows a schema of the different choices a subject can do in each trial. Thus, when the subject cooperates, it receives one pellet (R) or eight seconds timeout (S) depending on whether the opponent choice was to cooperate or to defect. On the other hand, when the subject defects, it receives 2 pellets (T) or four seconds timeout (P), according to whether the opponent choice was to cooperate or to defect respectively.              
+The criteria for cooperation was an established the preference for pressing C lever (cooperation) over D lever (defection) in more than 60\% of the trials for five or more consecutive sessions. Eight out of the twelve animals learned to cooperate (cooperation rate $0.86\pm0.05$, mean$\,\pm\,$s.e.m), reaching criteria in $30\pm4$ sessions, mean$\,\pm\,$s.e.m. In fig ~\ref{figHighC}B, we show the mean cooperation levels for those animals during the last twenty three sessions before reaching criteria. The inset in fig ~\ref{figHighC}B shows the mean cooperation level for each animal during the last five training sessions. As a consequence of the increase in cooperation levels, the average total timeout per session decreased as training progressed ($0.23\,\pm\,0.08$, mean$\,\pm\,$sem, see fig ~\ref{figHighC}C). Due to the fact that many sequences of lever pressing can give the same amount of reward and/or timeout, independently of the cooperation level, we analyzed the relationship between total reward and timeout for all animals. Thus, for each animal we compared those values with the theoretical reward-timeout function when the cooperation level was set to 60\%, see fig~\ref{figHighC}D. As can be seen, the higher the cooperation levels, the larger the total reward and the lower the total timeout. We then built one Markov model for the group of cooperative animals (see fig~\ref{figHighC}E)  averaging occupancy state rate and transition probabilities in the group. In the iPD there are four possible occupancy state where experimental and opponent individual behaviour can be as follows: R (both cooperate or mutual cooperation), P (both do not cooperate or mutual defection), T (experimental subject does not cooperate when the opponent cooperates), and S (experimental cooperates when the opponent does not cooperate). For the group of non-cooperative animals see fig 1S (supplementary materials). The  cooperative group showed that the permanency in R state was high in cooperative animals and, whenever the animal defects (states T and P), it returns to cooperate in most of the cases ($p(c|T_{-1})=0.76$, $p(c|R_{-1})=0.85$, $p(c|S_{-1})=0.93$, $p(c|P_{-1})=0.87$). Besides, state occupancy $R=0.76$ was higher than $T=0.1$, $P=0.04$ and $S=0.1$ ($p =<1e^{-8}$, ANOVA two-way test, n=8).  On the contrary, in the group of non-cooperative animals, state occupancy ($T=0.25$, $R=0.19$, $P=0.33$, $S=0.23$ and  $p > 0.05$,  F=0.353, ANOVA two-way test, n=4) and transition probabilities ($p(c|T_{-1})=0.43$, $p(c|R_{-1})=0.38$, $p(c|S_{-1})=0.32$ and $p(c|P_{-1})=0.31$) did not evidence preference for any defined strategy. To discard the fact that  animals had have a preference for one of the levers and, in consequence, their behaviour biased independently of the training paradigm, we select the best four cooperators and apply a reversal procedure immediately after cooperation was reached.  All animals learned to cooperate after reversal ($0.87\,\pm\,0.04$,mean$\,\pm\,$sem), see fig~\ref{figHighC}F.
+
+
+% Place figure captions after the first paragraph in which they are cited.
+\begin{figure}[!h]
+\caption{{\bf High level of cooperation in iPD.}
+({\bf A}) Dual operant box diagram and the matrix with positive(blue) and negative(red) reinforcement is shown. The iPD game had four possible states: R(reward) mutual cooperation, P(punishment) mutual defection, T(temptation) in which subject defected and opponent cooperated and S(sucker) subject cooperated and opponent defected. The opponent´s light was driven in order to perform a Tit for Tat strategy. ({\bf B,C}) Time-course of cooperation and timeout rate along the last 23 games sessions. In the last 5 sessions, the mean$\,\pm\,$sem of cooperation was 0.86$\,\pm\,$0.05 and timeout was $0.23\,\pm\,0.08$. ({\bf D}) Total reward versus timeout for all animals (color bar means cooperation mean). Each animal was compared with the theoretical reward-timeout function when the cooperation level was set to 60\% (black continuous line). The higher the cooperation levels, the larger the total reward and the lower the total timeout.({\bf E}) Markov Chain diagram shows the probabilities of transition between states ($p(c|T_{-1})=0.76$, $p(c|R_{-1})=0.85$, $p(c|S_{-1})=0.93$, $p(c|P_{-1})=0.87$). The arrow represents transitions: driven by cooperation in blue, and driven by defection in red (the arrow thickness is proportional to transition probability). The size of circles is proportional to the state occupancy ratio. Below, bars show the occupancy ratio when the cooperation reaches stability. ($R=0.76$, $T=0.1$, $P=0.04$, $S=0.1$, $p =<1e^{-8}$, ANOVA two-way test, n=8). Asterisks denote significant differences from multiple comparisons using one-way ANOVA and Bonferroni correction. ({\bf F}) Evolution cooperation rate before and after reversion treatment. Graphs show a moving average with samples of 3 sessions (the mean and sem from reversion on the last five sessions was $0.87\,\pm\,0.04$).}
+\label{figHighC}
+\end{figure}
+
+We then asked how the ratio in the amount of positive reinforcement of R and T states affects cooperation learning and maintenance. We defined a contrast index CI that measures the relationship between the amount of reward in R and T as follows:
+    \[CI=\frac{T-R}{T+R}\]
+Thus, in the experiment shown in fig 1 CI was $\frac{1}{3}$, which is the maximum contrast level constrained to a payoff matrix that favours cooperation, that is, $2R>T+S$, assuming that S becomes a negative stimulus induced by timeout. We trained six animals with a payoff matrix ($R=1$, $T=3$, $P=4$, $S=8$) and found that three animals learned to cooperate ($0.88\,\pm\,0.01$,mean$\,\pm\,$sem, states occupancy $T=0.09$, $R=0.80$, $P=0.03$ and $S=0.08$ ( $p=<7.8e^{-13}$, F=727.5, ANOVA two-way test, n=3) and $p(c|T_{-1})=0.65$, $p(c|R_{-1})=0.90$, $p(c|P_{-1})=0.87$, $p(c|S_{-1})=0.94$, see fig~\ref{figModify}A), while others did not ($0.64\,\pm\,0.13$, mean$\,\pm\,$sem, $p(c|T_{-1})=0.47$, $p(c|R_{-1})=0.55$, $p(c|P_{-1})=0.56$, $p(c|S_{-1})=0.65$ and states occupancy $T=0.23$, $R=0.34$, $P=0.21$ and $S=0.22$ and $p\le0.0103$, F=5.9070 , ANOVA two-way test, n=3), see fig~\ref{figModify}B. Then we changed the amount of reward in order to increase/decrease CI in the cooperative/non-cooperative groups. As it can be seen, a high value of $CI=\frac{2}{3}$ disrupts cooperation in cooperative group, fig~\ref{figModify}A, (cooperation $0.604\,\pm\,0.102$, mean$\,\pm\,$sem, and $p(c|T_{-1})=0.45$, $p(c|R_{-1})=0.64$, $p(c|P_{-1})=0.62$, $p(c|S_{-1})=0.78$ and states occupancy $T=0.18$, $R=0.44$, $P=0.214$ and $S=0.17$) while a lower value of $CI=\frac{1}{5}$ empowers the cooperation in two out of three animals, see fig~\ref{figModify}B ($0.711\,\pm\,0.04$, mean$\,\pm\,$sem, $p(c|T_{-1})=0.62$, $p(c|R_{-1})=0.66$, $p(c|P_{-1})=0.67$, $p(c|S_{-1})=0.66$ and states occupancy $T=0.20$, $R=0.51$, $P=0.09$ and $S=0.20$). We analized how these changes in strategies impact on the amount of received reward and timeout penalties. In the group of cooperative animals, the change in T (3 pellets to 5 pellets) increased both timeout and reward, as expected when states T, P and S become more probable ($p_T<0.0079$, $p_R<0.0079$ , $p_P< 0.0079$ , $p_S< 0.0079$, wilcoxon ranksum test), see fig~\ref{figModify}C and \ref{figModify}E. It is worth noting however that the amount of received reward is not the maximum allowed, which would be delivered in the case of an animal that alternates from state T to S indefinitely. On the other hand, when we applied a matrix with a lower contrast to the group of non-cooperative animals ($R=2$, $T=3$, $P=4$, $S=8$, $CI=\frac{1}{5}$), they learned to cooperate, receiving more reward without significant changes in total timeout, see fig~\ref{figModify}D. In fig~\ref{figModify}F, we show the state occupancy probabilities for this group before and after the change in the payoff matrix. It can be seen that the occupancy probability of R state increased after the change in the payoff matrix. It can be observed a significant difference in R and P states, ($p_R <0.008$ and $p_P<0.048$, wilcoxon rank-sum test).
+
+\begin{figure}[!h]
+\caption{{\bf Effect of changes in the amount of positive reinforcement of R and T.} ({\bf A}) The rats were pre-trained by pay-off matrix [$R=1$, $T=3$, $P=4$, $S=8$] (filled dots). The cooperation is strongly affected by change of temptation payoff, decreasing when T payoff increased and matrix with changed to [$R=1$, $T=5$, $P=4$, $S=8$] (open circles) and $CI=\frac{2}{3}$ (significantly difference, $p< 9.8e^{-06}$, wilcoxon rank-sum test), but cooperation ({\bf B}) enhances when the matrix changed to [$R=2$, $T=3$, $P=4$, $S=8$] (open circles) favouring the cooperation  ($p<0.0062$, statistics using two of three subjects, because one had no significant difference after matrix change, $p>0.05(0.7063)$). In the 3D plots were related cooperation, reward and timeout. ({\bf C}) In the group of cooperative animals (filled dots), the change in T (3 pellets to 5 pellets) increased both timeout and reward in order to decrease cooperation (open circles) ($p<0.05(6.7e^{-05})$).({\bf D}) In the group of non-cooperative animals (filled dots), they learned to cooperate (open circles) by receiving more reward without significant changes in total timeout ($p>0.05(0.081)$). ({\bf E},{\bf F}) The mean of occupancy state rate graph (last five sessions) from cooperative (left) and non-cooperative (right) groups (Mean$\,\pm\,$sem). Asterisks denote significant difference, after matrix changed, among T, R, P or S state occupancy and dash line indicates the level of equal rate in each state (that corresponds to a strategy with strongly random component). Before changes (filled dots) and after changes (open circles).
+}
+\label{figModify}
+\end{figure}
+
+From the results shown in figs \ref{figHighC} and \ref{figModify}, it is reasonable to ask whether a fine tuning in contrasted reward encourages cooperative behaviour. We have shown that eight out of twelve (66\%) animals acquired a cooperative behaviour when CI was $\frac{1}{3}$ while three out of six (50\%) succeeded when CI was $\frac{1}{2}$,as expected when temptation payoff increases. In the same line of reasoning, animals that had learned cooperation under CI=$\frac{1}{2}$ disrupted their cooperative behaviour when CI was increased to $\frac{2}{3}$, while those that had not learned acquired a cooperative behaviour when CI was decreased to $\frac{1}{5}$. Fig~\ref{figU}A exemplifies the occupancy and transition probabilities for an animal that disrupted its cooperative behaviour when $CI=\frac{1}{2}$ was changed to $CI=\frac{2}{3}$. The opposite can be seen in the example of fig~\ref{figU}B. A non-cooperative animal under a $CI=\frac{1}{2}$ became cooperative when CI was decreased to $\frac{1}{5}$. Figs~\ref{figU}C and \ref{figU}D show cooperation levels and normalized rewards. It can be seen that both variables follow an inverted U profile as a function of contrast index CI, as expected when a delicate balance between rewards at R and T is mandatory.
+
+\begin{figure}[!h]
+\caption{{\bf Markov chain diagrams and contrast index.} 
+Markov chain diagrams are shown (the size of circle means of occupancy state rate and the arrow's width are proportional to the probability of cooperate given  ({\bf A}) Occupancy state and transition probabilities for an animal that disrupted its cooperative behaviour when contrast index $CI=\frac{1}{2}$ was changed to $CI=\frac{2}{3}$ and pay-off matrix was changed [T,R,P,S]=[3p,1p,4s,8s] to [5p,1p,4s,8s] (p=pellet and s=seconds). Probabilities of cooperation given some  previous occupancy states were all decreased (before/after: $p(c|T_{-1})= 0.65/0.45$, $p(c|R_{-1})= 0.90/0.64$, $p(c|P_{-1})= 0.87/0.62$, $p(c|S_{-1})= 0.94/0.78$). ({\bf B}) The opposite situation can be seen, non-cooperative animal becomes cooperative when $CI=\frac{1}{2}$ was decreased to $CI=\frac{1}{5}$ in a matrix that favours cooperation (before/after: $p(c|T_{-1})= 0.47/0.62$, $p(c|R_{-1})= 0.55/0.66$, $p(c|P_{-1})= 0.56/0.67$, $p(c|S_{-1})= 0.65/0.66$). ({\bf C}, {\bf D}) show cooperation and timeout levels as a function of CI. Here, it can be seen that both variables follow an inverted U profile in correlation with the contrast index increase and if the payoff matrix favours or not the cooperation behaviour.
+}
+\label{figU}
+\end{figure}
+
+%PLOS does not support heading levels beyond the 3rd (no 4th level headings).
+
+\section*{Discussion and Conclusion}
+In this work, we study the contrasted role between reinforcements in reciprocal altruism learning in rats. Traditionally, reciprocal altruism is achieved by playing the iterated prisoner's dilemma game (iPD) when an experimental subject is confronted to a reciprocal opponent. The payoff matrix used had positive and negative reinforcements with highly contrasted between pairs, positive pairs and negative pairs and also using discriminable amount of reinforcements \cite{{capaldi1988counting}, {killeen1982incentive}, {killeen1985incentive}}.
+In our experiment, pellets were used as positive reinforcements and timeout as negative reinforcements. In this way, the positive and negative reinforcements acted as strengtheners of mutual cooperation behaviour likelihood \cite{mazur2015learning}. To our knowledge, results show for the first time high levels of cooperation (86,11\%) and mutual cooperation (76,32\%) in iPD, see Fig 1B.                   
+A dynamic system can be represented with Markov diagrams and its associated state transition vector. In this case, each state (T, R, P, S, see Results section) will have two associated conditional probabilities: to cooperate or not to cooperate given state. An individual will adopt an altruist reciprocal behaviour if when playing with an opponent with a Tit for Tat strategy, the cooperation probability is near 1, independently of the current occupancy state (T, R, P o S). And while the opponent perform a reciprocal behaviour, the best strategy is to return to the mutual cooperation state, R. In the first experiment in this work, we found that animals adopted two well defined strategies (fig~\ref{figHighC}D). On one hand, a group of 8 animals proved to have learned a cooperative strategy while other 4 animals answered at random (see fig~\ref{S1_noC}A Supporting information). The strategy of the first group (fig~\ref{figHighC}E) showed cooperation probabilities according to their occupancy state T, R, P or S in 0.760, 0.845, 0.929 and 0.870 respectively, and the second group showed not significantly different from random (see fig~\ref{S1_noC}B Supporting information). In various works, results were presented with Markov diagrams and its associated transition vector \cite{viana2010cognitive} \cite{ {stephens2002discounting}, {stevens2004economic}} \cite{kefi2007accumulated} and showed that conditional probabilities of cooperation were not high when facing a reciprocal opponent.                   
+In this protocol, with the matrix T=2p,R=1p,P=4s and S=8s, there are two theoretical strategies that maximize appetitive reinforcement: one is ALLC strategy and the other an alternating between cooperation (C) and defection (D) strategy. The latter, also maximizes positive reinforcement when alternating between cooperation and defection option, but it also increases negative reinforcement (timeout). In this case, ALLC strategy is the only one that maximizes positive reinforcement and minimizes the negative one (Pareto Optimum). Since negative reinforcement is timeout, ALLC strategy gives more food per unit of time. In this case, the role of the negative reinforcement appears.
+
+In order to evaluate if animals developed ALLC strategy by place preference or by reward maximization, we applied a reversion treatment, see fig \ref{figHighC}F, and we observed that animals relearn reciprocal altruism when they were exposed to a new lever’s contingency.
+
+Finally, after animals adopted a strategy, we wanted to evaluate if a change in the payoff matrix could modify their behaviour, to do so we studied the effect of modifying positive reinforcements, see fig \ref{figModify}A and \ref{figModify}B. Animals were pre-trained with a payoff matrix where alternating between C and D strategy gives more positive reinforcements than with an ALLC strategy, and keeping the same negative reinforcement as in the first experiment. It was observed that only half of the animals learned to cooperate although all of them obtained the same mean amount reward (pellet), see fig \ref{figModify}C, \ref{figModify}D.
+Then, a matrix with an increased payoff T was applied to the cooperative group (fig \ref{figModify}A), and we observed that cooperative behaviour decreased. Animals reduced R frequencies and increased P frequencies, proving that they prefered a small-immediate option instead of a large-delayed option. This behaviour is similar to the one observed in birds (\cite{clements1995testing}). In the second group, we applied a matrix that keeps the proportions of reinforcements in T and R similar to the most common matrix (T=3p,R=2p equal proportion to T=6p,R=4). It was observed that animals modified their behaviour and became more cooperative (fig \ref{figModify}B). These results show that animals that learned to cooperate with an appropriate matrix, stop cooperating when a temptation payoff (T) was enough increased (matrix with high contrast index). However, if non-cooperative animals are trained with a matrix that favours cooperation (matrix with low contrast index), they become cooperators. In the latter case, cooperation levels achieved are comparable to results that are shared in diverse bibliography.                   
+The main differences with other research works are the levels of cooperation and mutual cooperation achieved. A possible explanation is that animals could not discriminate among the reinforcements obtained, preventing them from learning that in the long-term the large-delayed option provides more reinforcement and consequently they did not learn iPD. \cite{baker2002teaching}, \cite{clements1995testing}, \cite{
+flood19832}, \cite{gardner1984prisoner}, \cite{green1995prisoner}, \cite{marquez2015prosocial}, \cite{mesterton2002economics}, \cite{stephens2001adaptive}, \cite{stephens2006effects}, \cite{ stevens2004economic}, \cite{wood2016cooperation}, \cite{viana2010cognitive}.
+We observe that if a iPD matrix uses large positive reward, it will improve less cooperation than one with small rewards, shown that satisfying the relationship among iPD reinforcement was not enough  to achieve high mutual cooperation behavior. 
+The reciprocal altruist behaviour in humans, monkeys and elephants has been studied in laboratories showing high levels of cooperation
+[\cite{wedekind1996human}, \cite{kummerli2007human}, \cite{de2000attitudinal}, \cite{hauser2003give}, \cite{Plotnik22032011}, however in rats and birds those levels of cooperation were much lower. Our results showed that by using positive and negative reinforcements and an appropriate contrast index in order, to favour reinforcement discrimination, rats proved to have the cognitive capacity to learn reciprocal altruism.
+
+\section*{Supporting information}
+
+% Include only the SI item label in the paragraph heading. Use the \nameref{label} command to cite SI items in the text.
+\paragraph*{S1 Fig.}
+\label{S1_noC}
+{\bf Non-cooperative rats.} ({\bf A}) Time-course of cooperation rate along the last 23 games sessions. In the last 5 sessions, the mean$\,\pm\,$sem of cooperation was  0.36$\,\pm\,$0.03. ({\bf B}) Markov Chain diagram shows the probabilities of transition between states ($p(c|T_{-1})=0.44$, $p(c|R_{-1})=0.38$, $p(c|S_{-1})=0.32$, $p(c|P_{-1})=0.32$). The arrow represents transitions: driven by cooperation in blue, and driven by defection in red (the arrow thickness is proportional to transition probability). The size of circles is proportional to the state occupancy ratio. Below, bars show the occupancy ratio ($T=0.25$, $R=0.19$, $P=0.33$, $S=0.23$ and  $p > 0.05$,  F=0.353, ANOVA two-way test, n=4) and transition probabilities ($p(c|T_{-1})=0.43$, $p(c|R_{-1})=0.38$, $p(c|S_{-1})=0.32$ and $p(c|P_{-1})=0.31$) did not evidence preference for any defined strategy. Asterisks denote significant differences from multiple comparisons using one-way ANOVA and Bonferroni correction.
+
+\section*{Acknowledgments}
+
+
+\nolinenumbers
+
+% Either type in your references using
+% \begin{thebibliography}{}
+% \bibitem{}
+% Text
+% \end{thebibliography}
+%
+% or
+%
+% Compile your BiBTeX database using our plos2015.bst
+% style file and paste the contents of your .bbl file
+% here. See http://journals.plos.org/plosone/s/latex for 
+% step-by-step instructions.
+% 
+
+%\bibliographystyle{plain}
+%\bibliography{bibliografia}
+
+\begin{thebibliography}{10}
+
+\bibitem{smith1964group}
+Smith JM.
+\newblock Group selection and kin selection.
+\newblock Nature. 1964;201(4924):1145--1147.
+
+\bibitem{trivers1971evolution}
+Trivers RL.
+\newblock The evolution of reciprocal altruism.
+\newblock The Quarterly review of biology. 1971;46(1):35--57.
+
+\bibitem{wilkinson1988reciprocal}
+Wilkinson GS.
+\newblock Reciprocal altruism in bats and other mammals.
+\newblock Ethology and Sociobiology. 1988;9(2--4):85--100.
+
+\bibitem{flood19832}
+Flood M, Lendenmann K, Rapoport A.
+\newblock 2$\times$ 2 Games played by rats: Different delays of reinforcement
+  as payoffs.
+\newblock Systems Research and Behavioral Science. 1983;28(1):65--78.
+
+\bibitem{doebeli2005models}
+Doebeli M, Hauert C.
+\newblock Models of cooperation based on the Prisoner's Dilemma and the
+  Snowdrift game.
+\newblock Ecology letters. 2005;8(7):748--766.
+
+\bibitem{von1944game}
+Von~Neumann J, Morgenstern O.
+\newblock Game theory and economic behavior.
+\newblock Joh Wiley and Sons, New York. 1944;.
+
+\bibitem{nash1950equilibrium}
+Nash JF, et~al.
+\newblock Equilibrium points in n-person games.
+\newblock Proceedings of the national academy of sciences. 1950;36(1):48--49.
+
+\bibitem{hamilton1981evolution}
+Hamilton WD, Axelrod R.
+\newblock The evolution of cooperation.
+\newblock Science. 1981;211(27):1390--1396.
+
+\bibitem{wood2016cooperation}
+Wood RI, Kim JY, Li GR.
+\newblock Cooperation in rats playing the iterated Prisoner's Dilemma game.
+\newblock Animal behaviour. 2016;114:27--35.
+
+\bibitem{stephens2002discounting}
+Stephens DW, McLinn CM, Stevens JR.
+\newblock Discounting and reciprocity in an iterated prisoner's dilemma.
+\newblock Science. 2002;298(5601):2216--2218.
+
+\bibitem{kefi2007accumulated}
+K{\'e}fi S, Bonnet O, Danchin E.
+\newblock Accumulated gain in a Prisoner's Dilemma: which game is carried out
+  by the players?
+\newblock Animal Behaviour. 2007;4(74):e1--e6.
+
+\bibitem{st2009long}
+St-Pierre A, Larose K, Dubois F.
+\newblock Long-term social bonds promote cooperation in the iterated Prisoner's
+  Dilemma.
+\newblock Proceedings of the Royal Society of London B: Biological Sciences.
+  2009;276(1676):4223--4228.
+
+\bibitem{de2000attitudinal}
+De~Waal FB.
+\newblock Attitudinal reciprocity in food sharing among brown capuchin monkeys.
+\newblock Animal Behaviour. 2000;60(2):253--261.
+
+\bibitem{mendres2000capuchins}
+Mendres KA, de~Waal FB.
+\newblock Capuchins do cooperate: the advantage of an intuitive task.
+\newblock Animal Behaviour. 2000;60(4):523--529.
+
+\bibitem{hauser2003give}
+Hauser MD, Chen MK, Chen F, Chuang E.
+\newblock Give unto others: genetically unrelated cotton-top tamarin monkeys
+  preferentially give food to those who altruistically give food back.
+\newblock Proceedings of the Royal Society of London B: Biological Sciences.
+  2003;270(1531):2363--2370.
+
+\bibitem{rutte2007generalized}
+Rutte C, Taborsky M.
+\newblock Generalized reciprocity in rats.
+\newblock PLoS biology. 2007;5(7):e196.
+
+\bibitem{rutte2008influence}
+Rutte C, Taborsky M.
+\newblock The influence of social experience on cooperative behaviour of rats
+  (Rattus norvegicus): direct vs generalised reciprocity.
+\newblock Behavioral Ecology and Sociobiology. 2008;62(4):499--505.
+
+\bibitem{schneeberger2012reciprocal}
+Schneeberger K, Dietz M, Taborsky M.
+\newblock Reciprocal cooperation between unrelated rats depends on cost to
+  donor and benefit to recipient.
+\newblock BMC evolutionary biology. 2012;12(1):41.
+
+\bibitem{dolivo2015norway}
+Dolivo V, Taborsky M.
+\newblock Norway rats reciprocate help according to the quality of help they
+  received.
+\newblock Biology letters. 2015;11(2):20140959.
+
+\bibitem{green1995prisoner}
+Green L, Price PC, Hamburger ME.
+\newblock Prisoner's dilemma and the pigeon: Control by immediate consequences.
+\newblock Journal of the experimental analysis of behavior. 1995;64(1):1--17.
+
+\bibitem{stephens2001adaptive}
+Stephens DW, Anderson D.
+\newblock The adaptive value of preference for immediacy: when shortsighted
+  rules have farsighted consequences.
+\newblock Behavioral Ecology. 2001;12(3):330--339.
+
+\bibitem{gardner1984prisoner}
+Gardner RM, Corbin TL, Beltramo JS, Nickell GS.
+\newblock The Prisoner's Dilemma game and cooperation in the rat.
+\newblock Psychological Reports. 1984;55(3):687--696.
+
+\bibitem{viana2010cognitive}
+Viana DS, Gordo I, Sucena E, Moita MA.
+\newblock Cognitive and motivational requirements for the emergence of
+  cooperation in a rat social game.
+\newblock PloS one. 2010;5(1):e8483.
+
+\bibitem{capaldi1988counting}
+Capaldi E, Miller DJ.
+\newblock Counting in rats: Its functional significance and the independent
+  cognitive processes that constitute it.
+\newblock Journal of Experimental Psychology: Animal Behavior Processes.
+  1988;14(1):3.
+
+\bibitem{killeen1982incentive}
+Killeen PR.
+\newblock Incentive theory: II. Models for choice.
+\newblock Journal of the Experimental Analysis of Behavior.
+  1982;38(2):217--232.
+
+\bibitem{killeen1985incentive}
+Killeen PR.
+\newblock Incentive theory: IV. Magnitude of reward.
+\newblock Journal of the experimental analysis of behavior.
+  1985;43(3):407--417.
+
+\bibitem{cabrera2013affordance}
+Cabrera F, Sanabria F, Jim{\'e}nez {\'A}A, Covarrubias P.
+\newblock An affordance analysis of unconditioned lever pressing in rats and
+  hamsters.
+\newblock Behavioural processes. 2013;92:36--46.
+
+\bibitem{mazur2015learning}
+Mazur JE.
+\newblock Learning and behavior.
+\newblock Psychology Press; 2015.
+
+\bibitem{stevens2004economic}
+Stevens JR, Stephens DW.
+\newblock The economic basis of cooperation: tradeoffs between selfishness and
+  generosity.
+\newblock Behavioral Ecology. 2004;15(2):255--261.
+
+\bibitem{clements1995testing}
+Clements KC, Stephens DW.
+\newblock Testing models of non-kin cooperation: mutualism and the Prisoner's
+  Dilemma.
+\newblock Animal Behaviour. 1995;50(2):527--535.
+
+\bibitem{baker2002teaching}
+Baker F, Rachlin H.
+\newblock Teaching and learning in a probabilistic prisoner's dilemma.
+\newblock Behavioural Processes. 2002;57(2):211--226.
+
+\bibitem{marquez2015prosocial}
+M{\'a}rquez C, Rennie SM, Costa DF, Moita MA.
+\newblock Prosocial choice in rats depends on food-seeking behavior displayed
+  by recipients.
+\newblock Current Biology. 2015;25(13):1736--1745.
+
+\bibitem{mesterton2002economics}
+Mesterton-Gibbons M, Adams ES.
+\newblock The economics of animal cooperation.
+\newblock Science. 2002;298(5601):2146--2147.
+
+\bibitem{stephens2006effects}
+Stephens DW, McLinn CM, Stevens JR.
+\newblock Effects of temporal clumping and payoff accumulation on impulsiveness
+  and cooperation.
+\newblock Behavioural processes. 2006;71(1):29--40.
+
+\bibitem{wedekind1996human}
+Wedekind C, Milinski M.
+\newblock Human cooperation in the simultaneous and the alternating Prisoner's
+  Dilemma: Pavlov versus Generous Tit-for-Tat.
+\newblock Proceedings of the National Academy of Sciences.
+  1996;93(7):2686--2689.
+
+\bibitem{kummerli2007human}
+K{\"u}mmerli R, Colliard C, Fiechter N, Petitpierre B, Russier F, Keller L.
+\newblock Human cooperation in social dilemmas: comparing the Snowdrift game
+  with the Prisoner's Dilemma.
+\newblock Proceedings of the Royal Society of London B: Biological Sciences.
+  2007;274(1628):2965--2970.
+
+\bibitem{Plotnik22032011}
+Plotnik JM, Lair R, Suphachoksahakun W, de~Waal FBM.
+\newblock Elephants know when they need a helping trunk in a cooperative task.
+\newblock Proceedings of the National Academy of Sciences.
+  2011;108(12):5116--5121.
+\newblock doi:{10.1073/pnas.1101765108}.
+
+\end{thebibliography}
+
+\end{document}
+
