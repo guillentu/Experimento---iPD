@@ -2,10 +2,10 @@
 
 %% PARA LA MEDIA DE TODOS los SUJETOS COOPERADORES
 sujetos=[1 3 7 8 9 10 11 12];
-sujetos=[2 4 5 6];
 scale=1;
-auxC=sum(scale*probEleccionC(:,sujetos),2)
-auxD=sum(scale*probEleccionD(:,sujetos),2)
+auxC=mean(scale*probEleccionC(:,sujetos),2)*100
+sujetos=[2 4 5 6];
+auxD=mean(scale*probEleccionD(:,sujetos),2)*100
 auxC=scale*[.5 .5 .5 .5]';
 auxD=scale*[.5 .5 .5 .5]';
 marg_col=auxC+auxD;
